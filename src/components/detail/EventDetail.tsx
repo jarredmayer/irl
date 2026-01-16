@@ -4,10 +4,11 @@ import {
   formatEventTimeRange,
 } from '../../utils/time';
 import { formatDistance } from '../../utils/distance';
+import { getWeatherForTime, getWeatherIcon } from '../../services/weather';
 import { ActionButtons } from './ActionButtons';
 import { Chip, ChipGroup } from '../ui/Chip';
 import { EmptyState } from '../ui/EmptyState';
-import type { Event, ScoredEvent, FollowType } from '../../types';
+import type { Event, ScoredEvent, FollowType, WeatherForecast } from '../../types';
 
 interface EventDetailProps {
   event: Event | ScoredEvent | undefined;
@@ -15,6 +16,7 @@ interface EventDetailProps {
   isFollowingVenue?: boolean;
   isFollowingSeries?: boolean;
   isFollowingNeighborhood?: boolean;
+  weather?: WeatherForecast | null;
 }
 
 export function EventDetail({
@@ -23,8 +25,10 @@ export function EventDetail({
   isFollowingVenue = false,
   isFollowingSeries = false,
   isFollowingNeighborhood = false,
+  weather,
 }: EventDetailProps) {
   const navigate = useNavigate();
+  const eventWeather = event && weather ? getWeatherForTime(weather, event.startAt) : null;
 
   if (!event) {
     return (
@@ -138,6 +142,23 @@ export function EventDetail({
             <p className="text-sm text-slate-500 pl-7">{event.address}</p>
           )}
         </div>
+
+        {/* Weather forecast */}
+        {eventWeather && (
+          <div className="flex items-center gap-3 p-3 bg-sky-50 rounded-xl">
+            <span className="text-2xl">{getWeatherIcon(eventWeather.weatherCode)}</span>
+            <div>
+              <p className="font-medium text-slate-900">
+                {Math.round(eventWeather.temperature)}°F at event time
+              </p>
+              {eventWeather.precipitationProbability > 20 && (
+                <p className="text-sm text-slate-600">
+                  {eventWeather.precipitationProbability}% chance of rain
+                </p>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Price */}
         {event.priceLabel && (

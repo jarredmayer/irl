@@ -187,35 +187,6 @@ export function ProfileView({
           </div>
         </section>
 
-        {/* Transport Mode */}
-        <section className="bg-white rounded-2xl p-5 border border-slate-100">
-          <h3 className="font-semibold text-slate-900 mb-3">How do you get around?</h3>
-          <div className="flex gap-3">
-            <button
-              onClick={() => onPreferencesChange({ ...preferences, transportMode: 'walk' })}
-              className={`flex-1 py-3 px-4 rounded-xl border-2 transition-all ${
-                preferences.transportMode === 'walk'
-                  ? 'border-sky-500 bg-sky-50 text-sky-700'
-                  : 'border-slate-200 text-slate-600 hover:border-slate-300'
-              }`}
-            >
-              <span className="text-2xl mb-1 block">🚶</span>
-              <span className="text-sm font-medium">Walk</span>
-            </button>
-            <button
-              onClick={() => onPreferencesChange({ ...preferences, transportMode: 'drive' })}
-              className={`flex-1 py-3 px-4 rounded-xl border-2 transition-all ${
-                preferences.transportMode === 'drive'
-                  ? 'border-sky-500 bg-sky-50 text-sky-700'
-                  : 'border-slate-200 text-slate-600 hover:border-slate-300'
-              }`}
-            >
-              <span className="text-2xl mb-1 block">🚗</span>
-              <span className="text-sm font-medium">Drive</span>
-            </button>
-          </div>
-        </section>
-
         {/* Interests */}
         <section className="bg-white rounded-2xl p-5 border border-slate-100">
           <h3 className="font-semibold text-slate-900 mb-3">Your Interests</h3>

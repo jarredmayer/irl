@@ -86,7 +86,7 @@ export function getRelativeTimeLabel(isoString: string): string {
   if (isTomorrow(date)) {
     return 'Tomorrow';
   }
-  return format(date, 'EEE');
+  return format(date, 'EEE, MMM d');
 }
 
 export function getTimeSection(isoString: string): string {

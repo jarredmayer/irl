@@ -74,15 +74,18 @@ export function FeedView({
           }}
         />
       ) : (
-        <div className="px-4 py-4 space-y-6">
+        <div className="px-4 py-3 space-y-4">
           {sections.map(
             (section) =>
               section.events.length > 0 && (
                 <section key={section.title}>
-                  <h2 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">
-                    {section.title}
-                  </h2>
-                  <div className="space-y-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <h2 className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+                      {section.title}
+                    </h2>
+                    <span className="text-xs text-slate-400">{section.events.length} events</span>
+                  </div>
+                  <div className="space-y-2">
                     {section.events.map((event) => (
                       <EventCard
                         key={event.id}

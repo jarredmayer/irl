@@ -52,6 +52,19 @@ body {
   border-radius: 12px;
 }
 
+/* Fix marker click handling */
+.leaflet-marker-icon {
+  cursor: pointer !important;
+}
+
+.custom-marker, .custom-marker-editor, .marker-cluster {
+  cursor: pointer !important;
+}
+
+.leaflet-marker-icon > div {
+  pointer-events: auto !important;
+}
+
 /* Bottom sheet styling */
 .bottom-sheet {
   border-radius: 16px 16px 0 0;

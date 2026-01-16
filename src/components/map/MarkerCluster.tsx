@@ -78,6 +78,8 @@ export function MarkerCluster({ events, onEventClick }: MarkerClusterProps) {
                 border: 3px solid white;
                 border-radius: 50%;
                 box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                cursor: pointer;
+                pointer-events: auto;
               "></div>
             `,
             iconSize: [32, 32],
@@ -93,6 +95,8 @@ export function MarkerCluster({ events, onEventClick }: MarkerClusterProps) {
                 border: 3px solid white;
                 border-radius: 50%;
                 box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                cursor: pointer;
+                pointer-events: auto;
               "></div>
             `,
             iconSize: [32, 32],

@@ -145,6 +145,7 @@ function AppContent() {
             followingVenueIds={venueIds}
             followingSeriesIds={seriesIds}
             followingNeighborhoods={neighborhoodIds}
+            weather={weather}
           />
         }
       />
@@ -158,12 +159,14 @@ function EventDetailPage({
   followingVenueIds,
   followingSeriesIds,
   followingNeighborhoods,
+  weather,
 }: {
   getEventById: (id: string) => ReturnType<typeof useEvents>['getEventById'] extends (id: string) => infer R ? R : never;
   onFollow: (id: string, type: import('./types').FollowType, name: string) => void;
   followingVenueIds: string[];
   followingSeriesIds: string[];
   followingNeighborhoods: string[];
+  weather: import('./types').WeatherForecast | null;
 }) {
   const { id } = useParams<{ id: string }>();
   const event = id ? getEventById(id) : undefined;
@@ -175,6 +178,7 @@ function EventDetailPage({
       isFollowingVenue={event?.venueId ? followingVenueIds.includes(event.venueId) : false}
       isFollowingSeries={event?.seriesId ? followingSeriesIds.includes(event.seriesId) : false}
       isFollowingNeighborhood={event ? followingNeighborhoods.includes(event.neighborhood) : false}
+      weather={weather}
     />
   );
 }
