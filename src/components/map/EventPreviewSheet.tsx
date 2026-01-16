@@ -28,7 +28,7 @@ export function EventPreviewSheet({
   };
 
   return (
-    <div className="fixed bottom-16 left-0 right-0 z-30 px-4 pb-4 pointer-events-none">
+    <div className="fixed bottom-16 left-0 right-0 z-[2000] px-4 pb-4 pointer-events-none">
       <div className="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden pointer-events-auto animate-slide-up">
         {/* Handle */}
         <div className="flex justify-center pt-2">
