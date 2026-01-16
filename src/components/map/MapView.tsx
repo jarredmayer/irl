@@ -12,8 +12,6 @@ import type { ScoredEvent, UserLocation, FilterState } from '../../types';
 interface MapViewProps {
   events: ScoredEvent[];
   userLocation?: UserLocation | null;
-  savedIds: string[];
-  onSaveToggle: (eventId: string) => void;
   filters?: FilterState;
   onFiltersChange?: (filters: FilterState) => void;
   hasLocation?: boolean;
@@ -22,8 +20,6 @@ interface MapViewProps {
 export function MapView({
   events,
   userLocation,
-  savedIds,
-  onSaveToggle,
   filters,
   onFiltersChange,
   hasLocation = false,
@@ -118,8 +114,6 @@ export function MapView({
 
       <EventPreviewSheet
         event={selectedEvent}
-        isSaved={selectedEvent ? savedIds.includes(selectedEvent.id) : false}
-        onSaveToggle={onSaveToggle}
         onClose={handleClosePreview}
       />
     </div>

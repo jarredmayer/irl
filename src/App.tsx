@@ -26,7 +26,7 @@ function AppContent() {
   const [filters, setFilters] = useState<FilterState>({ ...DEFAULT_FILTERS });
 
   const { preferences, updatePreferences, isLoaded: prefsLoaded } = usePreferences();
-  const { savedIds, toggleSaved, isLoaded: savedLoaded } = useSavedEvents();
+  const { isLoaded: savedLoaded } = useSavedEvents();
   const { following, toggleFollow, unfollow, venueIds, seriesIds, neighborhoodIds, isLoaded: followingLoaded } = useFollowing();
   const { profile, updateProfile, isLoaded: profileLoaded } = useProfile();
   const { location, status: locationStatus, requestLocation } = useGeolocation();
@@ -100,8 +100,6 @@ function AppContent() {
             <MapView
               events={filteredEvents}
               userLocation={location}
-              savedIds={savedIds}
-              onSaveToggle={toggleSaved}
               filters={filters}
               onFiltersChange={setFilters}
               hasLocation={locationStatus === 'granted'}
