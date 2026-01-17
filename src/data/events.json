@@ -5010,6 +5010,492 @@
     "venueId": "6fa6da8adfb5"
   },
   {
+    "id": "2fe1a1262a737241",
+    "title": "Florida Panthers vs Tampa Bay Lightning",
+    "startAt": "2026-01-17T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Miami's finest.",
+    "editorialWhy": "NHL game: Florida Panthers vs Tampa Bay Lightning at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Tampa Bay Lightning at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "065fbb6960fa2bbc",
+    "title": "Florida Panthers vs Boston Bruins",
+    "startAt": "2026-01-22T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers vs Boston Bruins at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Boston Bruins at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "b0f1eb894de76325",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-01-27T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers vs Toronto Maple Leafs at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Toronto Maple Leafs at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "516569a8b7257885",
+    "title": "Florida Panthers vs New York Rangers",
+    "startAt": "2026-01-31T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers vs New York Rangers at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs New York Rangers at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "174bb86f8e2595c0",
+    "title": "Florida Panthers vs Carolina Hurricanes",
+    "startAt": "2026-02-05T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Miami's finest.",
+    "editorialWhy": "NHL game: Florida Panthers vs Carolina Hurricanes at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Carolina Hurricanes at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "ca593d4ee091823b",
+    "title": "Florida Panthers vs Washington Capitals",
+    "startAt": "2026-02-10T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Miami's finest.",
+    "editorialWhy": "NHL game: Florida Panthers vs Washington Capitals at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Washington Capitals at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "d3809d1de87529c7",
+    "title": "Florida Panthers vs Tampa Bay Lightning",
+    "startAt": "2026-02-14T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Miami's finest.",
+    "editorialWhy": "NHL game: Florida Panthers vs Tampa Bay Lightning at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Tampa Bay Lightning at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "8b461e6bc5a065a3",
+    "title": "Florida Panthers vs Boston Bruins",
+    "startAt": "2026-02-19T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers vs Boston Bruins at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Boston Bruins at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "680e8a1b0daebdae",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-02-24T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Miami's finest.",
+    "editorialWhy": "NHL game: Florida Panthers vs Toronto Maple Leafs at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Toronto Maple Leafs at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "1570fe49d9c3ede5",
+    "title": "Florida Panthers vs New York Rangers",
+    "startAt": "2026-02-28T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers vs New York Rangers at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs New York Rangers at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "8a4d74f6cdd6263f",
+    "title": "Florida Panthers vs Carolina Hurricanes",
+    "startAt": "2026-03-05T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers vs Carolina Hurricanes at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Carolina Hurricanes at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "64803e415befaf8e",
+    "title": "Florida Panthers vs Washington Capitals",
+    "startAt": "2026-03-10T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Game day energy at its peak.",
+    "editorialWhy": "NHL game: Florida Panthers vs Washington Capitals at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Washington Capitals at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "f5a8ad7931cd7dc3",
+    "title": "Florida Panthers vs Tampa Bay Lightning",
+    "startAt": "2026-03-14T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers vs Tampa Bay Lightning at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Tampa Bay Lightning at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "b45959a69c83b49e",
+    "title": "Florida Panthers vs Boston Bruins",
+    "startAt": "2026-03-19T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Miami's finest.",
+    "editorialWhy": "NHL game: Florida Panthers vs Boston Bruins at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Boston Bruins at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "86cb5457f9842ee0",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-03-24T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Game day energy at its peak.",
+    "editorialWhy": "NHL game: Florida Panthers vs Toronto Maple Leafs at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Toronto Maple Leafs at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "4e0ce1c20d4206e2",
+    "title": "Florida Panthers vs New York Rangers",
+    "startAt": "2026-03-28T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers vs New York Rangers at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs New York Rangers at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "18f5de5217dc6e6e",
+    "title": "Florida Panthers vs Carolina Hurricanes",
+    "startAt": "2026-04-02T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Miami's finest.",
+    "editorialWhy": "NHL game: Florida Panthers vs Carolina Hurricanes at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Carolina Hurricanes at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "fcb56285d3e8a89d",
+    "title": "Florida Panthers vs Washington Capitals",
+    "startAt": "2026-04-07T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Game day energy at its peak.",
+    "editorialWhy": "NHL game: Florida Panthers vs Washington Capitals at Amerant Bank Arena Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers vs Washington Capitals at Amerant Bank Arena",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
     "id": "151764d13e862537",
     "title": "November Project Miami",
     "startAt": "2026-01-21T06:30:00",

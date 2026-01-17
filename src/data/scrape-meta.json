@@ -1,0 +1,47 @@
+{
+  "scrapedAt": "2026-01-17T18:59:56.559Z",
+  "stats": {
+    "total": 462,
+    "deduplicated": 454,
+    "bySource": {
+      "Miami New Times": 76,
+      "Farmers Markets": 80,
+      "Music Venues": 66,
+      "Professional Sports": 46,
+      "Wellness & Fitness": 78,
+      "Cultural Venues": 116
+    }
+  },
+  "sources": [
+    {
+      "name": "Miami New Times",
+      "count": 76,
+      "errors": []
+    },
+    {
+      "name": "Farmers Markets",
+      "count": 80,
+      "errors": []
+    },
+    {
+      "name": "Music Venues",
+      "count": 66,
+      "errors": []
+    },
+    {
+      "name": "Professional Sports",
+      "count": 46,
+      "errors": []
+    },
+    {
+      "name": "Wellness & Fitness",
+      "count": 78,
+      "errors": []
+    },
+    {
+      "name": "Cultural Venues",
+      "count": 116,
+      "errors": []
+    }
+  ]
+}
