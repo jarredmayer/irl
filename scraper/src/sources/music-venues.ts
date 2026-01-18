@@ -1,120 +1,141 @@
 /**
  * Miami Music Venues Scraper
- * Generates events from boutique music venues
+ * Quality venues with differentiated programming
  */
 
 import { addDays, format, getDay } from 'date-fns';
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 
-interface VenueInfo {
+interface VenueEvent {
   name: string;
+  venue: string;
   address: string;
   neighborhood: string;
   lat: number;
   lng: number;
   url: string;
-  eventPattern: 'nightly' | 'weekend' | 'weekly';
-  closedDays?: number[]; // 0 = Sunday, 1 = Monday, etc.
-  startTime: string;
+  days: number[];
+  time: string;
   category: string;
   description: string;
   tags: string[];
+  price: number;
 }
 
 export class MusicVenuesScraper extends BaseScraper {
-  private venues: VenueInfo[] = [
+  // Specific programming, not generic "Live at X"
+  private events: VenueEvent[] = [
+    // Lagniappe - actual jazz programming
     {
-      name: 'Lagniappe House',
+      name: 'Live Jazz at Lagniappe',
+      venue: 'Lagniappe House',
       address: '3425 NE 2nd Ave, Miami, FL 33137',
       neighborhood: 'Midtown',
       lat: 25.8076,
       lng: -80.193,
       url: 'http://www.lagniappehouse.com/',
-      eventPattern: 'nightly',
-      closedDays: [1], // Closed Mondays
-      startTime: '20:00',
+      days: [2, 3, 4, 5, 6, 0], // Tue-Sun
+      time: '20:00',
       category: 'Music',
-      description: 'Intimate live jazz and world music in a magical outdoor garden setting.',
-      tags: ['live-music', 'jazz', 'outdoor-dining', 'local-favorite'],
+      description: 'Nightly live jazz in a magical outdoor wine garden. Rotating musicians, intimate setting, great wine selection.',
+      tags: ['live-music', 'jazz', 'wine-bar', 'local-favorite'],
+      price: 0,
     },
+    // Dante's Hifi - specific vinyl night
     {
-      name: "Dante's Hifi",
+      name: 'Vinyl Sessions at Dante\'s HiFi',
+      venue: "Dante's HiFi",
       address: '1519 NW 2nd Ave, Miami, FL 33136',
       neighborhood: 'Wynwood',
       lat: 25.7889,
       lng: -80.1995,
       url: 'https://danteshifi.com/',
-      eventPattern: 'weekend',
-      startTime: '21:00',
-      category: 'Music',
-      description: 'All-vinyl DJ sets in an intimate speakeasy setting. Deep cuts and rare grooves.',
-      tags: ['dj', 'electronic', 'cocktails', 'local-favorite'],
+      days: [5, 6], // Fri-Sat
+      time: '21:00',
+      category: 'Nightlife',
+      description: 'All-vinyl DJ sets on a world-class sound system. Deep house, disco, rare grooves. Intimate speakeasy vibes.',
+      tags: ['dj', 'electronic', 'vinyl', 'local-favorite'],
+      price: 10,
     },
+    // Ball & Chain - live salsa
     {
-      name: 'Ball & Chain',
+      name: 'Live Salsa at Ball & Chain',
+      venue: 'Ball & Chain',
       address: '1513 SW 8th St, Miami, FL 33135',
       neighborhood: 'Little Havana',
       lat: 25.7653,
       lng: -80.2156,
       url: 'https://ballandchainmiami.com/',
-      eventPattern: 'nightly',
-      startTime: '19:00',
+      days: [4, 5, 6, 0], // Thu-Sun
+      time: '20:00',
       category: 'Music',
-      description: 'Historic Little Havana venue with live Latin music, salsa dancing, and Cuban cocktails.',
-      tags: ['live-music', 'latin', 'dancing', 'cocktails', 'local-favorite'],
+      description: 'Live Cuban bands, salsa dancing, and mojitos in this historic Little Havana venue. The real Miami experience.',
+      tags: ['live-music', 'latin', 'dancing', 'local-favorite'],
+      price: 0,
     },
+    // Gramps - specific programming
     {
-      name: 'The Anderson',
-      address: '709 NE 79th St, Miami, FL 33138',
-      neighborhood: 'Little River',
-      lat: 25.8487,
-      lng: -80.1831,
-      url: 'https://theandersonmiami.com/',
-      eventPattern: 'nightly',
-      startTime: '20:00',
-      category: 'Music',
-      description: 'Neighborhood bar with rotating DJs, craft cocktails, and a tropical backyard.',
-      tags: ['dj', 'cocktails', 'local-favorite'],
-    },
-    {
-      name: 'Gramps',
+      name: 'Comedy Night at Gramps',
+      venue: 'Gramps',
       address: '176 NW 24th St, Miami, FL 33127',
       neighborhood: 'Wynwood',
       lat: 25.8002,
       lng: -80.2009,
       url: 'https://gramps.com/',
-      eventPattern: 'nightly',
-      startTime: '19:00',
-      category: 'Music',
-      description: 'Wynwood dive bar with eclectic programming, comedy shows, and DJ nights.',
-      tags: ['dj', 'comedy', 'local-favorite'],
+      days: [2], // Tuesday
+      time: '20:00',
+      category: 'Comedy',
+      description: 'Weekly stand-up comedy showcase featuring local and touring comedians. Free entry, cheap drinks.',
+      tags: ['comedy', 'free-event', 'local-favorite'],
+      price: 0,
     },
     {
-      name: 'Miami Beach Bandshell',
+      name: 'DJ Night at Gramps',
+      venue: 'Gramps',
+      address: '176 NW 24th St, Miami, FL 33127',
+      neighborhood: 'Wynwood',
+      lat: 25.8002,
+      lng: -80.2009,
+      url: 'https://gramps.com/',
+      days: [5, 6], // Fri-Sat
+      time: '22:00',
+      category: 'Nightlife',
+      description: 'Curated DJ sets in Wynwood\'s favorite dive bar. Eclectic programming from house to hip-hop.',
+      tags: ['dj', 'local-favorite'],
+      price: 0,
+    },
+    // Miami Beach Bandshell - free concerts
+    {
+      name: 'Free Concert at Miami Beach Bandshell',
+      venue: 'Miami Beach Bandshell',
       address: '7275 Collins Ave, Miami Beach, FL 33141',
-      neighborhood: 'North Miami Beach',
+      neighborhood: 'North Beach',
       lat: 25.8648,
       lng: -80.1216,
       url: 'https://www.miamibeachbandshell.com/',
-      eventPattern: 'weekend',
-      startTime: '19:00',
+      days: [6], // Saturday
+      time: '19:00',
       category: 'Music',
-      description: 'Historic beachfront amphitheater hosting free concerts and cultural events.',
-      tags: ['live-music', 'beach', 'free-event', 'outdoor-dining'],
+      description: 'Free outdoor concerts at the historic beachfront bandshell. Bring a blanket, enjoy the ocean breeze.',
+      tags: ['live-music', 'beach', 'free-event', 'family-friendly'],
+      price: 0,
     },
+    // Zey Zey - new venue
     {
-      name: 'Do Not Sit On The Furniture',
-      address: '423 16th St, Miami Beach, FL 33139',
-      neighborhood: 'South Beach',
-      lat: 25.7867,
-      lng: -80.1368,
-      url: 'https://donotsitonfurniture.com/',
-      eventPattern: 'weekend',
-      startTime: '23:00',
-      category: 'Nightlife',
-      description: 'Underground house music club known for quality sound and intimate atmosphere.',
-      tags: ['dj', 'electronic', 'dancing'],
+      name: 'Live Music at Zey Zey',
+      venue: 'Zey Zey',
+      address: '233 NE 2nd St, Miami, FL 33132',
+      neighborhood: 'Downtown Miami',
+      lat: 25.7751,
+      lng: -80.1897,
+      url: 'https://www.zeyzey.com/',
+      days: [4, 5, 6], // Thu-Sat
+      time: '21:00',
+      category: 'Music',
+      description: 'Intimate live music venue in downtown Miami. Eclectic bookings from jazz to indie to electronic.',
+      tags: ['live-music', 'local-favorite'],
+      price: 15,
     },
   ];
 
@@ -124,72 +145,56 @@ export class MusicVenuesScraper extends BaseScraper {
 
   async scrape(): Promise<RawEvent[]> {
     const events: RawEvent[] = [];
-    const daysAhead = 14;
+    const weeksAhead = 4;
 
-    this.log(`Generating music venue events for next ${daysAhead} days...`);
+    this.log(`Generating music venue events for next ${weeksAhead} weeks...`);
 
-    for (const venue of this.venues) {
-      const venueEvents = this.generateVenueEvents(venue, daysAhead);
-      events.push(...venueEvents);
+    for (const event of this.events) {
+      const generated = this.generateEvents(event, weeksAhead);
+      events.push(...generated);
     }
 
     this.log(`Generated ${events.length} music venue events`);
     return events;
   }
 
-  private generateVenueEvents(venue: VenueInfo, daysAhead: number): RawEvent[] {
-    const events: RawEvent[] = [];
+  private generateEvents(event: VenueEvent, weeksAhead: number): RawEvent[] {
+    const results: RawEvent[] = [];
     const today = new Date();
 
-    for (let i = 0; i < daysAhead; i++) {
-      const eventDate = addDays(today, i);
-      const dayOfWeek = getDay(eventDate);
+    for (let week = 0; week < weeksAhead; week++) {
+      for (const targetDay of event.days) {
+        const baseDate = addDays(today, week * 7);
+        let daysUntil = targetDay - getDay(baseDate);
+        if (daysUntil < 0) daysUntil += 7;
+        const eventDate = addDays(baseDate, daysUntil);
 
-      // Check if venue is closed this day
-      if (venue.closedDays?.includes(dayOfWeek)) {
-        continue;
+        if (eventDate >= today) {
+          const dateStr = format(eventDate, 'yyyy-MM-dd');
+          results.push({
+            title: event.name,
+            startAt: `${dateStr}T${event.time}:00`,
+            venueName: event.venue,
+            address: event.address,
+            neighborhood: event.neighborhood,
+            lat: event.lat,
+            lng: event.lng,
+            city: 'Miami',
+            tags: event.tags,
+            category: event.category,
+            priceLabel: event.price === 0 ? 'Free' : '$',
+            priceAmount: event.price,
+            isOutdoor: event.tags.includes('beach'),
+            description: event.description,
+            sourceUrl: event.url,
+            sourceName: this.name,
+            recurring: true,
+            recurrencePattern: 'weekly',
+          });
+        }
       }
-
-      // Check event pattern
-      if (venue.eventPattern === 'weekend' && dayOfWeek !== 5 && dayOfWeek !== 6) {
-        continue; // Only Friday and Saturday
-      }
-
-      const dateStr = format(eventDate, 'yyyy-MM-dd');
-      const startAt = `${dateStr}T${venue.startTime}:00`;
-
-      // Generate event title based on day
-      let title = `Live at ${venue.name}`;
-      if (venue.name === 'Lagniappe House') {
-        title = dayOfWeek >= 5 ? 'Live Jazz at Lagniappe' : 'Lagniappe Live Music';
-      } else if (venue.name === "Dante's Hifi") {
-        title = 'Vinyl Night at Dante\'s Hifi';
-      } else if (venue.name === 'Ball & Chain') {
-        title = 'Live Salsa at Ball & Chain';
-      }
-
-      events.push({
-        title,
-        startAt,
-        venueName: venue.name,
-        address: venue.address,
-        neighborhood: venue.neighborhood,
-        lat: venue.lat,
-        lng: venue.lng,
-        city: 'Miami',
-        tags: venue.tags,
-        category: venue.category,
-        priceLabel: 'Free',
-        priceAmount: 0,
-        isOutdoor: venue.tags.includes('outdoor-dining') || venue.tags.includes('beach'),
-        description: venue.description,
-        sourceUrl: venue.url,
-        sourceName: this.name,
-        recurring: true,
-        recurrencePattern: venue.eventPattern,
-      });
     }
 
-    return events;
+    return results;
   }
 }

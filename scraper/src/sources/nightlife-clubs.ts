@@ -23,95 +23,96 @@ interface ClubVenue {
 }
 
 export class NightlifeClubsScraper extends BaseScraper {
-  private clubs: ClubVenue[] = [
-    // Club Space
+  // Specific club nights with differentiated programming
+  private clubNights = [
+    // Club Space - specific nights
     {
-      name: 'Club Space',
+      eventName: 'Space Terrace Sunrise Session',
+      venue: 'Club Space',
       address: '34 NE 11th St, Miami, FL 33132',
       neighborhood: 'Downtown Miami',
       lat: 25.7858,
       lng: -80.1927,
       url: 'https://clubspace.com/',
-      eventDays: [5, 6], // Fri, Sat
-      startTime: '23:00',
-      category: 'Nightlife',
-      description: 'Legendary Miami club known for marathon dance sessions. World-class DJs and house/techno until sunrise.',
-      tags: ['dj', 'electronic', 'dancing'],
+      days: [6, 0], // Sat into Sun, Sun into Mon
+      startTime: '06:00',
+      description: 'Legendary sunrise sessions on the Space Terrace. House and techno as the sun comes up over Miami.',
+      tags: ['dj', 'electronic', 'sunrise', 'local-favorite'],
       price: 40,
     },
-    // E11even
+    // Floyd - specific programming
     {
-      name: 'E11EVEN Miami',
-      address: '29 NE 11th St, Miami, FL 33132',
-      neighborhood: 'Downtown Miami',
-      lat: 25.7856,
-      lng: -80.1931,
-      url: 'https://11miami.com/',
-      eventDays: [0, 1, 2, 3, 4, 5, 6], // Every night
-      startTime: '23:00',
-      category: 'Nightlife',
-      description: 'Miami\'s only 24/7 ultraclub. High-energy performances, celebrity DJs, and an unforgettable experience.',
-      tags: ['dj', 'dancing'],
-      price: 50,
-    },
-    // Floyd Miami
-    {
-      name: 'Floyd Miami',
+      eventName: 'Floyd Underground',
+      venue: 'Floyd Miami',
       address: '34 NE 11th St, Miami, FL 33132',
       neighborhood: 'Downtown Miami',
       lat: 25.7858,
       lng: -80.1927,
       url: 'https://floydmiami.com/',
-      eventDays: [4, 5, 6], // Thu-Sat
+      days: [5, 6], // Fri, Sat
       startTime: '22:00',
-      category: 'Nightlife',
-      description: 'Intimate underground club focused on quality house and techno. Impeccable Funktion-One sound system.',
+      description: 'Intimate underground club focused on quality house and techno. Impeccable Funktion-One sound.',
       tags: ['dj', 'electronic', 'local-favorite'],
       price: 25,
     },
-    // Treehouse
+    // Treehouse - rooftop vibes
     {
-      name: 'Treehouse Miami',
+      eventName: 'Treehouse Rooftop Sessions',
+      venue: 'Treehouse Miami',
       address: '323 23rd St, Miami Beach, FL 33139',
       neighborhood: 'South Beach',
       lat: 25.8001,
       lng: -80.1354,
       url: 'https://treehousemiami.com/',
-      eventDays: [5, 6], // Fri, Sat
+      days: [5, 6], // Fri, Sat
       startTime: '23:00',
-      category: 'Nightlife',
-      description: 'Open-air rooftop club in South Beach. House music, tropical vibes, and dancing under the stars.',
+      description: 'Open-air rooftop club in South Beach. House music, tropical vibes, dancing under the stars.',
       tags: ['dj', 'electronic', 'rooftop', 'dancing'],
       price: 30,
     },
-    // Basement Miami
+    // Basement - specific night
     {
-      name: 'Basement Miami',
+      eventName: 'Basement Sessions',
+      venue: 'Basement Miami',
       address: '2901 Collins Ave, Miami Beach, FL 33140',
       neighborhood: 'Mid-Beach',
       lat: 25.8089,
       lng: -80.1267,
       url: 'https://basementmiami.com/',
-      eventDays: [4, 5, 6], // Thu-Sat
+      days: [5, 6], // Fri, Sat
       startTime: '22:00',
-      category: 'Nightlife',
-      description: 'Underground club beneath the Edition hotel featuring bowling, ice skating, and world-class DJs.',
+      description: 'Underground club beneath the Edition hotel. World-class DJs plus bowling and ice skating.',
       tags: ['dj', 'electronic', 'dancing'],
       price: 35,
     },
-    // ATV Records
+    // ATV Records - vinyl focused
     {
-      name: 'ATV Records',
+      eventName: 'ATV Records After Hours',
+      venue: 'ATV Records',
       address: '1306 N Miami Ave, Miami, FL 33136',
       neighborhood: 'Wynwood',
       lat: 25.7889,
       lng: -80.1967,
       url: 'https://atvrecords.com/',
-      eventDays: [4, 5, 6], // Thu-Sat
+      days: [5, 6], // Fri, Sat
       startTime: '22:00',
-      category: 'Nightlife',
-      description: 'Record shop by day, intimate club by night. Curated lineups featuring underground selectors.',
-      tags: ['dj', 'electronic', 'local-favorite'],
+      description: 'Record shop by day, intimate club by night. Underground selectors and vinyl-focused sets.',
+      tags: ['dj', 'electronic', 'vinyl', 'local-favorite'],
+      price: 20,
+    },
+    // Do Not Sit - house music focused
+    {
+      eventName: 'Do Not Sit House Sessions',
+      venue: 'Do Not Sit On The Furniture',
+      address: '423 16th St, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7867,
+      lng: -80.1368,
+      url: 'https://donotsitonfurniture.com/',
+      days: [5, 6], // Fri, Sat
+      startTime: '23:00',
+      description: 'Underground house music club known for quality sound and intimate atmosphere. No pretense.',
+      tags: ['dj', 'electronic', 'dancing', 'local-favorite'],
       price: 20,
     },
   ];
@@ -126,50 +127,50 @@ export class NightlifeClubsScraper extends BaseScraper {
 
     this.log(`Generating nightlife events for next ${weeksAhead} weeks...`);
 
-    for (const club of this.clubs) {
-      const clubEvents = this.generateClubEvents(club, weeksAhead);
-      events.push(...clubEvents);
+    for (const night of this.clubNights) {
+      const nightEvents = this.generateClubNightEvents(night, weeksAhead);
+      events.push(...nightEvents);
     }
 
     this.log(`Generated ${events.length} nightlife events`);
     return events;
   }
 
-  private generateClubEvents(club: ClubVenue, weeksAhead: number): RawEvent[] {
+  private generateClubNightEvents(night: typeof this.clubNights[0], weeksAhead: number): RawEvent[] {
     const events: RawEvent[] = [];
     const today = new Date();
-    const daysToCheck = weeksAhead * 7;
 
-    for (let i = 0; i < daysToCheck; i++) {
-      const checkDate = addDays(today, i);
-      const dayOfWeek = getDay(checkDate);
+    for (let week = 0; week < weeksAhead; week++) {
+      for (const targetDay of night.days) {
+        const baseDate = addDays(today, week * 7);
+        let daysUntil = targetDay - getDay(baseDate);
+        if (daysUntil < 0) daysUntil += 7;
 
-      if (club.eventDays.includes(dayOfWeek)) {
-        const dateStr = format(checkDate, 'yyyy-MM-dd');
-        const startAt = `${dateStr}T${club.startTime}:00`;
+        const eventDate = addDays(baseDate, daysUntil);
+        if (eventDate >= today) {
+          const dateStr = format(eventDate, 'yyyy-MM-dd');
 
-        const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
-
-        events.push({
-          title: `${dayName} at ${club.name}`,
-          startAt,
-          venueName: club.name,
-          address: club.address,
-          neighborhood: club.neighborhood,
-          lat: club.lat,
-          lng: club.lng,
-          city: 'Miami',
-          tags: club.tags,
-          category: club.category,
-          priceLabel: club.price > 40 ? '$$$' : club.price > 25 ? '$$' : '$',
-          priceAmount: club.price,
-          isOutdoor: club.tags.includes('rooftop'),
-          description: club.description,
-          sourceUrl: club.url,
-          sourceName: this.name,
-          recurring: true,
-          recurrencePattern: 'weekly',
-        });
+          events.push({
+            title: night.eventName,
+            startAt: `${dateStr}T${night.startTime}:00`,
+            venueName: night.venue,
+            address: night.address,
+            neighborhood: night.neighborhood,
+            lat: night.lat,
+            lng: night.lng,
+            city: 'Miami',
+            tags: night.tags,
+            category: 'Nightlife',
+            priceLabel: night.price > 40 ? '$$$' : night.price > 25 ? '$$' : '$',
+            priceAmount: night.price,
+            isOutdoor: night.tags.includes('rooftop'),
+            description: night.description,
+            sourceUrl: night.url,
+            sourceName: this.name,
+            recurring: true,
+            recurrencePattern: 'weekly',
+          });
+        }
       }
     }
 

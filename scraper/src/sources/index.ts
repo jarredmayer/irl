@@ -48,6 +48,9 @@ export { HotelsHospitalityScraper } from './hotels-hospitality.js';
 // Instagram sources
 export { InstagramSourcesScraper } from './instagram-sources.js';
 
+// Ticketing platforms
+export { DiceFmScraper, ShotgunScraper, WorldCup2026Scraper } from './ticketing-platforms.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -77,6 +80,7 @@ import {
 } from './food-drink.js';
 import { HotelsHospitalityScraper } from './hotels-hospitality.js';
 import { InstagramSourcesScraper } from './instagram-sources.js';
+import { DiceFmScraper, ShotgunScraper, WorldCup2026Scraper } from './ticketing-platforms.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -119,5 +123,10 @@ export function getAllScrapers(): BaseScraper[] {
 
     // Instagram-sourced events
     new InstagramSourcesScraper(),
+
+    // Ticketing platforms
+    new DiceFmScraper(),
+    new ShotgunScraper(),
+    new WorldCup2026Scraper(),
   ];
 }

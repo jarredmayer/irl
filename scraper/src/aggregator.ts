@@ -56,9 +56,14 @@ export class EventAggregator {
       results.push(result);
     }
 
+    // Curate events (filter out generic/low-quality)
+    console.log(`\n🎯 Curating ${allRawEvents.length} total events...`);
+    const curated = this.curateEvents(allRawEvents);
+    console.log(`   ✅ ${curated.length} events passed curation\n`);
+
     // Deduplicate events
-    console.log(`\n🔄 Deduplicating ${allRawEvents.length} total events...`);
-    const deduplicated = this.deduplicateEvents(allRawEvents);
+    console.log(`🔄 Deduplicating ${curated.length} curated events...`);
+    const deduplicated = this.deduplicateEvents(curated);
     console.log(`   ✅ ${deduplicated.length} unique events after deduplication\n`);
 
     // Transform to IRL format
@@ -81,6 +86,72 @@ export class EventAggregator {
         bySource,
       },
     };
+  }
+
+  /**
+   * Filter out low-quality/generic events
+   */
+  private curateEvents(events: RawEvent[]): RawEvent[] {
+    const rejected: string[] = [];
+
+    const curated = events.filter((event) => {
+      const title = event.title.toLowerCase();
+      const desc = event.description.toLowerCase();
+
+      // Reject generic venue visits (not actual events)
+      const genericVisitPatterns = [
+        /^.*\s(visit|tour)$/i,
+        /visit to/i,
+        /general admission$/i,
+        /^tour:/i,
+      ];
+      for (const pattern of genericVisitPatterns) {
+        if (pattern.test(event.title)) {
+          rejected.push(`Generic visit: ${event.title}`);
+          return false;
+        }
+      }
+
+      // Reject tour offerings (not events)
+      const tourKeywords = ['speedboat', 'boat tour', 'walking tour', 'bus tour', 'helicopter', 'jet ski rental'];
+      for (const keyword of tourKeywords) {
+        if (title.includes(keyword) || desc.includes(keyword)) {
+          rejected.push(`Tour offering: ${event.title}`);
+          return false;
+        }
+      }
+
+      // Reject generic club nights without specific programming
+      const genericClubPatterns = [
+        /^(monday|tuesday|wednesday|thursday|friday|saturday|sunday) at /i,
+        /^(monday|tuesday|wednesday|thursday|friday|saturday|sunday) night at /i,
+        /^live at (?!.*(lagniappe|ball & chain|zey zey))/i, // Allow specific venues
+      ];
+      for (const pattern of genericClubPatterns) {
+        if (pattern.test(event.title)) {
+          rejected.push(`Generic club night: ${event.title}`);
+          return false;
+        }
+      }
+
+      // Reject events without enough substance
+      if (event.description.length < 30) {
+        rejected.push(`Short description: ${event.title}`);
+        return false;
+      }
+
+      return true;
+    });
+
+    if (rejected.length > 0) {
+      console.log(`\n🧹 Curation filter rejected ${rejected.length} events:`);
+      rejected.slice(0, 10).forEach((r) => console.log(`   - ${r}`));
+      if (rejected.length > 10) {
+        console.log(`   ... and ${rejected.length - 10} more`);
+      }
+    }
+
+    return curated;
   }
 
   /**

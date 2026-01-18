@@ -1,17 +1,17 @@
 {
-  "scrapedAt": "2026-01-17T19:20:33.689Z",
+  "scrapedAt": "2026-01-18T21:13:03.484Z",
   "stats": {
-    "total": 1124,
-    "deduplicated": 1102,
+    "total": 1039,
+    "deduplicated": 861,
     "bySource": {
-      "Miami New Times": 76,
+      "Miami New Times": 78,
       "Farmers Markets": 80,
-      "Music Venues": 66,
-      "Professional Sports": 46,
+      "Music Venues": 76,
+      "Professional Sports": 38,
       "Wellness & Fitness": 78,
-      "Cultural Venues": 116,
-      "Fort Lauderdale": 177,
-      "Nightlife & Clubs": 80,
+      "Cultural Venues": 48,
+      "Fort Lauderdale": 174,
+      "Nightlife & Clubs": 48,
       "Resident Advisor": 8,
       "Latin Parties": 7,
       "Candlelight Concerts": 12,
@@ -25,13 +25,16 @@
       "SOBEWFF": 4,
       "Wine Tastings": 42,
       "Hotels & Hospitality": 180,
-      "Instagram Sources": 27
+      "Instagram Sources": 27,
+      "Dice.fm": 4,
+      "Shotgun": 3,
+      "World Cup 2026": 7
     }
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 76,
+      "count": 78,
       "errors": []
     },
     {
@@ -41,12 +44,12 @@
     },
     {
       "name": "Music Venues",
-      "count": 66,
+      "count": 76,
       "errors": []
     },
     {
       "name": "Professional Sports",
-      "count": 46,
+      "count": 38,
       "errors": []
     },
     {
@@ -56,17 +59,17 @@
     },
     {
       "name": "Cultural Venues",
-      "count": 116,
+      "count": 48,
       "errors": []
     },
     {
       "name": "Fort Lauderdale",
-      "count": 177,
+      "count": 174,
       "errors": []
     },
     {
       "name": "Nightlife & Clubs",
-      "count": 80,
+      "count": 48,
       "errors": []
     },
     {
@@ -137,6 +140,21 @@
     {
       "name": "Instagram Sources",
       "count": 27,
+      "errors": []
+    },
+    {
+      "name": "Dice.fm",
+      "count": 4,
+      "errors": []
+    },
+    {
+      "name": "Shotgun",
+      "count": 3,
+      "errors": []
+    },
+    {
+      "name": "World Cup 2026",
+      "count": 7,
       "errors": []
     }
   ]
