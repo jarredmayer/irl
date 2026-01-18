@@ -290,6 +290,16 @@ export class EventAggregator {
         'Local vibes, real connections.',
         'Where Miami comes together.',
       ],
+      Nightlife: [
+        'Where South Florida comes alive after dark.',
+        'The kind of night you\'ll remember.',
+        'Dance floors and good energy.',
+      ],
+      Comedy: [
+        'Laugh out loud with Miami\'s comedy scene.',
+        'Comedians who know how to deliver.',
+        'The perfect night out.',
+      ],
     };
 
     const categoryTemplates = templates[event.category] || templates.Community;
@@ -321,8 +331,8 @@ export class EventAggregator {
   private isEditorPick(event: RawEvent): boolean {
     // Mark as editor's pick based on various criteria
     const isLocalFavorite = event.tags.includes('local-favorite');
-    const isFreeEvent = event.priceLabel === 'Free';
     const isPopularVenue = [
+      // Miami venues
       'Lagniappe',
       'Ball & Chain',
       'Smorgasburg',
@@ -330,6 +340,21 @@ export class EventAggregator {
       'PAMM',
       'Vizcaya',
       'Fairchild',
+      'The Standard',
+      'Faena',
+      'Broken Shaker',
+      'Club Space',
+      'Adrienne Arsht',
+      'Fillmore',
+      "Don't Tell Comedy",
+      'Critical Mass',
+      // Fort Lauderdale venues
+      'NSU Art Museum',
+      'Broward Center',
+      'Bonnet House',
+      'Las Olas',
+      'FAT Village',
+      'Riverwalk Fort Lauderdale',
     ].some((v) => event.venueName?.includes(v) || event.title.includes(v));
 
     return isLocalFavorite || isPopularVenue;

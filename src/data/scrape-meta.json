@@ -1,15 +1,31 @@
 {
-  "scrapedAt": "2026-01-17T18:59:56.559Z",
+  "scrapedAt": "2026-01-17T19:20:33.689Z",
   "stats": {
-    "total": 462,
-    "deduplicated": 454,
+    "total": 1124,
+    "deduplicated": 1102,
     "bySource": {
       "Miami New Times": 76,
       "Farmers Markets": 80,
       "Music Venues": 66,
       "Professional Sports": 46,
       "Wellness & Fitness": 78,
-      "Cultural Venues": 116
+      "Cultural Venues": 116,
+      "Fort Lauderdale": 177,
+      "Nightlife & Clubs": 80,
+      "Resident Advisor": 8,
+      "Latin Parties": 7,
+      "Candlelight Concerts": 12,
+      "III Points": 1,
+      "Don't Tell Comedy": 16,
+      "Miami Improv": 36,
+      "Adrienne Arsht Center": 32,
+      "Fillmore Miami Beach": 16,
+      "Food Events": 24,
+      "Miami Spice": 0,
+      "SOBEWFF": 4,
+      "Wine Tastings": 42,
+      "Hotels & Hospitality": 180,
+      "Instagram Sources": 27
     }
   },
   "sources": [
@@ -41,6 +57,86 @@
     {
       "name": "Cultural Venues",
       "count": 116,
+      "errors": []
+    },
+    {
+      "name": "Fort Lauderdale",
+      "count": 177,
+      "errors": []
+    },
+    {
+      "name": "Nightlife & Clubs",
+      "count": 80,
+      "errors": []
+    },
+    {
+      "name": "Resident Advisor",
+      "count": 8,
+      "errors": []
+    },
+    {
+      "name": "Latin Parties",
+      "count": 7,
+      "errors": []
+    },
+    {
+      "name": "Candlelight Concerts",
+      "count": 12,
+      "errors": []
+    },
+    {
+      "name": "III Points",
+      "count": 1,
+      "errors": []
+    },
+    {
+      "name": "Don't Tell Comedy",
+      "count": 16,
+      "errors": []
+    },
+    {
+      "name": "Miami Improv",
+      "count": 36,
+      "errors": []
+    },
+    {
+      "name": "Adrienne Arsht Center",
+      "count": 32,
+      "errors": []
+    },
+    {
+      "name": "Fillmore Miami Beach",
+      "count": 16,
+      "errors": []
+    },
+    {
+      "name": "Food Events",
+      "count": 24,
+      "errors": []
+    },
+    {
+      "name": "Miami Spice",
+      "count": 0,
+      "errors": []
+    },
+    {
+      "name": "SOBEWFF",
+      "count": 4,
+      "errors": []
+    },
+    {
+      "name": "Wine Tastings",
+      "count": 42,
+      "errors": []
+    },
+    {
+      "name": "Hotels & Hospitality",
+      "count": 180,
+      "errors": []
+    },
+    {
+      "name": "Instagram Sources",
+      "count": 27,
       "errors": []
     }
   ]

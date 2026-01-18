@@ -3,7 +3,10 @@
  * Export all scrapers
  */
 
+// Base class
 export { BaseScraper } from './base.js';
+
+// Original sources
 export { MiamiNewTimesScraper } from './miami-new-times.js';
 export { FarmersMarketsScraper } from './farmers-markets.js';
 export { MusicVenuesScraper } from './music-venues.js';
@@ -11,12 +14,69 @@ export { ProfessionalSportsScraper } from './professional-sports.js';
 export { WellnessFitnessScraper } from './wellness-fitness.js';
 export { CulturalVenuesScraper } from './cultural-venues.js';
 
+// Fort Lauderdale sources
+export { FortLauderdaleScraper } from './fort-lauderdale.js';
+
+// Nightlife & clubs
+export {
+  NightlifeClubsScraper,
+  ResidentAdvisorScraper,
+  LatinPartiesScraper,
+  CandlelightConcertsScraper,
+  IIIPointsScraper,
+} from './nightlife-clubs.js';
+
+// Comedy & entertainment
+export {
+  DontTellComedyScraper,
+  MiamiImprovScraper,
+  ArshtCenterScraper,
+  FillmoreMiamiScraper,
+} from './comedy-entertainment.js';
+
+// Food & drink
+export {
+  FoodEventsScraper,
+  MiamiSpiceScraper,
+  SOBEWFFScraper,
+  WineTastingsScraper,
+} from './food-drink.js';
+
+// Hotels & hospitality
+export { HotelsHospitalityScraper } from './hotels-hospitality.js';
+
+// Instagram sources
+export { InstagramSourcesScraper } from './instagram-sources.js';
+
+// Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
 import { MusicVenuesScraper } from './music-venues.js';
 import { ProfessionalSportsScraper } from './professional-sports.js';
 import { WellnessFitnessScraper } from './wellness-fitness.js';
 import { CulturalVenuesScraper } from './cultural-venues.js';
+import { FortLauderdaleScraper } from './fort-lauderdale.js';
+import {
+  NightlifeClubsScraper,
+  ResidentAdvisorScraper,
+  LatinPartiesScraper,
+  CandlelightConcertsScraper,
+  IIIPointsScraper,
+} from './nightlife-clubs.js';
+import {
+  DontTellComedyScraper,
+  MiamiImprovScraper,
+  ArshtCenterScraper,
+  FillmoreMiamiScraper,
+} from './comedy-entertainment.js';
+import {
+  FoodEventsScraper,
+  MiamiSpiceScraper,
+  SOBEWFFScraper,
+  WineTastingsScraper,
+} from './food-drink.js';
+import { HotelsHospitalityScraper } from './hotels-hospitality.js';
+import { InstagramSourcesScraper } from './instagram-sources.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -24,11 +84,40 @@ import type { BaseScraper } from './base.js';
  */
 export function getAllScrapers(): BaseScraper[] {
   return [
+    // Original Miami sources
     new MiamiNewTimesScraper(),
     new FarmersMarketsScraper(),
     new MusicVenuesScraper(),
     new ProfessionalSportsScraper(),
     new WellnessFitnessScraper(),
     new CulturalVenuesScraper(),
+
+    // Fort Lauderdale
+    new FortLauderdaleScraper(),
+
+    // Nightlife & clubs
+    new NightlifeClubsScraper(),
+    new ResidentAdvisorScraper(),
+    new LatinPartiesScraper(),
+    new CandlelightConcertsScraper(),
+    new IIIPointsScraper(),
+
+    // Comedy & entertainment
+    new DontTellComedyScraper(),
+    new MiamiImprovScraper(),
+    new ArshtCenterScraper(),
+    new FillmoreMiamiScraper(),
+
+    // Food & drink
+    new FoodEventsScraper(),
+    new MiamiSpiceScraper(),
+    new SOBEWFFScraper(),
+    new WineTastingsScraper(),
+
+    // Hotels & hospitality
+    new HotelsHospitalityScraper(),
+
+    // Instagram-sourced events
+    new InstagramSourcesScraper(),
   ];
 }
