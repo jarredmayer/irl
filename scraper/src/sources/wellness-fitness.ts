@@ -185,6 +185,52 @@ export class WellnessFitnessScraper extends BaseScraper {
       tags: ['meditation', 'waterfront'],
       price: 35,
     },
+    // Fontainebleau Miami Beach
+    {
+      name: 'Circuit Training at Ocean Lawn',
+      venue: 'Fontainebleau Miami Beach',
+      address: '4441 Collins Ave, Miami Beach, FL 33140',
+      neighborhood: 'Mid-Beach',
+      lat: 25.8195,
+      lng: -80.1224,
+      url: 'https://www.fontainebleau.com/miamibeach/venue/ocean-lawn/',
+      days: [2, 3, 6], // Tuesday, Wednesday, Saturday
+      time: '06:30',
+      category: 'Fitness',
+      description: 'Dynamic circuit training on Fontainebleau\'s Ocean Lawn. High-intensity intervals, strength training, and cardio with Miami\'s top trainers. $35 drop-in, free for hotel guests.',
+      tags: ['fitness-class', 'beach', 'waterfront'],
+      price: 35,
+    },
+    {
+      name: 'Beau Monde Pilates at Ocean Lawn',
+      venue: 'Fontainebleau Miami Beach',
+      address: '4441 Collins Ave, Miami Beach, FL 33140',
+      neighborhood: 'Mid-Beach',
+      lat: 25.8195,
+      lng: -80.1224,
+      url: 'https://www.fontainebleau.com/miamibeach/venue/ocean-lawn/',
+      days: [1, 4], // Monday, Thursday
+      time: '07:00',
+      category: 'Wellness',
+      description: 'Signature Mat Pilates on Fontainebleau\'s stunning Ocean Lawn overlooking the Atlantic. Build core strength with ocean breezes.',
+      tags: ['yoga', 'beach', 'waterfront'],
+      price: 35,
+    },
+    {
+      name: 'Sunrise Yoga at Fontainebleau',
+      venue: 'Fontainebleau Miami Beach',
+      address: '4441 Collins Ave, Miami Beach, FL 33140',
+      neighborhood: 'Mid-Beach',
+      lat: 25.8195,
+      lng: -80.1224,
+      url: 'https://www.fontainebleau.com/miamibeach/venue/ocean-lawn/',
+      days: [0], // Sunday
+      time: '07:00',
+      category: 'Wellness',
+      description: 'Sunrise yoga session on the beach at Fontainebleau. Start your Sunday with movement and ocean views.',
+      tags: ['yoga', 'beach', 'sunrise', 'waterfront'],
+      price: 35,
+    },
   ];
 
   constructor() {

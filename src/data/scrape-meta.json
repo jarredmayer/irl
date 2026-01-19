@@ -1,14 +1,14 @@
 {
-  "scrapedAt": "2026-01-19T18:36:31.147Z",
+  "scrapedAt": "2026-01-19T18:40:18.509Z",
   "stats": {
-    "total": 1723,
-    "deduplicated": 1571,
+    "total": 1759,
+    "deduplicated": 1606,
     "bySource": {
       "Miami New Times": 83,
       "Farmers Markets": 80,
       "Music Venues": 48,
       "Professional Sports": 38,
-      "Wellness & Fitness": 78,
+      "Wellness & Fitness": 114,
       "Cultural Venues": 48,
       "Fort Lauderdale": 84,
       "Nightlife & Clubs": 40,
@@ -69,7 +69,7 @@
     },
     {
       "name": "Wellness & Fitness",
-      "count": 78,
+      "count": 114,
       "errors": []
     },
     {
