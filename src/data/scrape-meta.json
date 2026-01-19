@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-01-19T18:22:05.988Z",
+  "scrapedAt": "2026-01-19T18:27:24.318Z",
   "stats": {
-    "total": 1700,
-    "deduplicated": 1548,
+    "total": 1694,
+    "deduplicated": 1542,
     "bySource": {
       "Miami New Times": 83,
       "Farmers Markets": 80,
@@ -10,7 +10,7 @@
       "Professional Sports": 38,
       "Wellness & Fitness": 78,
       "Cultural Venues": 48,
-      "Fort Lauderdale": 90,
+      "Fort Lauderdale": 84,
       "Nightlife & Clubs": 40,
       "Resident Advisor": 8,
       "Latin Parties": 7,
@@ -78,7 +78,7 @@
     },
     {
       "name": "Fort Lauderdale",
-      "count": 90,
+      "count": 84,
       "errors": []
     },
     {

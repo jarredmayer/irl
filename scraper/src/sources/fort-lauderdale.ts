@@ -76,15 +76,7 @@ export class FortLauderdaleScraper extends BaseScraper {
           tags: ['art-gallery', 'free-event', 'local-favorite', 'food-market'],
           price: 0,
         },
-        {
-          name: 'Flagler Village First Friday',
-          days: [5], // First Friday (simplified to every Friday)
-          time: '18:00',
-          category: 'Art',
-          description: 'First Friday celebration in Flagler Village with gallery openings and street performances.',
-          tags: ['art-gallery', 'free-event'],
-          price: 0,
-        },
+        // Flagler Village First Friday - removed (was generating every Friday incorrectly)
       ],
     },
     // NSU Art Museum

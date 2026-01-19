@@ -133,7 +133,7 @@ export abstract class BaseScraper {
       Wellness: ['wellness', 'meditation', 'mindfulness', 'spa', 'healing', 'breathwork'],
       Sports: ['sport', 'game', 'match', 'tournament', 'championship', 'nba', 'nfl', 'mlb', 'mls', 'f1'],
       Comedy: ['comedy', 'stand-up', 'improv', 'laugh'],
-      Family: ['family', 'kids', 'children', 'family-friendly'],
+      Family: ['family', 'kids', 'children', 'family-friendly', 'circus', 'ringling'],
       Community: ['community', 'social', 'networking', 'meetup', 'farmers market'],
       Nightlife: ['nightlife', 'club', 'party', 'night'],
       Outdoors: ['outdoor', 'park', 'beach', 'garden', 'nature', 'hike'],
