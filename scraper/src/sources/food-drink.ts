@@ -56,12 +56,12 @@ export class FoodEventsScraper extends BaseScraper {
       description: 'Garden bar at Freehand Miami. Craft cocktails in a tropical setting.',
     },
     {
-      name: 'The Bar at Brickell',
-      address: '1680 SW 1st Ave, Miami, FL 33129',
+      name: 'Sugar',
+      address: '788 Brickell Plaza, Miami, FL 33131',
       neighborhood: 'Brickell',
-      lat: 25.7617,
-      lng: -80.1918,
-      description: 'Sleek Brickell bar with extensive wine and cocktail list.',
+      lat: 25.7652,
+      lng: -80.1900,
+      description: 'Rooftop bar at EAST Miami with skyline views. Asian-inspired cocktails and small plates.',
     },
     {
       name: 'Baby Jane',

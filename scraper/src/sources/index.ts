@@ -74,6 +74,12 @@ export { CoralGablesVenuesScraper } from './coral-gables-venues.js';
 // Coconut Grove
 export { CoconutGroveScraper } from './coconut-grove.js';
 
+// Brickell
+export { BrickellVenuesScraper } from './brickell-venues.js';
+
+// Real venue events (actual scheduled events, not recurring templates)
+export { RealVenueEventsScraper } from './real-venue-events.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -119,6 +125,8 @@ import {
 } from './cultural-districts.js';
 import { CoralGablesVenuesScraper } from './coral-gables-venues.js';
 import { CoconutGroveScraper } from './coconut-grove.js';
+import { BrickellVenuesScraper } from './brickell-venues.js';
+import { RealVenueEventsScraper } from './real-venue-events.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -185,5 +193,11 @@ export function getAllScrapers(): BaseScraper[] {
 
     // Coconut Grove
     new CoconutGroveScraper(),
+
+    // Brickell
+    new BrickellVenuesScraper(),
+
+    // Real venue events (Zey Zey, Bandshell, etc.)
+    new RealVenueEventsScraper(),
   ];
 }

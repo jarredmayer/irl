@@ -17,6 +17,30 @@ const EDITOR_PICK_BOOST = 10;
 const WEATHER_PENALTY = -10;
 const WEATHER_BOOST = 5;
 const HIDDEN_GEM_BOOST = 8;
+const GENERIC_EVENT_PENALTY = -20;
+
+// Patterns that indicate generic/filler events
+const GENERIC_TITLE_PATTERNS = [
+  /^happy hour at /i,
+  /^brunch at /i,
+  /^live music at /i,
+  /^sunset at /i,
+  /^yoga at /i,
+  /^beach volleyball at /i,
+  /^swimming at /i,
+  /^dinner at /i,
+  /^lunch at /i,
+  /^drinks at /i,
+  /^cocktails at /i,
+];
+
+// Keywords that make a generic title more specific/unique
+const UNIQUENESS_KEYWORDS = [
+  'special', 'themed', 'featuring', 'presents', 'with', 'live', 'dj',
+  'guest', 'limited', 'pop-up', 'festival', 'party', 'night', 'day',
+  'bottomless', 'unlimited', 'tasting', 'pairing', 'class', 'workshop',
+  'lesson', 'competition', 'tournament', 'championship', 'vs',
+];
 
 // Mainstream venues that are well-known (reduce hidden gem score)
 const MAINSTREAM_VENUES = [
@@ -52,9 +76,10 @@ export function scoreEvent(event: Event, context: RankingContext): ScoredEvent {
   const weatherScore = computeWeatherScore(event, context.weather);
   const editorBoost = event.editorPick ? EDITOR_PICK_BOOST : 0;
   const hiddenGemScore = computeHiddenGemScore(event);
+  const genericPenalty = computeGenericEventPenalty(event);
 
   const score =
-    timeScore + distanceScore + tasteScore + weatherScore + editorBoost + hiddenGemScore;
+    timeScore + distanceScore + tasteScore + weatherScore + editorBoost + hiddenGemScore + genericPenalty;
 
   return {
     ...event,
@@ -199,6 +224,43 @@ export function computeHiddenGemScore(event: Event): number {
   }
 
   return 0;
+}
+
+export function computeGenericEventPenalty(event: Event): number {
+  const title = event.title.toLowerCase();
+
+  // Check if title matches generic patterns
+  const isGenericPattern = GENERIC_TITLE_PATTERNS.some((pattern) =>
+    pattern.test(event.title)
+  );
+
+  if (!isGenericPattern) {
+    return 0; // Not generic, no penalty
+  }
+
+  // Check if the title has uniqueness keywords that make it less generic
+  const hasUniqueness = UNIQUENESS_KEYWORDS.some((keyword) =>
+    title.includes(keyword.toLowerCase())
+  );
+
+  if (hasUniqueness) {
+    return GENERIC_EVENT_PENALTY * 0.3; // Reduced penalty for themed events
+  }
+
+  // Check description for specificity
+  const description = event.description?.toLowerCase() || '';
+  const hasSpecificDescription =
+    description.length > 100 &&
+    UNIQUENESS_KEYWORDS.some((keyword) =>
+      description.includes(keyword.toLowerCase())
+    );
+
+  if (hasSpecificDescription) {
+    return GENERIC_EVENT_PENALTY * 0.5; // Moderate penalty if description adds context
+  }
+
+  // Full penalty for truly generic events
+  return GENERIC_EVENT_PENALTY;
 }
 
 export function rankEvents(

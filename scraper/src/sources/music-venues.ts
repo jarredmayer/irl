@@ -105,53 +105,7 @@ export class MusicVenuesScraper extends BaseScraper {
       tags: ['dj', 'local-favorite'],
       price: 0,
     },
-    // Miami Beach Bandshell - free concerts
-    {
-      name: 'Free Concert at Miami Beach Bandshell',
-      venue: 'Miami Beach Bandshell',
-      address: '7275 Collins Ave, Miami Beach, FL 33141',
-      neighborhood: 'North Beach',
-      lat: 25.8648,
-      lng: -80.1216,
-      url: 'https://www.miamibeachbandshell.com/',
-      days: [6], // Saturday
-      time: '19:00',
-      category: 'Music',
-      description: 'Free outdoor concerts at the historic beachfront bandshell. Bring a blanket, enjoy the ocean breeze.',
-      tags: ['live-music', 'beach', 'free-event', 'family-friendly'],
-      price: 0,
-    },
-    // Zey Zey - specific programming nights
-    {
-      name: 'Thursday Jazz at Zey Zey',
-      venue: 'Zey Zey',
-      address: '233 NE 2nd St, Miami, FL 33132',
-      neighborhood: 'Downtown Miami',
-      lat: 25.7751,
-      lng: -80.1897,
-      url: 'https://www.zeyzey.com/',
-      days: [4], // Thursday
-      time: '21:00',
-      category: 'Music',
-      description: 'Weekly jazz night featuring local and touring musicians. Intimate rooftop setting with craft cocktails. Check their socials for the lineup.',
-      tags: ['live-music', 'jazz', 'rooftop', 'local-favorite'],
-      price: 15,
-    },
-    {
-      name: 'Weekend Sounds at Zey Zey',
-      venue: 'Zey Zey',
-      address: '233 NE 2nd St, Miami, FL 33132',
-      neighborhood: 'Downtown Miami',
-      lat: 25.7751,
-      lng: -80.1897,
-      url: 'https://www.zeyzey.com/',
-      days: [5, 6], // Fri-Sat
-      time: '21:00',
-      category: 'Music',
-      description: 'Eclectic weekend programming from indie rock to electronic to soul. One of downtown\'s best intimate venues. Check @zeyzey for artist lineup.',
-      tags: ['live-music', 'indie', 'rooftop', 'local-favorite'],
-      price: 20,
-    },
+    // Zey Zey and Miami Beach Bandshell now use real events from real-venue-events.ts
   ];
 
   constructor() {

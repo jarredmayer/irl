@@ -56,6 +56,19 @@ export function useEvents(options: UseEventsOptions) {
     let events = rankedEvents;
     const now = new Date();
 
+    // Filter by date range
+    if (filters.dateRange && filters.dateRange[0] && filters.dateRange[1]) {
+      const startDate = new Date(filters.dateRange[0]);
+      startDate.setHours(0, 0, 0, 0);
+      const endDate = new Date(filters.dateRange[1]);
+      endDate.setHours(23, 59, 59, 999);
+
+      events = events.filter((event) => {
+        const eventDate = new Date(event.startAt);
+        return eventDate >= startDate && eventDate <= endDate;
+      });
+    }
+
     // Filter by time
     if (filters.timeFilter !== 'all') {
       events = filterEventsByTime(events, filters.timeFilter, now) as ScoredEvent[];
@@ -65,6 +78,13 @@ export function useEvents(options: UseEventsOptions) {
     if (filters.selectedTags.length > 0) {
       events = events.filter((event) =>
         event.tags.some((tag) => filters.selectedTags.includes(tag))
+      );
+    }
+
+    // Filter by selected categories
+    if (filters.selectedCategories.length > 0) {
+      events = events.filter((event) =>
+        filters.selectedCategories.includes(event.category)
       );
     }
 

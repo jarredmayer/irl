@@ -1,5 +1,1139 @@
 [
   {
+    "id": "e8d507d158770d3f",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-01-23T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "History and culture, local-style.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "ffc47e4388b28d15",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-01-24T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "a472cdded1825ff6",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-01-30T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "6020026196055cbd",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-01-31T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "History and culture, local-style.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "e258630895d06be7",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-02-06T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "825f10adda692b94",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-02-07T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "b580d95f7ae1f71b",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-02-13T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "History and culture, local-style.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "6431cdb710bd24c2",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-02-14T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "99f7701bd27affa7",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-02-20T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Experience local heritage.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "158ecd2333ee70ea",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-02-21T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Experience local heritage.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "c932ea73f94849f4",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-02-27T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "History and culture, local-style.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "e2f05573c8e726e0",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-02-28T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Experience local heritage.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "37112007993f",
+    "seriesName": "Ghost Tour at Stranahan House",
+    "venueId": "bc6df03c3a99"
+  },
+  {
+    "id": "3c03335845b1c016",
+    "title": "Birding Walk at Bonnet House",
+    "startAt": "2026-01-24T08:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Bonnet House Museum & Gardens",
+    "address": "900 N Birch Rd, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1367,
+    "lng": -80.1067,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "park",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Outdoors",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "editorialWhy": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists. Located in Fort Lauderdale Beach, Bonnet House Museum & Gardens is a local favorite.",
+    "description": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://bonnethouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "2aa5bf85ce47",
+    "seriesName": "Birding Walk at Bonnet House",
+    "venueId": "5082c6265c3b"
+  },
+  {
+    "id": "9ec887f5ac2ae510",
+    "title": "Birding Walk at Bonnet House",
+    "startAt": "2026-01-31T08:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Bonnet House Museum & Gardens",
+    "address": "900 N Birch Rd, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1367,
+    "lng": -80.1067,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "park",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Outdoors",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "editorialWhy": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists. Located in Fort Lauderdale Beach, Bonnet House Museum & Gardens is a local favorite.",
+    "description": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://bonnethouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "2aa5bf85ce47",
+    "seriesName": "Birding Walk at Bonnet House",
+    "venueId": "5082c6265c3b"
+  },
+  {
+    "id": "6ffb784115815893",
+    "title": "Birding Walk at Bonnet House",
+    "startAt": "2026-02-07T08:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Bonnet House Museum & Gardens",
+    "address": "900 N Birch Rd, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1367,
+    "lng": -80.1067,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "park",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Outdoors",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "editorialWhy": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists. Located in Fort Lauderdale Beach, Bonnet House Museum & Gardens is a local favorite.",
+    "description": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://bonnethouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "2aa5bf85ce47",
+    "seriesName": "Birding Walk at Bonnet House",
+    "venueId": "5082c6265c3b"
+  },
+  {
+    "id": "5760d43e35a9d917",
+    "title": "Birding Walk at Bonnet House",
+    "startAt": "2026-02-14T08:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Bonnet House Museum & Gardens",
+    "address": "900 N Birch Rd, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1367,
+    "lng": -80.1067,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "park",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Outdoors",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Where Fort Lauderdale comes together.",
+    "editorialWhy": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists. Located in Fort Lauderdale Beach, Bonnet House Museum & Gardens is a local favorite.",
+    "description": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://bonnethouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "2aa5bf85ce47",
+    "seriesName": "Birding Walk at Bonnet House",
+    "venueId": "5082c6265c3b"
+  },
+  {
+    "id": "8c82b878050371d2",
+    "title": "Birding Walk at Bonnet House",
+    "startAt": "2026-02-21T08:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Bonnet House Museum & Gardens",
+    "address": "900 N Birch Rd, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1367,
+    "lng": -80.1067,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "park",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Outdoors",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Local vibes, real connections.",
+    "editorialWhy": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists. Located in Fort Lauderdale Beach, Bonnet House Museum & Gardens is a local favorite.",
+    "description": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://bonnethouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "2aa5bf85ce47",
+    "seriesName": "Birding Walk at Bonnet House",
+    "venueId": "5082c6265c3b"
+  },
+  {
+    "id": "443b690f18f53d9e",
+    "title": "Birding Walk at Bonnet House",
+    "startAt": "2026-02-28T08:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Bonnet House Museum & Gardens",
+    "address": "900 N Birch Rd, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1367,
+    "lng": -80.1067,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "park",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Outdoors",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Where Fort Lauderdale comes together.",
+    "editorialWhy": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists. Located in Fort Lauderdale Beach, Bonnet House Museum & Gardens is a local favorite.",
+    "description": "Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://bonnethouse.org/"
+    },
+    "editorPick": true,
+    "seriesId": "2aa5bf85ce47",
+    "seriesName": "Birding Walk at Bonnet House",
+    "venueId": "5082c6265c3b"
+  },
+  {
+    "id": "aa6a9d9884ac9163",
+    "title": "Beach Bootcamp with FLL Fit Club",
+    "startAt": "2026-01-24T08:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event",
+      "community"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Free workout with good people.",
+    "editorialWhy": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite. Best of all, it's free.",
+    "description": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "f4790f3bb2e7",
+    "seriesName": "Beach Bootcamp with FLL Fit Club",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "f74b5898e059f459",
+    "title": "Beach Bootcamp with FLL Fit Club",
+    "startAt": "2026-01-31T08:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event",
+      "community"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Start your day right with locals.",
+    "editorialWhy": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite. Best of all, it's free.",
+    "description": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "f4790f3bb2e7",
+    "seriesName": "Beach Bootcamp with FLL Fit Club",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "4d104f81747c6ad2",
+    "title": "Beach Bootcamp with FLL Fit Club",
+    "startAt": "2026-02-07T08:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event",
+      "community"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Start your day right with locals.",
+    "editorialWhy": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite. Best of all, it's free.",
+    "description": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "f4790f3bb2e7",
+    "seriesName": "Beach Bootcamp with FLL Fit Club",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "fa6d38264fb601d4",
+    "title": "Beach Bootcamp with FLL Fit Club",
+    "startAt": "2026-02-14T08:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event",
+      "community"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
+    "editorialWhy": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite. Best of all, it's free.",
+    "description": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "f4790f3bb2e7",
+    "seriesName": "Beach Bootcamp with FLL Fit Club",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "bc1a5f03bb1a3cac",
+    "title": "Beach Bootcamp with FLL Fit Club",
+    "startAt": "2026-02-21T08:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event",
+      "community"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
+    "editorialWhy": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite. Best of all, it's free.",
+    "description": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "f4790f3bb2e7",
+    "seriesName": "Beach Bootcamp with FLL Fit Club",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "662daf0c03d71a9c",
+    "title": "Beach Bootcamp with FLL Fit Club",
+    "startAt": "2026-02-28T08:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event",
+      "community"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Start your day right with locals.",
+    "editorialWhy": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite. Best of all, it's free.",
+    "description": "High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "f4790f3bb2e7",
+    "seriesName": "Beach Bootcamp with FLL Fit Club",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "418bf319fd2e7ca3",
+    "title": "Sunrise Flow Yoga",
+    "startAt": "2026-01-25T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise",
+      "wellness"
+    ],
+    "category": "Wellness",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Find your calm in the Venice of America.",
+    "editorialWhy": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite.",
+    "description": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "470b132e56ed",
+    "seriesName": "Sunrise Flow Yoga",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "ee64b2276b8a753d",
+    "title": "Sunrise Flow Yoga",
+    "startAt": "2026-02-01T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise",
+      "wellness"
+    ],
+    "category": "Wellness",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Wellness done right.",
+    "editorialWhy": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite.",
+    "description": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "470b132e56ed",
+    "seriesName": "Sunrise Flow Yoga",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "4c6f9b6390be00bd",
+    "title": "Sunrise Flow Yoga",
+    "startAt": "2026-02-08T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise",
+      "wellness"
+    ],
+    "category": "Wellness",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Wellness done right.",
+    "editorialWhy": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite.",
+    "description": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "470b132e56ed",
+    "seriesName": "Sunrise Flow Yoga",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "0e9c64530d67c313",
+    "title": "Sunrise Flow Yoga",
+    "startAt": "2026-02-15T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise",
+      "wellness"
+    ],
+    "category": "Wellness",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Wellness done right.",
+    "editorialWhy": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite.",
+    "description": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "470b132e56ed",
+    "seriesName": "Sunrise Flow Yoga",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "3092e34f5b5eaa90",
+    "title": "Sunrise Flow Yoga",
+    "startAt": "2026-02-22T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise",
+      "wellness"
+    ],
+    "category": "Wellness",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Reset and recharge.",
+    "editorialWhy": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite.",
+    "description": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "470b132e56ed",
+    "seriesName": "Sunrise Flow Yoga",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "026ccedea385b4c3",
+    "title": "Sunrise Flow Yoga",
+    "startAt": "2026-03-01T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise",
+      "wellness"
+    ],
+    "category": "Wellness",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Reset and recharge.",
+    "editorialWhy": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one. Located in Fort Lauderdale Beach, Fort Lauderdale Beach Park is a local favorite.",
+    "description": "Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "470b132e56ed",
+    "seriesName": "Sunrise Flow Yoga",
+    "venueId": "a10dd744543f"
+  },
+  {
+    "id": "d6dde3a47bf4cb08",
+    "title": "Art After Dark at NSU",
+    "startAt": "2026-01-23T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "dj",
+      "cocktails"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite.",
+    "description": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "f69a41b3a055",
+    "seriesName": "Art After Dark at NSU",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "6a2eba7ebfbe6dd1",
+    "title": "Art After Dark at NSU",
+    "startAt": "2026-01-30T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "dj",
+      "cocktails"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite.",
+    "description": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "f69a41b3a055",
+    "seriesName": "Art After Dark at NSU",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "e2dde2e82d532bad",
+    "title": "Art After Dark at NSU",
+    "startAt": "2026-02-06T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "dj",
+      "cocktails"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite.",
+    "description": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "f69a41b3a055",
+    "seriesName": "Art After Dark at NSU",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "a3ac07877c30d0b4",
+    "title": "Art After Dark at NSU",
+    "startAt": "2026-02-13T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "dj",
+      "cocktails"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite.",
+    "description": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "f69a41b3a055",
+    "seriesName": "Art After Dark at NSU",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "92e9ad9f85673788",
+    "title": "Art After Dark at NSU",
+    "startAt": "2026-02-20T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "dj",
+      "cocktails"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite.",
+    "description": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "f69a41b3a055",
+    "seriesName": "Art After Dark at NSU",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "6da75563e55e9fce",
+    "title": "Art After Dark at NSU",
+    "startAt": "2026-02-27T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "dj",
+      "cocktails"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite.",
+    "description": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "f69a41b3a055",
+    "seriesName": "Art After Dark at NSU",
+    "venueId": "a82dca0c394f"
+  },
+  {
     "id": "f8eb01bc08d291c7",
     "title": "First Friday Art Walk",
     "startAt": "2026-02-06T18:00:00",
@@ -18,7 +1152,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
     "source": {
@@ -49,7 +1183,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
     "source": {
@@ -60,6 +1194,192 @@
     "seriesId": "2de5f55194f5",
     "seriesName": "First Friday Art Walk",
     "venueId": "2f3e26b9985c"
+  },
+  {
+    "id": "79cb250f7a551dd8",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-01-22T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours, curator talks, and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours, curator talks, and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "32938c5dca7d6537",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-01-29T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours, curator talks, and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours, curator talks, and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "020bf87ba16dd75f",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-02-05T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours, curator talks, and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours, curator talks, and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "d8b7836765f2e1c9",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-02-12T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours, curator talks, and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours, curator talks, and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "a3b245beeabd3e2f",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-02-19T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours, curator talks, and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours, curator talks, and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "5485e8cc89b4a860",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-02-26T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours, curator talks, and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours, curator talks, and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
   },
   {
     "id": "1231747774bd6f86",
@@ -80,7 +1400,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
     "source": {
@@ -142,7 +1462,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
     "source": {
@@ -173,7 +1493,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
     "source": {
@@ -204,7 +1524,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
     "source": {
@@ -235,7 +1555,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
     "source": {
@@ -266,7 +1586,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
     "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
     "source": {
@@ -297,7 +1617,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
     "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
     "source": {
@@ -328,7 +1648,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
     "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
     "source": {
@@ -390,7 +1710,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
     "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
     "source": {
@@ -451,7 +1771,7 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
     "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
     "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
     "source": {
@@ -541,7 +1861,7 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "shortWhy": "Culture in full color.",
     "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
     "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
     "source": {
@@ -571,7 +1891,7 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "shortWhy": "Culture in full color.",
     "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
     "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
     "source": {
@@ -632,7 +1952,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -663,7 +1983,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -756,7 +2076,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -787,7 +2107,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -818,7 +2138,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -849,7 +2169,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -880,7 +2200,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
     "source": {
@@ -942,7 +2262,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
     "source": {
@@ -973,7 +2293,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
     "source": {
@@ -1004,7 +2324,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
     "source": {
@@ -1035,7 +2355,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
     "source": {
@@ -1122,7 +2442,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1151,7 +2471,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1209,7 +2529,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1238,7 +2558,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1267,7 +2587,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1296,7 +2616,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1354,7 +2674,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1441,7 +2761,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1586,7 +2906,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1615,7 +2935,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1673,7 +2993,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1702,7 +3022,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1731,7 +3051,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
     "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
     "source": {
@@ -1742,378 +3062,6 @@
     "seriesId": "abe784e11de9",
     "seriesName": "Stand-Up Comedy at Dania Beach Improv",
     "venueId": "19be0041a46f"
-  },
-  {
-    "id": "15cebb0c04747e4d",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-01-24T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "2675814c929009b7",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-01-25T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "8eb456b1d6a8854f",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-01-31T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "b6a6e758a799266c",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-01T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "42c9f1ad4e5b1d04",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-07T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "4bd9fac7873591da",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-08T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "cfcefa08db8a918d",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-14T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "bd1198a8af478846",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-15T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "587524a24376031e",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-21T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "519fb264daf53d3d",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-22T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "8ba9e83783c03251",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-28T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "c12594184478fdf8",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-03-01T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
   },
   {
     "id": "ffbae5797d56d042",
@@ -2132,7 +3080,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -2213,7 +3161,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -2321,7 +3269,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -2348,7 +3296,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
@@ -2375,7 +3323,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -2429,7 +3377,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
     "source": {
@@ -2456,7 +3404,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
     "source": {
@@ -2483,7 +3431,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
     "source": {
@@ -2492,192 +3440,6 @@
     },
     "editorPick": true,
     "venueId": "bd875e433162"
-  },
-  {
-    "id": "79cb250f7a551dd8",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-01-22T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Fort Lauderdale's art scene is about.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "32938c5dca7d6537",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-01-29T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Fort Lauderdale's art scene is about.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "020bf87ba16dd75f",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-02-05T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Fort Lauderdale's art scene is about.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "d8b7836765f2e1c9",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-02-12T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "a3b245beeabd3e2f",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-02-19T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "5485e8cc89b4a860",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-02-26T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
   },
   {
     "id": "0fe5f8844f872ab0",
@@ -2696,7 +3458,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -2723,7 +3485,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -2777,7 +3539,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -2807,7 +3569,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2839,7 +3601,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2903,7 +3665,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2935,7 +3697,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2967,7 +3729,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2999,7 +3761,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -3042,377 +3804,5 @@
     "seriesId": "f28cf977ea27",
     "seriesName": "Sunday Jazz Brunch Downtown",
     "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "79f53b2664d704de",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-01-24T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Venice of America.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "482ce1e0e14ff1f8",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-01-25T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Wellness done right.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "1a9d26f76205317c",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-01-31T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Venice of America.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "fb9f17422b2797fc",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-01T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "3ed24b8a635ad515",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-07T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Venice of America.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "8a8447e096c43547",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-08T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "24505a3851335f18",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-14T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "20a14340a8a10717",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-15T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "177baa5d3150d5cb",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-21T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "cb5ecc8972ef180d",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-22T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Venice of America.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "99ed3bd149a2f9d1",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-28T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Venice of America.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "2e212927a45aadd2",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-03-01T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
   }
 ]

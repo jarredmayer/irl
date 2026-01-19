@@ -1,6 +1,6 @@
 import { Chip, ChipGroup } from '../ui/Chip';
 import type { TimeFilter, FilterState, City } from '../../types';
-import { TAGS, MAX_PRICE } from '../../constants';
+import { TAGS, MAX_PRICE, CATEGORIES, CATEGORY_COLORS } from '../../constants';
 
 interface FilterBarProps {
   filters: FilterState;
@@ -36,6 +36,13 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
     updateFilter('selectedTags', newTags);
   };
 
+  const toggleCategory = (category: string) => {
+    const newCategories = filters.selectedCategories.includes(category)
+      ? filters.selectedCategories.filter((c) => c !== category)
+      : [...filters.selectedCategories, category];
+    updateFilter('selectedCategories', newCategories);
+  };
+
   return (
     <div className="bg-white border-b border-slate-100 sticky top-[52px] z-20">
       {/* Search bar */}
@@ -61,6 +68,28 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
               </svg>
             </button>
           )}
+        </div>
+      </div>
+
+      {/* Date range filter */}
+      <div className="px-4 py-2 flex items-center gap-3 border-b border-slate-50">
+        <div className="flex items-center gap-2">
+          <label className="text-xs text-slate-500">From</label>
+          <input
+            type="date"
+            value={filters.dateRange[0]}
+            onChange={(e) => updateFilter('dateRange', [e.target.value, filters.dateRange[1]])}
+            className="px-2 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+          />
+        </div>
+        <div className="flex items-center gap-2">
+          <label className="text-xs text-slate-500">To</label>
+          <input
+            type="date"
+            value={filters.dateRange[1]}
+            onChange={(e) => updateFilter('dateRange', [filters.dateRange[0], e.target.value])}
+            className="px-2 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+          />
         </div>
       </div>
 
@@ -128,6 +157,31 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
             />
           </div>
         )}
+      </div>
+
+      {/* Category filters */}
+      <div className="px-4 py-2 overflow-x-auto hide-scrollbar border-t border-slate-50">
+        <ChipGroup>
+          {CATEGORIES.map((category) => {
+            const colors = CATEGORY_COLORS[category] || CATEGORY_COLORS['Other'];
+            const isSelected = filters.selectedCategories.includes(category);
+            return (
+              <button
+                key={category}
+                onClick={() => toggleCategory(category)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all"
+                style={{
+                  backgroundColor: isSelected ? colors.primary : `${colors.primary}15`,
+                  color: isSelected ? 'white' : colors.primary,
+                  border: `1px solid ${isSelected ? colors.primary : `${colors.primary}40`}`,
+                }}
+              >
+                <span>{colors.emoji}</span>
+                <span>{category}</span>
+              </button>
+            );
+          })}
+        </ChipGroup>
       </div>
 
       {/* Tag filters */}

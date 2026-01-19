@@ -55,21 +55,6 @@ export class NightlifeClubsScraper extends BaseScraper {
       tags: ['dj', 'electronic', 'local-favorite'],
       price: 25,
     },
-    // Treehouse - rooftop vibes
-    {
-      eventName: 'Treehouse Rooftop Sessions',
-      venue: 'Treehouse Miami',
-      address: '323 23rd St, Miami Beach, FL 33139',
-      neighborhood: 'South Beach',
-      lat: 25.8001,
-      lng: -80.1354,
-      url: 'https://treehousemiami.com/',
-      days: [5, 6], // Fri, Sat
-      startTime: '23:00',
-      description: 'Open-air rooftop club in South Beach. House music, tropical vibes, dancing under the stars.',
-      tags: ['dj', 'electronic', 'rooftop', 'dancing'],
-      price: 30,
-    },
     // Basement - specific night
     {
       eventName: 'Basement Sessions',

@@ -97,22 +97,22 @@ export class FortLauderdaleScraper extends BaseScraper {
       url: 'https://nsuartmuseum.org/',
       events: [
         {
-          name: 'NSU Art Museum Visit',
-          days: [2, 3, 4, 5, 6, 0], // Tue-Sun
-          time: '11:00',
-          category: 'Art',
-          description: 'Visit one of the largest art museums in Florida, featuring contemporary art in a stunning building.',
-          tags: ['museum', 'art-gallery'],
-          price: 12,
-        },
-        {
           name: 'Free First Thursday at NSU Art Museum',
           days: [4], // Thursday (first of month - simplified)
           time: '16:00',
           category: 'Art',
-          description: 'Free admission on first Thursdays with extended hours and special programming.',
+          description: 'Free admission on first Thursdays with extended hours, curator talks, and special programming.',
           tags: ['museum', 'art-gallery', 'free-event'],
           price: 0,
+        },
+        {
+          name: 'Art After Dark at NSU',
+          days: [5], // Friday
+          time: '18:00',
+          category: 'Art',
+          description: 'Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.',
+          tags: ['museum', 'art-gallery', 'dj', 'cocktails'],
+          price: 15,
         },
       ],
     },
@@ -167,7 +167,7 @@ export class FortLauderdaleScraper extends BaseScraper {
     },
     // Fort Lauderdale Beach
     {
-      name: 'Fort Lauderdale Beach',
+      name: 'Fort Lauderdale Beach Park',
       address: 'A1A, Fort Lauderdale Beach, FL 33304',
       neighborhood: 'Fort Lauderdale Beach',
       lat: 26.1224,
@@ -175,22 +175,22 @@ export class FortLauderdaleScraper extends BaseScraper {
       url: 'https://www.fortlauderdale.gov/departments/parks-recreation/beach',
       events: [
         {
-          name: 'Beach Volleyball at Fort Lauderdale',
-          days: [6, 0], // Weekend
-          time: '09:00',
+          name: 'Beach Bootcamp with FLL Fit Club',
+          days: [6], // Saturday
+          time: '08:00',
           category: 'Fitness',
-          description: 'Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.',
-          tags: ['beach', 'fitness-class', 'free-event'],
+          description: 'High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels.',
+          tags: ['beach', 'fitness-class', 'free-event', 'community'],
           price: 0,
         },
         {
-          name: 'Sunrise Yoga on the Beach',
-          days: [6, 0], // Weekend
+          name: 'Sunrise Flow Yoga',
+          days: [0], // Sunday
           time: '07:00',
           category: 'Wellness',
-          description: 'Morning yoga session on Fort Lauderdale Beach. Bring your own mat.',
-          tags: ['yoga', 'beach', 'sunrise'],
-          price: 0,
+          description: 'Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one.',
+          tags: ['yoga', 'beach', 'sunrise', 'wellness'],
+          price: 10,
         },
       ],
     },
@@ -204,13 +204,22 @@ export class FortLauderdaleScraper extends BaseScraper {
       url: 'https://stranahanhouse.org/',
       events: [
         {
-          name: 'Stranahan House Tour',
-          days: [3, 4, 5, 6, 0], // Wed-Sun
-          time: '13:00',
+          name: 'Ghost Tour at Stranahan House',
+          days: [5, 6], // Fri-Sat
+          time: '19:30',
           category: 'Culture',
-          description: 'Tour Fort Lauderdale\'s oldest surviving structure and learn about the city\'s pioneer history.',
+          description: 'Candlelit ghost tour of Fort Lauderdale\'s most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.',
+          tags: ['museum', 'waterfront', 'local-favorite'],
+          price: 30,
+        },
+        {
+          name: 'River History Cruise & House Tour',
+          days: [6], // Saturday
+          time: '14:00',
+          category: 'Culture',
+          description: 'Boat cruise down the New River followed by a guided tour of the historic Stranahan House. Learn the pioneer history of Fort Lauderdale.',
           tags: ['museum', 'waterfront'],
-          price: 15,
+          price: 40,
         },
       ],
     },
@@ -224,13 +233,22 @@ export class FortLauderdaleScraper extends BaseScraper {
       url: 'https://bonnethouse.org/',
       events: [
         {
-          name: 'Bonnet House Garden Tour',
-          days: [2, 3, 4, 5, 6, 0], // Tue-Sun
-          time: '10:00',
+          name: 'Full Moon Tour at Bonnet House',
+          days: 'monthly',
+          time: '19:00',
           category: 'Culture',
-          description: 'Explore 35 acres of tropical gardens and a historic estate filled with art and wildlife.',
-          tags: ['museum', 'park', 'waterfront'],
-          price: 25,
+          description: 'Monthly full moon tours of the Bonnet House gardens with wine and light refreshments. Experience the estate under the moonlight.',
+          tags: ['museum', 'park', 'waterfront', 'local-favorite'],
+          price: 35,
+        },
+        {
+          name: 'Birding Walk at Bonnet House',
+          days: [6], // Saturday
+          time: '08:30',
+          category: 'Outdoors',
+          description: 'Guided birding walk through 35 acres of tropical habitat. Spot monkeys, swans, and dozens of bird species with expert naturalists.',
+          tags: ['park', 'outdoor', 'local-favorite'],
+          price: 20,
         },
       ],
     },

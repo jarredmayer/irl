@@ -116,11 +116,13 @@ export type TimeFilter = 'today' | 'tomorrow' | 'this-week' | 'weekend' | 'all';
 export interface FilterState {
   timeFilter: TimeFilter;
   selectedTags: string[];
+  selectedCategories: string[];
   nearMeOnly: boolean;
   city?: City;
   searchQuery: string;
   priceRange: [number, number]; // [min, max]
   freeOnly: boolean;
+  dateRange: [string, string]; // [startDate, endDate] in YYYY-MM-DD format
 }
 
 export type ViewMode = 'feed' | 'map';

@@ -1,17 +1,17 @@
 {
-  "scrapedAt": "2026-01-19T13:47:53.859Z",
+  "scrapedAt": "2026-01-19T14:06:53.006Z",
   "stats": {
-    "total": 1818,
-    "deduplicated": 1573,
+    "total": 1979,
+    "deduplicated": 1802,
     "bySource": {
       "Miami New Times": 83,
       "Farmers Markets": 80,
-      "Music Venues": 76,
+      "Music Venues": 60,
       "Professional Sports": 38,
       "Wellness & Fitness": 78,
       "Cultural Venues": 48,
-      "Fort Lauderdale": 174,
-      "Nightlife & Clubs": 48,
+      "Fort Lauderdale": 90,
+      "Nightlife & Clubs": 40,
       "Resident Advisor": 8,
       "Latin Parties": 7,
       "Candlelight Concerts": 12,
@@ -39,7 +39,9 @@
       "Regatta Grove": 12,
       "South Pointe Park": 12,
       "Coral Gables & Neighborhood Venues": 162,
-      "Coconut Grove": 252
+      "Coconut Grove": 252,
+      "Brickell Venues": 240,
+      "Real Venue Events": 29
     }
   },
   "sources": [
@@ -55,7 +57,7 @@
     },
     {
       "name": "Music Venues",
-      "count": 76,
+      "count": 60,
       "errors": []
     },
     {
@@ -75,12 +77,12 @@
     },
     {
       "name": "Fort Lauderdale",
-      "count": 174,
+      "count": 90,
       "errors": []
     },
     {
       "name": "Nightlife & Clubs",
-      "count": 48,
+      "count": 40,
       "errors": []
     },
     {
@@ -221,6 +223,16 @@
     {
       "name": "Coconut Grove",
       "count": 252,
+      "errors": []
+    },
+    {
+      "name": "Brickell Venues",
+      "count": 240,
+      "errors": []
+    },
+    {
+      "name": "Real Venue Events",
+      "count": 29,
       "errors": []
     }
   ]
