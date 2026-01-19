@@ -68,16 +68,6 @@ export class CoconutGroveScraper extends BaseScraper {
       url: 'https://spillovermiami.com/',
       events: [
         {
-          name: 'Happy Hour at Spillover',
-          days: [1, 2, 3, 4, 5], // Mon-Fri
-          time: '16:00',
-          category: 'Food & Drink',
-          description: 'The Grove\'s favorite neighborhood bar. Great beer selection, friendly crowd, dog-friendly patio.',
-          tags: ['happy-hour', 'craft-beer', 'dog-friendly', 'local-favorite'],
-          price: 0,
-          isOutdoor: true,
-        },
-        {
           name: 'Trivia Night at Spillover',
           days: [3], // Wednesday
           time: '20:00',
@@ -99,36 +89,7 @@ export class CoconutGroveScraper extends BaseScraper {
         },
       ],
     },
-    // Glass & Vine at Peacock Park
-    {
-      name: 'Glass & Vine',
-      address: '2820 McFarlane Rd, Miami, FL 33133',
-      lat: 25.7267,
-      lng: -80.2389,
-      url: 'https://www.glassandvine.com/',
-      events: [
-        {
-          name: 'Brunch at Glass & Vine',
-          days: [6, 0], // Sat-Sun
-          time: '11:00',
-          category: 'Food & Drink',
-          description: 'Farm-to-table brunch in Peacock Park. Beautiful outdoor setting with views of the bay.',
-          tags: ['brunch', 'outdoor-dining', 'local-favorite'],
-          price: 45,
-          isOutdoor: true,
-        },
-        {
-          name: 'Sunset Dinner at Glass & Vine',
-          days: [4, 5, 6], // Thu-Sat
-          time: '18:00',
-          category: 'Food & Drink',
-          description: 'Seasonal dinner menu with sunset views over Peacock Park. One of the Grove\'s best date spots.',
-          tags: ['outdoor-dining', 'sunset', 'local-favorite'],
-          price: 65,
-          isOutdoor: true,
-        },
-      ],
-    },
+    // Glass & Vine - removed generic brunch/dinner events (destination suggestions, not events)
     // The Barnacle Historic State Park
     {
       name: 'The Barnacle Historic State Park',
@@ -189,26 +150,7 @@ export class CoconutGroveScraper extends BaseScraper {
         },
       ],
     },
-    // Greenstreet Cafe
-    {
-      name: 'GreenStreet Cafe',
-      address: '3468 Main Hwy, Miami, FL 33133',
-      lat: 25.7256,
-      lng: -80.2423,
-      url: 'https://greenstreetcafe.net/',
-      events: [
-        {
-          name: 'Weekend Brunch at GreenStreet',
-          days: [6, 0], // Sat-Sun
-          time: '10:00',
-          category: 'Food & Drink',
-          description: 'The Grove\'s classic brunch spot. Sidewalk seating, people watching, and the famous French toast.',
-          tags: ['brunch', 'outdoor-dining', 'local-favorite'],
-          price: 30,
-          isOutdoor: true,
-        },
-      ],
-    },
+    // GreenStreet Cafe - removed generic brunch (destination suggestion, not event)
     // Taurus Beer & Whiskey House
     {
       name: 'Taurus Beer & Whiskey House',
@@ -319,26 +261,7 @@ export class CoconutGroveScraper extends BaseScraper {
         },
       ],
     },
-    // CocoWalk area
-    {
-      name: 'CocoWalk',
-      address: '3015 Grand Ave, Miami, FL 33133',
-      lat: 25.7289,
-      lng: -80.2401,
-      url: 'https://www.cocowalk.com/',
-      events: [
-        {
-          name: 'First Friday at CocoWalk',
-          days: [5], // Friday (first of month, simplified to every)
-          time: '18:00',
-          category: 'Community',
-          description: 'Monthly First Friday celebration at CocoWalk with live music, pop-ups, and extended shopping hours.',
-          tags: ['community', 'live-music', 'free-event'],
-          price: 0,
-          isOutdoor: true,
-        },
-      ],
-    },
+    // CocoWalk - removed First Friday (was generating every Friday incorrectly)
   ];
 
   constructor() {

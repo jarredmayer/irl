@@ -43,6 +43,22 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
     updateFilter('selectedCategories', newCategories);
   };
 
+  const toggleAllCategories = () => {
+    if (filters.selectedCategories.length === CATEGORIES.length) {
+      updateFilter('selectedCategories', []);
+    } else {
+      updateFilter('selectedCategories', [...CATEGORIES]);
+    }
+  };
+
+  const toggleAllTags = () => {
+    if (filters.selectedTags.length === popularTags.length) {
+      updateFilter('selectedTags', []);
+    } else {
+      updateFilter('selectedTags', [...popularTags]);
+    }
+  };
+
   return (
     <div className="bg-white border-b border-slate-100 sticky top-[52px] z-20">
       {/* Search bar */}
@@ -162,6 +178,12 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
       {/* Category filters */}
       <div className="px-4 py-2 overflow-x-auto hide-scrollbar border-t border-slate-50">
         <ChipGroup>
+          <button
+            onClick={toggleAllCategories}
+            className="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all bg-slate-100 text-slate-600 border border-slate-300 hover:bg-slate-200"
+          >
+            {filters.selectedCategories.length === CATEGORIES.length ? 'Clear all' : 'Select all'}
+          </button>
           {CATEGORIES.map((category) => {
             const colors = CATEGORY_COLORS[category] || CATEGORY_COLORS['Other'];
             const isSelected = filters.selectedCategories.includes(category);
@@ -187,6 +209,12 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
       {/* Tag filters */}
       <div className="px-4 py-2 overflow-x-auto hide-scrollbar border-t border-slate-50">
         <ChipGroup>
+          <button
+            onClick={toggleAllTags}
+            className="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all bg-slate-100 text-slate-600 border border-slate-300 hover:bg-slate-200"
+          >
+            {filters.selectedTags.length === popularTags.length ? 'Clear all' : 'Select all'}
+          </button>
           {popularTags.map((tag) => (
             <Chip
               key={tag}

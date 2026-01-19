@@ -514,26 +514,6 @@ export class HotelsHospitalityScraper extends BaseScraper {
           isOutdoor: true,
         },
         {
-          name: 'Sunset Aperitivo at Mr. C',
-          days: [4, 5, 6], // Thu-Sat
-          time: '17:30',
-          category: 'Food & Drink',
-          description: 'Italian aperitivo hour with Negronis and cicchetti overlooking Biscayne Bay. The Grove\'s most elegant sunset spot.',
-          tags: ['happy-hour', 'cocktails', 'sunset', 'waterfront'],
-          price: 0,
-          isOutdoor: true,
-        },
-        {
-          name: 'Pool Day at Mr. C',
-          days: [6, 0], // Sat, Sun
-          time: '12:00',
-          category: 'Nightlife',
-          description: 'Stylish poolside scene at Mr. C with DJs, Italian bites, and bay views. Open to non-guests.',
-          tags: ['dj', 'pool', 'waterfront', 'local-favorite'],
-          price: 50,
-          isOutdoor: true,
-        },
-        {
           name: 'Jazz Night at Bellini',
           days: [5], // Friday
           time: '20:00',

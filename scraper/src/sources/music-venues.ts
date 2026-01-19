@@ -74,37 +74,7 @@ export class MusicVenuesScraper extends BaseScraper {
       tags: ['live-music', 'latin', 'dancing', 'local-favorite'],
       price: 0,
     },
-    // Gramps - specific programming
-    {
-      name: 'Comedy Night at Gramps',
-      venue: 'Gramps',
-      address: '176 NW 24th St, Miami, FL 33127',
-      neighborhood: 'Wynwood',
-      lat: 25.8002,
-      lng: -80.2009,
-      url: 'https://gramps.com/',
-      days: [2], // Tuesday
-      time: '20:00',
-      category: 'Comedy',
-      description: 'Weekly stand-up comedy showcase featuring local and touring comedians. Free entry, cheap drinks.',
-      tags: ['comedy', 'free-event', 'local-favorite'],
-      price: 0,
-    },
-    {
-      name: 'DJ Night at Gramps',
-      venue: 'Gramps',
-      address: '176 NW 24th St, Miami, FL 33127',
-      neighborhood: 'Wynwood',
-      lat: 25.8002,
-      lng: -80.2009,
-      url: 'https://gramps.com/',
-      days: [5, 6], // Fri-Sat
-      time: '22:00',
-      category: 'Nightlife',
-      description: 'Curated DJ sets in Wynwood\'s favorite dive bar. Eclectic programming from house to hip-hop.',
-      tags: ['dj', 'local-favorite'],
-      price: 0,
-    },
+    // Gramps is permanently closed - removed
     // Zey Zey and Miami Beach Bandshell now use real events from real-venue-events.ts
   ];
 
