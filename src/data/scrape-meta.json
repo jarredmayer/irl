@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-01-19T18:18:49.983Z",
+  "scrapedAt": "2026-01-19T18:22:05.988Z",
   "stats": {
-    "total": 1685,
-    "deduplicated": 1534,
+    "total": 1700,
+    "deduplicated": 1548,
     "bySource": {
       "Miami New Times": 83,
       "Farmers Markets": 80,
@@ -41,7 +41,8 @@
       "Coral Gables & Neighborhood Venues": 162,
       "Coconut Grove": 174,
       "Brickell Venues": 66,
-      "Real Venue Events": 29
+      "Real Venue Events": 29,
+      "Cultural Attractions": 15
     }
   },
   "sources": [
@@ -233,6 +234,11 @@
     {
       "name": "Real Venue Events",
       "count": 29,
+      "errors": []
+    },
+    {
+      "name": "Cultural Attractions",
+      "count": 15,
       "errors": []
     }
   ]

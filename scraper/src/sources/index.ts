@@ -80,6 +80,9 @@ export { BrickellVenuesScraper } from './brickell-venues.js';
 // Real venue events (actual scheduled events, not recurring templates)
 export { RealVenueEventsScraper } from './real-venue-events.js';
 
+// Cultural attractions (Pinecrest Gardens, The Bass, Jungle Island, etc.)
+export { CulturalAttractionsScraper } from './cultural-attractions.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -127,6 +130,7 @@ import { CoralGablesVenuesScraper } from './coral-gables-venues.js';
 import { CoconutGroveScraper } from './coconut-grove.js';
 import { BrickellVenuesScraper } from './brickell-venues.js';
 import { RealVenueEventsScraper } from './real-venue-events.js';
+import { CulturalAttractionsScraper } from './cultural-attractions.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -199,5 +203,8 @@ export function getAllScrapers(): BaseScraper[] {
 
     // Real venue events (Zey Zey, Bandshell, etc.)
     new RealVenueEventsScraper(),
+
+    // Cultural attractions (Pinecrest, Bass, Jungle Island, SOBEWFF, etc.)
+    new CulturalAttractionsScraper(),
   ];
 }

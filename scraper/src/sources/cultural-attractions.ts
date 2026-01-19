@@ -1,0 +1,289 @@
+/**
+ * Cultural Attractions Scraper
+ * Real events from Pinecrest Gardens, The Bass, Jungle Island, Fairchild, etc.
+ */
+
+import { BaseScraper } from './base.js';
+import type { RawEvent } from '../types.js';
+
+interface RealEvent {
+  title: string;
+  date: string;
+  time: string;
+  venue: string;
+  address: string;
+  neighborhood: string;
+  lat: number;
+  lng: number;
+  category: string;
+  description: string;
+  tags: string[];
+  price: number;
+  sourceUrl: string;
+}
+
+export class CulturalAttractionsScraper extends BaseScraper {
+  private events: RealEvent[] = [
+    // Jungle Island events
+    {
+      title: 'Survivor Ultimate Fan Cafe',
+      date: '2026-01-30',
+      time: '10:00',
+      venue: 'Jungle Island',
+      address: '1111 Parrot Jungle Trail, Miami, FL 33132',
+      neighborhood: 'Watson Island',
+      lat: 25.7856,
+      lng: -80.1747,
+      category: 'Community',
+      description: 'Ultimate Survivor fan experience at Jungle Island. Meet fellow fans and enjoy themed activities.',
+      tags: ['family-friendly', 'pop-up'],
+      price: 45,
+      sourceUrl: 'https://www.jungleisland.com/calendar-of-events/',
+    },
+    {
+      title: 'Valentine\'s Sweet Fest',
+      date: '2026-02-07',
+      time: '10:00',
+      venue: 'Jungle Island',
+      address: '1111 Parrot Jungle Trail, Miami, FL 33132',
+      neighborhood: 'Watson Island',
+      lat: 25.7856,
+      lng: -80.1747,
+      category: 'Family',
+      description: 'Valentine\'s celebration at Jungle Island with sweet treats, animal encounters, and family activities.',
+      tags: ['family-friendly', 'seasonal'],
+      price: 45,
+      sourceUrl: 'https://www.jungleisland.com/calendar-of-events/',
+    },
+    // The Bass Museum events
+    {
+      title: 'The Bass Ball: Kaleidoscopic',
+      date: '2026-03-07',
+      time: '19:00',
+      venue: 'The Bass Museum of Art',
+      address: '2100 Collins Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7956,
+      lng: -80.1300,
+      category: 'Art',
+      description: 'Annual gala celebrating contemporary art. Cocktails, dinner, dancing, and art in Miami Beach\'s premier museum.',
+      tags: ['art-gallery', 'local-favorite'],
+      price: 500,
+      sourceUrl: 'https://thebass.org/',
+    },
+    {
+      title: 'Night at the Museum',
+      date: '2026-02-14',
+      time: '19:00',
+      venue: 'The Bass Museum of Art',
+      address: '2100 Collins Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7956,
+      lng: -80.1300,
+      category: 'Art',
+      description: 'After-hours museum experience with cocktails, music, and exclusive gallery access. Valentine\'s edition.',
+      tags: ['art-gallery', 'museum', 'local-favorite'],
+      price: 25,
+      sourceUrl: 'https://thebass.org/',
+    },
+    {
+      title: 'Breakfast at The Bass: Meet the Curator',
+      date: '2026-02-08',
+      time: '10:00',
+      venue: 'The Bass Museum of Art',
+      address: '2100 Collins Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7956,
+      lng: -80.1300,
+      category: 'Art',
+      description: 'Intimate breakfast with The Bass curator. Learn about current exhibitions and upcoming programming.',
+      tags: ['art-gallery', 'museum', 'workshop'],
+      price: 35,
+      sourceUrl: 'https://thebass.org/',
+    },
+    // Pinecrest Gardens events
+    {
+      title: 'Pinecrest Gardens Farmers Market',
+      date: '2026-01-19',
+      time: '09:00',
+      venue: 'Pinecrest Gardens',
+      address: '11000 Red Rd, Pinecrest, FL 33156',
+      neighborhood: 'Pinecrest',
+      lat: 25.6667,
+      lng: -80.3056,
+      category: 'Food & Drink',
+      description: 'Weekly farmers market with local produce, artisan goods, and live music in the botanical gardens.',
+      tags: ['food-market', 'free-event', 'family-friendly', 'local-favorite'],
+      price: 0,
+      sourceUrl: 'https://www.pinecrestgardens.org/',
+    },
+    {
+      title: 'Pinecrest Gardens Farmers Market',
+      date: '2026-01-26',
+      time: '09:00',
+      venue: 'Pinecrest Gardens',
+      address: '11000 Red Rd, Pinecrest, FL 33156',
+      neighborhood: 'Pinecrest',
+      lat: 25.6667,
+      lng: -80.3056,
+      category: 'Food & Drink',
+      description: 'Weekly farmers market with local produce, artisan goods, and live music in the botanical gardens.',
+      tags: ['food-market', 'free-event', 'family-friendly', 'local-favorite'],
+      price: 0,
+      sourceUrl: 'https://www.pinecrestgardens.org/',
+    },
+    // Fairchild Tropical Botanic Garden
+    {
+      title: 'Fairchild Chocolate Festival',
+      date: '2026-01-25',
+      time: '10:00',
+      venue: 'Fairchild Tropical Botanic Garden',
+      address: '10901 Old Cutler Rd, Coral Gables, FL 33156',
+      neighborhood: 'Coral Gables',
+      lat: 25.6767,
+      lng: -80.2756,
+      category: 'Food & Drink',
+      description: 'Annual celebration of cacao and chocolate. Tastings, workshops, and tropical garden tours.',
+      tags: ['food-market', 'family-friendly', 'local-favorite', 'festival'],
+      price: 25,
+      sourceUrl: 'https://fairchildgarden.org/',
+    },
+    {
+      title: 'Fairchild Chocolate Festival',
+      date: '2026-01-26',
+      time: '10:00',
+      venue: 'Fairchild Tropical Botanic Garden',
+      address: '10901 Old Cutler Rd, Coral Gables, FL 33156',
+      neighborhood: 'Coral Gables',
+      lat: 25.6767,
+      lng: -80.2756,
+      category: 'Food & Drink',
+      description: 'Annual celebration of cacao and chocolate. Tastings, workshops, and tropical garden tours.',
+      tags: ['food-market', 'family-friendly', 'local-favorite', 'festival'],
+      price: 25,
+      sourceUrl: 'https://fairchildgarden.org/',
+    },
+    // SOBEWFF (South Beach Wine & Food Festival) - Feb 19-22, 2026
+    {
+      title: 'SOBEWFF Grand Tasting Village',
+      date: '2026-02-21',
+      time: '12:00',
+      venue: 'Miami Beach Convention Center',
+      address: '1901 Convention Center Dr, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7956,
+      lng: -80.1389,
+      category: 'Food & Drink',
+      description: 'The signature SOBEWFF event. Sample dishes from top chefs, wine, spirits, and celebrity chef demos.',
+      tags: ['food-market', 'wine-tasting', 'festival', 'local-favorite'],
+      price: 225,
+      sourceUrl: 'https://sobewff.org/',
+    },
+    {
+      title: 'SOBEWFF Grand Tasting Village',
+      date: '2026-02-22',
+      time: '12:00',
+      venue: 'Miami Beach Convention Center',
+      address: '1901 Convention Center Dr, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7956,
+      lng: -80.1389,
+      category: 'Food & Drink',
+      description: 'Day 2 of the signature SOBEWFF event. More chef demos, tastings, and culinary experiences.',
+      tags: ['food-market', 'wine-tasting', 'festival', 'local-favorite'],
+      price: 225,
+      sourceUrl: 'https://sobewff.org/',
+    },
+    {
+      title: 'SOBEWFF Burger Bash',
+      date: '2026-02-20',
+      time: '19:00',
+      venue: 'Miami Beach',
+      address: 'South Beach, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7825,
+      lng: -80.1340,
+      category: 'Food & Drink',
+      description: 'Battle of the burgers. Top chefs compete for best burger while guests taste and vote.',
+      tags: ['food-market', 'festival', 'local-favorite', 'beach'],
+      price: 275,
+      sourceUrl: 'https://sobewff.org/',
+    },
+    // Fruit & Spice Park
+    {
+      title: 'Redland Heritage Festival',
+      date: '2026-02-07',
+      time: '10:00',
+      venue: 'Fruit & Spice Park',
+      address: '24801 SW 187th Ave, Homestead, FL 33031',
+      neighborhood: 'Homestead',
+      lat: 25.5833,
+      lng: -80.4833,
+      category: 'Food & Drink',
+      description: 'Celebrate the agricultural heritage of the Redland. Local produce, artisan crafts, and live music.',
+      tags: ['food-market', 'family-friendly', 'local-favorite', 'festival'],
+      price: 10,
+      sourceUrl: 'https://www.miamidade.gov/global/park/fruit-and-spice-park.page',
+    },
+    // Joia Beach wellness
+    {
+      title: 'Sunrise Yoga at Joia Beach',
+      date: '2026-01-25',
+      time: '07:30',
+      venue: 'Joia Beach',
+      address: '1111 Parrot Jungle Trail, Miami, FL 33132',
+      neighborhood: 'Watson Island',
+      lat: 25.7856,
+      lng: -80.1747,
+      category: 'Wellness',
+      description: 'Oceanside sunrise yoga at Joia Beach. Start your weekend with movement and ocean views.',
+      tags: ['yoga', 'beach', 'sunrise', 'wellness'],
+      price: 35,
+      sourceUrl: 'https://joiabeachmiami.com/wellness/',
+    },
+    {
+      title: 'Sound Healing at Joia Beach',
+      date: '2026-02-01',
+      time: '17:00',
+      venue: 'Joia Beach',
+      address: '1111 Parrot Jungle Trail, Miami, FL 33132',
+      neighborhood: 'Watson Island',
+      lat: 25.7856,
+      lng: -80.1747,
+      category: 'Wellness',
+      description: 'Immersive sound healing session at sunset. Crystal bowls and ocean waves for deep relaxation.',
+      tags: ['wellness', 'beach', 'meditation', 'sunset'],
+      price: 45,
+      sourceUrl: 'https://joiabeachmiami.com/wellness/',
+    },
+  ];
+
+  constructor() {
+    super('Cultural Attractions', { weight: 1.4, rateLimit: 0 });
+  }
+
+  async scrape(): Promise<RawEvent[]> {
+    this.log(`Processing ${this.events.length} cultural attraction events...`);
+
+    return this.events.map((event) => ({
+      title: event.title,
+      startAt: `${event.date}T${event.time}:00`,
+      venueName: event.venue,
+      address: event.address,
+      neighborhood: event.neighborhood,
+      lat: event.lat,
+      lng: event.lng,
+      city: 'Miami',
+      tags: event.tags,
+      category: event.category,
+      priceLabel: event.price === 0 ? 'Free' : event.price > 100 ? '$$$' : event.price > 30 ? '$$' : '$',
+      priceAmount: event.price,
+      isOutdoor: event.tags.includes('beach') || event.tags.includes('park') || event.tags.includes('food-market'),
+      description: event.description,
+      sourceUrl: event.sourceUrl,
+      sourceName: this.name,
+      ticketUrl: event.sourceUrl,
+      recurring: false,
+    }));
+  }
+}
