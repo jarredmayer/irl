@@ -266,6 +266,285 @@ export class HotelsHospitalityScraper extends BaseScraper {
         },
       ],
     },
+    // Strawberry Moon at Goodtime Hotel
+    {
+      name: 'Strawberry Moon',
+      address: '601 Washington Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7729,
+      lng: -80.1347,
+      url: 'https://thegoodtimehotel.com/strawberry-moon/',
+      events: [
+        {
+          name: 'Strawberry Moon Pool Party',
+          days: [6, 0], // Sat, Sun
+          time: '12:00',
+          category: 'Nightlife',
+          description: 'Pharrell\'s poolside paradise at The Goodtime Hotel. DJs, cocktails, and Miami\'s stylish crowd.',
+          tags: ['dj', 'pool', 'local-favorite', 'dancing'],
+          price: 50,
+          isOutdoor: true,
+        },
+        {
+          name: 'Strawberry Moon Sunset Session',
+          days: [5, 6], // Fri, Sat
+          time: '17:00',
+          category: 'Nightlife',
+          description: 'Golden hour vibes at Strawberry Moon. Tropical cocktails and chill DJ sets as the sun goes down.',
+          tags: ['dj', 'sunset', 'pool', 'cocktails'],
+          price: 0,
+          isOutdoor: true,
+        },
+      ],
+    },
+    // The Goodtime Hotel
+    {
+      name: 'The Goodtime Hotel',
+      address: '601 Washington Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7729,
+      lng: -80.1347,
+      url: 'https://thegoodtimehotel.com/',
+      events: [
+        {
+          name: 'Goodtime Yoga',
+          days: [6, 0], // Weekend
+          time: '09:00',
+          category: 'Wellness',
+          description: 'Morning yoga in the Goodtime Hotel courtyard. Start your weekend right.',
+          tags: ['yoga', 'free-event'],
+          price: 0,
+          isOutdoor: true,
+        },
+      ],
+    },
+    // The Esme Hotel
+    {
+      name: 'The Esme Hotel',
+      address: '1438 Washington Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7892,
+      lng: -80.1347,
+      url: 'https://theesmehotel.com/',
+      events: [
+        {
+          name: 'Jazz Nights at The Esme',
+          days: [4, 5, 6], // Thu-Sat
+          time: '20:00',
+          category: 'Music',
+          description: 'Live jazz in The Esme\'s stylish courtyard. Intimate setting, great cocktails.',
+          tags: ['jazz', 'live-music', 'cocktails', 'local-favorite'],
+          price: 0,
+          isOutdoor: true,
+        },
+        {
+          name: 'Sunday Brunch at The Esme',
+          days: [0], // Sunday
+          time: '11:00',
+          category: 'Food & Drink',
+          description: 'Elegant Sunday brunch with Mediterranean flavors in a beautiful courtyard setting.',
+          tags: ['brunch', 'local-favorite'],
+          price: 65,
+          isOutdoor: true,
+        },
+      ],
+    },
+    // Shelborne South Beach
+    {
+      name: 'Shelborne South Beach',
+      address: '1801 Collins Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7928,
+      lng: -80.1289,
+      url: 'https://shelbornesouthbeach.com/',
+      events: [
+        {
+          name: 'Pool Sessions at Shelborne',
+          days: [5, 6, 0], // Fri-Sun
+          time: '13:00',
+          category: 'Nightlife',
+          description: 'Poolside DJ sets at Shelborne\'s iconic art deco pool. Open to public.',
+          tags: ['dj', 'pool', 'waterfront'],
+          price: 35,
+          isOutdoor: true,
+        },
+      ],
+    },
+    // Delano South Beach
+    {
+      name: 'Delano South Beach',
+      address: '1685 Collins Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7912,
+      lng: -80.1289,
+      url: 'https://delanosouthbeach.com/',
+      events: [
+        {
+          name: 'FDR Lounge Night',
+          days: [4, 5, 6], // Thu-Sat
+          time: '22:00',
+          category: 'Nightlife',
+          description: 'Late-night in the legendary FDR underground lounge at Delano. Intimate and exclusive.',
+          tags: ['dj', 'nightlife', 'dancing'],
+          price: 30,
+          isOutdoor: false,
+        },
+        {
+          name: 'Rose Bar Happy Hour',
+          days: [1, 2, 3, 4, 5], // Mon-Fri
+          time: '17:00',
+          category: 'Food & Drink',
+          description: 'Happy hour at Delano\'s iconic Rose Bar. Classic cocktails in Philippe Starck\'s legendary design.',
+          tags: ['happy-hour', 'cocktails', 'local-favorite'],
+          price: 0,
+          isOutdoor: false,
+        },
+      ],
+    },
+    // The Betsy Hotel
+    {
+      name: 'The Betsy Hotel',
+      address: '1440 Ocean Dr, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7867,
+      lng: -80.1289,
+      url: 'https://thebetsyhotel.com/',
+      events: [
+        {
+          name: 'Jazz at The Betsy',
+          days: [3, 4, 5, 6], // Wed-Sat
+          time: '20:00',
+          category: 'Music',
+          description: 'Nightly jazz performances at The Betsy\'s rooftop. Ocean views and sophisticated vibes.',
+          tags: ['jazz', 'live-music', 'rooftop', 'local-favorite'],
+          price: 0,
+          isOutdoor: true,
+        },
+        {
+          name: 'Betsy Poetry Salon',
+          days: [2], // Tuesday
+          time: '19:00',
+          category: 'Culture',
+          description: 'Monthly poetry readings and literary events at The Betsy, a hotel known for arts programming.',
+          tags: ['workshop', 'community', 'local-favorite'],
+          price: 0,
+          isOutdoor: false,
+        },
+        {
+          name: 'Sunday Sounds at The Betsy',
+          days: [0], // Sunday
+          time: '16:00',
+          category: 'Music',
+          description: 'Sunday afternoon jazz session on The Betsy\'s rooftop with ocean views and tropical cocktails.',
+          tags: ['jazz', 'live-music', 'rooftop', 'sunset'],
+          price: 0,
+          isOutdoor: true,
+        },
+      ],
+    },
+    // Hotel Greystone
+    {
+      name: 'Hotel Greystone',
+      address: '1920 Collins Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7945,
+      lng: -80.1289,
+      url: 'https://greystonemiamibeach.com/',
+      events: [
+        {
+          name: 'Rooftop Sundowners at Greystone',
+          days: [4, 5, 6], // Thu-Sat
+          time: '18:00',
+          category: 'Food & Drink',
+          description: 'Sunset cocktails on the Greystone rooftop. Art deco architecture meets modern Miami.',
+          tags: ['rooftop', 'cocktails', 'sunset'],
+          price: 0,
+          isOutdoor: true,
+        },
+      ],
+    },
+    // The Moore Hotel (Design District)
+    {
+      name: 'The Moore Hotel',
+      address: '4040 NE 2nd Ave, Miami, FL 33137',
+      neighborhood: 'Design District',
+      lat: 25.8134,
+      lng: -80.1936,
+      url: 'https://themooremiami.com/',
+      events: [
+        {
+          name: 'Pool Sessions at The Moore',
+          days: [6, 0], // Sat, Sun
+          time: '13:00',
+          category: 'Nightlife',
+          description: 'Weekend pool party at The Moore in the Design District. DJs, cocktails, and a stylish crowd.',
+          tags: ['dj', 'pool', 'local-favorite'],
+          price: 40,
+          isOutdoor: true,
+        },
+        {
+          name: 'Art After Dark at The Moore',
+          days: [5], // Friday
+          time: '19:00',
+          category: 'Art',
+          description: 'Evening art exhibition and cocktails at The Moore. Featuring local and emerging artists.',
+          tags: ['art-gallery', 'cocktails', 'networking'],
+          price: 0,
+          isOutdoor: false,
+        },
+      ],
+    },
+    // Mr. C Hotel Coconut Grove
+    {
+      name: 'Mr. C Coconut Grove',
+      address: '2988 McFarlane Rd, Miami, FL 33133',
+      neighborhood: 'Coconut Grove',
+      lat: 25.7267,
+      lng: -80.2412,
+      url: 'https://mrchotels.com/coconut-grove/',
+      events: [
+        {
+          name: 'Bellini Brunch at Mr. C',
+          days: [0], // Sunday
+          time: '11:00',
+          category: 'Food & Drink',
+          description: 'Italian Sunday brunch at Bellini restaurant with bay views. Live music and bottomless bellinis.',
+          tags: ['brunch', 'live-music', 'waterfront', 'local-favorite'],
+          price: 75,
+          isOutdoor: true,
+        },
+        {
+          name: 'Sunset Aperitivo at Mr. C',
+          days: [4, 5, 6], // Thu-Sat
+          time: '17:30',
+          category: 'Food & Drink',
+          description: 'Italian aperitivo hour with Negronis and cicchetti overlooking Biscayne Bay. The Grove\'s most elegant sunset spot.',
+          tags: ['happy-hour', 'cocktails', 'sunset', 'waterfront'],
+          price: 0,
+          isOutdoor: true,
+        },
+        {
+          name: 'Pool Day at Mr. C',
+          days: [6, 0], // Sat, Sun
+          time: '12:00',
+          category: 'Nightlife',
+          description: 'Stylish poolside scene at Mr. C with DJs, Italian bites, and bay views. Open to non-guests.',
+          tags: ['dj', 'pool', 'waterfront', 'local-favorite'],
+          price: 50,
+          isOutdoor: true,
+        },
+        {
+          name: 'Jazz Night at Bellini',
+          days: [5], // Friday
+          time: '20:00',
+          category: 'Music',
+          description: 'Live jazz at Bellini restaurant. Sophisticated evening with Italian cuisine and bay views.',
+          tags: ['jazz', 'live-music', 'waterfront'],
+          price: 0,
+          isOutdoor: false,
+        },
+      ],
+    },
   ];
 
   constructor() {

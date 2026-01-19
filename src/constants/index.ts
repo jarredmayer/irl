@@ -187,7 +187,14 @@ export const WEATHER_CACHE_TTL_MS = 30 * 60 * 1000; // 30 minutes
 export const STORAGE_KEYS = {
   USER_STATE: 'irl_user_state',
   WEATHER_CACHE: 'irl_weather_cache',
+  USER_SUBMITTED_EVENTS: 'irl_user_submitted_events',
 } as const;
+
+// Flat list of all neighborhoods for forms
+export const ALL_NEIGHBORHOODS = [
+  ...NEIGHBORHOODS.Miami,
+  ...NEIGHBORHOODS['Fort Lauderdale'],
+] as const;
 
 export const TIME_SECTIONS = {
   TONIGHT: 'Tonight',

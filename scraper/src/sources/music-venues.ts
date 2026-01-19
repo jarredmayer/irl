@@ -121,21 +121,36 @@ export class MusicVenuesScraper extends BaseScraper {
       tags: ['live-music', 'beach', 'free-event', 'family-friendly'],
       price: 0,
     },
-    // Zey Zey - new venue
+    // Zey Zey - specific programming nights
     {
-      name: 'Live Music at Zey Zey',
+      name: 'Thursday Jazz at Zey Zey',
       venue: 'Zey Zey',
       address: '233 NE 2nd St, Miami, FL 33132',
       neighborhood: 'Downtown Miami',
       lat: 25.7751,
       lng: -80.1897,
       url: 'https://www.zeyzey.com/',
-      days: [4, 5, 6], // Thu-Sat
+      days: [4], // Thursday
       time: '21:00',
       category: 'Music',
-      description: 'Intimate live music venue in downtown Miami. Eclectic bookings from jazz to indie to electronic.',
-      tags: ['live-music', 'local-favorite'],
+      description: 'Weekly jazz night featuring local and touring musicians. Intimate rooftop setting with craft cocktails. Check their socials for the lineup.',
+      tags: ['live-music', 'jazz', 'rooftop', 'local-favorite'],
       price: 15,
+    },
+    {
+      name: 'Weekend Sounds at Zey Zey',
+      venue: 'Zey Zey',
+      address: '233 NE 2nd St, Miami, FL 33132',
+      neighborhood: 'Downtown Miami',
+      lat: 25.7751,
+      lng: -80.1897,
+      url: 'https://www.zeyzey.com/',
+      days: [5, 6], // Fri-Sat
+      time: '21:00',
+      category: 'Music',
+      description: 'Eclectic weekend programming from indie rock to electronic to soul. One of downtown\'s best intimate venues. Check @zeyzey for artist lineup.',
+      tags: ['live-music', 'indie', 'rooftop', 'local-favorite'],
+      price: 20,
     },
   ];
 

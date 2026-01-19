@@ -30,6 +30,7 @@ export {
 export {
   DontTellComedyScraper,
   MiamiImprovScraper,
+  DaniaBeachImprovScraper,
   ArshtCenterScraper,
   FillmoreMiamiScraper,
 } from './comedy-entertainment.js';
@@ -51,6 +52,28 @@ export { InstagramSourcesScraper } from './instagram-sources.js';
 // Ticketing platforms
 export { DiceFmScraper, ShotgunScraper, WorldCup2026Scraper } from './ticketing-platforms.js';
 
+// Community & lifestyle
+export {
+  CoffeeAndChillScraper,
+  DiploRunClubScraper,
+  SoFloPopupsScraper,
+} from './community-lifestyle.js';
+
+// Cultural districts & estates
+export {
+  DesignDistrictScraper,
+  DeeringEstateScraper,
+  MiamiFestivalsScraper,
+  RegattaGroveScraper,
+  SouthPointeParkScraper,
+} from './cultural-districts.js';
+
+// Coral Gables & neighborhood venues
+export { CoralGablesVenuesScraper } from './coral-gables-venues.js';
+
+// Coconut Grove
+export { CoconutGroveScraper } from './coconut-grove.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -69,6 +92,7 @@ import {
 import {
   DontTellComedyScraper,
   MiamiImprovScraper,
+  DaniaBeachImprovScraper,
   ArshtCenterScraper,
   FillmoreMiamiScraper,
 } from './comedy-entertainment.js';
@@ -81,6 +105,20 @@ import {
 import { HotelsHospitalityScraper } from './hotels-hospitality.js';
 import { InstagramSourcesScraper } from './instagram-sources.js';
 import { DiceFmScraper, ShotgunScraper, WorldCup2026Scraper } from './ticketing-platforms.js';
+import {
+  CoffeeAndChillScraper,
+  DiploRunClubScraper,
+  SoFloPopupsScraper,
+} from './community-lifestyle.js';
+import {
+  DesignDistrictScraper,
+  DeeringEstateScraper,
+  MiamiFestivalsScraper,
+  RegattaGroveScraper,
+  SouthPointeParkScraper,
+} from './cultural-districts.js';
+import { CoralGablesVenuesScraper } from './coral-gables-venues.js';
+import { CoconutGroveScraper } from './coconut-grove.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -109,6 +147,7 @@ export function getAllScrapers(): BaseScraper[] {
     // Comedy & entertainment
     new DontTellComedyScraper(),
     new MiamiImprovScraper(),
+    new DaniaBeachImprovScraper(),
     new ArshtCenterScraper(),
     new FillmoreMiamiScraper(),
 
@@ -128,5 +167,23 @@ export function getAllScrapers(): BaseScraper[] {
     new DiceFmScraper(),
     new ShotgunScraper(),
     new WorldCup2026Scraper(),
+
+    // Community & lifestyle
+    new CoffeeAndChillScraper(),
+    new DiploRunClubScraper(),
+    new SoFloPopupsScraper(),
+
+    // Cultural districts & estates
+    new DesignDistrictScraper(),
+    new DeeringEstateScraper(),
+    new MiamiFestivalsScraper(),
+    new RegattaGroveScraper(),
+    new SouthPointeParkScraper(),
+
+    // Coral Gables & neighborhood venues
+    new CoralGablesVenuesScraper(),
+
+    // Coconut Grove
+    new CoconutGroveScraper(),
   ];
 }

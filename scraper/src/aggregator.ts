@@ -56,9 +56,17 @@ export class EventAggregator {
       results.push(result);
     }
 
+    // Filter out past events
+    const now = new Date();
+    const futureEvents = allRawEvents.filter((event) => {
+      const eventDate = new Date(event.startAt);
+      return eventDate >= now;
+    });
+    console.log(`\n⏰ Filtered out ${allRawEvents.length - futureEvents.length} past events`);
+
     // Curate events (filter out generic/low-quality)
-    console.log(`\n🎯 Curating ${allRawEvents.length} total events...`);
-    const curated = this.curateEvents(allRawEvents);
+    console.log(`🎯 Curating ${futureEvents.length} future events...`);
+    const curated = this.curateEvents(futureEvents);
     console.log(`   ✅ ${curated.length} events passed curation\n`);
 
     // Deduplicate events
@@ -166,17 +174,15 @@ export class EventAggregator {
       // Prioritize events with coordinates
       if (a.lat && !b.lat) return -1;
       if (!a.lat && b.lat) return 1;
-      return 0;
+      // Prioritize longer descriptions
+      return b.description.length - a.description.length;
     });
 
     for (const event of sorted) {
       const key = this.generateDedupeKey(event);
 
-      if (!seen.has(key)) {
-        seen.set(key, event);
-        unique.push(event);
-      } else {
-        // Merge with existing event if this one has more data
+      // Check exact key match first
+      if (seen.has(key)) {
         const existing = seen.get(key)!;
         const merged = this.mergeEvents(existing, event);
         seen.set(key, merged);
@@ -184,6 +190,29 @@ export class EventAggregator {
         if (idx >= 0) {
           unique[idx] = merged;
         }
+        continue;
+      }
+
+      // Check for fuzzy duplicates among existing events
+      let foundDuplicate = false;
+      for (const existing of unique) {
+        if (this.areLikelyDuplicates(existing, event)) {
+          // Merge into existing
+          const existingKey = this.generateDedupeKey(existing);
+          const merged = this.mergeEvents(existing, event);
+          seen.set(existingKey, merged);
+          const idx = unique.findIndex((e) => this.generateDedupeKey(e) === existingKey);
+          if (idx >= 0) {
+            unique[idx] = merged;
+          }
+          foundDuplicate = true;
+          break;
+        }
+      }
+
+      if (!foundDuplicate) {
+        seen.set(key, event);
+        unique.push(event);
       }
     }
 
@@ -194,21 +223,64 @@ export class EventAggregator {
    * Generate a deduplication key for an event
    */
   private generateDedupeKey(event: RawEvent): string {
-    // Normalize title for comparison
-    const normalizedTitle = event.title
+    // Extract key words, sorted alphabetically to catch reordered titles
+    const words = event.title
       .toLowerCase()
       .replace(/[^\w\s]/g, '')
-      .replace(/\s+/g, ' ')
-      .trim()
-      .slice(0, 50);
+      .split(/\s+/)
+      .filter((w) => w.length > 2) // Skip short words
+      .filter((w) => !['the', 'at', 'and', 'for', 'with'].includes(w)) // Skip common words
+      .sort()
+      .join(' ');
 
     // Extract date only (not time)
     const dateOnly = event.startAt.slice(0, 10);
 
-    // Create composite key
-    const keyParts = [normalizedTitle, dateOnly, event.neighborhood?.toLowerCase() || 'miami'];
+    // Use venue name if available (normalized)
+    const venue = event.venueName?.toLowerCase().replace(/[^\w\s]/g, '').trim() || '';
+
+    // Create composite key - sorted words + date + venue
+    const keyParts = [words, dateOnly, venue || event.neighborhood?.toLowerCase() || 'miami'];
 
     return createHash('md5').update(keyParts.join('|')).digest('hex').slice(0, 16);
+  }
+
+  /**
+   * Check if two events are likely duplicates using fuzzy matching
+   */
+  private areLikelyDuplicates(a: RawEvent, b: RawEvent): boolean {
+    // Must be on the same date
+    if (a.startAt.slice(0, 10) !== b.startAt.slice(0, 10)) return false;
+
+    // Same venue is a strong signal
+    const sameVenue =
+      a.venueName &&
+      b.venueName &&
+      a.venueName.toLowerCase() === b.venueName.toLowerCase();
+
+    if (sameVenue) {
+      // Check if titles share significant words
+      const wordsA = new Set(
+        a.title
+          .toLowerCase()
+          .replace(/[^\w\s]/g, '')
+          .split(/\s+/)
+          .filter((w) => w.length > 3)
+      );
+      const wordsB = new Set(
+        b.title
+          .toLowerCase()
+          .replace(/[^\w\s]/g, '')
+          .split(/\s+/)
+          .filter((w) => w.length > 3)
+      );
+
+      const intersection = [...wordsA].filter((w) => wordsB.has(w));
+      // If they share 2+ significant words at the same venue on the same day, likely duplicate
+      if (intersection.length >= 2) return true;
+    }
+
+    return false;
   }
 
   /**
@@ -320,46 +392,50 @@ export class EventAggregator {
    * Generate short editorial hook
    */
   private generateShortWhy(event: RawEvent): string {
+    const isMiami = event.city === 'Miami';
+    const cityName = isMiami ? 'Miami' : 'Fort Lauderdale';
+    const regionName = isMiami ? 'the Magic City' : 'the Venice of America';
+
     const templates: Record<string, string[]> = {
       Music: [
-        'Live sounds in one of Miami\'s best spots.',
+        `Live sounds in one of ${cityName}'s best spots.`,
         'Get your music fix with locals who know.',
-        'The kind of night Miami does best.',
+        `The kind of night ${cityName} does best.`,
       ],
       'Food & Drink': [
-        'Taste what makes Miami\'s food scene special.',
+        `Taste what makes ${cityName}'s food scene special.`,
         'Local flavors and community vibes.',
         'Fresh, local, and full of character.',
       ],
       Fitness: [
-        'Move your body with Miami\'s fitness community.',
+        `Move your body with ${cityName}'s fitness community.`,
         'Free workout with good people.',
         'Start your day right with locals.',
       ],
       Wellness: [
-        'Find your calm in the Magic City.',
-        'Wellness the Miami way.',
+        `Find your calm in ${regionName}.`,
+        'Wellness done right.',
         'Reset and recharge.',
       ],
       Sports: [
-        'Cheer on Miami\'s finest.',
+        `Cheer on ${cityName}'s finest.`,
         'Game day energy at its peak.',
         'Nothing beats live sports.',
       ],
       Art: [
-        'See what Miami\'s art scene is about.',
+        `See what ${cityName}'s art scene is about.`,
         'Culture in full color.',
         'Art worth the trip.',
       ],
       Culture: [
-        'Dive into Miami\'s cultural richness.',
-        'History and culture, Miami-style.',
+        `Dive into ${cityName}'s cultural richness.`,
+        'History and culture, local-style.',
         'Experience local heritage.',
       ],
       Community: [
-        'Connect with the Miami community.',
+        `Connect with the ${cityName} community.`,
         'Local vibes, real connections.',
-        'Where Miami comes together.',
+        `Where ${cityName} comes together.`,
       ],
       Nightlife: [
         'Where South Florida comes alive after dark.',
@@ -367,7 +443,7 @@ export class EventAggregator {
         'Dance floors and good energy.',
       ],
       Comedy: [
-        'Laugh out loud with Miami\'s comedy scene.',
+        `Laugh out loud with ${cityName}'s comedy scene.`,
         'Comedians who know how to deliver.',
         'The perfect night out.',
       ],

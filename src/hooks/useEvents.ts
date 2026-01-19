@@ -140,6 +140,16 @@ export function useEvents(options: UseEventsOptions) {
       }
     }
 
+    // Sort each group chronologically by start time
+    const sortByTime = (a: ScoredEvent, b: ScoredEvent) =>
+      new Date(a.startAt).getTime() - new Date(b.startAt).getTime();
+
+    groups.tonight.sort(sortByTime);
+    groups.tomorrow.sort(sortByTime);
+    groups.thisWeekend.sort(sortByTime);
+    groups.nextWeek.sort(sortByTime);
+    groups.worthPlanning.sort(sortByTime);
+
     return groups;
   }, [filteredEvents]);
 

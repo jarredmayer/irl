@@ -16,6 +16,31 @@ const MAX_TASTE_SCORE = 20;
 const EDITOR_PICK_BOOST = 10;
 const WEATHER_PENALTY = -10;
 const WEATHER_BOOST = 5;
+const HIDDEN_GEM_BOOST = 8;
+
+// Mainstream venues that are well-known (reduce hidden gem score)
+const MAINSTREAM_VENUES = [
+  'E11EVEN',
+  'LIV',
+  'Fillmore',
+  'Kaseya Center',
+  'Hard Rock Stadium',
+  'Arsht Center',
+  'Faena',
+  'Fontainebleau',
+];
+
+// Neighborhoods with authentic local character
+const LOCAL_NEIGHBORHOODS = [
+  'Little Havana',
+  'Little Haiti',
+  'Allapattah',
+  'Little River',
+  'Hialeah',
+  'Overtown',
+  'Liberty City',
+  'Palmetto Bay',
+];
 
 export function scoreEvent(event: Event, context: RankingContext): ScoredEvent {
   const timeScore = computeTimeScore(event.startAt, context.now);
@@ -26,9 +51,10 @@ export function scoreEvent(event: Event, context: RankingContext): ScoredEvent {
   const tasteScore = computeTasteScore(event.tags, context.preferences);
   const weatherScore = computeWeatherScore(event, context.weather);
   const editorBoost = event.editorPick ? EDITOR_PICK_BOOST : 0;
+  const hiddenGemScore = computeHiddenGemScore(event);
 
   const score =
-    timeScore + distanceScore + tasteScore + weatherScore + editorBoost;
+    timeScore + distanceScore + tasteScore + weatherScore + editorBoost + hiddenGemScore;
 
   return {
     ...event,
@@ -141,6 +167,40 @@ export function computeWeatherScore(
   return 0;
 }
 
+export function computeHiddenGemScore(event: Event): number {
+  // Check if venue is mainstream (no boost)
+  const venueName = event.venueName?.toLowerCase() || '';
+  const isMainstream = MAINSTREAM_VENUES.some(
+    (v) => venueName.includes(v.toLowerCase())
+  );
+
+  if (isMainstream) {
+    return 0;
+  }
+
+  // Check if in a local neighborhood (full boost)
+  const neighborhood = event.neighborhood?.toLowerCase() || '';
+  const isLocalNeighborhood = LOCAL_NEIGHBORHOODS.some(
+    (n) => neighborhood.toLowerCase() === n.toLowerCase()
+  );
+
+  if (isLocalNeighborhood) {
+    return HIDDEN_GEM_BOOST;
+  }
+
+  // Check for local-favorite tag
+  if (event.tags.includes('local-favorite')) {
+    return HIDDEN_GEM_BOOST;
+  }
+
+  // Partial boost for free events at non-mainstream venues
+  if (event.priceLabel === 'Free') {
+    return HIDDEN_GEM_BOOST * 0.5;
+  }
+
+  return 0;
+}
+
 export function rankEvents(
   events: Event[],
   context: RankingContext
@@ -160,4 +220,125 @@ export function filterByDistance(
     }
     return event.distanceMiles <= maxMiles;
   });
+}
+
+/**
+ * Compute similarity score between two events
+ */
+export function computeSimilarityScore(eventA: Event, eventB: Event): number {
+  if (eventA.id === eventB.id) {
+    return 0; // Don't recommend the same event
+  }
+
+  let score = 0;
+
+  // Tag overlap (up to 30 points)
+  const sharedTags = eventA.tags.filter((tag) => eventB.tags.includes(tag));
+  score += Math.min(sharedTags.length * 10, 30);
+
+  // Same category (20 points)
+  if (eventA.category === eventB.category) {
+    score += 20;
+  }
+
+  // Same neighborhood (15 points)
+  if (eventA.neighborhood && eventB.neighborhood) {
+    if (eventA.neighborhood.toLowerCase() === eventB.neighborhood.toLowerCase()) {
+      score += 15;
+    }
+  }
+
+  // Similar time of day (10 points)
+  const hourA = parseInt(eventA.startAt.slice(11, 13), 10);
+  const hourB = parseInt(eventB.startAt.slice(11, 13), 10);
+  if (Math.abs(hourA - hourB) <= 2) {
+    score += 10;
+  }
+
+  // Same price range (5 points)
+  if (eventA.priceLabel === eventB.priceLabel) {
+    score += 5;
+  }
+
+  // Both indoor or both outdoor (5 points)
+  if (eventA.isOutdoor === eventB.isOutdoor) {
+    score += 5;
+  }
+
+  return score;
+}
+
+/**
+ * Find events similar to a given event
+ */
+export function findSimilarEvents(
+  targetEvent: Event,
+  allEvents: Event[],
+  limit: number = 5
+): Event[] {
+  const now = new Date();
+
+  // Filter to future events only
+  const futureEvents = allEvents.filter((event) => {
+    const eventDate = parseISO(event.startAt);
+    return eventDate > now;
+  });
+
+  // Score all events by similarity
+  const scored = futureEvents.map((event) => ({
+    event,
+    similarityScore: computeSimilarityScore(targetEvent, event),
+  }));
+
+  // Sort by similarity and return top N
+  return scored
+    .filter((s) => s.similarityScore > 0)
+    .sort((a, b) => b.similarityScore - a.similarityScore)
+    .slice(0, limit)
+    .map((s) => s.event);
+}
+
+/**
+ * Find events similar to a list of saved events
+ * Useful for "Because you saved X" recommendations
+ */
+export function findRecommendationsFromSaved(
+  savedEvents: Event[],
+  allEvents: Event[],
+  limit: number = 10
+): { event: Event; reason: string }[] {
+  const now = new Date();
+  const savedIds = new Set(savedEvents.map((e) => e.id));
+
+  // Filter to future events that aren't already saved
+  const candidates = allEvents.filter((event) => {
+    const eventDate = parseISO(event.startAt);
+    return eventDate > now && !savedIds.has(event.id);
+  });
+
+  // Score each candidate against all saved events
+  const recommendations: Map<string, { event: Event; score: number; reason: string }> = new Map();
+
+  for (const savedEvent of savedEvents) {
+    for (const candidate of candidates) {
+      const score = computeSimilarityScore(savedEvent, candidate);
+      if (score > 20) {
+        // Only consider if similarity is meaningful
+        const existing = recommendations.get(candidate.id);
+        if (!existing || score > existing.score) {
+          recommendations.set(candidate.id, {
+            event: candidate,
+            score,
+            reason: `Similar to "${savedEvent.title}"`,
+          });
+        }
+      }
+    }
+  }
+
+  // Sort by score and return top recommendations
+  return Array.from(recommendations.values())
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ event, reason }) => ({ event, reason }));
 }

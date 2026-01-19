@@ -146,6 +146,63 @@ export class MiamiImprovScraper extends BaseScraper {
 }
 
 /**
+ * Dania Beach Improv - Fort Lauderdale area comedy
+ */
+export class DaniaBeachImprovScraper extends BaseScraper {
+  constructor() {
+    super('Dania Beach Improv', { weight: 1.2, rateLimit: 0 });
+  }
+
+  async scrape(): Promise<RawEvent[]> {
+    const events: RawEvent[] = [];
+    const today = new Date();
+
+    this.log('Generating Dania Beach Improv events...');
+
+    const showDays = [4, 5, 6, 0]; // Thu, Fri, Sat, Sun
+
+    for (let week = 0; week < 6; week++) {
+      for (const targetDay of showDays) {
+        const baseDate = addDays(today, week * 7);
+        let daysUntil = targetDay - getDay(baseDate);
+        if (daysUntil <= 0) daysUntil += 7;
+
+        const eventDate = addDays(baseDate, daysUntil);
+        const dateStr = format(eventDate, 'yyyy-MM-dd');
+
+        const showTimes = targetDay >= 5 ? ['19:30', '21:30'] : ['20:00'];
+
+        for (const time of showTimes) {
+          events.push({
+            title: 'Stand-Up Comedy at Dania Beach Improv',
+            startAt: `${dateStr}T${time}:00`,
+            venueName: 'Dania Beach Improv',
+            address: '1100 Silks Run #1490, Hallandale Beach, FL 33009',
+            neighborhood: 'Hallandale Beach',
+            lat: 25.9739,
+            lng: -80.1489,
+            city: 'Fort Lauderdale',
+            tags: ['comedy'],
+            category: 'Comedy',
+            priceLabel: '$$',
+            priceAmount: 30,
+            isOutdoor: false,
+            description: 'Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.',
+            sourceUrl: 'https://improv.com/dania-beach/',
+            sourceName: this.name,
+            recurring: true,
+            recurrencePattern: 'weekly',
+          });
+        }
+      }
+    }
+
+    this.log(`Generated ${events.length} Dania Beach Improv events`);
+    return events;
+  }
+}
+
+/**
  * Adrienne Arsht Center - Performing arts
  */
 export class ArshtCenterScraper extends BaseScraper {

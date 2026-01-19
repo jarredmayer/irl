@@ -105,3 +105,49 @@ export function clearLocation(): void {
   state.lastKnownLocation = undefined;
   saveUserState(state);
 }
+
+// User-submitted events
+export interface UserSubmittedEvent {
+  id: string;
+  title: string;
+  startAt: string;
+  venueName?: string;
+  address?: string;
+  neighborhood: string;
+  city: 'Miami' | 'Fort Lauderdale';
+  category: string;
+  description: string;
+  sourceUrl?: string;
+  submittedAt: string;
+  status: 'pending' | 'approved' | 'rejected';
+}
+
+export function saveUserSubmittedEvent(event: UserSubmittedEvent): void {
+  try {
+    const events = getUserSubmittedEvents();
+    events.push(event);
+    localStorage.setItem(STORAGE_KEYS.USER_SUBMITTED_EVENTS, JSON.stringify(events));
+  } catch (e) {
+    console.error('Failed to save user-submitted event:', e);
+  }
+}
+
+export function getUserSubmittedEvents(): UserSubmittedEvent[] {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEYS.USER_SUBMITTED_EVENTS);
+    if (!stored) return [];
+    return JSON.parse(stored);
+  } catch {
+    return [];
+  }
+}
+
+export function deleteUserSubmittedEvent(eventId: string): void {
+  try {
+    const events = getUserSubmittedEvents();
+    const filtered = events.filter((e) => e.id !== eventId);
+    localStorage.setItem(STORAGE_KEYS.USER_SUBMITTED_EVENTS, JSON.stringify(filtered));
+  } catch (e) {
+    console.error('Failed to delete user-submitted event:', e);
+  }
+}

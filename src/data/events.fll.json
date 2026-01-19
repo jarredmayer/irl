@@ -1,2159 +1,5 @@
 [
   {
-    "id": "ffbae5797d56d042",
-    "title": "Florida Panthers vs Tampa Bay Lightning",
-    "startAt": "2026-01-20T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "0fe5f8844f872ab0",
-    "title": "Florida Panthers vs Boston Bruins",
-    "startAt": "2026-01-24T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "0cc4a573cd581bab",
-    "title": "Florida Panthers vs Toronto Maple Leafs",
-    "startAt": "2026-01-29T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "d1f23c21ed26bdfa",
-    "title": "Florida Panthers vs New York Rangers",
-    "startAt": "2026-02-03T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
-    "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "c34fc485ca2cd214",
-    "title": "Florida Panthers vs Carolina Hurricanes",
-    "startAt": "2026-02-07T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "3eebfd686410be71",
-    "title": "Florida Panthers vs Tampa Bay Lightning",
-    "startAt": "2026-02-12T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "bdbf99cc7f7b3446",
-    "title": "Florida Panthers vs Boston Bruins",
-    "startAt": "2026-02-17T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "b4493363c1f15602",
-    "title": "Florida Panthers vs Toronto Maple Leafs",
-    "startAt": "2026-02-21T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "4c30a8fc106b799f",
-    "title": "Florida Panthers vs New York Rangers",
-    "startAt": "2026-02-26T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "abdda2ff45149305",
-    "title": "Florida Panthers vs Carolina Hurricanes",
-    "startAt": "2026-03-03T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "85ae74b4ac481a5e",
-    "title": "Florida Panthers vs Tampa Bay Lightning",
-    "startAt": "2026-03-07T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "e8710f1fc5cd3653",
-    "title": "Florida Panthers vs Boston Bruins",
-    "startAt": "2026-03-12T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "9cea94492875d82f",
-    "title": "Florida Panthers vs Toronto Maple Leafs",
-    "startAt": "2026-03-17T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "c02c21e8a7ead426",
-    "title": "Florida Panthers vs New York Rangers",
-    "startAt": "2026-03-21T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
-    "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "12da0648c214000d",
-    "title": "Florida Panthers vs Carolina Hurricanes",
-    "startAt": "2026-03-26T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "96fb61942db6ce9a",
-    "title": "Florida Panthers vs Tampa Bay Lightning",
-    "startAt": "2026-03-31T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "9f85fad7f1a73ef7",
-    "title": "Florida Panthers vs Boston Bruins",
-    "startAt": "2026-04-04T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "28a13133e048f41b",
-    "title": "Florida Panthers vs Toronto Maple Leafs",
-    "startAt": "2026-04-09T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "d317018d00209522",
-    "title": "Sunday Jazz Brunch on Las Olas",
-    "startAt": "2026-01-18T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Las Olas Boulevard",
-    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Las Olas",
-    "lat": 26.1195,
-    "lng": -80.1365,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "live-music"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
-    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
-    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://lasolasboulevard.com/"
-    },
-    "editorPick": true,
-    "seriesId": "1524a6f2198f",
-    "seriesName": "Sunday Jazz Brunch on Las Olas",
-    "venueId": "d0dbc7393da7"
-  },
-  {
-    "id": "f6de2d980bb3895f",
-    "title": "Sunday Jazz Brunch on Las Olas",
-    "startAt": "2026-01-25T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Las Olas Boulevard",
-    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Las Olas",
-    "lat": 26.1195,
-    "lng": -80.1365,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "live-music"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
-    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
-    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://lasolasboulevard.com/"
-    },
-    "editorPick": true,
-    "seriesId": "1524a6f2198f",
-    "seriesName": "Sunday Jazz Brunch on Las Olas",
-    "venueId": "d0dbc7393da7"
-  },
-  {
-    "id": "bfb073ac541680be",
-    "title": "Sunday Jazz Brunch on Las Olas",
-    "startAt": "2026-02-01T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Las Olas Boulevard",
-    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Las Olas",
-    "lat": 26.1195,
-    "lng": -80.1365,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "live-music"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
-    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
-    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://lasolasboulevard.com/"
-    },
-    "editorPick": true,
-    "seriesId": "1524a6f2198f",
-    "seriesName": "Sunday Jazz Brunch on Las Olas",
-    "venueId": "d0dbc7393da7"
-  },
-  {
-    "id": "40403d04a8a01df6",
-    "title": "Sunday Jazz Brunch on Las Olas",
-    "startAt": "2026-02-08T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Las Olas Boulevard",
-    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Las Olas",
-    "lat": 26.1195,
-    "lng": -80.1365,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "live-music"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
-    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://lasolasboulevard.com/"
-    },
-    "editorPick": true,
-    "seriesId": "1524a6f2198f",
-    "seriesName": "Sunday Jazz Brunch on Las Olas",
-    "venueId": "d0dbc7393da7"
-  },
-  {
-    "id": "395e387b664d6e59",
-    "title": "Sunday Jazz Brunch on Las Olas",
-    "startAt": "2026-02-15T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Las Olas Boulevard",
-    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Las Olas",
-    "lat": 26.1195,
-    "lng": -80.1365,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "live-music"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
-    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
-    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://lasolasboulevard.com/"
-    },
-    "editorPick": true,
-    "seriesId": "1524a6f2198f",
-    "seriesName": "Sunday Jazz Brunch on Las Olas",
-    "venueId": "d0dbc7393da7"
-  },
-  {
-    "id": "264d4664ee952ebb",
-    "title": "Sunday Jazz Brunch on Las Olas",
-    "startAt": "2026-02-22T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Las Olas Boulevard",
-    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Las Olas",
-    "lat": 26.1195,
-    "lng": -80.1365,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "live-music"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
-    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
-    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://lasolasboulevard.com/"
-    },
-    "editorPick": true,
-    "seriesId": "1524a6f2198f",
-    "seriesName": "Sunday Jazz Brunch on Las Olas",
-    "venueId": "d0dbc7393da7"
-  },
-  {
-    "id": "b69678437297defc",
-    "title": "Flagler Village First Friday",
-    "startAt": "2026-01-23T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "FAT Village Arts District",
-    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
-    "neighborhood": "Flagler Village",
-    "lat": 26.1289,
-    "lng": -80.1456,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Miami's art scene is about.",
-    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
-    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://fatvillage.com/"
-    },
-    "editorPick": true,
-    "seriesId": "7f53af3d313e",
-    "seriesName": "Flagler Village First Friday",
-    "venueId": "76fb681d761c"
-  },
-  {
-    "id": "693790747f7c4e2d",
-    "title": "Flagler Village First Friday",
-    "startAt": "2026-01-30T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "FAT Village Arts District",
-    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
-    "neighborhood": "Flagler Village",
-    "lat": 26.1289,
-    "lng": -80.1456,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
-    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
-    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://fatvillage.com/"
-    },
-    "editorPick": true,
-    "seriesId": "7f53af3d313e",
-    "seriesName": "Flagler Village First Friday",
-    "venueId": "76fb681d761c"
-  },
-  {
-    "id": "159ecf13c1fd9a4d",
-    "title": "Flagler Village First Friday",
-    "startAt": "2026-02-06T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "FAT Village Arts District",
-    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
-    "neighborhood": "Flagler Village",
-    "lat": 26.1289,
-    "lng": -80.1456,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
-    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
-    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://fatvillage.com/"
-    },
-    "editorPick": true,
-    "seriesId": "7f53af3d313e",
-    "seriesName": "Flagler Village First Friday",
-    "venueId": "76fb681d761c"
-  },
-  {
-    "id": "044872929c7d6ea6",
-    "title": "Flagler Village First Friday",
-    "startAt": "2026-02-13T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "FAT Village Arts District",
-    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
-    "neighborhood": "Flagler Village",
-    "lat": 26.1289,
-    "lng": -80.1456,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Art worth the trip.",
-    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
-    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://fatvillage.com/"
-    },
-    "editorPick": true,
-    "seriesId": "7f53af3d313e",
-    "seriesName": "Flagler Village First Friday",
-    "venueId": "76fb681d761c"
-  },
-  {
-    "id": "730ed7d167428413",
-    "title": "Flagler Village First Friday",
-    "startAt": "2026-02-20T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "FAT Village Arts District",
-    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
-    "neighborhood": "Flagler Village",
-    "lat": 26.1289,
-    "lng": -80.1456,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Miami's art scene is about.",
-    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
-    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://fatvillage.com/"
-    },
-    "editorPick": true,
-    "seriesId": "7f53af3d313e",
-    "seriesName": "Flagler Village First Friday",
-    "venueId": "76fb681d761c"
-  },
-  {
-    "id": "0892870ad0f6eec8",
-    "title": "Flagler Village First Friday",
-    "startAt": "2026-02-27T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "FAT Village Arts District",
-    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
-    "neighborhood": "Flagler Village",
-    "lat": 26.1289,
-    "lng": -80.1456,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Miami's art scene is about.",
-    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
-    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://fatvillage.com/"
-    },
-    "editorPick": true,
-    "seriesId": "7f53af3d313e",
-    "seriesName": "Flagler Village First Friday",
-    "venueId": "76fb681d761c"
-  },
-  {
-    "id": "79cb250f7a551dd8",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-01-22T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Miami's art scene is about.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "32938c5dca7d6537",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-01-29T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Art worth the trip.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "020bf87ba16dd75f",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-02-05T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Miami's art scene is about.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "d8b7836765f2e1c9",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-02-12T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "a3b245beeabd3e2f",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-02-19T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Miami's art scene is about.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "5485e8cc89b4a860",
-    "title": "Free First Thursday at NSU Art Museum",
-    "startAt": "2026-02-26T16:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum Fort Lauderdale",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "See what Miami's art scene is about.",
-    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Free admission on first Thursdays with extended hours and special programming.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "seriesId": "dbc3fbde0826",
-    "seriesName": "Free First Thursday at NSU Art Museum",
-    "venueId": "a82dca0c394f"
-  },
-  {
-    "id": "b39ab35b5a79717d",
-    "title": "Riverwalk Friday Night",
-    "startAt": "2026-01-23T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "live-music",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "b26c9f2df599",
-    "seriesName": "Riverwalk Friday Night",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "579da5e5da943a1a",
-    "title": "Riverwalk Friday Night",
-    "startAt": "2026-01-30T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "live-music",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Miami comes together.",
-    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "b26c9f2df599",
-    "seriesName": "Riverwalk Friday Night",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "d5d92346a9a3a51c",
-    "title": "Riverwalk Friday Night",
-    "startAt": "2026-02-06T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "live-music",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "b26c9f2df599",
-    "seriesName": "Riverwalk Friday Night",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "ed7ac97a854849e5",
-    "title": "Riverwalk Friday Night",
-    "startAt": "2026-02-13T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "live-music",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "b26c9f2df599",
-    "seriesName": "Riverwalk Friday Night",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "c28d7097375e9f34",
-    "title": "Riverwalk Friday Night",
-    "startAt": "2026-02-20T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "live-music",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Miami comes together.",
-    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "b26c9f2df599",
-    "seriesName": "Riverwalk Friday Night",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "b58aa26e19193939",
-    "title": "Riverwalk Friday Night",
-    "startAt": "2026-02-27T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "live-music",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Miami comes together.",
-    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "b26c9f2df599",
-    "seriesName": "Riverwalk Friday Night",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "d7db432d70225437",
-    "title": "Sunday on the Riverwalk",
-    "startAt": "2026-01-18T10:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "family-friendly",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Miami comes together.",
-    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "18c89297f778",
-    "seriesName": "Sunday on the Riverwalk",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "1231747774bd6f86",
-    "title": "Sunday on the Riverwalk",
-    "startAt": "2026-01-25T10:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "family-friendly",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Miami comes together.",
-    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "18c89297f778",
-    "seriesName": "Sunday on the Riverwalk",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "f8b99d08122cd183",
-    "title": "Sunday on the Riverwalk",
-    "startAt": "2026-02-01T10:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "family-friendly",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Connect with the Miami community.",
-    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "18c89297f778",
-    "seriesName": "Sunday on the Riverwalk",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "60aec9a6e9110caf",
-    "title": "Sunday on the Riverwalk",
-    "startAt": "2026-02-08T10:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "family-friendly",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "18c89297f778",
-    "seriesName": "Sunday on the Riverwalk",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "09bbd01c618b353b",
-    "title": "Sunday on the Riverwalk",
-    "startAt": "2026-02-15T10:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "family-friendly",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Miami comes together.",
-    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "18c89297f778",
-    "seriesName": "Sunday on the Riverwalk",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "b81dead7e53ad66b",
-    "title": "Sunday on the Riverwalk",
-    "startAt": "2026-02-22T10:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "waterfront",
-      "family-friendly",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Miami comes together.",
-    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://goriverwalk.com/"
-    },
-    "editorPick": true,
-    "seriesId": "18c89297f778",
-    "seriesName": "Sunday on the Riverwalk",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "4a4a7960e538c999",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-01-18T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "15cebb0c04747e4d",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-01-24T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Miami's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "2675814c929009b7",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-01-25T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "8eb456b1d6a8854f",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-01-31T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Miami's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "b6a6e758a799266c",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-01T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "42c9f1ad4e5b1d04",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-07T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Miami's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "4bd9fac7873591da",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-08T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "cfcefa08db8a918d",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-14T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "bd1198a8af478846",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-15T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "587524a24376031e",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-21T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Miami's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "519fb264daf53d3d",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-22T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "8ba9e83783c03251",
-    "title": "Beach Volleyball at Fort Lauderdale",
-    "startAt": "2026-02-28T09:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "beach",
-      "fitness-class",
-      "free-event"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Move your body with Miami's fitness community.",
-    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "cca5487312eb",
-    "seriesName": "Beach Volleyball at Fort Lauderdale",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "34f1b83d18b4f4e7",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-01-18T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "79f53b2664d704de",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-01-24T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Magic City.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "482ce1e0e14ff1f8",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-01-25T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Magic City.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "1a9d26f76205317c",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-01-31T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Magic City.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "fb9f17422b2797fc",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-01T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "3ed24b8a635ad515",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-07T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Magic City.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "8a8447e096c43547",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-08T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Wellness the Miami way.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "24505a3851335f18",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-14T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "20a14340a8a10717",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-15T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Magic City.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "177baa5d3150d5cb",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-21T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Wellness the Miami way.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "cb5ecc8972ef180d",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-22T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "99ed3bd149a2f9d1",
-    "title": "Sunrise Yoga on the Beach",
-    "startAt": "2026-02-28T07:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Fort Lauderdale Beach",
-    "address": "A1A, Fort Lauderdale Beach, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "yoga",
-      "beach",
-      "sunrise"
-    ],
-    "category": "Wellness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Magic City.",
-    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
-    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
-    },
-    "editorPick": false,
-    "seriesId": "e158bb30c000",
-    "seriesName": "Sunrise Yoga on the Beach",
-    "venueId": "d26aa89ab44b"
-  },
-  {
     "id": "f8eb01bc08d291c7",
     "title": "First Friday Art Walk",
     "startAt": "2026-02-06T18:00:00",
@@ -2172,7 +18,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
     "source": {
@@ -2203,7 +49,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
     "source": {
@@ -2214,6 +60,558 @@
     "seriesId": "2de5f55194f5",
     "seriesName": "First Friday Art Walk",
     "venueId": "2f3e26b9985c"
+  },
+  {
+    "id": "1231747774bd6f86",
+    "title": "Sunday on the Riverwalk",
+    "startAt": "2026-01-25T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "family-friendly",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Where Fort Lauderdale comes together.",
+    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "18c89297f778",
+    "seriesName": "Sunday on the Riverwalk",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "f8b99d08122cd183",
+    "title": "Sunday on the Riverwalk",
+    "startAt": "2026-02-01T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "family-friendly",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "18c89297f778",
+    "seriesName": "Sunday on the Riverwalk",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "60aec9a6e9110caf",
+    "title": "Sunday on the Riverwalk",
+    "startAt": "2026-02-08T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "family-friendly",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "18c89297f778",
+    "seriesName": "Sunday on the Riverwalk",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "09bbd01c618b353b",
+    "title": "Sunday on the Riverwalk",
+    "startAt": "2026-02-15T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "family-friendly",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "18c89297f778",
+    "seriesName": "Sunday on the Riverwalk",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "b81dead7e53ad66b",
+    "title": "Sunday on the Riverwalk",
+    "startAt": "2026-02-22T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "family-friendly",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Local vibes, real connections.",
+    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "18c89297f778",
+    "seriesName": "Sunday on the Riverwalk",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "016776f81a9020da",
+    "title": "Sunday on the Riverwalk",
+    "startAt": "2026-03-01T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "family-friendly",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Local vibes, real connections.",
+    "editorialWhy": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Sunday morning activities along the Riverwalk including yoga, markets, and family activities.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "18c89297f778",
+    "seriesName": "Sunday on the Riverwalk",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "f6de2d980bb3895f",
+    "title": "Sunday Jazz Brunch on Las Olas",
+    "startAt": "2026-01-25T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "jazz",
+      "brunch",
+      "live-music"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
+    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://lasolasboulevard.com/"
+    },
+    "editorPick": true,
+    "seriesId": "1524a6f2198f",
+    "seriesName": "Sunday Jazz Brunch on Las Olas",
+    "venueId": "d0dbc7393da7"
+  },
+  {
+    "id": "bfb073ac541680be",
+    "title": "Sunday Jazz Brunch on Las Olas",
+    "startAt": "2026-02-01T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "jazz",
+      "brunch",
+      "live-music"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Get your music fix with locals who know.",
+    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
+    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://lasolasboulevard.com/"
+    },
+    "editorPick": true,
+    "seriesId": "1524a6f2198f",
+    "seriesName": "Sunday Jazz Brunch on Las Olas",
+    "venueId": "d0dbc7393da7"
+  },
+  {
+    "id": "40403d04a8a01df6",
+    "title": "Sunday Jazz Brunch on Las Olas",
+    "startAt": "2026-02-08T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "jazz",
+      "brunch",
+      "live-music"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
+    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://lasolasboulevard.com/"
+    },
+    "editorPick": true,
+    "seriesId": "1524a6f2198f",
+    "seriesName": "Sunday Jazz Brunch on Las Olas",
+    "venueId": "d0dbc7393da7"
+  },
+  {
+    "id": "395e387b664d6e59",
+    "title": "Sunday Jazz Brunch on Las Olas",
+    "startAt": "2026-02-15T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "jazz",
+      "brunch",
+      "live-music"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Get your music fix with locals who know.",
+    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
+    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://lasolasboulevard.com/"
+    },
+    "editorPick": true,
+    "seriesId": "1524a6f2198f",
+    "seriesName": "Sunday Jazz Brunch on Las Olas",
+    "venueId": "d0dbc7393da7"
+  },
+  {
+    "id": "264d4664ee952ebb",
+    "title": "Sunday Jazz Brunch on Las Olas",
+    "startAt": "2026-02-22T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "jazz",
+      "brunch",
+      "live-music"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
+    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://lasolasboulevard.com/"
+    },
+    "editorPick": true,
+    "seriesId": "1524a6f2198f",
+    "seriesName": "Sunday Jazz Brunch on Las Olas",
+    "venueId": "d0dbc7393da7"
+  },
+  {
+    "id": "22d28d1d51c14e8e",
+    "title": "Sunday Jazz Brunch on Las Olas",
+    "startAt": "2026-03-01T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "jazz",
+      "brunch",
+      "live-music"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "editorialWhy": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials. Located in Las Olas, Las Olas Boulevard is a local favorite. Best of all, it's free.",
+    "description": "Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://lasolasboulevard.com/"
+    },
+    "editorPick": true,
+    "seriesId": "1524a6f2198f",
+    "seriesName": "Sunday Jazz Brunch on Las Olas",
+    "venueId": "d0dbc7393da7"
+  },
+  {
+    "id": "b69678437297defc",
+    "title": "Flagler Village First Friday",
+    "startAt": "2026-01-23T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FAT Village Arts District",
+    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
+    "neighborhood": "Flagler Village",
+    "lat": 26.1289,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
+    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://fatvillage.com/"
+    },
+    "editorPick": true,
+    "seriesId": "7f53af3d313e",
+    "seriesName": "Flagler Village First Friday",
+    "venueId": "76fb681d761c"
+  },
+  {
+    "id": "693790747f7c4e2d",
+    "title": "Flagler Village First Friday",
+    "startAt": "2026-01-30T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FAT Village Arts District",
+    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
+    "neighborhood": "Flagler Village",
+    "lat": 26.1289,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
+    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://fatvillage.com/"
+    },
+    "editorPick": true,
+    "seriesId": "7f53af3d313e",
+    "seriesName": "Flagler Village First Friday",
+    "venueId": "76fb681d761c"
+  },
+  {
+    "id": "159ecf13c1fd9a4d",
+    "title": "Flagler Village First Friday",
+    "startAt": "2026-02-06T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FAT Village Arts District",
+    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
+    "neighborhood": "Flagler Village",
+    "lat": 26.1289,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
+    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://fatvillage.com/"
+    },
+    "editorPick": true,
+    "seriesId": "7f53af3d313e",
+    "seriesName": "Flagler Village First Friday",
+    "venueId": "76fb681d761c"
+  },
+  {
+    "id": "044872929c7d6ea6",
+    "title": "Flagler Village First Friday",
+    "startAt": "2026-02-13T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FAT Village Arts District",
+    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
+    "neighborhood": "Flagler Village",
+    "lat": 26.1289,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
+    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://fatvillage.com/"
+    },
+    "editorPick": true,
+    "seriesId": "7f53af3d313e",
+    "seriesName": "Flagler Village First Friday",
+    "venueId": "76fb681d761c"
+  },
+  {
+    "id": "730ed7d167428413",
+    "title": "Flagler Village First Friday",
+    "startAt": "2026-02-20T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FAT Village Arts District",
+    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
+    "neighborhood": "Flagler Village",
+    "lat": 26.1289,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
+    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://fatvillage.com/"
+    },
+    "editorPick": true,
+    "seriesId": "7f53af3d313e",
+    "seriesName": "Flagler Village First Friday",
+    "venueId": "76fb681d761c"
+  },
+  {
+    "id": "0892870ad0f6eec8",
+    "title": "Flagler Village First Friday",
+    "startAt": "2026-02-27T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FAT Village Arts District",
+    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
+    "neighborhood": "Flagler Village",
+    "lat": 26.1289,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "First Friday celebration in Flagler Village with gallery openings and street performances. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
+    "description": "First Friday celebration in Flagler Village with gallery openings and street performances.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://fatvillage.com/"
+    },
+    "editorPick": true,
+    "seriesId": "7f53af3d313e",
+    "seriesName": "Flagler Village First Friday",
+    "venueId": "76fb681d761c"
   },
   {
     "id": "38005ab1dcfeb5b9",
@@ -2234,7 +632,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -2265,7 +663,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -2327,7 +725,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -2358,7 +756,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -2389,7 +787,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -2464,9 +862,9 @@
     "venueId": "b0ab1c99310a"
   },
   {
-    "id": "46af74d18a2a0f8e",
-    "title": "Sunday Jazz Brunch Downtown",
-    "startAt": "2026-01-18T11:00:00",
+    "id": "b39ab35b5a79717d",
+    "title": "Riverwalk Friday Night",
+    "startAt": "2026-01-23T18:00:00",
     "timezone": "America/New_York",
     "venueName": "Riverwalk Fort Lauderdale",
     "address": "Riverwalk, Fort Lauderdale, FL 33301",
@@ -2475,25 +873,1919 @@
     "lng": -80.1467,
     "city": "Fort Lauderdale",
     "tags": [
-      "jazz",
-      "brunch",
       "waterfront",
+      "live-music",
       "free-event"
     ],
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Miami community.",
-    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
+    "shortWhy": "Local vibes, real connections.",
+    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
     "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
     },
     "editorPick": true,
-    "seriesId": "f28cf977ea27",
-    "seriesName": "Sunday Jazz Brunch Downtown",
+    "seriesId": "b26c9f2df599",
+    "seriesName": "Riverwalk Friday Night",
     "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "579da5e5da943a1a",
+    "title": "Riverwalk Friday Night",
+    "startAt": "2026-01-30T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "live-music",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Local vibes, real connections.",
+    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "b26c9f2df599",
+    "seriesName": "Riverwalk Friday Night",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "d5d92346a9a3a51c",
+    "title": "Riverwalk Friday Night",
+    "startAt": "2026-02-06T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "live-music",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Where Fort Lauderdale comes together.",
+    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "b26c9f2df599",
+    "seriesName": "Riverwalk Friday Night",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "ed7ac97a854849e5",
+    "title": "Riverwalk Friday Night",
+    "startAt": "2026-02-13T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "live-music",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Where Fort Lauderdale comes together.",
+    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "b26c9f2df599",
+    "seriesName": "Riverwalk Friday Night",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "c28d7097375e9f34",
+    "title": "Riverwalk Friday Night",
+    "startAt": "2026-02-20T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "live-music",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Local vibes, real connections.",
+    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "b26c9f2df599",
+    "seriesName": "Riverwalk Friday Night",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "b58aa26e19193939",
+    "title": "Riverwalk Friday Night",
+    "startAt": "2026-02-27T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "live-music",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Local vibes, real connections.",
+    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "editorPick": true,
+    "seriesId": "b26c9f2df599",
+    "seriesName": "Riverwalk Friday Night",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "9cbcd1b59e492d6c",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-01-22T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "9c8babafc6200970",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-01-23T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "07eff3f9a72ceb27",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-01-24T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "ab1f7fd294def85f",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-01-25T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "b1da93ed1dc015f2",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-01-29T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "a74bbb34f291eedd",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-01-30T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "e58e6c4e7ea2aacb",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-01-31T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "c8c7bc2baa4c8ecc",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-01T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "36df9ce8de4c0d16",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-05T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "1fe322b040a77c60",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-06T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "0b1dc8c0f5a50f91",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-07T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "88eb0df4435dc859",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-08T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "2d6b0b97d7f4dc1b",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-12T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "536e7737f2b3f742",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-13T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "5a7bd1d8d88aad2f",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-14T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "f9b5ad330a78da0c",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-15T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "9fcb77ac2034545f",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-19T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "cfa69a339a49dcc4",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-20T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "58f78ad460d85a8a",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-21T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "5a069b9939bc84d3",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-22T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "e92a7716a1598af5",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-26T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "452b87caa8893286",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-27T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "475d6906c9156ba4",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-02-28T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "682e4cd20bd83fbe",
+    "title": "Stand-Up Comedy at Dania Beach Improv",
+    "startAt": "2026-03-01T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "1100 Silks Run #1490, Hallandale Beach, FL 33009",
+    "neighborhood": "Hallandale Beach",
+    "lat": 25.9739,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center. Located in Hallandale Beach, Dania Beach Improv is a local favorite.",
+    "description": "Live stand-up comedy at the Dania Beach Improv inside the Dania Pointe shopping center.",
+    "source": {
+      "name": "Dania Beach Improv",
+      "url": "https://improv.com/dania-beach/"
+    },
+    "editorPick": false,
+    "seriesId": "abe784e11de9",
+    "seriesName": "Stand-Up Comedy at Dania Beach Improv",
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "15cebb0c04747e4d",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-01-24T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Free workout with good people.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "2675814c929009b7",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-01-25T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Start your day right with locals.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "8eb456b1d6a8854f",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-01-31T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "b6a6e758a799266c",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-02-01T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Free workout with good people.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "42c9f1ad4e5b1d04",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-02-07T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Free workout with good people.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "4bd9fac7873591da",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-02-08T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "cfcefa08db8a918d",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-02-14T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "bd1198a8af478846",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-02-15T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Start your day right with locals.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "587524a24376031e",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-02-21T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "519fb264daf53d3d",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-02-22T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Free workout with good people.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "8ba9e83783c03251",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-02-28T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Free workout with good people.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "c12594184478fdf8",
+    "title": "Beach Volleyball at Fort Lauderdale",
+    "startAt": "2026-03-01T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "beach",
+      "fitness-class",
+      "free-event"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
+    "editorialWhy": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Drop-in beach volleyball games at Fort Lauderdale Beach. All skill levels welcome.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "cca5487312eb",
+    "seriesName": "Beach Volleyball at Fort Lauderdale",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "ffbae5797d56d042",
+    "title": "Florida Panthers vs Tampa Bay Lightning",
+    "startAt": "2026-01-20T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "0cc4a573cd581bab",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-01-29T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Game day energy at its peak.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "c34fc485ca2cd214",
+    "title": "Florida Panthers vs Carolina Hurricanes",
+    "startAt": "2026-02-07T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "3eebfd686410be71",
+    "title": "Florida Panthers vs Tampa Bay Lightning",
+    "startAt": "2026-02-12T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "b4493363c1f15602",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-02-21T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "abdda2ff45149305",
+    "title": "Florida Panthers vs Carolina Hurricanes",
+    "startAt": "2026-03-03T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "85ae74b4ac481a5e",
+    "title": "Florida Panthers vs Tampa Bay Lightning",
+    "startAt": "2026-03-07T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "9cea94492875d82f",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-03-17T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "12da0648c214000d",
+    "title": "Florida Panthers vs Carolina Hurricanes",
+    "startAt": "2026-03-26T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "96fb61942db6ce9a",
+    "title": "Florida Panthers vs Tampa Bay Lightning",
+    "startAt": "2026-03-31T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Game day energy at its peak.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "28a13133e048f41b",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-04-09T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "d1f23c21ed26bdfa",
+    "title": "Florida Panthers vs New York Rangers",
+    "startAt": "2026-02-03T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "4c30a8fc106b799f",
+    "title": "Florida Panthers vs New York Rangers",
+    "startAt": "2026-02-26T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "c02c21e8a7ead426",
+    "title": "Florida Panthers vs New York Rangers",
+    "startAt": "2026-03-21T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "79cb250f7a551dd8",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-01-22T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "32938c5dca7d6537",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-01-29T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "020bf87ba16dd75f",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-02-05T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "d8b7836765f2e1c9",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-02-12T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "a3b245beeabd3e2f",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-02-19T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "5485e8cc89b4a860",
+    "title": "Free First Thursday at NSU Art Museum",
+    "startAt": "2026-02-26T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "free-event"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "Free admission on first Thursdays with extended hours and special programming. Located in Downtown FLL, NSU Art Museum Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Free admission on first Thursdays with extended hours and special programming.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "seriesId": "dbc3fbde0826",
+    "seriesName": "Free First Thursday at NSU Art Museum",
+    "venueId": "a82dca0c394f"
+  },
+  {
+    "id": "0fe5f8844f872ab0",
+    "title": "Florida Panthers vs Boston Bruins",
+    "startAt": "2026-01-24T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "bdbf99cc7f7b3446",
+    "title": "Florida Panthers vs Boston Bruins",
+    "startAt": "2026-02-17T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "e8710f1fc5cd3653",
+    "title": "Florida Panthers vs Boston Bruins",
+    "startAt": "2026-03-12T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "9f85fad7f1a73ef7",
+    "title": "Florida Panthers vs Boston Bruins",
+    "startAt": "2026-04-04T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Game day energy at its peak.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
   },
   {
     "id": "3864b493f672e447",
@@ -2515,7 +2807,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2547,7 +2839,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2579,7 +2871,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2611,7 +2903,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2643,7 +2935,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2675,7 +2967,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2707,7 +2999,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -2718,5 +3010,409 @@
     "seriesId": "f28cf977ea27",
     "seriesName": "Sunday Jazz Brunch Downtown",
     "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "369a98b21e2bb825",
+    "title": "Sunday Jazz Brunch Downtown",
+    "startAt": "2026-03-15T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "jazz",
+      "brunch",
+      "waterfront",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
+    "source": {
+      "name": "@fortlauderdaledowntown",
+      "url": "https://instagram.com/fortlauderdaledowntown"
+    },
+    "editorPick": true,
+    "seriesId": "f28cf977ea27",
+    "seriesName": "Sunday Jazz Brunch Downtown",
+    "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "79f53b2664d704de",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-01-24T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Find your calm in the Venice of America.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "482ce1e0e14ff1f8",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-01-25T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Wellness done right.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "1a9d26f76205317c",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-01-31T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Find your calm in the Venice of America.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "fb9f17422b2797fc",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-02-01T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Reset and recharge.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "3ed24b8a635ad515",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-02-07T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Find your calm in the Venice of America.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "8a8447e096c43547",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-02-08T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Reset and recharge.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "24505a3851335f18",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-02-14T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Reset and recharge.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "20a14340a8a10717",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-02-15T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Reset and recharge.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "177baa5d3150d5cb",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-02-21T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Reset and recharge.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "cb5ecc8972ef180d",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-02-22T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Find your calm in the Venice of America.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "99ed3bd149a2f9d1",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-02-28T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Find your calm in the Venice of America.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "2e212927a45aadd2",
+    "title": "Sunrise Yoga on the Beach",
+    "startAt": "2026-03-01T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach",
+    "address": "A1A, Fort Lauderdale Beach, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "yoga",
+      "beach",
+      "sunrise"
+    ],
+    "category": "Wellness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Reset and recharge.",
+    "editorialWhy": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "description": "Morning yoga session on Fort Lauderdale Beach. Bring your own mat.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/beach"
+    },
+    "editorPick": false,
+    "seriesId": "e158bb30c000",
+    "seriesName": "Sunrise Yoga on the Beach",
+    "venueId": "d26aa89ab44b"
   }
 ]

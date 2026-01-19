@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-01-18T21:13:03.484Z",
+  "scrapedAt": "2026-01-19T13:47:53.859Z",
   "stats": {
-    "total": 1039,
-    "deduplicated": 861,
+    "total": 1818,
+    "deduplicated": 1573,
     "bySource": {
-      "Miami New Times": 78,
+      "Miami New Times": 83,
       "Farmers Markets": 80,
       "Music Venues": 76,
       "Professional Sports": 38,
@@ -18,23 +18,34 @@
       "III Points": 1,
       "Don't Tell Comedy": 16,
       "Miami Improv": 36,
+      "Dania Beach Improv": 36,
       "Adrienne Arsht Center": 32,
       "Fillmore Miami Beach": 16,
       "Food Events": 24,
       "Miami Spice": 0,
       "SOBEWFF": 4,
       "Wine Tastings": 42,
-      "Hotels & Hospitality": 180,
+      "Hotels & Hospitality": 420,
       "Instagram Sources": 27,
       "Dice.fm": 4,
       "Shotgun": 3,
-      "World Cup 2026": 7
+      "World Cup 2026": 7,
+      "Coffee & Chill": 12,
+      "Diplo Run Club": 8,
+      "SoFlo Popups": 6,
+      "Design District": 18,
+      "Deering Estate": 12,
+      "Miami Festivals": 4,
+      "Regatta Grove": 12,
+      "South Pointe Park": 12,
+      "Coral Gables & Neighborhood Venues": 162,
+      "Coconut Grove": 252
     }
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 78,
+      "count": 83,
       "errors": []
     },
     {
@@ -103,6 +114,11 @@
       "errors": []
     },
     {
+      "name": "Dania Beach Improv",
+      "count": 36,
+      "errors": []
+    },
+    {
       "name": "Adrienne Arsht Center",
       "count": 32,
       "errors": []
@@ -134,7 +150,7 @@
     },
     {
       "name": "Hotels & Hospitality",
-      "count": 180,
+      "count": 420,
       "errors": []
     },
     {
@@ -155,6 +171,56 @@
     {
       "name": "World Cup 2026",
       "count": 7,
+      "errors": []
+    },
+    {
+      "name": "Coffee & Chill",
+      "count": 12,
+      "errors": []
+    },
+    {
+      "name": "Diplo Run Club",
+      "count": 8,
+      "errors": []
+    },
+    {
+      "name": "SoFlo Popups",
+      "count": 6,
+      "errors": []
+    },
+    {
+      "name": "Design District",
+      "count": 18,
+      "errors": []
+    },
+    {
+      "name": "Deering Estate",
+      "count": 12,
+      "errors": []
+    },
+    {
+      "name": "Miami Festivals",
+      "count": 4,
+      "errors": []
+    },
+    {
+      "name": "Regatta Grove",
+      "count": 12,
+      "errors": []
+    },
+    {
+      "name": "South Pointe Park",
+      "count": 12,
+      "errors": []
+    },
+    {
+      "name": "Coral Gables & Neighborhood Venues",
+      "count": 162,
+      "errors": []
+    },
+    {
+      "name": "Coconut Grove",
+      "count": 252,
       "errors": []
     }
   ]
