@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-01-22T13:48:31.542Z",
+  "scrapedAt": "2026-01-23T16:41:15.761Z",
   "stats": {
-    "total": 1818,
-    "deduplicated": 934,
+    "total": 1817,
+    "deduplicated": 382,
     "bySource": {
-      "Miami New Times": 84,
+      "Miami New Times": 83,
       "Farmers Markets": 80,
       "Music Venues": 48,
       "Professional Sports": 38,
@@ -49,7 +49,7 @@
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 84,
+      "count": 83,
       "errors": []
     },
     {

@@ -9,113 +9,106 @@ import type { RawEvent } from './types.js';
 // Source confidence levels
 export type SourceConfidence = 'high' | 'medium' | 'low';
 
-// Sources that scrape real data from APIs/websites or are verified real events
-const HIGH_CONFIDENCE_SOURCES = [
-  'Miami New Times',
-  'Resident Advisor',
-  'Dice.fm',
-  'Shotgun',
-  'Adrienne Arsht Center',
-  'Fillmore Miami Beach',
-  'Miami Improv',
-  'Dania Beach Improv',
-  'Professional Sports',
-  'Candlelight Concerts',
-  'III Points',
-  'SOBEWFF',
-  'World Cup 2026',
-  'Miami Festivals',
-  // Real recurring events that actually happen
-  'Farmers Markets',
-  'Beach Cleanups',
-  "Don't Tell Comedy",
-  'Coffee & Chill',
-  'Diplo Run Club',
+// VERIFIED sources - ONLY these are trusted
+// Must be: real API scrape, real calendar, or manually curated real events
+const VERIFIED_SOURCES = [
+  'Miami New Times',           // Real calendar scrape from their website
+  'Professional Sports',       // Real game schedules (Heat, Dolphins, etc.)
+  'III Points',                // Real festival with known dates
+  'SOBEWFF',                   // Real food & wine festival
+  'World Cup 2026',            // Real scheduled matches
+  'Miami Festivals',           // Real festivals with known dates
+  'Resident Advisor',          // Real event listings from RA
+  'Dice.fm',                   // Real ticketed events
+  'Shotgun',                   // Real ticketed events
+  // Manually verified REAL recurring events
+  'Farmers Markets',           // Known real weekly markets
+  'Beach Cleanups',            // Real scheduled cleanups with orgs
+  "Don't Tell Comedy",         // Real comedy shows (specific locations)
+  'Diplo Run Club',            // Verified real run club
+  'Coffee & Chill',            // Verified real meetups
+  // Manually curated real events (in cultural-attractions.ts)
+  'Cultural Attractions',      // Hand-picked REAL events only
+  'Real Venue Events',         // Hand-picked REAL events only
 ];
 
-// Sources with curated real events (manually added) or known venue programming
-const MEDIUM_CONFIDENCE_SOURCES = [
-  'Cultural Attractions',
-  'Real Venue Events',
-  'Music Venues',
-  'Cultural Venues',
-  'Nightlife & Clubs',
-  'Food Events',
-  'Wine Tastings',
-  'SoFlo Popups',
-  'Design District',
-  'Deering Estate',
-  'Regatta Grove',
-  'South Pointe Park',
-  'Fort Lauderdale',
-  'Instagram Sources',
-  'Latin Parties',
-  'Wellness & Fitness', // Known fitness classes at real venues
-];
-
-// Sources that generate SYNTHETIC/ASSUMED events - not verified
-// These are the problematic ones that assume events exist
-const LOW_CONFIDENCE_SOURCES = [
-  'Hotels & Hospitality', // Assumes pool parties, yoga, etc. without verification
-  'Coral Gables & Neighborhood Venues', // Generic venue suggestions
-  'Coconut Grove', // Generic venue suggestions
-  'Brickell Venues', // Generic venue suggestions
+// ALL OTHER SOURCES ARE SYNTHETIC - they generate assumed events
+// These will be automatically rejected
+const SYNTHETIC_SOURCES = [
+  // These generate fake "events" without real calendar data
+  'Adrienne Arsht Center',     // SYNTHETIC: generates "Broadway in Miami" etc.
+  'Fillmore Miami Beach',      // SYNTHETIC: generates "Live Rock at Fillmore"
+  'Miami Improv',              // SYNTHETIC: generates generic comedy shows
+  'Dania Beach Improv',        // SYNTHETIC: generates generic comedy shows
+  'Candlelight Concerts',      // SYNTHETIC: generates assumed concerts
+  'Music Venues',              // SYNTHETIC: "Live Jazz at Lagniappe"
+  'Cultural Venues',           // SYNTHETIC: "ICA Miami Free Admission"
+  'Nightlife & Clubs',         // SYNTHETIC: club nights without verification
+  'Hotels & Hospitality',      // SYNTHETIC: pool parties, yoga, etc.
+  'Wellness & Fitness',        // SYNTHETIC: assumed fitness classes
+  'Wine Tastings',             // SYNTHETIC: assumed wine events
+  'Food Events',               // SYNTHETIC: assumed food events
+  'SoFlo Popups',              // SYNTHETIC: assumed popup events
+  'Design District',           // SYNTHETIC: assumed events
+  'Deering Estate',            // SYNTHETIC: assumed events
+  'Regatta Grove',             // SYNTHETIC: assumed events
+  'South Pointe Park',         // SYNTHETIC: assumed events
+  'Fort Lauderdale',           // SYNTHETIC: assumed events
+  'Instagram Sources',         // SYNTHETIC: unverified
+  'Latin Parties',             // SYNTHETIC: assumed parties
+  'Coral Gables & Neighborhood Venues',
+  'Coconut Grove',
+  'Brickell Venues',
 ];
 
 export function getSourceConfidence(sourceName: string): SourceConfidence {
-  if (HIGH_CONFIDENCE_SOURCES.includes(sourceName)) return 'high';
-  if (MEDIUM_CONFIDENCE_SOURCES.includes(sourceName)) return 'medium';
-  return 'low';
+  if (VERIFIED_SOURCES.includes(sourceName)) return 'high';
+  if (SYNTHETIC_SOURCES.includes(sourceName)) return 'low';
+  return 'medium'; // Unknown sources get medium
 }
 
 /**
  * Quality score for an event (0-100)
  */
 export function scoreEventQuality(event: RawEvent): number {
-  let score = 60; // Base score - most events should pass
-
-  // Source confidence is the primary factor
   const confidence = getSourceConfidence(event.sourceName);
-  if (confidence === 'high') score += 20;
-  if (confidence === 'medium') score += 10;
-  if (confidence === 'low') score -= 30; // Strong penalty for synthetic sources
+
+  // SYNTHETIC SOURCES ARE AUTOMATICALLY REJECTED
+  // These generate assumed events without verification
+  if (confidence === 'low') {
+    return 0; // Fail immediately
+  }
+
+  // Filter out tour/activity listings (not events)
+  const tourPatterns = [
+    /speedboat/i,
+    /boat tour/i,
+    /bus tour/i,
+    /walking tour/i,
+    /helicopter/i,
+    /jet ski/i,
+    /kayak rental/i,
+    /ride and dine/i,
+    /segway/i,
+  ];
+  if (tourPatterns.some(p => p.test(event.title) || p.test(event.description))) {
+    return 0; // Tours are not events
+  }
+
+  // Verified sources pass by default
+  let score = 70;
 
   // Positive signals
-  if (event.sourceUrl) score += 5;
+  if (event.sourceUrl) score += 10;
   if (event.description.length > 100) score += 5;
 
-  // Named performer/artist in title (strong signal for real events)
+  // Named performer/artist in title
   const hasNamedPerformer = /\b(with|featuring|presents|ft\.?|feat\.?)\b/i.test(event.title) ||
     /vs\.?|versus/i.test(event.title);
   if (hasNamedPerformer) score += 10;
 
-  // ONLY penalize generic patterns from LOW confidence sources
-  // These are the synthetic/assumed events we want to filter
-  if (confidence === 'low') {
-    // Generic hotel/hospitality patterns
-    const genericHospitalityPatterns = [
-      /pool party/i,
-      /sunset (session|sound|cocktails?)/i,
-      /morning (yoga|meditation)/i,
-      /sound bath/i,
-      /breathwork/i,
-      /theater performance$/i, // Generic "Faena Theater Performance"
-    ];
-    if (genericHospitalityPatterns.some(p => p.test(event.title))) score -= 25;
-
-    // Generic venue suggestion patterns
-    const venuesuggestionPatterns = [
-      /^live (music|jazz|band) at /i,
-      /^dj at /i,
-      /^happy hour at /i,
-      /^brunch at /i,
-      /^(monday|tuesday|wednesday|thursday|friday|saturday|sunday) at /i,
-    ];
-    if (venuesuggestionPatterns.some(p => p.test(event.title))) score -= 25;
-  }
-
-  // Short description penalty (applies to all)
-  if (event.description.length < 30) score -= 10;
+  // Short description penalty
+  if (event.description.length < 30) score -= 15;
 
   return Math.max(0, Math.min(100, score));
 }
