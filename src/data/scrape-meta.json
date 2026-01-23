@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-01-23T16:41:15.761Z",
+  "scrapedAt": "2026-01-23T16:49:09.487Z",
   "stats": {
-    "total": 1817,
-    "deduplicated": 382,
+    "total": 1846,
+    "deduplicated": 411,
     "bySource": {
       "Miami New Times": 83,
       "Farmers Markets": 80,
@@ -42,7 +42,7 @@
       "Coconut Grove": 174,
       "Brickell Venues": 66,
       "Real Venue Events": 29,
-      "Cultural Attractions": 86,
+      "Cultural Attractions": 115,
       "Beach Cleanups": 16
     }
   },
@@ -239,7 +239,7 @@
     },
     {
       "name": "Cultural Attractions",
-      "count": 86,
+      "count": 115,
       "errors": []
     },
     {
