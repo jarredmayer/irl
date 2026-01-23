@@ -17,7 +17,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "Florida Panthers Watch Party presented by Yuengling. Open skating 6-8pm before puck drop at 8pm vs St. Louis Blues. Mascot appearances, giveaways, big screen viewing. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Florida Panthers Watch Party presented by Yuengling. Open skating 6-8pm before puck drop at 8pm vs St. Louis Blues. Mascot appearances, giveaways, big screen viewing.",
     "source": {
@@ -102,7 +102,7 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "South Florida's largest street hockey festival. Adult tournament presented by Coors Light & Youth tournament powered by Verizon. Located in Sunrise, Amerant Bank Arena is a local favorite. Best of all, it's free.",
     "description": "South Florida's largest street hockey festival. Adult tournament presented by Coors Light & Youth tournament powered by Verizon.",
     "source": {
@@ -132,7 +132,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
@@ -162,7 +162,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
@@ -220,7 +220,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Have-Nots Comedy has been making South Florida laugh for over 12 years featuring the best local and national comedians. Located in Dania Beach, Dania Beach Improv is a local favorite.",
     "description": "Have-Nots Comedy has been making South Florida laugh for over 12 years featuring the best local and national comedians.",
     "source": {
@@ -229,6 +229,91 @@
     },
     "editorPick": true,
     "venueId": "19be0041a46f"
+  },
+  {
+    "id": "edd882f881592995",
+    "title": "Bailey Zimmerman",
+    "startAt": "2026-01-30T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "Rising country star Bailey Zimmerman brings his platinum hits \"Rock and A Hard Place\" and \"Fall In Love\" live. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Rising country star Bailey Zimmerman brings his platinum hits \"Rock and A Hard Place\" and \"Fall In Love\" live.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "editorPick": true,
+    "venueId": "5d516220fdd4"
+  },
+  {
+    "id": "e02874cb7e984769",
+    "title": "Gipsy Kings featuring Nicolas Reyes",
+    "startAt": "2026-02-10T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "latin",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Get your music fix with locals who know.",
+    "editorialWhy": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\" Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\"",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "editorPick": true,
+    "venueId": "5d516220fdd4"
+  },
+  {
+    "id": "68637da37ef5c0f3",
+    "title": "NEEDTOBREATHE",
+    "startAt": "2026-02-06T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Get your music fix with locals who know.",
+    "editorialWhy": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\" Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\"",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "editorPick": true,
+    "venueId": "5d516220fdd4"
   },
   {
     "id": "764342175724a690",
@@ -248,7 +333,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Leah Rudick known for viral characters \"Wealthy Woman\" and \"Joannie\" with nearly 2 million followers. Located in Dania Beach, Dania Beach Improv is a local favorite.",
     "description": "Leah Rudick known for viral characters \"Wealthy Woman\" and \"Joannie\" with nearly 2 million followers.",
     "source": {
@@ -278,7 +363,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -349,66 +434,89 @@
     "venueId": "5fe8d06f12e5"
   },
   {
-    "id": "f8eb01bc08d291c7",
-    "title": "First Friday Art Walk",
-    "startAt": "2026-02-06T18:00:00",
+    "id": "4b4f011a58afe8c9",
+    "title": "Rascal Flatts with Lauren Alaina & Chris Lane",
+    "startAt": "2026-02-14T19:00:00",
     "timezone": "America/New_York",
-    "venueName": "Downtown Fort Lauderdale",
-    "address": "SW 2nd St, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1456,
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
     "city": "Fort Lauderdale",
     "tags": [
-      "art-gallery",
-      "free-event",
+      "live-music",
       "local-favorite"
     ],
-    "category": "Community",
-    "priceLabel": "Free",
+    "category": "Music",
+    "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "editorialWhy": "Valentine's Day country concert with Rascal Flatts and special guests Lauren Alaina and Chris Lane. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Valentine's Day country concert with Rascal Flatts and special guests Lauren Alaina and Chris Lane.",
     "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
     },
     "editorPick": true,
-    "seriesId": "2de5f55194f5",
-    "seriesName": "First Friday Art Walk",
-    "venueId": "2f3e26b9985c"
+    "venueId": "5d516220fdd4"
   },
   {
-    "id": "3b0cfec7ac6ff3f2",
-    "title": "First Friday Art Walk",
-    "startAt": "2026-03-06T18:00:00",
+    "id": "721cf499b0388b49",
+    "title": "Penn & Teller",
+    "startAt": "2026-01-31T20:00:00",
     "timezone": "America/New_York",
-    "venueName": "Downtown Fort Lauderdale",
-    "address": "SW 2nd St, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1456,
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
     "city": "Fort Lauderdale",
     "tags": [
-      "art-gallery",
-      "free-event",
+      "comedy",
       "local-favorite"
     ],
-    "category": "Community",
-    "priceLabel": "Free",
+    "category": "Comedy",
+    "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "The legendary magic duo Penn & Teller bring their unique blend of comedy, magic, and skepticism. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "The legendary magic duo Penn & Teller bring their unique blend of comedy, magic, and skepticism.",
     "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
     },
     "editorPick": true,
-    "seriesId": "2de5f55194f5",
-    "seriesName": "First Friday Art Walk",
-    "venueId": "2f3e26b9985c"
+    "venueId": "5d516220fdd4"
+  },
+  {
+    "id": "90226056167560f0",
+    "title": "Santana: Oneness Tour",
+    "startAt": "2026-04-11T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "latin",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "Guitar legend Carlos Santana brings his Oneness Tour, celebrating decades of Latin rock fusion. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Guitar legend Carlos Santana brings his Oneness Tour, celebrating decades of Latin rock fusion.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events/santana"
+    },
+    "editorPick": true,
+    "venueId": "5d516220fdd4"
   },
   {
     "id": "8f88a577654d3544",
@@ -431,7 +539,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -462,7 +570,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -493,7 +601,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -524,7 +632,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -533,254 +641,6 @@
     },
     "editorPick": false,
     "venueId": "5fe8d06f12e5"
-  },
-  {
-    "id": "38005ab1dcfeb5b9",
-    "title": "Downtown FLL Food Truck Rally",
-    "startAt": "2026-01-23T17:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Huizenga Plaza",
-    "address": "32 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "food-market",
-      "free-event",
-      "family-friendly"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
-    "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": false,
-    "seriesId": "b57a7fe6ecb1",
-    "seriesName": "Downtown FLL Food Truck Rally",
-    "venueId": "b0ab1c99310a"
-  },
-  {
-    "id": "190dd7447e4ba6e5",
-    "title": "Downtown FLL Food Truck Rally",
-    "startAt": "2026-01-30T17:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Huizenga Plaza",
-    "address": "32 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "food-market",
-      "free-event",
-      "family-friendly"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
-    "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": false,
-    "seriesId": "b57a7fe6ecb1",
-    "seriesName": "Downtown FLL Food Truck Rally",
-    "venueId": "b0ab1c99310a"
-  },
-  {
-    "id": "e9f6c5fb9457dc46",
-    "title": "Downtown FLL Food Truck Rally",
-    "startAt": "2026-02-06T17:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Huizenga Plaza",
-    "address": "32 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "food-market",
-      "free-event",
-      "family-friendly"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
-    "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": false,
-    "seriesId": "b57a7fe6ecb1",
-    "seriesName": "Downtown FLL Food Truck Rally",
-    "venueId": "b0ab1c99310a"
-  },
-  {
-    "id": "80ace5984bff0061",
-    "title": "Downtown FLL Food Truck Rally",
-    "startAt": "2026-02-13T17:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Huizenga Plaza",
-    "address": "32 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "food-market",
-      "free-event",
-      "family-friendly"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
-    "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": false,
-    "seriesId": "b57a7fe6ecb1",
-    "seriesName": "Downtown FLL Food Truck Rally",
-    "venueId": "b0ab1c99310a"
-  },
-  {
-    "id": "399577ace818c959",
-    "title": "Downtown FLL Food Truck Rally",
-    "startAt": "2026-02-20T17:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Huizenga Plaza",
-    "address": "32 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "food-market",
-      "free-event",
-      "family-friendly"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
-    "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": false,
-    "seriesId": "b57a7fe6ecb1",
-    "seriesName": "Downtown FLL Food Truck Rally",
-    "venueId": "b0ab1c99310a"
-  },
-  {
-    "id": "6d7ce2d10896c321",
-    "title": "Downtown FLL Food Truck Rally",
-    "startAt": "2026-02-27T17:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Huizenga Plaza",
-    "address": "32 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "food-market",
-      "free-event",
-      "family-friendly"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
-    "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": false,
-    "seriesId": "b57a7fe6ecb1",
-    "seriesName": "Downtown FLL Food Truck Rally",
-    "venueId": "b0ab1c99310a"
-  },
-  {
-    "id": "4e0d6b16c077bb85",
-    "title": "Downtown FLL Food Truck Rally",
-    "startAt": "2026-03-06T17:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Huizenga Plaza",
-    "address": "32 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "food-market",
-      "free-event",
-      "family-friendly"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
-    "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": false,
-    "seriesId": "b57a7fe6ecb1",
-    "seriesName": "Downtown FLL Food Truck Rally",
-    "venueId": "b0ab1c99310a"
-  },
-  {
-    "id": "c287e607a6c8f33d",
-    "title": "Downtown FLL Food Truck Rally",
-    "startAt": "2026-03-13T17:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Huizenga Plaza",
-    "address": "32 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "food-market",
-      "free-event",
-      "family-friendly"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
-    "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": false,
-    "seriesId": "b57a7fe6ecb1",
-    "seriesName": "Downtown FLL Food Truck Rally",
-    "venueId": "b0ab1c99310a"
   },
   {
     "id": "8be9bee7253752b9",
@@ -801,7 +661,7 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "Day 2 of South Florida's largest street hockey festival. Finals and championship games. Located in Sunrise, Amerant Bank Arena is a local favorite. Best of all, it's free.",
     "description": "Day 2 of South Florida's largest street hockey festival. Finals and championship games.",
     "source": {
@@ -810,6 +670,63 @@
     },
     "editorPick": true,
     "venueId": "bd875e433162"
+  },
+  {
+    "id": "0a34aca4bae94279",
+    "title": "Andrea Bocelli: Romanza 30th Anniversary Tour",
+    "startAt": "2026-02-12T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "The world's most beloved tenor celebrates 30 years of his breakthrough album Romanza. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "The world's most beloved tenor celebrates 30 years of his breakthrough album Romanza.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "editorPick": true,
+    "venueId": "5d516220fdd4"
+  },
+  {
+    "id": "92e34351d313b9b3",
+    "title": "Gilberto Santa Rosa",
+    "startAt": "2026-02-07T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "latin",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "El Caballero de la Salsa performs his legendary catalog of salsa romántica classics. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "El Caballero de la Salsa performs his legendary catalog of salsa romántica classics.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "editorPick": true,
+    "venueId": "5d516220fdd4"
   },
   {
     "id": "761682b49331c866",
@@ -829,7 +746,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2.",
     "source": {
@@ -884,7 +801,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -911,7 +828,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -938,7 +855,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
@@ -965,7 +882,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -992,7 +909,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -1019,7 +936,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
@@ -1046,7 +963,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -1100,7 +1017,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
@@ -1127,7 +1044,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -1154,7 +1071,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -1182,7 +1099,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel.",
     "source": {
@@ -1291,7 +1208,7 @@
     "category": "Community",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice.",
     "source": {
@@ -1300,6 +1217,62 @@
     },
     "editorPick": true,
     "venueId": "b3f22102a8c4"
+  },
+  {
+    "id": "32d2c7564a15a419",
+    "title": "Jerry Seinfeld",
+    "startAt": "2026-01-23T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "local-favorite"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Comedy legend Jerry Seinfeld performs his signature observational humor live. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Comedy legend Jerry Seinfeld performs his signature observational humor live.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "editorPick": true,
+    "venueId": "5d516220fdd4"
+  },
+  {
+    "id": "5afb85fc1defe414",
+    "title": "Rod Stewart",
+    "startAt": "2026-02-28T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Get your music fix with locals who know.",
+    "editorialWhy": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "editorPick": true,
+    "venueId": "5d516220fdd4"
   },
   {
     "id": "bc429755d5f7d280",
@@ -1318,7 +1291,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -1372,7 +1345,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -1410,262 +1383,6 @@
     "venueId": "bd875e433162"
   },
   {
-    "id": "3864b493f672e447",
-    "title": "Sunday Jazz Brunch Downtown",
-    "startAt": "2026-01-25T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "waterfront",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": true,
-    "seriesId": "f28cf977ea27",
-    "seriesName": "Sunday Jazz Brunch Downtown",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "2c227e91c670c2c5",
-    "title": "Sunday Jazz Brunch Downtown",
-    "startAt": "2026-02-01T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "waterfront",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": true,
-    "seriesId": "f28cf977ea27",
-    "seriesName": "Sunday Jazz Brunch Downtown",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "ca85a618a394fec7",
-    "title": "Sunday Jazz Brunch Downtown",
-    "startAt": "2026-02-08T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "waterfront",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": true,
-    "seriesId": "f28cf977ea27",
-    "seriesName": "Sunday Jazz Brunch Downtown",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "786e0e49fe482146",
-    "title": "Sunday Jazz Brunch Downtown",
-    "startAt": "2026-02-15T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "waterfront",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": true,
-    "seriesId": "f28cf977ea27",
-    "seriesName": "Sunday Jazz Brunch Downtown",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "e48ffbb0a3388206",
-    "title": "Sunday Jazz Brunch Downtown",
-    "startAt": "2026-02-22T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "waterfront",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": true,
-    "seriesId": "f28cf977ea27",
-    "seriesName": "Sunday Jazz Brunch Downtown",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "ab23e7a2669c6674",
-    "title": "Sunday Jazz Brunch Downtown",
-    "startAt": "2026-03-01T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "waterfront",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": true,
-    "seriesId": "f28cf977ea27",
-    "seriesName": "Sunday Jazz Brunch Downtown",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "6453ac890083dce2",
-    "title": "Sunday Jazz Brunch Downtown",
-    "startAt": "2026-03-08T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "waterfront",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": true,
-    "seriesId": "f28cf977ea27",
-    "seriesName": "Sunday Jazz Brunch Downtown",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
-    "id": "369a98b21e2bb825",
-    "title": "Sunday Jazz Brunch Downtown",
-    "startAt": "2026-03-15T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Riverwalk Fort Lauderdale",
-    "address": "Riverwalk, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "jazz",
-      "brunch",
-      "waterfront",
-      "free-event"
-    ],
-    "category": "Community",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
-    "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/fortlauderdaledowntown"
-    },
-    "editorPick": true,
-    "seriesId": "f28cf977ea27",
-    "seriesName": "Sunday Jazz Brunch Downtown",
-    "venueId": "ae04e2bfed8e"
-  },
-  {
     "id": "77683264d960b636",
     "title": "Bob Marley (Comedian)",
     "startAt": "2026-02-07T19:30:00",
@@ -1683,7 +1400,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more. Located in Dania Beach, Dania Beach Improv is a local favorite.",
     "description": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more.",
     "source": {
@@ -1692,6 +1409,34 @@
     },
     "editorPick": true,
     "venueId": "19be0041a46f"
+  },
+  {
+    "id": "11a37a013c138927",
+    "title": "Jerry Seinfeld",
+    "startAt": "2026-01-24T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "local-favorite"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Second night of Jerry Seinfeld at Hard Rock Live Hollywood. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Second night of Jerry Seinfeld at Hard Rock Live Hollywood.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "editorPick": true,
+    "venueId": "5d516220fdd4"
   },
   {
     "id": "4a0e48bf900562b8",
@@ -1710,7 +1455,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Live music performance at the War Memorial Auditorium. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Live music performance at the War Memorial Auditorium.",
     "source": {

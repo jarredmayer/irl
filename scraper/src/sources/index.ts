@@ -139,79 +139,67 @@ import type { BaseScraper } from './base.js';
 
 /**
  * Get all available scrapers
+ * ONLY VERIFIED SOURCES - real calendar data, not synthetic/assumed events
  */
 export function getAllScrapers(): BaseScraper[] {
   return [
-    // Original Miami sources
+    // === VERIFIED REAL SOURCES ===
+
+    // Real calendar scrape
     new MiamiNewTimesScraper(),
+
+    // Known real recurring events
     new FarmersMarketsScraper(),
-    new MusicVenuesScraper(),
-    new ProfessionalSportsScraper(),
-    new WellnessFitnessScraper(),
-    new CulturalVenuesScraper(),
-
-    // Fort Lauderdale
-    new FortLauderdaleScraper(),
-
-    // Nightlife & clubs
-    new NightlifeClubsScraper(),
-    new ResidentAdvisorScraper(),
-    new LatinPartiesScraper(),
-    new CandlelightConcertsScraper(),
-    new IIIPointsScraper(),
-
-    // Comedy & entertainment
+    new BeachCleanupsScraper(),
     new DontTellComedyScraper(),
-    new MiamiImprovScraper(),
-    new DaniaBeachImprovScraper(),
-    new ArshtCenterScraper(),
-    new FillmoreMiamiScraper(),
+    new DiploRunClubScraper(),
+    new CoffeeAndChillScraper(),
 
-    // Food & drink
-    new FoodEventsScraper(),
-    new MiamiSpiceScraper(),
-    new SOBEWFFScraper(),
-    new WineTastingsScraper(),
-
-    // Hotels & hospitality
-    new HotelsHospitalityScraper(),
-
-    // Instagram-sourced events
-    new InstagramSourcesScraper(),
-
-    // Ticketing platforms
-    new DiceFmScraper(),
-    new ShotgunScraper(),
+    // Real schedules
+    new ProfessionalSportsScraper(),
     new WorldCup2026Scraper(),
 
-    // Community & lifestyle
-    new CoffeeAndChillScraper(),
-    new DiploRunClubScraper(),
-    new SoFloPopupsScraper(),
-
-    // Cultural districts & estates
-    new DesignDistrictScraper(),
-    new DeeringEstateScraper(),
+    // Real festivals
+    new IIIPointsScraper(),
+    new SOBEWFFScraper(),
+    new MiamiSpiceScraper(),
     new MiamiFestivalsScraper(),
-    new RegattaGroveScraper(),
-    new SouthPointeParkScraper(),
 
-    // Coral Gables & neighborhood venues
-    new CoralGablesVenuesScraper(),
+    // Real ticketing platforms
+    new ResidentAdvisorScraper(),
+    new DiceFmScraper(),
+    new ShotgunScraper(),
 
-    // Coconut Grove
-    new CoconutGroveScraper(),
-
-    // Brickell
-    new BrickellVenuesScraper(),
-
-    // Real venue events (Zey Zey, Bandshell, etc.)
+    // Manually curated REAL events (venues, concerts, cultural)
     new RealVenueEventsScraper(),
-
-    // Cultural attractions (Pinecrest, Bass, Jungle Island, SOBEWFF, etc.)
     new CulturalAttractionsScraper(),
 
-    // Beach cleanups and environmental events
-    new BeachCleanupsScraper(),
+    // === DISABLED SYNTHETIC SOURCES ===
+    // These generate assumed events without real calendar data
+    // Real events from these venues are in CulturalAttractionsScraper
+    //
+    // new MusicVenuesScraper(),         // SYNTHETIC
+    // new WellnessFitnessScraper(),     // SYNTHETIC
+    // new CulturalVenuesScraper(),      // SYNTHETIC
+    // new FortLauderdaleScraper(),      // SYNTHETIC
+    // new NightlifeClubsScraper(),      // SYNTHETIC
+    // new LatinPartiesScraper(),        // SYNTHETIC
+    // new CandlelightConcertsScraper(), // SYNTHETIC
+    // new MiamiImprovScraper(),         // SYNTHETIC - real shows in CulturalAttractions
+    // new DaniaBeachImprovScraper(),    // SYNTHETIC - real shows in CulturalAttractions
+    // new ArshtCenterScraper(),         // SYNTHETIC - real shows in CulturalAttractions
+    // new FillmoreMiamiScraper(),       // SYNTHETIC - real shows in CulturalAttractions
+    // new FoodEventsScraper(),          // SYNTHETIC
+    // new WineTastingsScraper(),        // SYNTHETIC
+    // new HotelsHospitalityScraper(),   // SYNTHETIC
+    // new InstagramSourcesScraper(),    // SYNTHETIC/unverified
+    // new SoFloPopupsScraper(),         // SYNTHETIC
+    // new DesignDistrictScraper(),      // SYNTHETIC
+    // new DeeringEstateScraper(),       // SYNTHETIC
+    // new RegattaGroveScraper(),        // SYNTHETIC
+    // new SouthPointeParkScraper(),     // SYNTHETIC
+    // new CoralGablesVenuesScraper(),   // SYNTHETIC
+    // new CoconutGroveScraper(),        // SYNTHETIC
+    // new BrickellVenuesScraper(),      // SYNTHETIC
   ];
 }

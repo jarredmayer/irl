@@ -1,50 +1,33 @@
 {
-  "scrapedAt": "2026-01-23T16:56:59.889Z",
+  "scrapedAt": "2026-01-23T21:40:58.147Z",
   "stats": {
-    "total": 1877,
-    "deduplicated": 430,
+    "total": 504,
+    "deduplicated": 438,
     "bySource": {
       "Miami New Times": 83,
       "Farmers Markets": 80,
-      "Music Venues": 48,
-      "Professional Sports": 38,
-      "Wellness & Fitness": 114,
-      "Cultural Venues": 48,
-      "Fort Lauderdale": 84,
-      "Nightlife & Clubs": 40,
-      "Resident Advisor": 8,
-      "Latin Parties": 7,
-      "Candlelight Concerts": 12,
-      "III Points": 1,
+      "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
-      "Miami Improv": 36,
-      "Dania Beach Improv": 36,
-      "Adrienne Arsht Center": 32,
-      "Fillmore Miami Beach": 16,
-      "Food Events": 24,
-      "Miami Spice": 0,
+      "Diplo Run Club": 8,
+      "Coffee & Chill": 12,
+      "Professional Sports": 38,
+      "World Cup 2026": 7,
+      "III Points": 1,
       "SOBEWFF": 4,
-      "Wine Tastings": 42,
-      "Hotels & Hospitality": 390,
-      "Instagram Sources": 27,
+      "Miami Spice": 0,
+      "Miami Festivals": 4,
+      "Resident Advisor": 8,
       "Dice.fm": 4,
       "Shotgun": 3,
-      "World Cup 2026": 7,
-      "Coffee & Chill": 12,
-      "Diplo Run Club": 8,
-      "SoFlo Popups": 6,
-      "Design District": 18,
-      "Deering Estate": 12,
-      "Miami Festivals": 4,
-      "Regatta Grove": 12,
-      "South Pointe Park": 12,
-      "Coral Gables & Neighborhood Venues": 162,
-      "Coconut Grove": 174,
-      "Brickell Venues": 66,
       "Real Venue Events": 29,
-      "Cultural Attractions": 146,
-      "Beach Cleanups": 16
+      "Cultural Attractions": 191
     }
+  },
+  "delta": {
+    "added": 35,
+    "removed": 27,
+    "modified": 0,
+    "unchanged": 403
   },
   "sources": [
     {
@@ -58,53 +41,8 @@
       "errors": []
     },
     {
-      "name": "Music Venues",
-      "count": 48,
-      "errors": []
-    },
-    {
-      "name": "Professional Sports",
-      "count": 38,
-      "errors": []
-    },
-    {
-      "name": "Wellness & Fitness",
-      "count": 114,
-      "errors": []
-    },
-    {
-      "name": "Cultural Venues",
-      "count": 48,
-      "errors": []
-    },
-    {
-      "name": "Fort Lauderdale",
-      "count": 84,
-      "errors": []
-    },
-    {
-      "name": "Nightlife & Clubs",
-      "count": 40,
-      "errors": []
-    },
-    {
-      "name": "Resident Advisor",
-      "count": 8,
-      "errors": []
-    },
-    {
-      "name": "Latin Parties",
-      "count": 7,
-      "errors": []
-    },
-    {
-      "name": "Candlelight Concerts",
-      "count": 12,
-      "errors": []
-    },
-    {
-      "name": "III Points",
-      "count": 1,
+      "name": "Beach Cleanups",
+      "count": 16,
       "errors": []
     },
     {
@@ -113,33 +51,28 @@
       "errors": []
     },
     {
-      "name": "Miami Improv",
-      "count": 36,
+      "name": "Diplo Run Club",
+      "count": 8,
       "errors": []
     },
     {
-      "name": "Dania Beach Improv",
-      "count": 36,
+      "name": "Coffee & Chill",
+      "count": 12,
       "errors": []
     },
     {
-      "name": "Adrienne Arsht Center",
-      "count": 32,
+      "name": "Professional Sports",
+      "count": 38,
       "errors": []
     },
     {
-      "name": "Fillmore Miami Beach",
-      "count": 16,
+      "name": "World Cup 2026",
+      "count": 7,
       "errors": []
     },
     {
-      "name": "Food Events",
-      "count": 24,
-      "errors": []
-    },
-    {
-      "name": "Miami Spice",
-      "count": 0,
+      "name": "III Points",
+      "count": 1,
       "errors": []
     },
     {
@@ -148,18 +81,18 @@
       "errors": []
     },
     {
-      "name": "Wine Tastings",
-      "count": 42,
+      "name": "Miami Spice",
+      "count": 0,
       "errors": []
     },
     {
-      "name": "Hotels & Hospitality",
-      "count": 390,
+      "name": "Miami Festivals",
+      "count": 4,
       "errors": []
     },
     {
-      "name": "Instagram Sources",
-      "count": 27,
+      "name": "Resident Advisor",
+      "count": 8,
       "errors": []
     },
     {
@@ -173,78 +106,13 @@
       "errors": []
     },
     {
-      "name": "World Cup 2026",
-      "count": 7,
-      "errors": []
-    },
-    {
-      "name": "Coffee & Chill",
-      "count": 12,
-      "errors": []
-    },
-    {
-      "name": "Diplo Run Club",
-      "count": 8,
-      "errors": []
-    },
-    {
-      "name": "SoFlo Popups",
-      "count": 6,
-      "errors": []
-    },
-    {
-      "name": "Design District",
-      "count": 18,
-      "errors": []
-    },
-    {
-      "name": "Deering Estate",
-      "count": 12,
-      "errors": []
-    },
-    {
-      "name": "Miami Festivals",
-      "count": 4,
-      "errors": []
-    },
-    {
-      "name": "Regatta Grove",
-      "count": 12,
-      "errors": []
-    },
-    {
-      "name": "South Pointe Park",
-      "count": 12,
-      "errors": []
-    },
-    {
-      "name": "Coral Gables & Neighborhood Venues",
-      "count": 162,
-      "errors": []
-    },
-    {
-      "name": "Coconut Grove",
-      "count": 174,
-      "errors": []
-    },
-    {
-      "name": "Brickell Venues",
-      "count": 66,
-      "errors": []
-    },
-    {
       "name": "Real Venue Events",
       "count": 29,
       "errors": []
     },
     {
       "name": "Cultural Attractions",
-      "count": 146,
-      "errors": []
-    },
-    {
-      "name": "Beach Cleanups",
-      "count": 16,
+      "count": 191,
       "errors": []
     }
   ]
