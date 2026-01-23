@@ -49,7 +49,7 @@
     "category": "Art",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Art worth the trip.",
+    "shortWhy": "See what Miami's art scene is about.",
     "editorialWhy": "Spectacular outdoor lantern festival with 160 tons of steel, 200,000 feet of silk fabric, and nearly a million LED lights. Journey through the Amazon, African savannah, Ancient Egypt and Frozen Kingdom. Located in Watson Island, Jungle Island is a local favorite.",
     "description": "Spectacular outdoor lantern festival with 160 tons of steel, 200,000 feet of silk fabric, and nearly a million LED lights. Journey through the Amazon, African savannah, Ancient Egypt and Frozen Kingdom.",
     "source": {
@@ -78,7 +78,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "The kind of night Miami does best.",
     "editorialWhy": "US premiere of Rosalía's most ambitious production yet. The Spanish superstar launches the American leg of her 42-show global tour in Miami, where she spent a year creating her album LUX. Located in Downtown, Kaseya Center is a local favorite.",
     "description": "US premiere of Rosalía's most ambitious production yet. The Spanish superstar launches the American leg of her 42-show global tour in Miami, where she spent a year creating her album LUX.",
     "source": {
@@ -134,7 +134,7 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "Miami Dolphins NFL Draft Watch Party presented by Bud Light. Expert panel discussions, Dolphins alumni appearances, cheerleaders, mascot, and giveaways. Located in Doral, The Doral Yard is a local favorite. Best of all, it's free.",
     "description": "Miami Dolphins NFL Draft Watch Party presented by Bud Light. Expert panel discussions, Dolphins alumni appearances, cheerleaders, mascot, and giveaways.",
     "source": {
@@ -162,7 +162,7 @@
     "category": "Sports",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Miami's finest.",
     "editorialWhy": "Formula 1 Miami Grand Prix Day 1. Practice 1 at 1:30pm, Sprint Qualifying at 5:30pm. Support races include Porsche Carrera Cup and McLaren Trophy. Located in Miami Gardens, Miami International Autodrome is a local favorite.",
     "description": "Formula 1 Miami Grand Prix Day 1. Practice 1 at 1:30pm, Sprint Qualifying at 5:30pm. Support races include Porsche Carrera Cup and McLaren Trophy.",
     "source": {
@@ -193,7 +193,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Free outdoor Wallcast. Stéphane Denève and Jean-Yves Thibaudet perform Bernstein's Candide, Age of Anxiety, and Gershwin's An American in Paris. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
     "description": "Free outdoor Wallcast. Stéphane Denève and Jean-Yves Thibaudet perform Bernstein's Candide, Age of Anxiety, and Gershwin's An American in Paris.",
     "source": {
@@ -222,7 +222,7 @@
     "category": "Sports",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "10th anniversary of horse racing's hottest event. $3M Championship race at 5:45pm. Live on NBC. Performances by Black Coffee and Diplo. Located in Hallandale Beach, Gulfstream Park is a local favorite.",
     "description": "10th anniversary of horse racing's hottest event. $3M Championship race at 5:45pm. Live on NBC. Performances by Black Coffee and Diplo.",
     "source": {
@@ -251,7 +251,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Miami does best.",
     "editorialWhy": "Second Miami show added due to overwhelming demand. Rosalía performs from her album LUX, recorded with the London Symphony Orchestra. Located in Downtown, Kaseya Center is a local favorite.",
     "description": "Second Miami show added due to overwhelming demand. Rosalía performs from her album LUX, recorded with the London Symphony Orchestra.",
     "source": {
@@ -279,7 +279,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal.",
     "source": {
@@ -335,7 +335,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "4 Nations Face-Off Watch & Skate. Canada vs Finland on the big screens. Skating, Pantherland shopping, cocktails at The Federal. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "4 Nations Face-Off Watch & Skate. Canada vs Finland on the big screens. Skating, Pantherland shopping, cocktails at The Federal.",
     "source": {
@@ -364,7 +364,7 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "South Florida's largest street hockey festival. Adult tournament presented by Coors Light & Youth tournament powered by Verizon. Located in Sunrise, Amerant Bank Arena is a local favorite. Best of all, it's free.",
     "description": "South Florida's largest street hockey festival. Adult tournament presented by Coors Light & Youth tournament powered by Verizon.",
     "source": {
@@ -423,7 +423,7 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
+    "shortWhy": "See what Miami's art scene is about.",
     "editorialWhy": "Monthly art walk through Wynwood galleries. 30+ galleries open late with new exhibitions, live music, and street performances. Located in Wynwood, Wynwood Arts District is a local favorite. Best of all, it's free.",
     "description": "Monthly art walk through Wynwood galleries. 30+ galleries open late with new exhibitions, live music, and street performances.",
     "source": {
@@ -453,7 +453,7 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "See what Miami's art scene is about.",
+    "shortWhy": "Culture in full color.",
     "editorialWhy": "Monthly art walk through Wynwood galleries. 30+ galleries open late with new exhibitions, live music, and street performances. Located in Wynwood, Wynwood Arts District is a local favorite. Best of all, it's free.",
     "description": "Monthly art walk through Wynwood galleries. 30+ galleries open late with new exhibitions, live music, and street performances.",
     "source": {
@@ -484,7 +484,7 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Move your body with Miami's fitness community.",
+    "shortWhy": "Start your day right with locals.",
     "editorialWhy": "Monthly community bike ride through Miami streets. Meet at Government Center, ride through the city with hundreds of cyclists. Located in Downtown, Government Center is a local favorite. Best of all, it's free.",
     "description": "Monthly community bike ride through Miami streets. Meet at Government Center, ride through the city with hundreds of cyclists.",
     "source": {
@@ -546,7 +546,7 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Move your body with Miami's fitness community.",
+    "shortWhy": "Free workout with good people.",
     "editorialWhy": "Monthly community bike ride through Miami streets. Meet at Government Center, ride through the city with hundreds of cyclists. Located in Downtown, Government Center is a local favorite. Best of all, it's free.",
     "description": "Monthly community bike ride through Miami streets. Meet at Government Center, ride through the city with hundreds of cyclists.",
     "source": {
@@ -577,7 +577,7 @@
     "category": "Art",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "See what Miami's art scene is about.",
+    "shortWhy": "Art worth the trip.",
     "editorialWhy": "62nd annual arts festival. 285+ artists, live performances, family activities. Overlooking Biscayne Bay at Dinner Key Marina. Located in Coconut Grove, Regatta Park is a local favorite.",
     "description": "62nd annual arts festival. 285+ artists, live performances, family activities. Overlooking Biscayne Bay at Dinner Key Marina.",
     "source": {
@@ -639,7 +639,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "Monthly Turtle Tuesday cleanup to protect sea turtle nesting habitats. Learn about marine conservation while volunteering. Located in South Beach, South Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly Turtle Tuesday cleanup to protect sea turtle nesting habitats. Learn about marine conservation while volunteering.",
     "source": {
@@ -670,7 +670,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Free outdoor Wallcast. Explore American chamber music from colonial-era compositions to groundbreaking 20th-century works. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
     "description": "Free outdoor Wallcast. Explore American chamber music from colonial-era compositions to groundbreaking 20th-century works.",
     "source": {
@@ -793,7 +793,7 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Move your body with Miami's fitness community.",
+    "shortWhy": "Start your day right with locals.",
     "editorialWhy": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after. Located in South Beach, South Pointe Park is a local favorite. Best of all, it's free.",
     "description": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after.",
     "source": {
@@ -825,7 +825,7 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Move your body with Miami's fitness community.",
+    "shortWhy": "Free workout with good people.",
     "editorialWhy": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after. Located in South Beach, South Pointe Park is a local favorite. Best of all, it's free.",
     "description": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after.",
     "source": {
@@ -857,7 +857,7 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
+    "shortWhy": "Move your body with Miami's fitness community.",
     "editorialWhy": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after. Located in South Beach, South Pointe Park is a local favorite. Best of all, it's free.",
     "description": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after.",
     "source": {
@@ -889,7 +889,7 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Move your body with Miami's fitness community.",
+    "shortWhy": "Start your day right with locals.",
     "editorialWhy": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after. Located in South Beach, South Pointe Park is a local favorite. Best of all, it's free.",
     "description": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after.",
     "source": {
@@ -921,7 +921,7 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Move your body with Miami's fitness community.",
+    "shortWhy": "Free workout with good people.",
     "editorialWhy": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after. Located in South Beach, South Pointe Park is a local favorite. Best of all, it's free.",
     "description": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after.",
     "source": {
@@ -985,7 +985,7 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Start your day right with locals.",
+    "shortWhy": "Move your body with Miami's fitness community.",
     "editorialWhy": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after. Located in South Beach, South Pointe Park is a local favorite. Best of all, it's free.",
     "description": "Weekly run club founded by Diplo. 5K route along the beach, all levels welcome. Stay for stretches and socializing after.",
     "source": {
@@ -1046,7 +1046,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Free outdoor WALLCAST exploring themes of identity and justice through contemporary classical music, protest, and gospel. Located in South Beach, SoundScape Park is a local favorite. Best of all, it's free.",
     "description": "Free outdoor WALLCAST exploring themes of identity and justice through contemporary classical music, protest, and gospel.",
     "source": {
@@ -1076,7 +1076,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
@@ -1136,7 +1136,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
@@ -1164,7 +1164,7 @@
     "category": "Sports",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Miami's finest.",
     "editorialWhy": "Formula 1 Miami Grand Prix Day 2. F1 Sprint at 1pm, Qualifying at 5pm. Fan zones, entertainment, and world-class racing. Located in Miami Gardens, Miami International Autodrome is a local favorite.",
     "description": "Formula 1 Miami Grand Prix Day 2. F1 Sprint at 1pm, Qualifying at 5pm. Fan zones, entertainment, and world-class racing.",
     "source": {
@@ -1192,7 +1192,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Have-Nots Comedy has been making South Florida laugh for over 12 years featuring the best local and national comedians. Located in Dania Beach, Dania Beach Improv is a local favorite.",
     "description": "Have-Nots Comedy has been making South Florida laugh for over 12 years featuring the best local and national comedians.",
     "source": {
@@ -1222,7 +1222,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "Biweekly outdoor market with 100+ vendors. Vintage finds, local crafts, food trucks, and live music on the waterfront. Located in Coconut Grove, Regatta Park is a local favorite. Best of all, it's free.",
     "description": "Biweekly outdoor market with 100+ vendors. Vintage finds, local crafts, food trucks, and live music on the waterfront.",
     "source": {
@@ -1293,6 +1293,35 @@
     "venueId": "c1286ca85e29"
   },
   {
+    "id": "dbdc84e5e7ec22d3",
+    "title": "Deering Contemporary 2026 Opening",
+    "startAt": "2026-01-25T12:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Deering Estate",
+    "address": "16701 SW 72nd Ave, Miami, FL 33157",
+    "neighborhood": "Palmetto Bay",
+    "lat": 25.6148,
+    "lng": -80.3112,
+    "city": "Miami",
+    "tags": [
+      "art-gallery",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "Opening of \"Here We Gather...All We Need, We Already Have\" - artists create works using materials found at the Estate. Located in Palmetto Bay, Deering Estate is a local favorite.",
+    "description": "Opening of \"Here We Gather...All We Need, We Already Have\" - artists create works using materials found at the Estate.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://deeringestate.org/events/"
+    },
+    "editorPick": true,
+    "venueId": "376988e17b40"
+  },
+  {
     "id": "14b74a6a72aedcc4",
     "title": "To Wong Foo, Thanks for Everything! Julie Newmar",
     "startAt": "2026-01-29T21:00:00",
@@ -1310,7 +1339,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Dive into Miami's cultural richness.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Classic film screening of the 1995 drag queen road comedy starring Wesley Snipes, Patrick Swayze, and John Leguizamo. Located in South Beach, O Cinema South Beach is a local favorite.",
     "description": "Classic film screening of the 1995 drag queen road comedy starring Wesley Snipes, Patrick Swayze, and John Leguizamo.",
     "source": {
@@ -1340,7 +1369,7 @@
     "category": "Art",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Art worth the trip.",
+    "shortWhy": "Culture in full color.",
     "editorialWhy": "Spectacular outdoor lantern festival. Journey through the Amazon, African savannah, Ancient Egypt and Frozen Kingdom. Located in Watson Island, Jungle Island is a local favorite.",
     "description": "Spectacular outdoor lantern festival. Journey through the Amazon, African savannah, Ancient Egypt and Frozen Kingdom.",
     "source": {
@@ -1371,7 +1400,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Free outdoor Wallcast. Familiar film themes meet bold orchestral works exploring early Hollywood's classical roots. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
     "description": "Free outdoor Wallcast. Familiar film themes meet bold orchestral works exploring early Hollywood's classical roots.",
     "source": {
@@ -1380,6 +1409,34 @@
     },
     "editorPick": true,
     "venueId": "6093bbd4fb5a"
+  },
+  {
+    "id": "7a65c82ecfc7b461",
+    "title": "Candlelight: The Best of Hans Zimmer",
+    "startAt": "2026-01-24T18:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Scottish Rite Temple MIA",
+    "address": "471 NW 3rd St, Miami, FL 33128",
+    "neighborhood": "Downtown",
+    "lat": 25.7789,
+    "lng": -80.1998,
+    "city": "Miami",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "editorialWhy": "String quartet performs Hans Zimmer film scores by candlelight. Interstellar, Inception, The Dark Knight, and more. Located in Downtown, Scottish Rite Temple MIA is a local favorite.",
+    "description": "String quartet performs Hans Zimmer film scores by candlelight. Interstellar, Inception, The Dark Knight, and more.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://feverup.com/en/miami/candlelight"
+    },
+    "editorPick": true,
+    "venueId": "20e4535fdd6c"
   },
   {
     "id": "4ddc60c69c4d8d9a",
@@ -1402,7 +1459,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Free outdoor Wallcast. Orchestral color and vocal expression unite in a program centered on love, poetry and myth. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
     "description": "Free outdoor Wallcast. Orchestral color and vocal expression unite in a program centered on love, poetry and myth.",
     "source": {
@@ -1460,7 +1517,7 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Art worth the trip.",
+    "shortWhy": "See what Miami's art scene is about.",
     "editorialWhy": "Monthly gallery walk in Coral Gables. Explore local galleries, meet artists, and enjoy complimentary refreshments. Located in Coral Gables, Coral Gables Art & Gallery District is a local favorite. Best of all, it's free.",
     "description": "Monthly gallery walk in Coral Gables. Explore local galleries, meet artists, and enjoy complimentary refreshments.",
     "source": {
@@ -1469,6 +1526,35 @@
     },
     "editorPick": true,
     "venueId": "833a73e56b7d"
+  },
+  {
+    "id": "2e6db1fab3066b39",
+    "title": "PAMM: Art + Soul 13th Anniversary",
+    "startAt": "2026-02-07T18:15:00",
+    "timezone": "America/New_York",
+    "venueName": "Pérez Art Museum Miami",
+    "address": "1103 Biscayne Blvd, Miami, FL 33132",
+    "neighborhood": "Downtown",
+    "lat": 25.7858,
+    "lng": -80.1863,
+    "city": "Miami",
+    "tags": [
+      "art-gallery",
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "PAMM's 13th anniversary Art + Soul gala honoring Fab 5 Freddy. Art, cocktails, music, and dancing on Biscayne Bay. Located in Downtown, Pérez Art Museum Miami is a local favorite.",
+    "description": "PAMM's 13th anniversary Art + Soul gala honoring Fab 5 Freddy. Art, cocktails, music, and dancing on Biscayne Bay.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.pamm.org/en/events/"
+    },
+    "editorPick": true,
+    "venueId": "bfaa19e18d1a"
   },
   {
     "id": "8c80e15b746c1e95",
@@ -1488,7 +1574,7 @@
     "category": "Sports",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "Cheer on Miami's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world. Located in Miami Gardens, Hard Rock Stadium is a local favorite.",
     "description": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world.",
     "source": {
@@ -1516,7 +1602,7 @@
     "category": "Sports",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Miami's finest.",
     "editorialWhy": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world. Located in Miami Gardens, Hard Rock Stadium is a local favorite.",
     "description": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world.",
     "source": {
@@ -1572,7 +1658,7 @@
     "category": "Sports",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world. Located in Miami Gardens, Hard Rock Stadium is a local favorite.",
     "description": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world.",
     "source": {
@@ -1600,7 +1686,7 @@
     "category": "Sports",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Miami's finest.",
     "editorialWhy": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world. Located in Miami Gardens, Hard Rock Stadium is a local favorite.",
     "description": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world.",
     "source": {
@@ -1628,7 +1714,7 @@
     "category": "Sports",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Miami's finest.",
     "editorialWhy": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world. Located in Miami Gardens, Hard Rock Stadium is a local favorite.",
     "description": "FIFA World Cup 2026 match at Hard Rock Stadium. Miami is a host city for the biggest sporting event in the world.",
     "source": {
@@ -1637,6 +1723,35 @@
     },
     "editorPick": true,
     "venueId": "6fa6da8adfb5"
+  },
+  {
+    "id": "9b1a03476c8b9dcb",
+    "title": "NSU Art Museum: Shared Dreams Exhibition",
+    "startAt": "2026-01-25T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown",
+    "lat": 26.1186,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "museum",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "Major exhibition of 88 works of 20th-century Latin American art from the Goodman collection. Through Sept 2026. Located in Downtown, NSU Art Museum is a local favorite.",
+    "description": "Major exhibition of 88 works of 20th-century Latin American art from the Goodman collection. Through Sept 2026.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "editorPick": true,
+    "venueId": "cf61c35657eb"
   },
   {
     "id": "88bd84af4841823d",
@@ -1658,7 +1773,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Beach cleanup in partnership with the Miami Marathon. Help keep our beaches clean before the big race weekend. Located in South Beach, South Beach is a local favorite. Best of all, it's free.",
     "description": "Beach cleanup in partnership with the Miami Marathon. Help keep our beaches clean before the big race weekend.",
     "source": {
@@ -1714,7 +1829,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Rising country star Bailey Zimmerman brings his platinum hits \"Rock and A Hard Place\" and \"Fall In Love\" live. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Rising country star Bailey Zimmerman brings his platinum hits \"Rock and A Hard Place\" and \"Fall In Love\" live.",
     "source": {
@@ -1743,7 +1858,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "German electronic duo Booka Shade performing live. Known for \"Body Language\" and their Get Physical releases. Located in Downtown Miami, Zey Zey is a local favorite.",
     "description": "German electronic duo Booka Shade performing live. Known for \"Body Language\" and their Get Physical releases.",
     "source": {
@@ -1781,6 +1896,36 @@
     },
     "editorPick": true,
     "venueId": "6630c1663ddd"
+  },
+  {
+    "id": "1d7b225a4449dc99",
+    "title": "ICA Miami: Dolce & Gabbana Exhibition Opening",
+    "startAt": "2026-02-06T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "ICA Miami",
+    "address": "61 NE 41st St, Miami, FL 33137",
+    "neighborhood": "Design District",
+    "lat": 25.8135,
+    "lng": -80.1918,
+    "city": "Miami",
+    "tags": [
+      "art-gallery",
+      "museum",
+      "free-event",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "Opening of \"From the Heart to the Hands\" - over 300 pieces celebrating Dolce & Gabbana. Runs through June 14. Located in Design District, ICA Miami is a local favorite. Best of all, it's free.",
+    "description": "Opening of \"From the Heart to the Hands\" - over 300 pieces celebrating Dolce & Gabbana. Runs through June 14.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://icamiami.org/exhibitions/"
+    },
+    "editorPick": true,
+    "venueId": "3cf1ab04c639"
   },
   {
     "id": "0f9e7b2545af4fde",
@@ -1859,7 +2004,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\" Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\"",
     "source": {
@@ -1887,7 +2032,7 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "Luxury automotive showcase in Miami Design District. Day 2 with collector car displays and VIP experiences. Located in Design District, Miami Design District is a local favorite.",
     "description": "Luxury automotive showcase in Miami Design District. Day 2 with collector car displays and VIP experiences.",
     "source": {
@@ -1915,7 +2060,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\" Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\"",
     "source": {
@@ -1944,7 +2089,7 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "Official FIFA Fan Fest with giant screens, live music, food vendors. Free entry throughout the tournament. Located in Downtown Miami, Bayfront Park is a local favorite. Best of all, it's free.",
     "description": "Official FIFA Fan Fest with giant screens, live music, food vendors. Free entry throughout the tournament.",
     "source": {
@@ -1974,7 +2119,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission. Located in Key Biscayne, Key Biscayne Community Church is a local favorite. Best of all, it's free.",
     "description": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission.",
     "source": {
@@ -2004,7 +2149,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission. Located in Key Biscayne, Key Biscayne Community Church is a local favorite. Best of all, it's free.",
     "description": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission.",
     "source": {
@@ -2034,7 +2179,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission. Located in Key Biscayne, Key Biscayne Community Church is a local favorite. Best of all, it's free.",
     "description": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission.",
     "source": {
@@ -2064,7 +2209,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission. Located in Key Biscayne, Key Biscayne Community Church is a local favorite. Best of all, it's free.",
     "description": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission.",
     "source": {
@@ -2094,7 +2239,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission. Located in Key Biscayne, Key Biscayne Community Church is a local favorite. Best of all, it's free.",
     "description": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission.",
     "source": {
@@ -2124,7 +2269,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission. Located in Key Biscayne, Key Biscayne Community Church is a local favorite. Best of all, it's free.",
     "description": "Weekly Saturday farmers market with farm-fresh produce, artisan goods, and gourmet treats. Free admission.",
     "source": {
@@ -2154,7 +2299,7 @@
     "category": "Culture",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Dive into Miami's cultural richness.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Free annual celebration of Pan-African culture with music, dance, food, and community at the Arsht Center. Located in Downtown Miami, Adrienne Arsht Center is a local favorite. Best of all, it's free.",
     "description": "Free annual celebration of Pan-African culture with music, dance, food, and community at the Arsht Center.",
     "source": {
@@ -2184,7 +2329,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Vinyl record fair with live performance by Tony And The Kings. Dig through crates and discover new music. Located in Downtown Miami, Zey Zey is a local favorite. Best of all, it's free.",
     "description": "Vinyl record fair with live performance by Tony And The Kings. Dig through crates and discover new music.",
     "source": {
@@ -2193,6 +2338,34 @@
     },
     "editorPick": true,
     "venueId": "9c9a1761ea9b"
+  },
+  {
+    "id": "914fba1898a6cfe7",
+    "title": "Candlelight: A Tribute to Queen",
+    "startAt": "2026-01-24T21:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Scottish Rite Temple MIA",
+    "address": "471 NW 3rd St, Miami, FL 33128",
+    "neighborhood": "Downtown",
+    "lat": 25.7789,
+    "lng": -80.1998,
+    "city": "Miami",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "editorialWhy": "String quartet performs Queen classics by candlelight. Bohemian Rhapsody, We Are The Champions, and more. Located in Downtown, Scottish Rite Temple MIA is a local favorite.",
+    "description": "String quartet performs Queen classics by candlelight. Bohemian Rhapsody, We Are The Champions, and more.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://feverup.com/en/miami/candlelight"
+    },
+    "editorPick": true,
+    "venueId": "20e4535fdd6c"
   },
   {
     "id": "075f5d4a21a2e9a7",
@@ -2246,7 +2419,7 @@
     "category": "Culture",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "Free outdoor Wallcast. Stéphane Denève conducts with Miami City Ballet in an American dance celebration. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
     "description": "Free outdoor Wallcast. Stéphane Denève conducts with Miami City Ballet in an American dance celebration.",
     "source": {
@@ -2277,7 +2450,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Day 1 of GroundUP Music Festival. Snarky Puppy and friends bring world-class musicianship to the beach. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Day 1 of GroundUP Music Festival. Snarky Puppy and friends bring world-class musicianship to the beach.",
     "source": {
@@ -2368,7 +2541,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Free outdoor Wallcast. Pioneering flutist Claire Chase pushes the boundaries of her ancient instrument. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
     "description": "Free outdoor Wallcast. Pioneering flutist Claire Chase pushes the boundaries of her ancient instrument.",
     "source": {
@@ -2398,7 +2571,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Miami's premier independent music, art, and technology festival. Multiple stages, world-class artists. Located in Wynwood, Mana Wynwood is a local favorite.",
     "description": "Miami's premier independent music, art, and technology festival. Multiple stages, world-class artists.",
     "source": {
@@ -2428,7 +2601,7 @@
     "category": "Culture",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "One of America's top-ranked arts festivals. 300+ artists, live music, food vendors along the bayfront. Located in Coconut Grove, Coconut Grove is a local favorite. Best of all, it's free.",
     "description": "One of America's top-ranked arts festivals. 300+ artists, live music, food vendors along the bayfront.",
     "source": {
@@ -2517,7 +2690,7 @@
     "category": "Family",
     "priceLabel": "$",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "Interactive music experience for families with young children. Singing, dancing, and fun at the beach. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Interactive music experience for families with young children. Singing, dancing, and fun at the beach.",
     "source": {
@@ -2545,7 +2718,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "Screening of Dee Rees' acclaimed coming-of-age drama about a Brooklyn teenager embracing her identity. Located in South Beach, O Cinema South Beach is a local favorite.",
     "description": "Screening of Dee Rees' acclaimed coming-of-age drama about a Brooklyn teenager embracing her identity.",
     "source": {
@@ -2575,7 +2748,7 @@
     "category": "Art",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
+    "shortWhy": "Art worth the trip.",
     "editorialWhy": "Valentine's Day at Luminosa. Spectacular outdoor lantern festival - romantic evening under the lights. Located in Watson Island, Jungle Island is a local favorite.",
     "description": "Valentine's Day at Luminosa. Spectacular outdoor lantern festival - romantic evening under the lights.",
     "source": {
@@ -2642,6 +2815,34 @@
     "venueId": "7f11618472bc"
   },
   {
+    "id": "2db54700222caf44",
+    "title": "Candlelight: Tribute to Whitney Houston",
+    "startAt": "2026-02-01T18:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Jungle Island",
+    "address": "1111 Parrot Jungle Trail, Miami, FL 33132",
+    "neighborhood": "Watson Island",
+    "lat": 25.7856,
+    "lng": -80.1747,
+    "city": "Miami",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "editorialWhy": "Candlelight tribute to Whitney Houston at Jungle Island. I Will Always Love You, Greatest Love of All. Located in Watson Island, Jungle Island is a local favorite.",
+    "description": "Candlelight tribute to Whitney Houston at Jungle Island. I Will Always Love You, Greatest Love of All.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://feverup.com/en/miami/candlelight"
+    },
+    "editorPick": true,
+    "venueId": "3291c4d2f43c"
+  },
+  {
     "id": "c810c41162794cc7",
     "title": "Valentine's Sweet Fest",
     "startAt": "2026-02-07T10:00:00",
@@ -2688,7 +2889,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Dive into Miami's cultural richness.",
     "editorialWhy": "Annual film festival showcasing independent and international films. Multiple screenings over 4 days. Located in Key Biscayne, Key Biscayne Community Center is a local favorite.",
     "description": "Annual film festival showcasing independent and international films. Multiple screenings over 4 days.",
     "source": {
@@ -2746,7 +2947,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Special tribute concert celebrating 100 years of Miles Davis. Jazz legends perform his iconic works. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Special tribute concert celebrating 100 years of Miles Davis. Jazz legends perform his iconic works.",
     "source": {
@@ -2775,7 +2976,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Grammy Award winner Samara J brings the warmth and sophistication of jazz's golden era to the Arsht. Located in Downtown Miami, Adrienne Arsht Center is a local favorite.",
     "description": "Grammy Award winner Samara J brings the warmth and sophistication of jazz's golden era to the Arsht.",
     "source": {
@@ -2803,7 +3004,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Classical crossover quartet Il Divo performs their greatest hits celebrating two decades of success. Located in Downtown Miami, Adrienne Arsht Center is a local favorite.",
     "description": "Classical crossover quartet Il Divo performs their greatest hits celebrating two decades of success.",
     "source": {
@@ -2812,6 +3013,64 @@
     },
     "editorPick": true,
     "venueId": "0b2e91c0a428"
+  },
+  {
+    "id": "261899a2d7cb5c29",
+    "title": "Vizcaya Village Night Market",
+    "startAt": "2026-02-12T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Vizcaya Museum & Gardens",
+    "address": "3251 S Miami Ave, Miami, FL 33129",
+    "neighborhood": "Coconut Grove",
+    "lat": 25.7441,
+    "lng": -80.2105,
+    "city": "Miami",
+    "tags": [
+      "food-market",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Community",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Local vibes, real connections.",
+    "editorialWhy": "Monthly night market in Vizcaya Village. Local vendors, creativity, wellness, and after-hours tours. Located in Coconut Grove, Vizcaya Museum & Gardens is a local favorite.",
+    "description": "Monthly night market in Vizcaya Village. Local vendors, creativity, wellness, and after-hours tours.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://vizcaya.org/calendar/"
+    },
+    "editorPick": true,
+    "venueId": "3f10714da7ae"
+  },
+  {
+    "id": "fb387d84c440888b",
+    "title": "Vizcaya Village Night Market",
+    "startAt": "2026-03-12T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Vizcaya Museum & Gardens",
+    "address": "3251 S Miami Ave, Miami, FL 33129",
+    "neighborhood": "Coconut Grove",
+    "lat": 25.7441,
+    "lng": -80.2105,
+    "city": "Miami",
+    "tags": [
+      "food-market",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Community",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Connect with the Miami community.",
+    "editorialWhy": "Monthly night market in Vizcaya Village. Local vendors, creativity, wellness, and after-hours tours. Located in Coconut Grove, Vizcaya Museum & Gardens is a local favorite.",
+    "description": "Monthly night market in Vizcaya Village. Local vendors, creativity, wellness, and after-hours tours.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://vizcaya.org/calendar/"
+    },
+    "editorPick": true,
+    "venueId": "3f10714da7ae"
   },
   {
     "id": "2cf184bec2fe65ae",
@@ -2833,7 +3092,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -2863,7 +3122,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -2893,7 +3152,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -2923,7 +3182,7 @@
     "category": "Wellness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Find your calm in the Magic City.",
+    "shortWhy": "Reset and recharge.",
     "editorialWhy": "Weekly coffee meetup for creatives, freelancers, and anyone who wants to connect over great coffee. Located in Wynwood, Panther Coffee is a local favorite. Best of all, it's free.",
     "description": "Weekly coffee meetup for creatives, freelancers, and anyone who wants to connect over great coffee.",
     "source": {
@@ -2987,7 +3246,7 @@
     "category": "Wellness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Wellness done right.",
+    "shortWhy": "Find your calm in the Magic City.",
     "editorialWhy": "Weekly coffee meetup for creatives, freelancers, and anyone who wants to connect over great coffee. Located in Wynwood, Panther Coffee is a local favorite. Best of all, it's free.",
     "description": "Weekly coffee meetup for creatives, freelancers, and anyone who wants to connect over great coffee.",
     "source": {
@@ -3019,7 +3278,7 @@
     "category": "Wellness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Reset and recharge.",
+    "shortWhy": "Wellness done right.",
     "editorialWhy": "Weekly coffee meetup for creatives, freelancers, and anyone who wants to connect over great coffee. Located in Wynwood, Panther Coffee is a local favorite. Best of all, it's free.",
     "description": "Weekly coffee meetup for creatives, freelancers, and anyone who wants to connect over great coffee.",
     "source": {
@@ -3083,7 +3342,7 @@
     "category": "Wellness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Find your calm in the Magic City.",
+    "shortWhy": "Wellness done right.",
     "editorialWhy": "Weekly coffee meetup for creatives, freelancers, and anyone who wants to connect over great coffee. Located in Wynwood, Panther Coffee is a local favorite. Best of all, it's free.",
     "description": "Weekly coffee meetup for creatives, freelancers, and anyone who wants to connect over great coffee.",
     "source": {
@@ -3143,7 +3402,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Hip-hop legends Digable Planets. Jazz-infused rap classics like \"Rebirth of Slick (Cool Like Dat)\". Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Hip-hop legends Digable Planets. Jazz-infused rap classics like \"Rebirth of Slick (Cool Like Dat)\".",
     "source": {
@@ -3174,7 +3433,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Day 2 of GroundUP Music Festival. More incredible performances from Snarky Puppy and collaborators. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Day 2 of GroundUP Music Festival. More incredible performances from Snarky Puppy and collaborators.",
     "source": {
@@ -3203,7 +3462,7 @@
     "category": "Art",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
+    "shortWhy": "Art worth the trip.",
     "editorialWhy": "Intimate breakfast with The Bass curator. Learn about current exhibitions and upcoming programming. Located in South Beach, The Bass Museum of Art is a local favorite.",
     "description": "Intimate breakfast with The Bass curator. Learn about current exhibitions and upcoming programming.",
     "source": {
@@ -3261,7 +3520,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Valentine's Day country concert with Rascal Flatts and special guests Lauren Alaina and Chris Lane. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Valentine's Day country concert with Rascal Flatts and special guests Lauren Alaina and Chris Lane.",
     "source": {
@@ -3350,7 +3609,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors. Located in South Beach, Lincoln Road Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors.",
     "editorPick": true,
@@ -3377,7 +3636,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors. Located in South Beach, Lincoln Road Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors.",
     "editorPick": true,
@@ -3404,7 +3663,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors. Located in South Beach, Lincoln Road Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors.",
     "editorPick": true,
@@ -3431,7 +3690,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors. Located in South Beach, Lincoln Road Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors.",
     "editorPick": true,
@@ -3458,7 +3717,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors. Located in South Beach, Lincoln Road Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors.",
     "editorPick": true,
@@ -3512,7 +3771,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors. Located in South Beach, Lincoln Road Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday farmers market on Lincoln Road featuring local produce, artisan goods, and street vendors.",
     "editorPick": true,
@@ -3565,7 +3824,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged. Located in Wynwood, Secret Location (Wynwood) is a local favorite.",
     "description": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged.",
     "source": {
@@ -3595,7 +3854,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Miami's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged. Located in Wynwood, Secret Location (Wynwood) is a local favorite.",
     "description": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged.",
     "source": {
@@ -3685,7 +3944,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Miami's comedy scene.",
     "editorialWhy": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged. Located in Wynwood, Secret Location (Wynwood) is a local favorite.",
     "description": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged.",
     "source": {
@@ -3715,7 +3974,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged. Located in Wynwood, Secret Location (Wynwood) is a local favorite.",
     "description": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged.",
     "source": {
@@ -3745,7 +4004,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Miami's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged. Located in Wynwood, Secret Location (Wynwood) is a local favorite.",
     "description": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged.",
     "source": {
@@ -3775,7 +4034,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Miami's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged. Located in Wynwood, Secret Location (Wynwood) is a local favorite.",
     "description": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged.",
     "source": {
@@ -3836,7 +4095,7 @@
     "category": "Nightlife",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Dance floors and good energy.",
+    "shortWhy": "Where South Florida comes alive after dark.",
     "editorialWhy": "Weekly underground house and techno event at Floyd, the intimate Funktion-One room at Club Space. Located in Downtown Miami, Floyd Miami is a local favorite.",
     "description": "Weekly underground house and techno event at Floyd, the intimate Funktion-One room at Club Space.",
     "source": {
@@ -3895,7 +4154,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "The kind of night Miami does best.",
     "editorialWhy": "Free show featuring Anemoia and Miami favorites Afrobeta. Electronic, synth-pop, and good vibes. Located in Downtown Miami, Zey Zey is a local favorite. Best of all, it's free.",
     "description": "Free show featuring Anemoia and Miami favorites Afrobeta. Electronic, synth-pop, and good vibes.",
     "source": {
@@ -3923,7 +4182,7 @@
     "category": "Community",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Ultimate Survivor fan experience at Jungle Island. Meet fellow fans and enjoy themed activities. Located in Watson Island, Jungle Island is a local favorite.",
     "description": "Ultimate Survivor fan experience at Jungle Island. Meet fellow fans and enjoy themed activities.",
     "source": {
@@ -3978,7 +4237,7 @@
     "category": "Music",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Outstanding local choirs compete live for cash prize and chance to perform at Gospel Fest Miami. Located in Downtown Miami, Adrienne Arsht Center is a local favorite.",
     "description": "Outstanding local choirs compete live for cash prize and chance to perform at Gospel Fest Miami.",
     "source": {
@@ -4007,7 +4266,7 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Dive into Miami's cultural richness.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Leading figure in contemporary flamenco Sara Baras marks a milestone at Flamenco Festival Miami. Located in Downtown Miami, Adrienne Arsht Center is a local favorite.",
     "description": "Leading figure in contemporary flamenco Sara Baras marks a milestone at Flamenco Festival Miami.",
     "source": {
@@ -4036,7 +4295,7 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Dive into Miami's cultural richness.",
     "editorialWhy": "Leading figure in contemporary flamenco Sara Baras marks a milestone at Flamenco Festival Miami. Located in Downtown Miami, Adrienne Arsht Center is a local favorite.",
     "description": "Leading figure in contemporary flamenco Sara Baras marks a milestone at Flamenco Festival Miami.",
     "source": {
@@ -4064,7 +4323,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "The legendary magic duo Penn & Teller bring their unique blend of comedy, magic, and skepticism. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "The legendary magic duo Penn & Teller bring their unique blend of comedy, magic, and skepticism.",
     "source": {
@@ -4122,7 +4381,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Guitar legend Carlos Santana brings his Oneness Tour, celebrating decades of Latin rock fusion. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Guitar legend Carlos Santana brings his Oneness Tour, celebrating decades of Latin rock fusion.",
     "source": {
@@ -4152,7 +4411,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "Pre-Ultra Music Festival beach cleanup. Help prepare Virginia Key before the festival arrives. Located in Virginia Key, Virginia Key Beach is a local favorite. Best of all, it's free.",
     "description": "Pre-Ultra Music Festival beach cleanup. Help prepare Virginia Key before the festival arrives.",
     "source": {
@@ -4183,7 +4442,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -4214,7 +4473,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -4245,7 +4504,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -4276,7 +4535,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -4304,7 +4563,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Jam band legends moe. bring their improvisational rock to the beach. Extended jams guaranteed. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Jam band legends moe. bring their improvisational rock to the beach. Extended jams guaranteed.",
     "source": {
@@ -4362,7 +4621,7 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Dive into Miami's cultural richness.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "Luxury automotive showcase in Miami Design District. Day 1 featuring rare and exotic vehicles. Located in Design District, Miami Design District is a local favorite.",
     "description": "Luxury automotive showcase in Miami Design District. Day 1 featuring rare and exotic vehicles.",
     "source": {
@@ -4392,7 +4651,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Day 1 of the world's premier electronic music festival. Top EDM artists on Miami's waterfront. Located in Downtown, FPL Solar Amphitheater is a local favorite.",
     "description": "Day 1 of the world's premier electronic music festival. Top EDM artists on Miami's waterfront.",
     "source": {
@@ -4422,7 +4681,7 @@
     "category": "Wellness",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Find your calm in the Magic City.",
+    "shortWhy": "Wellness done right.",
     "editorialWhy": "Immersive sound healing session at sunset. Crystal bowls and ocean waves for deep relaxation. Located in Watson Island, Joia Beach is a local favorite.",
     "description": "Immersive sound healing session at sunset. Crystal bowls and ocean waves for deep relaxation.",
     "source": {
@@ -4480,7 +4739,7 @@
     "category": "Wellness",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Wellness done right.",
+    "shortWhy": "Reset and recharge.",
     "editorialWhy": "Grammy-nominated kirtan artist Krishna Das. Devotional chanting and meditation at the beach. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Grammy-nominated kirtan artist Krishna Das. Devotional chanting and meditation at the beach.",
     "source": {
@@ -4509,7 +4768,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Dive into Miami's cultural richness.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "Seven award-winning shorts from Sundance including live action, animated, and documentaries. Located in South Beach, O Cinema South Beach is a local favorite.",
     "description": "Seven award-winning shorts from Sundance including live action, animated, and documentaries.",
     "source": {
@@ -4518,6 +4777,34 @@
     },
     "editorPick": true,
     "venueId": "4022911b25ea"
+  },
+  {
+    "id": "548a39b55f531c31",
+    "title": "ICA Miami: Evening in the Garden Gala",
+    "startAt": "2026-03-14T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "ICA Miami",
+    "address": "61 NE 41st St, Miami, FL 33137",
+    "neighborhood": "Design District",
+    "lat": 25.8135,
+    "lng": -80.1918,
+    "city": "Miami",
+    "tags": [
+      "art-gallery",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "ICA Miami's annual gala in the sculpture garden. Art, cocktails, and dinner under the stars. Located in Design District, ICA Miami is a local favorite.",
+    "description": "ICA Miami's annual gala in the sculpture garden. Art, cocktails, and dinner under the stars.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://gala.icamiami.org/"
+    },
+    "editorPick": true,
+    "venueId": "3cf1ab04c639"
   },
   {
     "id": "7f4596f98530fa9b",
@@ -4538,7 +4825,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods. Located in Coconut Grove, Vizcaya Village Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods.",
     "editorPick": true,
@@ -4592,7 +4879,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods. Located in Coconut Grove, Vizcaya Village Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods.",
     "editorPick": true,
@@ -4646,7 +4933,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods. Located in Coconut Grove, Vizcaya Village Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods.",
     "editorPick": true,
@@ -4673,7 +4960,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods. Located in Coconut Grove, Vizcaya Village Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods.",
     "editorPick": true,
@@ -4700,7 +4987,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods. Located in Coconut Grove, Vizcaya Village Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Sunday morning farmers market near Vizcaya Museum with fresh local produce and baked goods.",
     "editorPick": true,
@@ -4754,7 +5041,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Indie rock legends Modest Mouse at Zey Zey. Known for \"Float On\" and \"Dashboard\". SOLD OUT. Located in Downtown Miami, Zey Zey is a local favorite.",
     "description": "Indie rock legends Modest Mouse at Zey Zey. Known for \"Float On\" and \"Dashboard\". SOLD OUT.",
     "source": {
@@ -4783,7 +5070,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors. Located in Coral Gables, Coral Gables Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors.",
     "editorPick": true,
@@ -4810,7 +5097,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors. Located in Coral Gables, Coral Gables Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors.",
     "editorPick": true,
@@ -4837,7 +5124,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors. Located in Coral Gables, Coral Gables Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors.",
     "editorPick": true,
@@ -4891,7 +5178,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors. Located in Coral Gables, Coral Gables Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors.",
     "editorPick": true,
@@ -4945,7 +5232,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors. Located in Coral Gables, Coral Gables Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors.",
     "editorPick": true,
@@ -4972,7 +5259,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors. Located in Coral Gables, Coral Gables Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Saturday morning farmers market featuring fresh produce, artisan goods, and local vendors.",
     "editorPick": true,
@@ -4999,7 +5286,7 @@
     "category": "Nightlife",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Where South Florida comes alive after dark.",
+    "shortWhy": "Dance floors and good energy.",
     "editorialWhy": "Berlin collective Keinemusik brings their signature sound to Miami. Day party in the park. Located in Little Haiti, Space Park is a local favorite.",
     "description": "Berlin collective Keinemusik brings their signature sound to Miami. Day party in the park.",
     "source": {
@@ -5030,7 +5317,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Miami does best.",
     "editorialWhy": "Cuban singer Yusa headlines Global Cuba Fest. Afro-Cuban rhythms meet contemporary sounds. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Cuban singer Yusa headlines Global Cuba Fest. Afro-Cuban rhythms meet contemporary sounds.",
     "source": {
@@ -5120,7 +5407,7 @@
     "category": "Food & Drink",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Day 2 of the signature SOBEWFF event. More chef demos, tastings, and culinary experiences. Located in South Beach, Miami Beach Convention Center is a local favorite.",
     "description": "Day 2 of the signature SOBEWFF event. More chef demos, tastings, and culinary experiences.",
     "source": {
@@ -5149,7 +5436,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "Closing night of the Key Biscayne Film Festival with awards ceremony and final screenings. Located in Key Biscayne, Key Biscayne Community Center is a local favorite.",
     "description": "Closing night of the Key Biscayne Film Festival with awards ceremony and final screenings.",
     "source": {
@@ -5178,7 +5465,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes. Located in Coconut Grove, Coconut Grove Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes.",
     "editorPick": true,
@@ -5232,7 +5519,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes. Located in Coconut Grove, Coconut Grove Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes.",
     "editorPick": true,
@@ -5259,7 +5546,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes. Located in Coconut Grove, Coconut Grove Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes.",
     "editorPick": true,
@@ -5286,7 +5573,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes. Located in Coconut Grove, Coconut Grove Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes.",
     "editorPick": true,
@@ -5313,7 +5600,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes. Located in Coconut Grove, Coconut Grove Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekly farmers market with fresh produce, artisan goods, live music, and community vibes.",
     "editorPick": true,
@@ -5393,7 +5680,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "The kind of night Miami does best.",
     "editorialWhy": "World-renowned tenor Juan Diego Flórez performs a special recital at Knight Concert Hall. Located in Downtown Miami, Adrienne Arsht Center is a local favorite.",
     "description": "World-renowned tenor Juan Diego Flórez performs a special recital at Knight Concert Hall.",
     "source": {
@@ -5402,6 +5689,97 @@
     },
     "editorPick": true,
     "venueId": "0b2e91c0a428"
+  },
+  {
+    "id": "ce342c532f6a1a3e",
+    "title": "Thursdays at PAMM",
+    "startAt": "2026-01-30T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Pérez Art Museum Miami",
+    "address": "1103 Biscayne Blvd, Miami, FL 33132",
+    "neighborhood": "Downtown",
+    "lat": 25.7858,
+    "lng": -80.1863,
+    "city": "Miami",
+    "tags": [
+      "art-gallery",
+      "live-music",
+      "free-event",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "Weekly evening of community, live music, art-making activities on the waterfront terrace. Located in Downtown, Pérez Art Museum Miami is a local favorite. Best of all, it's free.",
+    "description": "Weekly evening of community, live music, art-making activities on the waterfront terrace.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.pamm.org/en/events/"
+    },
+    "editorPick": true,
+    "venueId": "bfaa19e18d1a"
+  },
+  {
+    "id": "893985148b0bfb76",
+    "title": "Thursdays at PAMM",
+    "startAt": "2026-02-06T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Pérez Art Museum Miami",
+    "address": "1103 Biscayne Blvd, Miami, FL 33132",
+    "neighborhood": "Downtown",
+    "lat": 25.7858,
+    "lng": -80.1863,
+    "city": "Miami",
+    "tags": [
+      "art-gallery",
+      "live-music",
+      "free-event",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Miami's art scene is about.",
+    "editorialWhy": "Weekly evening of community, live music, art-making activities on the waterfront terrace. Located in Downtown, Pérez Art Museum Miami is a local favorite. Best of all, it's free.",
+    "description": "Weekly evening of community, live music, art-making activities on the waterfront terrace.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.pamm.org/en/events/"
+    },
+    "editorPick": true,
+    "venueId": "bfaa19e18d1a"
+  },
+  {
+    "id": "afcb65caf9ad5c18",
+    "title": "Deering Seafood Festival on the Bay",
+    "startAt": "2026-04-12T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Deering Estate",
+    "address": "16701 SW 72nd Ave, Miami, FL 33157",
+    "neighborhood": "Palmetto Bay",
+    "lat": 25.6148,
+    "lng": -80.3112,
+    "city": "Miami",
+    "tags": [
+      "food-market",
+      "live-music",
+      "outdoor",
+      "festival",
+      "local-favorite"
+    ],
+    "category": "Food & Drink",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Fresh, local, and full of character.",
+    "editorialWhy": "Annual seafood festival on Biscayne Bay. Local seafood, live music, and waterfront views. Located in Palmetto Bay, Deering Estate is a local favorite.",
+    "description": "Annual seafood festival on Biscayne Bay. Local seafood, live music, and waterfront views.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://deeringestate.org/deering-events/signature-events/"
+    },
+    "editorPick": true,
+    "venueId": "376988e17b40"
   },
   {
     "id": "2434c943e189d523",
@@ -5422,7 +5800,7 @@
     "category": "Nightlife",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Dance floors and good energy.",
+    "shortWhy": "The kind of night you'll remember.",
     "editorialWhy": "Boiler Room returns to Miami with a stacked lineup of local and international selectors. Located in Wynwood, III Points Venue is a local favorite.",
     "description": "Boiler Room returns to Miami with a stacked lineup of local and international selectors.",
     "source": {
@@ -5451,7 +5829,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Closing night celebration of the Miami Jewish Film Festival at the oceanfront Bandshell. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Closing night celebration of the Miami Jewish Film Festival at the oceanfront Bandshell.",
     "source": {
@@ -5481,7 +5859,7 @@
     "category": "Nightlife",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Dance floors and good energy.",
+    "shortWhy": "Where South Florida comes alive after dark.",
     "editorialWhy": "Immersive party meets art installation. Dancing through Superblue's digital wonderland. Located in Allapattah, Superblue Miami is a local favorite.",
     "description": "Immersive party meets art installation. Dancing through Superblue's digital wonderland.",
     "source": {
@@ -5541,7 +5919,7 @@
     "category": "Wellness",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Wellness done right.",
+    "shortWhy": "Find your calm in the Magic City.",
     "editorialWhy": "Oceanside sunrise yoga at Joia Beach. Start your weekend with movement and ocean views. Located in Watson Island, Joia Beach is a local favorite.",
     "description": "Oceanside sunrise yoga at Joia Beach. Start your weekend with movement and ocean views.",
     "source": {
@@ -5570,7 +5948,7 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "Day 2 of South Florida's largest street hockey festival. Finals and championship games. Located in Sunrise, Amerant Bank Arena is a local favorite. Best of all, it's free.",
     "description": "Day 2 of South Florida's largest street hockey festival. Finals and championship games.",
     "source": {
@@ -5579,6 +5957,35 @@
     },
     "editorPick": true,
     "venueId": "bd875e433162"
+  },
+  {
+    "id": "97a4e6295e7d7bd9",
+    "title": "NSU Art Museum: Teen Art Exhibition Opening",
+    "startAt": "2026-03-15T14:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown",
+    "lat": 26.1186,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "Opening of \"Lost & Found\" - annual Teen Art Exhibition showcasing Broward teen artists. Located in Downtown, NSU Art Museum is a local favorite. Best of all, it's free.",
+    "description": "Opening of \"Lost & Found\" - annual Teen Art Exhibition showcasing Broward teen artists.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://nsuartmuseum.org/event/teen-art-exhibition-2026/"
+    },
+    "editorPick": true,
+    "venueId": "cf61c35657eb"
   },
   {
     "id": "07d4e84e4df77b7e",
@@ -5599,7 +6006,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars. Located in Coconut Grove, Vizcaya Night Market is a local favorite. Best of all, it's free.",
     "description": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars.",
     "editorPick": true,
@@ -5653,7 +6060,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars. Located in Coconut Grove, Vizcaya Night Market is a local favorite. Best of all, it's free.",
     "description": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars.",
     "editorPick": true,
@@ -5680,7 +6087,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars. Located in Coconut Grove, Vizcaya Night Market is a local favorite. Best of all, it's free.",
     "description": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars.",
     "editorPick": true,
@@ -5707,7 +6114,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars. Located in Coconut Grove, Vizcaya Night Market is a local favorite. Best of all, it's free.",
     "description": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars.",
     "editorPick": true,
@@ -5734,7 +6141,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars. Located in Coconut Grove, Vizcaya Night Market is a local favorite. Best of all, it's free.",
     "description": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars.",
     "editorPick": true,
@@ -5761,7 +6168,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars. Located in Coconut Grove, Vizcaya Night Market is a local favorite. Best of all, it's free.",
     "description": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars.",
     "editorPick": true,
@@ -5788,7 +6195,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars. Located in Coconut Grove, Vizcaya Night Market is a local favorite. Best of all, it's free.",
     "description": "Evening market at Vizcaya with local vendors, food trucks, live music under the stars.",
     "editorPick": true,
@@ -5844,7 +6251,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Miami's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks! Located in Brickell, Secret Location (Brickell) is a local favorite.",
     "description": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks!",
     "source": {
@@ -5874,7 +6281,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks! Located in Brickell, Secret Location (Brickell) is a local favorite.",
     "description": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks!",
     "source": {
@@ -5904,7 +6311,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks! Located in Brickell, Secret Location (Brickell) is a local favorite.",
     "description": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks!",
     "source": {
@@ -5934,7 +6341,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Miami's comedy scene.",
     "editorialWhy": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks! Located in Brickell, Secret Location (Brickell) is a local favorite.",
     "description": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks!",
     "source": {
@@ -5964,7 +6371,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Miami's comedy scene.",
     "editorialWhy": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks! Located in Brickell, Secret Location (Brickell) is a local favorite.",
     "description": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks!",
     "source": {
@@ -5994,7 +6401,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Miami's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks! Located in Brickell, Secret Location (Brickell) is a local favorite.",
     "description": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks!",
     "source": {
@@ -6024,7 +6431,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks! Located in Brickell, Secret Location (Brickell) is a local favorite.",
     "description": "Secret comedy show in Brickell. Exact location revealed day-of. Bring your own drinks!",
     "source": {
@@ -6088,7 +6495,7 @@
     "category": "Nightlife",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Dance floors and good energy.",
+    "shortWhy": "Where South Florida comes alive after dark.",
     "editorialWhy": "Crosstown Rebels presents Get Lost - a legendary party series during Miami Music Week. Located in Miami, Various Miami Venues is a local favorite.",
     "description": "Crosstown Rebels presents Get Lost - a legendary party series during Miami Music Week.",
     "source": {
@@ -6120,7 +6527,7 @@
     "category": "Nightlife",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Where South Florida comes alive after dark.",
+    "shortWhy": "The kind of night you'll remember.",
     "editorialWhy": "Crosstown Rebels presents Get Lost - a legendary party series during Miami Music Week. Located in Miami, Various Miami Venues is a local favorite.",
     "description": "Crosstown Rebels presents Get Lost - a legendary party series during Miami Music Week.",
     "source": {
@@ -6183,7 +6590,7 @@
     "category": "Music",
     "priceLabel": "$",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "The kind of night Miami does best.",
     "editorialWhy": "Classical music under the stars at the historic beachfront Bandshell. Bring a blanket. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Classical music under the stars at the historic beachfront Bandshell. Bring a blanket.",
     "source": {
@@ -6213,7 +6620,7 @@
     "category": "Sports",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Miami's finest.",
     "editorialWhy": "Watch the Big Game on a Miami Beach rooftop with stunning views and premium amenities. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
     "description": "Watch the Big Game on a Miami Beach rooftop with stunning views and premium amenities.",
     "source": {
@@ -6242,7 +6649,7 @@
     "category": "Nightlife",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night you'll remember.",
+    "shortWhy": "Where South Florida comes alive after dark.",
     "editorialWhy": "3D Disco party series featuring The Botanist. Expect disco, house, and funky grooves. Located in Downtown Miami, Zey Zey is a local favorite.",
     "description": "3D Disco party series featuring The Botanist. Expect disco, house, and funky grooves.",
     "source": {
@@ -6271,7 +6678,7 @@
     "category": "Nightlife",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Where South Florida comes alive after dark.",
+    "shortWhy": "The kind of night you'll remember.",
     "editorialWhy": "Late night rave vibes with DJ Pressed. House, techno, and high energy on the rooftop. Located in Downtown Miami, Zey Zey is a local favorite.",
     "description": "Late night rave vibes with DJ Pressed. House, techno, and high energy on the rooftop.",
     "source": {
@@ -6301,7 +6708,7 @@
     "category": "Food & Drink",
     "priceLabel": "$$$",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Battle of the burgers. Top chefs compete for best burger while guests taste and vote. Located in South Beach, Miami Beach is a local favorite.",
     "description": "Battle of the burgers. Top chefs compete for best burger while guests taste and vote.",
     "source": {
@@ -6329,7 +6736,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "The world's most beloved tenor celebrates 30 years of his breakthrough album Romanza. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "The world's most beloved tenor celebrates 30 years of his breakthrough album Romanza.",
     "source": {
@@ -6338,6 +6745,34 @@
     },
     "editorPick": true,
     "venueId": "5d516220fdd4"
+  },
+  {
+    "id": "850ea7913c6c5414",
+    "title": "Candlelight: Valentine's Day Special",
+    "startAt": "2026-02-14T18:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Scottish Rite Temple MIA",
+    "address": "471 NW 3rd St, Miami, FL 33128",
+    "neighborhood": "Downtown",
+    "lat": 25.7789,
+    "lng": -80.1998,
+    "city": "Miami",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "editorialWhy": "Romantic Valentine's Day candlelight concert. Love songs performed by string quartet. Located in Downtown, Scottish Rite Temple MIA is a local favorite.",
+    "description": "Romantic Valentine's Day candlelight concert. Love songs performed by string quartet.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://feverup.com/en/miami/candlelight"
+    },
+    "editorPick": true,
+    "venueId": "20e4535fdd6c"
   },
   {
     "id": "b2f9de7c66f029e7",
@@ -6359,7 +6794,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Miami does best.",
     "editorialWhy": "Genre-defying drummer and producer Makaya McCraven. Modern jazz meets hip-hop beats. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Genre-defying drummer and producer Makaya McCraven. Modern jazz meets hip-hop beats.",
     "source": {
@@ -6417,7 +6852,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Dive into Miami's cultural richness.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "The Miami crime classic on a Miami Beach rooftop. Premium outdoor cinema experience. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
     "description": "The Miami crime classic on a Miami Beach rooftop. Premium outdoor cinema experience.",
     "source": {
@@ -6446,7 +6881,7 @@
     "category": "Nightlife",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Dance floors and good energy.",
+    "shortWhy": "The kind of night you'll remember.",
     "editorialWhy": "Saturday underground house and techno at Floyd featuring rotating international DJs. Located in Downtown Miami, Floyd Miami is a local favorite.",
     "description": "Saturday underground house and techno at Floyd featuring rotating international DJs.",
     "source": {
@@ -6475,7 +6910,7 @@
     "category": "Nightlife",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Where South Florida comes alive after dark.",
+    "shortWhy": "Dance floors and good energy.",
     "editorialWhy": "Saturday underground house and techno at Floyd featuring rotating international DJs. Located in Downtown Miami, Floyd Miami is a local favorite.",
     "description": "Saturday underground house and techno at Floyd featuring rotating international DJs.",
     "source": {
@@ -6515,6 +6950,34 @@
     "venueId": "5d516220fdd4"
   },
   {
+    "id": "bf452cb78be20a6c",
+    "title": "Candlelight: Best of Bridgerton on Strings",
+    "startAt": "2026-02-06T18:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Scottish Rite Temple MIA",
+    "address": "471 NW 3rd St, Miami, FL 33128",
+    "neighborhood": "Downtown",
+    "lat": 25.7789,
+    "lng": -80.1998,
+    "city": "Miami",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "editorialWhy": "String quartet performs the viral classical covers from Netflix's Bridgerton series. Located in Downtown, Scottish Rite Temple MIA is a local favorite.",
+    "description": "String quartet performs the viral classical covers from Netflix's Bridgerton series.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://feverup.com/en/miami/candlelight"
+    },
+    "editorPick": true,
+    "venueId": "20e4535fdd6c"
+  },
+  {
     "id": "d0a76e4cd262e94d",
     "title": "Smorgasburg Miami",
     "startAt": "2026-01-25T11:00:00",
@@ -6533,7 +6996,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Weekly open-air food market featuring 40+ local vendors, artisans, and food makers. Located in Downtown Miami, Smorgasburg Miami is a local favorite. Best of all, it's free.",
     "description": "Weekly open-air food market featuring 40+ local vendors, artisans, and food makers.",
     "editorPick": true,
@@ -6560,7 +7023,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekly open-air food market featuring 40+ local vendors, artisans, and food makers. Located in Downtown Miami, Smorgasburg Miami is a local favorite. Best of all, it's free.",
     "description": "Weekly open-air food market featuring 40+ local vendors, artisans, and food makers.",
     "editorPick": true,
@@ -6614,7 +7077,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Weekly open-air food market featuring 40+ local vendors, artisans, and food makers. Located in Downtown Miami, Smorgasburg Miami is a local favorite. Best of all, it's free.",
     "description": "Weekly open-air food market featuring 40+ local vendors, artisans, and food makers.",
     "editorPick": true,
@@ -6641,7 +7104,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Weekly open-air food market featuring 40+ local vendors, artisans, and food makers. Located in Downtown Miami, Smorgasburg Miami is a local favorite. Best of all, it's free.",
     "description": "Weekly open-air food market featuring 40+ local vendors, artisans, and food makers.",
     "editorPick": true,
@@ -6778,7 +7241,7 @@
     "category": "Nightlife",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Where South Florida comes alive after dark.",
+    "shortWhy": "The kind of night you'll remember.",
     "editorialWhy": "Intimate underground house and techno night at Miami Beach's premier boutique club. Located in South Beach, Do Not Sit On The Furniture is a local favorite.",
     "description": "Intimate underground house and techno night at Miami Beach's premier boutique club.",
     "source": {
@@ -6806,7 +7269,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "The Philadelphia Orchestra returns to Knight Concert Hall for an evening of Brahms. Located in Downtown Miami, Adrienne Arsht Center is a local favorite.",
     "description": "The Philadelphia Orchestra returns to Knight Concert Hall for an evening of Brahms.",
     "source": {
@@ -6815,6 +7278,34 @@
     },
     "editorPick": true,
     "venueId": "0b2e91c0a428"
+  },
+  {
+    "id": "d746daa9e58d2e86",
+    "title": "Candlelight: Tribute to The Beatles",
+    "startAt": "2026-01-25T18:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Hotel Colonnade",
+    "address": "180 Aragon Ave, Coral Gables, FL 33134",
+    "neighborhood": "Coral Gables",
+    "lat": 25.749,
+    "lng": -80.259,
+    "city": "Miami",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "editorialWhy": "String quartet performs Beatles hits by candlelight in the elegant Hotel Colonnade. Located in Coral Gables, Hotel Colonnade is a local favorite.",
+    "description": "String quartet performs Beatles hits by candlelight in the elegant Hotel Colonnade.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://feverup.com/en/miami/candlelight"
+    },
+    "editorPick": true,
+    "venueId": "1b56146fd018"
   },
   {
     "id": "942a1c621530414b",
@@ -6864,7 +7355,7 @@
     "category": "Music",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "GoldFord brings the Space of the Heart Tour to Miami. Soulful R&B and indie vibes. Located in Downtown Miami, Zey Zey is a local favorite.",
     "description": "GoldFord brings the Space of the Heart Tour to Miami. Soulful R&B and indie vibes.",
     "source": {
@@ -6892,7 +7383,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2.",
     "source": {
@@ -6920,7 +7411,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2.",
     "source": {
@@ -6978,7 +7469,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Miami's comedy scene.",
     "editorialWhy": "Ryan Long live at Miami Improv. Comedian and creator known for his viral sketches. Located in Coconut Grove, Miami Improv is a local favorite.",
     "description": "Ryan Long live at Miami Improv. Comedian and creator known for his viral sketches.",
     "source": {
@@ -7006,7 +7497,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Aid L'Shalom presents an evening of music empowering joy and hope at the Fillmore. Located in South Beach, Fillmore Miami Beach is a local favorite.",
     "description": "Aid L'Shalom presents an evening of music empowering joy and hope at the Fillmore.",
     "source": {
@@ -7064,7 +7555,7 @@
     "category": "Wellness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Wellness done right.",
+    "shortWhy": "Find your calm in the Magic City.",
     "editorialWhy": "Sunday morning coffee hangout in Brickell. Meet locals, make friends, caffeinate. Located in Brickell, All Day is a local favorite. Best of all, it's free.",
     "description": "Sunday morning coffee hangout in Brickell. Meet locals, make friends, caffeinate.",
     "source": {
@@ -7128,7 +7619,7 @@
     "category": "Wellness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Reset and recharge.",
+    "shortWhy": "Wellness done right.",
     "editorialWhy": "Sunday morning coffee hangout in Brickell. Meet locals, make friends, caffeinate. Located in Brickell, All Day is a local favorite. Best of all, it's free.",
     "description": "Sunday morning coffee hangout in Brickell. Meet locals, make friends, caffeinate.",
     "source": {
@@ -7160,7 +7651,7 @@
     "category": "Wellness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Reset and recharge.",
+    "shortWhy": "Wellness done right.",
     "editorialWhy": "Sunday morning coffee hangout in Brickell. Meet locals, make friends, caffeinate. Located in Brickell, All Day is a local favorite. Best of all, it's free.",
     "description": "Sunday morning coffee hangout in Brickell. Meet locals, make friends, caffeinate.",
     "source": {
@@ -7224,7 +7715,7 @@
     "category": "Wellness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Reset and recharge.",
+    "shortWhy": "Wellness done right.",
     "editorialWhy": "Sunday morning coffee hangout in Brickell. Meet locals, make friends, caffeinate. Located in Brickell, All Day is a local favorite. Best of all, it's free.",
     "description": "Sunday morning coffee hangout in Brickell. Meet locals, make friends, caffeinate.",
     "source": {
@@ -7253,7 +7744,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -7280,7 +7771,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -7307,7 +7798,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
@@ -7334,7 +7825,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -7361,7 +7852,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -7415,7 +7906,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -7469,7 +7960,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
@@ -7552,7 +8043,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Indie rock legends Modest Mouse at Zey Zey. Known for \"Float On\" and \"Dashboard\". Located in Downtown Miami, Zey Zey is a local favorite.",
     "description": "Indie rock legends Modest Mouse at Zey Zey. Known for \"Float On\" and \"Dashboard\".",
     "source": {
@@ -7581,7 +8072,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Miami does best.",
     "editorialWhy": "Mexican rock band Molotov brings their politically charged rap-rock to the beach. Located in North Beach, Miami Beach Bandshell is a local favorite.",
     "description": "Mexican rock band Molotov brings their politically charged rap-rock to the beach.",
     "source": {
@@ -7610,7 +8101,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "Dive into Miami's cultural richness.",
     "editorialWhy": "Day 2 of the annual film festival. Independent and international film screenings. Located in Key Biscayne, Key Biscayne Community Center is a local favorite.",
     "description": "Day 2 of the annual film festival. Independent and international film screenings.",
     "source": {
@@ -7639,7 +8130,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Day 3 of the annual film festival. Independent and international film screenings. Located in Key Biscayne, Key Biscayne Community Center is a local favorite.",
     "description": "Day 3 of the annual film festival. Independent and international film screenings.",
     "source": {
@@ -7668,7 +8159,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7722,7 +8213,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7749,7 +8240,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7803,7 +8294,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7830,7 +8321,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7857,7 +8348,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7884,7 +8375,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7911,7 +8402,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7938,7 +8429,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7965,7 +8456,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -7992,7 +8483,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -8019,7 +8510,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -8046,7 +8537,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -8073,7 +8564,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays. Located in Surfside, Surfside Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Weekend farmers market in Surfside with fresh produce and beach yoga on Sundays.",
     "editorPick": true,
@@ -8127,7 +8618,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Community farmers market at Legion Park with local produce and artisan vendors. Located in Little Haiti, Legion Park Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Community farmers market at Legion Park with local produce and artisan vendors.",
     "editorPick": true,
@@ -8181,7 +8672,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Community farmers market at Legion Park with local produce and artisan vendors. Located in Little Haiti, Legion Park Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Community farmers market at Legion Park with local produce and artisan vendors.",
     "editorPick": true,
@@ -8208,7 +8699,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Community farmers market at Legion Park with local produce and artisan vendors. Located in Little Haiti, Legion Park Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Community farmers market at Legion Park with local produce and artisan vendors.",
     "editorPick": true,
@@ -8235,7 +8726,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Community farmers market at Legion Park with local produce and artisan vendors. Located in Little Haiti, Legion Park Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Community farmers market at Legion Park with local produce and artisan vendors.",
     "editorPick": true,
@@ -8289,7 +8780,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Community farmers market at Legion Park with local produce and artisan vendors. Located in Little Haiti, Legion Park Farmers Market is a local favorite. Best of all, it's free.",
     "description": "Community farmers market at Legion Park with local produce and artisan vendors.",
     "editorPick": true,
@@ -8316,7 +8807,7 @@
     "category": "Nightlife",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Dance floors and good energy.",
+    "shortWhy": "The kind of night you'll remember.",
     "editorialWhy": "NYC's premier techno series lands in Miami. Warehouse vibes, world-class sound. Located in Wynwood, Secret Warehouse is a local favorite.",
     "description": "NYC's premier techno series lands in Miami. Warehouse vibes, world-class sound.",
     "source": {
@@ -8344,7 +8835,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel.",
     "source": {
@@ -8372,7 +8863,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Sugar Sammy brings his multilingual comedy to Miami. International comedy star. Located in Coconut Grove, Miami Improv is a local favorite.",
     "description": "Sugar Sammy brings his multilingual comedy to Miami. International comedy star.",
     "source": {
@@ -8457,7 +8948,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "New World Symphony Mobile WALLCAST concert celebrating Coral Gables centennial. Located in Coral Gables, Sanctuary of the Arts is a local favorite. Best of all, it's free.",
     "description": "New World Symphony Mobile WALLCAST concert celebrating Coral Gables centennial.",
     "source": {
@@ -8513,7 +9004,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
     "source": {
@@ -8567,7 +9058,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
     "source": {
@@ -8597,7 +9088,7 @@
     "category": "Nightlife",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Dance floors and good energy.",
+    "shortWhy": "The kind of night you'll remember.",
     "editorialWhy": "Dixon and the Innervisions crew take over Space Terrace for a sunrise session. Located in Downtown Miami, Club Space Terrace is a local favorite.",
     "description": "Dixon and the Innervisions crew take over Space Terrace for a sunrise session.",
     "source": {
@@ -8627,7 +9118,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Dive into Miami's cultural richness.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Tarantino classic on a Miami Beach rooftop. Premium outdoor cinema experience. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
     "description": "Tarantino classic on a Miami Beach rooftop. Premium outdoor cinema experience.",
     "source": {
@@ -8657,7 +9148,7 @@
     "category": "Nightlife",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Where South Florida comes alive after dark.",
+    "shortWhy": "Dance floors and good energy.",
     "editorialWhy": "House music legend Dennis Ferrer headlines with Prunk, Ms. Mada, and Chesster. Located in Downtown, Club Space is a local favorite.",
     "description": "House music legend Dennis Ferrer headlines with Prunk, Ms. Mada, and Chesster.",
     "source": {
@@ -8713,7 +9204,7 @@
     "category": "Comedy",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Comedy legend Jerry Seinfeld performs his signature observational humor live. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Comedy legend Jerry Seinfeld performs his signature observational humor live.",
     "source": {
@@ -8742,7 +9233,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Electroclash pioneer Peaches brings her provocative performance art to Miami. Located in Little Haiti, ZeyZey Miami is a local favorite.",
     "description": "Electroclash pioneer Peaches brings her provocative performance art to Miami.",
     "source": {
@@ -8771,7 +9262,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Monthly artisan market featuring local artists, sculptors, and craftspeople. Located in Pinecrest, Pinecrest Gardens Artisan Market is a local favorite. Best of all, it's free.",
     "description": "Monthly artisan market featuring local artists, sculptors, and craftspeople.",
     "editorPick": true,
@@ -8798,7 +9289,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Monthly artisan market featuring local artists, sculptors, and craftspeople. Located in Pinecrest, Pinecrest Gardens Artisan Market is a local favorite. Best of all, it's free.",
     "description": "Monthly artisan market featuring local artists, sculptors, and craftspeople.",
     "editorPick": true,
@@ -8825,7 +9316,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Monthly artisan market featuring local artists, sculptors, and craftspeople. Located in Pinecrest, Pinecrest Gardens Artisan Market is a local favorite. Best of all, it's free.",
     "description": "Monthly artisan market featuring local artists, sculptors, and craftspeople.",
     "editorPick": true,
@@ -8879,7 +9370,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Monthly artisan market featuring local artists, sculptors, and craftspeople. Located in Pinecrest, Pinecrest Gardens Artisan Market is a local favorite. Best of all, it's free.",
     "description": "Monthly artisan market featuring local artists, sculptors, and craftspeople.",
     "editorPick": true,
@@ -8906,7 +9397,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Taste what makes Miami's food scene special.",
     "editorialWhy": "Monthly artisan market featuring local artists, sculptors, and craftspeople. Located in Pinecrest, Pinecrest Gardens Artisan Market is a local favorite. Best of all, it's free.",
     "description": "Monthly artisan market featuring local artists, sculptors, and craftspeople.",
     "editorPick": true,
@@ -8933,7 +9424,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Fresh, local, and full of character.",
+    "shortWhy": "Local flavors and community vibes.",
     "editorialWhy": "Monthly artisan market featuring local artists, sculptors, and craftspeople. Located in Pinecrest, Pinecrest Gardens Artisan Market is a local favorite. Best of all, it's free.",
     "description": "Monthly artisan market featuring local artists, sculptors, and craftspeople.",
     "editorPick": true,
@@ -8960,7 +9451,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Monthly artisan market featuring local artists, sculptors, and craftspeople. Located in Pinecrest, Pinecrest Gardens Artisan Market is a local favorite. Best of all, it's free.",
     "description": "Monthly artisan market featuring local artists, sculptors, and craftspeople.",
     "editorPick": true,
@@ -8987,7 +9478,7 @@
     "category": "Nightlife",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Dance floors and good energy.",
+    "shortWhy": "The kind of night you'll remember.",
     "editorialWhy": "Cercle brings their iconic live stream format to Vizcaya's stunning gardens. Located in Coconut Grove, Vizcaya Museum and Gardens is a local favorite.",
     "description": "Cercle brings their iconic live stream format to Vizcaya's stunning gardens.",
     "source": {
@@ -9042,7 +9533,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -9096,7 +9587,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -9151,7 +9642,7 @@
     "category": "Food & Drink",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Taste what makes Miami's food scene special.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "Celebrity chefs compete for the best burger. Unlimited tastings and drinks. Located in South Beach, South Beach is a local favorite.",
     "description": "Celebrity chefs compete for the best burger. Unlimited tastings and drinks.",
     "source": {
@@ -9209,7 +9700,7 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Final day of Miami Concours. Best in Show awards and closing celebrations. Located in Design District, Miami Design District is a local favorite.",
     "description": "Final day of Miami Concours. Best in Show awards and closing celebrations.",
     "source": {
@@ -9303,7 +9794,7 @@
     "category": "Nightlife",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Where South Florida comes alive after dark.",
+    "shortWhy": "Dance floors and good energy.",
     "editorialWhy": "Weekly house music party at Club Space. Deep, soulful, and classic house. Located in Downtown Miami, Club Space is a local favorite.",
     "description": "Weekly house music party at Club Space. Deep, soulful, and classic house.",
     "source": {
@@ -9335,7 +9826,7 @@
     "category": "Nightlife",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Where South Florida comes alive after dark.",
+    "shortWhy": "Dance floors and good energy.",
     "editorialWhy": "Weekly house music party at Club Space. Deep, soulful, and classic house. Located in Downtown Miami, Club Space is a local favorite.",
     "description": "Weekly house music party at Club Space. Deep, soulful, and classic house.",
     "source": {
@@ -9367,7 +9858,7 @@
     "category": "Art",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Art worth the trip.",
+    "shortWhy": "See what Miami's art scene is about.",
     "editorialWhy": "Spectacular outdoor lantern festival. Final weeks - runs through March 7. Located in Watson Island, Jungle Island is a local favorite.",
     "description": "Spectacular outdoor lantern festival. Final weeks - runs through March 7.",
     "source": {
@@ -9395,7 +9886,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Aries Spears live at Miami Improv. MADtv legend and master impressionist. Located in Coconut Grove, Miami Improv is a local favorite.",
     "description": "Aries Spears live at Miami Improv. MADtv legend and master impressionist.",
     "source": {
@@ -9423,7 +9914,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "R&B artist Mariah the Scientist performs her HEARTS SOLD SEPARATELY tour. Located in South Beach, Fillmore Miami Beach is a local favorite.",
     "description": "R&B artist Mariah the Scientist performs her HEARTS SOLD SEPARATELY tour.",
     "source": {
@@ -9451,7 +9942,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "R&B artist Mariah the Scientist performs her HEARTS SOLD SEPARATELY tour. Located in South Beach, Fillmore Miami Beach is a local favorite.",
     "description": "R&B artist Mariah the Scientist performs her HEARTS SOLD SEPARATELY tour.",
     "source": {
@@ -9508,7 +9999,7 @@
     "category": "Nightlife",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Dance floors and good energy.",
+    "shortWhy": "Where South Florida comes alive after dark.",
     "editorialWhy": "Deep house and techno night featuring Dennis Ferrer at Club Space Miami. Located in Downtown Miami, Club Space Miami is a local favorite.",
     "description": "Deep house and techno night featuring Dennis Ferrer at Club Space Miami.",
     "source": {
@@ -9567,7 +10058,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Free matinee outdoor WALLCAST exploring themes of identity and justice. Located in South Beach, SoundScape Park is a local favorite. Best of all, it's free.",
     "description": "Free matinee outdoor WALLCAST exploring themes of identity and justice.",
     "source": {
@@ -9597,7 +10088,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Day 2 of Ultra Miami. Electronic music's biggest names on Biscayne Bay. Located in Downtown, FPL Solar Amphitheater is a local favorite.",
     "description": "Day 2 of Ultra Miami. Electronic music's biggest names on Biscayne Bay.",
     "source": {
@@ -9624,7 +10115,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Miami's finest.",
     "editorialWhy": "NBA game: Miami Heat take on the Cleveland Cavaliers at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Cleveland Cavaliers at Kaseya Center.",
     "source": {
@@ -9651,7 +10142,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Miami's finest.",
     "editorialWhy": "NBA game: Miami Heat take on the Cleveland Cavaliers at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Cleveland Cavaliers at Kaseya Center.",
     "source": {
@@ -9706,7 +10197,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Miami's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Carlos Mencia returns to Miami Improv with his no-holds-barred comedy. Located in Coconut Grove, Miami Improv is a local favorite.",
     "description": "Carlos Mencia returns to Miami Improv with his no-holds-barred comedy.",
     "source": {
@@ -9762,7 +10253,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Carlos Mencia returns to Miami Improv with his no-holds-barred comedy. Located in Coconut Grove, Miami Improv is a local favorite.",
     "description": "Carlos Mencia returns to Miami Improv with his no-holds-barred comedy.",
     "source": {
@@ -9791,7 +10282,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Spanish singer Rels B brings his A New Star World Tour to Miami Beach. Located in South Beach, Fillmore Miami Beach is a local favorite.",
     "description": "Spanish singer Rels B brings his A New Star World Tour to Miami Beach.",
     "source": {
@@ -9820,7 +10311,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Club 90s presents Heated RivalRave - Valentine's Day dance party. 18+. Located in South Beach, Fillmore Miami Beach is a local favorite.",
     "description": "Club 90s presents Heated RivalRave - Valentine's Day dance party. 18+.",
     "source": {
@@ -9905,7 +10396,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NBA game: Miami Heat take on the Philadelphia 76ers at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Philadelphia 76ers at Kaseya Center.",
     "source": {
@@ -9959,7 +10450,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NBA game: Miami Heat take on the Philadelphia 76ers at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Philadelphia 76ers at Kaseya Center.",
     "source": {
@@ -10016,7 +10507,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "Dive into Miami's cultural richness.",
     "editorialWhy": "Miami crime epic on the rooftop. The ultimate Miami movie experience. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
     "description": "Miami crime epic on the rooftop. The ultimate Miami movie experience.",
     "source": {
@@ -10073,7 +10564,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NBA game: Miami Heat take on the New York Knicks at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the New York Knicks at Kaseya Center.",
     "source": {
@@ -10100,7 +10591,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NBA game: Miami Heat take on the Milwaukee Bucks at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Milwaukee Bucks at Kaseya Center.",
     "source": {
@@ -10181,7 +10672,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Miami's finest.",
     "editorialWhy": "NBA game: Miami Heat take on the New York Knicks at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the New York Knicks at Kaseya Center.",
     "source": {
@@ -10235,7 +10726,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NBA game: Miami Heat take on the New York Knicks at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the New York Knicks at Kaseya Center.",
     "source": {
@@ -10319,7 +10810,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NBA game: Miami Heat take on the Boston Celtics at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Boston Celtics at Kaseya Center.",
     "source": {
@@ -10346,7 +10837,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NBA game: Miami Heat take on the Boston Celtics at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Boston Celtics at Kaseya Center.",
     "source": {
@@ -10373,7 +10864,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NBA game: Miami Heat take on the Boston Celtics at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Boston Celtics at Kaseya Center.",
     "source": {
@@ -10430,7 +10921,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Final day of Ultra Miami 2026. Closing sets from world-class DJs. Located in Downtown, FPL Solar Amphitheater is a local favorite.",
     "description": "Final day of Ultra Miami 2026. Closing sets from world-class DJs.",
     "source": {
@@ -10439,6 +10930,35 @@
     },
     "editorPick": true,
     "venueId": "0ebc18170e2a"
+  },
+  {
+    "id": "f9f94a582d46c0e8",
+    "title": "Daybreak at Deering",
+    "startAt": "2026-02-28T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Deering Estate",
+    "address": "16701 SW 72nd Ave, Miami, FL 33157",
+    "neighborhood": "Palmetto Bay",
+    "lat": 25.6148,
+    "lng": -80.3112,
+    "city": "Miami",
+    "tags": [
+      "outdoor",
+      "wellness",
+      "local-favorite"
+    ],
+    "category": "Wellness",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Reset and recharge.",
+    "editorialWhy": "Watch the sunrise over Biscayne Bay from the historic front lawn. Located in Palmetto Bay, Deering Estate is a local favorite.",
+    "description": "Watch the sunrise over Biscayne Bay from the historic front lawn.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://deeringestate.org/events/"
+    },
+    "editorPick": true,
+    "venueId": "376988e17b40"
   },
   {
     "id": "ecd81143c3585e27",
@@ -10484,7 +11004,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NBA game: Miami Heat take on the Orlando Magic at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Orlando Magic at Kaseya Center.",
     "source": {
@@ -10511,7 +11031,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NBA game: Miami Heat take on the Orlando Magic at Kaseya Center. Located in Downtown Miami, Kaseya Center is a local favorite.",
     "description": "NBA game: Miami Heat take on the Orlando Magic at Kaseya Center.",
     "source": {
@@ -10597,7 +11117,7 @@
     "category": "Comedy",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Second night of Jerry Seinfeld at Hard Rock Live Hollywood. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Second night of Jerry Seinfeld at Hard Rock Live Hollywood.",
     "source": {
@@ -10764,7 +11284,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "Classic Friends episodes on the big screen rooftop. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
     "description": "Classic Friends episodes on the big screen rooftop.",
     "source": {
@@ -10792,7 +11312,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Dive into Miami's cultural richness.",
     "editorialWhy": "Teen comedy classic on the rooftop in South Beach. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
     "description": "Teen comedy classic on the rooftop in South Beach.",
     "source": {
@@ -10821,7 +11341,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Dive into Miami's cultural richness.",
     "editorialWhy": "Valentine's Day screening of the romantic classic. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
     "description": "Valentine's Day screening of the romantic classic.",
     "source": {
@@ -10962,7 +11482,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "Dive into Miami's cultural richness.",
     "editorialWhy": "Film premiere at O Cinema South Beach. Located in South Beach, O Cinema South Beach is a local favorite.",
     "description": "Film premiere at O Cinema South Beach.",
     "source": {
@@ -10991,7 +11511,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "Dive into Miami's cultural richness.",
     "editorialWhy": "Spielberg classic on the rooftop. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
     "description": "Spielberg classic on the rooftop.",
     "source": {
@@ -11019,7 +11539,7 @@
     "category": "Culture",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "Dive into Miami's cultural richness.",
     "editorialWhy": "Vampire romance on the rooftop. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
     "description": "Vampire romance on the rooftop.",
     "source": {
@@ -11064,7 +11584,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "Miami Hurricanes Womens Basketball vs. Syracuse University Womens Basketball at Miami Best of all, it's free.",
     "description": "Miami Hurricanes Womens Basketball vs. Syracuse University Womens Basketball at Miami",
     "source": {
@@ -11110,7 +11630,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "The kind of night Miami does best.",
     "editorialWhy": "Zeta “10th Anniversary in the U.S.” show w/ Pollyanna, and More in Miami at Miami Best of all, it's free.",
     "description": "Zeta “10th Anniversary in the U.S.” show w/ Pollyanna, and More in Miami at Miami",
     "source": {
@@ -11157,7 +11677,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Classical Classics: “The Monet of Music” featuring Genova & Dimitrov at Miami Best of all, it's free.",
     "description": "Classical Classics: “The Monet of Music” featuring Genova & Dimitrov at Miami",
     "source": {
@@ -11179,7 +11699,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "Steve Solomon’s Cannoli, Latkes & Guilt! The Therapy Continues… at Miami Best of all, it's free.",
     "description": "Steve Solomon’s Cannoli, Latkes & Guilt! The Therapy Continues… at Miami",
     "source": {
@@ -11223,7 +11743,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "The Cleveland Orchestra in Miami: Bronfman Plays Beethoven at Miami Best of all, it's free.",
     "description": "The Cleveland Orchestra in Miami: Bronfman Plays Beethoven at Miami",
     "source": {
@@ -11245,7 +11765,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "Off With Their Heads, Dikembe, and SMUG LLC in Miami at Miami Best of all, it's free.",
     "description": "Off With Their Heads, Dikembe, and SMUG LLC in Miami at Miami",
     "source": {
@@ -11267,7 +11787,7 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
+    "shortWhy": "Fresh, local, and full of character.",
     "editorialWhy": "The Outdoor Antique and Collectible Market 2023-2024 at Miami Best of all, it's free.",
     "description": "The Outdoor Antique and Collectible Market 2023-2024 at Miami",
     "source": {
@@ -11311,7 +11831,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "The Doo Wop Project Presents “Echoes of the Street” at Miami Best of all, it's free.",
     "description": "The Doo Wop Project Presents “Echoes of the Street” at Miami",
     "source": {
@@ -11357,7 +11877,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "Everglades Tattoo Expo 3DAY Pass Jan. 30 – Feb 1 at Miami Best of all, it's free.",
     "description": "Everglades Tattoo Expo 3DAY Pass Jan. 30 – Feb 1 at Miami",
     "source": {
@@ -11381,7 +11901,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Ringling Bros B&B: The Greatest Show on Earth at Miami Best of all, it's free.",
     "description": "Ringling Bros B&B: The Greatest Show on Earth at Miami",
     "source": {
@@ -11429,7 +11949,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Ringling Bros B&B: The Greatest Show on Earth at Miami Best of all, it's free.",
     "description": "Ringling Bros B&B: The Greatest Show on Earth at Miami",
     "source": {
@@ -11479,7 +11999,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Friday Night Live – Improv Comedy Miami Show at Miami Best of all, it's free.",
     "description": "Friday Night Live – Improv Comedy Miami Show at Miami",
     "source": {
@@ -11501,7 +12021,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "Florida Grand Opera presents Die Fledermaus at Miami Best of all, it's free.",
     "description": "Florida Grand Opera presents Die Fledermaus at Miami",
     "source": {
@@ -11523,7 +12043,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "Florida Grand Opera presents Die Fledermaus at Miami Best of all, it's free.",
     "description": "Florida Grand Opera presents Die Fledermaus at Miami",
     "source": {
@@ -11545,7 +12065,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "Florida Grand Opera presents Die Fledermaus at Miami Best of all, it's free.",
     "description": "Florida Grand Opera presents Die Fledermaus at Miami",
     "source": {
@@ -11567,7 +12087,7 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
+    "shortWhy": "See what Miami's art scene is about.",
     "editorialWhy": "The Second City: Laugh Harder, Not Smarter at Miami Best of all, it's free.",
     "description": "The Second City: Laugh Harder, Not Smarter at Miami",
     "source": {
@@ -11589,7 +12109,7 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Art worth the trip.",
+    "shortWhy": "See what Miami's art scene is about.",
     "editorialWhy": "Pout Pout Fish: Smart Stage Matinee Series at Miami Best of all, it's free.",
     "description": "Pout Pout Fish: Smart Stage Matinee Series at Miami",
     "source": {
@@ -11657,7 +12177,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Florida Panthers vs. Buffalo Sabres at Miami Best of all, it's free.",
     "description": "Florida Panthers vs. Buffalo Sabres at Miami",
     "source": {
@@ -11701,7 +12221,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "Florida Panthers vs. Winnipeg Jets at Miami Best of all, it's free.",
     "description": "Florida Panthers vs. Winnipeg Jets at Miami",
     "source": {
@@ -11723,7 +12243,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "Florida Panthers vs. Boston Bruins at Miami Best of all, it's free.",
     "description": "Florida Panthers vs. Boston Bruins at Miami",
     "source": {
@@ -11748,7 +12268,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Miami does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "The BIG Show Improv Comedy Miami at Miami Best of all, it's free.",
     "description": "The BIG Show Improv Comedy Miami at Miami",
     "source": {
@@ -11880,7 +12400,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Miami Heat vs. Atlanta Hawks at Miami Best of all, it's free.",
     "description": "Miami Heat vs. Atlanta Hawks at Miami",
     "source": {
@@ -11904,7 +12424,7 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Miami's best spots.",
     "editorialWhy": "Cheap Trills Musical Improv at Miami Best of all, it's free.",
     "description": "Cheap Trills Musical Improv at Miami",
     "source": {
@@ -11926,7 +12446,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "Backstage & Burgers at Miami Best of all, it's free.",
     "description": "Backstage & Burgers at Miami",
     "source": {
@@ -11948,7 +12468,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "Backstage & Burgers at Miami Best of all, it's free.",
     "description": "Backstage & Burgers at Miami",
     "source": {
@@ -11970,7 +12490,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "The Pout Pout Fish at Miami Best of all, it's free.",
     "description": "The Pout Pout Fish at Miami",
     "source": {
@@ -11992,7 +12512,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "BKB 50: Evolution at Miami Best of all, it's free.",
     "description": "BKB 50: Evolution at Miami",
     "source": {
@@ -12014,7 +12534,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Miami comes together.",
     "editorialWhy": "The Second City at Miami Best of all, it's free.",
     "description": "The Second City at Miami",
     "source": {
@@ -12036,7 +12556,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Jerry Seinfeld at Miami Best of all, it's free.",
     "description": "Jerry Seinfeld at Miami",
     "source": {
@@ -12058,7 +12578,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Miami comes together.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "Jerry Seinfeld at Miami Best of all, it's free.",
     "description": "Jerry Seinfeld at Miami",
     "source": {
@@ -12102,7 +12622,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Miami community.",
     "editorialWhy": "In Pour Taste at Miami Best of all, it's free.",
     "description": "In Pour Taste at Miami",
     "source": {
@@ -12124,7 +12644,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Miami community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "In Pour Taste at Miami Best of all, it's free.",
     "description": "In Pour Taste at Miami",
     "source": {
@@ -12190,7 +12710,7 @@
     "category": "Culture",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Dive into Miami's cultural richness.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "Riverdance at Miami Best of all, it's free.",
     "description": "Riverdance at Miami",
     "source": {
