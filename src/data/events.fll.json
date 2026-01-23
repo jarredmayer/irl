@@ -45,7 +45,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal.",
     "source": {
@@ -73,7 +73,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "4 Nations Face-Off Watch & Skate. Canada vs Finland on the big screens. Skating, Pantherland shopping, cocktails at The Federal. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "4 Nations Face-Off Watch & Skate. Canada vs Finland on the big screens. Skating, Pantherland shopping, cocktails at The Federal.",
     "source": {
@@ -132,7 +132,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
@@ -203,6 +203,62 @@
     "venueId": "d26aa89ab44b"
   },
   {
+    "id": "f8bd2c23d2af49e4",
+    "title": "Have-Nots Comedy",
+    "startAt": "2026-01-24T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "177 N Pointe Dr, Dania Beach, FL 33004",
+    "neighborhood": "Dania Beach",
+    "lat": 26.0614,
+    "lng": -80.1447,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "local-favorite"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Have-Nots Comedy has been making South Florida laugh for over 12 years featuring the best local and national comedians. Located in Dania Beach, Dania Beach Improv is a local favorite.",
+    "description": "Have-Nots Comedy has been making South Florida laugh for over 12 years featuring the best local and national comedians.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.daniaimprov.com/"
+    },
+    "editorPick": true,
+    "venueId": "19be0041a46f"
+  },
+  {
+    "id": "764342175724a690",
+    "title": "Leah Rudick",
+    "startAt": "2026-01-31T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "177 N Pointe Dr, Dania Beach, FL 33004",
+    "neighborhood": "Dania Beach",
+    "lat": 26.0614,
+    "lng": -80.1447,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "local-favorite"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Leah Rudick known for viral characters \"Wealthy Woman\" and \"Joannie\" with nearly 2 million followers. Located in Dania Beach, Dania Beach Improv is a local favorite.",
+    "description": "Leah Rudick known for viral characters \"Wealthy Woman\" and \"Joannie\" with nearly 2 million followers.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.daniaimprov.com/"
+    },
+    "editorPick": true,
+    "venueId": "19be0041a46f"
+  },
+  {
     "id": "2cf184bec2fe65ae",
     "title": "Guided Nature Tour at Snyder Park",
     "startAt": "2026-02-07T10:00:00",
@@ -222,7 +278,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -252,7 +308,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -282,7 +338,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -342,7 +398,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
     "source": {
@@ -375,7 +431,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -406,7 +462,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -437,7 +493,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -468,7 +524,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -497,7 +553,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -528,7 +584,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -559,7 +615,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -590,7 +646,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -621,7 +677,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -652,7 +708,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -683,7 +739,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -714,7 +770,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly. Located in Downtown FLL, Huizenga Plaza is a local favorite. Best of all, it's free.",
     "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
     "source": {
@@ -745,7 +801,7 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "Day 2 of South Florida's largest street hockey festival. Finals and championship games. Located in Sunrise, Amerant Bank Arena is a local favorite. Best of all, it's free.",
     "description": "Day 2 of South Florida's largest street hockey festival. Finals and championship games.",
     "source": {
@@ -773,7 +829,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2.",
     "source": {
@@ -828,7 +884,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -855,7 +911,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -882,7 +938,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
@@ -909,7 +965,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -990,7 +1046,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -1017,7 +1073,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -1044,7 +1100,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
@@ -1098,7 +1154,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -1126,7 +1182,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel.",
     "source": {
@@ -1153,7 +1209,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
     "source": {
@@ -1180,7 +1236,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
     "source": {
@@ -1235,7 +1291,7 @@
     "category": "Community",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice.",
     "source": {
@@ -1262,7 +1318,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -1289,7 +1345,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -1316,7 +1372,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -1343,7 +1399,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -1373,7 +1429,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -1437,7 +1493,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -1469,7 +1525,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -1501,7 +1557,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -1533,7 +1589,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -1565,7 +1621,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -1597,7 +1653,7 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Live jazz along the Riverwalk with brunch specials at nearby restaurants. Located in Downtown FLL, Riverwalk Fort Lauderdale is a local favorite. Best of all, it's free.",
     "description": "Live jazz along the Riverwalk with brunch specials at nearby restaurants.",
     "source": {
@@ -1608,6 +1664,34 @@
     "seriesId": "f28cf977ea27",
     "seriesName": "Sunday Jazz Brunch Downtown",
     "venueId": "ae04e2bfed8e"
+  },
+  {
+    "id": "77683264d960b636",
+    "title": "Bob Marley (Comedian)",
+    "startAt": "2026-02-07T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "177 N Pointe Dr, Dania Beach, FL 33004",
+    "neighborhood": "Dania Beach",
+    "lat": 26.0614,
+    "lng": -80.1447,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "local-favorite"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more. Located in Dania Beach, Dania Beach Improv is a local favorite.",
+    "description": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.daniaimprov.com/"
+    },
+    "editorPick": true,
+    "venueId": "19be0041a46f"
   },
   {
     "id": "4a0e48bf900562b8",
@@ -1626,7 +1710,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Live music performance at the War Memorial Auditorium. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Live music performance at the War Memorial Auditorium.",
     "source": {
