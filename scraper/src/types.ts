@@ -21,6 +21,7 @@ export interface RawEvent {
   description: string;
   sourceUrl?: string;
   sourceName: string;
+  ticketUrl?: string;
   image?: string;
   recurring?: boolean;
   recurrencePattern?: string;

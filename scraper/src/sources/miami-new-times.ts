@@ -4,6 +4,8 @@
  */
 
 import { addDays, format, parse } from 'date-fns';
+import * as cheerio from 'cheerio';
+import type { Element } from 'domhandler';
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 
@@ -62,7 +64,7 @@ export class MiamiNewTimesScraper extends BaseScraper {
 
   private parseEventListing(
     $: cheerio.CheerioAPI,
-    item: cheerio.Cheerio<cheerio.Element>,
+    item: cheerio.Cheerio<Element>,
     dateStr: string
   ): RawEvent | null {
     // Extract event name from link

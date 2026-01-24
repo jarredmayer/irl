@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-01-24T18:31:05.893Z",
+  "scrapedAt": "2026-01-24T18:43:55.970Z",
   "stats": {
-    "total": 559,
-    "deduplicated": 468,
+    "total": 597,
+    "deduplicated": 497,
     "bySource": {
       "Miami New Times": 79,
       "Farmers Markets": 80,
@@ -20,14 +20,14 @@
       "Dice.fm": 4,
       "Shotgun": 3,
       "Real Venue Events": 29,
-      "Cultural Attractions": 250
+      "Cultural Attractions": 288
     }
   },
   "delta": {
-    "added": 46,
-    "removed": 12,
+    "added": 0,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 422
+    "unchanged": 497
   },
   "sources": [
     {
@@ -112,7 +112,7 @@
     },
     {
       "name": "Cultural Attractions",
-      "count": 250,
+      "count": 288,
       "errors": []
     }
   ]
