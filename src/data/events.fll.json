@@ -45,7 +45,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal.",
     "source": {
@@ -73,7 +73,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "4 Nations Face-Off Watch & Skate. Canada vs Finland on the big screens. Skating, Pantherland shopping, cocktails at The Federal. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "4 Nations Face-Off Watch & Skate. Canada vs Finland on the big screens. Skating, Pantherland shopping, cocktails at The Federal.",
     "source": {
@@ -132,7 +132,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
@@ -162,7 +162,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
@@ -201,63 +201,6 @@
     },
     "editorPick": false,
     "venueId": "d26aa89ab44b"
-  },
-  {
-    "id": "f8bd2c23d2af49e4",
-    "title": "Have-Nots Comedy",
-    "startAt": "2026-01-24T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Dania Beach Improv",
-    "address": "177 N Pointe Dr, Dania Beach, FL 33004",
-    "neighborhood": "Dania Beach",
-    "lat": 26.0614,
-    "lng": -80.1447,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "comedy",
-      "local-favorite"
-    ],
-    "category": "Comedy",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
-    "editorialWhy": "Have-Nots Comedy has been making South Florida laugh for over 12 years featuring the best local and national comedians. Located in Dania Beach, Dania Beach Improv is a local favorite.",
-    "description": "Have-Nots Comedy has been making South Florida laugh for over 12 years featuring the best local and national comedians.",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://www.daniaimprov.com/"
-    },
-    "editorPick": true,
-    "venueId": "19be0041a46f"
-  },
-  {
-    "id": "9b1a03476c8b9dcb",
-    "title": "NSU Art Museum: Shared Dreams Exhibition",
-    "startAt": "2026-01-25T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "NSU Art Museum",
-    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown",
-    "lat": 26.1186,
-    "lng": -80.1436,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "art-gallery",
-      "museum",
-      "local-favorite"
-    ],
-    "category": "Art",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
-    "editorialWhy": "Major exhibition of 88 works of 20th-century Latin American art from the Goodman collection. Through Sept 2026. Located in Downtown, NSU Art Museum is a local favorite.",
-    "description": "Major exhibition of 88 works of 20th-century Latin American art from the Goodman collection. Through Sept 2026.",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://nsuartmuseum.org/"
-    },
-    "editorPick": true,
-    "venueId": "cf61c35657eb"
   },
   {
     "id": "edd882f881592995",
@@ -306,7 +249,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\" Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\"",
     "source": {
@@ -334,7 +277,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\" Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\"",
     "source": {
@@ -363,7 +306,7 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Broadway adaptation of the beloved film. Marty McFly travels back to 1955 in the DeLorean time machine. Located in Downtown, Broward Center is a local favorite.",
     "description": "Broadway adaptation of the beloved film. Marty McFly travels back to 1955 in the DeLorean time machine.",
     "source": {
@@ -391,7 +334,7 @@
     "category": "Comedy",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Leah Rudick known for viral characters \"Wealthy Woman\" and \"Joannie\" with nearly 2 million followers. Located in Dania Beach, Dania Beach Improv is a local favorite.",
     "description": "Leah Rudick known for viral characters \"Wealthy Woman\" and \"Joannie\" with nearly 2 million followers.",
     "source": {
@@ -400,35 +343,6 @@
     },
     "editorPick": true,
     "venueId": "19be0041a46f"
-  },
-  {
-    "id": "f4b800878ec3d0e6",
-    "title": "ZimSculpt Exhibition at Bonnet House",
-    "startAt": "2026-01-25T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Bonnet House Museum & Gardens",
-    "address": "900 N Birch Rd, Fort Lauderdale, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1297,
-    "lng": -80.1055,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "art-gallery",
-      "outdoor",
-      "local-favorite"
-    ],
-    "category": "Art",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Art worth the trip.",
-    "editorialWhy": "Outdoor Zimbabwean sculpture exhibition throughout the 35-acre subtropical estate. Through April 19. Located in Fort Lauderdale Beach, Bonnet House Museum & Gardens is a local favorite.",
-    "description": "Outdoor Zimbabwean sculpture exhibition throughout the 35-acre subtropical estate. Through April 19.",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://www.bonnethouse.org/"
-    },
-    "editorPick": true,
-    "venueId": "5082c6265c3b"
   },
   {
     "id": "2cf184bec2fe65ae",
@@ -450,7 +364,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -510,7 +424,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -566,7 +480,7 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Featuring Wheeldon's This Bitter Earth, Balanchine's Tarantella, and works by Miami choreographers. Located in Downtown, The Parker is a local favorite.",
     "description": "Featuring Wheeldon's This Bitter Earth, Balanchine's Tarantella, and works by Miami choreographers.",
     "source": {
@@ -594,7 +508,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "The legendary magic duo Penn & Teller bring their unique blend of comedy, magic, and skepticism. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "The legendary magic duo Penn & Teller bring their unique blend of comedy, magic, and skepticism.",
     "source": {
@@ -654,7 +568,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -716,7 +630,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -745,7 +659,7 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "Day 2 of South Florida's largest street hockey festival. Finals and championship games. Located in Sunrise, Amerant Bank Arena is a local favorite. Best of all, it's free.",
     "description": "Day 2 of South Florida's largest street hockey festival. Finals and championship games.",
     "source": {
@@ -774,7 +688,7 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
+    "shortWhy": "Art worth the trip.",
     "editorialWhy": "Opening of \"Lost & Found\" - annual Teen Art Exhibition showcasing Broward teen artists. Located in Downtown, NSU Art Museum is a local favorite. Best of all, it's free.",
     "description": "Opening of \"Lost & Found\" - annual Teen Art Exhibition showcasing Broward teen artists.",
     "source": {
@@ -831,7 +745,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "El Caballero de la Salsa performs his legendary catalog of salsa romántica classics. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "El Caballero de la Salsa performs his legendary catalog of salsa romántica classics.",
     "source": {
@@ -859,7 +773,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2.",
     "source": {
@@ -887,7 +801,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2.",
     "source": {
@@ -898,9 +812,9 @@
     "venueId": "b3f22102a8c4"
   },
   {
-    "id": "1cbe775fb1bb236c",
+    "id": "f38881f416cb984b",
     "title": "Florida Panthers vs Tampa Bay Lightning",
-    "startAt": "2026-01-25T19:00:00",
+    "startAt": "2026-01-27T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -925,171 +839,9 @@
     "venueId": "bd875e433162"
   },
   {
-    "id": "b93b6030ecffc921",
+    "id": "6b4da57a04df53d6",
     "title": "Florida Panthers vs Toronto Maple Leafs",
-    "startAt": "2026-02-03T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "bec056d00b31b2ee",
-    "title": "Florida Panthers vs Carolina Hurricanes",
-    "startAt": "2026-02-12T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "f8402466d69a46cd",
-    "title": "Florida Panthers vs Tampa Bay Lightning",
-    "startAt": "2026-02-17T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "f69abc7043f2bca9",
-    "title": "Florida Panthers vs Toronto Maple Leafs",
-    "startAt": "2026-02-26T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "a8e2da2c3825b5d9",
-    "title": "Florida Panthers vs Carolina Hurricanes",
-    "startAt": "2026-03-07T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "81982590051740a9",
-    "title": "Florida Panthers vs Tampa Bay Lightning",
-    "startAt": "2026-03-12T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "cafa4875bc3adaf6",
-    "title": "Florida Panthers vs Toronto Maple Leafs",
-    "startAt": "2026-03-21T19:00:00",
+    "startAt": "2026-02-05T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -1114,9 +866,9 @@
     "venueId": "bd875e433162"
   },
   {
-    "id": "a3994fff39e511bc",
+    "id": "6395bcd1a4205f0b",
     "title": "Florida Panthers vs Carolina Hurricanes",
-    "startAt": "2026-03-31T19:00:00",
+    "startAt": "2026-02-14T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -1130,7 +882,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
@@ -1141,9 +893,9 @@
     "venueId": "bd875e433162"
   },
   {
-    "id": "2be1f02918c58cc3",
+    "id": "1b0762bf386bcd61",
     "title": "Florida Panthers vs Tampa Bay Lightning",
-    "startAt": "2026-04-04T19:00:00",
+    "startAt": "2026-02-19T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -1157,7 +909,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
@@ -1168,9 +920,9 @@
     "venueId": "bd875e433162"
   },
   {
-    "id": "7978e90530cde74e",
+    "id": "6a2422321f2d3722",
     "title": "Florida Panthers vs Toronto Maple Leafs",
-    "startAt": "2026-04-14T19:00:00",
+    "startAt": "2026-02-28T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -1185,6 +937,168 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "8e67d5c19f507e8b",
+    "title": "Florida Panthers vs Carolina Hurricanes",
+    "startAt": "2026-03-10T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "f5a8ad7931cd7dc3",
+    "title": "Florida Panthers vs Tampa Bay Lightning",
+    "startAt": "2026-03-14T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "86cb5457f9842ee0",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-03-24T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "18f5de5217dc6e6e",
+    "title": "Florida Panthers vs Carolina Hurricanes",
+    "startAt": "2026-04-02T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "7336b4c6fbade047",
+    "title": "Florida Panthers vs Tampa Bay Lightning",
+    "startAt": "2026-04-07T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "b5f523f232eb3f18",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-04-16T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
@@ -1212,7 +1126,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel.",
     "source": {
@@ -1240,7 +1154,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Yacht Rock Forever Tour - the ultimate tribute to smooth 70s and 80s soft rock. Located in Downtown, The Parker is a local favorite.",
     "description": "Yacht Rock Forever Tour - the ultimate tribute to smooth 70s and 80s soft rock.",
     "source": {
@@ -1269,7 +1183,7 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
+    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
     "editorialWhy": "Classical Chinese dance and music bringing 5,000 years of civilization to life. Located in Downtown, Broward Center is a local favorite.",
     "description": "Classical Chinese dance and music bringing 5,000 years of civilization to life.",
     "source": {
@@ -1280,9 +1194,9 @@
     "venueId": "a71832b70344"
   },
   {
-    "id": "3da35db386629875",
+    "id": "a2854f7eea4208be",
     "title": "Florida Panthers vs New York Rangers",
-    "startAt": "2026-02-07T19:00:00",
+    "startAt": "2026-02-10T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -1307,36 +1221,9 @@
     "venueId": "bd875e433162"
   },
   {
-    "id": "b3f22c750533f5a0",
+    "id": "de2f604da419ca86",
     "title": "Florida Panthers vs New York Rangers",
-    "startAt": "2026-03-03T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
-    "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "d65a97a09698d99a",
-    "title": "Florida Panthers vs New York Rangers",
-    "startAt": "2026-03-26T19:00:00",
+    "startAt": "2026-03-05T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -1351,6 +1238,33 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Game day energy at its peak.",
+    "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "4e0ce1c20d4206e2",
+    "title": "Florida Panthers vs New York Rangers",
+    "startAt": "2026-03-28T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
     "source": {
@@ -1378,7 +1292,7 @@
     "category": "Community",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice.",
     "source": {
@@ -1406,7 +1320,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades.",
     "source": {
@@ -1417,36 +1331,9 @@
     "venueId": "5d516220fdd4"
   },
   {
-    "id": "bc429755d5f7d280",
+    "id": "781cb743158d5e83",
     "title": "Florida Panthers vs Boston Bruins",
-    "startAt": "2026-01-29T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "local-favorite"
-    ],
-    "category": "Sports",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
-    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
-    "source": {
-      "name": "Professional Sports",
-      "url": "https://www.floridapanthers.com"
-    },
-    "editorPick": true,
-    "venueId": "bd875e433162"
-  },
-  {
-    "id": "f136af1226a242e9",
-    "title": "Florida Panthers vs Boston Bruins",
-    "startAt": "2026-02-21T19:00:00",
+    "startAt": "2026-01-31T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -1471,9 +1358,36 @@
     "venueId": "bd875e433162"
   },
   {
-    "id": "b9162fb3b23f5ac0",
+    "id": "58ce55b8e2f0c5cb",
     "title": "Florida Panthers vs Boston Bruins",
-    "startAt": "2026-03-17T19:00:00",
+    "startAt": "2026-02-24T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite"
+    ],
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
+    "source": {
+      "name": "Professional Sports",
+      "url": "https://www.floridapanthers.com"
+    },
+    "editorPick": true,
+    "venueId": "bd875e433162"
+  },
+  {
+    "id": "b45959a69c83b49e",
+    "title": "Florida Panthers vs Boston Bruins",
+    "startAt": "2026-03-19T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -1498,9 +1412,9 @@
     "venueId": "bd875e433162"
   },
   {
-    "id": "753e078a74c3e20c",
+    "id": "8579e36e1f87c8d8",
     "title": "Florida Panthers vs Boston Bruins",
-    "startAt": "2026-04-09T19:00:00",
+    "startAt": "2026-04-11T19:00:00",
     "timezone": "America/New_York",
     "venueName": "Amerant Bank Arena",
     "address": "1 Panther Pkwy, Sunrise, FL 33323",
@@ -1514,7 +1428,7 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
@@ -1542,7 +1456,7 @@
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more. Located in Dania Beach, Dania Beach Improv is a local favorite.",
     "description": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more.",
     "source": {
@@ -1570,7 +1484,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Indie rock legends from Boise. Doug Martsch's guitar-driven masterclass. Located in Fort Lauderdale, Culture Room is a local favorite.",
     "description": "Indie rock legends from Boise. Doug Martsch's guitar-driven masterclass.",
     "source": {
@@ -1598,7 +1512,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "50 years of punk rock pioneers Buzzcocks with special guests Redd Kross. Located in Fort Lauderdale, Culture Room is a local favorite.",
     "description": "50 years of punk rock pioneers Buzzcocks with special guests Redd Kross.",
     "source": {
@@ -1711,7 +1625,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Australian singer-songwriter Ruel on his North American tour. Located in Downtown, Revolution Live is a local favorite.",
     "description": "Australian singer-songwriter Ruel on his North American tour.",
     "source": {
@@ -1776,34 +1690,6 @@
     },
     "editorPick": true,
     "venueId": "a71832b70344"
-  },
-  {
-    "id": "11a37a013c138927",
-    "title": "Jerry Seinfeld",
-    "startAt": "2026-01-24T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Hard Rock Live",
-    "address": "1 Seminole Way, Hollywood, FL 33314",
-    "neighborhood": "Hollywood",
-    "lat": 26.0515,
-    "lng": -80.2105,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "comedy",
-      "local-favorite"
-    ],
-    "category": "Comedy",
-    "priceLabel": "$$$",
-    "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
-    "editorialWhy": "Second night of Jerry Seinfeld at Hard Rock Live Hollywood. Located in Hollywood, Hard Rock Live is a local favorite.",
-    "description": "Second night of Jerry Seinfeld at Hard Rock Live Hollywood.",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://casino.hardrock.com/hollywood/events"
-    },
-    "editorPick": true,
-    "venueId": "5d516220fdd4"
   },
   {
     "id": "4a0e48bf900562b8",

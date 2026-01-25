@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-01-24T18:43:55.970Z",
+  "scrapedAt": "2026-01-25T21:45:31.454Z",
   "stats": {
-    "total": 597,
-    "deduplicated": 497,
+    "total": 619,
+    "deduplicated": 484,
     "bySource": {
-      "Miami New Times": 79,
+      "Miami New Times": 73,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -20,19 +20,19 @@
       "Dice.fm": 4,
       "Shotgun": 3,
       "Real Venue Events": 29,
-      "Cultural Attractions": 288
+      "Cultural Attractions": 316
     }
   },
   "delta": {
-    "added": 0,
-    "removed": 0,
+    "added": 87,
+    "removed": 47,
     "modified": 0,
-    "unchanged": 497
+    "unchanged": 397
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 79,
+      "count": 73,
       "errors": []
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "name": "Cultural Attractions",
-      "count": 288,
+      "count": 316,
       "errors": []
     }
   ]
