@@ -175,10 +175,10 @@ export function getAllScrapers(): BaseScraper[] {
     new MiamiFestivalsScraper(),
 
     // Real ticketing platforms
-    new ResidentAdvisorScraper(),
-    new DiceFmScraper(),
     new DiceRealScraper(), // Puppeteer-based real scraper
-    new ShotgunScraper(),
+    // new ResidentAdvisorScraper(),  // SYNTHETIC - fake "RA-style" events
+    // new DiceFmScraper(),           // SYNTHETIC - fake events like "Keinemusik Miami"
+    // new ShotgunScraper(),          // SYNTHETIC - fake events like "Teksupport Miami"
 
     // Manually curated REAL events (venues, concerts, cultural)
     new RealVenueEventsScraper(),
