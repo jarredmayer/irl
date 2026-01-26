@@ -86,6 +86,13 @@ export { CulturalAttractionsScraper } from './cultural-attractions.js';
 // Beach cleanups and environmental events
 export { BeachCleanupsScraper } from './beach-cleanups.js';
 
+// Pop-ups (food pop-ups, sample sales, art shows, markets)
+export { PopUpsScraper } from './pop-ups.js';
+
+// Puppeteer-based real scrapers
+export { PuppeteerScraper } from './puppeteer-base.js';
+export { DiceRealScraper } from './dice-scraper.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -135,6 +142,8 @@ import { BrickellVenuesScraper } from './brickell-venues.js';
 import { RealVenueEventsScraper } from './real-venue-events.js';
 import { CulturalAttractionsScraper } from './cultural-attractions.js';
 import { BeachCleanupsScraper } from './beach-cleanups.js';
+import { PopUpsScraper } from './pop-ups.js';
+import { DiceRealScraper } from './dice-scraper.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -168,11 +177,15 @@ export function getAllScrapers(): BaseScraper[] {
     // Real ticketing platforms
     new ResidentAdvisorScraper(),
     new DiceFmScraper(),
+    new DiceRealScraper(), // Puppeteer-based real scraper
     new ShotgunScraper(),
 
     // Manually curated REAL events (venues, concerts, cultural)
     new RealVenueEventsScraper(),
     new CulturalAttractionsScraper(),
+
+    // Pop-ups, markets, and temporary events
+    new PopUpsScraper(),
 
     // === DISABLED SYNTHETIC SOURCES ===
     // These generate assumed events without real calendar data

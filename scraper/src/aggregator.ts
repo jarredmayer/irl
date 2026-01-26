@@ -7,6 +7,7 @@ import { getAllScrapers, type BaseScraper } from './sources/index.js';
 import type { RawEvent, IRLEvent, ScrapeResult } from './types.js';
 import { createHash } from 'crypto';
 import { verifyEvents } from './verification.js';
+import { findVenue, CATEGORY_IMAGES, type Venue } from './venues.js';
 
 export class EventAggregator {
   private scrapers: BaseScraper[];
@@ -179,38 +180,111 @@ export class EventAggregator {
   }
 
   /**
+   * Normalize venue name using the venue database
+   */
+  private normalizeVenue(venueName: string | undefined): { id: string; venue: Venue } | null {
+    if (!venueName) return null;
+    const venue = findVenue(venueName);
+    return venue ? { id: venue.id, venue } : null;
+  }
+
+  /**
+   * Check if two venues are the same (using venue database for aliases)
+   */
+  private isSameVenue(venueA: string | undefined, venueB: string | undefined): boolean {
+    if (!venueA || !venueB) return false;
+
+    // Direct match
+    if (venueA.toLowerCase().trim() === venueB.toLowerCase().trim()) return true;
+
+    // Check via venue database
+    const normalizedA = this.normalizeVenue(venueA);
+    const normalizedB = this.normalizeVenue(venueB);
+
+    if (normalizedA && normalizedB) {
+      return normalizedA.id === normalizedB.id;
+    }
+
+    // Fuzzy match - one contains the other
+    const a = venueA.toLowerCase().trim();
+    const b = venueB.toLowerCase().trim();
+    if (a.includes(b) || b.includes(a)) return true;
+
+    return false;
+  }
+
+  /**
+   * Calculate title similarity score (0-1)
+   */
+  private getTitleSimilarity(titleA: string, titleB: string): number {
+    const normalize = (s: string) =>
+      s
+        .toLowerCase()
+        .replace(/[^\w\s]/g, '')
+        .split(/\s+/)
+        .filter((w) => w.length > 2)
+        .filter((w) => !['the', 'at', 'and', 'for', 'with', 'presents', 'featuring', 'feat', 'live'].includes(w));
+
+    const wordsA = normalize(titleA);
+    const wordsB = normalize(titleB);
+
+    if (wordsA.length === 0 || wordsB.length === 0) return 0;
+
+    const setA = new Set(wordsA);
+    const setB = new Set(wordsB);
+
+    const intersection = [...setA].filter((w) => setB.has(w));
+    const union = new Set([...setA, ...setB]);
+
+    // Jaccard similarity
+    return intersection.length / union.size;
+  }
+
+  /**
    * Check if two events are likely duplicates using fuzzy matching
    */
   private areLikelyDuplicates(a: RawEvent, b: RawEvent): boolean {
     // Must be on the same date
     if (a.startAt.slice(0, 10) !== b.startAt.slice(0, 10)) return false;
 
-    // Same venue is a strong signal
-    const sameVenue =
-      a.venueName &&
-      b.venueName &&
-      a.venueName.toLowerCase() === b.venueName.toLowerCase();
+    // Check venue similarity
+    const sameVenue = this.isSameVenue(a.venueName, b.venueName);
 
-    if (sameVenue) {
-      // Check if titles share significant words
-      const wordsA = new Set(
-        a.title
-          .toLowerCase()
-          .replace(/[^\w\s]/g, '')
-          .split(/\s+/)
-          .filter((w) => w.length > 3)
-      );
-      const wordsB = new Set(
-        b.title
-          .toLowerCase()
-          .replace(/[^\w\s]/g, '')
-          .split(/\s+/)
-          .filter((w) => w.length > 3)
-      );
+    // Calculate title similarity
+    const titleSimilarity = this.getTitleSimilarity(a.title, b.title);
 
-      const intersection = [...wordsA].filter((w) => wordsB.has(w));
-      // If they share 2+ significant words at the same venue on the same day, likely duplicate
-      if (intersection.length >= 2) return true;
+    // High title similarity alone is enough (e.g., same artist different venues would be different events)
+    if (titleSimilarity >= 0.7) return true;
+
+    // Same venue + moderate title similarity
+    if (sameVenue && titleSimilarity >= 0.3) return true;
+
+    // Same venue + same time is very suspicious
+    if (sameVenue && a.startAt === b.startAt) return true;
+
+    // Check for artist name match (common pattern: "Artist Name at Venue" vs "Artist Name")
+    const extractArtist = (title: string) => {
+      // Remove common suffixes like "at Venue", "Live at", etc.
+      return title
+        .toLowerCase()
+        .replace(/\s+(at|@|live at|presents?)\s+.+$/i, '')
+        .replace(/[^\w\s]/g, '')
+        .trim();
+    };
+
+    const artistA = extractArtist(a.title);
+    const artistB = extractArtist(b.title);
+
+    if (artistA && artistB && artistA.length > 5 && artistB.length > 5) {
+      if (artistA === artistB || artistA.includes(artistB) || artistB.includes(artistA)) {
+        // Same artist on same date - check if same venue or close proximity
+        if (sameVenue) return true;
+
+        // Check if same neighborhood
+        if (a.neighborhood && b.neighborhood && a.neighborhood === b.neighborhood) {
+          return true;
+        }
+      }
     }
 
     return false;
@@ -263,9 +337,36 @@ export class EventAggregator {
       seriesName = event.title;
     }
 
-    // Generate venue ID if we have a venue name
+    // Use venue database for normalized data
+    const normalizedVenue = this.normalizeVenue(event.venueName);
     let venueId: string | undefined;
-    if (event.venueName) {
+    let venueName = event.venueName;
+    let address = event.address;
+    let neighborhood = event.neighborhood || 'Miami';
+    let lat = event.lat ?? null;
+    let lng = event.lng ?? null;
+    let tags = [...event.tags];
+
+    if (normalizedVenue) {
+      const { id: vId, venue } = normalizedVenue;
+      venueId = vId;
+      // Use canonical venue name
+      venueName = venue.name;
+      // Fill in missing data from venue database
+      if (!address) address = venue.address;
+      if (!neighborhood || neighborhood === 'Miami') neighborhood = venue.neighborhood;
+      if (!lat || !lng) {
+        lat = venue.lat;
+        lng = venue.lng;
+      }
+      // Add venue vibe tags if not already present
+      for (const vibeTag of venue.vibeTags) {
+        if (!tags.includes(vibeTag) && tags.length < 6) {
+          tags.push(vibeTag);
+        }
+      }
+    } else if (event.venueName) {
+      // Generate venue ID from name if not in database
       venueId = createHash('md5')
         .update(event.venueName.toLowerCase())
         .digest('hex')
@@ -278,13 +379,13 @@ export class EventAggregator {
       startAt: event.startAt,
       endAt: event.endAt,
       timezone: 'America/New_York',
-      venueName: event.venueName,
-      address: event.address,
-      neighborhood: event.neighborhood || 'Miami',
-      lat: event.lat ?? null,
-      lng: event.lng ?? null,
+      venueName,
+      address,
+      neighborhood,
+      lat,
+      lng,
       city: event.city,
-      tags: event.tags,
+      tags,
       category: event.category,
       priceLabel: event.priceLabel,
       isOutdoor: event.isOutdoor,
@@ -297,7 +398,11 @@ export class EventAggregator {
             url: event.sourceUrl,
           }
         : undefined,
-      image: event.image,
+      // Use event image, venue image, or category fallback
+      image: event.image ||
+        (normalizedVenue?.venue.imageUrl) ||
+        CATEGORY_IMAGES[event.category] ||
+        undefined,
       editorPick,
       seriesId,
       seriesName,

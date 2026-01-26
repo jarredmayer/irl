@@ -127,6 +127,17 @@ export class MiamiNewTimesScraper extends BaseScraper {
       ? this.cleanText(neighborhoodMatch[1])
       : 'Miami';
 
+    // Extract image URL
+    const img = item.find('img').first();
+    let image = img.attr('src') || img.attr('data-src') || undefined;
+    // Make sure image URL is absolute
+    if (image && image.startsWith('/')) {
+      image = this.baseUrl + image;
+    }
+
+    // Parse price from listing text (look for $XX patterns or "Free")
+    const priceInfo = this.parsePrice(fullText);
+
     // Categorize and generate tags
     const category = this.categorize(title, '', venueName || '');
     const tags = this.generateTags(title, '', category);
@@ -143,10 +154,12 @@ export class MiamiNewTimesScraper extends BaseScraper {
       city: 'Miami',
       tags,
       category,
-      priceLabel: 'Free', // Miami New Times doesn't always show price
+      priceLabel: priceInfo.label,
+      priceAmount: priceInfo.amount,
       isOutdoor,
       description: `${title} at ${venueName || 'Miami'}`,
       sourceUrl,
+      image,
       sourceName: this.name,
     };
   }

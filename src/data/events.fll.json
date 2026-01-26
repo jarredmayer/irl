@@ -17,13 +17,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "Florida Panthers Watch Party presented by Yuengling. Open skating 6-8pm before puck drop at 8pm vs St. Louis Blues. Mascot appearances, giveaways, big screen viewing. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Florida Panthers Watch Party presented by Yuengling. Open skating 6-8pm before puck drop at 8pm vs St. Louis Blues. Mascot appearances, giveaways, big screen viewing.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events/detail/watch-party"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "b3f22102a8c4"
   },
@@ -45,13 +46,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events/detail/skate-watch-4-nations-face-off"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "b3f22102a8c4"
   },
@@ -73,13 +75,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "4 Nations Face-Off Watch & Skate. Canada vs Finland on the big screens. Skating, Pantherland shopping, cocktails at The Federal. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "4 Nations Face-Off Watch & Skate. Canada vs Finland on the big screens. Skating, Pantherland shopping, cocktails at The Federal.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events/detail/skate-watch-4-nations-face-off"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "b3f22102a8c4"
   },
@@ -109,6 +112,7 @@
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events/detail/cats-cup"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -132,13 +136,14 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
       "name": "Beach Cleanups",
       "url": "https://healtheplanet.com/activities"
     },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "d26aa89ab44b"
   },
@@ -169,6 +174,7 @@
       "name": "Beach Cleanups",
       "url": "https://healtheplanet.com/activities"
     },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "d26aa89ab44b"
   },
@@ -199,6 +205,7 @@
       "name": "Beach Cleanups",
       "url": "https://healtheplanet.com/activities"
     },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "d26aa89ab44b"
   },
@@ -215,20 +222,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
     ],
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Rising country star Bailey Zimmerman brings his platinum hits \"Rock and A Hard Place\" and \"Fall In Love\" live. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Rising country star Bailey Zimmerman brings his platinum hits \"Rock and A Hard Place\" and \"Fall In Love\" live.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://casino.hardrock.com/hollywood/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "5d516220fdd4"
+    "venueId": "hard-rock-live"
   },
   {
     "id": "e02874cb7e984769",
@@ -244,20 +255,24 @@
     "tags": [
       "live-music",
       "latin",
-      "local-favorite"
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
     ],
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\" Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\"",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://casino.hardrock.com/hollywood/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "5d516220fdd4"
+    "venueId": "hard-rock-live"
   },
   {
     "id": "68637da37ef5c0f3",
@@ -272,20 +287,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
     ],
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\" Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\"",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://casino.hardrock.com/hollywood/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "5d516220fdd4"
+    "venueId": "hard-rock-live"
   },
   {
     "id": "ce81d1b1ad2c9b58",
@@ -301,7 +320,10 @@
     "tags": [
       "live-music",
       "family-friendly",
-      "local-favorite"
+      "local-favorite",
+      "performing-arts",
+      "broadway",
+      "concerts"
     ],
     "category": "Culture",
     "priceLabel": "$$",
@@ -313,8 +335,9 @@
       "name": "Cultural Attractions",
       "url": "https://www.browardcenter.org/events"
     },
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
     "editorPick": true,
-    "venueId": "a71832b70344"
+    "venueId": "broward-center"
   },
   {
     "id": "764342175724a690",
@@ -329,7 +352,9 @@
     "city": "Fort Lauderdale",
     "tags": [
       "comedy",
-      "local-favorite"
+      "local-favorite",
+      "standup",
+      "casino"
     ],
     "category": "Comedy",
     "priceLabel": "$",
@@ -341,8 +366,9 @@
       "name": "Cultural Attractions",
       "url": "https://www.daniaimprov.com/"
     },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": true,
-    "venueId": "19be0041a46f"
+    "venueId": "dania-improv"
   },
   {
     "id": "2cf184bec2fe65ae",
@@ -364,13 +390,14 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
       "name": "Beach Cleanups",
       "url": "https://healtheplanet.com/activities"
     },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "5fe8d06f12e5"
   },
@@ -394,13 +421,14 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
       "name": "Beach Cleanups",
       "url": "https://healtheplanet.com/activities"
     },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "5fe8d06f12e5"
   },
@@ -424,13 +452,14 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
       "name": "Beach Cleanups",
       "url": "https://healtheplanet.com/activities"
     },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "5fe8d06f12e5"
   },
@@ -447,20 +476,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
     ],
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Valentine's Day country concert with Rascal Flatts and special guests Lauren Alaina and Chris Lane. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Valentine's Day country concert with Rascal Flatts and special guests Lauren Alaina and Chris Lane.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://casino.hardrock.com/hollywood/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "5d516220fdd4"
+    "venueId": "hard-rock-live"
   },
   {
     "id": "71db309029f6d9d4",
@@ -480,13 +513,14 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
+    "shortWhy": "History and culture, local-style.",
     "editorialWhy": "Featuring Wheeldon's This Bitter Earth, Balanchine's Tarantella, and works by Miami choreographers. Located in Downtown, The Parker is a local favorite.",
     "description": "Featuring Wheeldon's This Bitter Earth, Balanchine's Tarantella, and works by Miami choreographers.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.miamicityballet.org/tickets-and-events/"
     },
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
     "editorPick": true,
     "venueId": "4822b9a182b8"
   },
@@ -503,7 +537,10 @@
     "city": "Fort Lauderdale",
     "tags": [
       "comedy",
-      "local-favorite"
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
     ],
     "category": "Comedy",
     "priceLabel": "$$",
@@ -515,8 +552,9 @@
       "name": "Cultural Attractions",
       "url": "https://casino.hardrock.com/hollywood/events"
     },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": true,
-    "venueId": "5d516220fdd4"
+    "venueId": "hard-rock-live"
   },
   {
     "id": "90226056167560f0",
@@ -532,7 +570,10 @@
     "tags": [
       "live-music",
       "latin",
-      "local-favorite"
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
     ],
     "category": "Music",
     "priceLabel": "$$$",
@@ -544,8 +585,9 @@
       "name": "Cultural Attractions",
       "url": "https://casino.hardrock.com/hollywood/events/santana"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "5d516220fdd4"
+    "venueId": "hard-rock-live"
   },
   {
     "id": "1c3e715131e0147a",
@@ -568,13 +610,14 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
       "name": "Beach Cleanups",
       "url": "https://healtheplanet.com/activities"
     },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "5fe8d06f12e5"
   },
@@ -599,13 +642,14 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
       "name": "Beach Cleanups",
       "url": "https://healtheplanet.com/activities"
     },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "5fe8d06f12e5"
   },
@@ -630,13 +674,14 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
       "name": "Beach Cleanups",
       "url": "https://healtheplanet.com/activities"
     },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "5fe8d06f12e5"
   },
@@ -666,6 +711,7 @@
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events/detail/cats-cup"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -683,20 +729,23 @@
     "tags": [
       "art-gallery",
       "free-event",
-      "local-favorite"
+      "local-favorite",
+      "museum",
+      "contemporary-art"
     ],
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "shortWhy": "Culture in full color.",
     "editorialWhy": "Opening of \"Lost & Found\" - annual Teen Art Exhibition showcasing Broward teen artists. Located in Downtown, NSU Art Museum is a local favorite. Best of all, it's free.",
     "description": "Opening of \"Lost & Found\" - annual Teen Art Exhibition showcasing Broward teen artists.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://nsuartmuseum.org/event/teen-art-exhibition-2026/"
     },
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
     "editorPick": true,
-    "venueId": "cf61c35657eb"
+    "venueId": "nsu-art-museum"
   },
   {
     "id": "0a34aca4bae94279",
@@ -711,20 +760,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
     ],
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "The world's most beloved tenor celebrates 30 years of his breakthrough album Romanza. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "The world's most beloved tenor celebrates 30 years of his breakthrough album Romanza.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://casino.hardrock.com/hollywood/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "5d516220fdd4"
+    "venueId": "hard-rock-live"
   },
   {
     "id": "92e34351d313b9b3",
@@ -740,20 +793,24 @@
     "tags": [
       "live-music",
       "latin",
-      "local-favorite"
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
     ],
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "El Caballero de la Salsa performs his legendary catalog of salsa romántica classics. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "El Caballero de la Salsa performs his legendary catalog of salsa romántica classics.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://casino.hardrock.com/hollywood/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "5d516220fdd4"
+    "venueId": "hard-rock-live"
   },
   {
     "id": "761682b49331c866",
@@ -773,13 +830,14 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
     "venueId": "b3f22102a8c4"
   },
@@ -801,13 +859,14 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
     "venueId": "b3f22102a8c4"
   },
@@ -828,13 +887,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -862,6 +922,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -882,13 +943,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Carolina Hurricanes at Amerant Bank Arena.",
     "source": {
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -909,13 +971,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -943,6 +1006,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -970,6 +1034,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -997,6 +1062,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1017,13 +1083,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Toronto Maple Leafs at Amerant Bank Arena.",
     "source": {
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1051,6 +1118,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1071,13 +1139,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Tampa Bay Lightning at Amerant Bank Arena.",
     "source": {
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1105,6 +1174,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1126,13 +1196,14 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
     "venueId": "b3f22102a8c4"
   },
@@ -1150,7 +1221,10 @@
     "tags": [
       "dancing",
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "performing-arts",
+      "broadway",
+      "concerts"
     ],
     "category": "Culture",
     "priceLabel": "$$",
@@ -1162,8 +1236,9 @@
       "name": "Cultural Attractions",
       "url": "https://www.browardcenter.org/events"
     },
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
     "editorPick": true,
-    "venueId": "a71832b70344"
+    "venueId": "broward-center"
   },
   {
     "id": "a2854f7eea4208be",
@@ -1182,13 +1257,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the New York Rangers at Amerant Bank Arena.",
     "source": {
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1216,6 +1292,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1243,6 +1320,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1264,13 +1342,14 @@
     "category": "Community",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events"
     },
+    "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
     "editorPick": true,
     "venueId": "b3f22102a8c4"
   },
@@ -1287,20 +1366,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
     ],
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://casino.hardrock.com/hollywood/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "5d516220fdd4"
+    "venueId": "hard-rock-live"
   },
   {
     "id": "781cb743158d5e83",
@@ -1319,13 +1402,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1353,6 +1437,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1373,13 +1458,14 @@
     "category": "Sports",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Nothing beats live sports.",
+    "shortWhy": "Game day energy at its peak.",
     "editorialWhy": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL game: Florida Panthers take on the Boston Bruins at Amerant Bank Arena.",
     "source": {
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1407,6 +1493,7 @@
       "name": "Professional Sports",
       "url": "https://www.floridapanthers.com"
     },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "bd875e433162"
   },
@@ -1423,20 +1510,23 @@
     "city": "Fort Lauderdale",
     "tags": [
       "comedy",
-      "local-favorite"
+      "local-favorite",
+      "standup",
+      "casino"
     ],
     "category": "Comedy",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more. Located in Dania Beach, Dania Beach Improv is a local favorite.",
     "description": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.daniaimprov.com/"
     },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": true,
-    "venueId": "19be0041a46f"
+    "venueId": "dania-improv"
   },
   {
     "id": "ff51e26ce68f2b4c",
@@ -1451,7 +1541,10 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "intimate",
+      "rock",
+      "indie"
     ],
     "category": "Music",
     "priceLabel": "$$",
@@ -1463,8 +1556,9 @@
       "name": "Cultural Attractions",
       "url": "https://cultureroom.net/"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "0829043169ad"
+    "venueId": "culture-room"
   },
   {
     "id": "33dbd465b1c99962",
@@ -1479,20 +1573,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "intimate",
+      "rock",
+      "indie"
     ],
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "50 years of punk rock pioneers Buzzcocks with special guests Redd Kross. Located in Fort Lauderdale, Culture Room is a local favorite.",
     "description": "50 years of punk rock pioneers Buzzcocks with special guests Redd Kross.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://cultureroom.net/"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "0829043169ad"
+    "venueId": "culture-room"
   },
   {
     "id": "55fb3e52aaa79c5d",
@@ -1520,6 +1618,7 @@
       "name": "Cultural Attractions",
       "url": "https://www.browardcenter.org/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
     "venueId": "4822b9a182b8"
   },
@@ -1536,20 +1635,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "rock",
+      "indie",
+      "standing-room"
     ],
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Australian indie pop band Last Dinosaurs brings their dreamy sound. Located in Downtown, Revolution Live is a local favorite.",
     "description": "Australian indie pop band Last Dinosaurs brings their dreamy sound.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.jointherevolution.net/concerts/"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "4fc8f4e8c1cf"
+    "venueId": "revolution-live"
   },
   {
     "id": "521426a9e0add7d7",
@@ -1564,20 +1667,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "rock",
+      "indie",
+      "standing-room"
     ],
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Viral hip-hop duo bringing their old-school influenced sound. Located in Downtown, Revolution Live is a local favorite.",
     "description": "Viral hip-hop duo bringing their old-school influenced sound.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.jointherevolution.net/concerts/"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "4fc8f4e8c1cf"
+    "venueId": "revolution-live"
   },
   {
     "id": "ea4847a040541a3e",
@@ -1592,7 +1699,10 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "rock",
+      "indie",
+      "standing-room"
     ],
     "category": "Music",
     "priceLabel": "$$",
@@ -1604,8 +1714,9 @@
       "name": "Cultural Attractions",
       "url": "https://www.jointherevolution.net/concerts/"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "4fc8f4e8c1cf"
+    "venueId": "revolution-live"
   },
   {
     "id": "d0732c20ee235ba6",
@@ -1620,20 +1731,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "live-music",
-      "local-favorite"
+      "local-favorite",
+      "intimate",
+      "rock",
+      "indie"
     ],
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "British indie rock trio behind \"Let's Dance to Joy Division.\" Located in Fort Lauderdale, Culture Room is a local favorite.",
     "description": "British indie rock trio behind \"Let's Dance to Joy Division.\"",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://cultureroom.net/"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
-    "venueId": "0829043169ad"
+    "venueId": "culture-room"
   },
   {
     "id": "7ffe6a22e711b4e6",
@@ -1648,20 +1763,24 @@
     "city": "Fort Lauderdale",
     "tags": [
       "dancing",
-      "local-favorite"
+      "local-favorite",
+      "performing-arts",
+      "broadway",
+      "concerts"
     ],
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
+    "shortWhy": "Experience local heritage.",
     "editorialWhy": "30th anniversary tour of the iconic Irish dance spectacular. Located in Downtown, Broward Center is a local favorite.",
     "description": "30th anniversary tour of the iconic Irish dance spectacular.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.browardcenter.org/events/detail/riverdance-2026"
     },
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
     "editorPick": true,
-    "venueId": "a71832b70344"
+    "venueId": "broward-center"
   },
   {
     "id": "4a0e48bf900562b8",
@@ -1680,13 +1799,14 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Live music performance at the War Memorial Auditorium. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Live music performance at the War Memorial Auditorium.",
     "source": {
       "name": "Cultural Attractions",
       "url": "https://www.ftlwarmemorial.com/events"
     },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": false,
     "venueId": "b3f22102a8c4"
   }
