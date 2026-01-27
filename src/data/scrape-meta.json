@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-01-27T03:38:30.206Z",
+  "scrapedAt": "2026-01-27T11:46:22.222Z",
   "stats": {
-    "total": 918,
-    "deduplicated": 724,
+    "total": 916,
+    "deduplicated": 722,
     "bySource": {
       "Miami New Times": 67,
       "Farmers Markets": 80,
@@ -18,15 +18,15 @@
       "Dice.fm Real": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 337,
-      "Pop-Ups": 41,
-      "Curated Recurring": 296
+      "Pop-Ups": 40,
+      "Curated Recurring": 295
     }
   },
   "delta": {
-    "added": 14,
-    "removed": 6,
+    "added": 1,
+    "removed": 2,
     "modified": 0,
-    "unchanged": 710
+    "unchanged": 721
   },
   "sources": [
     {
@@ -101,12 +101,12 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 41,
+      "count": 40,
       "errors": []
     },
     {
       "name": "Curated Recurring",
-      "count": 296,
+      "count": 295,
       "errors": []
     }
   ]
