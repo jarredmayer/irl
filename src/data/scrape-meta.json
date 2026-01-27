@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-01-27T00:15:40.603Z",
+  "scrapedAt": "2026-01-27T00:19:10.972Z",
   "stats": {
-    "total": 855,
-    "deduplicated": 671,
+    "total": 939,
+    "deduplicated": 755,
     "bySource": {
       "Miami New Times": 67,
       "Farmers Markets": 80,
@@ -20,14 +20,14 @@
       "Real Venue Events": 29,
       "Cultural Attractions": 320,
       "Pop-Ups": 41,
-      "Curated Recurring": 212
+      "Curated Recurring": 296
     }
   },
   "delta": {
-    "added": 14,
+    "added": 84,
     "removed": 0,
     "modified": 0,
-    "unchanged": 657
+    "unchanged": 671
   },
   "sources": [
     {
@@ -112,7 +112,7 @@
     },
     {
       "name": "Curated Recurring",
-      "count": 212,
+      "count": 296,
       "errors": []
     }
   ]

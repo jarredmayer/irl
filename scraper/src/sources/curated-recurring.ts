@@ -401,6 +401,126 @@ export class CuratedRecurringScraper extends BaseScraper {
       isOutdoor: false,
       sourceUrl: 'https://frostscience.org/',
     },
+
+    // === EDITION MIAMI BEACH ===
+    {
+      name: 'Market at EDITION',
+      venue: 'The Miami Beach EDITION',
+      address: '2901 Collins Ave, Miami Beach, FL 33140',
+      neighborhood: 'Mid-Beach',
+      lat: 25.8089,
+      lng: -80.1267,
+      days: [0], // Sunday
+      time: '10:00',
+      category: 'Food & Drink',
+      description: 'Sunday market at The EDITION with local vendors, artisans, and brunch vibes.',
+      tags: ['food-market', 'brunch', 'local-favorite'],
+      price: 0,
+      isOutdoor: true,
+      sourceUrl: 'https://editionhotels.com/miami-beach/',
+    },
+    {
+      name: 'Sunset Sessions at EDITION',
+      venue: 'The Miami Beach EDITION',
+      address: '2901 Collins Ave, Miami Beach, FL 33140',
+      neighborhood: 'Mid-Beach',
+      lat: 25.8089,
+      lng: -80.1267,
+      days: [5, 6], // Fri, Sat
+      time: '17:00',
+      category: 'Music',
+      description: 'Poolside DJ sessions at sunset. Cocktails and ocean views at The EDITION.',
+      tags: ['dj', 'sunset', 'waterfront', 'cocktails'],
+      price: 0,
+      isOutdoor: true,
+      sourceUrl: 'https://editionhotels.com/miami-beach/',
+    },
+
+    // === STRAWBERRY MOON / GOODTIME HOTEL ===
+    {
+      name: 'Strawberry Moon Pool Party',
+      venue: 'Strawberry Moon at Goodtime Hotel',
+      address: '601 Washington Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7717,
+      lng: -80.1350,
+      days: [6, 0], // Sat, Sun
+      time: '12:00',
+      category: 'Nightlife',
+      description: "Pharrell's poolside paradise at The Goodtime Hotel. DJs, cocktails, and Miami's stylish crowd.",
+      tags: ['dj', 'waterfront', 'local-favorite', 'dancing'],
+      price: 50,
+      isOutdoor: true,
+      sourceUrl: 'https://thegoodtimehotel.com/strawberry-moon/',
+    },
+    {
+      name: 'Goodtime Yoga',
+      venue: 'The Goodtime Hotel',
+      address: '601 Washington Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7717,
+      lng: -80.1350,
+      days: [6, 0], // Sat, Sun
+      time: '09:00',
+      category: 'Wellness',
+      description: 'Morning yoga in the Goodtime Hotel courtyard. Start your weekend right.',
+      tags: ['yoga', 'wellness'],
+      price: 25,
+      isOutdoor: true,
+      sourceUrl: 'https://thegoodtimehotel.com/',
+    },
+
+    // === ESME HOTEL ===
+    {
+      name: 'Jazz Nights at The Esme',
+      venue: 'The Esme Hotel',
+      address: '1438 Washington Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7867,
+      lng: -80.1350,
+      days: [4, 5, 6], // Thu-Sat
+      time: '20:00',
+      category: 'Music',
+      description: "Live jazz in The Esme's stylish courtyard. Intimate setting, great cocktails.",
+      tags: ['live-music', 'jazz', 'cocktails', 'local-favorite'],
+      price: 0,
+      isOutdoor: true,
+      sourceUrl: 'https://theesmehotel.com/',
+    },
+    {
+      name: 'Sunday Brunch at The Esme',
+      venue: 'The Esme Hotel',
+      address: '1438 Washington Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7867,
+      lng: -80.1350,
+      days: [0], // Sunday
+      time: '11:00',
+      category: 'Food & Drink',
+      description: 'Mediterranean-inspired brunch in a beautiful courtyard setting.',
+      tags: ['brunch', 'local-favorite'],
+      price: 45,
+      isOutdoor: true,
+      sourceUrl: 'https://theesmehotel.com/',
+    },
+
+    // === HOTEL GREYSTONE ===
+    {
+      name: 'Rooftop Sundowners at Greystone',
+      venue: 'Hotel Greystone',
+      address: '1920 Collins Ave, Miami Beach, FL 33139',
+      neighborhood: 'South Beach',
+      lat: 25.7933,
+      lng: -80.1283,
+      days: [4, 5, 6], // Thu-Sat
+      time: '17:00',
+      category: 'Food & Drink',
+      description: 'Sunset cocktails on the Greystone rooftop. Art deco architecture meets modern Miami.',
+      tags: ['rooftop', 'sunset', 'cocktails', 'local-favorite'],
+      price: 0,
+      isOutdoor: true,
+      sourceUrl: 'https://greystonemiamibeach.com/',
+    },
   ];
 
   constructor() {
