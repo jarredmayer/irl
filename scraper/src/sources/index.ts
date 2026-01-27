@@ -169,7 +169,7 @@ export function getAllScrapers(): BaseScraper[] {
     new CoffeeAndChillScraper(),
 
     // Real schedules
-    new ProfessionalSportsScraper(),
+    // new ProfessionalSportsScraper(),  // DISABLED - generates fake games, need real API
     new WorldCup2026Scraper(),
 
     // Real festivals
