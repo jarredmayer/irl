@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-01-27T00:27:41.833Z",
+  "scrapedAt": "2026-01-27T03:04:49.530Z",
   "stats": {
-    "total": 942,
-    "deduplicated": 758,
+    "total": 941,
+    "deduplicated": 753,
     "bySource": {
       "Miami New Times": 67,
       "Farmers Markets": 80,
@@ -10,7 +10,7 @@
       "Don't Tell Comedy": 16,
       "Diplo Run Club": 8,
       "Coffee & Chill": 12,
-      "Professional Sports": 38,
+      "Professional Sports": 37,
       "World Cup 2026": 7,
       "III Points": 1,
       "SOBEWFF": 4,
@@ -24,10 +24,10 @@
     }
   },
   "delta": {
-    "added": 3,
-    "removed": 0,
+    "added": 0,
+    "removed": 3,
     "modified": 0,
-    "unchanged": 755
+    "unchanged": 753
   },
   "sources": [
     {
@@ -62,7 +62,7 @@
     },
     {
       "name": "Professional Sports",
-      "count": 38,
+      "count": 37,
       "errors": []
     },
     {

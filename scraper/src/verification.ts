@@ -78,6 +78,18 @@ const VENUE_BLACKLIST = [
   'topgolf',
 ];
 
+// Blacklisted event titles - low signal events
+const TITLE_BLACKLIST = [
+  'backstage & burgers',
+  'backstage and burgers',
+  'ride and dine',
+  'big bus tour',
+  'hop on hop off',
+  'segway tour',
+  'jet ski rental',
+  'parasailing',
+];
+
 export function getSourceConfidence(sourceName: string): SourceConfidence {
   if (VERIFIED_SOURCES.includes(sourceName)) return 'high';
   if (SYNTHETIC_SOURCES.includes(sourceName)) return 'low';
@@ -88,6 +100,11 @@ export function isBlacklistedVenue(venueName: string | undefined): boolean {
   if (!venueName) return false;
   const lower = venueName.toLowerCase();
   return VENUE_BLACKLIST.some(v => lower.includes(v));
+}
+
+export function isBlacklistedTitle(title: string): boolean {
+  const lower = title.toLowerCase();
+  return TITLE_BLACKLIST.some(t => lower.includes(t));
 }
 
 /**
@@ -102,9 +119,12 @@ export function scoreEventQuality(event: RawEvent): number {
     return 0; // Fail immediately
   }
 
-  // Filter out blacklisted low-quality venues
+  // Filter out blacklisted low-quality venues and titles
   if (isBlacklistedVenue(event.venueName)) {
     return 0; // Low-quality venue
+  }
+  if (isBlacklistedTitle(event.title)) {
+    return 0; // Low-quality event
   }
 
   // Filter out tour/activity listings (not events)
