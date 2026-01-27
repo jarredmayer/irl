@@ -30,6 +30,9 @@ const VERIFIED_SOURCES = [
   // Manually curated real events (in cultural-attractions.ts)
   'Cultural Attractions',      // Hand-picked REAL events only
   'Real Venue Events',         // Hand-picked REAL events only
+  'Pop-Ups',                   // Hand-picked pop-up events
+  'Curated Recurring',         // Verified recurring events (jazz, hotels, etc.)
+  'Dice.fm Real',              // Puppeteer scraper for real Dice events
 ];
 
 // ALL OTHER SOURCES ARE SYNTHETIC - they generate assumed events
@@ -61,10 +64,30 @@ const SYNTHETIC_SOURCES = [
   'Brickell Venues',
 ];
 
+// Blacklisted venues - low signal venues that clutter results
+const VENUE_BLACKLIST = [
+  'hard rock cafe',
+  'hard rock café',
+  'rainforest cafe',
+  'bubba gump',
+  'senor frogs',
+  'señor frogs',
+  'hooters',
+  'dave & busters',
+  'dave and busters',
+  'topgolf',
+];
+
 export function getSourceConfidence(sourceName: string): SourceConfidence {
   if (VERIFIED_SOURCES.includes(sourceName)) return 'high';
   if (SYNTHETIC_SOURCES.includes(sourceName)) return 'low';
   return 'medium'; // Unknown sources get medium
+}
+
+export function isBlacklistedVenue(venueName: string | undefined): boolean {
+  if (!venueName) return false;
+  const lower = venueName.toLowerCase();
+  return VENUE_BLACKLIST.some(v => lower.includes(v));
 }
 
 /**
@@ -77,6 +100,11 @@ export function scoreEventQuality(event: RawEvent): number {
   // These generate assumed events without verification
   if (confidence === 'low') {
     return 0; // Fail immediately
+  }
+
+  // Filter out blacklisted low-quality venues
+  if (isBlacklistedVenue(event.venueName)) {
+    return 0; // Low-quality venue
   }
 
   // Filter out tour/activity listings (not events)

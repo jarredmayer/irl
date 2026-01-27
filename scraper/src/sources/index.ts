@@ -89,6 +89,9 @@ export { BeachCleanupsScraper } from './beach-cleanups.js';
 // Pop-ups (food pop-ups, sample sales, art shows, markets)
 export { PopUpsScraper } from './pop-ups.js';
 
+// Curated recurring events (verified real recurring events)
+export { CuratedRecurringScraper } from './curated-recurring.js';
+
 // Puppeteer-based real scrapers
 export { PuppeteerScraper } from './puppeteer-base.js';
 export { DiceRealScraper } from './dice-scraper.js';
@@ -143,6 +146,7 @@ import { RealVenueEventsScraper } from './real-venue-events.js';
 import { CulturalAttractionsScraper } from './cultural-attractions.js';
 import { BeachCleanupsScraper } from './beach-cleanups.js';
 import { PopUpsScraper } from './pop-ups.js';
+import { CuratedRecurringScraper } from './curated-recurring.js';
 import { DiceRealScraper } from './dice-scraper.js';
 import type { BaseScraper } from './base.js';
 
@@ -186,6 +190,9 @@ export function getAllScrapers(): BaseScraper[] {
 
     // Pop-ups, markets, and temporary events
     new PopUpsScraper(),
+
+    // Curated recurring (jazz, hotel events, Disco Domingo, etc.)
+    new CuratedRecurringScraper(),
 
     // === DISABLED SYNTHETIC SOURCES ===
     // These generate assumed events without real calendar data

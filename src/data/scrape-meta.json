@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-01-26T23:45:32.443Z",
+  "scrapedAt": "2026-01-27T00:15:40.603Z",
   "stats": {
-    "total": 654,
-    "deduplicated": 486,
+    "total": 855,
+    "deduplicated": 671,
     "bySource": {
       "Miami New Times": 67,
       "Farmers Markets": 80,
@@ -16,20 +16,18 @@
       "SOBEWFF": 4,
       "Miami Spice": 0,
       "Miami Festivals": 4,
-      "Resident Advisor": 8,
-      "Dice.fm": 4,
       "Dice.fm Real": 0,
-      "Shotgun": 3,
       "Real Venue Events": 29,
-      "Cultural Attractions": 316,
-      "Pop-Ups": 41
+      "Cultural Attractions": 320,
+      "Pop-Ups": 41,
+      "Curated Recurring": 212
     }
   },
   "delta": {
-    "added": 0,
+    "added": 14,
     "removed": 0,
     "modified": 0,
-    "unchanged": 486
+    "unchanged": 657
   },
   "sources": [
     {
@@ -93,23 +91,8 @@
       "errors": []
     },
     {
-      "name": "Resident Advisor",
-      "count": 8,
-      "errors": []
-    },
-    {
-      "name": "Dice.fm",
-      "count": 4,
-      "errors": []
-    },
-    {
       "name": "Dice.fm Real",
       "count": 0,
-      "errors": []
-    },
-    {
-      "name": "Shotgun",
-      "count": 3,
       "errors": []
     },
     {
@@ -119,12 +102,17 @@
     },
     {
       "name": "Cultural Attractions",
-      "count": 316,
+      "count": 320,
       "errors": []
     },
     {
       "name": "Pop-Ups",
       "count": 41,
+      "errors": []
+    },
+    {
+      "name": "Curated Recurring",
+      "count": 212,
       "errors": []
     }
   ]

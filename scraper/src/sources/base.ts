@@ -131,7 +131,7 @@ export abstract class BaseScraper {
       'Food & Drink': ['food', 'drink', 'wine', 'beer', 'cocktail', 'dining', 'restaurant', 'brunch', 'tasting', 'chef', 'market'],
       Fitness: ['fitness', 'yoga', 'pilates', 'running', 'cycling', 'workout', 'training', 'gym', 'run club', 'bootcamp'],
       Wellness: ['wellness', 'meditation', 'mindfulness', 'spa', 'healing', 'breathwork'],
-      Sports: ['sport', 'game', 'match', 'tournament', 'championship', 'nba', 'nfl', 'mlb', 'mls', 'f1'],
+      Sports: ['sport', 'game', 'match', 'tournament', 'championship', 'nba', 'nfl', 'mlb', 'mls', 'nhl', 'f1', 'basketball', 'hockey', 'football', 'baseball', 'soccer', 'hurricanes', 'panthers', 'heat', 'dolphins', 'marlins', 'inter miami', ' vs ', ' vs.'],
       Comedy: ['comedy', 'stand-up', 'improv', 'laugh'],
       Family: ['family', 'kids', 'children', 'family-friendly', 'circus', 'ringling'],
       Community: ['community', 'social', 'networking', 'meetup', 'farmers market'],
