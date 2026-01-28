@@ -384,6 +384,42 @@ export class CuratedRecurringScraper extends BaseScraper {
       frequency: 'monthly',
     },
 
+    // === WYNWOOD ART WALK ===
+    {
+      name: 'Wynwood Art Walk',
+      venue: 'Wynwood Arts District',
+      address: '2520 NW 2nd Ave, Miami, FL 33127',
+      neighborhood: 'Wynwood',
+      lat: 25.8011,
+      lng: -80.1994,
+      days: [6], // Saturday (second Saturday)
+      time: '17:00',
+      category: 'Art',
+      description: 'Second Saturday Art Walk. Free open-air arts experience with galleries, murals, live artists, pop-up vendors, food trucks, and music. Explore Wynwood Walls, Museum of Graffiti, and 10+ galleries with free admission 5-10pm.',
+      tags: ['art-gallery', 'free-event', 'local-favorite', 'outdoor'],
+      price: 0,
+      isOutdoor: true,
+      sourceUrl: 'https://wynwoodmiami.com/experience/art-walk/',
+      frequency: 'monthly',
+    },
+    {
+      name: 'Wynwood Walls Night at Art Walk',
+      venue: 'Wynwood Walls',
+      address: '2520 NW 2nd Ave, Miami, FL 33127',
+      neighborhood: 'Wynwood',
+      lat: 25.8011,
+      lng: -80.1994,
+      days: [6], // Saturday (second Saturday)
+      time: '17:00',
+      category: 'Art',
+      description: 'Free admission to Wynwood Walls during Art Walk 5-10pm. Live DJ, bar service, and access to the world\'s premier outdoor street art museum.',
+      tags: ['art-gallery', 'free-event', 'local-favorite', 'outdoor', 'dj'],
+      price: 0,
+      isOutdoor: true,
+      sourceUrl: 'https://thewynwoodwalls.com/',
+      frequency: 'monthly',
+    },
+
     // === FROST SCIENCE ===
     {
       name: 'Laser Fridays at Frost Science',
