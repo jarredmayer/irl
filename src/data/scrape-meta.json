@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-01-29T03:16:19.100Z",
+  "scrapedAt": "2026-01-29T03:22:58.613Z",
   "stats": {
-    "total": 933,
-    "deduplicated": 663,
+    "total": 928,
+    "deduplicated": 661,
     "bySource": {
       "Miami New Times": 68,
       "Farmers Markets": 80,
@@ -17,7 +17,7 @@
       "Miami Festivals": 4,
       "Dice.fm Real": 0,
       "Real Venue Events": 29,
-      "Cultural Attractions": 357,
+      "Cultural Attractions": 352,
       "Pop-Ups": 40,
       "Miami Improv": 143,
       "Fort Lauderdale Improv": 136,
@@ -26,10 +26,10 @@
     }
   },
   "delta": {
-    "added": 12,
-    "removed": 290,
+    "added": 1,
+    "removed": 3,
     "modified": 0,
-    "unchanged": 651
+    "unchanged": 660
   },
   "sources": [
     {
@@ -99,7 +99,7 @@
     },
     {
       "name": "Cultural Attractions",
-      "count": 357,
+      "count": 352,
       "errors": []
     },
     {
