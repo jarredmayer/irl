@@ -281,7 +281,7 @@ export class BrowardCenterScraper extends BaseScraper {
 
 // === CORAL GABLES CITY ===
 export class CoralGablesScraper extends BaseScraper {
-  private url = 'https://www.coralgables.com/events';
+  private url = 'https://www.coralgables.com/events-calendar';
 
   constructor() {
     super('Coral Gables', { weight: 1.2, rateLimit: 2000 });
@@ -292,32 +292,33 @@ export class CoralGablesScraper extends BaseScraper {
     const $ = await this.fetchHTML(this.url);
     const events: RawEvent[] = [];
 
-    $('.event-item, .calendar-event, tr, [class*="event"]').each((_, el) => {
+    // Cards with about="/events/..." attribute
+    $('.card[about*="/events/"]').each((_, el) => {
       try {
         const $el = $(el);
-        const title = this.cleanText($el.find('a, .title, h3').first().text());
-        const dateText = $el.find('.date, time, td').first().text();
-        const venue = $el.find('.venue, .location').first().text() || '';
+        const title = this.cleanText($el.find('h3, h4, .card-title, a').first().text());
+        const description = this.cleanText($el.find('p, .card-text').first().text());
+        const link = $el.attr('about') || $el.find('a').attr('href') || '';
+        const dateText = $el.find('time, .date').first().text();
 
         if (!title || title.length < 5) return;
-        if (title.toLowerCase().includes('advisory') || title.toLowerCase().includes('committee')) return;
 
-        const startAt = this.parseCityDate(dateText);
-        if (!startAt) return;
+        // Extract date from link if available (e.g., /events/music-mcbride-plaza)
+        const startAt = this.parseCityDate(dateText) || this.getNextWeekday();
 
         events.push({
           title,
           startAt,
           timezone: 'America/New_York',
-          venueName: venue || 'Coral Gables',
+          venueName: this.extractVenue(title, description),
           neighborhood: 'Coral Gables',
           city: 'Miami',
-          description: `${title} - City of Coral Gables event.`,
-          category: this.categorize(title, ''),
+          description: description || `${title} - City of Coral Gables event.`,
+          category: this.categorize(title, description),
           tags: ['community', 'local-favorite'],
-          isOutdoor: title.toLowerCase().includes('park') || title.toLowerCase().includes('market'),
+          isOutdoor: /plaza|park|outdoor/i.test(title + description),
           sourceName: this.sourceName,
-          sourceUrl: this.url,
+          sourceUrl: `https://www.coralgables.com${link}`,
         });
       } catch { /* skip */ }
     });
@@ -326,7 +327,17 @@ export class CoralGablesScraper extends BaseScraper {
     return events;
   }
 
+  private extractVenue(title: string, desc: string): string {
+    const text = `${title} ${desc}`;
+    if (/mcbride plaza/i.test(text)) return 'McBride Plaza';
+    if (/merrick park/i.test(text)) return 'Merrick Park';
+    if (/biltmore/i.test(text)) return 'Biltmore Hotel';
+    if (/country club/i.test(text)) return 'Coral Gables Country Club';
+    return 'Coral Gables';
+  }
+
   private parseCityDate(text: string): string | null {
+    if (!text) return null;
     const match = text.match(/(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s*(\d{4})?/i);
     if (match) {
       const monthMap: Record<string, string> = {
@@ -339,5 +350,11 @@ export class CoralGablesScraper extends BaseScraper {
       return `${year}-${month}-${day}T18:00:00`;
     }
     return null;
+  }
+
+  private getNextWeekday(): string {
+    const d = new Date();
+    d.setDate(d.getDate() + 7);
+    return format(d, "yyyy-MM-dd'T'18:00:00");
   }
 }

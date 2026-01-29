@@ -105,6 +105,9 @@ export {
   CoralGablesScraper,
 } from './real-scrapers.js';
 
+// Verified recurring events (confirmed from official sources)
+export { VerifiedRecurringScraper } from './verified-recurring.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -164,6 +167,7 @@ import {
   BrowardCenterScraper,
   CoralGablesScraper,
 } from './real-scrapers.js';
+import { VerifiedRecurringScraper } from './verified-recurring.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -207,8 +211,8 @@ export function getAllScrapers(): BaseScraper[] {
     // Pop-ups, markets, and temporary events
     new PopUpsScraper(),
 
-    // Curated recurring (jazz, hotel events, Disco Domingo, etc.)
-    new CuratedRecurringScraper(),
+    // DISABLED - contains assumed events without verification
+    // new CuratedRecurringScraper(),  // NEEDS AUDIT - many events are assumed, not verified
 
     // Real HTTP scrapers (verified calendar data)
     new MiamiImprovRealScraper(),
@@ -216,6 +220,9 @@ export function getAllScrapers(): BaseScraper[] {
     new CoralGablesScraper(),
     // new DiceMiamiScraper(),      // NEEDS PUPPETEER - JS rendered
     // new BrowardCenterScraper(),  // NEEDS PUPPETEER - JS rendered
+
+    // Verified recurring (confirmed from official sources only)
+    new VerifiedRecurringScraper(),
 
     // === DISABLED SYNTHETIC SOURCES ===
     // These generate assumed events without real calendar data

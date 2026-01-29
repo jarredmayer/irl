@@ -39,6 +39,7 @@ const VERIFIED_SOURCES = [
   'Fort Lauderdale Improv',    // Real comedy shows
   'Broward Center',            // Real performing arts events
   'Coral Gables',              // Real city calendar events
+  'Verified Recurring',        // Confirmed recurring events only
 ];
 
 // ALL OTHER SOURCES ARE SYNTHETIC - they generate assumed events
@@ -96,6 +97,31 @@ const TITLE_BLACKLIST = [
   'parasailing',
 ];
 
+// Government/administrative content - NOT entertainment events
+const GOVERNMENT_PATTERNS = [
+  /\bboard\s+(of|meeting)/i,
+  /\badvisory\s+board/i,
+  /\bcommittee\s+meeting/i,
+  /\bcouncil\s+meeting/i,
+  /\bcity\s+commission/i,
+  /\bplanning\s+(board|commission|meeting)/i,
+  /\bzoning\s+(board|hearing|meeting)/i,
+  /\bdevelopment\s+review/i,
+  /\bpublic\s+hearing/i,
+  /\btown\s+hall\s+meeting/i,
+  /\bbudget\s+(hearing|meeting|workshop)/i,
+  /\bcode\s+enforcement/i,
+  /\bpermit\s+(hearing|review)/i,
+  /\bvariance\s+hearing/i,
+  /\barchitects.*board/i,
+  /\bhistoric\s+preservation\s+(board|commission)/i,
+];
+
+export function isGovernmentContent(title: string, description?: string): boolean {
+  const text = `${title} ${description || ''}`.toLowerCase();
+  return GOVERNMENT_PATTERNS.some(pattern => pattern.test(text));
+}
+
 export function getSourceConfidence(sourceName: string): SourceConfidence {
   if (VERIFIED_SOURCES.includes(sourceName)) return 'high';
   if (SYNTHETIC_SOURCES.includes(sourceName)) return 'low';
@@ -131,6 +157,11 @@ export function scoreEventQuality(event: RawEvent): number {
   }
   if (isBlacklistedTitle(event.title)) {
     return 0; // Low-quality event
+  }
+
+  // Filter out government/administrative content (not entertainment)
+  if (isGovernmentContent(event.title, event.description)) {
+    return 0; // Government meeting, not entertainment
   }
 
   // Filter out tour/activity listings (not events)
