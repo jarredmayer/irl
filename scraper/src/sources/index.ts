@@ -96,6 +96,15 @@ export { CuratedRecurringScraper } from './curated-recurring.js';
 export { PuppeteerScraper } from './puppeteer-base.js';
 export { DiceRealScraper } from './dice-scraper.js';
 
+// Real HTTP scrapers (verified calendar data)
+export {
+  DiceMiamiScraper,
+  MiamiImprovRealScraper,
+  FortLauderdaleImprovScraper,
+  BrowardCenterScraper,
+  CoralGablesScraper,
+} from './real-scrapers.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -148,6 +157,13 @@ import { BeachCleanupsScraper } from './beach-cleanups.js';
 import { PopUpsScraper } from './pop-ups.js';
 import { CuratedRecurringScraper } from './curated-recurring.js';
 import { DiceRealScraper } from './dice-scraper.js';
+import {
+  DiceMiamiScraper,
+  MiamiImprovRealScraper,
+  FortLauderdaleImprovScraper,
+  BrowardCenterScraper,
+  CoralGablesScraper,
+} from './real-scrapers.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -193,6 +209,13 @@ export function getAllScrapers(): BaseScraper[] {
 
     // Curated recurring (jazz, hotel events, Disco Domingo, etc.)
     new CuratedRecurringScraper(),
+
+    // Real HTTP scrapers (verified calendar data)
+    new MiamiImprovRealScraper(),
+    new FortLauderdaleImprovScraper(),
+    new CoralGablesScraper(),
+    // new DiceMiamiScraper(),      // NEEDS PUPPETEER - JS rendered
+    // new BrowardCenterScraper(),  // NEEDS PUPPETEER - JS rendered
 
     // === DISABLED SYNTHETIC SOURCES ===
     // These generate assumed events without real calendar data

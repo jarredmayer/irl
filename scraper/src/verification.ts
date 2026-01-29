@@ -33,6 +33,12 @@ const VERIFIED_SOURCES = [
   'Pop-Ups',                   // Hand-picked pop-up events
   'Curated Recurring',         // Verified recurring events (jazz, hotels, etc.)
   'Dice.fm Real',              // Puppeteer scraper for real Dice events
+  // Real HTTP scrapers
+  'Dice.fm',                   // Real club/music events from Dice
+  'Miami Improv',              // Real comedy shows
+  'Fort Lauderdale Improv',    // Real comedy shows
+  'Broward Center',            // Real performing arts events
+  'Coral Gables',              // Real city calendar events
 ];
 
 // ALL OTHER SOURCES ARE SYNTHETIC - they generate assumed events
