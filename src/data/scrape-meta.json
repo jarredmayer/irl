@@ -1,15 +1,13 @@
 {
-  "scrapedAt": "2026-02-01T11:42:42.899Z",
+  "scrapedAt": "2026-02-01T23:53:20.518Z",
   "stats": {
-    "total": 912,
-    "deduplicated": 618,
+    "total": 1029,
+    "deduplicated": 720,
     "bySource": {
-      "Miami New Times": 65,
+      "Miami New Times": 64,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
-      "Diplo Run Club": 8,
-      "Coffee & Chill": 12,
       "World Cup 2026": 7,
       "III Points": 1,
       "SOBEWFF": 4,
@@ -19,22 +17,26 @@
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
       "Pop-Ups": 38,
-      "Miami Improv": 139,
+      "Miami Improv": 138,
       "Fort Lauderdale Improv": 129,
       "Coral Gables": 10,
-      "Verified Recurring": 2
+      "Verified Recurring": 2,
+      "Coffee & Chill": 6,
+      "Free Yoga Miami": 76,
+      "Run Clubs": 19,
+      "Cycling Group Rides": 38
     }
   },
   "delta": {
-    "added": 19,
-    "removed": 1,
+    "added": 137,
+    "removed": 20,
     "modified": 0,
-    "unchanged": 599
+    "unchanged": 583
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 65,
+      "count": 64,
       "errors": []
     },
     {
@@ -50,16 +52,6 @@
     {
       "name": "Don't Tell Comedy",
       "count": 16,
-      "errors": []
-    },
-    {
-      "name": "Diplo Run Club",
-      "count": 8,
-      "errors": []
-    },
-    {
-      "name": "Coffee & Chill",
-      "count": 12,
       "errors": []
     },
     {
@@ -109,7 +101,7 @@
     },
     {
       "name": "Miami Improv",
-      "count": 139,
+      "count": 138,
       "errors": []
     },
     {
@@ -125,6 +117,26 @@
     {
       "name": "Verified Recurring",
       "count": 2,
+      "errors": []
+    },
+    {
+      "name": "Coffee & Chill",
+      "count": 6,
+      "errors": []
+    },
+    {
+      "name": "Free Yoga Miami",
+      "count": 76,
+      "errors": []
+    },
+    {
+      "name": "Run Clubs",
+      "count": 19,
+      "errors": []
+    },
+    {
+      "name": "Cycling Group Rides",
+      "count": 38,
       "errors": []
     }
   ]
