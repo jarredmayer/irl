@@ -117,6 +117,7 @@ export interface FilterState {
   timeFilter: TimeFilter;
   selectedTags: string[];
   selectedCategories: string[];
+  selectedNeighborhoods: string[];
   nearMeOnly: boolean;
   city?: City;
   searchQuery: string;

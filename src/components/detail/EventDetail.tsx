@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   formatEventDateLong,
   formatEventTimeRange,
+  isHappeningNow,
 } from '../../utils/time';
 import { formatDistance } from '../../utils/distance';
 import { getWeatherForTime, getWeatherIcon } from '../../services/weather';
+import { openDirections } from '../../utils/directions';
 import { ActionButtons } from './ActionButtons';
 import { Chip, ChipGroup } from '../ui/Chip';
 import { EmptyState } from '../ui/EmptyState';
@@ -28,7 +31,37 @@ export function EventDetail({
   weather,
 }: EventDetailProps) {
   const navigate = useNavigate();
+  const [copiedAddress, setCopiedAddress] = useState(false);
   const eventWeather = event && weather ? getWeatherForTime(weather, event.startAt) : null;
+  const happeningNow = event ? isHappeningNow(event.startAt, event.endAt) : false;
+
+  const handleCopyAddress = async () => {
+    if (!event?.address) return;
+    try {
+      await navigator.clipboard.writeText(event.address);
+      setCopiedAddress(true);
+      if ('vibrate' in navigator) navigator.vibrate(10);
+      setTimeout(() => setCopiedAddress(false), 2000);
+    } catch {
+      // Clipboard API failed
+    }
+  };
+
+  const handleOpenMaps = () => {
+    if (!event) return;
+    if (event.lat !== null && event.lng !== null) {
+      openDirections({
+        lat: event.lat,
+        lng: event.lng,
+        address: event.address,
+        venueName: event.venueName,
+      });
+    } else if (event.address) {
+      // Fallback to address-based directions
+      const encodedAddress = encodeURIComponent(event.address);
+      window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+    }
+  };
 
   if (!event) {
     return (
@@ -85,7 +118,16 @@ export function EventDetail({
       <div className="px-4 py-4 space-y-4">
         {/* Title and badges */}
         <div>
-          <div className="flex items-start gap-2 mb-2">
+          <div className="flex items-start gap-2 mb-2 flex-wrap">
+            {happeningNow && (
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Happening Now
+              </span>
+            )}
             {event.editorPick && (
               <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
                 <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
@@ -139,7 +181,36 @@ export function EventDetail({
           </div>
 
           {event.address && (
-            <p className="text-sm text-slate-500 pl-7">{event.address}</p>
+            <div className="flex items-center gap-2 pl-7">
+              <p className="text-sm text-slate-500 flex-1">{event.address}</p>
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={handleCopyAddress}
+                  className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors text-slate-400 hover:text-slate-600 btn-press"
+                  title="Copy address"
+                >
+                  {copiedAddress ? (
+                    <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  ) : (
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <rect x="9" y="9" width="13" height="13" rx="2" />
+                      <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                    </svg>
+                  )}
+                </button>
+                <button
+                  onClick={handleOpenMaps}
+                  className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors text-slate-400 hover:text-slate-600 btn-press"
+                  title="Open in Maps"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           )}
         </div>
 

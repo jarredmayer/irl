@@ -25,8 +25,11 @@ const VERIFIED_SOURCES = [
   'Farmers Markets',           // Known real weekly markets
   'Beach Cleanups',            // Real scheduled cleanups with orgs
   "Don't Tell Comedy",         // Real comedy shows (specific locations)
-  'Diplo Run Club',            // Verified real run club
-  'Coffee & Chill',            // Verified real meetups
+  // Community fitness (verified from official sources)
+  'Coffee & Chill',            // Verified bi-weekly wellness events (coffeeandchill.com)
+  'Free Yoga Miami',           // Verified free yoga in parks (miamiandbeaches.com)
+  'Run Clubs',                 // Verified run clubs (Nike, On Running, Lululemon)
+  'Cycling Group Rides',       // Verified group rides (themiamibikescene.com)
   // Manually curated real events (in cultural-attractions.ts)
   'Cultural Attractions',      // Hand-picked REAL events only
   'Real Venue Events',         // Hand-picked REAL events only

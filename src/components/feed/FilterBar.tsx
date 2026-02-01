@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Chip, ChipGroup } from '../ui/Chip';
 import type { TimeFilter, FilterState, City } from '../../types';
-import { TAGS, MAX_PRICE, CATEGORIES, CATEGORY_COLORS } from '../../constants';
+import { TAGS, MAX_PRICE, CATEGORIES, CATEGORY_COLORS, POPULAR_NEIGHBORHOODS } from '../../constants';
 
 interface FilterBarProps {
   filters: FilterState;
@@ -36,6 +36,7 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
   const activeFilterCount =
     (filters.selectedCategories.length > 0 ? 1 : 0) +
     (filters.selectedTags.length > 0 ? 1 : 0) +
+    (filters.selectedNeighborhoods.length > 0 ? 1 : 0) +
     (filters.nearMeOnly ? 1 : 0) +
     (filters.freeOnly ? 1 : 0) +
     (filters.city ? 1 : 0) +
@@ -69,6 +70,13 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
     } else {
       updateFilter('selectedTags', [...popularTags]);
     }
+  };
+
+  const toggleNeighborhood = (neighborhood: string) => {
+    const newNeighborhoods = filters.selectedNeighborhoods.includes(neighborhood)
+      ? filters.selectedNeighborhoods.filter((n) => n !== neighborhood)
+      : [...filters.selectedNeighborhoods, neighborhood];
+    updateFilter('selectedNeighborhoods', newNeighborhoods);
   };
 
   return (
@@ -217,6 +225,33 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
             />
           </div>
         )}
+      </div>
+
+      {/* Neighborhood quick filters */}
+      <div className="px-4 py-2 overflow-x-auto hide-scrollbar border-t border-slate-50">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="text-xs font-medium text-slate-500 shrink-0">Neighborhoods</span>
+          {filters.selectedNeighborhoods.length > 0 && (
+            <button
+              onClick={() => updateFilter('selectedNeighborhoods', [])}
+              className="text-xs text-sky-500 hover:text-sky-600"
+            >
+              Clear
+            </button>
+          )}
+        </div>
+        <ChipGroup>
+          {POPULAR_NEIGHBORHOODS.map((neighborhood) => (
+            <Chip
+              key={neighborhood}
+              label={neighborhood}
+              selected={filters.selectedNeighborhoods.includes(neighborhood)}
+              onClick={() => toggleNeighborhood(neighborhood)}
+              size="sm"
+              variant="outline"
+            />
+          ))}
+        </ChipGroup>
       </div>
 
       {/* Category filters */}

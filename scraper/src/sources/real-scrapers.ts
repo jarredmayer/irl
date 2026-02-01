@@ -39,16 +39,15 @@ export class DiceMiamiScraper extends BaseScraper {
         events.push({
           title,
           startAt,
-          timezone: 'America/New_York',
           venueName: venue || 'TBA',
           neighborhood: this.inferNeighborhood(venue),
           city: 'Miami',
           description: `${title} at ${venue}. Tickets on Dice.fm.`,
           category: this.categorize(title, ''),
           tags: ['live-music', 'nightlife'],
-          priceMin: this.parsePrice(priceText),
+          priceAmount: this.parsePriceAmount(priceText),
           isOutdoor: false,
-          sourceName: this.sourceName,
+          sourceName: this.name,
           sourceUrl: link ? `https://dice.fm${link}` : this.url,
         });
       } catch (e) { /* skip */ }
@@ -83,7 +82,7 @@ export class DiceMiamiScraper extends BaseScraper {
     return 'Miami';
   }
 
-  private parsePrice(text: string): number {
+  private parsePriceAmount(text: string): number {
     const match = text.match(/\$?([\d.]+)/);
     return match ? parseFloat(match[1]) : 0;
   }
@@ -129,7 +128,6 @@ export class MiamiImprovRealScraper extends BaseScraper {
     return {
       title: this.cleanText(data.name),
       startAt: data.startDate?.replace('Z', ''),
-      timezone: 'America/New_York',
       venueName: 'Miami Improv',
       address: '3450 NW 83rd Ave #224, Doral, FL 33166',
       neighborhood: 'Doral',
@@ -137,9 +135,9 @@ export class MiamiImprovRealScraper extends BaseScraper {
       description: `${data.name} at Miami Improv. 21+ with two-drink minimum.`,
       category: 'Comedy',
       tags: ['comedy', 'live-entertainment'],
-      priceMin: data.offers?.price,
+      priceAmount: data.offers?.price,
       isOutdoor: false,
-      sourceName: this.sourceName,
+      sourceName: this.name,
       sourceUrl: data.url || this.url,
     };
   }
@@ -168,17 +166,16 @@ export class FortLauderdaleImprovScraper extends BaseScraper {
               events.push({
                 title: this.cleanText(evt.name),
                 startAt: evt.startDate?.replace('Z', ''),
-                timezone: 'America/New_York',
-                venueName: 'Fort Lauderdale Improv',
+                      venueName: 'Fort Lauderdale Improv',
                 address: '5700 Seminole Way, Hollywood, FL 33314',
                 neighborhood: 'Hollywood',
                 city: 'Fort Lauderdale',
                 description: `${evt.name} at Fort Lauderdale Improv. 21+ with two-drink minimum.`,
                 category: 'Comedy',
                 tags: ['comedy', 'live-entertainment'],
-                priceMin: evt.offers?.price,
+                priceAmount: evt.offers?.price,
                 isOutdoor: false,
-                sourceName: this.sourceName,
+                sourceName: this.name,
                 sourceUrl: evt.url || this.url,
               });
             }
@@ -225,8 +222,7 @@ export class BrowardCenterScraper extends BaseScraper {
             events.push({
               title,
               startAt,
-              timezone: 'America/New_York',
-              venueName: this.normalizeVenue(venue),
+                  venueName: this.normalizeVenue(venue),
               address: this.getVenueAddress(venue),
               neighborhood: 'Fort Lauderdale',
               city: 'Fort Lauderdale',
@@ -234,7 +230,7 @@ export class BrowardCenterScraper extends BaseScraper {
               category: this.categorize(title, ''),
               tags: ['live-entertainment', 'performing-arts'],
               isOutdoor: false,
-              sourceName: this.sourceName,
+              sourceName: this.name,
               sourceUrl: link ? `https://www.browardcenter.org${link}` : this.baseUrl,
             });
           } catch { /* skip */ }
@@ -309,7 +305,6 @@ export class CoralGablesScraper extends BaseScraper {
         events.push({
           title,
           startAt,
-          timezone: 'America/New_York',
           venueName: this.extractVenue(title, description),
           neighborhood: 'Coral Gables',
           city: 'Miami',
@@ -317,7 +312,7 @@ export class CoralGablesScraper extends BaseScraper {
           category: this.categorize(title, description),
           tags: ['community', 'local-favorite'],
           isOutdoor: /plaza|park|outdoor/i.test(title + description),
-          sourceName: this.sourceName,
+          sourceName: this.name,
           sourceUrl: `https://www.coralgables.com${link}`,
         });
       } catch { /* skip */ }

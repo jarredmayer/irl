@@ -3,7 +3,7 @@ interface ChipProps {
   selected?: boolean;
   onClick?: () => void;
   size?: 'sm' | 'md';
-  variant?: 'default' | 'outline';
+  variant?: 'default' | 'outline' | 'success' | 'warning';
 }
 
 export function Chip({
@@ -28,6 +28,8 @@ export function Chip({
     outline: selected
       ? 'border-2 border-sky-500 text-sky-600 bg-sky-50'
       : 'border border-slate-300 text-slate-600 hover:border-slate-400',
+    success: 'bg-emerald-100 text-emerald-700 border border-emerald-200',
+    warning: 'bg-amber-100 text-amber-700 border border-amber-200',
   };
 
   const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]}`;

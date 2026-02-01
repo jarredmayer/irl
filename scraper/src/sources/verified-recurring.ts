@@ -61,7 +61,6 @@ export class VerifiedRecurringScraper extends BaseScraper {
         events.push({
           title: event.name,
           startAt: `${date}T${event.time}:00`,
-          timezone: 'America/New_York',
           venueName: event.venue,
           address: event.address,
           neighborhood: event.neighborhood,
@@ -71,9 +70,9 @@ export class VerifiedRecurringScraper extends BaseScraper {
           description: event.description,
           category: event.category,
           tags: event.tags,
-          priceMin: event.price,
+          priceAmount: event.price,
           isOutdoor: event.isOutdoor,
-          sourceName: this.sourceName,
+          sourceName: this.name,
           sourceUrl: event.sourceUrl,
         });
       }

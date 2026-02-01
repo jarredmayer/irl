@@ -176,3 +176,6 @@ export function isEventHappeningNow(startAt: string, endAt?: string): boolean {
   assumedEnd.setHours(start.getHours() + 3);
   return now <= assumedEnd;
 }
+
+// Alias for shorter import
+export const isHappeningNow = isEventHappeningNow;

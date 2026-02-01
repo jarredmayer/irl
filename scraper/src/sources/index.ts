@@ -108,6 +108,14 @@ export {
 // Verified recurring events (confirmed from official sources)
 export { VerifiedRecurringScraper } from './verified-recurring.js';
 
+// Community fitness (verified recurring fitness/wellness events)
+export {
+  CoffeeAndChillRealScraper,
+  FreeYogaScraper,
+  RunClubsScraper,
+  CyclingGroupRidesScraper,
+} from './community-fitness.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -168,6 +176,12 @@ import {
   CoralGablesScraper,
 } from './real-scrapers.js';
 import { VerifiedRecurringScraper } from './verified-recurring.js';
+import {
+  CoffeeAndChillRealScraper,
+  FreeYogaScraper,
+  RunClubsScraper,
+  CyclingGroupRidesScraper,
+} from './community-fitness.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -185,8 +199,8 @@ export function getAllScrapers(): BaseScraper[] {
     new FarmersMarketsScraper(),
     new BeachCleanupsScraper(),
     new DontTellComedyScraper(),
-    new DiploRunClubScraper(),
-    new CoffeeAndChillScraper(),
+    // new DiploRunClubScraper(),   // DISABLED - was a one-time 5K race on Jan 17 2026, NOT weekly
+    // new CoffeeAndChillScraper(), // DISABLED - needs verification from @coffeeandchill.miami
 
     // Real schedules
     // new ProfessionalSportsScraper(),  // DISABLED - generates fake games, need real API
@@ -223,6 +237,12 @@ export function getAllScrapers(): BaseScraper[] {
 
     // Verified recurring (confirmed from official sources only)
     new VerifiedRecurringScraper(),
+
+    // Community fitness (verified recurring fitness/wellness events)
+    new CoffeeAndChillRealScraper(),
+    new FreeYogaScraper(),
+    new RunClubsScraper(),
+    new CyclingGroupRidesScraper(),
 
     // === DISABLED SYNTHETIC SOURCES ===
     // These generate assumed events without real calendar data

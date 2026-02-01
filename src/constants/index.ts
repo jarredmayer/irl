@@ -173,6 +173,7 @@ export const DEFAULT_FILTERS = {
   timeFilter: 'all' as const,
   selectedTags: [] as string[],
   selectedCategories: [] as string[],
+  selectedNeighborhoods: [] as string[],
   nearMeOnly: false,
   city: undefined,
   searchQuery: '',
@@ -180,6 +181,20 @@ export const DEFAULT_FILTERS = {
   freeOnly: false,
   dateRange: getDefaultDateRange(),
 };
+
+// Popular neighborhoods for quick filtering
+export const POPULAR_NEIGHBORHOODS = [
+  'Wynwood',
+  'Brickell',
+  'South Beach',
+  'Design District',
+  'Coconut Grove',
+  'Little Havana',
+  'Downtown Miami',
+  'Coral Gables',
+  'Las Olas',
+  'Downtown FLL',
+] as const;
 
 // Miami city center for fallback
 export const MIAMI_CENTER = {
