@@ -125,13 +125,16 @@ async function main() {
   console.log('═══════════════════════════════════════════════════════════');
 
   const isTest = process.argv.includes('--test');
+  const verifyLocations = process.argv.includes('--verify-locations');
   const startTime = Date.now();
   const dataDir = join(__dirname, '../../src/data');
 
   try {
     // Run aggregator
     const aggregator = new EventAggregator();
-    const { events, results, stats } = await aggregator.aggregate();
+    const { events, results, stats, locationIssues } = await aggregator.aggregate({
+      verifyLocations,
+    });
 
     // Print stats
     console.log('═══════════════════════════════════════════════════════════');
@@ -212,6 +215,17 @@ async function main() {
           count: r.events.length,
           errors: r.errors,
         })),
+        ...(locationIssues && locationIssues.length > 0 && {
+          locationIssues: locationIssues.map((issue) => ({
+            venue: issue.name,
+            address: issue.address,
+            currentLat: issue.lat,
+            currentLng: issue.lng,
+            suggestedLat: issue.suggestedLat,
+            suggestedLng: issue.suggestedLng,
+            discrepancyMiles: issue.discrepancyMiles,
+          })),
+        }),
       };
       writeFileSync(metaPath, JSON.stringify(meta, null, 2));
       console.log(`  ✅ Saved metadata to ${metaPath}`);

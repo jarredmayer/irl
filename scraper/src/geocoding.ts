@@ -4,6 +4,7 @@
  */
 
 import { setTimeout } from 'timers/promises';
+import fetch from 'node-fetch';
 
 interface GeocodingResult {
   lat: number;

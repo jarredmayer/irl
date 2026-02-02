@@ -8,6 +8,7 @@ import type { RawEvent, IRLEvent, ScrapeResult } from './types.js';
 import { createHash } from 'crypto';
 import { verifyEvents } from './verification.js';
 import { findVenue, CATEGORY_IMAGES, type Venue } from './venues.js';
+import { extractUniqueVenues, batchVerifyLocations, type VerificationResult } from './geocoding.js';
 
 export class EventAggregator {
   private scrapers: BaseScraper[];
@@ -19,10 +20,11 @@ export class EventAggregator {
   /**
    * Run all scrapers and aggregate results
    */
-  async aggregate(): Promise<{
+  async aggregate(options?: { verifyLocations?: boolean }): Promise<{
     events: IRLEvent[];
     results: ScrapeResult[];
     stats: { total: number; deduplicated: number; bySource: Record<string, number> };
+    locationIssues?: VerificationResult[];
   }> {
     console.log(`\n🚀 Starting event aggregation with ${this.scrapers.length} sources...\n`);
 
@@ -85,6 +87,36 @@ export class EventAggregator {
       bySource[result.source] = result.events.length;
     }
 
+    // Verify locations if requested
+    let locationIssues: VerificationResult[] | undefined;
+    if (options?.verifyLocations) {
+      console.log(`\n🗺️  Verifying venue locations...`);
+      const venues = extractUniqueVenues(irlEvents);
+      console.log(`   Found ${venues.length} unique venues to verify`);
+
+      if (venues.length > 0) {
+        const verificationResults = await batchVerifyLocations(venues);
+        locationIssues = verificationResults.filter(
+          (r) => !r.isValid && r.discrepancyMiles > 0
+        );
+
+        if (locationIssues.length > 0) {
+          console.log(`\n⚠️  ${locationIssues.length} venues have coordinate issues:`);
+          for (const issue of locationIssues.slice(0, 5)) {
+            console.log(`   • ${issue.name}: ${issue.discrepancyMiles.toFixed(2)} miles off`);
+            console.log(`     Address: ${issue.address}`);
+            console.log(`     Current: (${issue.lat.toFixed(4)}, ${issue.lng.toFixed(4)})`);
+            console.log(`     Should be: (${issue.suggestedLat?.toFixed(4)}, ${issue.suggestedLng?.toFixed(4)})`);
+          }
+          if (locationIssues.length > 5) {
+            console.log(`   ... and ${locationIssues.length - 5} more`);
+          }
+        } else {
+          console.log(`   ✅ All venue locations verified!`);
+        }
+      }
+    }
+
     return {
       events: irlEvents,
       results,
@@ -93,6 +125,7 @@ export class EventAggregator {
         deduplicated: irlEvents.length,
         bySource,
       },
+      locationIssues,
     };
   }
 

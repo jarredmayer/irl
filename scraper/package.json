@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "scrape": "npx tsx src/index.ts",
+    "scrape:verify": "npx tsx src/index.ts --verify-locations",
     "scrape:test": "npx tsx src/index.ts --test",
     "validate": "npx tsx src/validate.ts",
     "verify-locations": "npx tsx src/verify-locations.ts",
