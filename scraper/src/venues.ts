@@ -312,7 +312,7 @@ export const VENUES: Record<string, Venue> = {
   'hard-rock-stadium': {
     id: 'hard-rock-stadium',
     name: 'Hard Rock Stadium',
-    aliases: ['Dolphins Stadium', 'Sun Life Stadium'],
+    aliases: ['Dolphins Stadium', 'Sun Life Stadium', 'Miami International Autodrome'],
     address: '347 Don Shula Dr, Miami Gardens, FL 33056',
     neighborhood: 'Miami Gardens',
     city: 'Miami',
@@ -320,6 +320,32 @@ export const VENUES: Record<string, Venue> = {
     lng: -80.2389,
     capacity: 65000,
     vibeTags: ['massive', 'stadium', 'sports', 'concerts', 'festivals'],
+    category: 'sports',
+  },
+  'amerant-bank-arena': {
+    id: 'amerant-bank-arena',
+    name: 'Amerant Bank Arena',
+    aliases: ['BB&T Center', 'FLA Live Arena', 'Panthers Arena', 'Sunrise Arena'],
+    address: '1 Panther Pkwy, Sunrise, FL 33323',
+    neighborhood: 'Sunrise',
+    city: 'Fort Lauderdale',
+    lat: 26.1584,
+    lng: -80.3256,
+    capacity: 20000,
+    vibeTags: ['massive', 'arena', 'sports', 'concerts'],
+    category: 'sports',
+  },
+  'miami-freedom-park': {
+    id: 'miami-freedom-park',
+    name: 'Miami Freedom Park',
+    aliases: ['Inter Miami Stadium', 'Freedom Park'],
+    address: '3500 NW 8th St, Miami, FL 33125',
+    neighborhood: 'Flagami',
+    city: 'Miami',
+    lat: 25.7717,
+    lng: -80.2564,
+    capacity: 25000,
+    vibeTags: ['stadium', 'sports', 'soccer'],
     category: 'sports',
   },
 
@@ -428,12 +454,12 @@ export const VENUES: Record<string, Venue> = {
   'miami-improv': {
     id: 'miami-improv',
     name: 'Miami Improv',
-    aliases: ['Improv Miami', 'The Improv'],
-    address: '8300 NW 36th St, Doral, FL 33166',
+    aliases: ['Improv Miami', 'The Improv', 'Miami Improv Comedy Club'],
+    address: '3450 NW 83rd Ave #224, Doral, FL 33166',
     neighborhood: 'Doral',
     city: 'Miami',
-    lat: 25.8133,
-    lng: -80.3417,
+    lat: 25.8073,
+    lng: -80.3318,
     capacity: 400,
     vibeTags: ['comedy', 'standup', 'big-names'],
     category: 'theater',
@@ -442,16 +468,16 @@ export const VENUES: Record<string, Venue> = {
   'dania-improv': {
     id: 'dania-improv',
     name: 'Dania Beach Improv',
-    aliases: ['Dania Improv'],
-    address: '1 Seminole Way, Dania Beach, FL 33004',
-    neighborhood: 'Dania Beach',
+    aliases: ['Dania Improv', 'Fort Lauderdale Improv', 'FTL Improv', 'Improv Fort Lauderdale'],
+    address: '5700 Seminole Way, Hollywood, FL 33314',
+    neighborhood: 'Hollywood',
     city: 'Fort Lauderdale',
-    lat: 26.0510,
-    lng: -80.2112,
+    lat: 26.0515,
+    lng: -80.2105,
     capacity: 400,
     vibeTags: ['comedy', 'standup', 'casino'],
     category: 'theater',
-    website: 'https://improv.com/dania-beach/',
+    website: 'https://improv.com/fort-lauderdale/',
   },
 
   // ==========================================
@@ -732,6 +758,321 @@ export const VENUES: Record<string, Venue> = {
     category: 'hotel',
     website: 'https://www.faena.com/miami-beach',
   },
+
+  // ==========================================
+  // FARMERS MARKETS
+  // ==========================================
+  'lincoln-road-farmers-market': {
+    id: 'lincoln-road-farmers-market',
+    name: 'Lincoln Road Farmers Market',
+    aliases: ['Lincoln Rd Farmers Market', 'South Beach Farmers Market'],
+    address: 'Lincoln Rd, Miami Beach, FL 33139',
+    neighborhood: 'South Beach',
+    city: 'Miami',
+    lat: 25.7904,
+    lng: -80.1399,
+    capacity: 1000,
+    vibeTags: ['outdoor', 'local-favorite', 'free', 'family-friendly'],
+    category: 'outdoor',
+  },
+  'coconut-grove-farmers-market': {
+    id: 'coconut-grove-farmers-market',
+    name: 'Coconut Grove Farmers Market',
+    aliases: ['Grove Farmers Market', 'CocoWalk Farmers Market'],
+    address: '3300 Grand Ave, Coconut Grove, FL 33133',
+    neighborhood: 'Coconut Grove',
+    city: 'Miami',
+    lat: 25.7291,
+    lng: -80.2419,
+    capacity: 500,
+    vibeTags: ['outdoor', 'local-favorite', 'free', 'family-friendly'],
+    category: 'outdoor',
+  },
+  'coral-gables-farmers-market': {
+    id: 'coral-gables-farmers-market',
+    name: 'Coral Gables Farmers Market',
+    aliases: ['Gables Farmers Market'],
+    address: '405 Biltmore Way, Coral Gables, FL 33134',
+    neighborhood: 'Coral Gables',
+    city: 'Miami',
+    lat: 25.7508,
+    lng: -80.2592,
+    capacity: 500,
+    vibeTags: ['outdoor', 'local-favorite', 'free', 'family-friendly'],
+    category: 'outdoor',
+  },
+  'legion-park-farmers-market': {
+    id: 'legion-park-farmers-market',
+    name: 'Legion Park Farmers Market',
+    aliases: ['Upper Eastside Farmers Market', 'Legion Park Market'],
+    address: '6447 NE 7th Ave, Miami, FL 33138',
+    neighborhood: 'Little Haiti',
+    city: 'Miami',
+    lat: 25.8245,
+    lng: -80.1829,
+    capacity: 500,
+    vibeTags: ['outdoor', 'local-favorite', 'free', 'family-friendly'],
+    category: 'outdoor',
+  },
+  'surfside-farmers-market': {
+    id: 'surfside-farmers-market',
+    name: 'Surfside Farmers Market',
+    aliases: ['Surfside Market'],
+    address: '9301 Collins Ave, Surfside, FL 33154',
+    neighborhood: 'Surfside',
+    city: 'Miami',
+    lat: 25.8768,
+    lng: -80.1245,
+    capacity: 300,
+    vibeTags: ['outdoor', 'local-favorite', 'free', 'family-friendly', 'beach'],
+    category: 'outdoor',
+  },
+
+  // ==========================================
+  // BEACHES & PARKS
+  // ==========================================
+  '3rd-street-beach': {
+    id: '3rd-street-beach',
+    name: '3rd Street Beach',
+    aliases: ['3rd St Beach', 'Third Street Beach'],
+    address: '3rd St & Ocean Dr, Miami Beach, FL 33139',
+    neighborhood: 'South Beach',
+    city: 'Miami',
+    lat: 25.768,
+    lng: -80.13,
+    capacity: 1000,
+    vibeTags: ['beach', 'outdoor', 'free', 'sunrise'],
+    category: 'outdoor',
+  },
+  'lummus-park': {
+    id: 'lummus-park',
+    name: 'Lummus Park',
+    aliases: ['Lummus Park Beach', 'South Beach Park'],
+    address: 'Ocean Dr & 10th St, Miami Beach, FL 33139',
+    neighborhood: 'South Beach',
+    city: 'Miami',
+    lat: 25.778,
+    lng: -80.13,
+    capacity: 2000,
+    vibeTags: ['beach', 'outdoor', 'free', 'iconic'],
+    category: 'outdoor',
+  },
+  'peacock-park': {
+    id: 'peacock-park',
+    name: 'Peacock Park',
+    aliases: ['Peacock Park Coconut Grove'],
+    address: '2820 McFarlane Rd, Miami, FL 33133',
+    neighborhood: 'Coconut Grove',
+    city: 'Miami',
+    lat: 25.7267,
+    lng: -80.242,
+    capacity: 1000,
+    vibeTags: ['outdoor', 'waterfront', 'family-friendly', 'community'],
+    category: 'outdoor',
+  },
+  'underline-brickell': {
+    id: 'underline-brickell',
+    name: 'The Underline - Brickell Backyard',
+    aliases: ['The Underline', 'Underline Brickell', 'Brickell Backyard'],
+    address: '1075 SW 8th St, Miami, FL 33130',
+    neighborhood: 'Brickell',
+    city: 'Miami',
+    lat: 25.765,
+    lng: -80.205,
+    capacity: 500,
+    vibeTags: ['outdoor', 'free', 'fitness', 'community', 'local-favorite'],
+    category: 'outdoor',
+  },
+  'regatta-park': {
+    id: 'regatta-park',
+    name: 'Regatta Park',
+    aliases: ['Regatta Park Coconut Grove'],
+    address: 'Pan American Dr, Coconut Grove, FL 33133',
+    neighborhood: 'Coconut Grove',
+    city: 'Miami',
+    lat: 25.7267,
+    lng: -80.2378,
+    capacity: 1000,
+    vibeTags: ['outdoor', 'waterfront', 'fitness', 'community'],
+    category: 'outdoor',
+  },
+  'snyder-park': {
+    id: 'snyder-park',
+    name: 'Snyder Park',
+    aliases: ['Snyder Park Fort Lauderdale'],
+    address: '3299 SW 4th Ave, Fort Lauderdale, FL 33315',
+    neighborhood: 'Fort Lauderdale',
+    city: 'Fort Lauderdale',
+    lat: 26.0956,
+    lng: -80.1567,
+    capacity: 500,
+    vibeTags: ['outdoor', 'fitness', 'community'],
+    category: 'outdoor',
+  },
+  'collins-park-beach': {
+    id: 'collins-park-beach',
+    name: 'Collins Park Beach',
+    aliases: ['Collins Park', '21st Street Beach'],
+    address: '21st & Collins Ave, Miami Beach, FL 33139',
+    neighborhood: 'South Beach',
+    city: 'Miami',
+    lat: 25.7942,
+    lng: -80.1227,
+    capacity: 500,
+    vibeTags: ['beach', 'outdoor', 'free'],
+    category: 'outdoor',
+  },
+  'smorgasburg-miami': {
+    id: 'smorgasburg-miami',
+    name: 'Smorgasburg Miami',
+    aliases: ['Smorgasburg', 'Smorgasburg Museum Park'],
+    address: 'Museum Park, 1075 Biscayne Blvd, Miami, FL 33132',
+    neighborhood: 'Downtown',
+    city: 'Miami',
+    lat: 25.7847,
+    lng: -80.1867,
+    capacity: 2000,
+    vibeTags: ['outdoor', 'food', 'local-favorite', 'family-friendly'],
+    category: 'outdoor',
+  },
+  'strawberry-moon': {
+    id: 'strawberry-moon',
+    name: 'Strawberry Moon at The Goodtime Hotel',
+    aliases: ['Strawberry Moon', 'Goodtime Hotel Pool'],
+    address: '601 Washington Ave, Miami Beach, FL 33139',
+    neighborhood: 'South Beach',
+    city: 'Miami',
+    lat: 25.7702,
+    lng: -80.134,
+    capacity: 500,
+    vibeTags: ['pool', 'upscale', 'nightlife', 'brunch'],
+    category: 'hotel',
+  },
+  'ftl-war-memorial': {
+    id: 'ftl-war-memorial',
+    name: 'FTL War Memorial',
+    aliases: ['Fort Lauderdale War Memorial', 'War Memorial Park'],
+    address: '800 NE 8th St, Fort Lauderdale, FL 33304',
+    neighborhood: 'Fort Lauderdale',
+    city: 'Fort Lauderdale',
+    lat: 26.1289,
+    lng: -80.1367,
+    capacity: 500,
+    vibeTags: ['outdoor', 'fitness', 'community'],
+    category: 'outdoor',
+  },
+
+  // ==========================================
+  // FITNESS & CYCLING
+  // ==========================================
+  'sun-cycling': {
+    id: 'sun-cycling',
+    name: 'Sun Cycling',
+    aliases: ['Sun Cycling Miami', 'Sun Cycling Coconut Grove'],
+    address: '3001 SW 27th Ave, Miami, FL 33133',
+    neighborhood: 'Coconut Grove',
+    city: 'Miami',
+    lat: 25.744,
+    lng: -80.2389,
+    capacity: 50,
+    vibeTags: ['fitness', 'cycling', 'local-favorite', 'community'],
+    category: 'other',
+  },
+  'bike-tech': {
+    id: 'bike-tech',
+    name: 'Bike Tech',
+    aliases: ['Bike Tech Miami', 'Bike Tech Downtown'],
+    address: '1622 NE 2nd Ave, Miami, FL 33132',
+    neighborhood: 'Downtown',
+    city: 'Miami',
+    lat: 25.788,
+    lng: -80.1918,
+    capacity: 50,
+    vibeTags: ['fitness', 'cycling', 'community'],
+    category: 'other',
+  },
+  'breaking-the-cycle': {
+    id: 'breaking-the-cycle',
+    name: 'Breaking The Cycle',
+    aliases: ['Breaking The Cycle Miami'],
+    address: '10400 NW 7th Ave, Miami, FL 33150',
+    neighborhood: 'Little Haiti',
+    city: 'Miami',
+    lat: 25.849,
+    lng: -80.2106,
+    capacity: 50,
+    vibeTags: ['fitness', 'cycling', 'community', 'local-favorite'],
+    category: 'other',
+  },
+  'ponce-middle-school': {
+    id: 'ponce-middle-school',
+    name: 'Ponce de Leon Middle School',
+    aliases: ['Ponce Middle School', 'Ponce de Leon'],
+    address: '5801 Augusto St, Coral Gables, FL 33146',
+    neighborhood: 'Coral Gables',
+    city: 'Miami',
+    lat: 25.712,
+    lng: -80.278,
+    capacity: 200,
+    vibeTags: ['fitness', 'cycling', 'community'],
+    category: 'other',
+  },
+  'nike-lincoln-road': {
+    id: 'nike-lincoln-road',
+    name: 'Nike Store Lincoln Road',
+    aliases: ['Nike Lincoln Road', 'Nike South Beach', 'Nike Run Club Lincoln Road'],
+    address: '1035 Lincoln Rd, Miami Beach, FL 33139',
+    neighborhood: 'South Beach',
+    city: 'Miami',
+    lat: 25.7906,
+    lng: -80.14,
+    capacity: 100,
+    vibeTags: ['fitness', 'running', 'free'],
+    category: 'other',
+  },
+  'on-store-design-district': {
+    id: 'on-store-design-district',
+    name: 'On Store Miami Design District',
+    aliases: ['On Running Design District', 'On Store Miami'],
+    address: '125 NE 40th St, Miami, FL 33137',
+    neighborhood: 'Design District',
+    city: 'Miami',
+    lat: 25.8135,
+    lng: -80.1918,
+    capacity: 50,
+    vibeTags: ['fitness', 'running', 'free'],
+    category: 'other',
+  },
+
+  // ==========================================
+  // RETAIL & POP-UPS
+  // ==========================================
+  '260-sample-sale': {
+    id: '260-sample-sale',
+    name: '260 Sample Sale',
+    aliases: ['260 Sample', '260 Wynwood'],
+    address: '2450 NW 2nd Ave, Miami, FL 33127',
+    neighborhood: 'Wynwood',
+    city: 'Miami',
+    lat: 25.7986,
+    lng: -80.1996,
+    capacity: 300,
+    vibeTags: ['shopping', 'fashion', 'deals'],
+    category: 'other',
+  },
+  'salty-donut': {
+    id: 'salty-donut',
+    name: 'The Salty Donut',
+    aliases: ['Salty Donut', 'Salty Donut Wynwood'],
+    address: '50 NW 23rd St, Miami, FL 33127',
+    neighborhood: 'Wynwood',
+    city: 'Miami',
+    lat: 25.7993,
+    lng: -80.1949,
+    capacity: 50,
+    vibeTags: ['coffee', 'local-favorite', 'community'],
+    category: 'restaurant',
+  },
 };
 
 /**
@@ -787,4 +1128,65 @@ export function getVenuesByVibe(vibe: string): Venue[] {
  */
 export function getVenuesByCity(city: 'Miami' | 'Fort Lauderdale'): Venue[] {
   return Object.values(VENUES).filter(v => v.city === city);
+}
+
+/**
+ * Apply canonical venue data to an event
+ * Returns updated fields if venue is found, null otherwise
+ */
+export function applyVenueData(event: {
+  venueName?: string;
+  address?: string;
+  neighborhood?: string;
+  lat?: number | null;
+  lng?: number | null;
+  city?: string;
+}): Partial<{
+  address: string;
+  neighborhood: string;
+  lat: number;
+  lng: number;
+  city: 'Miami' | 'Fort Lauderdale';
+}> | null {
+  if (!event.venueName) return null;
+
+  const venue = findVenue(event.venueName);
+  if (!venue) return null;
+
+  return {
+    address: venue.address,
+    neighborhood: venue.neighborhood,
+    lat: venue.lat,
+    lng: venue.lng,
+    city: venue.city,
+  };
+}
+
+/**
+ * Get stats about venue coverage for a set of events
+ */
+export function getVenueCoverage(events: Array<{ venueName?: string }>): {
+  total: number;
+  matched: number;
+  unmatched: string[];
+} {
+  const unmatched = new Set<string>();
+  let matched = 0;
+  let total = 0;
+
+  for (const event of events) {
+    if (!event.venueName) continue;
+    total++;
+    if (findVenue(event.venueName)) {
+      matched++;
+    } else {
+      unmatched.add(event.venueName);
+    }
+  }
+
+  return {
+    total,
+    matched,
+    unmatched: [...unmatched].sort(),
+  };
 }

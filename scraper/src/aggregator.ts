@@ -383,15 +383,13 @@ export class EventAggregator {
     if (normalizedVenue) {
       const { id: vId, venue } = normalizedVenue;
       venueId = vId;
-      // Use canonical venue name
+      // Use canonical venue data (source of truth)
       venueName = venue.name;
-      // Fill in missing data from venue database
-      if (!address) address = venue.address;
-      if (!neighborhood || neighborhood === 'Miami') neighborhood = venue.neighborhood;
-      if (!lat || !lng) {
-        lat = venue.lat;
-        lng = venue.lng;
-      }
+      address = venue.address;
+      neighborhood = venue.neighborhood;
+      // Always use verified venue coordinates
+      lat = venue.lat;
+      lng = venue.lng;
       // Add venue vibe tags if not already present
       for (const vibeTag of venue.vibeTags) {
         if (!tags.includes(vibeTag) && tags.length < 6) {
