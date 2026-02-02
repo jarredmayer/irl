@@ -6,7 +6,9 @@
   "scripts": {
     "scrape": "npx tsx src/index.ts",
     "scrape:test": "npx tsx src/index.ts --test",
-    "validate": "npx tsx src/validate.ts"
+    "validate": "npx tsx src/validate.ts",
+    "verify-locations": "npx tsx src/verify-locations.ts",
+    "verify-locations:fix": "npx tsx src/verify-locations.ts --fix"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
