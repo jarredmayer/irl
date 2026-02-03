@@ -127,6 +127,13 @@ export function useEvents(options: UseEventsOptions) {
       });
     }
 
+    // Filter by selected neighborhoods
+    if (filters.selectedNeighborhoods && filters.selectedNeighborhoods.length > 0) {
+      events = events.filter((event) =>
+        filters.selectedNeighborhoods.includes(event.neighborhood)
+      );
+    }
+
     return events;
   }, [rankedEvents, filters, location, preferences.radiusMiles]);
 
