@@ -126,6 +126,7 @@ async function main() {
 
   const isTest = process.argv.includes('--test');
   const verifyLocations = process.argv.includes('--verify-locations');
+  const generateEditorial = process.argv.includes('--ai-editorial');
   const startTime = Date.now();
   const dataDir = join(__dirname, '../../src/data');
 
@@ -134,6 +135,7 @@ async function main() {
     const aggregator = new EventAggregator();
     const { events, results, stats, locationIssues } = await aggregator.aggregate({
       verifyLocations,
+      generateEditorial,
     });
 
     // Print stats

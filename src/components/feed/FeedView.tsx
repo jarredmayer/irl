@@ -34,6 +34,7 @@ interface FeedViewProps {
   savedEventIds?: string[];
   onSaveEvent?: (eventId: string) => void;
   onDismissEvent?: (eventId: string) => void;
+  onConfigureAI?: () => void;
 }
 
 // Group events by series, keeping first occurrence of each series
@@ -87,6 +88,7 @@ export function FeedView({
   savedEventIds = [],
   onSaveEvent,
   onDismissEvent,
+  onConfigureAI,
 }: FeedViewProps) {
   const [dismissedIds, setDismissedIds] = useState<Set<string>>(new Set());
   const [weatherDismissed, setWeatherDismissed] = useState(false);
@@ -136,6 +138,7 @@ export function FeedView({
           filters={filters}
           onFiltersChange={onFiltersChange}
           hasLocation={hasLocation}
+          onConfigureAI={onConfigureAI}
         />
         <div className="px-4 py-4 space-y-3">
           {[1, 2, 3, 4].map((i) => (
@@ -152,6 +155,7 @@ export function FeedView({
         filters={filters}
         onFiltersChange={onFiltersChange}
         hasLocation={hasLocation}
+        onConfigureAI={onConfigureAI}
       />
 
       {/* Weather-aware suggestions banner */}

@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Chip, ChipGroup } from '../ui/Chip';
 import type { TimeFilter, FilterState, City } from '../../types';
 import { TAGS, MAX_PRICE, CATEGORIES, CATEGORY_COLORS, POPULAR_NEIGHBORHOODS } from '../../constants';
+import { parseNaturalLanguageSearch, hasApiKey } from '../../services/ai';
 
 interface FilterBarProps {
   filters: FilterState;
   onFiltersChange: (filters: FilterState) => void;
   hasLocation?: boolean;
+  onConfigureAI?: () => void;
 }
 
 const timeFilters: { value: TimeFilter; label: string }[] = [
@@ -25,8 +27,71 @@ const cityFilters: { value: City | undefined; label: string }[] = [
 
 const popularTags = TAGS.slice(0, 12);
 
-export function FilterBar({ filters, onFiltersChange, hasLocation = false }: FilterBarProps) {
+export function FilterBar({ filters, onFiltersChange, hasLocation = false, onConfigureAI }: FilterBarProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isAISearching, setIsAISearching] = useState(false);
+  const [aiInterpretation, setAiInterpretation] = useState<string | null>(null);
+
+  const handleAISearch = useCallback(async (query: string) => {
+    if (!query.trim()) return;
+
+    if (!hasApiKey()) {
+      onConfigureAI?.();
+      return;
+    }
+
+    setIsAISearching(true);
+    setAiInterpretation(null);
+
+    try {
+      const result = await parseNaturalLanguageSearch(query);
+      if (result) {
+        // Apply parsed filters
+        const newFilters = { ...filters };
+
+        if (result.filters.timeFilter) {
+          newFilters.timeFilter = result.filters.timeFilter as TimeFilter;
+        }
+        if (result.filters.selectedCategories?.length) {
+          newFilters.selectedCategories = result.filters.selectedCategories;
+        }
+        if (result.filters.selectedTags?.length) {
+          newFilters.selectedTags = result.filters.selectedTags;
+        }
+        if (result.filters.selectedNeighborhoods?.length) {
+          newFilters.selectedNeighborhoods = result.filters.selectedNeighborhoods;
+        }
+        if (result.filters.city) {
+          newFilters.city = result.filters.city as City;
+        }
+        if (result.filters.freeOnly !== undefined) {
+          newFilters.freeOnly = result.filters.freeOnly;
+        }
+        if (result.filters.nearMeOnly !== undefined) {
+          newFilters.nearMeOnly = result.filters.nearMeOnly;
+        }
+
+        // Set search terms as search query
+        if (result.searchTerms?.length) {
+          newFilters.searchQuery = result.searchTerms.join(' ');
+        }
+
+        setAiInterpretation(result.interpretation);
+        onFiltersChange(newFilters);
+      }
+    } catch (error) {
+      console.error('AI search failed:', error);
+    } finally {
+      setIsAISearching(false);
+    }
+  }, [filters, onFiltersChange, onConfigureAI]);
+
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && hasApiKey()) {
+      e.preventDefault();
+      handleAISearch(filters.searchQuery);
+    }
+  };
 
   const updateFilter = <K extends keyof FilterState>(key: K, value: FilterState[K]) => {
     onFiltersChange({ ...filters, [key]: value });
@@ -84,19 +149,34 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
       {/* Search bar + Filter toggle */}
       <div className="px-4 py-2 flex items-center gap-2">
         <div className="relative flex-1">
-          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+          {isAISearching ? (
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4">
+              <div className="w-4 h-4 border-2 border-violet-500 border-t-transparent rounded-full animate-spin" />
+            </div>
+          ) : (
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          )}
           <input
             type="text"
-            placeholder="Search events, venues..."
+            placeholder={hasApiKey() ? "Try: 'free outdoor events this weekend'" : "Search events, venues..."}
             value={filters.searchQuery}
-            onChange={(e) => updateFilter('searchQuery', e.target.value)}
-            className="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
+            onChange={(e) => {
+              updateFilter('searchQuery', e.target.value);
+              setAiInterpretation(null);
+            }}
+            onKeyDown={handleSearchKeyDown}
+            className={`w-full pl-9 pr-4 py-2.5 bg-slate-50 border rounded-xl text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent ${
+              hasApiKey() ? 'border-violet-200' : 'border-slate-200'
+            }`}
           />
           {filters.searchQuery && (
             <button
-              onClick={() => updateFilter('searchQuery', '')}
+              onClick={() => {
+                updateFilter('searchQuery', '');
+                setAiInterpretation(null);
+              }}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -135,6 +215,26 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false }: Fil
           </svg>
         </button>
       </div>
+
+      {/* AI interpretation */}
+      {aiInterpretation && (
+        <div className="px-4 pb-2">
+          <div className="flex items-center gap-2 px-3 py-2 bg-violet-50 border border-violet-100 rounded-lg">
+            <svg className="w-4 h-4 text-violet-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            <span className="text-xs text-violet-700">{aiInterpretation}</span>
+            <button
+              onClick={() => setAiInterpretation(null)}
+              className="ml-auto text-violet-400 hover:text-violet-600"
+            >
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Collapsible filter sections */}
       {isExpanded && (

@@ -11,6 +11,8 @@ import { EventDetail } from './components/detail/EventDetail';
 import { MapView } from './components/map/MapView';
 import { FollowingView } from './components/following/FollowingView';
 import { ProfileView } from './components/profile/ProfileView';
+import { ChatAssistant } from './components/ai/ChatAssistant';
+import { AISettingsModal } from './components/ai/AISettingsModal';
 import { useEvents } from './hooks/useEvents';
 import { usePreferences } from './hooks/usePreferences';
 import { useSavedEvents } from './hooks/useSavedEvents';
@@ -24,6 +26,7 @@ import './index.css';
 
 function AppContent() {
   const [filters, setFilters] = useState<FilterState>({ ...DEFAULT_FILTERS });
+  const [showAISettings, setShowAISettings] = useState(false);
 
   const { preferences, updatePreferences, isLoaded: prefsLoaded } = usePreferences();
   const { isLoaded: savedLoaded } = useSavedEvents();
@@ -72,6 +75,7 @@ function AppContent() {
   const clearFilters = () => setFilters({ ...DEFAULT_FILTERS });
 
   return (
+    <>
     <Routes>
       <Route
         element={<AppShell weatherNote={weatherNote} weather={weather} />}
@@ -91,6 +95,7 @@ function AppContent() {
               followingSeriesIds={seriesIds}
               followingNeighborhoods={neighborhoodIds}
               weather={weather}
+              onConfigureAI={() => setShowAISettings(true)}
             />
           }
         />
@@ -130,6 +135,7 @@ function AppContent() {
               onPreferencesChange={updatePreferences}
               locationStatus={locationStatus}
               onRequestLocation={requestLocation}
+              onConfigureAI={() => setShowAISettings(true)}
             />
           }
         />
@@ -148,6 +154,20 @@ function AppContent() {
         }
       />
     </Routes>
+
+    {/* AI Chat Assistant */}
+    <ChatAssistant
+      events={filteredEvents}
+      preferences={preferences}
+      onConfigureAI={() => setShowAISettings(true)}
+    />
+
+    {/* AI Settings Modal */}
+    <AISettingsModal
+      isOpen={showAISettings}
+      onClose={() => setShowAISettings(false)}
+    />
+    </>
   );
 }
 

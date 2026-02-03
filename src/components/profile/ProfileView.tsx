@@ -8,6 +8,7 @@ import {
   getUserSubmittedEvents,
   deleteUserSubmittedEvent,
 } from '../../services/storage';
+import { hasApiKey } from '../../services/ai';
 import { format, parseISO } from 'date-fns';
 
 interface ProfileViewProps {
@@ -17,6 +18,7 @@ interface ProfileViewProps {
   onPreferencesChange: (preferences: UserPreferences) => void;
   locationStatus: GeolocationState['status'];
   onRequestLocation: () => void;
+  onConfigureAI?: () => void;
 }
 
 export function ProfileView({
@@ -26,6 +28,7 @@ export function ProfileView({
   onPreferencesChange,
   locationStatus,
   onRequestLocation,
+  onConfigureAI,
 }: ProfileViewProps) {
   const [isEditingProfile, setIsEditingProfile] = useState(false);
   const [editHandle, setEditHandle] = useState(profile.handle || '');
@@ -211,6 +214,38 @@ export function ProfileView({
               <span>1 mi</span>
               <span>50 mi</span>
             </div>
+          </div>
+        </section>
+
+        {/* AI Features */}
+        <section className="bg-white rounded-2xl p-5 border border-slate-100">
+          <div className="flex items-center gap-2 mb-3">
+            <h3 className="font-semibold text-slate-900">AI Features</h3>
+            <span className="px-2 py-0.5 bg-violet-100 text-violet-700 text-xs font-medium rounded-full">Beta</span>
+          </div>
+          <p className="text-sm text-slate-500 mb-4">
+            Enable AI-powered features like natural language search and the chat assistant.
+          </p>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              {hasApiKey() ? (
+                <>
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full" />
+                  <span className="text-sm text-emerald-600 font-medium">API key configured</span>
+                </>
+              ) : (
+                <>
+                  <span className="w-2 h-2 bg-slate-300 rounded-full" />
+                  <span className="text-sm text-slate-500">Not configured</span>
+                </>
+              )}
+            </div>
+            <button
+              onClick={onConfigureAI}
+              className="px-4 py-2 bg-gradient-to-r from-violet-500 to-sky-500 text-white text-sm font-medium rounded-lg hover:opacity-90 transition-opacity"
+            >
+              {hasApiKey() ? 'Settings' : 'Configure'}
+            </button>
           </div>
         </section>
 

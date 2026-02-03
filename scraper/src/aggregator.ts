@@ -9,6 +9,7 @@ import { createHash } from 'crypto';
 import { verifyEvents } from './verification.js';
 import { findVenue, CATEGORY_IMAGES, type Venue } from './venues.js';
 import { extractUniqueVenues, batchVerifyLocations, type VerificationResult } from './geocoding.js';
+import { hasAIEnabled, batchGenerateEditorial } from './ai.js';
 
 export class EventAggregator {
   private scrapers: BaseScraper[];
@@ -20,7 +21,7 @@ export class EventAggregator {
   /**
    * Run all scrapers and aggregate results
    */
-  async aggregate(options?: { verifyLocations?: boolean }): Promise<{
+  async aggregate(options?: { verifyLocations?: boolean; generateEditorial?: boolean }): Promise<{
     events: IRLEvent[];
     results: ScrapeResult[];
     stats: { total: number; deduplicated: number; bySource: Record<string, number> };
@@ -76,9 +77,20 @@ export class EventAggregator {
     const deduplicated = this.deduplicateEvents(verified);
     console.log(`   ✅ ${deduplicated.length} unique events after deduplication\n`);
 
+    // Generate AI editorial content if enabled
+    let aiEditorial = new Map<string, { shortWhy: string; editorialWhy: string }>();
+    if (options?.generateEditorial && hasAIEnabled()) {
+      aiEditorial = await batchGenerateEditorial(deduplicated, {
+        batchSize: 5, // Conservative batch size to avoid rate limits
+        delayMs: 1000,
+      });
+    } else if (options?.generateEditorial && !hasAIEnabled()) {
+      console.log('⚠️  AI editorial requested but ANTHROPIC_API_KEY not set');
+    }
+
     // Transform to IRL format
     console.log(`📝 Transforming to IRL format...`);
-    const irlEvents = deduplicated.map((event) => this.transformToIRL(event));
+    const irlEvents = deduplicated.map((event) => this.transformToIRL(event, aiEditorial));
     console.log(`   ✅ ${irlEvents.length} events ready\n`);
 
     // Calculate stats
@@ -351,13 +363,18 @@ export class EventAggregator {
   /**
    * Transform raw event to IRL format
    */
-  private transformToIRL(event: RawEvent): IRLEvent {
+  private transformToIRL(
+    event: RawEvent,
+    aiEditorial?: Map<string, { shortWhy: string; editorialWhy: string }>
+  ): IRLEvent {
     // Generate unique ID
     const id = this.generateEventId(event);
 
-    // Generate editorial content
-    const shortWhy = this.generateShortWhy(event);
-    const editorialWhy = this.generateEditorialWhy(event);
+    // Use AI editorial if available, otherwise use templates
+    const eventKey = `${event.title}|${event.startAt}`;
+    const aiContent = aiEditorial?.get(eventKey);
+    const shortWhy = aiContent?.shortWhy || this.generateShortWhy(event);
+    const editorialWhy = aiContent?.editorialWhy || this.generateEditorialWhy(event);
 
     // Determine if it's an editor's pick
     const editorPick = this.isEditorPick(event);
