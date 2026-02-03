@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-02-02T23:57:09.806Z",
+  "scrapedAt": "2026-02-03T10:25:44.939Z",
   "stats": {
-    "total": 1034,
-    "deduplicated": 733,
+    "total": 1039,
+    "deduplicated": 737,
     "bySource": {
-      "Miami New Times": 62,
+      "Miami New Times": 61,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -16,8 +16,8 @@
       "Dice.fm Real": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
-      "Pop-Ups": 38,
-      "Miami Improv": 141,
+      "Pop-Ups": 37,
+      "Miami Improv": 148,
       "Fort Lauderdale Improv": 133,
       "Coral Gables": 10,
       "Verified Recurring": 2,
@@ -28,15 +28,15 @@
     }
   },
   "delta": {
-    "added": 14,
+    "added": 9,
     "removed": 5,
-    "modified": 107,
-    "unchanged": 612
+    "modified": 0,
+    "unchanged": 728
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 62,
+      "count": 61,
       "errors": []
     },
     {
@@ -96,12 +96,12 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 38,
+      "count": 37,
       "errors": []
     },
     {
       "name": "Miami Improv",
-      "count": 141,
+      "count": 148,
       "errors": []
     },
     {
