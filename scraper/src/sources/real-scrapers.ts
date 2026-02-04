@@ -322,13 +322,16 @@ export class CoralGablesScraper extends BaseScraper {
     return events;
   }
 
-  private extractVenue(title: string, desc: string): string {
+  private extractVenue(title: string, desc: string): string | undefined {
     const text = `${title} ${desc}`;
     if (/mcbride plaza/i.test(text)) return 'McBride Plaza';
     if (/merrick park/i.test(text)) return 'Merrick Park';
     if (/biltmore/i.test(text)) return 'Biltmore Hotel';
     if (/country club/i.test(text)) return 'Coral Gables Country Club';
-    return 'Coral Gables';
+    if (/alhambra circle/i.test(text)) return 'Alhambra Circle';
+    if (/chamber of commerce/i.test(text)) return 'Coral Gables Chamber of Commerce';
+    // Don't return generic location name - leave as undefined
+    return undefined;
   }
 
   private parseCityDate(text: string): string | null {

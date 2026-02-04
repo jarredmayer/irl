@@ -1078,9 +1078,25 @@ export const VENUES: Record<string, Venue> = {
 /**
  * Find venue by name (checks name and aliases)
  */
+// Generic location names that should NOT fuzzy-match to specific venues
+const GENERIC_LOCATIONS = [
+  'miami', 'miami beach', 'south beach', 'north beach', 'mid-beach',
+  'coral gables', 'coconut grove', 'wynwood', 'brickell', 'downtown',
+  'little havana', 'little haiti', 'design district', 'edgewater',
+  'fort lauderdale', 'hollywood', 'doral', 'aventura', 'surfside',
+  'key biscayne', 'bal harbour', 'sunny isles', 'north miami',
+  'tba', 'various', 'multiple locations', 'online', 'virtual',
+];
+
 export function findVenue(name: string): Venue | undefined {
   const normalized = name.toLowerCase().trim();
 
+  // Don't match generic location names
+  if (GENERIC_LOCATIONS.includes(normalized)) {
+    return undefined;
+  }
+
+  // Exact match on venue name
   for (const venue of Object.values(VENUES)) {
     if (venue.name.toLowerCase() === normalized) {
       return venue;
@@ -1092,7 +1108,14 @@ export function findVenue(name: string): Venue | undefined {
     }
   }
 
-  // Fuzzy match - check if name contains or is contained by venue name
+  // Fuzzy match - but only if query is specific enough (>15 chars or contains specific words)
+  const isSpecificEnough = normalized.length > 15 ||
+    /\b(theater|theatre|center|museum|park|arena|stadium|club|bar|restaurant|hotel|hall|gallery)\b/i.test(normalized);
+
+  if (!isSpecificEnough) {
+    return undefined;
+  }
+
   for (const venue of Object.values(VENUES)) {
     const venueLower = venue.name.toLowerCase();
     if (venueLower.includes(normalized) || normalized.includes(venueLower)) {

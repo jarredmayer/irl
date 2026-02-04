@@ -121,11 +121,15 @@ export class MiamiNewTimesScraper extends BaseScraper {
       }
     }
 
-    // Parse neighborhood
-    const neighborhoodMatch = fullText.match(/Neighborhood:\s*([A-Za-z0-9\s/]+)/);
-    const neighborhood = neighborhoodMatch
+    // Parse neighborhood - stop at common delimiters like Price, Category, TBA, or other labels
+    const neighborhoodMatch = fullText.match(/Neighborhood:\s*([A-Za-z\s/]+?)(?:\s*(?:Price|Category|TBA|Venue|When|Where|$|\n|[0-9]))/i);
+    let neighborhood = neighborhoodMatch
       ? this.cleanText(neighborhoodMatch[1])
       : 'Miami';
+
+    // Determine city from neighborhood
+    const isFortLauderdale = /fort lauderdale|hollywood|dania|pompano|davie|plantation|sunrise|weston|pembroke|hallandale|deerfield/i.test(neighborhood);
+    const city = isFortLauderdale ? 'Fort Lauderdale' : 'Miami';
 
     // Extract image URL
     const img = item.find('img').first();
@@ -151,13 +155,13 @@ export class MiamiNewTimesScraper extends BaseScraper {
       neighborhood,
       lat: null,
       lng: null,
-      city: 'Miami',
+      city,
       tags,
       category,
       priceLabel: priceInfo.label,
       priceAmount: priceInfo.amount,
       isOutdoor,
-      description: `${title} at ${venueName || 'Miami'}`,
+      description: `${title} at ${venueName || neighborhood}`,
       sourceUrl,
       image,
       sourceName: this.name,
