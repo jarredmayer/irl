@@ -102,14 +102,16 @@ const TITLE_BLACKLIST = [
 
 // Government/administrative content - NOT entertainment events
 const GOVERNMENT_PATTERNS = [
+  // Specific government boards (not venue names like "Board Room")
+  /\b(economic|planning|zoning|development|advisory|architectural|design|review|preservation|parks|recreation|beautification|environmental|ethics|finance|budget)\s+board\b/i,
   /\bboard\s+(of|meeting)/i,
-  /\badvisory\s+board/i,
+  /\badvisory\s+(board|committee)/i,
   /\bcommittee\s+meeting/i,
   /\bcouncil\s+meeting/i,
-  /\bcity\s+commission/i,
+  /\bcity\s+(commission|council|meeting)/i,
   /\bplanning\s+(board|commission|meeting)/i,
   /\bzoning\s+(board|hearing|meeting)/i,
-  /\bdevelopment\s+review/i,
+  /\bdevelopment\s+(review|committee)/i,
   /\bpublic\s+hearing/i,
   /\btown\s+hall\s+meeting/i,
   /\bbudget\s+(hearing|meeting|workshop)/i,
@@ -118,11 +120,34 @@ const GOVERNMENT_PATTERNS = [
   /\bvariance\s+hearing/i,
   /\barchitects.*board/i,
   /\bhistoric\s+preservation\s+(board|commission)/i,
+  /\bcivic\s+(meeting|association)/i,
+  /\bneighborhood\s+association\s+meeting/i,
+  /\bgovernment\s+meeting/i,
+  /\blegislative\s+session/i,
+  /\bcouncilmember/i,
+  /\bmayor.*meeting/i,
+  // Generic city government meetings
+  /^city\s+meetings?$/i,
+];
+
+// Additional patterns to match government event descriptions
+const GOVERNMENT_DESCRIPTION_PATTERNS = [
+  /^city\s+meetings?$/i,
+  /municipal\s+meeting/i,
+  /government\s+business/i,
+  /official\s+city\s+business/i,
 ];
 
 export function isGovernmentContent(title: string, description?: string): boolean {
-  const text = `${title} ${description || ''}`.toLowerCase();
-  return GOVERNMENT_PATTERNS.some(pattern => pattern.test(text));
+  // Check title against government patterns
+  if (GOVERNMENT_PATTERNS.some(pattern => pattern.test(title))) {
+    return true;
+  }
+  // Check description for government content indicators
+  if (description && GOVERNMENT_DESCRIPTION_PATTERNS.some(pattern => pattern.test(description))) {
+    return true;
+  }
+  return false;
 }
 
 export function getSourceConfidence(sourceName: string): SourceConfidence {
