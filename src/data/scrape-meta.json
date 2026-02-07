@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-02-06T23:54:05.763Z",
+  "scrapedAt": "2026-02-07T11:45:07.553Z",
   "stats": {
     "total": 1049,
-    "deduplicated": 724,
+    "deduplicated": 721,
     "bySource": {
-      "Miami New Times": 70,
+      "Miami New Times": 75,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -16,27 +16,27 @@
       "Dice.fm Real": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
-      "Pop-Ups": 36,
-      "Miami Improv": 150,
-      "Fort Lauderdale Improv": 133,
+      "Pop-Ups": 35,
+      "Miami Improv": 149,
+      "Fort Lauderdale Improv": 131,
       "Coral Gables": 10,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
       "Free Yoga Miami": 76,
-      "Run Clubs": 19,
+      "Run Clubs": 18,
       "Cycling Group Rides": 38
     }
   },
   "delta": {
-    "added": 1,
-    "removed": 0,
+    "added": 15,
+    "removed": 1,
     "modified": 0,
-    "unchanged": 723
+    "unchanged": 706
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 70,
+      "count": 75,
       "errors": []
     },
     {
@@ -96,17 +96,17 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 36,
+      "count": 35,
       "errors": []
     },
     {
       "name": "Miami Improv",
-      "count": 150,
+      "count": 149,
       "errors": []
     },
     {
       "name": "Fort Lauderdale Improv",
-      "count": 133,
+      "count": 131,
       "errors": []
     },
     {
@@ -131,7 +131,7 @@
     },
     {
       "name": "Run Clubs",
-      "count": 19,
+      "count": 18,
       "errors": []
     },
     {
