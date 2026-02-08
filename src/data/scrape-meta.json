@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-02-07T11:45:07.553Z",
+  "scrapedAt": "2026-02-08T00:02:23.167Z",
   "stats": {
-    "total": 1049,
-    "deduplicated": 721,
+    "total": 1057,
+    "deduplicated": 716,
     "bySource": {
-      "Miami New Times": 75,
+      "Miami New Times": 84,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -18,7 +18,7 @@
       "Cultural Attractions": 352,
       "Pop-Ups": 35,
       "Miami Improv": 149,
-      "Fort Lauderdale Improv": 131,
+      "Fort Lauderdale Improv": 130,
       "Coral Gables": 10,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
@@ -28,15 +28,15 @@
     }
   },
   "delta": {
-    "added": 15,
-    "removed": 1,
+    "added": 22,
+    "removed": 6,
     "modified": 0,
-    "unchanged": 706
+    "unchanged": 694
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 75,
+      "count": 84,
       "errors": []
     },
     {
@@ -106,7 +106,7 @@
     },
     {
       "name": "Fort Lauderdale Improv",
-      "count": 131,
+      "count": 130,
       "errors": []
     },
     {
