@@ -1,5 +1,5 @@
 {
-  "scrapedAt": "2026-02-10T05:21:52.523Z",
+  "scrapedAt": "2026-02-10T14:46:00.250Z",
   "stats": {
     "total": 1057,
     "deduplicated": 708,
@@ -28,10 +28,10 @@
     }
   },
   "delta": {
-    "added": 2,
-    "removed": 3,
+    "added": 0,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 706
+    "unchanged": 708
   },
   "sources": [
     {
