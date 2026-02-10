@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-02-09T14:39:00.879Z",
+  "scrapedAt": "2026-02-10T05:21:52.523Z",
   "stats": {
-    "total": 1060,
-    "deduplicated": 714,
+    "total": 1057,
+    "deduplicated": 708,
     "bySource": {
       "Miami New Times": 90,
       "Farmers Markets": 80,
@@ -16,22 +16,22 @@
       "Dice.fm Real": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
-      "Pop-Ups": 35,
-      "Miami Improv": 148,
+      "Pop-Ups": 34,
+      "Miami Improv": 147,
       "Fort Lauderdale Improv": 128,
       "Coral Gables": 10,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
       "Free Yoga Miami": 76,
       "Run Clubs": 18,
-      "Cycling Group Rides": 38
+      "Cycling Group Rides": 37
     }
   },
   "delta": {
-    "added": 16,
-    "removed": 5,
+    "added": 2,
+    "removed": 3,
     "modified": 0,
-    "unchanged": 698
+    "unchanged": 706
   },
   "sources": [
     {
@@ -96,12 +96,12 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 35,
+      "count": 34,
       "errors": []
     },
     {
       "name": "Miami Improv",
-      "count": 148,
+      "count": 147,
       "errors": []
     },
     {
@@ -136,7 +136,7 @@
     },
     {
       "name": "Cycling Group Rides",
-      "count": 38,
+      "count": 37,
       "errors": []
     }
   ]
