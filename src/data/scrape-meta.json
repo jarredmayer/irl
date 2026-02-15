@@ -1,24 +1,24 @@
 {
-  "scrapedAt": "2026-02-14T23:51:31.482Z",
+  "scrapedAt": "2026-02-15T11:46:50.706Z",
   "stats": {
-    "total": 1056,
-    "deduplicated": 664,
+    "total": 1048,
+    "deduplicated": 669,
     "bySource": {
-      "Miami New Times": 94,
+      "Miami New Times": 92,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
       "World Cup 2026": 7,
-      "III Points": 1,
+      "III Points": 0,
       "SOBEWFF": 4,
       "Miami Spice": 0,
-      "Miami Festivals": 4,
+      "Miami Festivals": 1,
       "Dice.fm Real": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
-      "Pop-Ups": 31,
-      "Miami Improv": 145,
-      "Fort Lauderdale Improv": 129,
+      "Pop-Ups": 32,
+      "Miami Improv": 144,
+      "Fort Lauderdale Improv": 127,
       "Coral Gables": 10,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
@@ -28,15 +28,15 @@
     }
   },
   "delta": {
-    "added": 1,
-    "removed": 1,
+    "added": 24,
+    "removed": 2,
     "modified": 0,
-    "unchanged": 663
+    "unchanged": 645
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 94,
+      "count": 92,
       "errors": []
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "name": "III Points",
-      "count": 1,
+      "count": 0,
       "errors": []
     },
     {
@@ -76,7 +76,7 @@
     },
     {
       "name": "Miami Festivals",
-      "count": 4,
+      "count": 1,
       "errors": []
     },
     {
@@ -96,17 +96,17 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 31,
+      "count": 32,
       "errors": []
     },
     {
       "name": "Miami Improv",
-      "count": 145,
+      "count": 144,
       "errors": []
     },
     {
       "name": "Fort Lauderdale Improv",
-      "count": 129,
+      "count": 127,
       "errors": []
     },
     {
