@@ -1,7 +1,7 @@
 {
-  "scrapedAt": "2026-02-16T12:05:34.172Z",
+  "scrapedAt": "2026-02-16T23:34:30.610Z",
   "stats": {
-    "total": 1046,
+    "total": 1047,
     "deduplicated": 666,
     "bySource": {
       "Miami New Times": 92,
@@ -17,7 +17,7 @@
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
       "Pop-Ups": 33,
-      "Miami Improv": 142,
+      "Miami Improv": 143,
       "Fort Lauderdale Improv": 126,
       "Coral Gables": 10,
       "Verified Recurring": 2,
@@ -28,10 +28,10 @@
     }
   },
   "delta": {
-    "added": 16,
-    "removed": 7,
+    "added": 1,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 650
+    "unchanged": 665
   },
   "sources": [
     {
@@ -101,7 +101,7 @@
     },
     {
       "name": "Miami Improv",
-      "count": 142,
+      "count": 143,
       "errors": []
     },
     {
