@@ -1,7 +1,7 @@
 {
-  "scrapedAt": "2026-02-16T23:34:30.610Z",
+  "scrapedAt": "2026-02-17T11:43:11.325Z",
   "stats": {
-    "total": 1047,
+    "total": 1046,
     "deduplicated": 666,
     "bySource": {
       "Miami New Times": 92,
@@ -16,7 +16,7 @@
       "Dice.fm Real": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
-      "Pop-Ups": 33,
+      "Pop-Ups": 32,
       "Miami Improv": 143,
       "Fort Lauderdale Improv": 126,
       "Coral Gables": 10,
@@ -96,7 +96,7 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 33,
+      "count": 32,
       "errors": []
     },
     {
