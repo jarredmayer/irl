@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-02-19T11:42:08.321Z",
+  "scrapedAt": "2026-02-19T23:35:03.575Z",
   "stats": {
-    "total": 1039,
-    "deduplicated": 658,
+    "total": 1041,
+    "deduplicated": 649,
     "bySource": {
       "Miami New Times": 86,
       "Farmers Markets": 80,
@@ -18,7 +18,7 @@
       "Cultural Attractions": 352,
       "Pop-Ups": 32,
       "Miami Improv": 143,
-      "Fort Lauderdale Improv": 125,
+      "Fort Lauderdale Improv": 127,
       "Coral Gables": 10,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
@@ -28,10 +28,10 @@
     }
   },
   "delta": {
-    "added": 8,
-    "removed": 1,
+    "added": 3,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 650
+    "unchanged": 646
   },
   "sources": [
     {
@@ -106,7 +106,7 @@
     },
     {
       "name": "Fort Lauderdale Improv",
-      "count": 125,
+      "count": 127,
       "errors": []
     },
     {
