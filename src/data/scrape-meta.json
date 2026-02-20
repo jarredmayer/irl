@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-02-20T11:37:12.643Z",
+  "scrapedAt": "2026-02-20T23:32:55.685Z",
   "stats": {
-    "total": 1032,
-    "deduplicated": 651,
+    "total": 1041,
+    "deduplicated": 644,
     "bySource": {
       "Miami New Times": 84,
       "Farmers Markets": 80,
@@ -17,7 +17,7 @@
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
       "Pop-Ups": 32,
-      "Miami Improv": 142,
+      "Miami Improv": 151,
       "Fort Lauderdale Improv": 125,
       "Coral Gables": 10,
       "Verified Recurring": 2,
@@ -28,10 +28,10 @@
     }
   },
   "delta": {
-    "added": 9,
-    "removed": 4,
+    "added": 15,
+    "removed": 6,
     "modified": 0,
-    "unchanged": 642
+    "unchanged": 629
   },
   "sources": [
     {
@@ -101,7 +101,7 @@
     },
     {
       "name": "Miami Improv",
-      "count": 142,
+      "count": 151,
       "errors": []
     },
     {
