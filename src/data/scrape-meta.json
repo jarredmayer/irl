@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-02-20T23:32:55.685Z",
+  "scrapedAt": "2026-02-21T11:27:14.834Z",
   "stats": {
-    "total": 1041,
-    "deduplicated": 644,
+    "total": 1035,
+    "deduplicated": 641,
     "bySource": {
-      "Miami New Times": 84,
+      "Miami New Times": 82,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -16,27 +16,27 @@
       "Dice.fm Real": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
-      "Pop-Ups": 32,
+      "Pop-Ups": 31,
       "Miami Improv": 151,
-      "Fort Lauderdale Improv": 125,
+      "Fort Lauderdale Improv": 123,
       "Coral Gables": 10,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
-      "Free Yoga Miami": 76,
+      "Free Yoga Miami": 75,
       "Run Clubs": 18,
       "Cycling Group Rides": 36
     }
   },
   "delta": {
     "added": 15,
-    "removed": 6,
+    "removed": 2,
     "modified": 0,
-    "unchanged": 629
+    "unchanged": 626
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 84,
+      "count": 82,
       "errors": []
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 32,
+      "count": 31,
       "errors": []
     },
     {
@@ -106,7 +106,7 @@
     },
     {
       "name": "Fort Lauderdale Improv",
-      "count": 125,
+      "count": 123,
       "errors": []
     },
     {
@@ -126,7 +126,7 @@
     },
     {
       "name": "Free Yoga Miami",
-      "count": 76,
+      "count": 75,
       "errors": []
     },
     {
