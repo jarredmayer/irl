@@ -83,7 +83,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
@@ -116,7 +116,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -149,7 +149,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -211,7 +211,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Guitar legend Carlos Santana brings his Oneness Tour, celebrating decades of Latin rock fusion. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Guitar legend Carlos Santana brings his Oneness Tour, celebrating decades of Latin rock fusion.",
     "source": {
@@ -277,7 +277,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -310,7 +310,7 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Nothing beats live sports.",
     "editorialWhy": "Day 2 of South Florida's largest street hockey festival. Finals and championship games. Located in Sunrise, Amerant Bank Arena is a local favorite. Best of all, it's free.",
     "description": "Day 2 of South Florida's largest street hockey festival. Finals and championship games.",
     "source": {
@@ -374,7 +374,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2.",
     "source": {
@@ -406,7 +406,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2.",
     "source": {
@@ -470,7 +470,7 @@
     "category": "Sports",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
     "editorialWhy": "NHL hockey: Florida Panthers face the Detroit Red Wings at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL hockey: Florida Panthers face the Detroit Red Wings at Amerant Bank Arena.",
     "source": {
@@ -502,7 +502,7 @@
     "category": "Music",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
     "editorialWhy": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades. Located in Hollywood, Hard Rock Live is a local favorite.",
     "description": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades.",
     "source": {
@@ -657,7 +657,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -687,7 +687,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -717,7 +717,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -747,7 +747,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "March Madnuts 2026: A One-Night Comedy Tournament at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "March Madnuts 2026: A One-Night Comedy Tournament at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -777,7 +777,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "FEEL THE MAGIC FT WILL PARFITT:  2026 USA TOUR  at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "FEEL THE MAGIC FT WILL PARFITT:  2026 USA TOUR  at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -837,7 +837,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Darci Lynn & Friends: Up Close And Personal at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Darci Lynn & Friends: Up Close And Personal at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -867,7 +867,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Andy Huggins From \"America's Got Talent\" at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Andy Huggins From \"America's Got Talent\" at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -957,7 +957,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Lady Bunny: Don’t Bring the Kids at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Lady Bunny: Don’t Bring the Kids at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1047,7 +1047,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Alfred Robles: Vatos With Gatos at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Alfred Robles: Vatos With Gatos at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1137,7 +1137,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Mike Goodwin: Open Mike Tour at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Mike Goodwin: Open Mike Tour at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1197,7 +1197,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1227,7 +1227,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Psychic Medium Bill Philipps at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Psychic Medium Bill Philipps at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1257,7 +1257,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1377,7 +1377,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "New York Comedy Take Over! at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "New York Comedy Take Over! at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1497,7 +1497,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Randy Feltface: Gimmick at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Randy Feltface: Gimmick at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1658,7 +1658,7 @@
     "category": "Music",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "shortWhy": "Get your music fix with locals who know.",
     "editorialWhy": "Slow Burn Theatre Co: Beautiful: The Carole King Musical at Fort Lauderdale",
     "description": "Slow Burn Theatre Co: Beautiful: The Carole King Musical at Fort Lauderdale",
     "source": {
@@ -1799,7 +1799,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Rachel Feinstein at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Rachel Feinstein at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1829,42 +1829,12 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Kerwin Claiborne at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Kerwin Claiborne at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
       "name": "Fort Lauderdale Improv",
       "url": "https://www.improvftl.com/shows/350176"
-    },
-    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
-    "editorPick": false,
-    "venueId": "dania-improv"
-  },
-  {
-    "id": "8bf317b192eda1f1",
-    "title": "Hannibal Buress",
-    "startAt": "2026-02-22T00:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Dania Beach Improv",
-    "address": "5700 Seminole Way, Hollywood, FL 33314",
-    "neighborhood": "Hollywood",
-    "lat": 26.0515,
-    "lng": -80.2105,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "comedy",
-      "live-entertainment",
-      "standup",
-      "casino"
-    ],
-    "category": "Comedy",
-    "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
-    "editorialWhy": "Hannibal Buress at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
-    "description": "Hannibal Buress at Fort Lauderdale Improv. 21+ with two-drink minimum.",
-    "source": {
-      "name": "Fort Lauderdale Improv",
-      "url": "https://www.improvftl.com/shows/346733"
     },
     "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": false,
@@ -1889,7 +1859,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Open Mic Night at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Open Mic Night at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1919,7 +1889,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Open Mic Night at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Open Mic Night at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -1979,7 +1949,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Geoffrey Asmus at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Geoffrey Asmus at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2069,7 +2039,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2099,7 +2069,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2159,7 +2129,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Dedrick Flynn at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Dedrick Flynn at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2249,7 +2219,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2279,7 +2249,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2309,7 +2279,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2339,7 +2309,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Sarper Güven at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Sarper Güven at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2369,7 +2339,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2429,7 +2399,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2459,7 +2429,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Gigi LeFlair at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Gigi LeFlair at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2549,7 +2519,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Mark Normand at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Mark Normand at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2579,7 +2549,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Fiona Cauley at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Fiona Cauley at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2609,7 +2579,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Zach Rushing at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Zach Rushing at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2639,7 +2609,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Greg Warren at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Greg Warren at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2669,7 +2639,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Maz Jobrani at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Maz Jobrani at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2759,7 +2729,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2789,7 +2759,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2819,7 +2789,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2849,7 +2819,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -2909,7 +2879,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Aaron Weber at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Aaron Weber at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3029,7 +2999,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Connor Wood at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Connor Wood at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3089,7 +3059,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "DL Hughley at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "DL Hughley at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3149,7 +3119,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "P-A Méthot at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "P-A Méthot at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3179,7 +3149,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Ben Bankas at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Ben Bankas at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3209,7 +3179,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Joey Avery at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Joey Avery at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3239,7 +3209,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Dave Smith at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Dave Smith at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3299,7 +3269,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Ryan Davis at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Ryan Davis at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3371,6 +3341,31 @@
     "venueId": "dania-improv"
   },
   {
+    "id": "ff1138851407a494",
+    "title": "My (unauthorized) Hallmark Movie Musical",
+    "startAt": "2026-03-07T14:00:00",
+    "timezone": "America/New_York",
+    "neighborhood": "Davie/West Hollywood",
+    "lat": null,
+    "lng": null,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music"
+    ],
+    "category": "Music",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "editorialWhy": "My (unauthorized) Hallmark Movie Musical at Davie/West Hollywood",
+    "description": "My (unauthorized) Hallmark Movie Musical at Davie/West Hollywood",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/my-unauthorized-hallmark-movie-musical-23795695/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-33/fda8c807-42eb-4b81-9f16-f3a8367e107d_106371_tablet_landscape_large_16_9-21920626.webp?w=1024",
+    "editorPick": false
+  },
+  {
     "id": "4eeec7a3ece255f6",
     "title": "Mark Paul",
     "startAt": "2026-02-22T22:00:00",
@@ -3419,7 +3414,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Ari Matti at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Ari Matti at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3449,7 +3444,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Ari Matti at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Ari Matti at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3479,7 +3474,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3569,7 +3564,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "The perfect night out.",
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
     "editorialWhy": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3579,6 +3574,31 @@
     "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": false,
     "venueId": "dania-improv"
+  },
+  {
+    "id": "25a3af3dcb63959d",
+    "title": "Miami City Ballet: Winter Mix at The Parker",
+    "startAt": "2026-03-07T19:30:00",
+    "timezone": "America/New_York",
+    "neighborhood": "Fort Lauderdale",
+    "lat": null,
+    "lng": null,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "park"
+    ],
+    "category": "Culture",
+    "priceLabel": "$",
+    "isOutdoor": true,
+    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
+    "editorialWhy": "Miami City Ballet: Winter Mix at The Parker at Fort Lauderdale",
+    "description": "Miami City Ballet: Winter Mix at The Parker at Fort Lauderdale",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/miami-city-ballet-winter-mix-at-the-parker-23971036/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-37/70b973b9-9475-4efe-a67d-aa417e587889_source-908736892.webp?w=1024",
+    "editorPick": false
   },
   {
     "id": "22e536077d2f62b2",
@@ -3599,7 +3619,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3629,7 +3649,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "shortWhy": "Comedians who know how to deliver.",
     "editorialWhy": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3659,7 +3679,7 @@
     ],
     "category": "Comedy",
     "isOutdoor": false,
-    "shortWhy": "Comedians who know how to deliver.",
+    "shortWhy": "The perfect night out.",
     "editorialWhy": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
     "description": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum.",
     "source": {
@@ -3683,7 +3703,7 @@
     "category": "Community",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "shortWhy": "Local vibes, real connections.",
     "editorialWhy": "The Naked Magicians (18+) at Fort Lauderdale",
     "description": "The Naked Magicians (18+) at Fort Lauderdale",
     "source": {
@@ -3729,7 +3749,7 @@
     "category": "Community",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Paul Reiser at Fort Lauderdale",
     "description": "Paul Reiser at Fort Lauderdale",
     "source": {
@@ -3752,7 +3772,7 @@
     "category": "Community",
     "priceLabel": "$",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "BATSU! at Fort Lauderdale",
     "description": "BATSU! at Fort Lauderdale",
     "source": {
