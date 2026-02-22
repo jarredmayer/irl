@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-02-22T11:27:05.640Z",
+  "scrapedAt": "2026-02-22T23:31:16.826Z",
   "stats": {
-    "total": 1029,
-    "deduplicated": 633,
+    "total": 1028,
+    "deduplicated": 622,
     "bySource": {
-      "Miami New Times": 82,
+      "Miami New Times": 81,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -28,15 +28,15 @@
     }
   },
   "delta": {
-    "added": 26,
-    "removed": 2,
+    "added": 0,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 607
+    "unchanged": 622
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 82,
+      "count": 81,
       "errors": []
     },
     {
