@@ -13,6 +13,7 @@ import { FollowingView } from './components/following/FollowingView';
 import { ProfileView } from './components/profile/ProfileView';
 import { ChatAssistant } from './components/ai/ChatAssistant';
 import { AISettingsModal } from './components/ai/AISettingsModal';
+import { InstallPrompt } from './components/pwa/InstallPrompt';
 import { useEvents } from './hooks/useEvents';
 import { usePreferences } from './hooks/usePreferences';
 import { useSavedEvents } from './hooks/useSavedEvents';
@@ -167,6 +168,9 @@ function AppContent() {
       isOpen={showAISettings}
       onClose={() => setShowAISettings(false)}
     />
+
+    {/* PWA Install Prompt */}
+    <InstallPrompt />
     </>
   );
 }
