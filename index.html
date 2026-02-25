@@ -2,27 +2,56 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/irl/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#0ea5e9" />
-    <meta name="description" content="Curated local events in Miami and Fort Lauderdale. Discover the best things to do IRL." />
 
-    <!-- PWA -->
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/irl/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/irl/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/irl/apple-touch-icon.png" />
+
+    <!-- PWA manifest (injected by vite-plugin-pwa, this is the fallback link) -->
+    <link rel="manifest" href="/irl/manifest.webmanifest" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="msapplication-TileColor" content="#0ea5e9" />
+
+    <!-- App description -->
+    <meta name="description" content="Curated local events in Miami and Fort Lauderdale. Discover the best things to do IRL." />
+    <meta name="keywords" content="miami events, fort lauderdale events, things to do miami, local events, weekend events miami" />
+
+    <!-- iOS PWA -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="IRL" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="IRL - Local Events in Miami & Fort Lauderdale" />
-    <meta property="og:description" content="Curated local events. Discover the best things to do IRL." />
-    <meta property="og:type" content="website" />
+    <!-- iOS splash screens — generated at runtime by the PWA plugin -->
+    <!-- Replace icon-512.png with properly sized splash images for production -->
+    <link rel="apple-touch-startup-image" href="/irl/icons/icon-512.png" />
 
-    <!-- Preconnect -->
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IRL" />
+    <meta property="og:title" content="IRL — Local Events in Miami & Fort Lauderdale" />
+    <meta property="og:description" content="Curated local events. Discover the best things happening near you in Miami and Fort Lauderdale." />
+    <meta property="og:url" content="https://jarredmayer.github.io/irl/" />
+    <!-- NOTE: Replace with a real 1200×630 social preview image before launch -->
+    <meta property="og:image" content="https://jarredmayer.github.io/irl/icons/icon-512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="IRL — Local Events in Miami & Fort Lauderdale" />
+    <meta name="twitter:description" content="Curated local events. Discover the best things happening near you." />
+    <meta name="twitter:image" content="https://jarredmayer.github.io/irl/icons/icon-512.png" />
+
+    <!-- Preconnect to services used at startup -->
     <link rel="preconnect" href="https://api.open-meteo.com" />
     <link rel="preconnect" href="https://tile.openstreetmap.org" />
 
-    <title>IRL - Local Events</title>
+    <title>IRL — Local Events</title>
   </head>
   <body>
     <div id="root"></div>
