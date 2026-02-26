@@ -1,4 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="20" fill="#0ea5e9"/>
-  <text x="50" y="70" font-family="system-ui, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">IRL</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="dot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="14.08" ry="14.08" fill="url(#bg)"/>
+
+  <!-- Wordmark -->
+  <text
+    x="32"
+    y="40.4096"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+    font-weight="900"
+    font-size="23.36"
+    letter-spacing="-0.64"
+    text-anchor="middle"
+    fill="white"
+  >IRL</text>
+
+  <!-- Accent dot (amber/yellow — pops against sky blue) -->
+  <circle cx="48.64" cy="15.36" r="4.608" fill="url(#dot)"/>
 </svg>
