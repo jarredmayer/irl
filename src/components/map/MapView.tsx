@@ -45,7 +45,7 @@ export function MapView({
       {filters && onFiltersChange && (
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className="absolute top-3 right-3 z-[1000] bg-white px-3 py-2 rounded-xl shadow-lg border border-slate-200 flex items-center gap-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+          className="absolute top-3 right-3 z-[1000] bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md border border-slate-100 flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
@@ -69,7 +69,7 @@ export function MapView({
       )}
 
       {/* Event count badge */}
-      <div className="absolute top-3 left-3 z-[1000] bg-white px-3 py-2 rounded-xl shadow-lg border border-slate-200 text-sm font-medium text-slate-700">
+      <div className="absolute top-3 left-3 z-[1000] bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md border border-slate-100 text-xs font-semibold text-slate-600 tracking-wide">
         {events.length} events
       </div>
 
@@ -81,8 +81,10 @@ export function MapView({
         zoomControl={false}
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          subdomains="abcd"
+          maxZoom={20}
         />
         <MarkerCluster events={events} onEventClick={handleEventClick} />
         {userLocation && (
