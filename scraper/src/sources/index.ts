@@ -6,6 +6,9 @@
 // Base class
 export { BaseScraper } from './base.js';
 
+// Resident Advisor
+export { ResidentAdvisorScraper } from './resident-advisor.js';
+
 // Original sources
 export { MiamiNewTimesScraper } from './miami-new-times.js';
 export { FarmersMarketsScraper } from './farmers-markets.js';
@@ -20,7 +23,6 @@ export { FortLauderdaleScraper } from './fort-lauderdale.js';
 // Nightlife & clubs
 export {
   NightlifeClubsScraper,
-  ResidentAdvisorScraper,
   LatinPartiesScraper,
   CandlelightConcertsScraper,
   IIIPointsScraper,
@@ -126,11 +128,11 @@ import { CulturalVenuesScraper } from './cultural-venues.js';
 import { FortLauderdaleScraper } from './fort-lauderdale.js';
 import {
   NightlifeClubsScraper,
-  ResidentAdvisorScraper,
   LatinPartiesScraper,
   CandlelightConcertsScraper,
   IIIPointsScraper,
 } from './nightlife-clubs.js';
+import { ResidentAdvisorScraper } from './resident-advisor.js';
 import {
   DontTellComedyScraper,
   MiamiImprovScraper,
@@ -214,7 +216,7 @@ export function getAllScrapers(): BaseScraper[] {
 
     // Real ticketing platforms
     new DiceRealScraper(), // Puppeteer-based real scraper
-    // new ResidentAdvisorScraper(),  // SYNTHETIC - fake "RA-style" events
+    new ResidentAdvisorScraper(), // Real RA GraphQL API — Miami area ID 38
     // new DiceFmScraper(),           // SYNTHETIC - fake events like "Keinemusik Miami"
     // new ShotgunScraper(),          // SYNTHETIC - fake events like "Teksupport Miami"
 
