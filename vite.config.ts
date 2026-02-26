@@ -9,10 +9,6 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      // Use custom SW so we can force-reload all open clients on update
-      strategies: 'injectManifest',
-      srcDir: 'src',
-      filename: 'sw.ts',
       includeAssets: [
         'favicon.svg',
         'icons/*.png',
@@ -75,12 +71,51 @@ export default defineConfig({
           },
         ],
       },
-      injectManifest: {
-        // Precache all static build assets
+      workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff,woff2}'],
+        runtimeCaching: [
+          {
+            urlPattern: /\/irl\/.*\.json$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'event-data',
+              expiration: { maxEntries: 10, maxAgeSeconds: 86400 },
+              networkTimeoutSeconds: 5,
+            },
+          },
+          {
+            urlPattern: /^https:\/\/api\.open-meteo\.com\/.*/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'weather-api',
+              expiration: { maxEntries: 5, maxAgeSeconds: 1800 },
+              networkTimeoutSeconds: 5,
+            },
+          },
+          {
+            urlPattern: /^https:\/\/[abc]\.tile\.openstreetmap\.org\/.*/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'map-tiles',
+              expiration: { maxEntries: 500, maxAgeSeconds: 2592000 },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/images\.unsplash\.com\/.*/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'event-images',
+              expiration: { maxEntries: 200, maxAgeSeconds: 604800 },
+            },
+          },
+        ],
+        navigateFallback: '/irl/index.html',
+        navigateFallbackDenylist: [/^\/api\//],
+        skipWaiting: true,
+        clientsClaim: true,
+        cleanupOutdatedCaches: true,
       },
       devOptions: {
-        // Enable PWA in dev so you can test install prompt locally
         enabled: true,
         type: 'module',
       },
