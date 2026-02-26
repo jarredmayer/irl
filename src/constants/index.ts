@@ -160,13 +160,13 @@ export const DEFAULT_USER_STATE = {
   lastKnownLocation: undefined,
 };
 
-// Helper to get date range defaults (30 days from now)
+// Helper to get date range defaults (7 days from now)
 const getDefaultDateRange = (): [string, string] => {
   const today = new Date();
-  const monthFromNow = new Date(today);
-  monthFromNow.setDate(monthFromNow.getDate() + 30);
+  const weekFromNow = new Date(today);
+  weekFromNow.setDate(weekFromNow.getDate() + 7);
   const formatDate = (d: Date) => d.toISOString().split('T')[0];
-  return [formatDate(today), formatDate(monthFromNow)];
+  return [formatDate(today), formatDate(weekFromNow)];
 };
 
 export const DEFAULT_FILTERS = {
