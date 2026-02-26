@@ -9,6 +9,10 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      // Use custom SW so we can force-reload all open clients on update
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'sw.ts',
       includeAssets: [
         'favicon.svg',
         'icons/*.png',
@@ -71,71 +75,9 @@ export default defineConfig({
           },
         ],
       },
-      workbox: {
+      injectManifest: {
         // Precache all static build assets
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff,woff2}'],
-
-        // Runtime caching strategies
-        runtimeCaching: [
-          // Network-first for event JSON data (always try fresh)
-          {
-            urlPattern: /\/irl\/.*\.json$/,
-            handler: 'NetworkFirst',
-            options: {
-              cacheName: 'event-data',
-              expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24, // 24 hours
-              },
-              networkTimeoutSeconds: 5,
-            },
-          },
-          // Network-first for Open-Meteo weather API
-          {
-            urlPattern: /^https:\/\/api\.open-meteo\.com\/.*/,
-            handler: 'NetworkFirst',
-            options: {
-              cacheName: 'weather-api',
-              expiration: {
-                maxEntries: 5,
-                maxAgeSeconds: 60 * 30, // 30 minutes
-              },
-              networkTimeoutSeconds: 5,
-            },
-          },
-          // Cache-first for OpenStreetMap tiles
-          {
-            urlPattern: /^https:\/\/[abc]\.tile\.openstreetmap\.org\/.*/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'map-tiles',
-              expiration: {
-                maxEntries: 500,
-                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
-              },
-            },
-          },
-          // Cache-first for Unsplash event images
-          {
-            urlPattern: /^https:\/\/images\.unsplash\.com\/.*/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'event-images',
-              expiration: {
-                maxEntries: 200,
-                maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
-              },
-            },
-          },
-        ],
-
-        // Offline fallback: serve the shell when navigation fails
-        navigateFallback: '/irl/index.html',
-        navigateFallbackDenylist: [/^\/api\//],
-
-        // Skip waiting so updates activate immediately
-        skipWaiting: true,
-        clientsClaim: true,
       },
       devOptions: {
         // Enable PWA in dev so you can test install prompt locally

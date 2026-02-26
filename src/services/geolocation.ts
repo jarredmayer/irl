@@ -45,6 +45,12 @@ export function watchPosition(callback: GeolocationCallback): void {
     return;
   }
 
+  // Clear any existing watcher so this is safe to call multiple times
+  if (watchId !== null) {
+    navigator.geolocation.clearWatch(watchId);
+    watchId = null;
+  }
+
   callback({ location: null, status: 'loading' });
 
   watchId = navigator.geolocation.watchPosition(
