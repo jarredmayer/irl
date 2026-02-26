@@ -18,7 +18,7 @@ export function useGeolocation() {
     status: 'idle',
   });
 
-  // Load last known location on mount
+  // Load last known location on mount and start watching immediately
   useEffect(() => {
     const lastKnown = getLastKnownLocation();
     if (lastKnown) {
@@ -26,7 +26,14 @@ export function useGeolocation() {
         location: lastKnown,
         status: 'granted',
       });
+      // Kick off live tracking straight away — no need to wait for the user
+      // to tap anything since they already granted permission previously.
+      watchPosition((newState) => {
+        if (newState.location) saveLocation(newState.location);
+        setState(newState);
+      });
     }
+    return () => stopWatchingPosition();
   }, []);
 
   const requestLocation = useCallback(async () => {
@@ -47,6 +54,11 @@ export function useGeolocation() {
       setState({
         location,
         status: 'granted',
+      });
+      // Transition from one-shot → continuous tracking
+      watchPosition((newState) => {
+        if (newState.location) saveLocation(newState.location);
+        setState(newState);
       });
     } catch (error) {
       const geoError = error as GeolocationPositionError;
