@@ -7,51 +7,28 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Create and merge PR
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Merge branch into main
         run: |
           BRANCH="${GITHUB_REF#refs/heads/}"
-          REPO="${GITHUB_REPOSITORY}"
+          echo "Merging $BRANCH → main"
 
-          echo "Branch: $BRANCH"
-          echo "Repo:   $REPO"
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
 
-          # Create PR — ignore error if one already exists for this branch
-          gh pr create \
-            --repo "$REPO" \
-            --head "$BRANCH" \
-            --base main \
-            --title "Auto: $BRANCH" \
-            --body "Automated merge from Claude." \
-            || true
+          git fetch origin main
+          git checkout main
+          git merge --no-ff "origin/$BRANCH" -m "Auto-merge: $BRANCH"
+          git push origin main
 
-          # Wait a moment for GitHub to register the PR
-          sleep 3
-
-          # Get the open PR number for this branch
-          PR_NUMBER=$(gh pr list \
-            --repo "$REPO" \
-            --head "$BRANCH" \
-            --base main \
-            --state open \
-            --json number \
-            --jq '.[0].number')
-
-          if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
-            echo "No open PR found for $BRANCH — may already be merged."
-            exit 0
-          fi
-
-          echo "Merging PR #$PR_NUMBER"
-          # Use --squash for a clean main history; drop --admin (not needed without branch protection)
-          gh pr merge "$PR_NUMBER" \
-            --repo "$REPO" \
-            --squash \
-            --delete-branch
+          # Clean up the feature branch
+          git push origin --delete "$BRANCH" || true
