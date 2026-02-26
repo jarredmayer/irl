@@ -41,25 +41,27 @@ export function MarkerCluster({ events, onEventClick }: MarkerClusterProps) {
       maxClusterRadius: 50,
       iconCreateFunction: (cluster: L.MarkerCluster) => {
         const count = cluster.getChildCount();
+        const size = count > 50 ? 48 : count > 10 ? 44 : 38;
         return L.divIcon({
           html: `
             <div style="
-              width: 40px;
-              height: 40px;
-              background: #0ea5e9;
-              border: 3px solid white;
+              width: ${size}px;
+              height: ${size}px;
+              background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+              border: 2.5px solid white;
               border-radius: 50%;
               display: flex;
               align-items: center;
               justify-content: center;
               color: white;
-              font-weight: 600;
-              font-size: 14px;
-              box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+              font-weight: 700;
+              font-size: ${count > 99 ? '11px' : '13px'};
+              box-shadow: 0 4px 12px rgba(14,165,233,0.45), 0 1px 3px rgba(0,0,0,0.15);
+              letter-spacing: -0.5px;
             ">${count}</div>
           `,
           className: 'marker-cluster',
-          iconSize: L.point(40, 40),
+          iconSize: L.point(size, size),
         });
       },
     });
@@ -71,36 +73,51 @@ export function MarkerCluster({ events, onEventClick }: MarkerClusterProps) {
         ? L.divIcon({
             className: 'custom-marker-editor',
             html: `
-              <div style="
-                width: 32px;
-                height: 32px;
-                background: #f59e0b;
-                border: 3px solid white;
-                border-radius: 50%;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-                cursor: pointer;
-                pointer-events: auto;
-              "></div>
+              <div style="position:relative;width:30px;height:38px;cursor:pointer;pointer-events:auto;">
+                <div style="
+                  width: 30px;
+                  height: 30px;
+                  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+                  border: 2.5px solid white;
+                  border-radius: 50% 50% 50% 0;
+                  transform: rotate(-45deg);
+                  box-shadow: 0 4px 12px rgba(245,158,11,0.5), 0 1px 3px rgba(0,0,0,0.2);
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                "></div>
+                <div style="
+                  position:absolute;top:5px;left:5px;
+                  width:20px;height:20px;
+                  display:flex;align-items:center;justify-content:center;
+                  transform:rotate(45deg);
+                  font-size:11px;
+                ">★</div>
+              </div>
             `,
-            iconSize: [32, 32],
-            iconAnchor: [16, 16],
+            iconSize: [30, 38],
+            iconAnchor: [15, 38],
           })
         : L.divIcon({
             className: 'custom-marker',
             html: `
-              <div style="
-                width: 32px;
-                height: 32px;
-                background: #0ea5e9;
-                border: 3px solid white;
-                border-radius: 50%;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-                cursor: pointer;
-                pointer-events: auto;
-              "></div>
+              <div style="position:relative;width:26px;height:34px;cursor:pointer;pointer-events:auto;">
+                <div style="
+                  width: 26px;
+                  height: 26px;
+                  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+                  border: 2.5px solid white;
+                  border-radius: 50% 50% 50% 0;
+                  transform: rotate(-45deg);
+                  box-shadow: 0 4px 10px rgba(14,165,233,0.45), 0 1px 3px rgba(0,0,0,0.15);
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                "></div>
+              </div>
             `,
-            iconSize: [32, 32],
-            iconAnchor: [16, 16],
+            iconSize: [26, 34],
+            iconAnchor: [13, 34],
           });
 
       const marker = L.marker([event.lat, event.lng], { icon });

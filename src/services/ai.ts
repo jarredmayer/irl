@@ -82,7 +82,7 @@ Only include filter fields that are relevant to the query. If the query mentions
 
   try {
     const response = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 500,
       messages: [
         { role: 'user', content: query }
@@ -173,7 +173,7 @@ Guidelines:
 
   try {
     const response = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 500,
       messages: messages.map(m => ({ role: m.role, content: m.content })),
       system: systemPrompt,
@@ -213,7 +213,7 @@ Just the sentence, no quotes or extra text.`;
 
   try {
     const response = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
       max_tokens: 50,
       messages: [{ role: 'user', content: prompt }],
     });
