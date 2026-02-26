@@ -2,7 +2,7 @@ import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import { formatEventDate, formatEventTime } from '../../utils/time';
 import { formatDistance } from '../../utils/distance';
-import { Chip } from '../ui/Chip';
+import { CATEGORY_COLORS } from '../../constants';
 import type { ScoredEvent } from '../../types';
 
 interface EventPreviewSheetProps {
@@ -10,38 +10,74 @@ interface EventPreviewSheetProps {
   onClose: () => void;
 }
 
-export function EventPreviewSheet({
-  event,
-  onClose,
-}: EventPreviewSheetProps) {
+export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
   const navigate = useNavigate();
 
-  if (!event) {
-    return null;
-  }
+  if (!event) return null;
 
-  const handleViewDetails = () => {
-    navigate(`/event/${event.id}`);
-  };
+  const cat = CATEGORY_COLORS[event.category] ?? CATEGORY_COLORS['Other'];
+  const catColor = cat.primary;
+  const catEmoji = cat.emoji;
 
-  // Use portal to render outside of map's stacking context
+  const handleViewDetails = () => navigate(`/event/${event.id}`);
+
+  const hasImage = Boolean(event.image);
+
   return createPortal(
     <div
-      className="fixed bottom-16 left-0 right-0 px-4 pb-4 pointer-events-none"
+      className="fixed bottom-16 left-0 right-0 px-3 pb-3 pointer-events-none"
       style={{ zIndex: 9999 }}
     >
-      <div className="bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden pointer-events-auto animate-slide-up">
-        {/* Handle */}
-        <div className="flex justify-center pt-2">
-          <div className="w-10 h-1 bg-slate-300 rounded-full" />
-        </div>
+      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden pointer-events-auto animate-slide-up"
+           style={{ boxShadow: '0 -2px 40px rgba(0,0,0,0.18), 0 8px 32px rgba(0,0,0,0.14)' }}>
 
-        <div className="p-4">
-          {/* Header row */}
-          <div className="flex items-start justify-between gap-3 mb-2">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 text-xs text-slate-500 mb-1">
-                <span className="font-medium text-sky-600">
+        {hasImage ? (
+          /* ── Image hero layout ── */
+          <div className="relative" style={{ height: '152px' }}>
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full h-full object-cover"
+            />
+            {/* Gradient scrim */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+
+            {/* Category badge */}
+            <div className="absolute top-3 left-3">
+              <div
+                className="flex items-center gap-1 px-2 py-0.5 rounded-full text-white text-xs font-semibold"
+                style={{ background: catColor + 'cc' }}
+              >
+                <span>{catEmoji}</span>
+                <span>{event.category}</span>
+              </div>
+            </div>
+
+            {/* Editor pick badge */}
+            {event.editorPick && (
+              <div className="absolute top-3 left-3 mt-6">
+                <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-400/90 text-white text-xs font-bold">
+                  <span>⭐</span>
+                  <span>Editor&apos;s Pick</span>
+                </div>
+              </div>
+            )}
+
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white/90 hover:text-white transition-colors"
+              style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(4px)' }}
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+                <path d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Title on image */}
+            <div className="absolute bottom-0 left-0 right-0 px-3 pb-3">
+              <div className="flex items-center gap-1.5 text-white/70 text-xs mb-1">
+                <span className="font-semibold text-white/90">
                   {formatEventDate(event.startAt, event.timezone)}
                 </span>
                 <span>·</span>
@@ -53,48 +89,102 @@ export function EventPreviewSheet({
                   </>
                 )}
               </div>
-              <h3 className="font-semibold text-slate-900 line-clamp-1">
-                {event.editorPick && (
-                  <span className="inline-block w-2 h-2 bg-amber-400 rounded-full mr-1.5 align-middle" />
-                )}
+              <h3 className="font-bold text-white text-[15px] leading-tight line-clamp-1">
                 {event.title}
               </h3>
-              <p className="text-sm text-slate-500 line-clamp-1">
-                {event.venueName || event.neighborhood}
-              </p>
+              {(event.venueName || event.neighborhood) && (
+                <p className="text-white/65 text-xs mt-0.5 line-clamp-1">
+                  {event.venueName || event.neighborhood}
+                </p>
+              )}
             </div>
-
-            {/* Close button */}
-            <button
-              onClick={onClose}
-              className="flex-shrink-0 p-2 rounded-full text-slate-400 hover:bg-slate-100 transition-colors"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                <path d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
           </div>
+        ) : (
+          /* ── No-image layout: colour accent bar + header ── */
+          <>
+            <div style={{ height: '3px', background: `linear-gradient(90deg, ${catColor}, ${cat.secondary})` }} />
+            <div className="flex items-start justify-between gap-3 px-4 pt-3.5 pb-0">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <span className="text-base leading-none">{catEmoji}</span>
+                  <span className="text-xs font-medium text-slate-500">{event.category}</span>
+                  {event.editorPick && (
+                    <span className="px-1.5 py-0.5 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">Pick</span>
+                  )}
+                </div>
+                <h3 className="font-bold text-slate-900 text-[15px] leading-tight line-clamp-1">
+                  {event.title}
+                </h3>
+                <p className="text-xs text-slate-500 mt-0.5 line-clamp-1">
+                  {event.venueName || event.neighborhood}
+                </p>
+              </div>
+              <button
+                onClick={onClose}
+                className="flex-shrink-0 p-1.5 rounded-full text-slate-400 hover:bg-slate-100 transition-colors -mt-0.5"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+                  <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </>
+        )}
+
+        {/* ── Body ── */}
+        <div className="px-4 pt-3 pb-4">
+          {/* Time/distance row (only shown here when no image) */}
+          {!hasImage && (
+            <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-2">
+              <span className="font-semibold" style={{ color: catColor }}>
+                {formatEventDate(event.startAt, event.timezone)}
+              </span>
+              <span>·</span>
+              <span>{formatEventTime(event.startAt, event.timezone)}</span>
+              {event.distanceMiles !== undefined && (
+                <>
+                  <span>·</span>
+                  <span>{formatDistance(event.distanceMiles)}</span>
+                </>
+              )}
+            </div>
+          )}
 
           {/* Short why */}
-          <p className="text-sm text-slate-600 line-clamp-2 mb-3">
+          <p className="text-sm text-slate-600 leading-relaxed line-clamp-2 mb-3">
             {event.shortWhy}
           </p>
 
-          {/* Tags */}
+          {/* Tags row */}
           <div className="flex flex-wrap gap-1.5 mb-3">
-            {event.priceLabel && <Chip label={event.priceLabel} size="sm" />}
-            {event.isOutdoor && <Chip label="Outdoor" size="sm" />}
+            {event.priceLabel && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 text-xs font-medium">
+                {event.priceLabel}
+              </span>
+            )}
+            {event.isOutdoor && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium border border-emerald-100">
+                🌿 Outdoor
+              </span>
+            )}
             {event.tags.slice(0, 2).map((tag) => (
-              <Chip key={tag} label={tag.replace(/-/g, ' ')} size="sm" />
+              <span
+                key={tag}
+                className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium"
+                style={{ background: catColor + '18', color: catColor }}
+              >
+                {tag.replace(/-/g, ' ')}
+              </span>
             ))}
           </div>
 
-          {/* Actions */}
+          {/* CTA */}
           <button
             onClick={handleViewDetails}
-            className="w-full py-3 bg-sky-500 text-white rounded-xl text-sm font-semibold hover:bg-sky-600 transition-colors"
+            className="w-full py-2.5 rounded-xl text-sm font-bold text-white transition-opacity active:opacity-80"
+            style={{ background: `linear-gradient(135deg, ${catColor}, ${cat.secondary})` }}
           >
-            View details
+            View details →
           </button>
         </div>
       </div>
