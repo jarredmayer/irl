@@ -218,7 +218,7 @@ export function getAllScrapers(): BaseScraper[] {
     new DiceRealScraper(), // Puppeteer-based real scraper
     new ResidentAdvisorScraper(), // Real RA GraphQL API — Miami area ID 38
     // new DiceFmScraper(),           // SYNTHETIC - fake events like "Keinemusik Miami"
-    // new ShotgunScraper(),          // SYNTHETIC - fake events like "Teksupport Miami"
+    new ShotgunScraper(),              // real Shotgun.live API
 
     // Manually curated REAL events (venues, concerts, cultural)
     new RealVenueEventsScraper(),
@@ -253,7 +253,7 @@ export function getAllScrapers(): BaseScraper[] {
     // new MusicVenuesScraper(),         // SYNTHETIC
     // new WellnessFitnessScraper(),     // SYNTHETIC
     // new CulturalVenuesScraper(),      // SYNTHETIC
-    // new FortLauderdaleScraper(),      // SYNTHETIC
+    new FortLauderdaleScraper(),          // recurring FLL venue events
     // new NightlifeClubsScraper(),      // SYNTHETIC
     // new LatinPartiesScraper(),        // SYNTHETIC
     // new CandlelightConcertsScraper(), // SYNTHETIC

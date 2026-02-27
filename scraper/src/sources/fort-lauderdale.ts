@@ -244,6 +244,124 @@ export class FortLauderdaleScraper extends BaseScraper {
         },
       ],
     },
+    // Esplanade Park — home of the Fort Lauderdale Green Market
+    {
+      name: 'Esplanade Park',
+      address: '400 SW 2nd St, Fort Lauderdale, FL 33312',
+      neighborhood: 'Riverwalk',
+      lat: 26.1140,
+      lng: -80.1467,
+      url: 'https://fortlauderdalegreenmarket.com/',
+      events: [
+        {
+          name: 'Fort Lauderdale Green Market',
+          days: [6], // Saturday
+          time: '08:00',
+          category: 'Food & Drink',
+          description: 'Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition.',
+          tags: ['farmers-market', 'free-event', 'outdoor', 'local-favorite', 'food'],
+          price: 0,
+        },
+      ],
+    },
+    // Holiday Park — largest city park; hosts concerts & festivals
+    {
+      name: 'Holiday Park',
+      address: '1601 NE 6th Ave, Fort Lauderdale, FL 33304',
+      neighborhood: 'Victoria Park',
+      lat: 26.1418,
+      lng: -80.1248,
+      url: 'https://www.fortlauderdale.gov/departments/parks-recreation/parks-facilities/holiday-park',
+      events: [
+        {
+          name: 'Sunday Tennis Round Robin at Holiday Park',
+          days: [0], // Sunday
+          time: '09:00',
+          category: 'Sports',
+          description: 'Weekly open tennis round robin at one of South Florida\'s premier tennis facilities. All skill levels welcome.',
+          tags: ['sports', 'outdoor', 'park', 'tennis'],
+          price: 5,
+        },
+        {
+          name: 'Friday Evening Concert Series at Holiday Park',
+          days: [5], // Friday
+          time: '18:00',
+          category: 'Music',
+          description: 'Seasonal outdoor concert series at Holiday Park amphitheater featuring local and regional acts across genres.',
+          tags: ['live-music', 'outdoor', 'park', 'free-event'],
+          price: 0,
+        },
+      ],
+    },
+    // Huizenga Plaza / Bubier Park — waterfront gathering spot on Las Olas
+    {
+      name: 'Huizenga Plaza',
+      address: '251 N New River Dr E, Fort Lauderdale, FL 33301',
+      neighborhood: 'Downtown Fort Lauderdale',
+      lat: 26.1189,
+      lng: -80.1430,
+      url: 'https://www.fortlauderdale.gov/departments/parks-recreation/parks-facilities/huizenga-plaza',
+      events: [
+        {
+          name: 'Riverside Market at Huizenga Plaza',
+          days: [0], // Sunday
+          time: '10:00',
+          category: 'Food & Drink',
+          description: 'Sunday riverside market with local vendors, food trucks, and live acoustic music along the New River waterfront.',
+          tags: ['market', 'outdoor', 'waterfront', 'free-event', 'food'],
+          price: 0,
+        },
+      ],
+    },
+    // Sistrunk Marketplace & Brewery
+    {
+      name: 'Sistrunk Marketplace & Brewery',
+      address: '1556 NW Sistrunk Blvd, Fort Lauderdale, FL 33311',
+      neighborhood: 'Sistrunk',
+      lat: 26.1262,
+      lng: -80.1557,
+      url: 'https://www.sistrunkmarketplace.com/',
+      events: [
+        {
+          name: 'Sistrunk Saturday Night Market',
+          days: [6], // Saturday
+          time: '17:00',
+          category: 'Food & Drink',
+          description: 'Vibrant outdoor market and food hall in the historic Sistrunk corridor. Local food vendors, craft beer, live DJs, and artisan makers.',
+          tags: ['market', 'outdoor', 'food', 'nightlife', 'local-favorite'],
+          price: 0,
+        },
+        {
+          name: 'Trivia Night at Sistrunk Brewery',
+          days: [3], // Wednesday
+          time: '19:00',
+          category: 'Entertainment',
+          description: 'Weekly pub trivia in a lively craft brewery setting. Form your team and compete for prizes while enjoying local craft brews.',
+          tags: ['trivia', 'bar', 'nightlife'],
+          price: 0,
+        },
+      ],
+    },
+    // Las Olas Oceanside Park (formerly "Las Olas Beach")
+    {
+      name: 'Las Olas Oceanside Park',
+      address: '3000 E Las Olas Blvd, Fort Lauderdale, FL 33316',
+      neighborhood: 'Fort Lauderdale Beach',
+      lat: 26.1199,
+      lng: -80.0974,
+      url: 'https://www.fortlauderdale.gov/departments/parks-recreation/parks-facilities/las-olas-oceanside-park',
+      events: [
+        {
+          name: 'Sunday Sunrise Yoga on the Beach',
+          days: [0], // Sunday
+          time: '07:30',
+          category: 'Wellness',
+          description: 'Free community yoga class at oceanside park facing the Atlantic. Bring a mat and enjoy the breeze.',
+          tags: ['yoga', 'beach', 'outdoor', 'free-event', 'wellness'],
+          price: 0,
+        },
+      ],
+    },
   ];
 
   constructor() {
