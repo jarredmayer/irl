@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-02-26T23:35:26.325Z",
+  "scrapedAt": "2026-02-27T11:37:08.529Z",
   "stats": {
-    "total": 1190,
-    "deduplicated": 753,
+    "total": 1189,
+    "deduplicated": 768,
     "bySource": {
-      "Miami New Times": 91,
+      "Miami New Times": 90,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -14,11 +14,11 @@
       "Miami Spice": 0,
       "Miami Festivals": 1,
       "Dice.fm Real": 0,
-      "Resident Advisor": 149,
+      "Resident Advisor": 150,
       "Real Venue Events": 29,
       "Cultural Attractions": 352,
       "Pop-Ups": 31,
-      "Miami Improv": 149,
+      "Miami Improv": 148,
       "Fort Lauderdale Improv": 122,
       "Coral Gables": 10,
       "Verified Recurring": 2,
@@ -29,15 +29,15 @@
     }
   },
   "delta": {
-    "added": 122,
+    "added": 18,
     "removed": 1,
     "modified": 0,
-    "unchanged": 631
+    "unchanged": 750
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 91,
+      "count": 90,
       "errors": []
     },
     {
@@ -87,7 +87,7 @@
     },
     {
       "name": "Resident Advisor",
-      "count": 149,
+      "count": 150,
       "errors": []
     },
     {
@@ -107,7 +107,7 @@
     },
     {
       "name": "Miami Improv",
-      "count": 149,
+      "count": 148,
       "errors": []
     },
     {
