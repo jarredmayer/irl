@@ -4,7 +4,8 @@
  */
 
 import { setTimeout } from 'timers/promises';
-import fetch from 'node-fetch';
+// Use global fetch (Node 18+); node-fetch package is not required
+const _fetch = globalThis.fetch;
 
 interface GeocodingResult {
   lat: number;
@@ -42,7 +43,7 @@ export async function geocodeAddress(address: string): Promise<GeocodingResult |
     const encodedAddress = encodeURIComponent(address);
     const url = `https://nominatim.openstreetmap.org/search?q=${encodedAddress}&format=json&limit=1&countrycodes=us`;
 
-    const response = await fetch(url, {
+    const response = await _fetch(url, {
       headers: {
         'User-Agent': 'IRL-Miami-Events-App/1.0',
         'Accept': 'application/json',
