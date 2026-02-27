@@ -119,6 +119,38 @@
     "venueId": "dania-improv"
   },
   {
+    "id": "9589a5fd395c2d73",
+    "title": "Lauderdale Run Club: Morning Run",
+    "startAt": "2026-02-28T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Riverfront",
+    "address": "300 SW 1st Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1189,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor",
+      "fitness-class"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Morning Run"
+  },
+  {
     "id": "662daf0c03d71a9c",
     "title": "Beach Bootcamp with FLL Fit Club",
     "startAt": "2026-02-28T08:00:00",
@@ -604,6 +636,37 @@
     "seriesName": "Culture Room: Live Music"
   },
   {
+    "id": "880c90f0244b9c95",
+    "title": "Fort Lauderdale Weekend Bar Crawl",
+    "startAt": "2026-02-28T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "craft-beer",
+      "nightlife",
+      "local-favorite",
+      "bar"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "description": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "source": {
+      "name": "@lauderale",
+      "url": "https://instagram.com/lauderale"
+    },
+    "isRecurring": true,
+    "seriesName": "Fort Lauderdale Weekend Bar Crawl"
+  },
+  {
     "id": "23bb88549347c5c1",
     "title": "Have-Nots Comedy LIVE In FTL",
     "startAt": "2026-02-28T21:00:00",
@@ -818,6 +881,38 @@
     },
     "isRecurring": true,
     "seriesName": "Sunday Tennis Round Robin at Holiday Park"
+  },
+  {
+    "id": "cffae1ac14f3c114",
+    "title": "Sunny Side Up Market",
+    "startAt": "2026-03-01T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Esplanade Park",
+    "address": "400 SW 2nd St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.114,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "market",
+      "outdoor",
+      "local-favorite",
+      "free-event",
+      "food"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "source": {
+      "name": "@sunnysideupmarket",
+      "url": "https://instagram.com/sunnysideupmarket"
+    },
+    "isRecurring": true,
+    "seriesName": "Sunny Side Up Market"
   },
   {
     "id": "016776f81a9020da",
@@ -1210,6 +1305,37 @@
     "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": false,
     "venueId": "dania-improv"
+  },
+  {
+    "id": "eef56687b5e09add",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-03-04T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Weekday Run"
   },
   {
     "id": "470913383b0ec95f",
@@ -1958,6 +2084,38 @@
     "venueId": "dania-improv"
   },
   {
+    "id": "28d8d93f66e33401",
+    "title": "Lauderdale Run Club: Morning Run",
+    "startAt": "2026-03-07T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Riverfront",
+    "address": "300 SW 1st Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1189,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor",
+      "fitness-class"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Morning Run"
+  },
+  {
     "id": "7da41ff893eb24f3",
     "title": "Beach Bootcamp with FLL Fit Club",
     "startAt": "2026-03-07T08:00:00",
@@ -2495,6 +2653,37 @@
     "seriesName": "Culture Room: Live Music"
   },
   {
+    "id": "f95698a33fa67848",
+    "title": "Fort Lauderdale Weekend Bar Crawl",
+    "startAt": "2026-03-07T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "craft-beer",
+      "nightlife",
+      "local-favorite",
+      "bar"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "description": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "source": {
+      "name": "@lauderale",
+      "url": "https://instagram.com/lauderale"
+    },
+    "isRecurring": true,
+    "seriesName": "Fort Lauderdale Weekend Bar Crawl"
+  },
+  {
     "id": "234923c48a14cd4f",
     "title": "The Fern Bar: Weekend DJ",
     "startAt": "2026-03-07T21:00:00",
@@ -2679,6 +2868,38 @@
     },
     "isRecurring": true,
     "seriesName": "Sunday Tennis Round Robin at Holiday Park"
+  },
+  {
+    "id": "751aed55d735e338",
+    "title": "Sunny Side Up Market",
+    "startAt": "2026-03-08T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Esplanade Park",
+    "address": "400 SW 2nd St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.114,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "market",
+      "outdoor",
+      "local-favorite",
+      "free-event",
+      "food"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "source": {
+      "name": "@sunnysideupmarket",
+      "url": "https://instagram.com/sunnysideupmarket"
+    },
+    "isRecurring": true,
+    "seriesName": "Sunny Side Up Market"
   },
   {
     "id": "9e720eac589cc2cb",
@@ -3180,6 +3401,37 @@
     "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-29/d0744d86-45bf-4bb5-b1c2-9b3d73d66abe_source-879068767.webp?w=1024",
     "editorPick": true,
     "venueId": "amerant-bank-arena"
+  },
+  {
+    "id": "4468423233e6b37e",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-03-11T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Weekday Run"
   },
   {
     "id": "66a3e9d5bb4c840a",
@@ -4007,6 +4259,38 @@
     "venueId": "dania-improv"
   },
   {
+    "id": "01fb30cbac8156df",
+    "title": "Lauderdale Run Club: Morning Run",
+    "startAt": "2026-03-14T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Riverfront",
+    "address": "300 SW 1st Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1189,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor",
+      "fitness-class"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Morning Run"
+  },
+  {
     "id": "5361b6b5cfd9c0ea",
     "title": "Fort Lauderdale Beach Sweep",
     "startAt": "2026-03-14T08:00:00",
@@ -4432,6 +4716,37 @@
     "seriesName": "Culture Room: Live Music"
   },
   {
+    "id": "5ed3ab3ff9e7df1b",
+    "title": "Fort Lauderdale Weekend Bar Crawl",
+    "startAt": "2026-03-14T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "craft-beer",
+      "nightlife",
+      "local-favorite",
+      "bar"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "description": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "source": {
+      "name": "@lauderale",
+      "url": "https://instagram.com/lauderale"
+    },
+    "isRecurring": true,
+    "seriesName": "Fort Lauderdale Weekend Bar Crawl"
+  },
+  {
     "id": "98f9fbff2b204098",
     "title": "The Fern Bar: Weekend DJ",
     "startAt": "2026-03-14T21:00:00",
@@ -4646,6 +4961,38 @@
     },
     "isRecurring": true,
     "seriesName": "Sunday Tennis Round Robin at Holiday Park"
+  },
+  {
+    "id": "a13cb255af59539d",
+    "title": "Sunny Side Up Market",
+    "startAt": "2026-03-15T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Esplanade Park",
+    "address": "400 SW 2nd St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.114,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "market",
+      "outdoor",
+      "local-favorite",
+      "free-event",
+      "food"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "source": {
+      "name": "@sunnysideupmarket",
+      "url": "https://instagram.com/sunnysideupmarket"
+    },
+    "isRecurring": true,
+    "seriesName": "Sunny Side Up Market"
   },
   {
     "id": "c98359901c1eeed2",
@@ -5074,6 +5421,37 @@
     },
     "isRecurring": true,
     "seriesName": "Stache: Industry Monday"
+  },
+  {
+    "id": "083efcec7bbca071",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-03-18T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Weekday Run"
   },
   {
     "id": "c1149385653b0ab7",
@@ -5799,6 +6177,38 @@
     "venueId": "dania-improv"
   },
   {
+    "id": "189e620dd61a9001",
+    "title": "Lauderdale Run Club: Morning Run",
+    "startAt": "2026-03-21T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Riverfront",
+    "address": "300 SW 1st Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1189,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor",
+      "fitness-class"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Morning Run"
+  },
+  {
     "id": "b7cf91a70a69787a",
     "title": "Beach Bootcamp with FLL Fit Club",
     "startAt": "2026-03-21T08:00:00",
@@ -6226,6 +6636,37 @@
     "seriesName": "Culture Room: Live Music"
   },
   {
+    "id": "cec70a5253994d3b",
+    "title": "Fort Lauderdale Weekend Bar Crawl",
+    "startAt": "2026-03-21T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "craft-beer",
+      "nightlife",
+      "local-favorite",
+      "bar"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "description": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "source": {
+      "name": "@lauderale",
+      "url": "https://instagram.com/lauderale"
+    },
+    "isRecurring": true,
+    "seriesName": "Fort Lauderdale Weekend Bar Crawl"
+  },
+  {
     "id": "fe5f75871262228d",
     "title": "The Fern Bar: Weekend DJ",
     "startAt": "2026-03-21T21:00:00",
@@ -6443,6 +6884,38 @@
     },
     "isRecurring": true,
     "seriesName": "Sunday Tennis Round Robin at Holiday Park"
+  },
+  {
+    "id": "da63a79c7a118756",
+    "title": "Sunny Side Up Market",
+    "startAt": "2026-03-22T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Esplanade Park",
+    "address": "400 SW 2nd St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.114,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "market",
+      "outdoor",
+      "local-favorite",
+      "free-event",
+      "food"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "source": {
+      "name": "@sunnysideupmarket",
+      "url": "https://instagram.com/sunnysideupmarket"
+    },
+    "isRecurring": true,
+    "seriesName": "Sunny Side Up Market"
   },
   {
     "id": "2e533381c1e6a4b8",
@@ -6839,6 +7312,37 @@
     "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": false,
     "venueId": "dania-improv"
+  },
+  {
+    "id": "16da23bdf3bb8dc4",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-03-25T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Weekday Run"
   },
   {
     "id": "6ae7e92c27c0a991",
@@ -7564,6 +8068,38 @@
     "venueId": "dania-improv"
   },
   {
+    "id": "2fef2cbd5025a6d5",
+    "title": "Lauderdale Run Club: Morning Run",
+    "startAt": "2026-03-28T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Riverfront",
+    "address": "300 SW 1st Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1189,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor",
+      "fitness-class"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Morning Run"
+  },
+  {
     "id": "823567980f8c2eb4",
     "title": "Beach Bootcamp with FLL Fit Club",
     "startAt": "2026-03-28T08:00:00",
@@ -7958,6 +8494,37 @@
     "seriesName": "Culture Room: Live Music"
   },
   {
+    "id": "10946763d9c20686",
+    "title": "Fort Lauderdale Weekend Bar Crawl",
+    "startAt": "2026-03-28T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "craft-beer",
+      "nightlife",
+      "local-favorite",
+      "bar"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "description": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "source": {
+      "name": "@lauderale",
+      "url": "https://instagram.com/lauderale"
+    },
+    "isRecurring": true,
+    "seriesName": "Fort Lauderdale Weekend Bar Crawl"
+  },
+  {
     "id": "7718bf17b0dfe86d",
     "title": "The Fern Bar: Weekend DJ",
     "startAt": "2026-03-28T21:00:00",
@@ -8142,6 +8709,38 @@
     },
     "isRecurring": true,
     "seriesName": "Sunday Tennis Round Robin at Holiday Park"
+  },
+  {
+    "id": "3e4b7dfe618eacd7",
+    "title": "Sunny Side Up Market",
+    "startAt": "2026-03-29T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Esplanade Park",
+    "address": "400 SW 2nd St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.114,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "market",
+      "outdoor",
+      "local-favorite",
+      "free-event",
+      "food"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "source": {
+      "name": "@sunnysideupmarket",
+      "url": "https://instagram.com/sunnysideupmarket"
+    },
+    "isRecurring": true,
+    "seriesName": "Sunny Side Up Market"
   },
   {
     "id": "d5f2286f9f88e7b1",
@@ -8568,6 +9167,37 @@
     "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": false,
     "venueId": "dania-improv"
+  },
+  {
+    "id": "de8ae15fc4fa5076",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-04-01T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Weekday Run"
   },
   {
     "id": "9dd7d65b8642cb53",
@@ -9355,6 +9985,38 @@
     "venueId": "dania-improv"
   },
   {
+    "id": "758431ab35b700ab",
+    "title": "Lauderdale Run Club: Morning Run",
+    "startAt": "2026-04-04T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Riverfront",
+    "address": "300 SW 1st Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1189,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor",
+      "fitness-class"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Morning Run"
+  },
+  {
     "id": "b457fa618e540b8e",
     "title": "Beach Bootcamp with FLL Fit Club",
     "startAt": "2026-04-04T08:00:00",
@@ -9782,6 +10444,37 @@
     "seriesName": "Culture Room: Live Music"
   },
   {
+    "id": "a0fe59d92568fbe7",
+    "title": "Fort Lauderdale Weekend Bar Crawl",
+    "startAt": "2026-04-04T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "craft-beer",
+      "nightlife",
+      "local-favorite",
+      "bar"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "description": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "source": {
+      "name": "@lauderale",
+      "url": "https://instagram.com/lauderale"
+    },
+    "isRecurring": true,
+    "seriesName": "Fort Lauderdale Weekend Bar Crawl"
+  },
+  {
     "id": "0ff2a6f06f57204d",
     "title": "The Fern Bar: Weekend DJ",
     "startAt": "2026-04-04T21:00:00",
@@ -9966,6 +10659,38 @@
     },
     "isRecurring": true,
     "seriesName": "Sunday Tennis Round Robin at Holiday Park"
+  },
+  {
+    "id": "961f90b0f85e8d39",
+    "title": "Sunny Side Up Market",
+    "startAt": "2026-04-05T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Esplanade Park",
+    "address": "400 SW 2nd St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.114,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "market",
+      "outdoor",
+      "local-favorite",
+      "free-event",
+      "food"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "source": {
+      "name": "@sunnysideupmarket",
+      "url": "https://instagram.com/sunnysideupmarket"
+    },
+    "isRecurring": true,
+    "seriesName": "Sunny Side Up Market"
   },
   {
     "id": "6d4dc3690908ee99",
@@ -10302,6 +11027,37 @@
     },
     "isRecurring": true,
     "seriesName": "Stache: Industry Monday"
+  },
+  {
+    "id": "ae2859ec50cb2ebe",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-04-08T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Weekday Run"
   },
   {
     "id": "be3f07db8a6068a3",
@@ -10694,6 +11450,38 @@
     "venueId": "dania-improv"
   },
   {
+    "id": "808c5819cdc44e98",
+    "title": "Lauderdale Run Club: Morning Run",
+    "startAt": "2026-04-11T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Riverfront",
+    "address": "300 SW 1st Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1189,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor",
+      "fitness-class"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Morning Run"
+  },
+  {
     "id": "4c14f9848d14cfb3",
     "title": "Fort Lauderdale Beach Sweep",
     "startAt": "2026-04-11T08:00:00",
@@ -10758,6 +11546,37 @@
     "venueId": "hard-rock-live"
   },
   {
+    "id": "7f5795e7440c2d50",
+    "title": "Fort Lauderdale Weekend Bar Crawl",
+    "startAt": "2026-04-11T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "craft-beer",
+      "nightlife",
+      "local-favorite",
+      "bar"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "description": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "source": {
+      "name": "@lauderale",
+      "url": "https://instagram.com/lauderale"
+    },
+    "isRecurring": true,
+    "seriesName": "Fort Lauderdale Weekend Bar Crawl"
+  },
+  {
     "id": "f1311a485096dd85",
     "title": "The Fern Bar: Weekend DJ",
     "startAt": "2026-04-11T21:00:00",
@@ -10817,6 +11636,38 @@
     "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": false,
     "venueId": "dania-improv"
+  },
+  {
+    "id": "fdd48330addfb2ef",
+    "title": "Sunny Side Up Market",
+    "startAt": "2026-04-12T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Esplanade Park",
+    "address": "400 SW 2nd St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.114,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "market",
+      "outdoor",
+      "local-favorite",
+      "free-event",
+      "food"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "source": {
+      "name": "@sunnysideupmarket",
+      "url": "https://instagram.com/sunnysideupmarket"
+    },
+    "isRecurring": true,
+    "seriesName": "Sunny Side Up Market"
   },
   {
     "id": "c32e01de1bb12609",
@@ -10941,6 +11792,37 @@
     "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": true,
     "venueId": "ftl-war-memorial"
+  },
+  {
+    "id": "26bbd337372c70e3",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-04-15T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Weekday Run"
   },
   {
     "id": "3cbe6da8fa88aaf9",
@@ -11096,6 +11978,69 @@
     "seriesName": "The Fern Bar: Weekend DJ"
   },
   {
+    "id": "204082ac589c6a97",
+    "title": "Lauderdale Run Club: Morning Run",
+    "startAt": "2026-04-18T07:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Riverfront",
+    "address": "300 SW 1st Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1189,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor",
+      "fitness-class"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Morning Run"
+  },
+  {
+    "id": "eb71309ab1c393db",
+    "title": "Fort Lauderdale Weekend Bar Crawl",
+    "startAt": "2026-04-18T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "craft-beer",
+      "nightlife",
+      "local-favorite",
+      "bar"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "description": "Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.",
+    "source": {
+      "name": "@lauderale",
+      "url": "https://instagram.com/lauderale"
+    },
+    "isRecurring": true,
+    "seriesName": "Fort Lauderdale Weekend Bar Crawl"
+  },
+  {
     "id": "bb117fcd32751390",
     "title": "The Fern Bar: Weekend DJ",
     "startAt": "2026-04-18T21:00:00",
@@ -11187,6 +12132,38 @@
     "venueId": "dania-improv"
   },
   {
+    "id": "e02dc1a51bfa80da",
+    "title": "Sunny Side Up Market",
+    "startAt": "2026-04-19T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Esplanade Park",
+    "address": "400 SW 2nd St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.114,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "market",
+      "outdoor",
+      "local-favorite",
+      "free-event",
+      "food"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
+    "source": {
+      "name": "@sunnysideupmarket",
+      "url": "https://instagram.com/sunnysideupmarket"
+    },
+    "isRecurring": true,
+    "seriesName": "Sunny Side Up Market"
+  },
+  {
     "id": "ab926a39fe4b2272",
     "title": "Sunday Jazz Brunch Downtown",
     "startAt": "2026-04-19T11:00:00",
@@ -11247,6 +12224,37 @@
     },
     "isRecurring": true,
     "seriesName": "Wilton Drive: Sunday Stroll"
+  },
+  {
+    "id": "fb4280e3b68add75",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-04-22T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · outdoors in FLL.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/lauderdalerunclub"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale Run Club: Weekday Run"
   },
   {
     "id": "0fbde3395a230a25",
