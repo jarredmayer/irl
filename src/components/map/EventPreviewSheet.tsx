@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { formatEventDate, formatEventTime } from '../../utils/time';
 import { formatDistance } from '../../utils/distance';
 import { CATEGORY_COLORS } from '../../constants';
+import { useSavedEvents } from '../../hooks/useSavedEvents';
 import type { ScoredEvent } from '../../types';
 
 interface EventPreviewSheetProps {
@@ -12,12 +13,14 @@ interface EventPreviewSheetProps {
 
 export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
   const navigate = useNavigate();
+  const { isSaved, toggleSaved } = useSavedEvents();
 
   if (!event) return null;
 
   const cat = CATEGORY_COLORS[event.category] ?? CATEGORY_COLORS['Other'];
   const catColor = cat.primary;
   const catEmoji = cat.emoji;
+  const saved = isSaved(event.id);
 
   const handleViewDetails = () => navigate(`/event/${event.id}`);
 
@@ -178,14 +181,49 @@ export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
             ))}
           </div>
 
-          {/* CTA */}
-          <button
-            onClick={handleViewDetails}
-            className="w-full py-2.5 rounded-xl text-sm font-bold text-white transition-opacity active:opacity-80"
-            style={{ background: `linear-gradient(135deg, ${catColor}, ${cat.secondary})` }}
-          >
-            View details →
-          </button>
+          {/* CTA row */}
+          <div className="flex items-center gap-2">
+            {/* Heart / save button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                if ('vibrate' in navigator) navigator.vibrate(10);
+                toggleSaved(event.id);
+              }}
+              className={`flex-shrink-0 p-2.5 rounded-xl transition-all btn-press ${
+                saved
+                  ? 'bg-rose-50 text-rose-500'
+                  : 'bg-slate-100 text-slate-400 hover:bg-rose-50 hover:text-rose-400'
+              }`}
+              aria-label={saved ? 'Unsave event' : 'Save event'}
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2}>
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </button>
+
+            {/* Ticket link */}
+            {event.ticketUrl && (
+              <a
+                href={event.ticketUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex-shrink-0 px-3 py-2.5 rounded-xl text-sm font-semibold bg-sky-500 text-white hover:bg-sky-600 active:opacity-80 transition-colors"
+              >
+                Tickets
+              </a>
+            )}
+
+            {/* View details */}
+            <button
+              onClick={handleViewDetails}
+              className="flex-1 py-2.5 rounded-xl text-sm font-bold text-white transition-opacity active:opacity-80"
+              style={{ background: `linear-gradient(135deg, ${catColor}, ${cat.secondary})` }}
+            >
+              View details →
+            </button>
+          </div>
         </div>
       </div>
     </div>,

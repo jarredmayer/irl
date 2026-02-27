@@ -237,6 +237,7 @@ export class ResidentAdvisorScraper extends BaseScraper {
       isOutdoor: false,
       description,
       sourceUrl: `https://ra.co${event.contentUrl}`,
+      ticketUrl: event.isTicketed ? `https://ra.co${event.contentUrl}` : undefined,
       sourceName: this.name,
       image: flyer?.filename,
     };

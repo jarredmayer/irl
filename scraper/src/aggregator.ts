@@ -440,6 +440,8 @@ export class EventAggregator {
       shortWhy,
       editorialWhy,
       description: event.description,
+      // Explicit ticketUrl wins; for paid events fall back to sourceUrl (where tickets are sold)
+      ticketUrl: event.ticketUrl || (event.priceAmount && event.priceAmount > 0 ? event.sourceUrl : undefined),
       source: event.sourceUrl
         ? {
             name: event.sourceName,

@@ -43,6 +43,7 @@ const VERIFIED_SOURCES = [
   'Broward Center',            // Real performing arts events
   'Coral Gables',              // Real city calendar events
   'Verified Recurring',        // Confirmed recurring events only
+  'Fort Lauderdale',           // Real recurring venue events (markets, parks, arts)
 ];
 
 // ALL OTHER SOURCES ARE SYNTHETIC - they generate assumed events
@@ -66,7 +67,7 @@ const SYNTHETIC_SOURCES = [
   'Deering Estate',            // SYNTHETIC: assumed events
   'Regatta Grove',             // SYNTHETIC: assumed events
   'South Pointe Park',         // SYNTHETIC: assumed events
-  'Fort Lauderdale',           // SYNTHETIC: assumed events
+  // 'Fort Lauderdale' moved to VERIFIED (real recurring venue events)
   'Instagram Sources',         // SYNTHETIC: unverified
   'Latin Parties',             // SYNTHETIC: assumed parties
   'Coral Gables & Neighborhood Venues',
