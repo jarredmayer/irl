@@ -97,7 +97,19 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
     onFiltersChange({ ...filters, [key]: value });
   };
 
-  // Count active filters
+  const setTimeFilter = (value: TimeFilter) => {
+    onFiltersChange({ ...filters, timeFilter: value, dateRange: ['', ''] });
+  };
+
+  const setDateRangeFrom = (v: string) => {
+    onFiltersChange({ ...filters, dateRange: [v, filters.dateRange[1]], timeFilter: 'all' });
+  };
+
+  const setDateRangeTo = (v: string) => {
+    onFiltersChange({ ...filters, dateRange: [filters.dateRange[0], v], timeFilter: 'all' });
+  };
+
+  // Count active filters (timeFilter excluded — always visible in bar)
   const activeFilterCount =
     (filters.selectedCategories.length > 0 ? 1 : 0) +
     (filters.selectedTags.length > 0 ? 1 : 0) +
@@ -105,7 +117,7 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
     (filters.nearMeOnly ? 1 : 0) +
     (filters.freeOnly ? 1 : 0) +
     (filters.city ? 1 : 0) +
-    (filters.timeFilter !== 'all' ? 1 : 0);
+    (filters.dateRange[0] && filters.dateRange[1] ? 1 : 0);
 
   const toggleTag = (tag: string) => {
     const newTags = filters.selectedTags.includes(tag)
@@ -236,17 +248,32 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
         </div>
       )}
 
+      {/* Time filter chips — always visible */}
+      <div className="px-4 pb-2 overflow-x-auto hide-scrollbar">
+        <ChipGroup>
+          {timeFilters.map((filter) => (
+            <Chip
+              key={filter.value}
+              label={filter.label}
+              selected={filters.timeFilter === filter.value && !(filters.dateRange[0] && filters.dateRange[1])}
+              onClick={() => setTimeFilter(filter.value)}
+              size="sm"
+            />
+          ))}
+        </ChipGroup>
+      </div>
+
       {/* Collapsible filter sections */}
       {isExpanded && (
         <>
-          {/* Date range filter */}
+          {/* Date range (overrides time chips when set) */}
       <div className="px-4 py-2 flex items-center gap-3 border-b border-slate-50">
         <div className="flex items-center gap-2">
           <label className="text-xs text-slate-500">From</label>
           <input
             type="date"
             value={filters.dateRange[0]}
-            onChange={(e) => updateFilter('dateRange', [e.target.value, filters.dateRange[1]])}
+            onChange={(e) => setDateRangeFrom(e.target.value)}
             className="px-2 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
           />
         </div>
@@ -255,25 +282,18 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
           <input
             type="date"
             value={filters.dateRange[1]}
-            onChange={(e) => updateFilter('dateRange', [filters.dateRange[0], e.target.value])}
+            onChange={(e) => setDateRangeTo(e.target.value)}
             className="px-2 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
           />
         </div>
-      </div>
-
-      {/* Time filters */}
-      <div className="px-4 py-2 overflow-x-auto hide-scrollbar">
-        <ChipGroup>
-          {timeFilters.map((filter) => (
-            <Chip
-              key={filter.value}
-              label={filter.label}
-              selected={filters.timeFilter === filter.value}
-              onClick={() => updateFilter('timeFilter', filter.value)}
-              size="sm"
-            />
-          ))}
-        </ChipGroup>
+        {(filters.dateRange[0] || filters.dateRange[1]) && (
+          <button
+            onClick={() => onFiltersChange({ ...filters, dateRange: ['', ''], timeFilter: 'this-week' })}
+            className="text-xs text-sky-500 hover:text-sky-700"
+          >
+            Clear
+          </button>
+        )}
       </div>
 
       {/* City + Near me + Price row */}
