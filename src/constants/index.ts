@@ -160,17 +160,9 @@ export const DEFAULT_USER_STATE = {
   lastKnownLocation: undefined,
 };
 
-// Helper to get date range defaults (7 days from now)
-const getDefaultDateRange = (): [string, string] => {
-  const today = new Date();
-  const weekFromNow = new Date(today);
-  weekFromNow.setDate(weekFromNow.getDate() + 7);
-  const formatDate = (d: Date) => d.toISOString().split('T')[0];
-  return [formatDate(today), formatDate(weekFromNow)];
-};
 
 export const DEFAULT_FILTERS = {
-  timeFilter: 'all' as const,
+  timeFilter: 'this-week' as const,
   selectedTags: [] as string[],
   selectedCategories: [] as string[],
   selectedNeighborhoods: [] as string[],
@@ -179,7 +171,7 @@ export const DEFAULT_FILTERS = {
   searchQuery: '',
   priceRange: [0, 200] as [number, number],
   freeOnly: false,
-  dateRange: getDefaultDateRange(),
+  dateRange: ['', ''] as [string, string],
 };
 
 // Popular neighborhoods for quick filtering
