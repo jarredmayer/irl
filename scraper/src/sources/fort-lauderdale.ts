@@ -362,6 +362,249 @@ export class FortLauderdaleScraper extends BaseScraper {
         },
       ],
     },
+    // Revolution Live - Downtown FLL music venue
+    {
+      name: 'Revolution Live',
+      address: '100 SW 3rd Ave, Fort Lauderdale, FL 33312',
+      neighborhood: 'Downtown FLL',
+      lat: 26.1165,
+      lng: -80.1487,
+      url: 'https://www.jointherevolution.net/',
+      events: [
+        {
+          name: 'Revolution Live: Weekend Concert',
+          days: [5, 6], // Fri-Sat
+          time: '20:00',
+          category: 'Music',
+          description: 'Live concerts at Fort Lauderdale\'s premier indoor music venue. National touring acts and local favorites on the main stage.',
+          tags: ['live-music', 'local-favorite'],
+          price: 25,
+        },
+      ],
+    },
+    // Culture Room - Oakland Park
+    {
+      name: 'Culture Room',
+      address: '3045 N Federal Hwy, Fort Lauderdale, FL 33306',
+      neighborhood: 'Oakland Park',
+      lat: 26.1583,
+      lng: -80.1316,
+      url: 'https://www.cultureroom.net/',
+      events: [
+        {
+          name: 'Culture Room: Live Music',
+          days: [4, 5, 6], // Thu-Sat
+          time: '20:00',
+          category: 'Music',
+          description: 'Intimate music venue hosting rock, metal, indie, and alternative acts. One of Broward\'s best spots for live music.',
+          tags: ['live-music', 'nightlife'],
+          price: 20,
+        },
+      ],
+    },
+    // Funky Buddha Brewery - Oakland Park
+    {
+      name: 'Funky Buddha Brewery',
+      address: '1201 NE 38th St, Oakland Park, FL 33334',
+      neighborhood: 'Oakland Park',
+      lat: 26.1679,
+      lng: -80.1357,
+      url: 'https://www.funkybuddhabrewery.com/',
+      events: [
+        {
+          name: 'Funky Buddha: Weekend Brewery Tour & Tasting',
+          days: [6, 0], // Sat-Sun
+          time: '13:00',
+          category: 'Food & Drink',
+          description: 'Tour the Funky Buddha brewery and sample award-winning craft beers including the legendary Maple Bacon Coffee Porter.',
+          tags: ['craft-beer', 'local-favorite', 'outdoor'],
+          price: 15,
+        },
+        {
+          name: 'Funky Buddha: Trivia Night',
+          days: [3], // Wednesday
+          time: '19:00',
+          category: 'Community',
+          description: 'Weekly pub trivia at Funky Buddha Brewery taproom. Teams of 6, prizes, and great craft beer.',
+          tags: ['bar', 'craft-beer', 'community'],
+          price: 0,
+        },
+      ],
+    },
+    // Stache Drinking Den - Downtown FLL
+    {
+      name: 'Stache Drinking Den + Coffee Bar',
+      address: '109 SW 2nd Ave, Fort Lauderdale, FL 33312',
+      neighborhood: 'Downtown FLL',
+      lat: 26.1168,
+      lng: -80.1467,
+      url: 'https://www.stachedrinkingden.com/',
+      events: [
+        {
+          name: 'Stache: DJ Night',
+          days: [4, 5, 6], // Thu-Sat
+          time: '22:00',
+          category: 'Nightlife',
+          description: 'Craft cocktails and DJs in Downtown Fort Lauderdale\'s coolest speakeasy-style bar. Rotating DJ lineup, eclectic music.',
+          tags: ['dj', 'nightlife', 'cocktails', 'local-favorite'],
+          price: 0,
+        },
+        {
+          name: 'Stache: Industry Monday',
+          days: [1], // Monday
+          time: '21:00',
+          category: 'Nightlife',
+          description: 'Industry Monday at Stache. Discounts for hospitality workers, DJ sets, and late-night fun in Downtown FLL.',
+          tags: ['dj', 'nightlife', 'cocktails'],
+          price: 0,
+        },
+      ],
+    },
+    // Tarpon River Brewing
+    {
+      name: 'Tarpon River Brewing',
+      address: '280 SW 6th St, Fort Lauderdale, FL 33312',
+      neighborhood: 'Downtown FLL',
+      lat: 26.1136,
+      lng: -80.1467,
+      url: 'https://tarponriverbrewing.com/',
+      events: [
+        {
+          name: 'Tarpon River: Live Music Weekend',
+          days: [5, 6], // Fri-Sat
+          time: '19:00',
+          category: 'Music',
+          description: 'Live music in Tarpon River Brewing\'s taproom and outdoor patio. Local acts, craft beer, and great vibes in the River District.',
+          tags: ['live-music', 'craft-beer', 'outdoor', 'local-favorite'],
+          price: 0,
+        },
+        {
+          name: 'Tarpon River: Open Mic Wednesday',
+          days: [3], // Wednesday
+          time: '19:00',
+          category: 'Music',
+          description: 'Weekly open mic night at Tarpon River Brewing. Acoustic sets, original music, and great local craft beer.',
+          tags: ['live-music', 'community', 'craft-beer'],
+          price: 0,
+        },
+      ],
+    },
+    // The Wharf Fort Lauderdale
+    {
+      name: 'The Wharf Fort Lauderdale',
+      address: '20 W Las Olas Blvd, Fort Lauderdale, FL 33301',
+      neighborhood: 'Downtown FLL',
+      lat: 26.1197,
+      lng: -80.1458,
+      url: 'https://wharfftl.com/',
+      events: [
+        {
+          name: 'The Wharf FTL: Weekend DJ Party',
+          days: [5, 6], // Fri-Sat
+          time: '18:00',
+          category: 'Nightlife',
+          description: 'Outdoor waterfront party at The Wharf Fort Lauderdale. DJs, cocktails, and New River views from shipping container bars.',
+          tags: ['dj', 'nightlife', 'waterfront', 'outdoor', 'local-favorite'],
+          price: 0,
+        },
+        {
+          name: 'The Wharf FTL: Sunday Funday',
+          days: [0], // Sunday
+          time: '13:00',
+          category: 'Community',
+          description: 'Sunday afternoon at The Wharf. Day drinking, DJs, and waterfront views on the New River. Fort Lauderdale\'s favorite chill Sunday spot.',
+          tags: ['dj', 'outdoor', 'waterfront'],
+          price: 0,
+        },
+      ],
+    },
+    // Yolo Restaurant + Bar - Las Olas
+    {
+      name: 'Yolo Restaurant',
+      address: '333 E Las Olas Blvd, Fort Lauderdale, FL 33301',
+      neighborhood: 'Las Olas',
+      lat: 26.1195,
+      lng: -80.1345,
+      url: 'https://yolorestaurant.com/',
+      events: [
+        {
+          name: 'Yolo: Thursday DJ Night',
+          days: [4], // Thursday
+          time: '22:00',
+          category: 'Nightlife',
+          description: 'Thursday DJ nights at Yolo on Las Olas. Live DJs, craft cocktails, and late-night bites at one of Fort Lauderdale\'s most popular spots.',
+          tags: ['dj', 'nightlife', 'cocktails'],
+          price: 0,
+        },
+        {
+          name: 'Yolo: Sunday Brunch',
+          days: [0], // Sunday
+          time: '10:30',
+          category: 'Food & Drink',
+          description: 'Sunday brunch at Yolo on Las Olas. Bottomless mimosas, DJ, and Fort Lauderdale\'s most vibrant brunch scene.',
+          tags: ['brunch', 'dj', 'cocktails'],
+          price: 35,
+        },
+      ],
+    },
+    // Pompano Beach Amphitheater
+    {
+      name: 'Pompano Beach Amphitheater',
+      address: '1806 NE 6th St, Pompano Beach, FL 33060',
+      neighborhood: 'Pompano Beach',
+      lat: 26.2396,
+      lng: -80.1240,
+      url: 'https://pompanobeachfl.gov/amphitheater',
+      events: [
+        {
+          name: 'Pompano Beach Amphitheater: Weekend Concert',
+          days: [6], // Saturday
+          time: '19:00',
+          category: 'Music',
+          description: 'Outdoor concerts at Pompano Beach Amphitheater. Touring and local acts under the stars on the barrier island.',
+          tags: ['live-music', 'outdoor', 'local-favorite'],
+          price: 20,
+        },
+        {
+          name: 'Pompano Beach Sunday Concert Series',
+          days: [0], // Sunday
+          time: '17:00',
+          category: 'Music',
+          description: 'Free Sunday concert series at Pompano Beach Amphitheater. Diverse musical programming from jazz to Caribbean to pop.',
+          tags: ['live-music', 'outdoor', 'free-event', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    // Lauderdale-By-The-Sea
+    {
+      name: 'El Mar Drive Beach',
+      address: 'El Mar Dr, Lauderdale-By-The-Sea, FL 33308',
+      neighborhood: 'Lauderdale-By-The-Sea',
+      lat: 26.1862,
+      lng: -80.0974,
+      url: 'https://www.lauderdalebythesea-fl.gov/',
+      events: [
+        {
+          name: 'Lauderdale-by-the-Sea Craft Fair',
+          days: 'first-saturday',
+          time: '09:00',
+          category: 'Community',
+          description: 'Monthly craft fair in the charming beach village of Lauderdale-By-The-Sea. Local art, jewelry, crafts, and food by the ocean.',
+          tags: ['outdoor', 'beach', 'market', 'local-favorite', 'free-event'],
+          price: 0,
+        },
+        {
+          name: 'Sunday Concert on the Beach',
+          days: [0], // Sunday
+          time: '14:00',
+          category: 'Music',
+          description: 'Free Sunday afternoon concerts on the beach in Lauderdale-By-The-Sea. Live music and ocean views.',
+          tags: ['live-music', 'outdoor', 'beach', 'free-event'],
+          price: 0,
+        },
+      ],
+    },
   ];
 
   constructor() {
