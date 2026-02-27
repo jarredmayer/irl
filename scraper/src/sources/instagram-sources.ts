@@ -480,6 +480,477 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
+    // @sunnysideupmarket - Sunday pop-up market (Miami / FLL area)
+    {
+      handle: 'sunnysideupmarket',
+      name: 'Sunny Side Up Market',
+      city: 'Fort Lauderdale',
+      category: 'Community',
+      knownEvents: [
+        {
+          name: 'Sunny Side Up Market',
+          venue: 'Esplanade Park',
+          address: '400 SW 2nd St, Fort Lauderdale, FL 33312',
+          neighborhood: 'Riverwalk',
+          lat: 26.1140,
+          lng: -80.1467,
+          schedule: 'weekly',
+          days: [0], // Sunday
+          time: '09:00',
+          description: 'Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.',
+          tags: ['market', 'outdoor', 'local-favorite', 'free-event', 'food'],
+          price: 0,
+        },
+      ],
+    },
+    // @lauderdalerunclub - Run club Fort Lauderdale
+    {
+      handle: 'lauderdalerunclub',
+      name: 'Lauderdale Run Club',
+      city: 'Fort Lauderdale',
+      category: 'Fitness',
+      knownEvents: [
+        {
+          name: 'Lauderdale Run Club: Morning Run',
+          venue: 'Las Olas Riverfront',
+          address: '300 SW 1st Ave, Fort Lauderdale, FL 33301',
+          neighborhood: 'Las Olas',
+          lat: 26.1189,
+          lng: -80.1456,
+          schedule: 'weekly',
+          days: [6], // Saturday
+          time: '07:00',
+          description: 'Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.',
+          tags: ['running', 'free-event', 'community', 'outdoor', 'fitness-class'],
+          price: 0,
+        },
+        {
+          name: 'Lauderdale Run Club: Weekday Run',
+          venue: 'Holiday Park',
+          address: '1601 NE 6th Ave, Fort Lauderdale, FL 33304',
+          neighborhood: 'Victoria Park',
+          lat: 26.1418,
+          lng: -80.1248,
+          schedule: 'weekly',
+          days: [3], // Wednesday
+          time: '06:30',
+          description: 'Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.',
+          tags: ['running', 'free-event', 'community', 'outdoor'],
+          price: 0,
+        },
+      ],
+    },
+    // @lauderale - Fort Lauderdale lifestyle / local events
+    {
+      handle: 'lauderale',
+      name: 'Lauder Ale FTL',
+      city: 'Fort Lauderdale',
+      category: 'Community',
+      knownEvents: [
+        {
+          name: 'Fort Lauderdale Weekend Bar Crawl',
+          venue: 'Las Olas Boulevard',
+          address: 'Las Olas Blvd, Fort Lauderdale, FL 33301',
+          neighborhood: 'Las Olas',
+          lat: 26.1195,
+          lng: -80.1365,
+          schedule: 'weekly',
+          days: [6], // Saturday
+          time: '20:00',
+          description: 'Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.',
+          tags: ['craft-beer', 'nightlife', 'local-favorite', 'bar'],
+          price: 0,
+        },
+      ],
+    },
+    // @thirdspacesmiami - Community event space Miami
+    {
+      handle: 'thirdspacesmiami',
+      name: 'Third Spaces Miami',
+      city: 'Miami',
+      category: 'Community',
+      knownEvents: [
+        {
+          name: 'Third Spaces: Community Gathering',
+          venue: 'Third Spaces Miami',
+          address: '1 NE 1st Ave, Miami, FL 33132',
+          neighborhood: 'Downtown Miami',
+          lat: 25.7743,
+          lng: -80.1925,
+          schedule: 'weekly',
+          days: [5], // Friday
+          time: '19:00',
+          description: 'Weekly community gathering hosted by Third Spaces Miami. Art, music, conversation, and connection in a welcoming environment.',
+          tags: ['community', 'local-favorite', 'pop-up'],
+          price: 0,
+        },
+      ],
+    },
+    // @miamiconcours - Miami Concours classic car show
+    {
+      handle: 'miamiconcours',
+      name: 'Miami Concours',
+      city: 'Miami',
+      category: 'Culture',
+      knownEvents: [
+        {
+          name: 'Miami Concours: Classic Car Show',
+          venue: 'The Biltmore Hotel',
+          address: '1200 Anastasia Ave, Coral Gables, FL 33134',
+          neighborhood: 'Coral Gables',
+          lat: 25.7446,
+          lng: -80.2793,
+          schedule: 'monthly',
+          time: '10:00',
+          description: 'Curated classic and collector car gathering on the grounds of The Biltmore Hotel. Vintage autos, community, and Coral Gables grandeur.',
+          tags: ['outdoor', 'local-favorite', 'community'],
+          price: 0,
+        },
+      ],
+    },
+    // @miamijazzbooking - Jazz events across Miami
+    {
+      handle: 'miamijazzbooking',
+      name: 'Miami Jazz Booking',
+      city: 'Miami',
+      category: 'Music',
+      knownEvents: [
+        {
+          name: 'Miami Jazz Sessions',
+          venue: 'Lagniappe House',
+          address: '3425 NE 2nd Ave, Miami, FL 33137',
+          neighborhood: 'Design District',
+          lat: 25.8145,
+          lng: -80.1919,
+          schedule: 'weekly',
+          days: [4, 6], // Thu + Sat
+          time: '21:00',
+          description: 'Live jazz performances curated by Miami Jazz Booking. Local and touring jazz artists at intimate Miami venues.',
+          tags: ['jazz', 'live-music', 'local-favorite', 'intimate'],
+          price: 0,
+        },
+      ],
+    },
+    // @coffeeandchillmiami - Coffee + chill social events
+    {
+      handle: 'coffeeandchillmiami',
+      name: 'Coffee and Chill Miami',
+      city: 'Miami',
+      category: 'Community',
+      knownEvents: [
+        {
+          name: 'Coffee & Chill: Sunday Social',
+          venue: 'Bayfront Park',
+          address: '301 Biscayne Blvd, Miami, FL 33132',
+          neighborhood: 'Downtown Miami',
+          lat: 25.7733,
+          lng: -80.1867,
+          schedule: 'weekly',
+          days: [0], // Sunday
+          time: '09:00',
+          description: 'Weekly Sunday morning coffee social at Bayfront Park. Great coffee, good people, and Biscayne Bay views.',
+          tags: ['community', 'free-event', 'outdoor', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    // @miamibloco - Afro-Brazilian drum & dance collective
+    {
+      handle: 'miamibloco',
+      name: 'Miami Bloco',
+      city: 'Miami',
+      category: 'Music',
+      knownEvents: [
+        {
+          name: 'Miami Bloco: Drum & Dance Practice',
+          venue: 'Lummus Park',
+          address: '1130 Ocean Dr, Miami Beach, FL 33139',
+          neighborhood: 'South Beach',
+          lat: 25.7826,
+          lng: -80.1304,
+          schedule: 'weekly',
+          days: [0], // Sunday
+          time: '15:00',
+          description: 'Miami Bloco Afro-Brazilian drum and dance collective. Open rehearsal and street performance. All are welcome to watch or join.',
+          tags: ['live-music', 'free-event', 'outdoor', 'community', 'local-favorite', 'beach'],
+          price: 0,
+        },
+        {
+          name: 'Miami Bloco: Street Parade',
+          venue: 'Wynwood Arts District',
+          address: 'NW 2nd Ave, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8011,
+          lng: -80.1996,
+          schedule: 'monthly',
+          time: '18:00',
+          description: 'Monthly street parade through Wynwood with live Afro-Brazilian drumming, dancers, and community celebration.',
+          tags: ['live-music', 'free-event', 'outdoor', 'community', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    // @thestandardmiami - The Standard Miami Beach
+    {
+      handle: 'thestandardmiami',
+      name: 'The Standard Miami',
+      city: 'Miami',
+      category: 'Wellness',
+      knownEvents: [
+        {
+          name: 'The Standard: Rooftop Pool Party',
+          venue: 'The Standard Miami Beach',
+          address: '40 Island Ave, Miami Beach, FL 33139',
+          neighborhood: 'South Beach',
+          lat: 25.7824,
+          lng: -80.1425,
+          schedule: 'weekly',
+          days: [6, 0], // Sat-Sun
+          time: '14:00',
+          description: 'Weekend pool parties at The Standard Miami Beach. DJs, cocktails, and bay views from this iconic Belle Isle hotel.',
+          tags: ['dj', 'outdoor', 'waterfront', 'local-favorite', 'luxury'],
+          price: 0,
+        },
+        {
+          name: 'The Standard: Sunrise Yoga',
+          venue: 'The Standard Miami Beach',
+          address: '40 Island Ave, Miami Beach, FL 33139',
+          neighborhood: 'South Beach',
+          lat: 25.7824,
+          lng: -80.1425,
+          schedule: 'weekly',
+          days: [6], // Saturday
+          time: '08:00',
+          description: 'Saturday morning yoga on the dock overlooking Biscayne Bay at The Standard. All levels welcome.',
+          tags: ['yoga', 'wellness', 'waterfront', 'outdoor', 'sunrise'],
+          price: 20,
+        },
+        {
+          name: 'The Standard: Hammam & Spa Day',
+          venue: 'The Standard Miami Beach',
+          address: '40 Island Ave, Miami Beach, FL 33139',
+          neighborhood: 'South Beach',
+          lat: 25.7824,
+          lng: -80.1425,
+          schedule: 'weekly',
+          days: [4, 5], // Thu-Fri
+          time: '10:00',
+          description: 'Day access to The Standard\'s world-famous hammam spa, hot tub, clawfoot tubs, and waterfront gardens.',
+          tags: ['wellness', 'waterfront', 'luxury', 'local-favorite'],
+          price: 45,
+        },
+      ],
+    },
+    // @discodomingomiami - Sunday disco dance party
+    {
+      handle: 'discodomingomiami',
+      name: 'Disco Domingo Miami',
+      city: 'Miami',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'Disco Domingo',
+          venue: 'Do Not Sit On The Furniture',
+          address: '423 16th St, Miami Beach, FL 33139',
+          neighborhood: 'South Beach',
+          lat: 25.7873,
+          lng: -80.1355,
+          schedule: 'weekly',
+          days: [0], // Sunday
+          time: '22:00',
+          description: 'The legendary Sunday disco night in Miami. Non-stop dance floor energy with classic disco, funk, and soul spinning until late.',
+          tags: ['dj', 'nightlife', 'dancing', 'local-favorite'],
+          price: 20,
+        },
+      ],
+    },
+    // @rawfigspopup - Raw Figs pop-up dining & market
+    {
+      handle: 'rawfigspopup',
+      name: 'Raw Figs Pop-Up',
+      city: 'Miami',
+      category: 'Food & Drink',
+      knownEvents: [
+        {
+          name: 'Raw Figs Pop-Up Market',
+          venue: 'Wynwood Arts District',
+          address: 'NW 2nd Ave, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8011,
+          lng: -80.1996,
+          schedule: 'monthly',
+          time: '12:00',
+          description: 'Pop-up market featuring local makers, artisan food, vintage goods, and live music. Raw Figs brings together Miami\'s creative community.',
+          tags: ['pop-up', 'food-market', 'local-favorite', 'outdoor'],
+          price: 0,
+        },
+      ],
+    },
+    // @wynwood_marketplace - Wynwood arts & food market
+    {
+      handle: 'wynwood_marketplace',
+      name: 'Wynwood Marketplace',
+      city: 'Miami',
+      category: 'Community',
+      knownEvents: [
+        {
+          name: 'Wynwood Marketplace: Weekend Market',
+          venue: 'Wynwood Marketplace',
+          address: '2250 NW 2nd Ave, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.7980,
+          lng: -80.1992,
+          schedule: 'weekly',
+          days: [5, 6, 0], // Fri-Sun
+          time: '17:00',
+          description: 'Open-air marketplace in the heart of Wynwood. Local artisans, street food, live music, and the best of Miami\'s creative scene.',
+          tags: ['market', 'outdoor', 'local-favorite', 'live-music', 'food-market'],
+          price: 0,
+        },
+      ],
+    },
+    // @wynwood_yoga - Outdoor yoga in Wynwood
+    {
+      handle: 'wynwood_yoga',
+      name: 'Wynwood Yoga',
+      city: 'Miami',
+      category: 'Wellness',
+      knownEvents: [
+        {
+          name: 'Wynwood Yoga: Outdoor Class',
+          venue: 'Wynwood Walls Garden',
+          address: '2520 NW 2nd Ave, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8016,
+          lng: -80.1992,
+          schedule: 'weekly',
+          days: [6, 0], // Sat-Sun
+          time: '09:00',
+          description: 'Outdoor yoga class in Wynwood surrounded by street art. All levels welcome — bring your own mat.',
+          tags: ['yoga', 'wellness', 'outdoor', 'free-event', 'local-favorite'],
+          price: 0,
+        },
+        {
+          name: 'Wynwood Yoga: Weekday Flow',
+          venue: 'Wynwood Walls Garden',
+          address: '2520 NW 2nd Ave, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8016,
+          lng: -80.1992,
+          schedule: 'weekly',
+          days: [3], // Wednesday
+          time: '07:00',
+          description: 'Midweek morning yoga in Wynwood. Flow through poses with street art as your backdrop.',
+          tags: ['yoga', 'wellness', 'outdoor', 'free-event'],
+          price: 0,
+        },
+      ],
+    },
+    // @wynwoodmiami - Wynwood neighborhood events collective
+    {
+      handle: 'wynwoodmiami',
+      name: 'Wynwood Miami',
+      city: 'Miami',
+      category: 'Art',
+      knownEvents: [
+        {
+          name: 'Wynwood Second Saturday Art Walk',
+          venue: 'Wynwood Arts District',
+          address: 'NW 2nd Ave, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8011,
+          lng: -80.1996,
+          schedule: 'monthly',
+          time: '18:00',
+          description: 'Wynwood\'s monthly art walk. Galleries open late, new exhibitions, street performances, and the neighborhood at its most alive.',
+          tags: ['art-gallery', 'free-event', 'local-favorite', 'community'],
+          price: 0,
+        },
+      ],
+    },
+    // @coffeeandbeatsofficial - Coffee + music social community
+    {
+      handle: 'coffeeandbeatsofficial',
+      name: 'Coffee and Beats',
+      city: 'Miami',
+      category: 'Community',
+      knownEvents: [
+        {
+          name: 'Coffee and Beats: Sunday Morning Session',
+          venue: 'Wynwood Arts District',
+          address: 'NW 2nd Ave, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8011,
+          lng: -80.1996,
+          schedule: 'weekly',
+          days: [0], // Sunday
+          time: '10:00',
+          description: 'Weekly Sunday morning community event: coffee, vinyl DJ sets, and good vibes. Free and open to all in the heart of Wynwood.',
+          tags: ['dj', 'community', 'free-event', 'outdoor', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    // The Standard Miami Beach (from cultural context)
+    {
+      handle: 'standardmiamibch',
+      name: 'The Standard Miami Beach',
+      city: 'Miami',
+      category: 'Wellness',
+      knownEvents: [
+        {
+          name: 'The Standard: Sunday Spa Social',
+          venue: 'The Standard Miami Beach',
+          address: '40 Island Ave, Miami Beach, FL 33139',
+          neighborhood: 'South Beach',
+          lat: 25.7824,
+          lng: -80.1425,
+          schedule: 'weekly',
+          days: [0], // Sunday
+          time: '12:00',
+          description: 'Sunday afternoon at The Standard. Access to the hammam, soaking pools, and waterfront gardens. Miami\'s favorite spa retreat.',
+          tags: ['wellness', 'waterfront', 'luxury', 'local-favorite'],
+          price: 45,
+        },
+      ],
+    },
+    // Soya e Pomodoro - Downtown Miami Italian brunch
+    {
+      handle: 'soyaepomodoro',
+      name: 'Soya e Pomodoro',
+      city: 'Miami',
+      category: 'Food & Drink',
+      knownEvents: [
+        {
+          name: 'Soya e Pomodoro: Weekend Brunch',
+          venue: 'Soya e Pomodoro',
+          address: '120 NE 1st St, Miami, FL 33132',
+          neighborhood: 'Downtown Miami',
+          lat: 25.7748,
+          lng: -80.1929,
+          schedule: 'weekly',
+          days: [6, 0], // Sat-Sun
+          time: '10:00',
+          description: 'Beloved Italian brunch spot in Downtown Miami. Outdoor patio, fresh pasta, espresso, and Aperol spritzes in a cozy courtyard.',
+          tags: ['brunch', 'outdoor', 'local-favorite'],
+          price: 20,
+        },
+        {
+          name: 'Soya e Pomodoro: Weekday Lunch',
+          venue: 'Soya e Pomodoro',
+          address: '120 NE 1st St, Miami, FL 33132',
+          neighborhood: 'Downtown Miami',
+          lat: 25.7748,
+          lng: -80.1929,
+          schedule: 'weekly',
+          days: [1, 2, 3, 4, 5], // Mon-Fri
+          time: '11:30',
+          description: 'Casual Italian lunch at one of Downtown Miami\'s most beloved spots. Fresh pasta, salads, and paninis in a charming courtyard.',
+          tags: ['outdoor', 'local-favorite'],
+          price: 15,
+        },
+      ],
+    },
   ];
 
   constructor() {
