@@ -187,6 +187,299 @@ export class InstagramSourcesScraper extends BaseScraper {
         // Would need Instagram API to track
       ],
     },
+    // @gramps_miami - Wynwood bar / music venue
+    {
+      handle: 'gramps_miami',
+      name: 'Gramps Miami',
+      city: 'Miami',
+      category: 'Music',
+      knownEvents: [
+        {
+          name: 'Gramps: Reggae Wednesday',
+          venue: 'Gramps',
+          address: '176 NW 24th St, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8010,
+          lng: -80.1979,
+          schedule: 'weekly',
+          days: [3], // Wednesday
+          time: '22:00',
+          description: 'Weekly reggae night at Gramps. Live DJs, drink specials, and the best outdoor patio in Wynwood.',
+          tags: ['dj', 'nightlife', 'local-favorite', 'dancing'],
+          price: 0,
+        },
+        {
+          name: 'Gramps: Live Music Friday',
+          venue: 'Gramps',
+          address: '176 NW 24th St, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8010,
+          lng: -80.1979,
+          schedule: 'weekly',
+          days: [5], // Friday
+          time: '22:00',
+          description: 'Live bands and DJs on the Gramps stage. Local and touring acts in Wynwood\'s most eclectic music venue.',
+          tags: ['live-music', 'nightlife', 'local-favorite'],
+          price: 10,
+        },
+        {
+          name: 'Gramps: Trivia Tuesday',
+          venue: 'Gramps',
+          address: '176 NW 24th St, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8010,
+          lng: -80.1979,
+          schedule: 'weekly',
+          days: [2], // Tuesday
+          time: '20:00',
+          description: 'Weekly bar trivia at Gramps. Teams of up to 6 compete for bar tabs. Miami\'s most fun Tuesday night.',
+          tags: ['bar', 'community', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    // @lasrosasmiami - Allapattah bar
+    {
+      handle: 'lasrosasmiami',
+      name: 'Las Rosas Miami',
+      city: 'Miami',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'Las Rosas: DJ Night',
+          venue: 'Las Rosas',
+          address: '2898 NW 7th Ave, Miami, FL 33127',
+          neighborhood: 'Allapattah',
+          lat: 25.7972,
+          lng: -80.2050,
+          schedule: 'weekly',
+          days: [5, 6], // Fri-Sat
+          time: '22:00',
+          description: 'Rotating DJs spinning everything from cumbia to techno. One of Miami\'s coolest neighborhood bars in Allapattah.',
+          tags: ['dj', 'nightlife', 'local-favorite', 'dancing', 'underground'],
+          price: 0,
+        },
+      ],
+    },
+    // @churchillspub_miami - Little Haiti
+    {
+      handle: 'churchillspub',
+      name: "Churchill's Pub",
+      city: 'Miami',
+      category: 'Music',
+      knownEvents: [
+        {
+          name: "Churchill's: Live Music Weekend",
+          venue: "Churchill's Pub",
+          address: '5501 NE 2nd Ave, Miami, FL 33137',
+          neighborhood: 'Little Haiti',
+          lat: 25.8255,
+          lng: -80.1859,
+          schedule: 'weekly',
+          days: [5, 6], // Fri-Sat
+          time: '21:00',
+          description: "Live bands at Miami's legendary dive bar. Rock, punk, indie, and everything in between since 1979.",
+          tags: ['live-music', 'nightlife', 'local-favorite'],
+          price: 10,
+        },
+        {
+          name: "Churchill's: Open Mic Wednesday",
+          venue: "Churchill's Pub",
+          address: '5501 NE 2nd Ave, Miami, FL 33137',
+          neighborhood: 'Little Haiti',
+          lat: 25.8255,
+          lng: -80.1859,
+          schedule: 'weekly',
+          days: [3], // Wednesday
+          time: '20:00',
+          description: "Wednesday open mic at Churchill's. Sign up to perform or enjoy Miami's underground music scene.",
+          tags: ['live-music', 'community', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    // @lagniappe_miami - Wine & jazz bar
+    {
+      handle: 'lagniappe_miami',
+      name: 'Lagniappe House',
+      city: 'Miami',
+      category: 'Music',
+      knownEvents: [
+        {
+          name: 'Lagniappe: Jazz & Wine',
+          venue: 'Lagniappe House',
+          address: '3425 NE 2nd Ave, Miami, FL 33137',
+          neighborhood: 'Design District',
+          lat: 25.8145,
+          lng: -80.1919,
+          schedule: 'weekly',
+          days: [4, 5, 6, 0], // Thu-Sun
+          time: '20:00',
+          description: 'Live jazz in an intimate wine-bar setting. Rotating wine list, cheese boards, and nightly jazz acts in this beloved Miami institution.',
+          tags: ['jazz', 'live-music', 'wine-tasting', 'local-favorite', 'intimate'],
+          price: 0,
+        },
+      ],
+    },
+    // @thewharfmiami - Brickell waterfront
+    {
+      handle: 'thewharfmiami',
+      name: 'The Wharf Miami',
+      city: 'Miami',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'The Wharf Miami: Weekend DJ Party',
+          venue: 'The Wharf Miami',
+          address: '114 SW North River Dr, Miami, FL 33130',
+          neighborhood: 'Brickell',
+          lat: 25.7692,
+          lng: -80.1994,
+          schedule: 'weekly',
+          days: [5, 6], // Fri-Sat
+          time: '18:00',
+          description: 'Outdoor waterfront party at The Wharf. DJs, shipping container bars, food trucks, and Miami River views.',
+          tags: ['dj', 'nightlife', 'waterfront', 'outdoor', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    // @pamm_museum - Pérez Art Museum Miami
+    {
+      handle: 'pamm_museum',
+      name: 'Pérez Art Museum Miami',
+      city: 'Miami',
+      category: 'Art',
+      knownEvents: [
+        {
+          name: 'PAMM: Free First Thursday',
+          venue: 'Pérez Art Museum Miami',
+          address: '1103 Biscayne Blvd, Miami, FL 33132',
+          neighborhood: 'Downtown Miami',
+          lat: 25.7748,
+          lng: -80.1856,
+          schedule: 'monthly',
+          time: '12:00',
+          description: "Free admission every first Thursday 12-9pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
+          tags: ['museum', 'art-gallery', 'free-event', 'waterfront', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    // @northbeachbandshell - North Beach outdoor venue
+    {
+      handle: 'northbeachbandshell',
+      name: 'North Beach Bandshell',
+      city: 'Miami',
+      category: 'Music',
+      knownEvents: [
+        {
+          name: 'Live at the Bandshell: Weekend Concert',
+          venue: 'North Beach Bandshell',
+          address: '7275 Collins Ave, Miami Beach, FL 33141',
+          neighborhood: 'North Beach',
+          lat: 25.8490,
+          lng: -80.1220,
+          schedule: 'weekly',
+          days: [5, 6], // Fri-Sat
+          time: '19:00',
+          description: 'Outdoor concerts at the beloved North Beach Bandshell amphitheater. Local and international artists under the stars on Miami Beach.',
+          tags: ['live-music', 'outdoor', 'local-favorite', 'beach', 'free-event'],
+          price: 0,
+        },
+      ],
+    },
+    // @wynwoodwalls - Street art museum
+    {
+      handle: 'wynwoodwalls',
+      name: 'Wynwood Walls',
+      city: 'Miami',
+      category: 'Art',
+      knownEvents: [
+        {
+          name: 'Wynwood Walls: Second Saturday Art Walk',
+          venue: 'Wynwood Walls',
+          address: '2520 NW 2nd Ave, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8016,
+          lng: -80.1992,
+          schedule: 'monthly',
+          time: '18:00',
+          description: 'Monthly art walk through Wynwood with extended hours at the Walls. New murals, artist talks, and live music in the garden.',
+          tags: ['art-gallery', 'outdoor', 'local-favorite', 'live-music', 'free-event'],
+          price: 0,
+        },
+      ],
+    },
+    // @wiltonmanorsfl - Wilton Manors FLL
+    {
+      handle: 'wiltonmanorsfl',
+      name: 'Wilton Manors',
+      city: 'Fort Lauderdale',
+      category: 'Community',
+      knownEvents: [
+        {
+          name: 'Wilton Drive: Sunday Stroll',
+          venue: 'Wilton Drive',
+          address: 'Wilton Dr, Wilton Manors, FL 33305',
+          neighborhood: 'Wilton Manors',
+          lat: 26.1563,
+          lng: -80.1379,
+          schedule: 'weekly',
+          days: [0], // Sunday
+          time: '11:00',
+          description: "Sunday stroll down Wilton Drive with brunch spots, pop-up vendors, and Wilton Manors' welcoming community atmosphere.",
+          tags: ['outdoor', 'community', 'local-favorite', 'brunch'],
+          price: 0,
+        },
+      ],
+    },
+    // @thefernbarftl - Fort Lauderdale cocktail bar
+    {
+      handle: 'thefernbarftl',
+      name: 'The Fern Bar FTL',
+      city: 'Fort Lauderdale',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'The Fern Bar: Weekend DJ',
+          venue: 'The Fern Bar',
+          address: '700 N Andrews Ave, Fort Lauderdale, FL 33311',
+          neighborhood: 'Flagler Village',
+          lat: 26.1289,
+          lng: -80.1456,
+          schedule: 'weekly',
+          days: [5, 6], // Fri-Sat
+          time: '21:00',
+          description: "Weekend DJ nights at The Fern Bar in Flagler Village. Craft cocktails, eclectic music, and Fort Lauderdale's coolest crowd.",
+          tags: ['dj', 'nightlife', 'cocktails', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    // @miamirunclub - Community fitness
+    {
+      handle: 'miamirunclub',
+      name: 'Miami Run Club',
+      city: 'Miami',
+      category: 'Fitness',
+      knownEvents: [
+        {
+          name: 'Miami Run Club: Saturday Morning Run',
+          venue: 'Bayfront Park',
+          address: '301 Biscayne Blvd, Miami, FL 33132',
+          neighborhood: 'Downtown Miami',
+          lat: 25.7733,
+          lng: -80.1867,
+          schedule: 'weekly',
+          days: [6], // Saturday
+          time: '07:00',
+          description: 'Free weekly group run starting at Bayfront Park. All paces welcome. Routes along Brickell, Edgewater, and the bay.',
+          tags: ['running', 'free-event', 'community', 'outdoor', 'fitness-class'],
+          price: 0,
+        },
+      ],
+    },
   ];
 
   constructor() {

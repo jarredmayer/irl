@@ -264,7 +264,7 @@ export function getAllScrapers(): BaseScraper[] {
     // new FoodEventsScraper(),          // SYNTHETIC
     // new WineTastingsScraper(),        // SYNTHETIC
     // new HotelsHospitalityScraper(),   // SYNTHETIC
-    // new InstagramSourcesScraper(),    // SYNTHETIC/unverified
+    new InstagramSourcesScraper(),         // Verified recurring events from monitored IG accounts
     // new SoFloPopupsScraper(),         // SYNTHETIC
     // new DesignDistrictScraper(),      // SYNTHETIC
     // new DeeringEstateScraper(),       // SYNTHETIC
