@@ -2,7 +2,7 @@
  * Merge FortLauderdaleScraper template events into events.fll.json
  * Runs the scraper, converts raw events to IRLEvent format, deduplicates, and writes output.
  */
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { createHash } from 'crypto';
@@ -64,6 +64,17 @@ async function main() {
   // Show events that started today or later (so ongoing events remain visible)
   const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
+  // Load Instagram post-scraper cache if available
+  const igCachePath = join(dataDir, 'instagram-posts-cache.json');
+  let igPostEvents = [];
+  if (existsSync(igCachePath)) {
+    try {
+      const cache = JSON.parse(readFileSync(igCachePath, 'utf-8'));
+      igPostEvents = (cache.events ?? []).filter(e => e.city === 'Fort Lauderdale' && new Date(e.startAt) >= startOfToday);
+      if (igPostEvents.length) console.log(`Loaded ${igPostEvents.length} FLL events from IG post cache`);
+    } catch {}
+  }
+
   // Run scrapers
   const fllScraper = new FortLauderdaleScraper();
   const instagramScraper = new InstagramSourcesScraper();
@@ -74,7 +85,7 @@ async function main() {
   ]);
 
   // Filter future events only
-  const futureRaw = [...fllRaw, ...igRaw].filter(e => {
+  const futureRaw = [...fllRaw, ...igRaw, ...igPostEvents].filter(e => {
     const d = new Date(e.startAt);
     return d >= startOfToday && e.city === 'Fort Lauderdale';
   });
@@ -109,8 +120,11 @@ async function main() {
   writeFileSync(fllPath, JSON.stringify(merged, null, 2));
   console.log(`\n✅ events.fll.json: ${existing.length} existing + ${toAddDeduped.length} new = ${merged.length} total`);
 
-  // Also handle Miami Instagram events
-  const miamiIg = igRaw.filter(e => e.city === 'Miami' && new Date(e.startAt) >= startOfToday);
+  // Also handle Miami Instagram events (template + post cache)
+  const miamiIgCache = existsSync(igCachePath)
+    ? (JSON.parse(readFileSync(igCachePath, 'utf-8')).events ?? []).filter(e => e.city === 'Miami' && new Date(e.startAt) >= startOfToday)
+    : [];
+  const miamiIg = [...igRaw.filter(e => e.city === 'Miami' && new Date(e.startAt) >= startOfToday), ...miamiIgCache];
   if (miamiIg.length > 0) {
     const miamiPath = join(dataDir, 'events.miami.json');
     let miamiExisting = [];
