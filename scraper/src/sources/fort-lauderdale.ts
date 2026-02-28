@@ -19,7 +19,7 @@ interface FLLVenue {
 
 interface FLLEventTemplate {
   name: string;
-  days: number[] | 'monthly' | 'first-saturday';
+  days: number[] | 'monthly' | 'first-saturday' | 'first-weekend-jan' | 'last-weekend-feb';
   time: string;
   category: string;
   description: string;
@@ -605,6 +605,35 @@ export class FortLauderdaleScraper extends BaseScraper {
         },
       ],
     },
+    // Las Olas Art Fair (bi-annual: first weekend Jan + last weekend Feb)
+    {
+      name: 'Las Olas Art Fair',
+      address: 'E Las Olas Blvd (SE 6th–11th Ave), Fort Lauderdale, FL 33301',
+      neighborhood: 'Las Olas',
+      lat: 26.1196,
+      lng: -80.1295,
+      url: 'https://www.artfestival.com/festivals/las-olas-art-fair-fort-lauderdale-florida',
+      events: [
+        {
+          name: 'Las Olas Art Fair – Part I (January)',
+          days: 'first-weekend-jan',
+          time: '10:00',
+          category: 'Art',
+          description: 'One of the nation\'s top 100 outdoor art festivals. 200+ juried artists line a mile of Las Olas Blvd with paintings, sculpture, jewelry, and more. Free admission.',
+          tags: ['art-gallery', 'free-event', 'outdoor', 'local-favorite', 'festival'],
+          price: 0,
+        },
+        {
+          name: 'Las Olas Art Fair – Part II (February)',
+          days: 'last-weekend-feb',
+          time: '10:00',
+          category: 'Art',
+          description: 'One of the nation\'s top 100 outdoor art festivals. 200+ juried artists line a mile of Las Olas Blvd with paintings, sculpture, jewelry, and more. Free admission.',
+          tags: ['art-gallery', 'free-event', 'outdoor', 'local-favorite', 'festival'],
+          price: 0,
+        },
+      ],
+    },
   ];
 
   constructor() {
@@ -637,7 +666,29 @@ export class FortLauderdaleScraper extends BaseScraper {
     const today = new Date();
     const daysToCheck = weeksAhead * 7;
 
-    if (template.days === 'monthly' || template.days === 'first-saturday') {
+    if (template.days === 'first-weekend-jan' || template.days === 'last-weekend-feb') {
+      // Bi-annual festival events: generate Sat+Sun for the target weekend in the window
+      for (let i = 0; i < daysToCheck; i++) {
+        const checkDate = addDays(today, i);
+        const month = checkDate.getMonth(); // 0=Jan, 1=Feb
+        const day = checkDate.getDate();
+        const dow = getDay(checkDate);
+        if (template.days === 'first-weekend-jan' && month === 0 && day <= 7 && (dow === 6 || dow === 0)) {
+          events.push(this.createEvent(venue, template, checkDate));
+        }
+        if (template.days === 'last-weekend-feb') {
+          // Last Saturday of Feb (day >= 22) and the Sunday that follows (may be March 1/2)
+          const isFebLastSat = month === 1 && dow === 6 && day >= 22;
+          const isSundayAfterFebLastSat = dow === 0 && (
+            (month === 1 && day >= 23) ||
+            (month === 2 && day <= 2)
+          );
+          if (isFebLastSat || isSundayAfterFebLastSat) {
+            events.push(this.createEvent(venue, template, checkDate));
+          }
+        }
+      }
+    } else if (template.days === 'monthly' || template.days === 'first-saturday') {
       // Generate monthly events (last Saturday or first Saturday)
       for (let week = 0; week < weeksAhead; week++) {
         const checkDate = addDays(today, week * 7);

@@ -977,6 +977,38 @@
     "seriesName": "Riverside Market at Huizenga Plaza"
   },
   {
+    "id": "ca418a40e7e4c046",
+    "title": "Las Olas Art Fair – Part II (February)",
+    "startAt": "2026-03-01T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Art Fair",
+    "address": "E Las Olas Blvd (SE 6th–11th Ave), Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1196,
+    "lng": -80.1295,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "outdoor",
+      "local-favorite",
+      "festival"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "One of the nation's top 100 outdoor art festivals. 200+ juried artists line a mile of Las Olas Blvd with paintings, sculpture, jewelry, and more. Free admission.",
+    "description": "One of the nation's top 100 outdoor art festivals. 200+ juried artists line a mile of Las Olas Blvd with paintings, sculpture, jewelry, and more. Free admission.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.artfestival.com/festivals/las-olas-art-fair-fort-lauderdale-florida"
+    },
+    "isRecurring": true,
+    "seriesName": "Las Olas Art Fair – Part II (February)"
+  },
+  {
     "id": "2fab0513aa48fe15",
     "title": "Yolo: Sunday Brunch",
     "startAt": "2026-03-01T10:30:00",
@@ -2209,6 +2241,38 @@
     "seriesName": "Birding Walk at Bonnet House"
   },
   {
+    "id": "c6fae4cc218c368b",
+    "title": "Lauderdale-by-the-Sea Craft Fair",
+    "startAt": "2026-03-07T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "El Mar Drive Beach",
+    "address": "El Mar Dr, Lauderdale-By-The-Sea, FL 33308",
+    "neighborhood": "Lauderdale-By-The-Sea",
+    "lat": 26.1862,
+    "lng": -80.0974,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "outdoor",
+      "beach",
+      "market",
+      "local-favorite",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": true,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Monthly craft fair in the charming beach village of Lauderdale-By-The-Sea. Local art, jewelry, crafts, and food by the ocean.",
+    "description": "Monthly craft fair in the charming beach village of Lauderdale-By-The-Sea. Local art, jewelry, crafts, and food by the ocean.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.lauderdalebythesea-fl.gov/"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale-by-the-Sea Craft Fair"
+  },
+  {
     "id": "df404c8c5b7432e9",
     "title": "Guided Nature Tour at Snyder Park",
     "startAt": "2026-03-07T10:00:00",
@@ -2449,6 +2513,36 @@
     },
     "isRecurring": true,
     "seriesName": "Pompano Beach Amphitheater: Weekend Concert"
+  },
+  {
+    "id": "a6dedef8797c5a9a",
+    "title": "Las Olas Art Walk",
+    "startAt": "2026-03-07T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Monthly art walk along Las Olas Boulevard featuring galleries, artists, and live entertainment.",
+    "description": "Monthly art walk along Las Olas Boulevard featuring galleries, artists, and live entertainment.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://lasolasboulevard.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "Las Olas Art Walk"
   },
   {
     "id": "25a3af3dcb63959d",
@@ -8316,6 +8410,37 @@
     "seriesName": "The Wharf FTL: Weekend DJ Party"
   },
   {
+    "id": "8daa6debf103e615",
+    "title": "FAT Village Art Walk",
+    "startAt": "2026-03-28T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FAT Village Arts District",
+    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
+    "neighborhood": "Flagler Village",
+    "lat": 26.1289,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "local-favorite",
+      "food-market"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Monthly art walk in Flagler Village featuring galleries, studios, food trucks, and live music.",
+    "description": "Monthly art walk in Flagler Village featuring galleries, studios, food trucks, and live music.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://fatvillage.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "FAT Village Art Walk"
+  },
+  {
     "id": "1493e93d33a781d6",
     "title": "Tarpon River: Live Music Weekend",
     "startAt": "2026-03-28T19:00:00",
@@ -8375,6 +8500,37 @@
     },
     "isRecurring": true,
     "seriesName": "Pompano Beach Amphitheater: Weekend Concert"
+  },
+  {
+    "id": "149b2a7ebd7d6eba",
+    "title": "Full Moon Tour at Bonnet House",
+    "startAt": "2026-03-28T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Bonnet House Museum & Gardens",
+    "address": "900 N Birch Rd, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1367,
+    "lng": -80.1067,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "park",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "price": 35,
+    "isOutdoor": true,
+    "shortWhy": "local fave · waterfront views in FLL.",
+    "editorialWhy": "Monthly full moon tours of the Bonnet House gardens with wine and light refreshments. Experience the estate under the moonlight.",
+    "description": "Monthly full moon tours of the Bonnet House gardens with wine and light refreshments. Experience the estate under the moonlight.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://bonnethouse.org/"
+    },
+    "isRecurring": true,
+    "seriesName": "Full Moon Tour at Bonnet House"
   },
   {
     "id": "414e3442b2899ca7",
@@ -10110,6 +10266,38 @@
     "seriesName": "Birding Walk at Bonnet House"
   },
   {
+    "id": "3b7a0ee1a6568907",
+    "title": "Lauderdale-by-the-Sea Craft Fair",
+    "startAt": "2026-04-04T09:00:00",
+    "timezone": "America/New_York",
+    "venueName": "El Mar Drive Beach",
+    "address": "El Mar Dr, Lauderdale-By-The-Sea, FL 33308",
+    "neighborhood": "Lauderdale-By-The-Sea",
+    "lat": 26.1862,
+    "lng": -80.0974,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "outdoor",
+      "beach",
+      "market",
+      "local-favorite",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": true,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Monthly craft fair in the charming beach village of Lauderdale-By-The-Sea. Local art, jewelry, crafts, and food by the ocean.",
+    "description": "Monthly craft fair in the charming beach village of Lauderdale-By-The-Sea. Local art, jewelry, crafts, and food by the ocean.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.lauderdalebythesea-fl.gov/"
+    },
+    "isRecurring": true,
+    "seriesName": "Lauderdale-by-the-Sea Craft Fair"
+  },
+  {
     "id": "a1d7f15076787120",
     "title": "Guided Nature Tour at Snyder Park",
     "startAt": "2026-04-04T10:00:00",
@@ -10325,6 +10513,36 @@
     },
     "isRecurring": true,
     "seriesName": "Pompano Beach Amphitheater: Weekend Concert"
+  },
+  {
+    "id": "583e9898208749bd",
+    "title": "Las Olas Art Walk",
+    "startAt": "2026-04-04T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "local-favorite"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Monthly art walk along Las Olas Boulevard featuring galleries, artists, and live entertainment.",
+    "description": "Monthly art walk along Las Olas Boulevard featuring galleries, artists, and live entertainment.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://lasolasboulevard.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "Las Olas Art Walk"
   },
   {
     "id": "5cfa94f3c574b16e",
@@ -11359,6 +11577,278 @@
     "seriesName": "Downtown FLL Food Truck Rally"
   },
   {
+    "id": "21041d4d646ce927",
+    "title": "Art After Dark at NSU",
+    "startAt": "2026-04-10T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "NSU Art Museum Fort Lauderdale",
+    "address": "1 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "art-gallery",
+      "dj",
+      "cocktails"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "price": 15,
+    "isOutdoor": false,
+    "shortWhy": "worth checking out in FLL.",
+    "editorialWhy": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.",
+    "description": "Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://nsuartmuseum.org/"
+    },
+    "isRecurring": true,
+    "seriesName": "Art After Dark at NSU"
+  },
+  {
+    "id": "89e0d54940f401e1",
+    "title": "Riverwalk Friday Night",
+    "startAt": "2026-04-10T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Riverwalk Fort Lauderdale",
+    "address": "Riverwalk, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "waterfront",
+      "live-music",
+      "free-event"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": true,
+    "shortWhy": "Free · live music in FLL.",
+    "editorialWhy": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
+    "description": "Friday evening along the Riverwalk with food vendors, live music, and waterfront views.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://goriverwalk.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "Riverwalk Friday Night"
+  },
+  {
+    "id": "cdfadb84576201b5",
+    "title": "Friday Evening Concert Series at Holiday Park",
+    "startAt": "2026-04-10T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "outdoor",
+      "park",
+      "free-event"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": true,
+    "shortWhy": "Free · live music in FLL.",
+    "editorialWhy": "Seasonal outdoor concert series at Holiday Park amphitheater featuring local and regional acts across genres.",
+    "description": "Seasonal outdoor concert series at Holiday Park amphitheater featuring local and regional acts across genres.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.fortlauderdale.gov/departments/parks-recreation/parks-facilities/holiday-park"
+    },
+    "isRecurring": true,
+    "seriesName": "Friday Evening Concert Series at Holiday Park"
+  },
+  {
+    "id": "7993c82589f8d6ae",
+    "title": "The Wharf FTL: Weekend DJ Party",
+    "startAt": "2026-04-10T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "The Wharf Fort Lauderdale",
+    "address": "20 W Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1197,
+    "lng": -80.1458,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "dj",
+      "nightlife",
+      "waterfront",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Nightlife",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": true,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Outdoor waterfront party at The Wharf Fort Lauderdale. DJs, cocktails, and New River views from shipping container bars.",
+    "description": "Outdoor waterfront party at The Wharf Fort Lauderdale. DJs, cocktails, and New River views from shipping container bars.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://wharfftl.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "The Wharf FTL: Weekend DJ Party"
+  },
+  {
+    "id": "b10c1c42e497adce",
+    "title": "Tarpon River: Live Music Weekend",
+    "startAt": "2026-04-10T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Tarpon River Brewing",
+    "address": "280 SW 6th St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1136,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "craft-beer",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · live music in FLL.",
+    "editorialWhy": "Live music in Tarpon River Brewing's taproom and outdoor patio. Local acts, craft beer, and great vibes in the River District.",
+    "description": "Live music in Tarpon River Brewing's taproom and outdoor patio. Local acts, craft beer, and great vibes in the River District.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://tarponriverbrewing.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "Tarpon River: Live Music Weekend"
+  },
+  {
+    "id": "5c554e4c81748624",
+    "title": "Live at the Broward Center",
+    "startAt": "2026-04-10T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center for the Performing Arts",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1172,
+    "lng": -80.1489,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-music"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "price": 45,
+    "isOutdoor": false,
+    "shortWhy": "live music in FLL.",
+    "editorialWhy": "World-class performances including Broadway shows, concerts, and dance at South Florida's premier performing arts venue.",
+    "description": "World-class performances including Broadway shows, concerts, and dance at South Florida's premier performing arts venue.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://browardcenter.org/"
+    },
+    "isRecurring": true,
+    "seriesName": "Live at the Broward Center"
+  },
+  {
+    "id": "703384a1bb374529",
+    "title": "Ghost Tour at Stranahan House",
+    "startAt": "2026-04-10T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Stranahan House Museum",
+    "address": "335 SE 6th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1178,
+    "lng": -80.1389,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "price": 30,
+    "isOutdoor": true,
+    "shortWhy": "local fave · waterfront views in FLL.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://stranahanhouse.org/"
+    },
+    "isRecurring": true,
+    "seriesName": "Ghost Tour at Stranahan House"
+  },
+  {
+    "id": "60d7242512d9c8e5",
+    "title": "Revolution Live: Weekend Concert",
+    "startAt": "2026-04-10T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Revolution Live",
+    "address": "100 SW 3rd Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1165,
+    "lng": -80.1487,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "price": 25,
+    "isOutdoor": false,
+    "shortWhy": "live music · local fave in FLL.",
+    "editorialWhy": "Live concerts at Fort Lauderdale's premier indoor music venue. National touring acts and local favorites on the main stage.",
+    "description": "Live concerts at Fort Lauderdale's premier indoor music venue. National touring acts and local favorites on the main stage.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.jointherevolution.net/"
+    },
+    "isRecurring": true,
+    "seriesName": "Revolution Live: Weekend Concert"
+  },
+  {
+    "id": "0716c613eb2f4631",
+    "title": "Culture Room: Live Music",
+    "startAt": "2026-04-10T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Culture Room",
+    "address": "3045 N Federal Hwy, Fort Lauderdale, FL 33306",
+    "neighborhood": "Oakland Park",
+    "lat": 26.1583,
+    "lng": -80.1316,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "nightlife"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "price": 20,
+    "isOutdoor": false,
+    "shortWhy": "live music in FLL.",
+    "editorialWhy": "Intimate music venue hosting rock, metal, indie, and alternative acts. One of Broward's best spots for live music.",
+    "description": "Intimate music venue hosting rock, metal, indie, and alternative acts. One of Broward's best spots for live music.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.cultureroom.net/"
+    },
+    "isRecurring": true,
+    "seriesName": "Culture Room: Live Music"
+  },
+  {
     "id": "57be067bd6472920",
     "title": "The Fern Bar: Weekend DJ",
     "startAt": "2026-04-10T21:00:00",
@@ -11388,6 +11878,37 @@
     },
     "isRecurring": true,
     "seriesName": "The Fern Bar: Weekend DJ"
+  },
+  {
+    "id": "129791e75ec286e1",
+    "title": "Stache: DJ Night",
+    "startAt": "2026-04-10T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Stache Drinking Den + Coffee Bar",
+    "address": "109 SW 2nd Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1168,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "dj",
+      "nightlife",
+      "cocktails",
+      "local-favorite"
+    ],
+    "category": "Nightlife",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Craft cocktails and DJs in Downtown Fort Lauderdale's coolest speakeasy-style bar. Rotating DJ lineup, eclectic music.",
+    "description": "Craft cocktails and DJs in Downtown Fort Lauderdale's coolest speakeasy-style bar. Rotating DJ lineup, eclectic music.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.stachedrinkingden.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "Stache: DJ Night"
   },
   {
     "id": "02790a7f3f5c0e54",
@@ -12285,6 +12806,67 @@
     "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
     "editorPick": false,
     "venueId": "dania-improv"
+  },
+  {
+    "id": "98d1dcf5ca1ccedc",
+    "title": "Downtown FLL Food Truck Rally",
+    "startAt": "2026-04-24T17:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Huizenga Plaza",
+    "address": "32 E Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "food-market",
+      "free-event",
+      "family-friendly"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free in FLL.",
+    "editorialWhy": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
+    "description": "Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.",
+    "source": {
+      "name": "@fortlauderdaledowntown",
+      "url": "https://instagram.com/fortlauderdaledowntown"
+    },
+    "isRecurring": true,
+    "seriesName": "Downtown FLL Food Truck Rally"
+  },
+  {
+    "id": "610919c82eff23ae",
+    "title": "The Fern Bar: Weekend DJ",
+    "startAt": "2026-04-24T21:00:00",
+    "timezone": "America/New_York",
+    "venueName": "The Fern Bar",
+    "address": "700 N Andrews Ave, Fort Lauderdale, FL 33311",
+    "neighborhood": "Flagler Village",
+    "lat": 26.1289,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "dj",
+      "nightlife",
+      "cocktails",
+      "local-favorite"
+    ],
+    "category": "Nightlife",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekend DJ nights at The Fern Bar in Flagler Village. Craft cocktails, eclectic music, and Fort Lauderdale's coolest crowd.",
+    "description": "Weekend DJ nights at The Fern Bar in Flagler Village. Craft cocktails, eclectic music, and Fort Lauderdale's coolest crowd.",
+    "source": {
+      "name": "@thefernbarftl",
+      "url": "https://instagram.com/thefernbarftl"
+    },
+    "isRecurring": true,
+    "seriesName": "The Fern Bar: Weekend DJ"
   },
   {
     "id": "8f7fd2166bce035d",

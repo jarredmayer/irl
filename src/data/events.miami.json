@@ -29600,6 +29600,98 @@
     "seriesName": "Miami Jazz Sessions"
   },
   {
+    "id": "9469a185fee17830",
+    "title": "The Standard: Hammam & Spa Day",
+    "startAt": "2026-04-24T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "The Standard Miami Beach",
+    "address": "40 Island Ave, Miami Beach, FL 33139",
+    "neighborhood": "South Beach",
+    "lat": 25.7824,
+    "lng": -80.1425,
+    "city": "Miami",
+    "tags": [
+      "wellness",
+      "waterfront",
+      "luxury",
+      "local-favorite"
+    ],
+    "category": "Wellness",
+    "priceLabel": "$",
+    "price": 45,
+    "isOutdoor": true,
+    "shortWhy": "local fave · waterfront views in FLL.",
+    "editorialWhy": "Day access to The Standard's world-famous hammam spa, hot tub, clawfoot tubs, and waterfront gardens.",
+    "description": "Day access to The Standard's world-famous hammam spa, hot tub, clawfoot tubs, and waterfront gardens.",
+    "source": {
+      "name": "@thestandardmiami",
+      "url": "https://instagram.com/thestandardmiami"
+    },
+    "isRecurring": true,
+    "seriesName": "The Standard: Hammam & Spa Day"
+  },
+  {
+    "id": "e7012762c14d247f",
+    "title": "Soya e Pomodoro: Weekday Lunch",
+    "startAt": "2026-04-24T11:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Soya e Pomodoro",
+    "address": "120 NE 1st St, Miami, FL 33132",
+    "neighborhood": "Downtown Miami",
+    "lat": 25.7748,
+    "lng": -80.1929,
+    "city": "Miami",
+    "tags": [
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Food & Drink",
+    "priceLabel": "$",
+    "price": 15,
+    "isOutdoor": false,
+    "shortWhy": "local fave · outdoors in FLL.",
+    "editorialWhy": "Casual Italian lunch at one of Downtown Miami's most beloved spots. Fresh pasta, salads, and paninis in a charming courtyard.",
+    "description": "Casual Italian lunch at one of Downtown Miami's most beloved spots. Fresh pasta, salads, and paninis in a charming courtyard.",
+    "source": {
+      "name": "@soyaepomodoro",
+      "url": "https://instagram.com/soyaepomodoro"
+    },
+    "isRecurring": true,
+    "seriesName": "Soya e Pomodoro: Weekday Lunch"
+  },
+  {
+    "id": "64e54c1c27dca9b5",
+    "title": "Wynwood Marketplace: Weekend Market",
+    "startAt": "2026-04-24T17:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Wynwood Marketplace",
+    "address": "2250 NW 2nd Ave, Miami, FL 33127",
+    "neighborhood": "Wynwood",
+    "lat": 25.798,
+    "lng": -80.1992,
+    "city": "Miami",
+    "tags": [
+      "market",
+      "outdoor",
+      "local-favorite",
+      "live-music",
+      "food-market"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · live music in FLL.",
+    "editorialWhy": "Open-air marketplace in the heart of Wynwood. Local artisans, street food, live music, and the best of Miami's creative scene.",
+    "description": "Open-air marketplace in the heart of Wynwood. Local artisans, street food, live music, and the best of Miami's creative scene.",
+    "source": {
+      "name": "@wynwood_marketplace",
+      "url": "https://instagram.com/wynwood_marketplace"
+    },
+    "isRecurring": true,
+    "seriesName": "Wynwood Marketplace: Weekend Market"
+  },
+  {
     "id": "5f20e4a5f970dc59",
     "title": "Vizcaya Night Market",
     "startAt": "2026-04-24T18:00:00",
@@ -29629,6 +29721,38 @@
     "seriesId": "7e951abcfb86",
     "seriesName": "Vizcaya Night Market",
     "venueId": "vizcaya"
+  },
+  {
+    "id": "43f823159b0563ca",
+    "title": "The Wharf Miami: Weekend DJ Party",
+    "startAt": "2026-04-24T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "The Wharf Miami",
+    "address": "114 SW North River Dr, Miami, FL 33130",
+    "neighborhood": "Brickell",
+    "lat": 25.7692,
+    "lng": -80.1994,
+    "city": "Miami",
+    "tags": [
+      "dj",
+      "nightlife",
+      "waterfront",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Nightlife",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": true,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Outdoor waterfront party at The Wharf. DJs, shipping container bars, food trucks, and Miami River views.",
+    "description": "Outdoor waterfront party at The Wharf. DJs, shipping container bars, food trucks, and Miami River views.",
+    "source": {
+      "name": "@thewharfmiami",
+      "url": "https://instagram.com/thewharfmiami"
+    },
+    "isRecurring": true,
+    "seriesName": "The Wharf Miami: Weekend DJ Party"
   },
   {
     "id": "32a35ac02a310f07",
@@ -29662,6 +29786,68 @@
     "seriesName": "Critical Mass Miami"
   },
   {
+    "id": "e2d00320d761e904",
+    "title": "Live at the Bandshell: Weekend Concert",
+    "startAt": "2026-04-24T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "North Beach Bandshell",
+    "address": "7275 Collins Ave, Miami Beach, FL 33141",
+    "neighborhood": "North Beach",
+    "lat": 25.849,
+    "lng": -80.122,
+    "city": "Miami",
+    "tags": [
+      "live-music",
+      "outdoor",
+      "local-favorite",
+      "beach",
+      "free-event"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · live music in FLL.",
+    "editorialWhy": "Outdoor concerts at the beloved North Beach Bandshell amphitheater. Local and international artists under the stars on Miami Beach.",
+    "description": "Outdoor concerts at the beloved North Beach Bandshell amphitheater. Local and international artists under the stars on Miami Beach.",
+    "source": {
+      "name": "@northbeachbandshell",
+      "url": "https://instagram.com/northbeachbandshell"
+    },
+    "isRecurring": true,
+    "seriesName": "Live at the Bandshell: Weekend Concert"
+  },
+  {
+    "id": "b0512d1db2db4068",
+    "title": "Third Spaces: Community Gathering",
+    "startAt": "2026-04-24T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Third Spaces Miami",
+    "address": "1 NE 1st Ave, Miami, FL 33132",
+    "neighborhood": "Downtown Miami",
+    "lat": 25.7743,
+    "lng": -80.1925,
+    "city": "Miami",
+    "tags": [
+      "community",
+      "local-favorite",
+      "pop-up"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Weekly community gathering hosted by Third Spaces Miami. Art, music, conversation, and connection in a welcoming environment.",
+    "description": "Weekly community gathering hosted by Third Spaces Miami. Art, music, conversation, and connection in a welcoming environment.",
+    "source": {
+      "name": "@thirdspacesmiami",
+      "url": "https://instagram.com/thirdspacesmiami"
+    },
+    "isRecurring": true,
+    "seriesName": "Third Spaces: Community Gathering"
+  },
+  {
     "id": "bb188a4c267cc5d9",
     "title": "O Cinema: Queer Cinema Series",
     "startAt": "2026-04-24T19:30:00",
@@ -29690,6 +29876,130 @@
       "url": "https://www.o-cinema.org"
     },
     "editorPick": true
+  },
+  {
+    "id": "f64be9d3eb4ee3d7",
+    "title": "Lagniappe: Jazz & Wine",
+    "startAt": "2026-04-24T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Lagniappe House",
+    "address": "3425 NE 2nd Ave, Miami, FL 33137",
+    "neighborhood": "Design District",
+    "lat": 25.8145,
+    "lng": -80.1919,
+    "city": "Miami",
+    "tags": [
+      "jazz",
+      "live-music",
+      "wine-tasting",
+      "local-favorite",
+      "intimate"
+    ],
+    "category": "Music",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · live music in FLL.",
+    "editorialWhy": "Live jazz in an intimate wine-bar setting. Rotating wine list, cheese boards, and nightly jazz acts in this beloved Miami institution.",
+    "description": "Live jazz in an intimate wine-bar setting. Rotating wine list, cheese boards, and nightly jazz acts in this beloved Miami institution.",
+    "source": {
+      "name": "@lagniappe_miami",
+      "url": "https://instagram.com/lagniappe_miami"
+    },
+    "isRecurring": true,
+    "seriesName": "Lagniappe: Jazz & Wine"
+  },
+  {
+    "id": "5a5e5dbc10e55600",
+    "title": "Churchill's: Live Music Weekend",
+    "startAt": "2026-04-24T21:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Churchill's Pub",
+    "address": "5501 NE 2nd Ave, Miami, FL 33137",
+    "neighborhood": "Little Haiti",
+    "lat": 25.8255,
+    "lng": -80.1859,
+    "city": "Miami",
+    "tags": [
+      "live-music",
+      "nightlife",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$",
+    "price": 10,
+    "isOutdoor": false,
+    "shortWhy": "live music · local fave in FLL.",
+    "editorialWhy": "Live bands at Miami's legendary dive bar. Rock, punk, indie, and everything in between since 1979.",
+    "description": "Live bands at Miami's legendary dive bar. Rock, punk, indie, and everything in between since 1979.",
+    "source": {
+      "name": "@churchillspub",
+      "url": "https://instagram.com/churchillspub"
+    },
+    "isRecurring": true,
+    "seriesName": "Churchill's: Live Music Weekend"
+  },
+  {
+    "id": "3269a0f9315e0a02",
+    "title": "Gramps: Live Music Friday",
+    "startAt": "2026-04-24T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Gramps",
+    "address": "176 NW 24th St, Miami, FL 33127",
+    "neighborhood": "Wynwood",
+    "lat": 25.801,
+    "lng": -80.1979,
+    "city": "Miami",
+    "tags": [
+      "live-music",
+      "nightlife",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$",
+    "price": 10,
+    "isOutdoor": false,
+    "shortWhy": "live music · local fave in FLL.",
+    "editorialWhy": "Live bands and DJs on the Gramps stage. Local and touring acts in Wynwood's most eclectic music venue.",
+    "description": "Live bands and DJs on the Gramps stage. Local and touring acts in Wynwood's most eclectic music venue.",
+    "source": {
+      "name": "@gramps_miami",
+      "url": "https://instagram.com/gramps_miami"
+    },
+    "isRecurring": true,
+    "seriesName": "Gramps: Live Music Friday"
+  },
+  {
+    "id": "fa1eb587f7f22e39",
+    "title": "Las Rosas: DJ Night",
+    "startAt": "2026-04-24T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Rosas",
+    "address": "2898 NW 7th Ave, Miami, FL 33127",
+    "neighborhood": "Allapattah",
+    "lat": 25.7972,
+    "lng": -80.205,
+    "city": "Miami",
+    "tags": [
+      "dj",
+      "nightlife",
+      "local-favorite",
+      "dancing",
+      "underground"
+    ],
+    "category": "Nightlife",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Rotating DJs spinning everything from cumbia to techno. One of Miami's coolest neighborhood bars in Allapattah.",
+    "description": "Rotating DJs spinning everything from cumbia to techno. One of Miami's coolest neighborhood bars in Allapattah.",
+    "source": {
+      "name": "@lasrosasmiami",
+      "url": "https://instagram.com/lasrosasmiami"
+    },
+    "isRecurring": true,
+    "seriesName": "Las Rosas: DJ Night"
   },
   {
     "id": "ec9b64873c21b762",
