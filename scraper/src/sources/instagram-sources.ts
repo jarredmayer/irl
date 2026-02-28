@@ -492,8 +492,8 @@ export class InstagramSourcesScraper extends BaseScraper {
           venue: 'Esplanade Park',
           address: '400 SW 2nd St, Fort Lauderdale, FL 33312',
           neighborhood: 'Riverwalk',
-          lat: 26.1140,
-          lng: -80.1467,
+          lat: 26.1192,
+          lng: -80.1478,
           schedule: 'weekly',
           days: [0], // Sunday
           time: '09:00',

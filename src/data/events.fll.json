@@ -1,94 +1,5 @@
 [
   {
-    "id": "a4bc4374011e474f",
-    "title": "Florida Panthers vs Buffalo Sabres",
-    "startAt": "2026-02-27T19:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Amerant Bank Arena",
-    "address": "1 Panther Pkwy, Sunrise, FL 33323",
-    "neighborhood": "Sunrise",
-    "lat": 26.1584,
-    "lng": -80.3256,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "sports",
-      "local-favorite",
-      "massive",
-      "arena",
-      "concerts"
-    ],
-    "category": "Sports",
-    "priceLabel": "$$",
-    "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "NHL hockey: Florida Panthers face the Buffalo Sabres at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
-    "description": "NHL hockey: Florida Panthers face the Buffalo Sabres at Amerant Bank Arena.",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://www.floridapanthers.com/schedule"
-    },
-    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-29/d0744d86-45bf-4bb5-b1c2-9b3d73d66abe_source-643316817.webp?w=1024",
-    "editorPick": true,
-    "venueId": "amerant-bank-arena"
-  },
-  {
-    "id": "572b4766cfbda6f1",
-    "title": "Slow Burn Theatre Co: Beautiful: The Carole King Musical",
-    "startAt": "2026-02-27T19:30:00",
-    "timezone": "America/New_York",
-    "neighborhood": "Fort Lauderdale",
-    "lat": null,
-    "lng": null,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "theater",
-      "live-music"
-    ],
-    "category": "Music",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Slow Burn Theatre Co: Beautiful: The Carole King Musical at Fort Lauderdale",
-    "description": "Slow Burn Theatre Co: Beautiful: The Carole King Musical at Fort Lauderdale",
-    "source": {
-      "name": "Miami New Times",
-      "url": "https://www.miaminewtimes.com/event/slow-burn-theatre-co-beautiful-the-carole-king-musical-23056083/"
-    },
-    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-19/fda8c807-42eb-4b81-9f16-f3a8367e107d_106371_tablet_landscape_large_16_9-541181265.webp?w=1024",
-    "editorPick": false
-  },
-  {
-    "id": "af6655400c3cb236",
-    "title": "Stache: DJ Night",
-    "startAt": "2026-02-27T22:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Stache Drinking Den + Coffee Bar",
-    "address": "109 SW 2nd Ave, Fort Lauderdale, FL 33312",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1168,
-    "lng": -80.1467,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "dj",
-      "nightlife",
-      "cocktails",
-      "local-favorite"
-    ],
-    "category": "Nightlife",
-    "priceLabel": "Free",
-    "price": 0,
-    "isOutdoor": false,
-    "shortWhy": "Free · local fave in FLL.",
-    "editorialWhy": "Craft cocktails and DJs in Downtown Fort Lauderdale's coolest speakeasy-style bar. Rotating DJ lineup, eclectic music.",
-    "description": "Craft cocktails and DJs in Downtown Fort Lauderdale's coolest speakeasy-style bar. Rotating DJ lineup, eclectic music.",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.stachedrinkingden.com/"
-    },
-    "isRecurring": true,
-    "seriesName": "Stache: DJ Night"
-  },
-  {
     "id": "6751ae96bcf3b1b0",
     "title": "DL Hughley",
     "startAt": "2026-02-28T00:30:00",
@@ -4601,6 +4512,38 @@
     },
     "isRecurring": true,
     "seriesName": "Birding Walk at Bonnet House"
+  },
+  {
+    "id": "a45a6fa191f94a13",
+    "title": "Fort Lauderdale St. Patrick's Day Parade & Festival",
+    "startAt": "2026-03-14T11:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale St. Patrick's Day Parade",
+    "address": "Las Olas Blvd, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "free-event",
+      "outdoor",
+      "community",
+      "festival",
+      "local-favorite"
+    ],
+    "category": "Community",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Annual St. Patrick's Day parade and street festival through downtown Fort Lauderdale. Marching bands, floats, Irish food and drinks, live music.",
+    "description": "Annual St. Patrick's Day parade and street festival through downtown Fort Lauderdale. Marching bands, floats, Irish food and drinks, live music.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.visitlauderdale.com/events/annual-events-festivals/"
+    },
+    "isRecurring": true,
+    "seriesName": "Fort Lauderdale St. Patrick's Day Parade & Festival"
   },
   {
     "id": "212b1316c4265e45",
@@ -11641,6 +11584,38 @@
     "seriesName": "Yolo: Thursday DJ Night"
   },
   {
+    "id": "c4a521a18ffe9ce9",
+    "title": "Tortuga Music Festival",
+    "startAt": "2026-04-10T12:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Tortuga Music Festival",
+    "address": "Fort Lauderdale Beach Park, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "outdoor",
+      "beach",
+      "festival",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "price": 150,
+    "isOutdoor": true,
+    "shortWhy": "live music · local fave in FLL.",
+    "editorialWhy": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages.",
+    "description": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.tortugamusicfestival.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "Tortuga Music Festival"
+  },
+  {
     "id": "898875d9f8f695c0",
     "title": "Downtown FLL Food Truck Rally",
     "startAt": "2026-04-10T17:30:00",
@@ -12126,6 +12101,38 @@
     "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "d26aa89ab44b"
+  },
+  {
+    "id": "34e9c481684d2042",
+    "title": "Tortuga Music Festival",
+    "startAt": "2026-04-11T12:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Tortuga Music Festival",
+    "address": "Fort Lauderdale Beach Park, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1224,
+    "lng": -80.1028,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "outdoor",
+      "beach",
+      "festival",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "price": 150,
+    "isOutdoor": true,
+    "shortWhy": "live music · local fave in FLL.",
+    "editorialWhy": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages.",
+    "description": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.tortugamusicfestival.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "Tortuga Music Festival"
   },
   {
     "id": "90226056167560f0",

@@ -85,22 +85,21 @@ async function main() {
   // Convert to IRL format
   const newEvents = futureRaw.map(rawToIRL);
 
-  // Load existing FLL events
+  // Load existing FLL events, purge past ones
   const fllPath = join(dataDir, 'events.fll.json');
   let existing = [];
   try {
-    existing = JSON.parse(readFileSync(fllPath, 'utf-8'));
+    const raw = JSON.parse(readFileSync(fllPath, 'utf-8'));
+    existing = raw.filter(e => new Date(e.startAt) >= startOfToday);
+    if (raw.length !== existing.length) console.log(`Purged ${raw.length - existing.length} past FLL events`);
   } catch {}
 
-  // Deduplicate: keep existing events, add new ones by ID
+  // Deduplicate by title+date+venue then add new
   const existingIds = new Set(existing.map(e => e.id));
-  const toAdd = newEvents.filter(e => !existingIds.has(e.id));
-
-  // Also deduplicate by title+date+venue (fuzzy match)
   const existingKeys = new Set(existing.map(e => `${e.title}|${e.startAt?.slice(0,10)}|${e.venueName||''}`));
-  const toAddDeduped = toAdd.filter(e => {
+  const toAddDeduped = newEvents.filter(e => {
     const key = `${e.title}|${e.startAt?.slice(0,10)}|${e.venueName||''}`;
-    return !existingKeys.has(key);
+    return !existingIds.has(e.id) && !existingKeys.has(key);
   });
 
   const merged = [...existing, ...toAddDeduped];
@@ -116,7 +115,9 @@ async function main() {
     const miamiPath = join(dataDir, 'events.miami.json');
     let miamiExisting = [];
     try {
-      miamiExisting = JSON.parse(readFileSync(miamiPath, 'utf-8'));
+      const miamiRaw = JSON.parse(readFileSync(miamiPath, 'utf-8'));
+      miamiExisting = miamiRaw.filter(e => new Date(e.startAt) >= startOfToday);
+      if (miamiRaw.length !== miamiExisting.length) console.log(`Purged ${miamiRaw.length - miamiExisting.length} past Miami events`);
     } catch {}
 
     const miamiExistingIds = new Set(miamiExisting.map(e => e.id));
