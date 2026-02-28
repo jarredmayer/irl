@@ -277,6 +277,38 @@
     "venueId": "snyder-park"
   },
   {
+    "id": "abc0db6843086174",
+    "title": "Las Olas Art Fair – Part II (February)",
+    "startAt": "2026-02-28T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Art Fair",
+    "address": "E Las Olas Blvd (SE 6th–11th Ave), Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1196,
+    "lng": -80.1295,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "outdoor",
+      "local-favorite",
+      "festival"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "One of the nation's top 100 outdoor art festivals. 200+ juried artists line a mile of Las Olas Blvd with paintings, sculpture, jewelry, and more. Free admission.",
+    "description": "One of the nation's top 100 outdoor art festivals. 200+ juried artists line a mile of Las Olas Blvd with paintings, sculpture, jewelry, and more. Free admission.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://www.artfestival.com/festivals/las-olas-art-fair-fort-lauderdale-florida"
+    },
+    "isRecurring": true,
+    "seriesName": "Las Olas Art Fair – Part II (February)"
+  },
+  {
     "id": "0b4fdc8cd32d9fe9",
     "title": "Slow Burn Theatre Co: Beautiful: The Carole King Musical",
     "startAt": "2026-02-28T13:00:00",
@@ -426,6 +458,37 @@
     "seriesName": "The Wharf FTL: Weekend DJ Party"
   },
   {
+    "id": "4e21b607064597b8",
+    "title": "FAT Village Art Walk",
+    "startAt": "2026-02-28T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FAT Village Arts District",
+    "address": "NW 1st Ave, Fort Lauderdale, FL 33311",
+    "neighborhood": "Flagler Village",
+    "lat": 26.1289,
+    "lng": -80.1456,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "local-favorite",
+      "food-market"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "price": 0,
+    "isOutdoor": false,
+    "shortWhy": "Free · local fave in FLL.",
+    "editorialWhy": "Monthly art walk in Flagler Village featuring galleries, studios, food trucks, and live music.",
+    "description": "Monthly art walk in Flagler Village featuring galleries, studios, food trucks, and live music.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://fatvillage.com/"
+    },
+    "isRecurring": true,
+    "seriesName": "FAT Village Art Walk"
+  },
+  {
     "id": "32df3db6c1ccb5c6",
     "title": "Tarpon River: Live Music Weekend",
     "startAt": "2026-02-28T19:00:00",
@@ -485,6 +548,37 @@
     },
     "isRecurring": true,
     "seriesName": "Pompano Beach Amphitheater: Weekend Concert"
+  },
+  {
+    "id": "e47c228a4d096295",
+    "title": "Full Moon Tour at Bonnet House",
+    "startAt": "2026-02-28T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Bonnet House Museum & Gardens",
+    "address": "900 N Birch Rd, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.1367,
+    "lng": -80.1067,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "museum",
+      "park",
+      "waterfront",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "price": 35,
+    "isOutdoor": true,
+    "shortWhy": "local fave · waterfront views in FLL.",
+    "editorialWhy": "Monthly full moon tours of the Bonnet House gardens with wine and light refreshments. Experience the estate under the moonlight.",
+    "description": "Monthly full moon tours of the Bonnet House gardens with wine and light refreshments. Experience the estate under the moonlight.",
+    "source": {
+      "name": "Fort Lauderdale",
+      "url": "https://bonnethouse.org/"
+    },
+    "isRecurring": true,
+    "seriesName": "Full Moon Tour at Bonnet House"
   },
   {
     "id": "4fc2f02f55b81e53",
