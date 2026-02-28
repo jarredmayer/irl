@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-02-28T11:24:59.360Z",
+  "scrapedAt": "2026-02-28T23:27:03.734Z",
   "stats": {
-    "total": 1967,
-    "deduplicated": 1470,
+    "total": 1974,
+    "deduplicated": 1422,
     "bySource": {
       "Miami New Times": 89,
       "Farmers Markets": 80,
@@ -14,7 +14,7 @@
       "Miami Spice": 0,
       "Miami Festivals": 1,
       "Dice.fm Real": 0,
-      "Resident Advisor": 145,
+      "Resident Advisor": 152,
       "Shotgun": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 430,
@@ -32,10 +32,10 @@
     }
   },
   "delta": {
-    "added": 44,
-    "removed": 3,
+    "added": 7,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 1426
+    "unchanged": 1415
   },
   "sources": [
     {
@@ -90,7 +90,7 @@
     },
     {
       "name": "Resident Advisor",
-      "count": 145,
+      "count": 152,
       "errors": []
     },
     {
