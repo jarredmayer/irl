@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-02-27T23:29:26.838Z",
+  "scrapedAt": "2026-02-28T11:24:59.360Z",
   "stats": {
-    "total": 1978,
-    "deduplicated": 1453,
+    "total": 1967,
+    "deduplicated": 1470,
     "bySource": {
-      "Miami New Times": 90,
+      "Miami New Times": 89,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -14,33 +14,33 @@
       "Miami Spice": 0,
       "Miami Festivals": 1,
       "Dice.fm Real": 0,
-      "Resident Advisor": 157,
+      "Resident Advisor": 145,
       "Shotgun": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 430,
-      "Pop-Ups": 31,
-      "Miami Improv": 150,
-      "Fort Lauderdale Improv": 122,
+      "Pop-Ups": 29,
+      "Miami Improv": 148,
+      "Fort Lauderdale Improv": 120,
       "Coral Gables": 10,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
       "Free Yoga Miami": 75,
       "Run Clubs": 18,
       "Cycling Group Rides": 36,
-      "Fort Lauderdale": 264,
+      "Fort Lauderdale": 272,
       "Instagram Sources": 438
     }
   },
   "delta": {
-    "added": 711,
-    "removed": 6,
-    "modified": 1,
-    "unchanged": 741
+    "added": 44,
+    "removed": 3,
+    "modified": 0,
+    "unchanged": 1426
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 90,
+      "count": 89,
       "errors": []
     },
     {
@@ -90,7 +90,7 @@
     },
     {
       "name": "Resident Advisor",
-      "count": 157,
+      "count": 145,
       "errors": []
     },
     {
@@ -110,17 +110,17 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 31,
+      "count": 29,
       "errors": []
     },
     {
       "name": "Miami Improv",
-      "count": 150,
+      "count": 148,
       "errors": []
     },
     {
       "name": "Fort Lauderdale Improv",
-      "count": 122,
+      "count": 120,
       "errors": []
     },
     {
@@ -155,7 +155,7 @@
     },
     {
       "name": "Fort Lauderdale",
-      "count": 264,
+      "count": 272,
       "errors": []
     },
     {
