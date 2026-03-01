@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { EventCard } from '../feed/EventCard';
 import { EmptyState } from '../ui/EmptyState';
+import { format } from 'date-fns';
 import type { ScoredEvent, FollowItem, FollowType } from '../../types';
 
 interface FollowingViewProps {
@@ -104,32 +105,40 @@ export function FollowingView({
             <FollowSection
               title="Venues"
               items={groupedFollowing.venue}
+              allEvents={events}
               onUnfollow={onUnfollow}
               emoji="📍"
+              getEventIds={(item) => events.filter(e => e.venueId === item.id).map(e => e.id)}
             />
           )}
           {groupedFollowing.series.length > 0 && (
             <FollowSection
               title="Series"
               items={groupedFollowing.series}
+              allEvents={events}
               onUnfollow={onUnfollow}
               emoji="🔁"
+              getEventIds={(item) => events.filter(e => e.seriesId === item.id).map(e => e.id)}
             />
           )}
           {groupedFollowing.neighborhood.length > 0 && (
             <FollowSection
               title="Neighborhoods"
               items={groupedFollowing.neighborhood}
+              allEvents={events}
               onUnfollow={onUnfollow}
               emoji="🏘️"
+              getEventIds={(item) => events.filter(e => e.neighborhood === item.id).map(e => e.id)}
             />
           )}
           {groupedFollowing.organizer.length > 0 && (
             <FollowSection
               title="Organizers"
               items={groupedFollowing.organizer}
+              allEvents={events}
               onUnfollow={onUnfollow}
               emoji="👤"
+              getEventIds={() => []}
             />
           )}
         </div>
@@ -141,13 +150,17 @@ export function FollowingView({
 function FollowSection({
   title,
   items,
+  allEvents,
   onUnfollow,
   emoji,
+  getEventIds,
 }: {
   title: string;
   items: FollowItem[];
+  allEvents: ScoredEvent[];
   onUnfollow: (id: string, type: FollowType) => void;
   emoji: string;
+  getEventIds: (item: FollowItem) => string[];
 }) {
   return (
     <section>
@@ -157,20 +170,45 @@ function FollowSection({
         <span className="text-slate-400">({items.length})</span>
       </h2>
       <div className="space-y-2">
-        {items.map((item) => (
-          <div
-            key={`${item.type}-${item.id}`}
-            className="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-100"
-          >
-            <span className="font-medium text-slate-800">{item.name}</span>
-            <button
-              onClick={() => onUnfollow(item.id, item.type)}
-              className="text-sm px-3 py-1.5 bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 transition-colors"
+        {items.map((item) => {
+          const itemEventIds = getEventIds(item);
+          const itemEvents = allEvents
+            .filter(e => itemEventIds.includes(e.id))
+            .sort((a, b) => new Date(a.startAt).getTime() - new Date(b.startAt).getTime());
+          const nextEvent = itemEvents[0];
+
+          return (
+            <div
+              key={`${item.type}-${item.id}`}
+              className="bg-white rounded-xl border border-slate-100 overflow-hidden"
             >
-              Unfollow
-            </button>
-          </div>
-        ))}
+              <div className="flex items-center justify-between p-3">
+                <div className="flex-1 min-w-0">
+                  <span className="font-medium text-slate-800">{item.name}</span>
+                  {itemEvents.length > 0 && (
+                    <span className="ml-2 text-xs text-sky-600 font-medium">
+                      {itemEvents.length} upcoming
+                    </span>
+                  )}
+                  {nextEvent && (
+                    <p className="text-xs text-slate-400 mt-0.5 truncate">
+                      Next: {nextEvent.title} · {format(new Date(nextEvent.startAt), 'MMM d')}
+                    </p>
+                  )}
+                  {!nextEvent && (
+                    <p className="text-xs text-slate-400 mt-0.5">No upcoming events</p>
+                  )}
+                </div>
+                <button
+                  onClick={() => onUnfollow(item.id, item.type)}
+                  className="ml-3 shrink-0 text-sm px-3 py-1.5 bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 transition-colors"
+                >
+                  Unfollow
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

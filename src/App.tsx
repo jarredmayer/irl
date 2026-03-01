@@ -21,6 +21,7 @@ import { useFollowing } from './hooks/useFollowing';
 import { useGeolocation } from './hooks/useGeolocation';
 import { useWeather } from './hooks/useWeather';
 import { useProfile } from './hooks/useProfile';
+import { useNotifications } from './hooks/useNotifications';
 import { DEFAULT_FILTERS } from './constants';
 import type { FilterState } from './types';
 import './index.css';
@@ -30,7 +31,7 @@ function AppContent() {
   const [showAISettings, setShowAISettings] = useState(false);
 
   const { preferences, updatePreferences, isLoaded: prefsLoaded } = usePreferences();
-  const { isLoaded: savedLoaded } = useSavedEvents();
+  const { savedIds, isLoaded: savedLoaded } = useSavedEvents();
   const { following, toggleFollow, unfollow, venueIds, seriesIds, neighborhoodIds, isLoaded: followingLoaded } = useFollowing();
   const { profile, updateProfile, isLoaded: profileLoaded } = useProfile();
   const { location, status: locationStatus, requestLocation } = useGeolocation();
@@ -40,12 +41,15 @@ function AppContent() {
     filteredEvents,
     groupedEvents,
     getEventById,
+    allEvents,
   } = useEvents({
     preferences,
     location,
     weather,
     filters,
   });
+
+  const notifications = useNotifications(savedIds, allEvents);
 
   const feedSections = useMemo(
     () => [
@@ -137,6 +141,7 @@ function AppContent() {
               locationStatus={locationStatus}
               onRequestLocation={requestLocation}
               onConfigureAI={() => setShowAISettings(true)}
+              notifications={notifications}
             />
           }
         />
