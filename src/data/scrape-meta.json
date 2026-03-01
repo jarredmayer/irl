@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-01T09:34:03.685Z",
+  "scrapedAt": "2026-03-01T11:16:37.558Z",
   "stats": {
     "total": 1119,
-    "deduplicated": 744,
+    "deduplicated": 740,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -30,14 +30,16 @@
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
       "Fort Lauderdale": 82,
-      "Instagram Sources": 252
+      "Instagram Sources": 252,
+      "WeekendBroward": 0,
+      "WeekendBrowardLiveMusic": 0
     }
   },
   "delta": {
     "added": 0,
     "removed": 0,
     "modified": 0,
-    "unchanged": 741
+    "unchanged": 737
   },
   "sources": [
     {
@@ -207,11 +209,23 @@
       "count": 252,
       "status": "ok",
       "errors": []
+    },
+    {
+      "name": "WeekendBroward",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "WeekendBrowardLiveMusic",
+      "count": 0,
+      "status": "empty",
+      "errors": []
     }
   ],
   "sourceHealth": {
     "ok": 15,
-    "empty": 9,
+    "empty": 11,
     "errored": 3,
     "emptySources": [
       "Miami New Times",
@@ -222,7 +236,9 @@
       "Resident Advisor",
       "Greater Miami & The Beaches",
       "Candlelight Concerts (Fever)",
-      "Hotel Events"
+      "Hotel Events",
+      "WeekendBroward",
+      "WeekendBrowardLiveMusic"
     ],
     "erroredSources": [
       "Miami Improv",
