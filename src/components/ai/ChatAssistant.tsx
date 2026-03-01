@@ -110,6 +110,35 @@ export function ChatAssistant({ events, preferences, onConfigureAI }: ChatAssist
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4 min-h-[200px]">
             {messages.length === 0 ? (
+              !hasApiKey() ? (
+                <div className="flex flex-col items-center justify-center h-full gap-4 py-4 text-center">
+                  <div className="w-12 h-12 rounded-full bg-violet-100 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-slate-700 mb-1">Unlock AI chat</p>
+                    <p className="text-xs text-slate-500">
+                      Add a free Anthropic API key to ask anything about events — dates, vibes, recommendations.
+                    </p>
+                  </div>
+                  <button
+                    onClick={onConfigureAI}
+                    className="px-4 py-2 bg-violet-500 hover:bg-violet-600 text-white text-sm rounded-lg transition-colors"
+                  >
+                    Set up API key →
+                  </button>
+                  <a
+                    href="https://console.anthropic.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-slate-400 underline"
+                  >
+                    Get a free key at console.anthropic.com
+                  </a>
+                </div>
+              ) : (
               <div className="space-y-3">
                 <p className="text-sm text-slate-500 text-center">
                   Ask me anything about events in Miami & Fort Lauderdale!
@@ -128,6 +157,7 @@ export function ChatAssistant({ events, preferences, onConfigureAI }: ChatAssist
                   ))}
                 </div>
               </div>
+              )
             ) : (
               messages.map((msg, i) => (
                 <div
