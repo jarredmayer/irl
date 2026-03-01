@@ -67,22 +67,33 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/events*.json src/data/scrape-meta.json src/data/instagram-posts-cache.json src/data/venue-images.json 2>/dev/null || true
+          git add src/data/events*.json src/data/scrape-meta.json \
+                  src/data/instagram-posts-cache.json src/data/venue-images.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No data changes — skipping commit"
             exit 0
           fi
           git commit -m "Update events data $(date +'%Y-%m-%d')"
-          # Rebase on latest main — use -X theirs so fresh scrape data wins any conflicts
-          # with concurrent auto-merge commits (retry up to 3 times on push failure)
+          # Push with up to 3 retries, rebasing on origin/main for concurrent-push safety.
+          # Use `if` blocks (not bare && chains) so bash -e doesn't exit on first retry failure.
+          # -X ours = prefer our fresh scrape data over old remote data on conflicts.
           for i in 1 2 3; do
-            git pull --rebase -X theirs origin main && git push && break
-            echo "Push failed (attempt $i) — retrying in 5s..."
-            git rebase --abort 2>/dev/null || true
-            sleep 5
+            echo "Push attempt $i/3..."
+            if git pull --rebase -X ours origin main; then
+              if git push; then
+                echo "Pushed successfully on attempt $i"
+                break
+              fi
+              echo "git push failed on attempt $i"
+            else
+              echo "git pull --rebase failed on attempt $i"
+              git rebase --abort 2>/dev/null || true
+            fi
+            [ "$i" -lt 3 ] && sleep 5
           done
 
       - name: Trigger deploy
+        continue-on-error: true
         run: |
           curl -s -X POST \
             -H "Accept: application/vnd.github.v3+json" \
