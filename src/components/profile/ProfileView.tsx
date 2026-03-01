@@ -3,10 +3,15 @@ import type { UserProfile, UserPreferences, GeolocationState } from '../../types
 import { TAGS } from '../../constants';
 import { Chip, ChipGroup } from '../ui/Chip';
 import { SubmitEventForm, type UserSubmittedEvent } from './SubmitEventForm';
+import { SubmitAccountForm } from './SubmitAccountForm';
 import {
   saveUserSubmittedEvent,
   getUserSubmittedEvents,
   deleteUserSubmittedEvent,
+  saveSubmittedAccount,
+  getSubmittedAccounts,
+  deleteSubmittedAccount,
+  type SubmittedAccount,
 } from '../../services/storage';
 import { hasApiKey } from '../../services/ai';
 import { format, parseISO } from 'date-fns';
@@ -37,6 +42,7 @@ export function ProfileView({
   const [editHandle, setEditHandle] = useState(profile.handle || '');
   const [editDisplayName, setEditDisplayName] = useState(profile.displayName || '');
   const [showSubmitForm, setShowSubmitForm] = useState(false);
+  const [showSubmitAccountForm, setShowSubmitAccountForm] = useState(false);
   const photoInputRef = useRef<HTMLInputElement>(null);
 
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,16 +55,29 @@ export function ProfileView({
     reader.readAsDataURL(file);
   };
   const [submittedEvents, setSubmittedEvents] = useState<UserSubmittedEvent[]>([]);
+  const [submittedAccounts, setSubmittedAccounts] = useState<SubmittedAccount[]>([]);
   const [showSubmitSuccess, setShowSubmitSuccess] = useState(false);
+  const [submitSuccessMessage, setSubmitSuccessMessage] = useState('');
 
   useEffect(() => {
     setSubmittedEvents(getUserSubmittedEvents());
+    setSubmittedAccounts(getSubmittedAccounts());
   }, []);
 
   const handleEventSubmit = (event: UserSubmittedEvent) => {
     saveUserSubmittedEvent(event);
     setSubmittedEvents(getUserSubmittedEvents());
     setShowSubmitForm(false);
+    setSubmitSuccessMessage('Event submitted! We\'ll review it shortly.');
+    setShowSubmitSuccess(true);
+    setTimeout(() => setShowSubmitSuccess(false), 3000);
+  };
+
+  const handleAccountSubmit = (account: SubmittedAccount) => {
+    saveSubmittedAccount(account);
+    setSubmittedAccounts(getSubmittedAccounts());
+    setShowSubmitAccountForm(false);
+    setSubmitSuccessMessage(`@${account.handle} submitted — thanks for the tip!`);
     setShowSubmitSuccess(true);
     setTimeout(() => setShowSubmitSuccess(false), 3000);
   };
@@ -66,6 +85,11 @@ export function ProfileView({
   const handleDeleteSubmittedEvent = (eventId: string) => {
     deleteUserSubmittedEvent(eventId);
     setSubmittedEvents(getUserSubmittedEvents());
+  };
+
+  const handleDeleteSubmittedAccount = (accountId: string) => {
+    deleteSubmittedAccount(accountId);
+    setSubmittedAccounts(getSubmittedAccounts());
   };
 
   const handleSaveProfile = () => {
@@ -341,21 +365,32 @@ export function ProfileView({
           </ChipGroup>
         </section>
 
-        {/* Submit Event */}
+        {/* Submit Event + Submit Account — side by side */}
         <section className="bg-white rounded-2xl p-5 border border-slate-100">
-          <h3 className="font-semibold text-slate-900 mb-3">Submit an Event</h3>
-          <p className="text-sm text-slate-500 mb-4">
-            Know about an event we're missing? Submit it and help grow the community.
-          </p>
-          <button
-            onClick={() => setShowSubmitForm(true)}
-            className="w-full py-3 bg-gradient-to-r from-sky-500 to-violet-500 text-white font-medium rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-            </svg>
-            Submit Event
-          </button>
+          <h3 className="font-semibold text-slate-900 mb-1">Contribute</h3>
+          <p className="text-sm text-slate-500 mb-4">Help us find more great events in Miami & Fort Lauderdale.</p>
+          <div className="grid grid-cols-2 gap-3 mb-2">
+            {/* Submit Event inline button */}
+            <button
+              onClick={() => setShowSubmitForm(true)}
+              className="flex flex-col items-center gap-2 p-4 border-2 border-dashed border-slate-200 rounded-xl hover:border-sky-400 hover:bg-sky-50 transition-all group"
+            >
+              <svg className="w-6 h-6 text-slate-400 group-hover:text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span className="text-sm font-medium text-slate-700 group-hover:text-sky-700 text-center">Submit an event</span>
+            </button>
+            {/* Submit Account button */}
+            <button
+              onClick={() => setShowSubmitAccountForm(true)}
+              className="flex flex-col items-center gap-2 p-4 border-2 border-dashed border-slate-200 rounded-xl hover:border-pink-400 hover:bg-pink-50 transition-all group"
+            >
+              <svg className="w-6 h-6 text-slate-400 group-hover:text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
+              </svg>
+              <span className="text-sm font-medium text-slate-700 group-hover:text-pink-700 text-center">Suggest Instagram</span>
+            </button>
+          </div>
         </section>
 
         {/* Your Submitted Events */}
@@ -400,6 +435,34 @@ export function ProfileView({
           </section>
         )}
 
+        {/* Your Submitted Instagram Accounts */}
+        {submittedAccounts.length > 0 && (
+          <section className="bg-white rounded-2xl p-5 border border-slate-100">
+            <h3 className="font-semibold text-slate-900 mb-3">Suggested Accounts</h3>
+            <div className="space-y-2">
+              {submittedAccounts.map((acct) => (
+                <div key={acct.id} className="p-3 bg-slate-50 rounded-xl flex items-center justify-between gap-3">
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-slate-900">@{acct.handle}</p>
+                    <p className="text-xs text-slate-500 mt-0.5 capitalize">{acct.accountType} · {acct.city}</p>
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium mt-1 bg-amber-100 text-amber-700">
+                      Pending Review
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => handleDeleteSubmittedAccount(acct.id)}
+                    className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* App Info */}
         <section className="text-center text-sm text-slate-400 py-4">
           <p className="font-medium text-slate-500">irl.</p>
@@ -416,6 +479,14 @@ export function ProfileView({
         />
       )}
 
+      {/* Submit Account Modal */}
+      {showSubmitAccountForm && (
+        <SubmitAccountForm
+          onClose={() => setShowSubmitAccountForm(false)}
+          onSubmit={handleAccountSubmit}
+        />
+      )}
+
       {/* Success Toast */}
       {showSubmitSuccess && (
         <div className="fixed bottom-20 left-4 right-4 z-50">
@@ -423,7 +494,7 @@ export function ProfileView({
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
-            Event submitted! We'll review it soon.
+            {submitSuccessMessage}
           </div>
         </div>
       )}

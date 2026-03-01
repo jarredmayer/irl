@@ -9,6 +9,7 @@ import { createHash } from 'crypto';
 import { verifyEvents } from './verification.js';
 import { findVenue, CATEGORY_IMAGES, type Venue } from './venues.js';
 import { extractUniqueVenues, batchVerifyLocations, type VerificationResult } from './geocoding.js';
+import { agentVerifyLocations } from './agents/location-verifier.js';
 import { hasAIEnabled, batchGenerateEditorial } from './ai.js';
 
 export class EventAggregator {
@@ -99,38 +100,45 @@ export class EventAggregator {
       bySource[result.source] = result.events.length;
     }
 
-    // Verify locations if requested
+    // Verify locations using agent (agentic tool-use loop) or legacy batch verifier
     let locationIssues: VerificationResult[] | undefined;
+    let verifiedEvents = irlEvents;
     if (options?.verifyLocations) {
-      console.log(`\n🗺️  Verifying venue locations...`);
-      const venues = extractUniqueVenues(irlEvents);
-      console.log(`   Found ${venues.length} unique venues to verify`);
+      const useAgent = hasAIEnabled();
+      if (useAgent) {
+        // Agent path: Claude reasons about each venue's coordinates
+        console.log(`\n🤖 Using Location Verifier Agent (Claude tool use)...`);
+        const result = await agentVerifyLocations(irlEvents, { maxEvents: 30 });
+        verifiedEvents = result.events;
+      } else {
+        // Legacy path: Nominatim batch geocode without AI reasoning
+        console.log(`\n🗺️  Verifying venue locations (legacy geocoder)...`);
+        const venues = extractUniqueVenues(irlEvents);
+        console.log(`   Found ${venues.length} unique venues to verify`);
 
-      if (venues.length > 0) {
-        const verificationResults = await batchVerifyLocations(venues);
-        locationIssues = verificationResults.filter(
-          (r) => !r.isValid && r.discrepancyMiles > 0
-        );
+        if (venues.length > 0) {
+          const verificationResults = await batchVerifyLocations(venues);
+          locationIssues = verificationResults.filter(
+            (r) => !r.isValid && r.discrepancyMiles > 0
+          );
 
-        if (locationIssues.length > 0) {
-          console.log(`\n⚠️  ${locationIssues.length} venues have coordinate issues:`);
-          for (const issue of locationIssues.slice(0, 5)) {
-            console.log(`   • ${issue.name}: ${issue.discrepancyMiles.toFixed(2)} miles off`);
-            console.log(`     Address: ${issue.address}`);
-            console.log(`     Current: (${issue.lat.toFixed(4)}, ${issue.lng.toFixed(4)})`);
-            console.log(`     Should be: (${issue.suggestedLat?.toFixed(4)}, ${issue.suggestedLng?.toFixed(4)})`);
+          if (locationIssues.length > 0) {
+            console.log(`\n⚠️  ${locationIssues.length} venues have coordinate issues:`);
+            for (const issue of locationIssues.slice(0, 5)) {
+              console.log(`   • ${issue.name}: ${issue.discrepancyMiles.toFixed(2)} miles off`);
+            }
+            if (locationIssues.length > 5) {
+              console.log(`   ... and ${locationIssues.length - 5} more`);
+            }
+          } else {
+            console.log(`   ✅ All venue locations verified!`);
           }
-          if (locationIssues.length > 5) {
-            console.log(`   ... and ${locationIssues.length - 5} more`);
-          }
-        } else {
-          console.log(`   ✅ All venue locations verified!`);
         }
       }
     }
 
     return {
-      events: irlEvents,
+      events: verifiedEvents,
       results,
       stats: {
         total: allRawEvents.length,
