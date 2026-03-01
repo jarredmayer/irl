@@ -34,6 +34,7 @@ interface KnownEvent {
   description: string;
   tags: string[];
   price: number;
+  category?: string; // Overrides account-level category for this event
 }
 
 export class InstagramSourcesScraper extends BaseScraper {
@@ -82,6 +83,7 @@ export class InstagramSourcesScraper extends BaseScraper {
           schedule: 'weekly',
           days: [0], // Sunday
           time: '11:00',
+          category: 'Music',
           description: 'Live jazz along the Riverwalk with brunch specials at nearby restaurants.',
           tags: ['jazz', 'brunch', 'waterfront', 'free-event'],
           price: 0,
@@ -1089,7 +1091,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       lng: event.lng,
       city: account.city,
       tags: event.tags,
-      category: account.category,
+      category: event.category ?? account.category,
       priceLabel: event.price === 0 ? 'Free' : '$',
       priceAmount: event.price,
       isOutdoor: event.tags.includes('waterfront') || event.tags.includes('park') || event.tags.includes('cycling'),
