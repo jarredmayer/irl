@@ -28,7 +28,18 @@ jobs:
 
           git fetch origin main
           git checkout main
-          git merge --no-ff "origin/$BRANCH" -m "Auto-merge: $BRANCH"
+
+          # Attempt standard merge; on conflict in event data files,
+          # keep the feature branch version (it has manual fixes)
+          if ! git merge --no-ff "origin/$BRANCH" -m "Auto-merge: $BRANCH"; then
+            echo "Merge conflict — resolving data files with feature branch version"
+            git checkout --theirs -- 'src/data/events*.json' 2>/dev/null || true
+            git add 'src/data/' 2>/dev/null || true
+            git checkout --theirs -- 'scraper/src/' 2>/dev/null || true
+            git add 'scraper/src/' 2>/dev/null || true
+            git commit -m "Auto-merge: $BRANCH (conflict resolved, kept branch data)"
+          fi
+
           git push origin main
 
           git push origin --delete "$BRANCH" || true

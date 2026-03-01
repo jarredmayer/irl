@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { UserProfile, UserPreferences, GeolocationState } from '../../types';
 import { TAGS } from '../../constants';
 import { Chip, ChipGroup } from '../ui/Chip';
@@ -34,6 +34,17 @@ export function ProfileView({
   const [editHandle, setEditHandle] = useState(profile.handle || '');
   const [editDisplayName, setEditDisplayName] = useState(profile.displayName || '');
   const [showSubmitForm, setShowSubmitForm] = useState(false);
+  const photoInputRef = useRef<HTMLInputElement>(null);
+
+  const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      onProfileChange({ ...profile, photoUrl: reader.result as string });
+    };
+    reader.readAsDataURL(file);
+  };
   const [submittedEvents, setSubmittedEvents] = useState<UserSubmittedEvent[]>([]);
   const [showSubmitSuccess, setShowSubmitSuccess] = useState(false);
 
@@ -78,12 +89,27 @@ export function ProfileView({
           <div className="flex items-start gap-4">
             {/* Avatar */}
             <div className="relative">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-sky-400 to-violet-500 flex items-center justify-center text-white text-2xl font-bold">
-                {profile.displayName?.[0]?.toUpperCase() || profile.handle?.[0]?.toUpperCase() || '?'}
-              </div>
+              {profile.photoUrl ? (
+                <img
+                  src={profile.photoUrl}
+                  alt="Profile"
+                  className="w-20 h-20 rounded-full object-cover"
+                />
+              ) : (
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-sky-400 to-violet-500 flex items-center justify-center text-white text-2xl font-bold">
+                  {profile.displayName?.[0]?.toUpperCase() || profile.handle?.[0]?.toUpperCase() || '?'}
+                </div>
+              )}
+              <input
+                ref={photoInputRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={handlePhotoChange}
+              />
               <button
                 className="absolute -bottom-1 -right-1 w-7 h-7 bg-white rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50 transition-colors"
-                onClick={() => {/* TODO: Add photo upload */}}
+                onClick={() => photoInputRef.current?.click()}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
