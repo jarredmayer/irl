@@ -32,6 +32,14 @@ jobs:
           cache: 'npm'
           cache-dependency-path: scraper/package-lock.json
 
+      - name: Cache Puppeteer Chrome
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('scraper/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-puppeteer-
+
       - name: Install scraper dependencies
         working-directory: scraper
         run: npm ci

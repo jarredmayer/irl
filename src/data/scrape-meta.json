@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-01T12:02:13.870Z",
+  "scrapedAt": "2026-03-01T14:21:44.915Z",
   "stats": {
     "total": 1104,
-    "deduplicated": 725,
+    "deduplicated": 724,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -36,7 +36,7 @@
     }
   },
   "delta": {
-    "added": 1,
+    "added": 0,
     "removed": 0,
     "modified": 0,
     "unchanged": 721
@@ -99,8 +99,10 @@
     {
       "name": "Dice.fm Real",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
     },
     {
       "name": "Resident Advisor",
@@ -111,14 +113,18 @@
     {
       "name": "Greater Miami & The Beaches",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
     },
     {
       "name": "Candlelight Concerts (Fever)",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
     },
     {
       "name": "Hotel Events",
@@ -219,31 +225,33 @@
     {
       "name": "WeekendBrowardLiveMusic",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
     }
   ],
   "sourceHealth": {
     "ok": 15,
-    "empty": 11,
-    "errored": 3,
+    "empty": 7,
+    "errored": 7,
     "emptySources": [
       "Miami New Times",
       "III Points",
       "SOBEWFF",
       "Miami Spice",
-      "Dice.fm Real",
       "Resident Advisor",
-      "Greater Miami & The Beaches",
-      "Candlelight Concerts (Fever)",
       "Hotel Events",
-      "WeekendBroward",
-      "WeekendBrowardLiveMusic"
+      "WeekendBroward"
     ],
     "erroredSources": [
+      "Dice.fm Real",
+      "Greater Miami & The Beaches",
+      "Candlelight Concerts (Fever)",
       "Miami Improv",
       "Fort Lauderdale Improv",
-      "Coral Gables"
+      "Coral Gables",
+      "WeekendBrowardLiveMusic"
     ]
   }
 }

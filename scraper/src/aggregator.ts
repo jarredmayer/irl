@@ -7,7 +7,7 @@ import { getAllScrapers, type BaseScraper } from './sources/index.js';
 import type { RawEvent, IRLEvent, ScrapeResult } from './types.js';
 import { createHash } from 'crypto';
 import { verifyEvents } from './verification.js';
-import { findVenue, CATEGORY_IMAGES, type Venue } from './venues.js';
+import { findVenue, type Venue } from './venues.js';
 import { extractUniqueVenues, batchVerifyLocations } from './geocoding.js';
 import { OrchestratorAgent } from './agents/orchestrator.js';
 import { hasAIEnabled, batchGenerateEditorial } from './ai.js';
@@ -447,11 +447,8 @@ export class EventAggregator {
             url: event.sourceUrl,
           }
         : undefined,
-      // Use event image, venue image, or category fallback
-      image: event.image ||
-        (normalizedVenue?.venue.imageUrl) ||
-        CATEGORY_IMAGES[event.category] ||
-        undefined,
+      // Native event image only — BrandingAgent handles all fallbacks (venue, og:image, tags, category)
+      image: event.image || undefined,
       editorPick,
       seriesId,
       seriesName,
