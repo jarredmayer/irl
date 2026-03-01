@@ -393,35 +393,8 @@ export class FortLauderdaleScraper extends BaseScraper {
         },
       ],
     },
-    // Yolo Restaurant + Bar - Las Olas
-    {
-      name: 'Yolo Restaurant',
-      address: '333 E Las Olas Blvd, Fort Lauderdale, FL 33301',
-      neighborhood: 'Las Olas',
-      lat: 26.1196,
-      lng: -80.1338,
-      url: 'https://yolorestaurant.com/',
-      events: [
-        {
-          name: 'Yolo: Thursday DJ Night',
-          days: [4], // Thursday
-          time: '22:00',
-          category: 'Nightlife',
-          description: 'Thursday DJ nights at Yolo on Las Olas. Live DJs, craft cocktails, and late-night bites at one of Fort Lauderdale\'s most popular spots.',
-          tags: ['dj', 'nightlife', 'cocktails'],
-          price: 0,
-        },
-        {
-          name: 'Yolo: Sunday Brunch',
-          days: [0], // Sunday
-          time: '10:30',
-          category: 'Food & Drink',
-          description: 'Sunday brunch at Yolo on Las Olas. Bottomless mimosas, DJ, and Fort Lauderdale\'s most vibrant brunch scene.',
-          tags: ['brunch', 'dj', 'cocktails'],
-          price: 35,
-        },
-      ],
-    },
+    // Yolo Restaurant + Bar — coordinates need verification, DJ Night/Brunch are generic templates
+    // TODO: get correct lat/lng (current -80.1338 may be too far east) and confirmed specific events
     // Pompano Beach Amphitheater
     {
       name: 'Pompano Beach Amphitheater',
