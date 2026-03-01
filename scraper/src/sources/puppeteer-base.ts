@@ -42,19 +42,24 @@ export abstract class PuppeteerScraper extends BaseScraper {
       await this.page.setViewport({ width: 1920, height: 1080 });
     }
 
-    // Set user agent
-    await this.page.setUserAgent(this.userAgent);
+    // Set user agent (puppeteer-extra v3 may not proxy this on newer Puppeteer)
+    if (typeof this.page.setUserAgent === 'function') {
+      await this.page.setUserAgent(this.userAgent);
+    }
 
     // Block unnecessary resources for faster loading
-    await this.page.setRequestInterception(true);
-    this.page.on('request', (req) => {
-      const resourceType = req.resourceType();
-      if (['image', 'stylesheet', 'font', 'media'].includes(resourceType)) {
-        req.abort();
-      } else {
-        req.continue();
-      }
-    });
+    // (puppeteer-extra v3 may not proxy setRequestInterception on newer Puppeteer)
+    if (typeof this.page.setRequestInterception === 'function') {
+      await this.page.setRequestInterception(true);
+      this.page.on('request', (req) => {
+        const resourceType = req.resourceType();
+        if (['image', 'stylesheet', 'font', 'media'].includes(resourceType)) {
+          req.abort();
+        } else {
+          req.continue();
+        }
+      });
+    }
   }
 
   /**
@@ -109,6 +114,10 @@ export abstract class PuppeteerScraper extends BaseScraper {
    */
   protected async getPageContent(): Promise<string> {
     if (!this.page) throw new Error('Browser not initialized');
+    // puppeteer-extra v3 doesn't proxy all Page methods in Puppeteer v24
+    if (typeof this.page.content !== 'function') {
+      return await this.page.evaluate(() => document.documentElement.outerHTML);
+    }
     return await this.page.content();
   }
 

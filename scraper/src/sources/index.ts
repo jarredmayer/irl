@@ -104,6 +104,9 @@ export { MiamiBeachesEventsScraper } from './miami-beaches-events.js';
 // Candlelight Concerts — real schedule from Fever (Candlelight page only)
 export { CandlelightRealScraper } from './candlelight-real.js';
 
+// Hotel website events (real calendar data from hotel events pages)
+export { HotelEventsScraper } from './hotel-events.js';
+
 // Real HTTP scrapers (verified calendar data)
 export {
   DiceMiamiScraper,
@@ -178,6 +181,7 @@ import { CuratedRecurringScraper } from './curated-recurring.js';
 import { DiceRealScraper } from './dice-scraper.js';
 import { MiamiBeachesEventsScraper } from './miami-beaches-events.js';
 import { CandlelightRealScraper } from './candlelight-real.js';
+import { HotelEventsScraper } from './hotel-events.js';
 import {
   DiceMiamiScraper,
   MiamiImprovRealScraper,
@@ -227,6 +231,7 @@ export function getAllScrapers(): BaseScraper[] {
     new ResidentAdvisorScraper(), // Real RA GraphQL API — Miami area ID 38
     new MiamiBeachesEventsScraper(), // Greater Miami & The Beaches official CVB calendar
     new CandlelightRealScraper(), // Real Candlelight concert dates from Fever (candlelight page only)
+    new HotelEventsScraper(), // Real events from hotel websites (Biltmore, Faena, EDITION, etc.)
     // new DiceFmScraper(),           // SYNTHETIC - fake events like "Keinemusik Miami"
     // new ShotgunScraper(), // DISABLED - API returning 404 (endpoint changed, auth required)
 

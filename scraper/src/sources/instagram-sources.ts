@@ -4,9 +4,13 @@
  *
  * Note: Direct Instagram scraping requires authentication.
  * This module provides:
- * 1. Known recurring events from monitored accounts
+ * 1. Known recurring events from monitored accounts (confirmed schedules only)
  * 2. Framework for manual event entry from Instagram posts
  * 3. Hooks for future Instagram API/scraping integration
+ *
+ * POLICY: knownEvents must have a confirmed recurring schedule from an official source.
+ * Fabricated or assumed events must NEVER be added. Use knownEvents: [] for accounts
+ * that are good sources but don't have a confirmed fixed recurring schedule yet.
  */
 
 import { addDays, format, getDay, lastDayOfMonth } from 'date-fns';
@@ -38,125 +42,15 @@ interface KnownEvent {
 }
 
 export class InstagramSourcesScraper extends BaseScraper {
+  // All entries are monitored Instagram sources.
+  // knownEvents: [] = real source, no confirmed fixed recurring schedule yet
+  // knownEvents: [...] = confirmed recurring schedule with source evidence
   private accounts: InstagramAccount[] = [
-    // @fortlauderdaledowntown
-    {
-      handle: 'fortlauderdaledowntown',
-      name: 'Downtown Fort Lauderdale',
-      city: 'Fort Lauderdale',
-      category: 'Community',
-      knownEvents: [
-        {
-          name: 'First Friday Art Walk',
-          venue: 'Downtown Fort Lauderdale',
-          address: 'SW 2nd St, Fort Lauderdale, FL 33301',
-          neighborhood: 'Downtown FLL',
-          lat: 26.1189,
-          lng: -80.1456,
-          schedule: 'monthly',
-          time: '18:00',
-          description: 'Monthly art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.',
-          tags: ['art-gallery', 'free-event', 'local-favorite'],
-          price: 0,
-        },
-        {
-          name: 'Downtown FLL Food Truck Rally',
-          venue: 'Huizenga Plaza',
-          address: '32 E Las Olas Blvd, Fort Lauderdale, FL 33301',
-          neighborhood: 'Downtown FLL',
-          lat: 26.1189,
-          lng: -80.1436,
-          schedule: 'weekly',
-          days: [5], // Friday
-          time: '17:30',
-          description: 'Weekly food truck gathering in downtown Fort Lauderdale. Live music and family-friendly.',
-          tags: ['food-market', 'free-event', 'family-friendly'],
-          price: 0,
-        },
-        {
-          name: 'Sunday Jazz Brunch Downtown',
-          venue: 'Riverwalk Fort Lauderdale',
-          address: 'Riverwalk, Fort Lauderdale, FL 33301',
-          neighborhood: 'Downtown FLL',
-          lat: 26.1189,
-          lng: -80.1467,
-          schedule: 'weekly',
-          days: [0], // Sunday
-          time: '11:00',
-          category: 'Music',
-          description: 'Live jazz along the Riverwalk with brunch specials at nearby restaurants.',
-          tags: ['jazz', 'brunch', 'waterfront', 'free-event'],
-          price: 0,
-        },
-      ],
-    },
-    // @wynaborhood
-    {
-      handle: 'wynaborhood',
-      name: 'Wynwood Neighborhood',
-      city: 'Miami',
-      category: 'Art',
-      knownEvents: [
-        {
-          name: 'Wynwood Second Saturday Art Walk',
-          venue: 'Wynwood Arts District',
-          address: 'NW 2nd Ave, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8011,
-          lng: -80.1996,
-          schedule: 'monthly',
-          time: '18:00',
-          description: 'Monthly art walk through Wynwood galleries. Extended hours, new exhibitions, and street performances.',
-          tags: ['art-gallery', 'free-event', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    // @baborhood (Brickell)
-    {
-      handle: 'baborhood',
-      name: 'Brickell Neighborhood',
-      city: 'Miami',
-      category: 'Community',
-      knownEvents: [
-        {
-          name: 'Brickell Night Market',
-          venue: 'Brickell City Centre',
-          address: '701 S Miami Ave, Miami, FL 33131',
-          neighborhood: 'Brickell',
-          lat: 25.7672,
-          lng: -80.1936,
-          schedule: 'monthly',
-          time: '18:00',
-          description: 'Monthly night market at Brickell City Centre featuring local vendors and artisans.',
-          tags: ['food-market', 'free-event'],
-          price: 0,
-        },
-      ],
-    },
-    // @themiamiflea
-    {
-      handle: 'themiamiflea',
-      name: 'The Miami Flea',
-      city: 'Miami',
-      category: 'Community',
-      knownEvents: [
-        {
-          name: 'The Miami Flea Market',
-          venue: 'Various Miami Locations',
-          address: 'Miami, FL',
-          neighborhood: 'Miami',
-          lat: 25.7617,
-          lng: -80.1918,
-          schedule: 'monthly',
-          time: '11:00',
-          description: 'Monthly artisan market featuring local makers, vintage vendors, food trucks, and live music.',
-          tags: ['food-market', 'local-favorite', 'free-event'],
-          price: 0,
-        },
-      ],
-    },
-    // @criticalmassmiami
+
+    // ── CONFIRMED RECURRING EVENTS ────────────────────────────────────────────
+
+    // @criticalmassmiami — last Friday monthly bike ride from Government Center
+    // Source: criticalmassmiami.com — 30+ year global tradition, Miami chapter confirmed
     {
       handle: 'criticalmassmiami',
       name: 'Critical Mass Miami',
@@ -178,175 +72,9 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
-    // @mikiaminightlife (nightlife events)
-    {
-      handle: 'mikiaminightlife',
-      name: 'Miami Nightlife',
-      city: 'Miami',
-      category: 'Nightlife',
-      knownEvents: [
-        // Events from this account are more ad-hoc
-        // Would need Instagram API to track
-      ],
-    },
-    // @gramps_miami - Wynwood bar / music venue
-    {
-      handle: 'gramps_miami',
-      name: 'Gramps Miami',
-      city: 'Miami',
-      category: 'Music',
-      knownEvents: [
-        {
-          name: 'Gramps: Reggae Wednesday',
-          venue: 'Gramps',
-          address: '176 NW 24th St, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8010,
-          lng: -80.1979,
-          schedule: 'weekly',
-          days: [3], // Wednesday
-          time: '22:00',
-          description: 'Weekly reggae night at Gramps. Live DJs, drink specials, and the best outdoor patio in Wynwood.',
-          tags: ['dj', 'nightlife', 'local-favorite', 'dancing'],
-          price: 0,
-        },
-        {
-          name: 'Gramps: Live Music Friday',
-          venue: 'Gramps',
-          address: '176 NW 24th St, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8010,
-          lng: -80.1979,
-          schedule: 'weekly',
-          days: [5], // Friday
-          time: '22:00',
-          description: 'Live bands and DJs on the Gramps stage. Local and touring acts in Wynwood\'s most eclectic music venue.',
-          tags: ['live-music', 'nightlife', 'local-favorite'],
-          price: 10,
-        },
-        {
-          name: 'Gramps: Trivia Tuesday',
-          venue: 'Gramps',
-          address: '176 NW 24th St, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8010,
-          lng: -80.1979,
-          schedule: 'weekly',
-          days: [2], // Tuesday
-          time: '20:00',
-          description: 'Weekly bar trivia at Gramps. Teams of up to 6 compete for bar tabs. Miami\'s most fun Tuesday night.',
-          tags: ['bar', 'community', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    // @lasrosasmiami - Allapattah bar
-    {
-      handle: 'lasrosasmiami',
-      name: 'Las Rosas Miami',
-      city: 'Miami',
-      category: 'Nightlife',
-      knownEvents: [
-        {
-          name: 'Las Rosas: DJ Night',
-          venue: 'Las Rosas',
-          address: '2898 NW 7th Ave, Miami, FL 33127',
-          neighborhood: 'Allapattah',
-          lat: 25.7972,
-          lng: -80.2050,
-          schedule: 'weekly',
-          days: [5, 6], // Fri-Sat
-          time: '22:00',
-          description: 'Rotating DJs spinning everything from cumbia to techno. One of Miami\'s coolest neighborhood bars in Allapattah.',
-          tags: ['dj', 'nightlife', 'local-favorite', 'dancing', 'underground'],
-          price: 0,
-        },
-      ],
-    },
-    // @churchillspub_miami - Little Haiti
-    {
-      handle: 'churchillspub',
-      name: "Churchill's Pub",
-      city: 'Miami',
-      category: 'Music',
-      knownEvents: [
-        {
-          name: "Churchill's: Live Music Weekend",
-          venue: "Churchill's Pub",
-          address: '5501 NE 2nd Ave, Miami, FL 33137',
-          neighborhood: 'Little Haiti',
-          lat: 25.8255,
-          lng: -80.1859,
-          schedule: 'weekly',
-          days: [5, 6], // Fri-Sat
-          time: '21:00',
-          description: "Live bands at Miami's legendary dive bar. Rock, punk, indie, and everything in between since 1979.",
-          tags: ['live-music', 'nightlife', 'local-favorite'],
-          price: 10,
-        },
-        {
-          name: "Churchill's: Open Mic Wednesday",
-          venue: "Churchill's Pub",
-          address: '5501 NE 2nd Ave, Miami, FL 33137',
-          neighborhood: 'Little Haiti',
-          lat: 25.8255,
-          lng: -80.1859,
-          schedule: 'weekly',
-          days: [3], // Wednesday
-          time: '20:00',
-          description: "Wednesday open mic at Churchill's. Sign up to perform or enjoy Miami's underground music scene.",
-          tags: ['live-music', 'community', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    // @lagniappe_miami - Wine & jazz bar
-    {
-      handle: 'lagniappe_miami',
-      name: 'Lagniappe House',
-      city: 'Miami',
-      category: 'Music',
-      knownEvents: [
-        {
-          name: 'Lagniappe: Jazz & Wine',
-          venue: 'Lagniappe House',
-          address: '3425 NE 2nd Ave, Miami, FL 33137',
-          neighborhood: 'Midtown',
-          lat: 25.8089,
-          lng: -80.1917,
-          schedule: 'weekly',
-          days: [4, 5, 6, 0], // Thu-Sun
-          time: '20:00',
-          description: 'Live jazz in an intimate wine-bar setting. Rotating wine list, cheese boards, and nightly jazz acts in this beloved Miami institution.',
-          tags: ['jazz', 'live-music', 'wine-tasting', 'local-favorite', 'intimate'],
-          price: 0,
-        },
-      ],
-    },
-    // @thewharfmiami - Brickell waterfront
-    {
-      handle: 'thewharfmiami',
-      name: 'The Wharf Miami',
-      city: 'Miami',
-      category: 'Nightlife',
-      knownEvents: [
-        {
-          name: 'The Wharf Miami: Weekend DJ Party',
-          venue: 'The Wharf Miami',
-          address: '114 SW North River Dr, Miami, FL 33130',
-          neighborhood: 'Brickell',
-          lat: 25.7692,
-          lng: -80.1994,
-          schedule: 'weekly',
-          days: [5, 6], // Fri-Sat
-          time: '18:00',
-          description: 'Outdoor waterfront party at The Wharf. DJs, shipping container bars, food trucks, and Miami River views.',
-          tags: ['dj', 'nightlife', 'waterfront', 'outdoor', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    // @pamm_museum - Pérez Art Museum Miami
+
+    // @pamm_museum — Pérez Art Museum Miami: Free First Thursday
+    // Source: pamm.org — confirmed monthly, 12–9pm free admission
     {
       handle: 'pamm_museum',
       name: 'Pérez Art Museum Miami',
@@ -362,36 +90,15 @@ export class InstagramSourcesScraper extends BaseScraper {
           lng: -80.1856,
           schedule: 'monthly',
           time: '12:00',
-          description: "Free admission every first Thursday 12-9pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
+          description: 'Free admission every first Thursday 12–9pm. Extended programming, docent-led tours, and community events on Museum Park\'s waterfront campus.',
           tags: ['museum', 'art-gallery', 'free-event', 'waterfront', 'local-favorite'],
           price: 0,
         },
       ],
     },
-    // @northbeachbandshell - North Beach outdoor venue
-    {
-      handle: 'northbeachbandshell',
-      name: 'North Beach Bandshell',
-      city: 'Miami',
-      category: 'Music',
-      knownEvents: [
-        {
-          name: 'Live at the Bandshell: Weekend Concert',
-          venue: 'North Beach Bandshell',
-          address: '7275 Collins Ave, Miami Beach, FL 33141',
-          neighborhood: 'North Beach',
-          lat: 25.8490,
-          lng: -80.1220,
-          schedule: 'weekly',
-          days: [5, 6], // Fri-Sat
-          time: '19:00',
-          description: 'Outdoor concerts at the beloved North Beach Bandshell amphitheater. Local and international artists under the stars on Miami Beach.',
-          tags: ['live-music', 'outdoor', 'local-favorite', 'beach', 'free-event'],
-          price: 0,
-        },
-      ],
-    },
-    // @wynwoodwalls - Street art museum
+
+    // @wynwoodwalls — Second Saturday Art Walk
+    // Source: wynwoodwalls.com — confirmed monthly, galleries open late
     {
       handle: 'wynwoodwalls',
       name: 'Wynwood Walls',
@@ -413,53 +120,33 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
-    // @wiltonmanorsfl - Wilton Manors FLL
+
+    // @wynwood_marketplace — Open-air weekend market at fixed address
+    // Source: wynwoodmarketplace.com — Fri–Sun at 2250 NW 2nd Ave confirmed
     {
-      handle: 'wiltonmanorsfl',
-      name: 'Wilton Manors',
-      city: 'Fort Lauderdale',
+      handle: 'wynwood_marketplace',
+      name: 'Wynwood Marketplace',
+      city: 'Miami',
       category: 'Community',
       knownEvents: [
         {
-          name: 'Wilton Drive: Sunday Stroll',
-          venue: 'Wilton Drive',
-          address: 'Wilton Dr, Wilton Manors, FL 33305',
-          neighborhood: 'Wilton Manors',
-          lat: 26.1563,
-          lng: -80.1379,
+          name: 'Wynwood Marketplace: Weekend Market',
+          venue: 'Wynwood Marketplace',
+          address: '2250 NW 2nd Ave, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.7980,
+          lng: -80.1992,
           schedule: 'weekly',
-          days: [0], // Sunday
-          time: '11:00',
-          description: "Sunday stroll down Wilton Drive with brunch spots, pop-up vendors, and Wilton Manors' welcoming community atmosphere.",
-          tags: ['outdoor', 'community', 'local-favorite', 'brunch'],
+          days: [5, 6, 0], // Fri–Sun
+          time: '17:00',
+          description: 'Open-air marketplace in the heart of Wynwood. Local artisans, street food, live music, and the best of Miami\'s creative scene.',
+          tags: ['market', 'outdoor', 'local-favorite', 'live-music', 'food-market'],
           price: 0,
         },
       ],
     },
-    // @thefernbarftl - Fort Lauderdale cocktail bar
-    {
-      handle: 'thefernbarftl',
-      name: 'The Fern Bar FTL',
-      city: 'Fort Lauderdale',
-      category: 'Nightlife',
-      knownEvents: [
-        {
-          name: 'The Fern Bar: Weekend DJ',
-          venue: 'The Fern Bar',
-          address: '700 N Andrews Ave, Fort Lauderdale, FL 33311',
-          neighborhood: 'Flagler Village',
-          lat: 26.1289,
-          lng: -80.1456,
-          schedule: 'weekly',
-          days: [5, 6], // Fri-Sat
-          time: '21:00',
-          description: "Weekend DJ nights at The Fern Bar in Flagler Village. Craft cocktails, eclectic music, and Fort Lauderdale's coolest crowd.",
-          tags: ['dj', 'nightlife', 'cocktails', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    // @miamirunclub - Community fitness
+
+    // @miamirunclub — Saturday morning group run from Bayfront Park
     {
       handle: 'miamirunclub',
       name: 'Miami Run Club',
@@ -482,7 +169,8 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
-    // @sunnysideupmarket - Sunday pop-up market (Miami / FLL area)
+
+    // @sunnysideupmarket — Sunday market at Esplanade Park, Fort Lauderdale
     {
       handle: 'sunnysideupmarket',
       name: 'Sunny Side Up Market',
@@ -505,7 +193,8 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
-    // @lauderdalerunclub - Run club Fort Lauderdale
+
+    // @lauderdalerunclub — Lauderdale Run Club (confirmed recurring at fixed FLL locations)
     {
       handle: 'lauderdalerunclub',
       name: 'Lauderdale Run Club',
@@ -542,185 +231,9 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
-    // @lauderale - Fort Lauderdale lifestyle / local events
-    {
-      handle: 'lauderale',
-      name: 'Lauder Ale FTL',
-      city: 'Fort Lauderdale',
-      category: 'Community',
-      knownEvents: [
-        {
-          name: 'Fort Lauderdale Weekend Bar Crawl',
-          venue: 'Las Olas Boulevard',
-          address: 'Las Olas Blvd, Fort Lauderdale, FL 33301',
-          neighborhood: 'Las Olas',
-          lat: 26.1195,
-          lng: -80.1365,
-          schedule: 'weekly',
-          days: [6], // Saturday
-          time: '20:00',
-          description: 'Weekend bar crawl through the best bars and craft beer spots on Las Olas. Meet locals, discover hidden gems, enjoy FTL nightlife.',
-          tags: ['craft-beer', 'nightlife', 'local-favorite', 'bar'],
-          price: 0,
-        },
-      ],
-    },
-    // @thirdspacesmiami - Community event space Miami
-    {
-      handle: 'thirdspacesmiami',
-      name: 'Third Spaces Miami',
-      city: 'Miami',
-      category: 'Community',
-      knownEvents: [
-        {
-          name: 'Third Spaces: Community Gathering',
-          venue: 'Third Spaces Miami',
-          address: '1 NE 1st Ave, Miami, FL 33132',
-          neighborhood: 'Downtown Miami',
-          lat: 25.7743,
-          lng: -80.1925,
-          schedule: 'weekly',
-          days: [5], // Friday
-          time: '19:00',
-          description: 'Weekly community gathering hosted by Third Spaces Miami. Art, music, conversation, and connection in a welcoming environment.',
-          tags: ['community', 'local-favorite', 'pop-up'],
-          price: 0,
-        },
-      ],
-    },
-    // @miamiconcours - Miami Concours classic car show
-    {
-      handle: 'miamiconcours',
-      name: 'Miami Concours',
-      city: 'Miami',
-      category: 'Culture',
-      knownEvents: [
-        {
-          name: 'Miami Concours: Classic Car Show',
-          venue: 'The Biltmore Hotel',
-          address: '1200 Anastasia Ave, Coral Gables, FL 33134',
-          neighborhood: 'Coral Gables',
-          lat: 25.7467,
-          lng: -80.2792,
-          schedule: 'monthly',
-          time: '10:00',
-          description: 'Curated classic and collector car gathering on the grounds of The Biltmore Hotel. Vintage autos, community, and Coral Gables grandeur.',
-          tags: ['outdoor', 'local-favorite', 'community'],
-          price: 0,
-        },
-      ],
-    },
-    // @miamijazzbooking - Jazz events across Miami
-    {
-      handle: 'miamijazzbooking',
-      name: 'Miami Jazz Booking',
-      city: 'Miami',
-      category: 'Music',
-      knownEvents: [
-        {
-          name: 'Miami Jazz Sessions',
-          venue: 'Lagniappe House',
-          address: '3425 NE 2nd Ave, Miami, FL 33137',
-          neighborhood: 'Midtown',
-          lat: 25.8089,
-          lng: -80.1917,
-          schedule: 'weekly',
-          days: [4, 6], // Thu + Sat
-          time: '21:00',
-          description: 'Live jazz performances curated by Miami Jazz Booking. Local and touring jazz artists at intimate Miami venues.',
-          tags: ['jazz', 'live-music', 'local-favorite', 'intimate'],
-          price: 0,
-        },
-      ],
-    },
-    // @coffeeandchillmiami - Coffee + chill social events
-    {
-      handle: 'coffeeandchillmiami',
-      name: 'Coffee and Chill Miami',
-      city: 'Miami',
-      category: 'Community',
-      knownEvents: [
-        {
-          name: 'Coffee & Chill: Sunday Social',
-          venue: 'Bayfront Park',
-          address: '301 Biscayne Blvd, Miami, FL 33132',
-          neighborhood: 'Downtown Miami',
-          lat: 25.7733,
-          lng: -80.1867,
-          schedule: 'weekly',
-          days: [0], // Sunday
-          time: '09:00',
-          description: 'Weekly Sunday morning coffee social at Bayfront Park. Great coffee, good people, and Biscayne Bay views.',
-          tags: ['community', 'free-event', 'outdoor', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    // @miamibloco - Afro-Brazilian drum & dance collective
-    {
-      handle: 'miamibloco',
-      name: 'Miami Bloco',
-      city: 'Miami',
-      category: 'Music',
-      knownEvents: [
-        {
-          name: 'Miami Bloco: Drum & Dance Practice',
-          venue: 'Lummus Park',
-          address: '1130 Ocean Dr, Miami Beach, FL 33139',
-          neighborhood: 'South Beach',
-          lat: 25.7826,
-          lng: -80.1304,
-          schedule: 'weekly',
-          days: [0], // Sunday
-          time: '15:00',
-          description: 'Miami Bloco Afro-Brazilian drum and dance collective. Open rehearsal and street performance. All are welcome to watch or join.',
-          tags: ['live-music', 'free-event', 'outdoor', 'community', 'local-favorite', 'beach'],
-          price: 0,
-        },
-        {
-          name: 'Miami Bloco: Street Parade',
-          venue: 'Wynwood Arts District',
-          address: 'NW 2nd Ave, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8011,
-          lng: -80.1996,
-          schedule: 'monthly',
-          time: '18:00',
-          description: 'Monthly street parade through Wynwood with live Afro-Brazilian drumming, dancers, and community celebration.',
-          tags: ['live-music', 'free-event', 'outdoor', 'community', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    // @thestandardmiami - The Standard Spa, Miami Beach
-    // 40 Island Ave, Belle Isle — the original Standard on a private island in Biscayne Bay.
-    // Known for bayfront pool, hammam spa, and weekend outdoor programming.
-    // NOTE: Only adding the Sunday pool event which is their known weekly public offering.
-    // The hammam/spa is an amenity (not an event); yoga is informal and not always ticketed.
-    {
-      handle: 'thestandardmiami',
-      name: 'The Standard Spa Miami Beach',
-      city: 'Miami',
-      category: 'Nightlife',
-      knownEvents: [
-        {
-          name: 'Sunday at The Standard',
-          venue: 'The Standard Spa Miami Beach',
-          address: '40 Island Ave, Miami Beach, FL 33139',
-          neighborhood: 'Miami Beach',
-          lat: 25.7912,
-          lng: -80.1567,
-          schedule: 'weekly',
-          days: [0], // Sunday
-          time: '13:00',
-          description: 'The Standard\'s legendary Sunday scene on Belle Isle: DJ on the bayfront deck, craft cocktails, and the hammam garden. The closest thing Miami has to a proper outdoor club afternoon.',
-          tags: ['dj', 'outdoor', 'waterfront', 'local-favorite'],
-          price: 0,
-          category: 'Nightlife',
-        },
-      ],
-    },
-    // @discodomingomiami - Sunday disco dance party
+
+    // @discodomingomiami — Disco Domingo at Do Not Sit On The Furniture, every Sunday
+    // Source: donotsit.com — documented weekly Sunday disco night
     {
       handle: 'discodomingomiami',
       name: 'Disco Domingo Miami',
@@ -743,187 +256,244 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
-    // @rawfigspopup - Raw Figs plant-based pop-up dining experience
-    // NOTE: Curator must verify exact date/venue from @rawfigspopup before enabling events
-    // Raw Figs is a curated plant-based pop-up dinner series at rotating Miami venues.
-    // Intentionally left empty — dates must be pulled from their IG stories/posts directly.
-    // {
-    //   handle: 'rawfigspopup',
-    //   name: 'Raw Figs',
-    //   city: 'Miami',
-    //   category: 'Food & Drink',
-    //   knownEvents: [] // populate from @rawfigspopup posts
-    // },
-    // @wynwood_marketplace - Wynwood arts & food market
+
+    // @lagniappe_miami — Lagniappe House: live jazz Thu–Sun
+    // Source: lagniappehouse.com — documented nightly jazz Thu–Sun
     {
-      handle: 'wynwood_marketplace',
-      name: 'Wynwood Marketplace',
+      handle: 'lagniappe_miami',
+      name: 'Lagniappe House',
       city: 'Miami',
-      category: 'Community',
+      category: 'Music',
       knownEvents: [
         {
-          name: 'Wynwood Marketplace: Weekend Market',
-          venue: 'Wynwood Marketplace',
-          address: '2250 NW 2nd Ave, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.7980,
-          lng: -80.1992,
+          name: 'Lagniappe: Jazz & Wine',
+          venue: 'Lagniappe House',
+          address: '3425 NE 2nd Ave, Miami, FL 33137',
+          neighborhood: 'Midtown',
+          lat: 25.8089,
+          lng: -80.1917,
           schedule: 'weekly',
-          days: [5, 6, 0], // Fri-Sun
-          time: '17:00',
-          description: 'Open-air marketplace in the heart of Wynwood. Local artisans, street food, live music, and the best of Miami\'s creative scene.',
-          tags: ['market', 'outdoor', 'local-favorite', 'live-music', 'food-market'],
+          days: [4, 5, 6, 0], // Thu–Sun
+          time: '20:00',
+          description: 'Live jazz in an intimate wine-bar setting. Rotating wine list, cheese boards, and nightly jazz acts in this beloved Miami institution.',
+          tags: ['jazz', 'live-music', 'wine-tasting', 'local-favorite', 'intimate'],
           price: 0,
         },
       ],
     },
-    // @wynwood_yoga - Outdoor yoga in Wynwood
+
+    // @miamibloco — Afro-Brazilian drum & dance collective, Sunday at Lummus Park
     {
-      handle: 'wynwood_yoga',
-      name: 'Wynwood Yoga',
+      handle: 'miamibloco',
+      name: 'Miami Bloco',
       city: 'Miami',
-      category: 'Wellness',
+      category: 'Music',
       knownEvents: [
         {
-          name: 'Wynwood Yoga: Outdoor Class',
-          venue: 'Wynwood Walls Garden',
-          address: '2520 NW 2nd Ave, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8016,
-          lng: -80.1992,
-          schedule: 'weekly',
-          days: [6, 0], // Sat-Sun
-          time: '09:00',
-          description: 'Outdoor yoga class in Wynwood surrounded by street art. All levels welcome — bring your own mat.',
-          tags: ['yoga', 'wellness', 'outdoor', 'free-event', 'local-favorite'],
-          price: 0,
-        },
-        {
-          name: 'Wynwood Yoga: Weekday Flow',
-          venue: 'Wynwood Walls Garden',
-          address: '2520 NW 2nd Ave, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8016,
-          lng: -80.1992,
-          schedule: 'weekly',
-          days: [3], // Wednesday
-          time: '07:00',
-          description: 'Midweek morning yoga in Wynwood. Flow through poses with street art as your backdrop.',
-          tags: ['yoga', 'wellness', 'outdoor', 'free-event'],
-          price: 0,
-        },
-      ],
-    },
-    // @wynwoodmiami - Wynwood neighborhood events collective
-    {
-      handle: 'wynwoodmiami',
-      name: 'Wynwood Miami',
-      city: 'Miami',
-      category: 'Art',
-      knownEvents: [
-        {
-          name: 'Wynwood Second Saturday Art Walk',
-          venue: 'Wynwood Arts District',
-          address: 'NW 2nd Ave, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8011,
-          lng: -80.1996,
-          schedule: 'monthly',
-          time: '18:00',
-          description: 'Wynwood\'s monthly art walk. Galleries open late, new exhibitions, street performances, and the neighborhood at its most alive.',
-          tags: ['art-gallery', 'free-event', 'local-favorite', 'community'],
-          price: 0,
-        },
-      ],
-    },
-    // @coffeeandbeatsofficial - Coffee + music social community
-    {
-      handle: 'coffeeandbeatsofficial',
-      name: 'Coffee and Beats',
-      city: 'Miami',
-      category: 'Community',
-      knownEvents: [
-        {
-          name: 'Coffee and Beats: Sunday Morning Session',
-          venue: 'Wynwood Arts District',
-          address: 'NW 2nd Ave, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8011,
-          lng: -80.1996,
+          name: 'Miami Bloco: Drum & Dance Practice',
+          venue: 'Lummus Park',
+          address: '1130 Ocean Dr, Miami Beach, FL 33139',
+          neighborhood: 'South Beach',
+          lat: 25.7826,
+          lng: -80.1304,
           schedule: 'weekly',
           days: [0], // Sunday
-          time: '10:00',
-          description: 'Weekly Sunday morning community event: coffee, vinyl DJ sets, and good vibes. Free and open to all in the heart of Wynwood.',
-          tags: ['dj', 'community', 'free-event', 'outdoor', 'local-favorite'],
+          time: '15:00',
+          description: 'Miami Bloco Afro-Brazilian drum and dance collective. Open rehearsal and street performance. All are welcome to watch or join.',
+          tags: ['live-music', 'free-event', 'outdoor', 'community', 'local-favorite', 'beach'],
           price: 0,
         },
       ],
     },
-    // Soya e Pomodoro - REMOVED
-    // This is a restaurant with regular operating hours, NOT a ticketed event series.
-    // Do not add recurring "brunch" / "lunch" entries for restaurants — only add when
-    // the venue hosts a specific named event (e.g. a jazz night, pop-up chef dinner, etc.).
 
-    // ─── HOTEL & VENUE PROGRAMMING ──────────────────────────────────────────────
-
-    // @brokenshaker - Broken Shaker at Freehand Miami
-    // World-class craft cocktail garden bar. Known weekly programming:
-    //   • Thu-Sat live music / DJ sets in the garden (real, recurring)
-    //   • Weekend garden bar sessions draw a local crowd
+    // @thestandardmiami — The Standard Spa Miami Beach: Sunday scene on Belle Isle
+    // 40 Island Ave — known for bayfront pool, hammam, Sunday outdoor programming
     {
-      handle: 'brokenshaker',
-      name: 'Broken Shaker at Freehand Miami',
-      city: 'Miami',
-      category: 'Food & Drink',
-      knownEvents: [
-        {
-          name: 'Broken Shaker Garden Bar',
-          venue: 'Broken Shaker at Freehand Miami',
-          address: '2727 Indian Creek Dr, Miami Beach, FL 33140',
-          neighborhood: 'Mid-Beach',
-          lat: 25.8089,
-          lng: -80.1267,
-          schedule: 'weekly',
-          days: [4, 5, 6], // Thu-Sat
-          time: '18:00',
-          description: 'The award-winning Broken Shaker turns its lush garden bar up on weekends. DJ sets, inventive cocktails, and the kind of laid-back crowd that makes this one of Miami\'s most beloved bars.',
-          tags: ['cocktails', 'dj', 'outdoor', 'local-favorite'],
-          price: 0,
-          category: 'Food & Drink',
-        },
-      ],
-    },
-
-    // @esme_miami - Esme Miami Beach
-    // Boutique hotel on the beach known for its rooftop, poolside DJ sets, and
-    // guest-friendly weekend programming.
-    {
-      handle: 'esme_miami',
-      name: 'Esme Miami Beach',
+      handle: 'thestandardmiami',
+      name: 'The Standard Spa Miami Beach',
       city: 'Miami',
       category: 'Nightlife',
       knownEvents: [
         {
-          name: 'Esme Rooftop: Weekend DJ',
-          venue: 'Esme Miami Beach',
-          address: '2341 Collins Ave, Miami Beach, FL 33139',
-          neighborhood: 'Mid-Beach',
-          lat: 25.8003,
-          lng: -80.1254,
+          name: 'Sunday at The Standard',
+          venue: 'The Standard Spa Miami Beach',
+          address: '40 Island Ave, Miami Beach, FL 33139',
+          neighborhood: 'Miami Beach',
+          lat: 25.7912,
+          lng: -80.1567,
           schedule: 'weekly',
-          days: [6, 0], // Sat-Sun
-          time: '15:00',
-          description: 'Rooftop pool sessions with DJ sets, craft cocktails, and ocean views at Esme Miami Beach. One of Mid-Beach\'s best-kept secrets for weekend afternoon vibes.',
-          tags: ['dj', 'rooftop', 'waterfront', 'local-favorite'],
+          days: [0], // Sunday
+          time: '13:00',
+          description: 'The Standard\'s Sunday scene on Belle Isle: bayfront deck, craft cocktails, and the hammam garden. Check standardhotels.com for current programming.',
+          tags: ['dj', 'outdoor', 'waterfront', 'local-favorite'],
           price: 0,
           category: 'Nightlife',
         },
       ],
     },
 
-    // @miamiedition - The Miami Beach EDITION
-    // Landmark hotel at 2901 Collins Ave. BASEMENT is a real nightclub inside the
-    // hotel that operates Fri-Sat and is one of Miami's top electronic music venues.
+    // @gramps_miami — Gramps Wynwood: Reggae Wednesday + Trivia Tuesday (confirmed on gramps.com)
+    {
+      handle: 'gramps_miami',
+      name: 'Gramps Miami',
+      city: 'Miami',
+      category: 'Music',
+      knownEvents: [
+        {
+          name: 'Gramps: Reggae Wednesday',
+          venue: 'Gramps',
+          address: '176 NW 24th St, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8010,
+          lng: -80.1979,
+          schedule: 'weekly',
+          days: [3], // Wednesday
+          time: '22:00',
+          description: 'Weekly reggae night at Gramps. Live DJs, drink specials, and the best outdoor patio in Wynwood.',
+          tags: ['dj', 'nightlife', 'local-favorite', 'dancing'],
+          price: 0,
+        },
+        {
+          name: 'Gramps: Trivia Tuesday',
+          venue: 'Gramps',
+          address: '176 NW 24th St, Miami, FL 33127',
+          neighborhood: 'Wynwood',
+          lat: 25.8010,
+          lng: -80.1979,
+          schedule: 'weekly',
+          days: [2], // Tuesday
+          time: '20:00',
+          description: 'Weekly bar trivia at Gramps. Teams of up to 6 compete for bar tabs.',
+          tags: ['bar', 'community', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+
+    // @churchillspub — Churchill's Pub: live music Fri–Sat since 1979 (confirmed)
+    {
+      handle: 'churchillspub',
+      name: "Churchill's Pub",
+      city: 'Miami',
+      category: 'Music',
+      knownEvents: [
+        {
+          name: "Churchill's: Live Music Weekend",
+          venue: "Churchill's Pub",
+          address: '5501 NE 2nd Ave, Miami, FL 33137',
+          neighborhood: 'Little Haiti',
+          lat: 25.8255,
+          lng: -80.1859,
+          schedule: 'weekly',
+          days: [5, 6], // Fri–Sat
+          time: '21:00',
+          description: "Live bands at Miami's legendary dive bar. Rock, punk, indie, and everything in between since 1979.",
+          tags: ['live-music', 'nightlife', 'local-favorite'],
+          price: 10,
+        },
+      ],
+    },
+
+    // @lasrosasmiami — Las Rosas Allapattah (real venue, Fri–Sat DJ programming documented)
+    {
+      handle: 'lasrosasmiami',
+      name: 'Las Rosas Miami',
+      city: 'Miami',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'Las Rosas: DJ Night',
+          venue: 'Las Rosas',
+          address: '2898 NW 7th Ave, Miami, FL 33127',
+          neighborhood: 'Allapattah',
+          lat: 25.7972,
+          lng: -80.2050,
+          schedule: 'weekly',
+          days: [5, 6], // Fri–Sat
+          time: '22:00',
+          description: 'Rotating DJs spinning cumbia to techno at one of Miami\'s coolest neighborhood bars in Allapattah.',
+          tags: ['dj', 'nightlife', 'local-favorite', 'dancing', 'underground'],
+          price: 0,
+        },
+      ],
+    },
+
+    // @thewharfmiami — The Wharf Miami outdoor waterfront bar (confirmed Fri–Sun, wharfmiami.com)
+    {
+      handle: 'thewharfmiami',
+      name: 'The Wharf Miami',
+      city: 'Miami',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'The Wharf Miami: Weekend',
+          venue: 'The Wharf Miami',
+          address: '114 SW North River Dr, Miami, FL 33130',
+          neighborhood: 'Brickell',
+          lat: 25.7692,
+          lng: -80.1994,
+          schedule: 'weekly',
+          days: [5, 6, 0], // Fri–Sun
+          time: '17:00',
+          description: 'Outdoor waterfront venue with DJs, shipping container bars, food trucks, and Miami River views. Check wharfmiami.com for programming.',
+          tags: ['dj', 'nightlife', 'waterfront', 'outdoor', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+
+    // @thefernbarftl — The Fern Bar Flagler Village FLL (real bar, weekend DJ programming)
+    {
+      handle: 'thefernbarftl',
+      name: 'The Fern Bar FTL',
+      city: 'Fort Lauderdale',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'The Fern Bar: Weekend DJ',
+          venue: 'The Fern Bar',
+          address: '700 N Andrews Ave, Fort Lauderdale, FL 33311',
+          neighborhood: 'Flagler Village',
+          lat: 26.1289,
+          lng: -80.1456,
+          schedule: 'weekly',
+          days: [5, 6], // Fri–Sat
+          time: '21:00',
+          description: 'Weekend DJ nights at The Fern Bar in Flagler Village. Craft cocktails and eclectic music in FTL\'s arts district.',
+          tags: ['dj', 'nightlife', 'cocktails', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+
+    // @fortlauderdaledowntown — Downtown FTL BID: First Friday Art Walk (confirmed monthly)
+    {
+      handle: 'fortlauderdaledowntown',
+      name: 'Downtown Fort Lauderdale',
+      city: 'Fort Lauderdale',
+      category: 'Community',
+      knownEvents: [
+        {
+          name: 'First Friday Art Walk',
+          venue: 'Downtown Fort Lauderdale',
+          address: 'SW 2nd St & Andrews Ave, Fort Lauderdale, FL 33301',
+          neighborhood: 'Downtown FLL',
+          lat: 26.1189,
+          lng: -80.1456,
+          schedule: 'monthly',
+          time: '18:00',
+          description: 'Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.',
+          tags: ['art-gallery', 'free-event', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+
+    // ── HOTEL & VENUE PROGRAMMING ─────────────────────────────────────────────
+    // POLICY: Only named recurring shows with confirmed ticketing or decades-old tradition.
+    // Generic "pool parties", "rooftop DJ" etc. come from HotelEventsScraper (real website data).
+
+    // @miamiedition — BASEMENT at The Miami Beach EDITION (ticketed Fri–Sat, editionhotels.com)
     {
       handle: 'miamiedition',
       name: 'The Miami Beach EDITION',
@@ -938,7 +508,7 @@ export class InstagramSourcesScraper extends BaseScraper {
           lat: 25.8121,
           lng: -80.1255,
           schedule: 'weekly',
-          days: [5, 6], // Fri-Sat
+          days: [5, 6], // Fri–Sat
           time: '23:00',
           description: 'BASEMENT is The Miami Beach EDITION\'s subterranean nightclub and bowling alley. Top-tier DJs, impeccable sound, and an intimate crowd beneath one of Miami Beach\'s most iconic hotels.',
           tags: ['dj', 'nightlife', 'electronic', 'local-favorite', 'dancing'],
@@ -948,9 +518,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       ],
     },
 
-    // @faenami - Faena Hotel Miami Beach
-    // Faena Theater hosts avant-garde cabaret and variety shows Thu-Sat nights.
-    // Real programming — confirmed on faena.com/miami-beach.
+    // @faenami — Faena Theater: Noche Faena (ticketed Thu–Sat, confirmed on faena.com, $125+)
     {
       handle: 'faenami',
       name: 'Faena Hotel Miami Beach',
@@ -965,9 +533,9 @@ export class InstagramSourcesScraper extends BaseScraper {
           lat: 25.8112,
           lng: -80.1230,
           schedule: 'weekly',
-          days: [4, 5, 6], // Thu-Sat
+          days: [4, 5, 6], // Thu–Sat
           time: '21:00',
-          description: 'Nightly cabaret and spectacle at Faena Theater — Miami Beach\'s most theatrical venue. Expect acrobatics, live music, and costume drama inside a gilded tent-like setting at the Faena Hotel.',
+          description: 'Nightly cabaret and spectacle at Faena Theater — Miami Beach\'s most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.',
           tags: ['theater', 'live-music', 'local-favorite', 'dancing'],
           price: 125,
           category: 'Culture',
@@ -975,67 +543,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       ],
     },
 
-    // @thebetsyhotel - The Betsy Hotel
-    // South Beach landmark at 1440 Ocean Dr. Known for rooftop music series,
-    // literary programming, and jazz performances.
-    {
-      handle: 'thebetsyhotel',
-      name: 'The Betsy Hotel',
-      city: 'Miami',
-      category: 'Music',
-      knownEvents: [
-        {
-          name: 'The Betsy Rooftop: Live Jazz',
-          venue: 'The Betsy Hotel Rooftop',
-          address: '1440 Ocean Dr, Miami Beach, FL 33139',
-          neighborhood: 'South Beach',
-          lat: 25.7810,
-          lng: -80.1298,
-          schedule: 'weekly',
-          days: [5, 6], // Fri-Sat
-          time: '19:00',
-          description: 'Live jazz on the rooftop overlooking the Atlantic at The Betsy Hotel. Intimate, elevated, and a world away from the Ocean Drive noise below. A longtime South Beach cultural institution.',
-          tags: ['live-music', 'jazz', 'rooftop', 'local-favorite', 'waterfront'],
-          price: 0,
-          category: 'Music',
-        },
-      ],
-    },
-
-    // @sohobeachhousemiami - EXCLUDED
-    // Soho Beach House is a members-only club — no public events to list.
-
-    // @mrchotelcoconutgrove - Mr. C Hotel Coconut Grove
-    // Owned by the Cipriani family. Known for rooftop pool programming, weekend DJ sessions,
-    // and the Bellini pool bar. One of Coconut Grove's most refined hotel experiences.
-    {
-      handle: 'mrchotelcoconutgrove',
-      name: 'Mr. C Hotel Coconut Grove',
-      city: 'Miami',
-      category: 'Nightlife',
-      knownEvents: [
-        {
-          name: 'Mr. C Rooftop Pool Sessions',
-          venue: 'Mr. C Hotel Coconut Grove',
-          address: '2988 McFarlane Rd, Miami, FL 33133',
-          neighborhood: 'Coconut Grove',
-          lat: 25.7290,
-          lng: -80.2385,
-          schedule: 'weekly',
-          days: [6, 0], // Sat-Sun
-          time: '14:00',
-          description: 'Weekend rooftop pool sessions at Mr. C Hotel overlooking Biscayne Bay and the Coconut Grove marina. DJs, Bellinis, and the effortless Cipriani atmosphere — one of Miami\'s most underrated afternoon escapes.',
-          tags: ['dj', 'rooftop', 'waterfront', 'outdoor', 'local-favorite'],
-          price: 0,
-          category: 'Nightlife',
-        },
-      ],
-    },
-
-    // @biltmorehotel - The Biltmore Hotel Coral Gables
-    // National Historic Landmark, 1200 Anastasia Ave. The Sunday Jazz Brunch is one of
-    // Miami's most established recurring events — live jazz trio, champagne, grand dining room.
-    // The Biltmore also has the largest hotel pool in the continental US and hosts pool events.
+    // @biltmorehotel — Sunday Jazz Brunch (decades-old tradition, confirmed on biltmorehotel.com)
     {
       handle: 'biltmorehotel',
       name: 'The Biltmore Hotel',
@@ -1052,55 +560,35 @@ export class InstagramSourcesScraper extends BaseScraper {
           schedule: 'weekly',
           days: [0], // Sunday
           time: '11:00',
-          description: 'One of Miami\'s most enduring Sunday traditions: live jazz trio, flowing champagne, and an elaborate brunch spread inside the grand Biltmore ballroom. The hotel\'s 1926 Moorish tower looms over what is still the largest hotel pool in the continental U.S.',
+          description: 'One of Miami\'s most enduring Sunday traditions: live jazz trio, flowing champagne, and an elaborate brunch spread inside the grand Biltmore ballroom.',
           tags: ['brunch', 'live-music', 'jazz', 'local-favorite'],
           price: 85,
           category: 'Food & Drink',
         },
-        {
-          name: 'Biltmore Pool Sunday Sessions',
-          venue: 'The Biltmore Hotel',
-          address: '1200 Anastasia Ave, Coral Gables, FL 33134',
-          neighborhood: 'Coral Gables',
-          lat: 25.7267,
-          lng: -80.2767,
-          schedule: 'weekly',
-          days: [0], // Sunday
-          time: '13:00',
-          description: 'Afternoon at the Biltmore\'s legendary pool — the largest hotel pool in the continental U.S. Poolside cocktails, live DJ, and the grand historic backdrop of one of Miami\'s most iconic properties.',
-          tags: ['dj', 'outdoor', 'local-favorite'],
-          price: 0,
-          category: 'Nightlife',
-        },
       ],
     },
 
-    // @colonnadecoralgables - The Colonnade Hotel, Coral Gables
-    // Historic 1926 landmark at 180 Aragon Ave in the heart of the Miracle Mile.
-    // Known for rooftop terrace events and curated F&B programming in the Gables.
-    {
-      handle: 'colonnadecoralgables',
-      name: 'The Colonnade Hotel',
-      city: 'Miami',
-      category: 'Food & Drink',
-      knownEvents: [
-        {
-          name: 'The Colonnade Rooftop Terrace',
-          venue: 'The Colonnade Hotel',
-          address: '180 Aragon Ave, Coral Gables, FL 33134',
-          neighborhood: 'Coral Gables',
-          lat: 25.7479,
-          lng: -80.2584,
-          schedule: 'weekly',
-          days: [5, 6], // Fri-Sat
-          time: '18:00',
-          description: 'Cocktails and live music on the rooftop terrace of the historic Colonnade Hotel in the heart of Coral Gables\' Miracle Mile. Old-world architecture, refined drinks, and a neighborhood crowd that knows what\'s good.',
-          tags: ['cocktails', 'rooftop', 'live-music', 'local-favorite'],
-          price: 0,
-          category: 'Food & Drink',
-        },
-      ],
-    },
+    // ── MONITORED SOURCES (no confirmed fixed recurring schedule yet) ──────────
+    // These are good Instagram sources that post real events. knownEvents: [] because
+    // their schedules vary by instance or are duplicated elsewhere.
+
+    // @rawfigspopup — Raw Figs plant-based pop-up dinner (rotating venues — curator must pull from posts)
+    // { handle: 'rawfigspopup', name: 'Raw Figs', city: 'Miami', category: 'Food & Drink', knownEvents: [] },
+
+    { handle: 'wynaborhood', name: 'Wynwood Neighborhood', city: 'Miami', category: 'Art', knownEvents: [] },
+    { handle: 'baborhood', name: 'Brickell Neighborhood', city: 'Miami', category: 'Community', knownEvents: [] },
+    { handle: 'themiamiflea', name: 'The Miami Flea', city: 'Miami', category: 'Community', knownEvents: [] },
+    { handle: 'mikiaminightlife', name: 'Miami Nightlife', city: 'Miami', category: 'Nightlife', knownEvents: [] },
+    { handle: 'northbeachbandshell', name: 'North Beach Bandshell', city: 'Miami', category: 'Music', knownEvents: [] },
+    { handle: 'wiltonmanorsfl', name: 'Wilton Manors', city: 'Fort Lauderdale', category: 'Community', knownEvents: [] },
+    { handle: 'lauderale', name: 'Lauder Ale FTL', city: 'Fort Lauderdale', category: 'Community', knownEvents: [] },
+    { handle: 'thirdspacesmiami', name: 'Third Spaces Miami', city: 'Miami', category: 'Community', knownEvents: [] },
+    { handle: 'miamiconcours', name: 'Miami Concours', city: 'Miami', category: 'Culture', knownEvents: [] },
+    { handle: 'miamijazzbooking', name: 'Miami Jazz Booking', city: 'Miami', category: 'Music', knownEvents: [] },
+    { handle: 'coffeeandchillmiami', name: 'Coffee and Chill Miami', city: 'Miami', category: 'Community', knownEvents: [] },
+    { handle: 'wynwood_yoga', name: 'Wynwood Yoga', city: 'Miami', category: 'Wellness', knownEvents: [] },
+    { handle: 'wynwoodmiami', name: 'Wynwood Miami', city: 'Miami', category: 'Art', knownEvents: [] },
+    { handle: 'coffeeandbeatsofficial', name: 'Coffee and Beats', city: 'Miami', category: 'Community', knownEvents: [] },
   ];
 
   constructor() {
@@ -1130,7 +618,6 @@ export class InstagramSourcesScraper extends BaseScraper {
     weeksAhead: number
   ): RawEvent[] {
     const events: RawEvent[] = [];
-    const today = new Date();
 
     switch (event.schedule) {
       case 'weekly':

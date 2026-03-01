@@ -48,15 +48,7 @@ export class FortLauderdaleScraper extends BaseScraper {
           tags: ['art-gallery', 'free-event', 'local-favorite'],
           price: 0,
         },
-        {
-          name: 'Sunday Jazz Brunch on Las Olas',
-          days: [0], // Sunday
-          time: '11:00',
-          category: 'Music',
-          description: 'Live jazz performances along Las Olas Boulevard. Multiple restaurants offer brunch specials.',
-          tags: ['jazz', 'brunch', 'live-music'],
-          price: 0,
-        },
+        // "Sunday Jazz Brunch on Las Olas" removed — generic suggestion, no named organizer
       ],
     },
     // Flagler Village
@@ -98,15 +90,7 @@ export class FortLauderdaleScraper extends BaseScraper {
           tags: ['museum', 'art-gallery', 'free-event'],
           price: 0,
         },
-        {
-          name: 'Art After Dark at NSU',
-          days: [5], // Friday
-          time: '18:00',
-          category: 'Art',
-          description: 'Evening museum hours with DJ sets, cocktails, and gallery tours. Experience contemporary art after hours.',
-          tags: ['museum', 'art-gallery', 'dj', 'cocktails'],
-          price: 15,
-        },
+        // "Art After Dark at NSU" removed — NSU has this event but NOT every Friday (schedule-specific)
       ],
     },
     // Broward Center
@@ -118,75 +102,12 @@ export class FortLauderdaleScraper extends BaseScraper {
       lng: -80.1489,
       url: 'https://browardcenter.org/',
       events: [
-        {
-          name: 'Live at the Broward Center',
-          days: [4, 5, 6], // Thu-Sat
-          time: '19:30',
-          category: 'Culture',
-          description: 'World-class performances including Broadway shows, concerts, and dance at South Florida\'s premier performing arts venue.',
-          tags: ['theater', 'live-music'],
-          price: 45,
-        },
+        // "Live at the Broward Center" removed — specific shows from browardcenter.org (see BrowardCenterScraper)
       ],
     },
-    // Riverwalk Fort Lauderdale
-    {
-      name: 'Riverwalk Fort Lauderdale',
-      address: 'Riverwalk, Fort Lauderdale, FL 33301',
-      neighborhood: 'Downtown FLL',
-      lat: 26.1189,
-      lng: -80.1467,
-      url: 'https://goriverwalk.com/',
-      events: [
-        {
-          name: 'Riverwalk Friday Night',
-          days: [5], // Friday
-          time: '18:00',
-          category: 'Community',
-          description: 'Friday evening along the Riverwalk with food vendors, live music, and waterfront views.',
-          tags: ['waterfront', 'live-music', 'free-event'],
-          price: 0,
-        },
-        {
-          name: 'Sunday on the Riverwalk',
-          days: [0], // Sunday
-          time: '10:00',
-          category: 'Community',
-          description: 'Sunday morning activities along the Riverwalk including yoga, markets, and family activities.',
-          tags: ['waterfront', 'family-friendly', 'free-event'],
-          price: 0,
-        },
-      ],
-    },
-    // Fort Lauderdale Beach
-    {
-      name: 'Fort Lauderdale Beach Park',
-      address: 'A1A, Fort Lauderdale Beach, FL 33304',
-      neighborhood: 'Fort Lauderdale Beach',
-      lat: 26.1224,
-      lng: -80.1028,
-      url: 'https://www.fortlauderdale.gov/departments/parks-recreation/beach',
-      events: [
-        {
-          name: 'Beach Bootcamp with FLL Fit Club',
-          days: [6], // Saturday
-          time: '08:00',
-          category: 'Fitness',
-          description: 'High-energy beach workout led by certified trainers. HIIT, strength, and cardio on the sand. All fitness levels.',
-          tags: ['beach', 'fitness-class', 'free-event', 'community'],
-          price: 0,
-        },
-        {
-          name: 'Sunrise Flow Yoga',
-          days: [0], // Sunday
-          time: '07:00',
-          category: 'Wellness',
-          description: 'Guided sunrise yoga session on Fort Lauderdale Beach led by local instructors. Bring your own mat or rent one.',
-          tags: ['yoga', 'beach', 'sunrise', 'wellness'],
-          price: 10,
-        },
-      ],
-    },
+    // Riverwalk Fort Lauderdale — goriverwalk.com runs specific events (schedule-specific, not generic)
+    // "Riverwalk Friday Night" and "Sunday on the Riverwalk" removed — no named organizer
+    // Fort Lauderdale Beach Park — generic fitness events removed (FLL Fit Club unknown, yoga unconfirmed)
     // Historic Stranahan House
     {
       name: 'Stranahan House Museum',
@@ -265,55 +186,8 @@ export class FortLauderdaleScraper extends BaseScraper {
         },
       ],
     },
-    // Holiday Park — largest city park; hosts concerts & festivals
-    {
-      name: 'Holiday Park',
-      address: '1601 NE 6th Ave, Fort Lauderdale, FL 33304',
-      neighborhood: 'Victoria Park',
-      lat: 26.1418,
-      lng: -80.1248,
-      url: 'https://www.fortlauderdale.gov/departments/parks-recreation/parks-facilities/holiday-park',
-      events: [
-        {
-          name: 'Sunday Tennis Round Robin at Holiday Park',
-          days: [0], // Sunday
-          time: '09:00',
-          category: 'Sports',
-          description: 'Weekly open tennis round robin at one of South Florida\'s premier tennis facilities. All skill levels welcome.',
-          tags: ['sports', 'outdoor', 'park', 'tennis'],
-          price: 5,
-        },
-        {
-          name: 'Friday Evening Concert Series at Holiday Park',
-          days: [5], // Friday
-          time: '18:00',
-          category: 'Music',
-          description: 'Seasonal outdoor concert series at Holiday Park amphitheater featuring local and regional acts across genres.',
-          tags: ['live-music', 'outdoor', 'park', 'free-event'],
-          price: 0,
-        },
-      ],
-    },
-    // Huizenga Plaza / Bubier Park — waterfront gathering spot on Las Olas
-    {
-      name: 'Huizenga Plaza',
-      address: '251 N New River Dr E, Fort Lauderdale, FL 33301',
-      neighborhood: 'Downtown Fort Lauderdale',
-      lat: 26.1189,
-      lng: -80.1430,
-      url: 'https://www.fortlauderdale.gov/departments/parks-recreation/parks-facilities/huizenga-plaza',
-      events: [
-        {
-          name: 'Riverside Market at Huizenga Plaza',
-          days: [0], // Sunday
-          time: '10:00',
-          category: 'Food & Drink',
-          description: 'Sunday riverside market with local vendors, food trucks, and live acoustic music along the New River waterfront.',
-          tags: ['market', 'outdoor', 'waterfront', 'free-event', 'food'],
-          price: 0,
-        },
-      ],
-    },
+    // Holiday Park — tennis round robin and concert series removed (not confirmed recurring public events)
+    // Huizenga Plaza — Riverside Market removed (no confirmed organizer for this market)
     // Sistrunk Marketplace & Brewery
     {
       name: 'Sistrunk Marketplace & Brewery',

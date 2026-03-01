@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-01T07:52:04.052Z",
+  "scrapedAt": "2026-03-01T08:44:42.874Z",
   "stats": {
-    "total": 1547,
-    "deduplicated": 1142,
+    "total": 1241,
+    "deduplicated": 867,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -17,6 +17,7 @@
       "Resident Advisor": 0,
       "Greater Miami & The Beaches": 0,
       "Candlelight Concerts (Fever)": 0,
+      "Hotel Events": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 430,
       "Pop-Ups": 65,
@@ -28,15 +29,15 @@
       "Free Yoga Miami": 76,
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
-      "Fort Lauderdale": 268,
-      "Instagram Sources": 494
+      "Fort Lauderdale": 196,
+      "Instagram Sources": 260
     }
   },
   "delta": {
-    "added": 24,
-    "removed": 0,
-    "modified": 0,
-    "unchanged": 1115
+    "added": 27,
+    "removed": 214,
+    "modified": 72,
+    "unchanged": 765
   },
   "sources": [
     {
@@ -87,9 +88,7 @@
     {
       "name": "Dice.fm Real",
       "count": 0,
-      "errors": [
-        "this.page.setUserAgent is not a function"
-      ]
+      "errors": []
     },
     {
       "name": "Resident Advisor",
@@ -99,16 +98,17 @@
     {
       "name": "Greater Miami & The Beaches",
       "count": 0,
-      "errors": [
-        "this.page.setUserAgent is not a function"
-      ]
+      "errors": []
     },
     {
       "name": "Candlelight Concerts (Fever)",
       "count": 0,
-      "errors": [
-        "this.page.setUserAgent is not a function"
-      ]
+      "errors": []
+    },
+    {
+      "name": "Hotel Events",
+      "count": 0,
+      "errors": []
     },
     {
       "name": "Real Venue Events",
@@ -173,12 +173,12 @@
     },
     {
       "name": "Fort Lauderdale",
-      "count": 268,
+      "count": 196,
       "errors": []
     },
     {
       "name": "Instagram Sources",
-      "count": 494,
+      "count": 260,
       "errors": []
     }
   ]
