@@ -2,7 +2,7 @@
  * Merge FortLauderdaleScraper template events into events.fll.json
  * Runs the scraper, converts raw events to IRLEvent format, deduplicates, and writes output.
  */
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { createHash } from 'crypto';
@@ -61,6 +61,19 @@ function generateShortWhy(event) {
 
 async function main() {
   const now = new Date();
+  // Show events that started today or later (so ongoing events remain visible)
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  // Load Instagram post-scraper cache if available
+  const igCachePath = join(dataDir, 'instagram-posts-cache.json');
+  let igPostEvents = [];
+  if (existsSync(igCachePath)) {
+    try {
+      const cache = JSON.parse(readFileSync(igCachePath, 'utf-8'));
+      igPostEvents = (cache.events ?? []).filter(e => e.city === 'Fort Lauderdale' && new Date(e.startAt) >= startOfToday);
+      if (igPostEvents.length) console.log(`Loaded ${igPostEvents.length} FLL events from IG post cache`);
+    } catch {}
+  }
 
   // Run scrapers
   const fllScraper = new FortLauderdaleScraper();
@@ -72,33 +85,32 @@ async function main() {
   ]);
 
   // Filter future events only
-  const futureRaw = [...fllRaw, ...igRaw].filter(e => {
+  const futureRaw = [...fllRaw, ...igRaw, ...igPostEvents].filter(e => {
     const d = new Date(e.startAt);
-    return d >= now && e.city === 'Fort Lauderdale';
+    return d >= startOfToday && e.city === 'Fort Lauderdale';
   });
 
-  console.log(`FortLauderdaleScraper: ${fllRaw.length} raw → ${fllRaw.filter(e => new Date(e.startAt) >= now).length} future`);
+  console.log(`FortLauderdaleScraper: ${fllRaw.length} raw → ${fllRaw.filter(e => new Date(e.startAt) >= startOfToday).length} future`);
   console.log(`Instagram FLL: ${igRaw.filter(e=>e.city==='Fort Lauderdale').length} raw → ${futureRaw.filter(e=>e.city==='Fort Lauderdale' && igRaw.includes(e)).length} future`);
 
   // Convert to IRL format
   const newEvents = futureRaw.map(rawToIRL);
 
-  // Load existing FLL events
+  // Load existing FLL events, purge past ones
   const fllPath = join(dataDir, 'events.fll.json');
   let existing = [];
   try {
-    existing = JSON.parse(readFileSync(fllPath, 'utf-8'));
+    const raw = JSON.parse(readFileSync(fllPath, 'utf-8'));
+    existing = raw.filter(e => new Date(e.startAt) >= startOfToday);
+    if (raw.length !== existing.length) console.log(`Purged ${raw.length - existing.length} past FLL events`);
   } catch {}
 
-  // Deduplicate: keep existing events, add new ones by ID
+  // Deduplicate by title+date+venue then add new
   const existingIds = new Set(existing.map(e => e.id));
-  const toAdd = newEvents.filter(e => !existingIds.has(e.id));
-
-  // Also deduplicate by title+date+venue (fuzzy match)
   const existingKeys = new Set(existing.map(e => `${e.title}|${e.startAt?.slice(0,10)}|${e.venueName||''}`));
-  const toAddDeduped = toAdd.filter(e => {
+  const toAddDeduped = newEvents.filter(e => {
     const key = `${e.title}|${e.startAt?.slice(0,10)}|${e.venueName||''}`;
-    return !existingKeys.has(key);
+    return !existingIds.has(e.id) && !existingKeys.has(key);
   });
 
   const merged = [...existing, ...toAddDeduped];
@@ -108,13 +120,18 @@ async function main() {
   writeFileSync(fllPath, JSON.stringify(merged, null, 2));
   console.log(`\n✅ events.fll.json: ${existing.length} existing + ${toAddDeduped.length} new = ${merged.length} total`);
 
-  // Also handle Miami Instagram events
-  const miamiIg = igRaw.filter(e => e.city === 'Miami' && new Date(e.startAt) >= now);
+  // Also handle Miami Instagram events (template + post cache)
+  const miamiIgCache = existsSync(igCachePath)
+    ? (JSON.parse(readFileSync(igCachePath, 'utf-8')).events ?? []).filter(e => e.city === 'Miami' && new Date(e.startAt) >= startOfToday)
+    : [];
+  const miamiIg = [...igRaw.filter(e => e.city === 'Miami' && new Date(e.startAt) >= startOfToday), ...miamiIgCache];
   if (miamiIg.length > 0) {
     const miamiPath = join(dataDir, 'events.miami.json');
     let miamiExisting = [];
     try {
-      miamiExisting = JSON.parse(readFileSync(miamiPath, 'utf-8'));
+      const miamiRaw = JSON.parse(readFileSync(miamiPath, 'utf-8'));
+      miamiExisting = miamiRaw.filter(e => new Date(e.startAt) >= startOfToday);
+      if (miamiRaw.length !== miamiExisting.length) console.log(`Purged ${miamiRaw.length - miamiExisting.length} past Miami events`);
     } catch {}
 
     const miamiExistingIds = new Set(miamiExisting.map(e => e.id));

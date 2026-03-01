@@ -10,7 +10,10 @@
     "scrape:test": "npx tsx src/index.ts --test",
     "validate": "npx tsx src/validate.ts",
     "verify-locations": "npx tsx src/verify-locations.ts",
-    "verify-locations:fix": "npx tsx src/verify-locations.ts --fix"
+    "verify-locations:fix": "npx tsx src/verify-locations.ts --fix",
+    "scrape:ig": "npx tsx scrape-instagram-posts.mjs",
+    "merge:fll": "npx tsx merge-fll.mjs",
+    "merge:miami": "npx tsx merge-miami-venues.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
