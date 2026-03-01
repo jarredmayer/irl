@@ -8,9 +8,8 @@ on:
   workflow_dispatch: # Allow manual trigger
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: write   # push event data to main
+  actions: write    # dispatch deploy.yml after successful scrape
 
 concurrency:
   group: "scrape-pipeline"
@@ -19,8 +18,6 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    outputs:
-      changed: ${{ steps.changes.outputs.changed }}
 
     steps:
       - uses: actions/checkout@v4
@@ -42,7 +39,13 @@ jobs:
 
       - name: Install scraper dependencies
         working-directory: scraper
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
         run: npm ci
+
+      - name: Install Puppeteer Chrome
+        working-directory: scraper
+        run: npx puppeteer browsers install chrome || echo "⚠ Chrome install failed — Puppeteer scrapers will be skipped"
 
       - name: Run Instagram post scraper
         if: ${{ secrets.INSTAGRAM_SESSION_ID != '' }}
@@ -58,66 +61,30 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: npm run scrape
 
-      - name: Check for changes
-        id: changes
-        run: |
-          if git diff --quiet src/data/events*.json src/data/venue-images.json 2>/dev/null; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Commit and push if changed
-        if: steps.changes.outputs.changed == 'true'
+      - name: Commit and push event data
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/events*.json src/data/scrape-meta.json src/data/instagram-posts-cache.json src/data/venue-images.json || true
+          git add src/data/events*.json src/data/scrape-meta.json src/data/instagram-posts-cache.json src/data/venue-images.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No data changes — skipping commit"
+            exit 0
+          fi
           git commit -m "Update events data $(date +'%Y-%m-%d')"
-          # Rebase on latest main before pushing to avoid conflicts with auto-merges
-          git pull --rebase origin main
-          git push
+          # Rebase on latest main — use -X theirs so fresh scrape data wins any conflicts
+          # with concurrent auto-merge commits (retry up to 3 times on push failure)
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && break
+            echo "Push failed (attempt $i) — retrying in 5s..."
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
 
-  build:
-    runs-on: ubuntu-latest
-    needs: scrape
-    # Always build — ensures frontend code changes (merged via auto-merge) are deployed
-    # even when event data didn't change in this scrape run.
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main  # Get latest after scrape push
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    concurrency:
-      group: "pages"
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Trigger deploy
+        run: |
+          curl -s -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches" \
+            -d '{"ref":"main"}'
+          echo "Deploy triggered on main"

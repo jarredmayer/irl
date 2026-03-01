@@ -93,8 +93,8 @@ function parseDescription(raw: string): ParsedDescription {
   // First part contains dates and times
   const datePart = parts[0];
 
-  // Extract all MM/DD/YYYY dates
-  const dateMatches = [...datePart.matchAll(/(\d{2}\/\d{2}\/\d{4})/g)];
+  // Extract all M/D/YYYY or MM/DD/YYYY dates (1 or 2 digit month/day)
+  const dateMatches = [...datePart.matchAll(/(\d{1,2}\/\d{1,2}\/\d{4})/g)];
   if (dateMatches.length >= 1) result.startDate = dateMatches[0][1];
   if (dateMatches.length >= 2) result.endDate = dateMatches[1][1];
 
