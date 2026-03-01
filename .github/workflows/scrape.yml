@@ -21,9 +21,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Lightweight pass for push/PR events — prevents phantom red X failures
+  gate:
+    if: github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Scraper only runs on schedule/dispatch. Skipping."
+
   scrape:
-    # Only run on schedule/manual dispatch — skip phantom push-triggered runs
-    # that GitHub creates when auto-merge pushes to main
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
