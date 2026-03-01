@@ -6,9 +6,6 @@ on:
     - cron: '0 11 * * *'
     - cron: '0 23 * * *'
   workflow_dispatch: # Allow manual trigger
-  # Accept all push/PR triggers so the gate job can pass cleanly
-  push:
-  pull_request:
 
 permissions:
   contents: write   # push event data to main
@@ -19,15 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Lightweight pass for push/PR events — prevents phantom red X failures
-  gate:
-    if: github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Scraper only runs on schedule/dispatch. Skipping."
-
   scrape:
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     steps:
@@ -87,9 +76,6 @@ jobs:
             exit 0
           fi
           git commit -m "Update events data $(date +'%Y-%m-%d')"
-          # Push with up to 3 retries. Use PUSH_OK flag so the loop always exits 0
-          # regardless of whether push succeeded or not (prevents bash -e from killing
-          # the job when all retries fail — the data will just be retried next run).
           PUSH_OK=false
           for i in 1 2 3; do
             echo "Push attempt $i/3..."
@@ -106,7 +92,6 @@ jobs:
             fi
             [ "$i" -lt 3 ] && sleep 5 || true
           done
-          # Always exit 0 — push failure is not fatal (data will be retried next run)
           $PUSH_OK && echo "✅ Data pushed" || echo "⚠️  Push failed after 3 attempts — will retry next scheduled run"
 
       - name: Trigger deploy
