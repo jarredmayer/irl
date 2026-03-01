@@ -1031,6 +1031,76 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
+
+    // @biltmorehotel - The Biltmore Hotel Coral Gables
+    // National Historic Landmark, 1200 Anastasia Ave. The Sunday Jazz Brunch is one of
+    // Miami's most established recurring events — live jazz trio, champagne, grand dining room.
+    // The Biltmore also has the largest hotel pool in the continental US and hosts pool events.
+    {
+      handle: 'biltmorehotel',
+      name: 'The Biltmore Hotel',
+      city: 'Miami',
+      category: 'Food & Drink',
+      knownEvents: [
+        {
+          name: 'Sunday Jazz Brunch at The Biltmore',
+          venue: 'The Biltmore Hotel',
+          address: '1200 Anastasia Ave, Coral Gables, FL 33134',
+          neighborhood: 'Coral Gables',
+          lat: 25.7267,
+          lng: -80.2767,
+          schedule: 'weekly',
+          days: [0], // Sunday
+          time: '11:00',
+          description: 'One of Miami\'s most enduring Sunday traditions: live jazz trio, flowing champagne, and an elaborate brunch spread inside the grand Biltmore ballroom. The hotel\'s 1926 Moorish tower looms over what is still the largest hotel pool in the continental U.S.',
+          tags: ['brunch', 'live-music', 'jazz', 'local-favorite'],
+          price: 85,
+          category: 'Food & Drink',
+        },
+        {
+          name: 'Biltmore Pool Sunday Sessions',
+          venue: 'The Biltmore Hotel',
+          address: '1200 Anastasia Ave, Coral Gables, FL 33134',
+          neighborhood: 'Coral Gables',
+          lat: 25.7267,
+          lng: -80.2767,
+          schedule: 'weekly',
+          days: [0], // Sunday
+          time: '13:00',
+          description: 'Afternoon at the Biltmore\'s legendary pool — the largest hotel pool in the continental U.S. Poolside cocktails, live DJ, and the grand historic backdrop of one of Miami\'s most iconic properties.',
+          tags: ['dj', 'outdoor', 'local-favorite'],
+          price: 0,
+          category: 'Nightlife',
+        },
+      ],
+    },
+
+    // @colonnadecoralgables - The Colonnade Hotel, Coral Gables
+    // Historic 1926 landmark at 180 Aragon Ave in the heart of the Miracle Mile.
+    // Known for rooftop terrace events and curated F&B programming in the Gables.
+    {
+      handle: 'colonnadecoralgables',
+      name: 'The Colonnade Hotel',
+      city: 'Miami',
+      category: 'Food & Drink',
+      knownEvents: [
+        {
+          name: 'The Colonnade Rooftop Terrace',
+          venue: 'The Colonnade Hotel',
+          address: '180 Aragon Ave, Coral Gables, FL 33134',
+          neighborhood: 'Coral Gables',
+          lat: 25.7479,
+          lng: -80.2584,
+          schedule: 'weekly',
+          days: [5, 6], // Fri-Sat
+          time: '18:00',
+          description: 'Cocktails and live music on the rooftop terrace of the historic Colonnade Hotel in the heart of Coral Gables\' Miracle Mile. Old-world architecture, refined drinks, and a neighborhood crowd that knows what\'s good.',
+          tags: ['cocktails', 'rooftop', 'live-music', 'local-favorite'],
+          price: 0,
+          category: 'Food & Drink',
+        },
+      ],
+    },
   ];
 
   constructor() {
