@@ -35,6 +35,7 @@
 import type { IRLEvent } from '../types.js';
 import { ValidationAgent } from './validation-agent.js';
 import { fillMissingCoordinates } from './venue-search-agent.js';
+import { verifyEventBatch } from './event-verifier-agent.js';
 import { hasAIEnabled as hasAIForVenueSearch } from '../ai.js';
 
 export interface OrchestratorOptions {
@@ -94,15 +95,15 @@ export class OrchestratorAgent {
     }
 
     if (options.fullPipeline) {
-      // Future enrichment agents:
-      //
       // 2. EventVerifierAgent: web-search to confirm events are real
-      //    Impact: high — removes synthetic/hallucinated events
-      //    Cost: medium-high (1 search per suspicious event)
-      //
-      // const { EventVerifierAgent } = await import('./event-verifier-agent.js');
-      // current = await new EventVerifierAgent().run(current);
-      // agentsRun.push('EventVerifierAgent');
+      //    Impact: high — removes cancelled events, surfaces unverified ones
+      //    Cost: medium-high (1 search per suspicious event, cached 7 days)
+      const verifyResult = await verifyEventBatch(current, {
+        max: options.maxEventsPerAgent ?? 20,
+      });
+      current = verifyResult.events;
+      agentsRun.push('EventVerifierAgent');
+      summary.eventVerifier = verifyResult.report;
       //
       // 3. CurationAgent: sets editorPick, scores novelty/relevance
       //    Impact: medium — improves app UX
