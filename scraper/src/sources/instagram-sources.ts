@@ -1004,6 +1004,33 @@ export class InstagramSourcesScraper extends BaseScraper {
 
     // @sohobeachhousemiami - EXCLUDED
     // Soho Beach House is a members-only club — no public events to list.
+
+    // @mrchotelcoconutgrove - Mr. C Hotel Coconut Grove
+    // Owned by the Cipriani family. Known for rooftop pool programming, weekend DJ sessions,
+    // and the Bellini pool bar. One of Coconut Grove's most refined hotel experiences.
+    {
+      handle: 'mrchotelcoconutgrove',
+      name: 'Mr. C Hotel Coconut Grove',
+      city: 'Miami',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'Mr. C Rooftop Pool Sessions',
+          venue: 'Mr. C Hotel Coconut Grove',
+          address: '2988 McFarlane Rd, Miami, FL 33133',
+          neighborhood: 'Coconut Grove',
+          lat: 25.7290,
+          lng: -80.2385,
+          schedule: 'weekly',
+          days: [6, 0], // Sat-Sun
+          time: '14:00',
+          description: 'Weekend rooftop pool sessions at Mr. C Hotel overlooking Biscayne Bay and the Coconut Grove marina. DJs, Bellinis, and the effortless Cipriani atmosphere — one of Miami\'s most underrated afternoon escapes.',
+          tags: ['dj', 'rooftop', 'waterfront', 'outdoor', 'local-favorite'],
+          price: 0,
+          category: 'Nightlife',
+        },
+      ],
+    },
   ];
 
   constructor() {
