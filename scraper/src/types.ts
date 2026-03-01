@@ -43,6 +43,8 @@ export interface IRLEvent {
   tags: string[];
   category: string;
   priceLabel?: 'Free' | '$' | '$$' | '$$$';
+  priceAmount?: number;
+  ticketUrl?: string;
   isOutdoor: boolean;
   shortWhy: string;
   editorialWhy: string;

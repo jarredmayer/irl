@@ -250,8 +250,8 @@ export class FortLauderdaleScraper extends BaseScraper {
       name: 'Esplanade Park',
       address: '400 SW 2nd St, Fort Lauderdale, FL 33312',
       neighborhood: 'Riverwalk',
-      lat: 26.1192,
-      lng: -80.1478,
+      lat: 26.1165,
+      lng: -80.1495,
       url: 'https://fortlauderdalegreenmarket.com/',
       events: [
         {
@@ -524,8 +524,8 @@ export class FortLauderdaleScraper extends BaseScraper {
       name: 'Yolo Restaurant',
       address: '333 E Las Olas Blvd, Fort Lauderdale, FL 33301',
       neighborhood: 'Las Olas',
-      lat: 26.1195,
-      lng: -80.1345,
+      lat: 26.1196,
+      lng: -80.1338,
       url: 'https://yolorestaurant.com/',
       events: [
         {
@@ -745,8 +745,8 @@ export class FortLauderdaleScraper extends BaseScraper {
       name: 'Brazilian Festival Fort Lauderdale',
       address: 'Esplanade Park, 400 SW 2nd St, Fort Lauderdale, FL 33312',
       neighborhood: 'Riverwalk',
-      lat: 26.1192,
-      lng: -80.1478,
+      lat: 26.1165,
+      lng: -80.1495,
       url: 'https://www.visitlauderdale.com/events/annual-events-festivals/',
       events: [
         {
@@ -845,7 +845,7 @@ export class FortLauderdaleScraper extends BaseScraper {
         const checkDate = addDays(today, i);
         const dayOfWeek = getDay(checkDate);
 
-        if (template.days.includes(dayOfWeek)) {
+        if ((template.days as number[]).includes(dayOfWeek)) {
           events.push(this.createEvent(venue, template, checkDate));
         }
       }

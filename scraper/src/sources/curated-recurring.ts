@@ -62,6 +62,24 @@ export class CuratedRecurringScraper extends BaseScraper {
       sourceUrl: 'https://standardhotels.com/miami',
     },
 
+    // === THE WILDER ===
+    {
+      name: 'Burlesque Brunch at The Wilder',
+      venue: 'The Wilder',
+      address: '2119 NW 2nd Ave, Miami, FL 33127',
+      neighborhood: 'Wynwood',
+      lat: 25.7965,
+      lng: -80.1996,
+      days: [0], // Sunday
+      time: '11:30',
+      category: 'Entertainment',
+      description: 'Live burlesque performances during Sunday brunch at The Wilder. Bottomless cocktails, brunch bites, and a show that blends cabaret energy with Miami flair. One of the city\'s most talked-about weekend experiences.',
+      tags: ['brunch', 'entertainment', 'burlesque', 'cocktails', 'local-favorite'],
+      price: 65,
+      isOutdoor: false,
+      sourceUrl: 'https://thewildermiami.com/',
+    },
+
     // === BROKEN SHAKER / FREEHAND ===
     {
       name: 'Broken Shaker Happy Hour',

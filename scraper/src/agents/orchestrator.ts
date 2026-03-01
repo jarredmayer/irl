@@ -1,44 +1,48 @@
 /**
- * Orchestrator Agent
+ * Orchestrator — Main Agent (the brain)
  *
- * The top-level agent that coordinates the full IRL data pipeline.
- * Unlike the legacy EventAggregator (which is a fixed batch pipeline),
- * the Orchestrator reasons about what needs to happen, decides which
- * sub-agents to invoke, and adapts based on intermediate results.
+ * The Orchestrator is the top-level decision maker for the IRL data pipeline.
+ * It decides what runs, in what order, and adapts based on results.
+ * All other agents are sub-agents it delegates to.
  *
- * Agent roster:
- * ┌─────────────────────────────────────────────────────────────┐
- * │  Orchestrator (this file)                                   │
- * │  └── decides what to run and in what order                  │
- * │                                                             │
- * │  ScraperAgent        – fetches raw events from sources      │
- * │  VenueSearchAgent    – resolves venue coords & details      │
- * │  LocationVerifier    – corrects misplaced coordinates ✅    │
- * │  EventVerifier       – validates real vs synthetic events   │
- * │  CurationAgent       – selects & ranks editorial picks      │
- * │  UXAgent             – generates descriptions for the app   │
- * │  BrandingAgent       – finds/assigns images & media         │
- * │  PMAgent             – tracks source health & suggests new  │
- * └─────────────────────────────────────────────────────────────┘
+ * Pipeline (current → future):
  *
- * Current status:
- * - LocationVerifier: IMPLEMENTED (see location-verifier.ts)
- * - All others: STUB — interfaces defined, implementation pending
+ *  ┌─────────────────────────────────────────────────────────────────┐
+ *  │  Orchestrator (this file) — THE BRAIN                           │
+ *  │                                                                 │
+ *  │  VALIDATION (implemented ✅)                                    │
+ *  │  └── ValidationAgent  – date, bounds, location, category       │
+ *  │       └── LocationVerifierAgent – Claude tool-use geocoding     │
+ *  │                                                                 │
+ *  │  ENRICHMENT (stubs — implement in order of ROI)                 │
+ *  │  └── VenueSearchAgent   – fills missing coords/addresses        │
+ *  │  └── EventVerifierAgent – confirms real vs synthetic            │
+ *  │  └── CurationAgent      – editor picks, ranking                 │
+ *  │  └── UXAgent            – shortWhy / editorialWhy copy          │
+ *  │  └── BrandingAgent      – images & media                        │
+ *  │                                                                 │
+ *  │  OBSERVABILITY (stub)                                           │
+ *  └── PMAgent              – source health, suggests new sources    │
+ *  └─────────────────────────────────────────────────────────────────┘
  *
- * Usage (future):
- *   const orchestrator = new OrchestratorAgent();
- *   const events = await orchestrator.run({ date: new Date() });
+ * Design principles:
+ * - Cheap checks first (rules), expensive checks last (LLM)
+ * - Each sub-agent is independently testable
+ * - The Orchestrator can skip agents based on cost/time budgets
+ * - ValidationAgent is mandatory; enrichment agents are optional
  */
 
 import type { IRLEvent } from '../types.js';
-import { agentVerifyLocations } from './location-verifier.js';
+import { ValidationAgent } from './validation-agent.js';
 
 export interface OrchestratorOptions {
-  /** Run all agents end-to-end */
+  /** Run the full pipeline (validation + enrichment) */
   fullPipeline?: boolean;
-  /** Only run location verification on existing events */
-  locationVerifyOnly?: boolean;
-  /** Max events to process per agent (cost control) */
+  /** Run only validation (fastest, lowest cost) */
+  validateOnly?: boolean;
+  /** Skip the LLM-based location verifier (saves API calls) */
+  skipLocationAgent?: boolean;
+  /** Max events to pass to each enrichment agent */
   maxEventsPerAgent?: number;
 }
 
@@ -50,128 +54,133 @@ export interface OrchestratorResult {
 
 export class OrchestratorAgent {
   /**
-   * Run the agentic pipeline.
-   * Currently supports locationVerifyOnly mode.
-   * fullPipeline will be enabled as each agent is implemented.
+   * Run the pipeline. The Orchestrator decides what to call and in what order.
+   *
+   * Modes:
+   *  validateOnly  → ValidationAgent only (date + bounds + location + category)
+   *  fullPipeline  → ValidationAgent + all implemented enrichment agents
+   *  default       → same as validateOnly until enrichment agents are implemented
    */
   async run(
-    existingEvents: IRLEvent[],
+    events: IRLEvent[],
     options: OrchestratorOptions = {}
   ): Promise<OrchestratorResult> {
     const agentsRun: string[] = [];
     const summary: Record<string, unknown> = {};
-    let events = existingEvents;
+    let current = events;
 
-    console.log('\n🎭 Orchestrator Agent starting...');
+    console.log(`\n🎭 Orchestrator: starting pipeline (${events.length} events in)...`);
 
-    if (options.locationVerifyOnly || options.fullPipeline) {
-      console.log('  → Delegating to LocationVerifierAgent...');
-      const result = await agentVerifyLocations(events, {
-        maxEvents: options.maxEventsPerAgent ?? 30,
-      });
-      events = result.events;
-      agentsRun.push('LocationVerifierAgent');
-      summary.locationVerification = result.report;
+    // ── VALIDATION (always runs) ──────────────────────────────────────
+    const validator = new ValidationAgent();
+    const validationResult = await validator.run(current, {
+      skipLocationAgent: options.skipLocationAgent ?? false,
+    });
+    current = validationResult.events;
+    agentsRun.push('ValidationAgent');
+    summary.validation = validationResult.report;
+
+    // ── ENRICHMENT (uncomment as each agent is implemented) ───────────
+    if (options.fullPipeline) {
+      // Priority order — implement these next:
+      //
+      // 1. VenueSearchAgent: fills lat/lng for events where coords are null
+      //    Impact: high — many events lose map pin without this
+      //    Cost: medium (web search + geocode per venue)
+      //
+      // const { VenueSearchAgent } = await import('./venue-search-agent.js');
+      // current = await new VenueSearchAgent().run(current, { max: options.maxEventsPerAgent });
+      // agentsRun.push('VenueSearchAgent');
+      //
+      // 2. EventVerifierAgent: web-search to confirm events are real
+      //    Impact: high — removes synthetic/hallucinated events
+      //    Cost: medium-high (1 search per suspicious event)
+      //
+      // const { EventVerifierAgent } = await import('./event-verifier-agent.js');
+      // current = await new EventVerifierAgent().run(current);
+      // agentsRun.push('EventVerifierAgent');
+      //
+      // 3. CurationAgent: sets editorPick, scores novelty/relevance
+      //    Impact: medium — improves app UX
+      //    Cost: low (batch classification)
+      //
+      // const { CurationAgent } = await import('./curation-agent.js');
+      // current = await new CurationAgent().run(current);
+      // agentsRun.push('CurationAgent');
+      //
+      // 4. UXAgent: generates shortWhy / editorialWhy per event
+      //    Impact: medium — better app copy
+      //    Cost: medium (1 call per ~10 events batched)
+      //
+      // const { UXAgent } = await import('./ux-agent.js');
+      // current = await new UXAgent().run(current);
+      // agentsRun.push('UXAgent');
     }
 
-    // Future agents (stubs — uncomment as implemented):
-    // if (options.fullPipeline) {
-    //   events = await new ScraperAgent().run(events);
-    //   agentsRun.push('ScraperAgent');
-    //
-    //   events = await new VenueSearchAgent().run(events);
-    //   agentsRun.push('VenueSearchAgent');
-    //
-    //   events = await new EventVerifierAgent().run(events);
-    //   agentsRun.push('EventVerifierAgent');
-    //
-    //   events = await new CurationAgent().run(events);
-    //   agentsRun.push('CurationAgent');
-    //
-    //   events = await new UXAgent().run(events);
-    //   agentsRun.push('UXAgent');
-    //
-    //   events = await new BrandingAgent().run(events);
-    //   agentsRun.push('BrandingAgent');
-    // }
+    console.log(`\n🎭 Orchestrator done. Ran: [${agentsRun.join(', ')}]`);
+    console.log(`   ${events.length} in → ${current.length} out\n`);
 
-    console.log(`  ✅ Orchestrator done. Ran: ${agentsRun.join(', ') || 'none'}`);
-    return { events, agentsRun, summary };
+    return { events: current, agentsRun, summary };
   }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// AGENT STUBS
-// Each stub defines the interface and purpose. Implement by extending BaseAgent.
+// SUB-AGENT INTERFACE CONTRACTS (stubs)
+// Implement each by extending BaseAgent and adding to this file's exports.
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
  * VenueSearchAgent
- * Given an event title + partial address, finds the correct venue
- * in the Miami/FLL area using web search + Places-style data.
- * Fills in missing venueName, address, lat, lng, venueId.
+ * Given an event with missing/partial location data, finds the real venue.
+ * Tools: search_web, geocode_address, lookup_venue_db
+ * Next to implement.
  */
-export interface VenueSearchAgentStub {
-  resolveVenue(eventTitle: string, hint: string, city: string): Promise<{
-    venueName: string;
-    address: string;
-    lat: number;
-    lng: number;
-  } | null>;
+export interface VenueSearchAgentContract {
+  run(events: IRLEvent[], opts?: { max?: number }): Promise<IRLEvent[]>;
 }
 
 /**
  * EventVerifierAgent
- * Classifies events as real vs synthetic.
- * Uses web search to confirm an event actually exists before including it.
- * Replaces the current static VERIFIED_SOURCES / SYNTHETIC_SOURCES lists
- * with dynamic per-event verification.
+ * Confirms events are real (not synthetic) via web search.
+ * Tools: search_web, fetch_page
+ * Replaces the static VERIFIED_SOURCES list with per-event verification.
  */
-export interface EventVerifierAgentStub {
-  isRealEvent(title: string, date: string, venue: string, sourceUrl?: string): Promise<{
-    isReal: boolean;
-    confidence: 'high' | 'medium' | 'low';
-    evidence: string;
-  }>;
+export interface EventVerifierAgentContract {
+  run(events: IRLEvent[]): Promise<IRLEvent[]>;
 }
 
 /**
  * CurationAgent
- * Applies editorial judgment to select the best events.
- * Scores for: novelty, local relevance, cultural significance, timing.
- * Sets editorPick=true on top events.
+ * Scores and ranks events. Sets editorPick on the best ones.
+ * Tools: get_event_history, get_neighborhood_profile
  */
-export interface CurationAgentStub {
-  curate(events: IRLEvent[]): Promise<IRLEvent[]>;
+export interface CurationAgentContract {
+  run(events: IRLEvent[]): Promise<IRLEvent[]>;
 }
 
 /**
  * UXAgent
- * Generates app-optimized copy: shortWhy (1 line), editorialWhy (2-5 lines).
- * Tailored to Miami/FLL audience. Replaces batchGenerateEditorial().
- * Can also generate category tags based on event content.
+ * Generates shortWhy (1 line) and editorialWhy (2-4 lines).
+ * Replaces batchGenerateEditorial() in ai.ts.
  */
-export interface UXAgentStub {
-  generateCopy(event: IRLEvent): Promise<{ shortWhy: string; editorialWhy: string }>;
+export interface UXAgentContract {
+  run(events: IRLEvent[]): Promise<IRLEvent[]>;
 }
 
 /**
  * BrandingAgent
- * Finds or assigns images for events.
- * Sources: event's own image, venue image, Unsplash category fallback.
- * Ensures every event shown in the app has a visual.
+ * Assigns images: event image → venue image → Unsplash by vibe.
  */
-export interface BrandingAgentStub {
-  assignImage(event: IRLEvent): Promise<string | null>;
+export interface BrandingAgentContract {
+  run(events: IRLEvent[]): Promise<IRLEvent[]>;
 }
 
 /**
- * PMAgent (Product Management Agent)
- * Monitors scraper health: success rate, event count trends, source freshness.
- * Suggests new Instagram accounts or websites to add as sources.
- * Flags sources that have gone stale (0 events for N runs).
+ * PMAgent (runs weekly, not per-scrape)
+ * Monitors source health, flags stale scrapers, suggests new IG accounts.
+ * Tools: read_scrape_history, check_source_url, search_web
  */
-export interface PMAgentStub {
+export interface PMAgentContract {
   analyzeSourceHealth(runHistory: unknown[]): Promise<{
     staleSources: string[];
     suggestedNewSources: string[];
