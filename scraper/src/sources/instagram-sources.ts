@@ -426,30 +426,6 @@ export class InstagramSourcesScraper extends BaseScraper {
       ],
     },
 
-    // @thefernbarftl — The Fern Bar Flagler Village FLL (real bar, weekend DJ programming)
-    {
-      handle: 'thefernbarftl',
-      name: 'The Fern Bar FTL',
-      city: 'Fort Lauderdale',
-      category: 'Nightlife',
-      knownEvents: [
-        {
-          name: 'The Fern Bar: Weekend DJ',
-          venue: 'The Fern Bar',
-          address: '700 N Andrews Ave, Fort Lauderdale, FL 33311',
-          neighborhood: 'Flagler Village',
-          lat: 26.1289,
-          lng: -80.1456,
-          schedule: 'weekly',
-          days: [5, 6], // Fri–Sat
-          time: '21:00',
-          description: 'Weekend DJ nights at The Fern Bar in Flagler Village. Craft cocktails and eclectic music in FTL\'s arts district.',
-          tags: ['dj', 'nightlife', 'cocktails', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-
     // @fortlauderdaledowntown — Downtown FTL BID: First Friday Art Walk (confirmed monthly)
     {
       handle: 'fortlauderdaledowntown',
