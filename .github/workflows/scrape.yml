@@ -6,6 +6,11 @@ on:
     - cron: '0 11 * * *'
     - cron: '0 23 * * *'
   workflow_dispatch: # Allow manual trigger
+  # Accept push/PR triggers so GitHub evaluates the job (and skips it via `if`)
+  # instead of creating phantom failed runs with 0 jobs
+  push:
+    branches: [main]
+  pull_request:
 
 permissions:
   contents: write   # push event data to main
