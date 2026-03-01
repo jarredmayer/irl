@@ -127,6 +127,9 @@ export {
   CyclingGroupRidesScraper,
 } from './community-fitness.js';
 
+// WeekendBroward — Broward County events calendar + live music
+export { WeekendBrowardScraper, WeekendBrowardLiveMusicScraper } from './weekend-broward.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -196,6 +199,7 @@ import {
   RunClubsScraper,
   CyclingGroupRidesScraper,
 } from './community-fitness.js';
+import { WeekendBrowardScraper, WeekendBrowardLiveMusicScraper } from './weekend-broward.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -280,6 +284,10 @@ export function getAllScrapers(): BaseScraper[] {
     // new WineTastingsScraper(),        // SYNTHETIC
     // new HotelsHospitalityScraper(),   // SYNTHETIC
     new InstagramSourcesScraper(),         // Verified recurring events from monitored IG accounts
+
+    // WeekendBroward — Broward County events RSS + live music (Puppeteer)
+    new WeekendBrowardScraper(),
+    new WeekendBrowardLiveMusicScraper(),
     // new SoFloPopupsScraper(),         // SYNTHETIC
     // new DesignDistrictScraper(),      // SYNTHETIC
     // new DeeringEstateScraper(),       // SYNTHETIC
