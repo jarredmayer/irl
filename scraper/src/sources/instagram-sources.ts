@@ -307,29 +307,13 @@ export class InstagramSourcesScraper extends BaseScraper {
     },
 
     // @thestandardmiami — The Standard Spa Miami Beach: Sunday scene on Belle Isle
-    // 40 Island Ave — known for bayfront pool, hammam, Sunday outdoor programming
+    // 40 Island Ave — has Sundays with rotating DJs/programming; needs real scrape from standardhotels.com
     {
       handle: 'thestandardmiami',
       name: 'The Standard Spa Miami Beach',
       city: 'Miami',
       category: 'Nightlife',
-      knownEvents: [
-        {
-          name: 'Sunday at The Standard',
-          venue: 'The Standard Spa Miami Beach',
-          address: '40 Island Ave, Miami Beach, FL 33139',
-          neighborhood: 'Miami Beach',
-          lat: 25.7912,
-          lng: -80.1567,
-          schedule: 'weekly',
-          days: [0], // Sunday
-          time: '13:00',
-          description: 'The Standard\'s Sunday scene on Belle Isle: bayfront deck, craft cocktails, and the hammam garden. Check standardhotels.com for current programming.',
-          tags: ['dj', 'outdoor', 'waterfront', 'local-favorite'],
-          price: 0,
-          category: 'Nightlife',
-        },
-      ],
+      knownEvents: [],
     },
 
     // @gramps_miami — Gramps Wynwood: Reggae Wednesday + Trivia Tuesday (confirmed on gramps.com)

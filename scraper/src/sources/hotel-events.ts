@@ -16,6 +16,7 @@
  *  - Mr. C Hotel Coconut Grove (mrchotels.com)
  *  - The Standard Spa Miami Beach (standardhotels.com)
  *  - The Colonnade Hotel Coral Gables (colonnadehotel.com)
+ *  - The Wilder Miami (thewildermiami.com)
  */
 
 import * as cheerio from 'cheerio';
@@ -68,10 +69,20 @@ const HOTEL_SOURCES: HotelSource[] = [
     name: 'Esme Miami Beach',
     eventsUrl: 'https://esmehotel.com/experiences/',
     fallbackUrl: 'https://esmehotel.com/',
-    neighborhood: 'Mid-Beach',
-    address: '2341 Collins Ave, Miami Beach, FL 33139',
-    lat: 25.8003,
-    lng: -80.1254,
+    neighborhood: 'South Beach',
+    address: '1438 Washington Ave, Miami Beach, FL 33139',
+    lat: 25.7867,
+    lng: -80.1350,
+    city: 'Miami',
+  },
+  {
+    name: 'The Wilder Miami',
+    eventsUrl: 'https://www.thewildermiami.com/events',
+    fallbackUrl: 'https://www.thewildermiami.com/',
+    neighborhood: 'Wynwood',
+    address: '2119 NW 2nd Ave, Miami, FL 33127',
+    lat: 25.7965,
+    lng: -80.1996,
     city: 'Miami',
   },
   {

@@ -3,6 +3,14 @@
  * Main entry point with delta loading support
  */
 
+// Load .env file if present (Node.js v22 built-in — no dotenv needed)
+// Create scraper/.env with ANTHROPIC_API_KEY=sk-... to enable AI features
+try {
+  process.loadEnvFile(new URL('../.env', import.meta.url));
+} catch {
+  // .env file not present — OK, use system environment
+}
+
 import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
