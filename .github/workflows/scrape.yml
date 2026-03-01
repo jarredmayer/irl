@@ -74,14 +74,16 @@ jobs:
             exit 0
           fi
           git commit -m "Update events data $(date +'%Y-%m-%d')"
-          # Push with up to 3 retries, rebasing on origin/main for concurrent-push safety.
-          # Use `if` blocks (not bare && chains) so bash -e doesn't exit on first retry failure.
-          # -X ours = prefer our fresh scrape data over old remote data on conflicts.
+          # Push with up to 3 retries. Use PUSH_OK flag so the loop always exits 0
+          # regardless of whether push succeeded or not (prevents bash -e from killing
+          # the job when all retries fail — the data will just be retried next run).
+          PUSH_OK=false
           for i in 1 2 3; do
             echo "Push attempt $i/3..."
-            if git pull --rebase -X ours origin main; then
+            if git pull --rebase -X theirs origin main; then
               if git push; then
                 echo "Pushed successfully on attempt $i"
+                PUSH_OK=true
                 break
               fi
               echo "git push failed on attempt $i"
@@ -89,8 +91,10 @@ jobs:
               echo "git pull --rebase failed on attempt $i"
               git rebase --abort 2>/dev/null || true
             fi
-            [ "$i" -lt 3 ] && sleep 5
+            [ "$i" -lt 3 ] && sleep 5 || true
           done
+          # Always exit 0 — push failure is not fatal (data will be retried next run)
+          $PUSH_OK && echo "✅ Data pushed" || echo "⚠️  Push failed after 3 attempts — will retry next scheduled run"
 
       - name: Trigger deploy
         continue-on-error: true
