@@ -41,7 +41,7 @@ jobs:
         working-directory: scraper
         env:
           PUPPETEER_SKIP_DOWNLOAD: 'true'
-        run: npm ci
+        run: npm ci || (echo "⚠ npm ci failed on first attempt, retrying..." && npm cache clean --force && npm ci) || echo "⚠ npm ci failed after retry — scrapers will be skipped this run"
 
       - name: Install Puppeteer Chrome
         working-directory: scraper
