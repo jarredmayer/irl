@@ -1,13 +1,18 @@
 /**
  * BrandingAgent
  *
- * Assigns images to events using a three-tier waterfall (zero LLM cost):
- *  1. Native event image  — from scraper source (always preferred)
- *  2. Venue image         — from VENUES database imageUrl field
- *  3. Vibe-aware Unsplash — specific to event tags (rooftop, latin, jazz…)
- *  4. Category fallback   — generic CATEGORY_IMAGES from venues.ts
+ * Assigns images to events using a waterfall (zero LLM cost):
+ *  1.   Native event image  — from scraper source (always preferred)
+ *  1.5. Fetched venue image — real og:image from VenueImageFetcher cache
+ *         keyed by event.source.url  (e.g. thebass.org → The Bass museum photo)
+ *         or "https://instagram.com/@handle" (from venue website)
+ *  2.   Venue DB image      — from VENUES database imageUrl field
+ *  2.5. Venue category      — semantic fallback when venue found but no imageUrl
+ *  3.   Vibe-aware Unsplash — specific to event tags (rooftop, latin, jazz…)
+ *  4.   Category fallback   — generic CATEGORY_IMAGES from venues.ts
  *
  * No API calls. Pure deterministic logic. Safe to run on every scrape.
+ * Real venue photos are supplied by VenueImageFetcher (runs before this agent).
  */
 
 import { findVenue, CATEGORY_IMAGES } from '../venues.js';
@@ -80,8 +85,16 @@ const TAG_PRIORITY = [
 ];
 
 export class BrandingAgent {
+  /** Map of sourceUrl/instagramKey → real venue og:image from VenueImageFetcher */
+  private fetchedImages: Record<string, string>;
+
+  constructor(fetchedVenueImages: Record<string, string> = {}) {
+    this.fetchedImages = fetchedVenueImages;
+  }
+
   run(events: IRLEvent[]): IRLEvent[] {
     let updated = 0;
+    const realImageCount = events.filter((e) => e.image && !e.image.includes('unsplash')).length;
 
     const result = events.map((e) => {
       const resolved = this.resolveImage(e);
@@ -92,16 +105,29 @@ export class BrandingAgent {
       return e;
     });
 
-    console.log(`\n🎨 BrandingAgent: assigned images to ${updated} events`);
+    const realAfter = result.filter((e) => e.image && !e.image.includes('unsplash')).length;
+    console.log(
+      `\n🎨 BrandingAgent: ${realAfter} events with real venue photos` +
+        (realAfter > realImageCount ? ` (+${realAfter - realImageCount} new)` : '') +
+        `, ${result.length - realAfter} using stock fallback`
+    );
     return result;
   }
 
   private resolveImage(event: IRLEvent): string | undefined {
-    // 1. Native event image — always win
+    // 1. Native event image — always wins (set by scraper from ticketing site)
     if (event.image) return event.image;
 
-    // 2. Venue DB image — pre-curated, specific to this venue
-    // 2.5. Venue category fallback — uses venue's category when imageUrl isn't set
+    // 1.5. Real venue photo from VenueImageFetcher (og:image from source website)
+    //   - Non-instagram: keyed by event.source.url (e.g. "https://thebass.org/")
+    //   - Instagram:     keyed by "https://instagram.com/@{handle}" (from websiteUrl)
+    if (event.source?.url) {
+      const fetched = this.fetchedImages[event.source.url];
+      if (fetched) return fetched;
+    }
+
+    // 2. Venue DB image — pre-curated imageUrl on known venues
+    // 2.5. Venue category fallback — semantic when venue found but lacks imageUrl
     if (event.venueName) {
       const venue = findVenue(event.venueName);
       if (venue?.imageUrl) return venue.imageUrl;
@@ -112,7 +138,6 @@ export class BrandingAgent {
 
     // 3. Vibe-aware: best-matching tag → specific Unsplash photo.
     // Priority order defined by TAG_PRIORITY — more specific tags beat generic ones.
-    // (e.g., 'rooftop' + 'live-music': rooftop wins because it's more visually distinctive)
     for (const tag of TAG_PRIORITY) {
       if (event.tags.includes(tag) && VIBE_IMAGES[tag]) {
         return VIBE_IMAGES[tag];
