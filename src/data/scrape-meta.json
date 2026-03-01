@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-01T09:18:38.640Z",
+  "scrapedAt": "2026-03-01T09:34:03.685Z",
   "stats": {
-    "total": 1221,
-    "deduplicated": 845,
+    "total": 1119,
+    "deduplicated": 744,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -29,105 +29,123 @@
       "Free Yoga Miami": 76,
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
-      "Fort Lauderdale": 184,
+      "Fort Lauderdale": 82,
       "Instagram Sources": 252
     }
   },
   "delta": {
     "added": 0,
-    "removed": 19,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 842
+    "unchanged": 741
   },
   "sources": [
     {
       "name": "Miami New Times",
       "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
       "name": "Farmers Markets",
       "count": 80,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Beach Cleanups",
       "count": 16,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Don't Tell Comedy",
       "count": 16,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "World Cup 2026",
       "count": 7,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "III Points",
       "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
       "name": "SOBEWFF",
       "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
       "name": "Miami Spice",
       "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
       "name": "Miami Festivals",
       "count": 1,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Dice.fm Real",
       "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
       "name": "Resident Advisor",
       "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
       "name": "Greater Miami & The Beaches",
       "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
       "name": "Candlelight Concerts (Fever)",
       "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
       "name": "Hotel Events",
       "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
       "name": "Real Venue Events",
       "count": 29,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Cultural Attractions",
       "count": 430,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Pop-Ups",
       "count": 65,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Miami Improv",
       "count": 0,
+      "status": "error",
       "errors": [
         "fetch failed"
       ]
@@ -135,6 +153,7 @@
     {
       "name": "Fort Lauderdale Improv",
       "count": 0,
+      "status": "error",
       "errors": [
         "fetch failed"
       ]
@@ -142,6 +161,7 @@
     {
       "name": "Coral Gables",
       "count": 0,
+      "status": "error",
       "errors": [
         "fetch failed"
       ]
@@ -149,37 +169,65 @@
     {
       "name": "Verified Recurring",
       "count": 2,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Coffee & Chill",
       "count": 6,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Free Yoga Miami",
       "count": 76,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Run Clubs",
       "count": 19,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Cycling Group Rides",
       "count": 38,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Fort Lauderdale",
-      "count": 184,
+      "count": 82,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Instagram Sources",
       "count": 252,
+      "status": "ok",
       "errors": []
     }
-  ]
+  ],
+  "sourceHealth": {
+    "ok": 15,
+    "empty": 9,
+    "errored": 3,
+    "emptySources": [
+      "Miami New Times",
+      "III Points",
+      "SOBEWFF",
+      "Miami Spice",
+      "Dice.fm Real",
+      "Resident Advisor",
+      "Greater Miami & The Beaches",
+      "Candlelight Concerts (Fever)",
+      "Hotel Events"
+    ],
+    "erroredSources": [
+      "Miami Improv",
+      "Fort Lauderdale Improv",
+      "Coral Gables"
+    ]
+  }
 }

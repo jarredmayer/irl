@@ -233,8 +233,19 @@ async function main() {
         sources: results.map((r) => ({
           name: r.source,
           count: r.events.length,
+          status: r.errors.length > 0 ? 'error' : r.events.length === 0 ? 'empty' : 'ok',
           errors: r.errors,
         })),
+        // Quick-read health summary
+        sourceHealth: {
+          ok: results.filter((r) => r.errors.length === 0 && r.events.length > 0).length,
+          empty: results.filter((r) => r.errors.length === 0 && r.events.length === 0).length,
+          errored: results.filter((r) => r.errors.length > 0).length,
+          emptySources: results
+            .filter((r) => r.errors.length === 0 && r.events.length === 0)
+            .map((r) => r.source),
+          erroredSources: results.filter((r) => r.errors.length > 0).map((r) => r.source),
+        },
       };
       writeFileSync(metaPath, JSON.stringify(meta, null, 2));
       console.log(`  ✅ Saved metadata to ${metaPath}`);
