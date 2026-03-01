@@ -10,6 +10,7 @@ import {
 } from '../../services/storage';
 import { hasApiKey } from '../../services/ai';
 import { format, parseISO } from 'date-fns';
+import type { useNotifications } from '../../hooks/useNotifications';
 
 interface ProfileViewProps {
   profile: UserProfile;
@@ -19,6 +20,7 @@ interface ProfileViewProps {
   locationStatus: GeolocationState['status'];
   onRequestLocation: () => void;
   onConfigureAI?: () => void;
+  notifications?: ReturnType<typeof useNotifications>;
 }
 
 export function ProfileView({
@@ -29,6 +31,7 @@ export function ProfileView({
   locationStatus,
   onRequestLocation,
   onConfigureAI,
+  notifications,
 }: ProfileViewProps) {
   const [isEditingProfile, setIsEditingProfile] = useState(false);
   const [editHandle, setEditHandle] = useState(profile.handle || '');
@@ -242,6 +245,49 @@ export function ProfileView({
             </div>
           </div>
         </section>
+
+        {/* Notifications */}
+        {notifications?.isSupported && (
+          <section className="bg-white rounded-2xl p-5 border border-slate-100">
+            <h3 className="font-semibold text-slate-900 mb-3">Notifications</h3>
+            {notifications.permission === 'denied' ? (
+              <p className="text-sm text-slate-500">
+                Notifications are blocked. Enable them in your browser settings to get daily reminders for saved events.
+              </p>
+            ) : notifications.permission === 'granted' ? (
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-slate-700">Daily event reminders</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Notified when saved events are happening today</p>
+                </div>
+                <button
+                  onClick={() => notifications.toggleEnabled(!notifications.enabled)}
+                  className={`relative w-11 h-6 rounded-full transition-colors ${
+                    notifications.enabled ? 'bg-sky-500' : 'bg-slate-200'
+                  }`}
+                >
+                  <span
+                    className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
+                      notifications.enabled ? 'translate-x-5' : 'translate-x-0'
+                    }`}
+                  />
+                </button>
+              </div>
+            ) : (
+              <div>
+                <p className="text-sm text-slate-500 mb-3">
+                  Get notified when saved events are happening today.
+                </p>
+                <button
+                  onClick={notifications.requestPermission}
+                  className="px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white text-sm font-medium rounded-lg transition-colors"
+                >
+                  Enable notifications
+                </button>
+              </div>
+            )}
+          </section>
+        )}
 
         {/* AI Features */}
         <section className="bg-white rounded-2xl p-5 border border-slate-100">
