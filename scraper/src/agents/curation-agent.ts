@@ -12,12 +12,18 @@
  *
  * Threshold: score >= 8 → editorPick: true  (targets ~5–10% of feed)
  * Cost: low — batches 10 events per LLM call, uses Haiku
+ * Caching: 7-day TTL keyed by event ID — recurring events are never re-scored
  */
 
 import { BaseAgent, type AgentTool } from './base-agent.js';
+import { PersistentCache } from './cache.js';
 import type { IRLEvent } from '../types.js';
 
 const BATCH_SIZE = 10;
+const EDITOR_PICK_THRESHOLD = 8;
+
+// 7-day cache — recurring events keep the same score across scrapes
+const curationCache = new PersistentCache<number>('curation-scores.json', 7);
 
 interface ScoreResult {
   id: string;
@@ -63,16 +69,37 @@ Return JSON array only: [{"id": "...", "score": <1-10>}, ...]`;
   }
 
   async run(events: IRLEvent[]): Promise<IRLEvent[]> {
-    console.log(`\n🏆 CurationAgent: scoring ${events.length} events for editor picks`);
     const result = [...events];
+    const toScore: IRLEvent[] = [];
+    let cacheHits = 0;
     let newPicks = 0;
 
-    for (let i = 0; i < events.length; i += BATCH_SIZE) {
-      const batch = events.slice(i, i + BATCH_SIZE);
+    // Apply cached scores and collect events needing scoring
+    for (let i = 0; i < result.length; i++) {
+      const cachedScore = curationCache.get(result[i].id);
+      if (cachedScore !== null) {
+        cacheHits++;
+        if (cachedScore >= EDITOR_PICK_THRESHOLD) {
+          result[i] = { ...result[i], editorPick: true };
+        }
+      } else {
+        toScore.push(result[i]);
+      }
+    }
+
+    console.log(
+      `\n🏆 CurationAgent: ${toScore.length} events to score` +
+      ` (${cacheHits} cache hits)`
+    );
+
+    // Score uncached events in batches
+    for (let i = 0; i < toScore.length; i += BATCH_SIZE) {
+      const batch = toScore.slice(i, i + BATCH_SIZE);
       const scores = await this.scoreBatch(batch);
 
       for (const { id, score } of scores) {
-        if (score >= 8) {
+        curationCache.set(id, score);
+        if (score >= EDITOR_PICK_THRESHOLD) {
           const idx = result.findIndex((e) => e.id === id);
           if (idx >= 0 && !result[idx].editorPick) {
             result[idx] = { ...result[idx], editorPick: true };
@@ -82,8 +109,11 @@ Return JSON array only: [{"id": "...", "score": <1-10>}, ...]`;
       }
     }
 
-    // Clear existing heuristic picks that scored below threshold (reset then re-apply)
-    console.log(`   CurationAgent: ${newPicks} editor picks set (threshold: 8/10)`);
+    curationCache.flush();
+    console.log(
+      `   CurationAgent: ${newPicks} new editor picks (threshold: ${EDITOR_PICK_THRESHOLD}/10),` +
+      ` ${result.filter((e) => e.editorPick).length} total`
+    );
     return result;
   }
 }

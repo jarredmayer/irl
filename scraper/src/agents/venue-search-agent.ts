@@ -15,11 +15,31 @@
  * Results cached for 30 days — same as LocationVerifierAgent.
  */
 
+import { writeFileSync, readFileSync, existsSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { BaseAgent, type AgentTool } from './base-agent.js';
 import { geocodeAddress } from '../geocoding.js';
 import { PersistentCache, cacheKey } from './cache.js';
 import { findVenue } from '../venues.js';
 import type { IRLEvent } from '../types.js';
+
+const CACHE_DIR = join(dirname(fileURLToPath(import.meta.url)), '../../cache');
+const NOT_FOUND_LOG = join(CACHE_DIR, 'venue-not-found.json');
+
+function appendNotFound(venueName: string, city: string): void {
+  try {
+    const existing: Array<{ venueName: string; city: string; lastSeen: string }> =
+      existsSync(NOT_FOUND_LOG) ? JSON.parse(readFileSync(NOT_FOUND_LOG, 'utf-8')) : [];
+    const key = `${venueName}|${city}`;
+    if (!existing.some((e) => `${e.venueName}|${e.city}` === key)) {
+      existing.push({ venueName, city, lastSeen: new Date().toISOString() });
+      writeFileSync(NOT_FOUND_LOG, JSON.stringify(existing, null, 2));
+    }
+  } catch {
+    // Non-fatal — logging failure shouldn't break the pipeline
+  }
+}
 
 // Shares the same cache file as LocationVerifierAgent — both verify venues
 const venueCache = new PersistentCache<{ lat: number; lng: number; confidence: string }>(
@@ -169,6 +189,7 @@ export async function fillMissingCoordinates(
       console.log(`   ✅ ${event.venueName}: (${result.lat!.toFixed(4)}, ${result.lng!.toFixed(4)}) [${result.confidence}]`);
     } else {
       notFound++;
+      if (event.venueName) appendNotFound(event.venueName, event.city);
     }
   }
 

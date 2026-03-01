@@ -10,12 +10,17 @@
  *
  * Only updates events with empty or obviously generic copy.
  * Batches 10 events per call. Uses Sonnet for copy quality.
+ * Caching: 14-day TTL keyed by event ID — recurring events reuse generated copy
  */
 
 import { BaseAgent, type AgentTool } from './base-agent.js';
+import { PersistentCache } from './cache.js';
 import type { IRLEvent } from '../types.js';
 
 const BATCH_SIZE = 10;
+
+// 14-day cache — longer TTL since editorial voice doesn't change often
+const uxCache = new PersistentCache<{ shortWhy: string; editorialWhy: string }>('ux-copy.json', 14);
 
 // Patterns that indicate generic/template copy — these events get rewritten
 const GENERIC_PATTERNS = [
@@ -85,36 +90,47 @@ Return JSON array only: [{"id": "...", "shortWhy": "...", "editorialWhy": "..."}
   }
 
   async run(events: IRLEvent[]): Promise<IRLEvent[]> {
-    const needsUX = events.filter(
-      (e) => isGenericCopy(e.shortWhy) || isGenericCopy(e.editorialWhy)
-    );
+    const resultMap = new Map(events.map((e) => [e.id, e]));
+    const toGenerate: IRLEvent[] = [];
+    let cacheHits = 0;
+    let updated = 0;
 
-    if (needsUX.length === 0) {
-      console.log('\n✍️  UXAgent: all events already have good copy');
-      return events;
+    // Apply cached copy and collect events needing generation
+    for (const event of events) {
+      const cached = uxCache.get(event.id);
+      if (cached) {
+        cacheHits++;
+        resultMap.set(event.id, { ...event, shortWhy: cached.shortWhy, editorialWhy: cached.editorialWhy });
+      } else if (isGenericCopy(event.shortWhy) || isGenericCopy(event.editorialWhy)) {
+        toGenerate.push(event);
+      }
+    }
+
+    if (toGenerate.length === 0) {
+      console.log(`\n✍️  UXAgent: all events have good copy (${cacheHits} cache hits)`);
+      return Array.from(resultMap.values());
     }
 
     console.log(
-      `\n✍️  UXAgent: generating copy for ${needsUX.length} events` +
-      ` (${events.length - needsUX.length} already have good copy)`
+      `\n✍️  UXAgent: generating copy for ${toGenerate.length} events` +
+      ` (${cacheHits} cache hits, ${events.length - toGenerate.length - cacheHits} already good)`
     );
 
-    const resultMap = new Map(events.map((e) => [e.id, e]));
-    let updated = 0;
-
-    for (let i = 0; i < needsUX.length; i += BATCH_SIZE) {
-      const batch = needsUX.slice(i, i + BATCH_SIZE);
+    for (let i = 0; i < toGenerate.length; i += BATCH_SIZE) {
+      const batch = toGenerate.slice(i, i + BATCH_SIZE);
       const copies = await this.generateBatch(batch);
 
       for (const { id, shortWhy, editorialWhy } of copies) {
         const event = resultMap.get(id);
         if (event && shortWhy && editorialWhy) {
+          uxCache.set(id, { shortWhy, editorialWhy });
           resultMap.set(id, { ...event, shortWhy, editorialWhy });
           updated++;
         }
       }
     }
 
+    uxCache.flush();
     console.log(`   UXAgent: copy updated for ${updated} events`);
     return Array.from(resultMap.values());
   }
