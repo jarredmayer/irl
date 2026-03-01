@@ -353,7 +353,7 @@ If all events seem real, respond with all numbers: [1, 2, 3, ...]`;
 
     try {
       const response = await this.client.messages.create({
-        model: 'claude-3-5-haiku-20241022',
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 500,
         messages: [{ role: 'user', content: prompt }],
       });
