@@ -66,6 +66,8 @@ jobs:
           git config --local user.name "GitHub Action"
           git add src/data/events*.json src/data/scrape-meta.json src/data/instagram-posts-cache.json || true
           git commit -m "Update events data $(date +'%Y-%m-%d')"
+          # Rebase on latest main before pushing to avoid conflicts with auto-merges
+          git pull --rebase origin main
           git push
 
   build:
