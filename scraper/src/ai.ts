@@ -1,10 +1,14 @@
 /**
  * AI Service for Scraper
  * Generates editorial content using Claude
+ *
+ * Editorial results are cached for 7 days.
+ * Recurring events (same title+category+venue) are never regenerated until stale.
  */
 
 import Anthropic from '@anthropic-ai/sdk';
 import type { RawEvent } from './types.js';
+import { PersistentCache, cacheKey } from './agents/cache.js';
 
 // Get API key from environment
 const API_KEY = process.env.ANTHROPIC_API_KEY;
@@ -23,39 +27,46 @@ export function hasAIEnabled(): boolean {
   return !!API_KEY;
 }
 
+// 7-day cache — editorial copy for recurring events doesn't change
+const editorialCache = new PersistentCache<{ shortWhy: string; editorialWhy: string }>(
+  'editorial.json',
+  7
+);
+
+/** Cache key for an event — title+category+venue, NOT date (for recurring events) */
+function editorialCacheKey(event: RawEvent): string {
+  return cacheKey(event.title, event.category, event.venueName ?? event.neighborhood ?? '');
+}
+
 /**
  * Generate a short editorial hook for an event
  */
-export async function generateShortWhy(event: RawEvent): Promise<string | null> {
-  const client = getClient();
-  if (!client) return null;
+async function generateShortWhy(event: RawEvent): Promise<string | null> {
+  const c = getClient();
+  if (!c) return null;
 
-  const prompt = `Generate a short, punchy editorial hook (10-15 words max) for this event. It should make someone want to attend. Be specific to the event, not generic. No quotes around the response.
+  try {
+    const response = await c.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 60,
+      messages: [{
+        role: 'user',
+        content: `Write a punchy 10-15 word hook for this event that makes someone want to go. Be specific, not generic. No quotes.
 
 Event: ${event.title}
 Category: ${event.category}
-Venue: ${event.venueName || 'Unknown'}
-Neighborhood: ${event.neighborhood}
-City: ${event.city}
-Tags: ${event.tags.join(', ')}
+Venue: ${event.venueName || 'Unknown'} (${event.neighborhood}, ${event.city})
 Price: ${event.priceLabel || 'Varies'}
-Description: ${event.description.slice(0, 300)}
+Tags: ${event.tags.join(', ')}
+Description: ${event.description.slice(0, 200)}
 
-Just the hook, nothing else:`;
-
-  try {
-    const response = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 50,
-      messages: [{ role: 'user', content: prompt }],
+Hook only:`,
+      }],
     });
-
     const content = response.content[0];
     if (content.type !== 'text') return null;
-
     return content.text.trim().replace(/^["']|["']$/g, '');
-  } catch (error) {
-    console.error('AI shortWhy generation failed:', error);
+  } catch {
     return null;
   }
 }
@@ -63,44 +74,39 @@ Just the hook, nothing else:`;
 /**
  * Generate editorial description for an event
  */
-export async function generateEditorialWhy(event: RawEvent): Promise<string | null> {
-  const client = getClient();
-  if (!client) return null;
+async function generateEditorialWhy(event: RawEvent): Promise<string | null> {
+  const c = getClient();
+  if (!c) return null;
 
-  const prompt = `Write a compelling 2-3 sentence editorial description for this event. Make it personal and enticing, like a friend recommending it. Focus on what makes it special and why someone should go. Don't repeat the title or basic info - add value beyond the description.
+  try {
+    const response = await c.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 150,
+      messages: [{
+        role: 'user',
+        content: `Write a 2-3 sentence editorial description for this event. Sound like a knowledgeable local friend recommending it. Don't restate the title — add value.
 
 Event: ${event.title}
 Category: ${event.category}
-Venue: ${event.venueName || 'Unknown'}
-Neighborhood: ${event.neighborhood}
-City: ${event.city}
-Tags: ${event.tags.join(', ')}
+Venue: ${event.venueName || 'Unknown'} (${event.neighborhood}, ${event.city})
 Price: ${event.priceLabel || 'Varies'}
-Is Outdoor: ${event.isOutdoor ? 'Yes' : 'No'}
-Original Description: ${event.description.slice(0, 500)}
+Outdoor: ${event.isOutdoor ? 'Yes' : 'No'}
+Description: ${event.description.slice(0, 400)}
 
-Editorial description (2-3 sentences only):`;
-
-  try {
-    const response = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 150,
-      messages: [{ role: 'user', content: prompt }],
+2-3 sentences only:`,
+      }],
     });
-
     const content = response.content[0];
     if (content.type !== 'text') return null;
-
     return content.text.trim();
-  } catch (error) {
-    console.error('AI editorialWhy generation failed:', error);
+  } catch {
     return null;
   }
 }
 
 /**
- * Batch generate editorial content for multiple events
- * Uses rate limiting to avoid API limits
+ * Batch generate editorial content for multiple events.
+ * Checks cache first — only calls the API for events with no cached copy.
  */
 export async function batchGenerateEditorial(
   events: RawEvent[],
@@ -114,49 +120,65 @@ export async function batchGenerateEditorial(
     return results;
   }
 
-  console.log(`\n🤖 Generating AI editorial content for ${events.length} events...`);
+  // Separate cached from uncached
+  const uncached: RawEvent[] = [];
+  let cacheHits = 0;
 
-  for (let i = 0; i < events.length; i += batchSize) {
-    const batch = events.slice(i, i + batchSize);
+  for (const event of events) {
+    const key = editorialCacheKey(event);
+    const eventKey = `${event.title}|${event.startAt}`;
+    const cached = editorialCache.get(key);
+    if (cached) {
+      results.set(eventKey, cached);
+      cacheHits++;
+    } else {
+      uncached.push(event);
+    }
+  }
 
-    // Process batch in parallel
+  const cacheStats = editorialCache.stats();
+  console.log(`\n🤖 Editorial: ${cacheHits} cached, ${uncached.length} to generate`);
+  console.log(`   Cache: ${cacheStats.valid} valid entries`);
+
+  if (uncached.length === 0) {
+    console.log('   ✅ All editorial content served from cache');
+    return results;
+  }
+
+  // Use Haiku for cost efficiency on batch generation
+  for (let i = 0; i < uncached.length; i += batchSize) {
+    const batch = uncached.slice(i, i + batchSize);
+
     const batchResults = await Promise.all(
       batch.map(async (event) => {
-        const eventKey = `${event.title}|${event.startAt}`;
-
         const [shortWhy, editorialWhy] = await Promise.all([
           generateShortWhy(event),
           generateEditorialWhy(event),
         ]);
-
-        return {
-          key: eventKey,
-          shortWhy: shortWhy || '',
-          editorialWhy: editorialWhy || '',
-        };
+        return { event, shortWhy: shortWhy || '', editorialWhy: editorialWhy || '' };
       })
     );
 
-    // Store results
-    for (const result of batchResults) {
-      if (result.shortWhy || result.editorialWhy) {
-        results.set(result.key, {
-          shortWhy: result.shortWhy,
-          editorialWhy: result.editorialWhy,
-        });
+    for (const { event, shortWhy, editorialWhy } of batchResults) {
+      if (shortWhy || editorialWhy) {
+        const content = { shortWhy, editorialWhy };
+        const eventKey = `${event.title}|${event.startAt}`;
+        results.set(eventKey, content);
+        // Cache by title+category+venue (not date) so recurring events reuse
+        editorialCache.set(editorialCacheKey(event), content);
       }
     }
 
-    // Progress update
-    const processed = Math.min(i + batchSize, events.length);
-    console.log(`   📝 Processed ${processed}/${events.length} events`);
+    const processed = Math.min(i + batchSize, uncached.length);
+    console.log(`   📝 Generated ${processed}/${uncached.length}`);
 
-    // Rate limiting delay between batches
-    if (i + batchSize < events.length) {
+    if (i + batchSize < uncached.length) {
       await new Promise((resolve) => setTimeout(resolve, delayMs));
     }
   }
 
-  console.log(`   ✅ Generated content for ${results.size} events\n`);
+  // Persist cache after all generation
+  editorialCache.flush();
+  console.log(`   ✅ Editorial done: ${results.size} total (${cacheHits} cached, ${uncached.length} new)\n`);
   return results;
 }

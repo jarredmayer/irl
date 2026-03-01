@@ -8,12 +8,13 @@
  * 3. Reasons about which coordinates are correct
  * 4. Returns verified lat/lng with confidence + explanation
  *
- * This is a true agent — Claude decides how many tools to call,
- * in what order, and when it has enough information to conclude.
+ * Results are cached for 30 days — venues don't move.
+ * On a warm cache, zero Claude calls are made.
  */
 
 import { BaseAgent, type AgentTool } from './base-agent.js';
 import { geocodeAddress, calculateDistance } from '../geocoding.js';
+import { PersistentCache, cacheKey } from './cache.js';
 import type { IRLEvent } from '../types.js';
 
 // Miami/FLL metro bounding box (generous)
@@ -31,6 +32,9 @@ export interface VerifiedLocation {
   wasChanged: boolean;
   reasoning: string;
 }
+
+// 30-day cache — venues almost never move
+const locationCache = new PersistentCache<VerifiedLocation>('venue-locations.json', 30);
 
 export class LocationVerifierAgent extends BaseAgent {
   protected systemPrompt = `You are a location verification agent for an events app covering Miami and Fort Lauderdale, Florida.
@@ -132,6 +136,14 @@ Rules:
     currentLng: number | null,
     city: string
   ): Promise<VerifiedLocation> {
+    // Check cache first — venues don't move
+    const key = cacheKey(venueName || address, city);
+    const cached = locationCache.get(key);
+    if (cached) {
+      // Return cached result with wasChanged=false since coords already applied
+      return { ...cached, wasChanged: false };
+    }
+
     const fullAddress = address.includes(city) ? address : `${address}, ${city}, FL`;
 
     const prompt = `Verify the location for this venue:
@@ -143,16 +155,19 @@ Use your tools to geocode the address and verify/correct the coordinates. Return
 
     try {
       const response = await this.runLoop(prompt);
-      const parsed = JSON.parse(response.trim());
-      return {
+      const parsed = JSON.parse(response.trim()) as VerifiedLocation;
+      const result: VerifiedLocation = {
         lat: parsed.lat,
         lng: parsed.lng,
         confidence: parsed.confidence,
         wasChanged: parsed.wasChanged,
         reasoning: parsed.reasoning,
       };
+      // Cache the verified result
+      locationCache.set(key, result);
+      return result;
     } catch {
-      // Fallback: if Claude response can't be parsed, keep current coords
+      // Fallback: keep current coords, don't cache failures
       return {
         lat: currentLat ?? 0,
         lng: currentLng ?? 0,
@@ -167,6 +182,7 @@ Use your tools to geocode the address and verify/correct the coordinates. Return
 /**
  * Batch verify all events with addresses but suspect or null coordinates.
  * Only processes events missing coords or with coords outside metro bounds.
+ * Uses a 30-day cache — known-good venues are never re-verified.
  */
 export async function agentVerifyLocations(
   events: IRLEvent[],
@@ -177,7 +193,6 @@ export async function agentVerifyLocations(
   const needsVerification = events.filter((e) => {
     if (!e.address && !e.venueName) return false;
     if (onlyNullCoords) return e.lat == null || e.lng == null;
-    // Also flag coords outside metro bounds
     const outOfBounds =
       e.lat != null &&
       e.lng != null &&
@@ -188,17 +203,24 @@ export async function agentVerifyLocations(
 
   if (needsVerification.length === 0) {
     console.log('  ✅ No events need location verification');
-    return { events, report: { verified: 0, corrected: 0, unverified: 0, issues: [] } };
+    return { events, report: { verified: 0, corrected: 0, unverified: 0, cacheHits: 0, issues: [] } };
   }
 
-  console.log(`\n🤖 Location Verifier Agent: checking ${needsVerification.length} venues...`);
+  // Log cache stats before run
+  const cacheStats = locationCache.stats();
+  console.log(`\n🤖 Location Verifier Agent: ${needsVerification.length} venues to check`);
+  console.log(`   Cache: ${cacheStats.valid} valid entries, ${cacheStats.expired} expired`);
+
   const agent = new LocationVerifierAgent();
-  const report: VerificationReport = { verified: 0, corrected: 0, unverified: 0, issues: [] };
+  const report: VerificationReport = { verified: 0, corrected: 0, unverified: 0, cacheHits: 0, issues: [] };
 
   const eventMap = new Map(events.map((e) => [e.id, e]));
 
   for (const event of needsVerification) {
     const address = event.address || event.venueName || '';
+    const key = cacheKey(event.venueName || address, event.city);
+    const isCacheHit = locationCache.get(key) !== null;
+
     const result = await agent.verifyVenue(
       event.venueName || '',
       address,
@@ -207,7 +229,9 @@ export async function agentVerifyLocations(
       event.city
     );
 
-    if (result.confidence === 'unverified') {
+    if (isCacheHit) {
+      report.cacheHits++;
+    } else if (result.confidence === 'unverified') {
       report.unverified++;
     } else {
       report.verified++;
@@ -227,7 +251,13 @@ export async function agentVerifyLocations(
     }
   }
 
-  console.log(`  ✅ Verified: ${report.verified} | Corrected: ${report.corrected} | Unverified: ${report.unverified}`);
+  // Persist cache after batch
+  locationCache.flush();
+
+  console.log(
+    `  ✅ Location check: ${report.verified} verified, ${report.corrected} corrected,` +
+    ` ${report.cacheHits} cache hits, ${report.unverified} unverified`
+  );
   if (report.issues.length > 0) {
     console.log('  📍 Corrections made:');
     for (const issue of report.issues) {
@@ -243,6 +273,7 @@ interface VerificationReport {
   verified: number;
   corrected: number;
   unverified: number;
+  cacheHits: number;
   issues: Array<{
     eventId: string;
     venueName: string;

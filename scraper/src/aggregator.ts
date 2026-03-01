@@ -8,7 +8,7 @@ import type { RawEvent, IRLEvent, ScrapeResult } from './types.js';
 import { createHash } from 'crypto';
 import { verifyEvents } from './verification.js';
 import { findVenue, CATEGORY_IMAGES, type Venue } from './venues.js';
-import { extractUniqueVenues, batchVerifyLocations, type VerificationResult } from './geocoding.js';
+import { extractUniqueVenues, batchVerifyLocations } from './geocoding.js';
 import { OrchestratorAgent } from './agents/orchestrator.js';
 import { hasAIEnabled, batchGenerateEditorial } from './ai.js';
 
@@ -26,7 +26,6 @@ export class EventAggregator {
     events: IRLEvent[];
     results: ScrapeResult[];
     stats: { total: number; deduplicated: number; bySource: Record<string, number> };
-    locationIssues?: VerificationResult[];
   }> {
     console.log(`\n🚀 Starting event aggregation with ${this.scrapers.length} sources...\n`);
 
@@ -93,12 +92,12 @@ export class EventAggregator {
     const deduplicated = this.deduplicateEvents(verified);
     console.log(`   ✅ ${deduplicated.length} unique events after deduplication\n`);
 
-    // Generate AI editorial content if enabled
+    // Generate AI editorial content (cached — recurring events reuse copy)
     let aiEditorial = new Map<string, { shortWhy: string; editorialWhy: string }>();
     if (options?.generateEditorial && hasAIEnabled()) {
       aiEditorial = await batchGenerateEditorial(deduplicated, {
-        batchSize: 5, // Conservative batch size to avoid rate limits
-        delayMs: 1000,
+        batchSize: 10,
+        delayMs: 500,
       });
     } else if (options?.generateEditorial && !hasAIEnabled()) {
       console.log('⚠️  AI editorial requested but ANTHROPIC_API_KEY not set');
@@ -115,42 +114,13 @@ export class EventAggregator {
       bySource[result.source] = result.events.length;
     }
 
-    // Run the Orchestrator (validation + optional enrichment)
-    let locationIssues: VerificationResult[] | undefined;
-    let verifiedEvents = irlEvents;
-    if (options?.verifyLocations) {
-      const useAgent = hasAIEnabled();
-      if (useAgent) {
-        console.log(`\n🎭 Running Orchestrator (ValidationAgent)...`);
-        const orchestrator = new OrchestratorAgent();
-        const result = await orchestrator.run(irlEvents, { validateOnly: true });
-        verifiedEvents = result.events;
-      } else {
-        // Legacy path: Nominatim batch geocode without AI reasoning
-        console.log(`\n🗺️  Verifying venue locations (legacy geocoder)...`);
-        const venues = extractUniqueVenues(irlEvents);
-        console.log(`   Found ${venues.length} unique venues to verify`);
-
-        if (venues.length > 0) {
-          const verificationResults = await batchVerifyLocations(venues);
-          locationIssues = verificationResults.filter(
-            (r) => !r.isValid && r.discrepancyMiles > 0
-          );
-
-          if (locationIssues.length > 0) {
-            console.log(`\n⚠️  ${locationIssues.length} venues have coordinate issues:`);
-            for (const issue of locationIssues.slice(0, 5)) {
-              console.log(`   • ${issue.name}: ${issue.discrepancyMiles.toFixed(2)} miles off`);
-            }
-            if (locationIssues.length > 5) {
-              console.log(`   ... and ${locationIssues.length - 5} more`);
-            }
-          } else {
-            console.log(`   ✅ All venue locations verified!`);
-          }
-        }
-      }
-    }
+    // Run the Orchestrator — always runs rule-based validation (free);
+    // location agent only runs when AI is enabled (cached, so very low cost)
+    const orchestrator = new OrchestratorAgent();
+    const orchResult = await orchestrator.run(irlEvents, {
+      skipLocationAgent: !hasAIEnabled() || !options?.verifyLocations,
+    });
+    const verifiedEvents = orchResult.events;
 
     return {
       events: verifiedEvents,
@@ -160,7 +130,6 @@ export class EventAggregator {
         deduplicated: irlEvents.length,
         bySource,
       },
-      locationIssues,
     };
   }
 

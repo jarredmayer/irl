@@ -7,7 +7,6 @@ import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { EventAggregator } from './aggregator.js';
-import { OrchestratorAgent } from './agents/orchestrator.js';
 import type { IRLEvent } from './types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -127,7 +126,6 @@ async function main() {
 
   const isTest = process.argv.includes('--test');
   const verifyLocations = process.argv.includes('--verify-locations');
-  const agentVerify = process.argv.includes('--agent-verify');
   const generateEditorial = process.argv.includes('--ai-editorial');
   const startTime = Date.now();
   const dataDir = join(__dirname, '../../src/data');
@@ -135,7 +133,7 @@ async function main() {
   try {
     // Run aggregator
     const aggregator = new EventAggregator();
-    const { events, results, stats, locationIssues } = await aggregator.aggregate({
+    const { events, results, stats } = await aggregator.aggregate({
       verifyLocations,
       generateEditorial,
     });
@@ -229,36 +227,11 @@ async function main() {
           count: r.events.length,
           errors: r.errors,
         })),
-        ...(locationIssues && locationIssues.length > 0 && {
-          locationIssues: locationIssues.map((issue) => ({
-            venue: issue.name,
-            address: issue.address,
-            currentLat: issue.lat,
-            currentLng: issue.lng,
-            suggestedLat: issue.suggestedLat,
-            suggestedLng: issue.suggestedLng,
-            discrepancyMiles: issue.discrepancyMiles,
-          })),
-        }),
       };
       writeFileSync(metaPath, JSON.stringify(meta, null, 2));
       console.log(`  ✅ Saved metadata to ${metaPath}`);
 
-      // Optional: run orchestrator agent verify pass on saved events
-      if (agentVerify) {
-        console.log('\n  🎭 Running Orchestrator Agent (location verification pass)...');
-        const orchestrator = new OrchestratorAgent();
-        const orchResult = await orchestrator.run(freshEvents, { validateOnly: true, maxEventsPerAgent: 50 });
-        if (orchResult.summary.validation) {
-          // Re-save with corrected coordinates
-          const correctedMiami = orchResult.events.filter((e) => e.city === 'Miami');
-          const correctedFll = orchResult.events.filter((e) => e.city === 'Fort Lauderdale');
-          writeFileSync(join(dataDir, 'events.miami.json'), JSON.stringify(correctedMiami, null, 2));
-          writeFileSync(join(dataDir, 'events.fll.json'), JSON.stringify(correctedFll, null, 2));
-          writeFileSync(join(dataDir, 'events.json'), JSON.stringify(orchResult.events, null, 2));
-          console.log(`  ✅ Re-saved with agent-verified coordinates`);
-        }
-      }
+
     } else {
       console.log('\n  🧪 Test mode - no files saved');
 
