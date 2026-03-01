@@ -17,6 +17,9 @@ concurrency:
 
 jobs:
   scrape:
+    # Only run on schedule/manual dispatch — skip phantom push-triggered runs
+    # that GitHub creates when auto-merge pushes to main
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     steps:
