@@ -64,7 +64,23 @@ Return JSON array only: [{"id": "...", "score": <1-10>}, ...]`;
       const cleaned = response.trim().replace(/^```json?\n?/, '').replace(/\n?```$/, '');
       return JSON.parse(cleaned) as ScoreResult[];
     } catch {
-      return [];
+      // First attempt failed — retry with a simpler one-line-per-event prompt
+      try {
+        const simplePrompt = `Score 1-10 (8+ = specific & rare, 1-4 = generic recurring):\n` +
+          events.map((e) => `${e.id}: "${e.title}" ${e.seriesId ? '(recurring)' : '(one-off)'}`).join('\n') +
+          `\nReturn JSON: [{"id":"...","score":<1-10>},...]`;
+        const response2 = await this.runLoop(simplePrompt, { maxTurns: 1 });
+        const cleaned2 = response2.trim().replace(/^```json?\n?/, '').replace(/\n?```$/, '');
+        return JSON.parse(cleaned2) as ScoreResult[];
+      } catch {
+        // Both attempts failed — apply heuristic fallback rather than losing all scores
+        console.log(`   ⚠️  CurationAgent: batch parse failed twice, applying heuristics`);
+        return events.map((e) => ({
+          id: e.id,
+          // Recurring series: safe 4. One-off events: 5. Can't identify editor picks without LLM.
+          score: e.seriesId ? 4 : 5,
+        }));
+      }
     }
   }
 

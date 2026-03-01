@@ -4,26 +4,24 @@
  * Runs weekly (not per-scrape). Reads scrape-meta.json and produces a health report:
  *  - Stale scrapers (empty output for 2+ consecutive runs)
  *  - Errored scrapers (fetch/parse failures)
+ *  - Trend analysis: gradual decline vs. cliff-drop (via rolling 5-run history)
  *  - Suggested new Instagram accounts to monitor
  *  - Summary health report string for logging/alerting
  *
- * Implements PMAgentContract from orchestrator.ts.
  * No LLM calls — pure data analysis.
  */
 
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-const META_PATH = join(
-  dirname(fileURLToPath(import.meta.url)),
-  '../../../src/data/scrape-meta.json'
-);
+const __dir = dirname(fileURLToPath(import.meta.url));
 
-const IG_SOURCES_PATH = join(
-  dirname(fileURLToPath(import.meta.url)),
-  '../sources/instagram-sources.ts'
-);
+const META_PATH = join(__dir, '../../../src/data/scrape-meta.json');
+const HISTORY_PATH = join(__dir, '../../cache/scrape-history.json');
+const IG_SOURCES_PATH = join(__dir, '../sources/instagram-sources.ts');
+
+const HISTORY_MAX_RUNS = 5;
 
 // Full candidate pool — PMAgent filters out already-monitored handles dynamically
 const IG_CANDIDATE_POOL: Array<{ handle: string; description: string }> = [
@@ -38,6 +36,29 @@ const IG_CANDIDATE_POOL: Array<{ handle: string; description: string }> = [
   { handle: 'sobe_arts',          description: 'South Beach arts & culture' },
   { handle: 'miamibookfair',      description: 'Miami Book Fair International' },
 ];
+
+interface HistoryEntry {
+  scrapedAt: string;
+  sources: Array<{ name: string; count: number; status: 'ok' | 'empty' | 'error' }>;
+}
+
+interface ScrapeMeta {
+  scrapedAt: string;
+  stats?: Record<string, unknown>;
+  sourceHealth: {
+    ok: number;
+    empty: number;
+    errored: number;
+    emptySources: string[];
+    erroredSources: string[];
+  };
+  sources?: Array<{
+    name: string;
+    count: number;
+    status: 'ok' | 'empty' | 'error';
+    errors: string[];
+  }>;
+}
 
 /** Read handles already in instagram-sources.ts to avoid duplicate suggestions */
 function getMonitoredHandles(): Set<string> {
@@ -57,22 +78,91 @@ function getSuggestedAccounts(): string[] {
     .map((c) => `@${c.handle} — ${c.description}`);
 }
 
-interface ScrapeMeta {
-  scrapedAt: string;
-  stats?: Record<string, unknown>;
-  sourceHealth: {
-    ok: number;
-    empty: number;
-    errored: number;
-    emptySources: string[];
-    erroredSources: string[];
+/** Load rolling history from disk */
+function loadHistory(): HistoryEntry[] {
+  try {
+    if (!existsSync(HISTORY_PATH)) return [];
+    return JSON.parse(readFileSync(HISTORY_PATH, 'utf-8')) as HistoryEntry[];
+  } catch {
+    return [];
+  }
+}
+
+/** Append current scrape to history, keep only last HISTORY_MAX_RUNS entries */
+function appendHistory(meta: ScrapeMeta): HistoryEntry[] {
+  const history = loadHistory();
+  const entry: HistoryEntry = {
+    scrapedAt: meta.scrapedAt,
+    sources: (meta.sources ?? []).map((s) => ({ name: s.name, count: s.count, status: s.status })),
   };
-  sources?: Array<{
-    name: string;
-    count: number;
-    status: 'ok' | 'empty' | 'error';
-    errors: string[];
-  }>;
+  // Avoid duplicate entries for the same scrape timestamp
+  if (!history.some((h) => h.scrapedAt === entry.scrapedAt)) {
+    history.push(entry);
+  }
+  const trimmed = history.slice(-HISTORY_MAX_RUNS);
+  try {
+    writeFileSync(HISTORY_PATH, JSON.stringify(trimmed, null, 2));
+  } catch {
+    // Non-fatal
+  }
+  return trimmed;
+}
+
+interface TrendAnalysis {
+  /** Sources with steady count decline over 3+ runs */
+  graduallyDeclining: Array<{ name: string; trend: string }>;
+  /** Sources that were OK last run but cliffed to error/empty now */
+  suddenlyFailed: string[];
+}
+
+/**
+ * Analyze rolling history to distinguish gradual decline from cliff-drops.
+ * graduallyDeclining: count dropped >50% over last 3+ runs
+ * suddenlyFailed: was 'ok' in previous run, now 'error' or 'empty'
+ */
+function analyzeTrends(history: HistoryEntry[], currentMeta: ScrapeMeta): TrendAnalysis {
+  const graduallyDeclining: Array<{ name: string; trend: string }> = [];
+  const suddenlyFailed: string[] = [];
+
+  if (history.length < 2) return { graduallyDeclining, suddenlyFailed };
+
+  const prevRun = history[history.length - 2]; // second-to-last
+  const currentSourceMap = new Map(
+    (currentMeta.sources ?? []).map((s) => [s.name, s])
+  );
+
+  // Cliff-drop detection: was ok in prev run, now error/empty
+  for (const prevSource of prevRun.sources) {
+    if (prevSource.status !== 'ok') continue;
+    const current = currentSourceMap.get(prevSource.name);
+    if (current && current.status !== 'ok') {
+      suddenlyFailed.push(prevSource.name);
+    }
+  }
+
+  // Gradual decline: look at all runs for each source
+  const allSourceNames = new Set(
+    history.flatMap((h) => h.sources.map((s) => s.name))
+  );
+
+  for (const sourceName of allSourceNames) {
+    const counts = history
+      .map((h) => h.sources.find((s) => s.name === sourceName)?.count ?? null)
+      .filter((c): c is number => c !== null);
+
+    if (counts.length < 3) continue;
+
+    const maxCount = Math.max(...counts);
+    const latest = counts[counts.length - 1];
+    const isDecreasing = counts.slice(-3).every((c, i, arr) => i === 0 || c <= arr[i - 1]);
+
+    if (isDecreasing && maxCount > 0 && latest < maxCount * 0.5) {
+      const trend = counts.map(String).join(' → ');
+      graduallyDeclining.push({ name: sourceName, trend });
+    }
+  }
+
+  return { graduallyDeclining, suddenlyFailed };
 }
 
 export class PMAgent {
@@ -101,6 +191,10 @@ export class PMAgent {
       };
     }
 
+    // Update rolling history and analyze trends
+    const history = appendHistory(meta);
+    const trends = analyzeTrends(history, meta);
+
     const { sourceHealth } = meta;
     const staleSources = [...(sourceHealth.emptySources ?? []), ...(sourceHealth.erroredSources ?? [])];
     const totalSources = sourceHealth.ok + sourceHealth.empty + sourceHealth.errored;
@@ -112,7 +206,7 @@ export class PMAgent {
 
     const lines: string[] = [
       `📊 PMAgent Source Health Report — ${scrapedAt}`,
-      `   ${sourceHealth.ok}/${totalSources} sources healthy (${healthPct}%)`,
+      `   ${sourceHealth.ok}/${totalSources} sources healthy (${healthPct}%) | History: ${history.length} runs`,
       '',
     ];
 
@@ -121,6 +215,19 @@ export class PMAgent {
     }
     if (sourceHealth.emptySources.length > 0) {
       lines.push(`🟡 Empty (${sourceHealth.emptySources.length}): ${sourceHealth.emptySources.join(', ')}`);
+    }
+
+    // Trend-based alerts (only if we have enough history)
+    if (trends.suddenlyFailed.length > 0) {
+      lines.push(`🆕 Sudden failures (was OK last run): ${trends.suddenlyFailed.join(', ')}`);
+      lines.push(`   → Likely cause: scraper broke or site changed. Investigate first.`);
+    }
+    if (trends.graduallyDeclining.length > 0) {
+      lines.push(`📉 Gradual decline (>50% drop over 3+ runs):`);
+      for (const { name, trend } of trends.graduallyDeclining) {
+        lines.push(`   ${name}: ${trend}`);
+      }
+      lines.push(`   → Consider refreshing scraper logic or dropping source.`);
     }
 
     lines.push('');

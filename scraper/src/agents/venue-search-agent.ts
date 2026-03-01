@@ -141,6 +141,12 @@ Try geocoding variations until you find metro-area coordinates. Return JSON only
         return null;
       }
 
+      // Distinguish "found but out of service area" from "not found at all"
+      if (!inBounds(parsed.lat as number, parsed.lng as number)) {
+        console.log(`   ⚠️  ${venueName}: found coords (${(parsed.lat as number).toFixed(4)}, ${(parsed.lng as number).toFixed(4)}) but outside Miami/FLL metro bounds`);
+        return null;
+      }
+
       const result = { lat: parsed.lat as number, lng: parsed.lng as number, confidence: parsed.confidence as string };
       venueCache.set(key, result);
       return result;

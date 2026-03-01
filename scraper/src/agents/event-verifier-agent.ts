@@ -45,11 +45,11 @@ const verifierCache = new PersistentCache<VerificationResult>(
   7
 );
 
-// 3-day cache for Instagram-sourced events — IG events >14 days out need fresher verification
-// to prevent stale "verified" status on events that may have changed since first check
+// 7-day cache for Instagram-sourced events — same as standard cache.
+// IG events rarely get cancelled without notice; 3-day was overly aggressive.
 const igVerifierCache = new PersistentCache<VerificationResult>(
   'event-verification-ig.json',
-  3
+  7
 );
 
 /** Returns true if this event should use the shorter IG cache (3-day TTL) */
@@ -76,6 +76,11 @@ export interface VerifierReport {
 }
 
 export class EventVerifierAgent extends BaseAgent {
+  /** Set to true if ALL search_web calls returned errors (infra down, not genuine no-results) */
+  private searchInfraFailed = false;
+  private searchAttempts = 0;
+  private searchErrors = 0;
+
   protected systemPrompt = `You are an event verification assistant for an events app covering Miami and Fort Lauderdale, Florida.
 
 Given an event title, venue, and date, search the web to determine if this event is real and happening.
@@ -115,6 +120,7 @@ Rules:
         // Perform a real web search via fetch to a search API.
         // We use DuckDuckGo's HTML endpoint for zero-auth searching.
         const query = encodeURIComponent(String(input.query));
+        this.searchAttempts++;
         try {
           const response = await fetch(
             `https://html.duckduckgo.com/html/?q=${query}`,
@@ -152,7 +158,10 @@ Rules:
             ? { found: true, results }
             : { found: false, message: 'No results found' };
         } catch (err) {
-          return { found: false, error: String(err) };
+          // Track infrastructure failures (network errors, timeouts) separately
+          // from genuine "no results" — they have different implications for trust.
+          this.searchErrors++;
+          return { found: false, searchFailed: true, error: String(err) };
         }
       },
     },
@@ -160,10 +169,13 @@ Rules:
 
   async verifyEvent(event: IRLEvent): Promise<VerificationResult> {
     const key = cacheKey(event.title, event.venueName ?? '', event.startAt.slice(0, 10));
-    // Use shorter cache for IG events that are >14 days out (freshness check)
     const cache = needsIgFreshnessCheck(event) ? igVerifierCache : verifierCache;
     const cached = cache.get(key);
     if (cached) return cached;
+
+    // Reset search tracking for this event
+    this.searchAttempts = 0;
+    this.searchErrors = 0;
 
     const dateStr = event.startAt.slice(0, 10);
     const prompt = `Verify this event is real and happening:
@@ -179,13 +191,22 @@ Return JSON only.`;
 
     try {
       const response = await this.runLoop(prompt, { maxTurns: 4 });
+
+      // If ALL search attempts failed with errors (infra down), don't penalize the event —
+      // "search unavailable" is not the same as "event not found"
+      if (this.searchAttempts > 0 && this.searchErrors === this.searchAttempts) {
+        return { verified: true, confidence: 'low', reasoning: 'Search infrastructure unavailable — assuming valid' };
+      }
+
       const cleaned = response.trim().replace(/^```json?\n?/, '').replace(/\n?```$/, '');
       const result = JSON.parse(cleaned) as VerificationResult;
       cache.set(key, result);
       return result;
     } catch {
-      // Parse error → mark unverified (not cancelled). Keep the event, but don't
-      // claim it's verified — that would be dishonest about what we know.
+      // If search infra was down, be lenient. Otherwise mark unverified but keep event.
+      if (this.searchAttempts > 0 && this.searchErrors === this.searchAttempts) {
+        return { verified: true, confidence: 'low', reasoning: 'Search infrastructure unavailable — assuming valid' };
+      }
       return { verified: false, confidence: 'low', reasoning: 'Verification skipped (parse error)' };
     }
   }

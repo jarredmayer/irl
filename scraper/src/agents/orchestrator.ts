@@ -127,9 +127,17 @@ export class OrchestratorAgent {
       // CurationAgent: score events, set editorPick on top 5–10%
       //    Impact: medium — improves app UX, gives users guidance
       //    Cost: low (batch scoring, Haiku, 7-day cache)
+      //    Cap: default 200 events — beyond that, caching covers recurring events
+      const maxCuration = options.maxEventsPerAgent ?? 200;
+      const curatorInput = current.length > maxCuration ? current.slice(0, maxCuration) : current;
+      if (curatorInput.length < current.length) {
+        console.log(`   CurationAgent: capping at ${maxCuration} events (${current.length} total)`);
+      }
       const curator = new CurationAgent();
-      const curationResult = await curator.run(current);
-      current = curationResult.events;
+      const curationResult = await curator.run(curatorInput);
+      // Merge scored events back with uncapped remainder (no editorPick changes for those)
+      const scoredMap = new Map(curationResult.events.map((e) => [e.id, e]));
+      current = current.map((e) => scoredMap.get(e.id) ?? e);
       agentsRun.push('CurationAgent');
       summary.curation = {
         editorPicks: current.filter((e) => e.editorPick).length,
@@ -140,9 +148,16 @@ export class OrchestratorAgent {
       // UXAgent: generate shortWhy + editorialWhy for events with generic copy
       //    Impact: medium — better app copy, more engaging editorial voice
       //    Cost: medium (batch generation, Sonnet, 14-day cache)
+      //    Cap: default 150 events — Sonnet is expensive; cache covers repeat events
+      const maxUx = options.maxEventsPerAgent ?? 150;
+      const uxInput = current.length > maxUx ? current.slice(0, maxUx) : current;
+      if (uxInput.length < current.length) {
+        console.log(`   UXAgent: capping at ${maxUx} events (${current.length} total)`);
+      }
       const uxAgent = new UXAgent();
-      const uxResult = await uxAgent.run(current);
-      current = uxResult.events;
+      const uxResult = await uxAgent.run(uxInput);
+      const uxMap = new Map(uxResult.events.map((e) => [e.id, e]));
+      current = current.map((e) => uxMap.get(e.id) ?? e);
       agentsRun.push('UXAgent');
       summary.ux = { updated: uxResult.updated, cacheHits: uxResult.cacheHits };
     }

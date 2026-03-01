@@ -42,8 +42,14 @@ function isGenericCopy(text: string | undefined): boolean {
 
 interface CopyResult {
   id: string;
-  shortWhy: string;
-  editorialWhy: string;
+  shortWhy?: string;
+  editorialWhy?: string;
+}
+
+interface GenerationTask {
+  event: IRLEvent;
+  needsShortWhy: boolean;
+  needsEditorialWhy: boolean;
 }
 
 export class UXAgent extends BaseAgent {
@@ -67,18 +73,21 @@ Return ONLY a JSON array, no markdown:
 
   protected tools: AgentTool[] = []; // Pure generation — no tools needed
 
-  private async generateBatch(events: IRLEvent[]): Promise<CopyResult[]> {
-    const prompt = `Write editorial copy for these ${events.length} events:
+  private async generateBatch(tasks: GenerationTask[]): Promise<CopyResult[]> {
+    const prompt = `Write editorial copy for these ${tasks.length} events. For each event, only generate the fields marked GENERATE — preserve fields marked KEEP as-is.
 
-${events.map((e) => `ID: ${e.id}
+${tasks.map(({ event: e, needsShortWhy, needsEditorialWhy }) => `ID: ${e.id}
 Title: ${e.title}
 Venue: ${e.venueName ?? 'Unknown'}, ${e.neighborhood}
 Category: ${e.category} | Tags: ${e.tags.slice(0, 6).join(', ')}
 Price: ${e.priceLabel ?? 'varies'} | Outdoor: ${e.isOutdoor}
 Recurring series: ${e.seriesId ? `Yes (${e.seriesName ?? ''})` : 'No'}
-Description: ${(e.description ?? '').slice(0, 250)}`).join('\n---\n')}
+Description: ${(e.description ?? '').slice(0, 250)}
+shortWhy: ${needsShortWhy ? 'GENERATE' : `KEEP: "${e.shortWhy}"`}
+editorialWhy: ${needsEditorialWhy ? 'GENERATE' : `KEEP: "${e.editorialWhy}"`}`).join('\n---\n')}
 
-Return JSON array only: [{"id": "...", "shortWhy": "...", "editorialWhy": "..."}, ...]`;
+Return JSON array only — include only fields that were GENERATE, omit KEEP fields:
+[{"id": "...", "shortWhy": "...", "editorialWhy": "..."}, ...]`;
 
     try {
       const response = await this.runLoop(prompt, { maxTurns: 1, model: 'claude-sonnet-4-6' });
@@ -91,7 +100,7 @@ Return JSON array only: [{"id": "...", "shortWhy": "...", "editorialWhy": "..."}
 
   async run(events: IRLEvent[]): Promise<{ events: IRLEvent[]; cacheHits: number; updated: number }> {
     const resultMap = new Map(events.map((e) => [e.id, e]));
-    const toGenerate: IRLEvent[] = [];
+    const toGenerate: GenerationTask[] = [];
     let cacheHits = 0;
     let updated = 0;
 
@@ -101,8 +110,12 @@ Return JSON array only: [{"id": "...", "shortWhy": "...", "editorialWhy": "..."}
       if (cached) {
         cacheHits++;
         resultMap.set(event.id, { ...event, shortWhy: cached.shortWhy, editorialWhy: cached.editorialWhy });
-      } else if (isGenericCopy(event.shortWhy) || isGenericCopy(event.editorialWhy)) {
-        toGenerate.push(event);
+      } else {
+        const needsShortWhy = isGenericCopy(event.shortWhy);
+        const needsEditorialWhy = isGenericCopy(event.editorialWhy);
+        if (needsShortWhy || needsEditorialWhy) {
+          toGenerate.push({ event, needsShortWhy, needsEditorialWhy });
+        }
       }
     }
 
@@ -120,9 +133,17 @@ Return JSON array only: [{"id": "...", "shortWhy": "...", "editorialWhy": "..."}
       const batch = toGenerate.slice(i, i + BATCH_SIZE);
       const copies = await this.generateBatch(batch);
 
-      for (const { id, shortWhy, editorialWhy } of copies) {
+      for (const result of copies) {
+        const { id } = result;
+        const task = batch.find((t) => t.event.id === id);
         const event = resultMap.get(id);
-        if (event && shortWhy && editorialWhy) {
+        if (!event || !task) continue;
+
+        // Merge: use generated fields, fall back to existing for KEEP fields
+        const shortWhy = result.shortWhy ?? (task.needsShortWhy ? event.shortWhy : event.shortWhy);
+        const editorialWhy = result.editorialWhy ?? (task.needsEditorialWhy ? event.editorialWhy : event.editorialWhy);
+
+        if (shortWhy && editorialWhy) {
           uxCache.set(id, { shortWhy, editorialWhy });
           resultMap.set(id, { ...event, shortWhy, editorialWhy });
           updated++;
