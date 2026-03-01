@@ -23,7 +23,9 @@ import { fileURLToPath } from 'url';
 import type { IRLEvent } from '../types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const CACHE_PATH = join(__dirname, '../../cache/venue-images.json');
+// Stored in src/data/ (tracked by git) so the cache persists across GitHub Actions runs.
+// scraper/cache/ is gitignored — that's why we write here instead.
+const CACHE_PATH = join(__dirname, '../../../src/data/venue-images.json');
 const CACHE_TTL_DAYS = 14;     // Re-fetch stale entries after 14 days
 const MAX_FETCHES_PER_RUN = 60; // Cap to avoid long scrape times
 const FETCH_TIMEOUT_MS = 8000;
