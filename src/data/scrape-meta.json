@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-01T11:30:40.057Z",
+  "scrapedAt": "2026-03-01T12:02:13.870Z",
   "stats": {
-    "total": 1103,
-    "deduplicated": 724,
+    "total": 1104,
+    "deduplicated": 725,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -29,15 +29,15 @@
       "Free Yoga Miami": 76,
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
-      "Fort Lauderdale": 82,
+      "Fort Lauderdale": 83,
       "Instagram Sources": 236,
       "WeekendBroward": 0,
       "WeekendBrowardLiveMusic": 0
     }
   },
   "delta": {
-    "added": 0,
-    "removed": 16,
+    "added": 1,
+    "removed": 0,
     "modified": 0,
     "unchanged": 721
   },
@@ -200,7 +200,7 @@
     },
     {
       "name": "Fort Lauderdale",
-      "count": 82,
+      "count": 83,
       "status": "ok",
       "errors": []
     },

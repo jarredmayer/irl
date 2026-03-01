@@ -23,6 +23,8 @@ interface InstagramAccount {
   city: 'Miami' | 'Fort Lauderdale';
   category: string;
   knownEvents: KnownEvent[];
+  /** Venue website URL — used by VenueImageFetcher to grab real og:image photos */
+  websiteUrl?: string;
 }
 
 interface KnownEvent {
@@ -39,6 +41,8 @@ interface KnownEvent {
   tags: string[];
   price: number;
   category?: string; // Overrides account-level category for this event
+  /** Override image for this specific event (URL) */
+  image?: string;
 }
 
 export class InstagramSourcesScraper extends BaseScraper {
@@ -56,6 +60,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Critical Mass Miami',
       city: 'Miami',
       category: 'Fitness',
+      websiteUrl: 'https://www.criticalmassmiami.com/',
       knownEvents: [
         {
           name: 'Critical Mass Miami',
@@ -80,6 +85,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Pérez Art Museum Miami',
       city: 'Miami',
       category: 'Art',
+      websiteUrl: 'https://pamm.org/',
       knownEvents: [
         {
           name: 'PAMM: Free First Thursday',
@@ -104,6 +110,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Wynwood Walls',
       city: 'Miami',
       category: 'Art',
+      websiteUrl: 'https://www.wynwoodwalls.com/',
       knownEvents: [
         {
           name: 'Wynwood Walls: Second Saturday Art Walk',
@@ -128,6 +135,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Wynwood Marketplace',
       city: 'Miami',
       category: 'Community',
+      websiteUrl: 'https://www.wynwoodmarketplace.com/',
       knownEvents: [
         {
           name: 'Wynwood Marketplace: Weekend Market',
@@ -239,6 +247,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Disco Domingo Miami',
       city: 'Miami',
       category: 'Nightlife',
+      websiteUrl: 'https://www.donotsit.com/',
       knownEvents: [
         {
           name: 'Disco Domingo',
@@ -264,6 +273,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Lagniappe House',
       city: 'Miami',
       category: 'Music',
+      websiteUrl: 'https://www.lagniappehouse.com/',
       knownEvents: [
         {
           name: 'Lagniappe: Jazz & Wine',
@@ -288,6 +298,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Miami Bloco',
       city: 'Miami',
       category: 'Music',
+      websiteUrl: 'https://www.miamibloco.com/',
       knownEvents: [
         {
           name: 'Miami Bloco: Drum & Dance Practice',
@@ -322,6 +333,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Gramps Miami',
       city: 'Miami',
       category: 'Music',
+      websiteUrl: 'https://www.gramps.com/',
       knownEvents: [
         {
           name: 'Gramps: Reggae Wednesday',
@@ -360,6 +372,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: "Churchill's Pub",
       city: 'Miami',
       category: 'Music',
+      websiteUrl: 'https://www.churchillspub.com/',
       knownEvents: [
         {
           name: "Churchill's: Live Music Weekend",
@@ -384,6 +397,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Las Rosas Miami',
       city: 'Miami',
       category: 'Nightlife',
+      websiteUrl: 'https://www.lasrosasbar.com/',
       knownEvents: [
         {
           name: 'Las Rosas: DJ Night',
@@ -408,6 +422,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'The Wharf Miami',
       city: 'Miami',
       category: 'Nightlife',
+      websiteUrl: 'https://www.thewharfmiami.com/',
       knownEvents: [
         {
           name: 'The Wharf Miami: Weekend',
@@ -432,6 +447,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Downtown Fort Lauderdale',
       city: 'Fort Lauderdale',
       category: 'Community',
+      websiteUrl: 'https://www.downtownfortlauderdale.net/',
       knownEvents: [
         {
           name: 'First Friday Art Walk',
@@ -459,6 +475,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'The Miami Beach EDITION',
       city: 'Miami',
       category: 'Nightlife',
+      websiteUrl: 'https://www.editionhotels.com/miami-beach/',
       knownEvents: [
         {
           name: 'BASEMENT at The Miami Beach EDITION',
@@ -484,6 +501,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'Faena Hotel Miami Beach',
       city: 'Miami',
       category: 'Culture',
+      websiteUrl: 'https://www.faena.com/miami-beach/',
       knownEvents: [
         {
           name: 'Faena Theater: Noche Faena',
@@ -509,6 +527,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       name: 'The Biltmore Hotel',
       city: 'Miami',
       category: 'Food & Drink',
+      websiteUrl: 'https://www.biltmorehotel.com/',
       knownEvents: [
         {
           name: 'Sunday Jazz Brunch at The Biltmore',
@@ -698,10 +717,11 @@ export class InstagramSourcesScraper extends BaseScraper {
       priceAmount: event.price,
       isOutdoor: event.tags.includes('waterfront') || event.tags.includes('park') || event.tags.includes('cycling'),
       description: event.description,
-      sourceUrl: `https://instagram.com/${account.handle}`,
+      sourceUrl: `https://instagram.com/@${account.handle}`,
       sourceName: `@${account.handle}`,
       recurring: true,
       recurrencePattern: event.schedule,
+      ...(event.image ? { image: event.image } : {}),
     };
   }
 
@@ -711,5 +731,14 @@ export class InstagramSourcesScraper extends BaseScraper {
    */
   getMonitoredAccounts(): string[] {
     return this.accounts.map((a) => `@${a.handle}`);
+  }
+
+  /**
+   * Get account metadata for VenueImageFetcher.
+   * Returns handle + websiteUrl for all accounts so the fetcher can
+   * look up real venue og:images and store them under the instagram source key.
+   */
+  getAccountMeta(): Array<{ handle: string; websiteUrl?: string }> {
+    return this.accounts.map((a) => ({ handle: a.handle, websiteUrl: a.websiteUrl }));
   }
 }

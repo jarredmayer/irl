@@ -44,6 +44,8 @@ import { verifyEventBatch } from './event-verifier-agent.js';
 import { CurationAgent } from './curation-agent.js';
 import { UXAgent } from './ux-agent.js';
 import { BrandingAgent } from './branding-agent.js';
+import { VenueImageFetcher } from './venue-image-fetcher.js';
+import { InstagramSourcesScraper } from '../sources/instagram-sources.js';
 import { hasAIEnabled as hasAIForVenueSearch } from '../ai.js';
 
 export { PMAgent } from './pm-agent.js';
@@ -162,9 +164,17 @@ export class OrchestratorAgent {
       summary.ux = { updated: uxResult.updated, cacheHits: uxResult.cacheHits };
     }
 
+    // ── VENUE IMAGE FETCHING (always runs — populates real venue photo cache) ──
+    //    Fetches og:images from event source websites + instagram account websites.
+    //    Results cached in scraper/cache/venue-images.json (14-day TTL).
+    //    Gracefully no-ops when offline (uses cached results from last real scrape).
+    const imageFetcher = new VenueImageFetcher();
+    const igScraper = new InstagramSourcesScraper();
+    const fetchedVenueImages = await imageFetcher.buildImageMap(current, igScraper.getAccountMeta());
+
     // ── BRANDING (always runs — deterministic, zero API cost) ─────────────────
-    //    Waterfall: event.image → venue.imageUrl → vibe tag → category fallback
-    const branding = new BrandingAgent();
+    //    Waterfall: event.image → og:image cache → venue DB → vibe tag → category
+    const branding = new BrandingAgent(fetchedVenueImages);
     current = branding.run(current);
     agentsRun.push('BrandingAgent');
     summary.branding = { eventsWithImages: current.filter((e) => !!e.image).length };
