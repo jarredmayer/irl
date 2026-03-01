@@ -237,46 +237,10 @@ export class FortLauderdaleScraper extends BaseScraper {
         },
       ],
     },
-    // Revolution Live - Downtown FLL music venue
-    {
-      name: 'Revolution Live',
-      address: '100 SW 3rd Ave, Fort Lauderdale, FL 33312',
-      neighborhood: 'Downtown FLL',
-      lat: 26.1165,
-      lng: -80.1487,
-      url: 'https://www.jointherevolution.net/',
-      events: [
-        {
-          name: 'Revolution Live: Weekend Concert',
-          days: [5, 6], // Fri-Sat
-          time: '20:00',
-          category: 'Music',
-          description: 'Live concerts at Fort Lauderdale\'s premier indoor music venue. National touring acts and local favorites on the main stage.',
-          tags: ['live-music', 'local-favorite'],
-          price: 25,
-        },
-      ],
-    },
-    // Culture Room - Oakland Park
-    {
-      name: 'Culture Room',
-      address: '3045 N Federal Hwy, Fort Lauderdale, FL 33306',
-      neighborhood: 'Oakland Park',
-      lat: 26.1583,
-      lng: -80.1316,
-      url: 'https://www.cultureroom.net/',
-      events: [
-        {
-          name: 'Culture Room: Live Music',
-          days: [4, 5, 6], // Thu-Sat
-          time: '20:00',
-          category: 'Music',
-          description: 'Intimate music venue hosting rock, metal, indie, and alternative acts. One of Broward\'s best spots for live music.',
-          tags: ['live-music', 'nightlife'],
-          price: 20,
-        },
-      ],
-    },
+    // Revolution Live — venue confirmed, but "Weekend Concert" is generic (no named act)
+    // TODO: add specific shows when they appear on jointherevolution.net calendar
+    // Culture Room — venue confirmed, but "Live Music" is generic (no named act)
+    // TODO: add specific shows when they appear on cultureroom.net calendar
     // Funky Buddha Brewery - Oakland Park
     {
       name: 'Funky Buddha Brewery',
@@ -295,15 +259,7 @@ export class FortLauderdaleScraper extends BaseScraper {
           tags: ['craft-beer', 'local-favorite', 'outdoor'],
           price: 15,
         },
-        {
-          name: 'Funky Buddha: Trivia Night',
-          days: [3], // Wednesday
-          time: '19:00',
-          category: 'Community',
-          description: 'Weekly pub trivia at Funky Buddha Brewery taproom. Teams of 6, prizes, and great craft beer.',
-          tags: ['bar', 'craft-beer', 'community'],
-          price: 0,
-        },
+        // Funky Buddha Trivia Night removed — no confirmed organizer or day verified
       ],
     },
     // Stache Drinking Den - Downtown FLL
@@ -315,15 +271,7 @@ export class FortLauderdaleScraper extends BaseScraper {
       lng: -80.1467,
       url: 'https://www.stachedrinkingden.com/',
       events: [
-        {
-          name: 'Stache: DJ Night',
-          days: [4, 5, 6], // Thu-Sat
-          time: '22:00',
-          category: 'Nightlife',
-          description: 'Craft cocktails and DJs in Downtown Fort Lauderdale\'s coolest speakeasy-style bar. Rotating DJ lineup, eclectic music.',
-          tags: ['dj', 'nightlife', 'cocktails', 'local-favorite'],
-          price: 0,
-        },
+        // Stache DJ Night removed — generic (no named DJs confirmed)
         {
           name: 'Stache: Industry Monday',
           days: [1], // Monday
@@ -344,15 +292,7 @@ export class FortLauderdaleScraper extends BaseScraper {
       lng: -80.1467,
       url: 'https://tarponriverbrewing.com/',
       events: [
-        {
-          name: 'Tarpon River: Live Music Weekend',
-          days: [5, 6], // Fri-Sat
-          time: '19:00',
-          category: 'Music',
-          description: 'Live music in Tarpon River Brewing\'s taproom and outdoor patio. Local acts, craft beer, and great vibes in the River District.',
-          tags: ['live-music', 'craft-beer', 'outdoor', 'local-favorite'],
-          price: 0,
-        },
+        // Tarpon River Live Music Weekend removed — generic (no named acts confirmed)
         {
           name: 'Tarpon River: Open Mic Wednesday',
           days: [3], // Wednesday
@@ -364,66 +304,12 @@ export class FortLauderdaleScraper extends BaseScraper {
         },
       ],
     },
-    // The Wharf Fort Lauderdale
-    {
-      name: 'The Wharf Fort Lauderdale',
-      address: '20 W Las Olas Blvd, Fort Lauderdale, FL 33301',
-      neighborhood: 'Downtown FLL',
-      lat: 26.1197,
-      lng: -80.1458,
-      url: 'https://wharfftl.com/',
-      events: [
-        {
-          name: 'The Wharf FTL: Weekend DJ Party',
-          days: [5, 6], // Fri-Sat
-          time: '18:00',
-          category: 'Nightlife',
-          description: 'Outdoor waterfront party at The Wharf Fort Lauderdale. DJs, cocktails, and New River views from shipping container bars.',
-          tags: ['dj', 'nightlife', 'waterfront', 'outdoor', 'local-favorite'],
-          price: 0,
-        },
-        {
-          name: 'The Wharf FTL: Sunday Funday',
-          days: [0], // Sunday
-          time: '13:00',
-          category: 'Community',
-          description: 'Sunday afternoon at The Wharf. Day drinking, DJs, and waterfront views on the New River. Fort Lauderdale\'s favorite chill Sunday spot.',
-          tags: ['dj', 'outdoor', 'waterfront'],
-          price: 0,
-        },
-      ],
-    },
+    // The Wharf Fort Lauderdale — venue confirmed but DJ Party/Sunday Funday are generic templates
+    // TODO: add specific events from wharfftl.com calendar
     // Yolo Restaurant + Bar — coordinates need verification, DJ Night/Brunch are generic templates
     // TODO: get correct lat/lng (current -80.1338 may be too far east) and confirmed specific events
-    // Pompano Beach Amphitheater
-    {
-      name: 'Pompano Beach Amphitheater',
-      address: '1806 NE 6th St, Pompano Beach, FL 33060',
-      neighborhood: 'Pompano Beach',
-      lat: 26.2396,
-      lng: -80.1240,
-      url: 'https://pompanobeachfl.gov/amphitheater',
-      events: [
-        {
-          name: 'Pompano Beach Amphitheater: Weekend Concert',
-          days: [6], // Saturday
-          time: '19:00',
-          category: 'Music',
-          description: 'Outdoor concerts at Pompano Beach Amphitheater. Touring and local acts under the stars on the barrier island.',
-          tags: ['live-music', 'outdoor', 'local-favorite'],
-          price: 20,
-        },
-        {
-          name: 'Pompano Beach Sunday Concert Series',
-          days: [0], // Sunday
-          time: '17:00',
-          category: 'Music',
-          description: 'Free Sunday concert series at Pompano Beach Amphitheater. Diverse musical programming from jazz to Caribbean to pop.',
-          tags: ['live-music', 'outdoor', 'free-event', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
+    // Pompano Beach Amphitheater — generic "Weekend Concert" and "Sunday Concert Series" removed
+    // TODO: add specific events from pompanobeachfl.gov/amphitheater calendar
     // Lauderdale-By-The-Sea
     {
       name: 'El Mar Drive Beach',
@@ -442,15 +328,7 @@ export class FortLauderdaleScraper extends BaseScraper {
           tags: ['outdoor', 'beach', 'market', 'local-favorite', 'free-event'],
           price: 0,
         },
-        {
-          name: 'Sunday Concert on the Beach',
-          days: [0], // Sunday
-          time: '14:00',
-          category: 'Music',
-          description: 'Free Sunday afternoon concerts on the beach in Lauderdale-By-The-Sea. Live music and ocean views.',
-          tags: ['live-music', 'outdoor', 'beach', 'free-event'],
-          price: 0,
-        },
+        // Sunday Concert on the Beach removed — no confirmed organizer or confirmed schedule
       ],
     },
     // Las Olas Art Fair (bi-annual: first weekend Jan + last weekend Feb)

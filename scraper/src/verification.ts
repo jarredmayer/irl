@@ -38,8 +38,8 @@ const VERIFIED_SOURCES = [
   'Dice.fm Real',              // Puppeteer scraper for real Dice events
   // Real HTTP scrapers
   'Dice.fm',                   // Real club/music events from Dice
-  'Miami Improv',              // Real comedy shows
-  'Fort Lauderdale Improv',    // Real comedy shows
+  // Miami Improv moved to SYNTHETIC — real HTTP scraper was failing; template events are generic
+  'Fort Lauderdale Improv',    // Real comedy shows (Dania Beach Improv real scraper)
   'Broward Center',            // Real performing arts events
   'Coral Gables',              // Real city calendar events
   'Verified Recurring',        // Confirmed recurring events only
@@ -53,8 +53,8 @@ const SYNTHETIC_SOURCES = [
   // These generate fake "events" without real calendar data
   'Adrienne Arsht Center',     // SYNTHETIC: generates "Broadway in Miami" etc.
   'Fillmore Miami Beach',      // SYNTHETIC: generates "Live Rock at Fillmore"
-  'Miami Improv',              // SYNTHETIC: generates generic comedy shows
-  'Dania Beach Improv',        // SYNTHETIC: generates generic comedy shows
+  'Miami Improv',              // SYNTHETIC: generates generic comedy shows (real scraper failing)
+  'Dania Beach Improv',        // SYNTHETIC: generates generic comedy shows (real scraper failing)
   'Candlelight Concerts',      // SYNTHETIC: generates assumed concerts
   'Music Venues',              // SYNTHETIC: "Live Jazz at Lagniappe"
   'Cultural Venues',           // SYNTHETIC: "ICA Miami Free Admission"
