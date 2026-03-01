@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-01T09:09:56.787Z",
+  "scrapedAt": "2026-03-01T09:18:38.640Z",
   "stats": {
-    "total": 1240,
-    "deduplicated": 864,
+    "total": 1221,
+    "deduplicated": 845,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -24,20 +24,20 @@
       "Miami Improv": 0,
       "Fort Lauderdale Improv": 0,
       "Coral Gables": 0,
-      "Verified Recurring": 9,
+      "Verified Recurring": 2,
       "Coffee & Chill": 6,
       "Free Yoga Miami": 76,
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
-      "Fort Lauderdale": 196,
+      "Fort Lauderdale": 184,
       "Instagram Sources": 252
     }
   },
   "delta": {
     "added": 0,
-    "removed": 0,
+    "removed": 19,
     "modified": 0,
-    "unchanged": 861
+    "unchanged": 842
   },
   "sources": [
     {
@@ -148,7 +148,7 @@
     },
     {
       "name": "Verified Recurring",
-      "count": 9,
+      "count": 2,
       "errors": []
     },
     {
@@ -173,7 +173,7 @@
     },
     {
       "name": "Fort Lauderdale",
-      "count": 196,
+      "count": 184,
       "errors": []
     },
     {

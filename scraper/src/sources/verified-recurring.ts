@@ -70,26 +70,11 @@ const MONTHLY_EVENTS: MonthlyEvent[] = [
 ];
 
 // Weekly recurring events — the event FORMAT is the product (confirmed from official sources)
+// NOTE: Add events here only when address/coordinates are verified from official source
 const WEEKLY_EVENTS: WeeklyEvent[] = [
-  // The Wilder Miami: Burlesque Brunch
-  // Source: thewildermiami.com — confirmed weekly Sunday brunch with live burlesque show
-  // This is a branded experience (the show IS the consistent product), not a generic "brunch"
-  {
-    name: 'Burlesque Brunch at The Wilder',
-    venue: 'The Wilder Miami',
-    address: '2119 NW 2nd Ave, Miami, FL 33127',
-    neighborhood: 'Wynwood',
-    lat: 25.7965,
-    lng: -80.1996,
-    days: [0], // Sunday
-    time: '11:30',
-    category: 'Entertainment',
-    description: 'Live burlesque performances during Sunday brunch at The Wilder. Bottomless cocktails, brunch bites, and a show that blends cabaret energy with Miami flair.',
-    tags: ['brunch', 'entertainment', 'local-favorite'],
-    price: 65,
-    isOutdoor: false,
-    sourceUrl: 'https://www.thewildermiami.com/',
-  },
+  // The Wilder (Fort Lauderdale) — Burlesque Brunch
+  // TODO: Confirm correct address and coordinates before re-adding
+  // User confirmed venue is in Fort Lauderdale, not Wynwood/Miami
 ];
 
 export class VerifiedRecurringScraper extends BaseScraper {
