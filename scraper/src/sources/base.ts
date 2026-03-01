@@ -28,27 +28,80 @@ export abstract class BaseScraper {
    */
   abstract scrape(): Promise<RawEvent[]>;
 
+  /** Max retries for transient network errors */
+  private static MAX_RETRIES = 3;
+  /** Per-request timeout in ms */
+  private static REQUEST_TIMEOUT_MS = 15_000;
+
   /**
-   * Make an HTTP request with rate limiting
+   * Make an HTTP request with rate limiting, timeout, and retry
    */
   protected async fetch(url: string, options: RequestInit = {}): Promise<Response> {
     await this.sleep(this.config.rateLimit);
 
-    const response = await fetch(url, {
-      ...options,
-      headers: {
-        'User-Agent': this.userAgent,
-        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-        ...options.headers,
-      },
-    });
+    let lastError: Error | undefined;
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    for (let attempt = 1; attempt <= BaseScraper.MAX_RETRIES; attempt++) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), BaseScraper.REQUEST_TIMEOUT_MS);
+
+      try {
+        const response = await fetch(url, {
+          ...options,
+          signal: controller.signal,
+          headers: {
+            'User-Agent': this.userAgent,
+            Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            ...options.headers,
+          },
+        });
+
+        clearTimeout(timeout);
+
+        // Retry on server errors (502, 503, 429)
+        if (response.status === 429 || response.status === 502 || response.status === 503) {
+          lastError = new Error(`HTTP ${response.status}: ${response.statusText}`);
+          if (attempt < BaseScraper.MAX_RETRIES) {
+            const delay = Math.pow(2, attempt) * 1000; // 2s, 4s
+            this.log(`  ↻ ${response.status} on attempt ${attempt}, retrying in ${delay / 1000}s...`);
+            await this.sleep(delay);
+            continue;
+          }
+          throw lastError;
+        }
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        return response;
+      } catch (error) {
+        clearTimeout(timeout);
+        lastError = error instanceof Error ? error : new Error(String(error));
+
+        // Only retry on transient network errors (DNS, timeout, connection reset)
+        const isTransient =
+          lastError.name === 'AbortError' ||
+          lastError.message.includes('fetch failed') ||
+          lastError.message.includes('ECONNRESET') ||
+          lastError.message.includes('ETIMEDOUT') ||
+          lastError.message.includes('EAI_AGAIN') ||
+          lastError.message.includes('ENOTFOUND') ||
+          lastError.message.includes('socket hang up');
+
+        if (isTransient && attempt < BaseScraper.MAX_RETRIES) {
+          const delay = Math.pow(2, attempt) * 1000;
+          this.log(`  ↻ Network error on attempt ${attempt}, retrying in ${delay / 1000}s...`);
+          await this.sleep(delay);
+          continue;
+        }
+
+        throw lastError;
+      }
     }
 
-    return response;
+    throw lastError || new Error('fetch failed after retries');
   }
 
   /**

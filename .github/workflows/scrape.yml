@@ -50,6 +50,7 @@ jobs:
       - name: Run Instagram post scraper
         if: ${{ secrets.INSTAGRAM_SESSION_ID != '' && secrets.ANTHROPIC_API_KEY != '' }}
         continue-on-error: true
+        timeout-minutes: 5
         working-directory: scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -58,6 +59,7 @@ jobs:
 
       - name: Run scraper
         continue-on-error: true
+        timeout-minutes: 10
         working-directory: scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

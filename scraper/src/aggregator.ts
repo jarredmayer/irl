@@ -27,38 +27,59 @@ export class EventAggregator {
     results: ScrapeResult[];
     stats: { total: number; deduplicated: number; bySource: Record<string, number> };
   }> {
-    console.log(`\n🚀 Starting event aggregation with ${this.scrapers.length} sources...\n`);
+    const enabledScrapers = this.scrapers.filter((s) => s.isEnabled());
+    const disabledCount = this.scrapers.length - enabledScrapers.length;
+    console.log(`\n🚀 Starting event aggregation with ${enabledScrapers.length} sources (${disabledCount} disabled)...\n`);
+
+    // Per-scraper timeout (2 minutes — enough for multi-page scrapers)
+    const SCRAPER_TIMEOUT_MS = 120_000;
+    // Concurrency — run up to 6 scrapers in parallel
+    const BATCH_SIZE = 6;
 
     const results: ScrapeResult[] = [];
     const allRawEvents: RawEvent[] = [];
 
-    // Run each scraper
-    for (const scraper of this.scrapers) {
-      if (!scraper.isEnabled()) {
-        console.log(`⏭️  Skipping disabled source: ${scraper.getSourceName()}`);
-        continue;
+    // Run scrapers in concurrent batches
+    for (let i = 0; i < enabledScrapers.length; i += BATCH_SIZE) {
+      const batch = enabledScrapers.slice(i, i + BATCH_SIZE);
+      console.log(`── Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(enabledScrapers.length / BATCH_SIZE)} (${batch.map((s) => s.getSourceName()).join(', ')}) ──`);
+
+      const batchResults = await Promise.allSettled(
+        batch.map(async (scraper) => {
+          const result: ScrapeResult = {
+            source: scraper.getSourceName(),
+            events: [],
+            errors: [],
+            scrapedAt: new Date().toISOString(),
+          };
+
+          try {
+            console.log(`📡 Scraping ${scraper.getSourceName()}...`);
+            const events = await Promise.race([
+              scraper.scrape(),
+              new Promise<never>((_, reject) =>
+                setTimeout(() => reject(new Error(`Timed out after ${SCRAPER_TIMEOUT_MS / 1000}s`)), SCRAPER_TIMEOUT_MS)
+              ),
+            ]);
+            result.events = events;
+            console.log(`   ✅ ${scraper.getSourceName()}: ${events.length} events`);
+          } catch (error) {
+            const errorMsg = error instanceof Error ? error.message : String(error);
+            result.errors.push(errorMsg);
+            console.log(`   ❌ ${scraper.getSourceName()}: ${errorMsg}`);
+          }
+
+          return result;
+        })
+      );
+
+      for (const settled of batchResults) {
+        if (settled.status === 'fulfilled') {
+          results.push(settled.value);
+          allRawEvents.push(...settled.value.events);
+        }
       }
-
-      const result: ScrapeResult = {
-        source: scraper.getSourceName(),
-        events: [],
-        errors: [],
-        scrapedAt: new Date().toISOString(),
-      };
-
-      try {
-        console.log(`📡 Scraping ${scraper.getSourceName()}...`);
-        const events = await scraper.scrape();
-        result.events = events;
-        allRawEvents.push(...events);
-        console.log(`   ✅ Got ${events.length} events\n`);
-      } catch (error) {
-        const errorMsg = error instanceof Error ? error.message : String(error);
-        result.errors.push(errorMsg);
-        console.log(`   ❌ Error: ${errorMsg}\n`);
-      }
-
-      results.push(result);
+      console.log('');
     }
 
     // Filter out past events and sanity-check dates
@@ -121,13 +142,19 @@ export class EventAggregator {
       ? irlEvents.map((e) => ({ ...e, editorPick: false }))
       : irlEvents;
 
-    const orchestrator = new OrchestratorAgent();
-    const orchResult = await orchestrator.run(eventsForOrchestrator, {
-      skipLocationAgent: !hasAIEnabled() || !options?.verifyLocations,
-      fullPipeline: options?.fullPipeline,
-      verifyEvents: options?.verifyEvents,
-    });
-    const verifiedEvents = orchResult.events;
+    let verifiedEvents: IRLEvent[];
+    try {
+      const orchestrator = new OrchestratorAgent();
+      const orchResult = await orchestrator.run(eventsForOrchestrator, {
+        skipLocationAgent: !hasAIEnabled() || !options?.verifyLocations,
+        fullPipeline: options?.fullPipeline,
+        verifyEvents: options?.verifyEvents,
+      });
+      verifiedEvents = orchResult.events;
+    } catch (orchError) {
+      console.error('⚠️  Orchestrator failed, using pre-orchestrator events:', orchError instanceof Error ? orchError.message : orchError);
+      verifiedEvents = irlEvents;
+    }
 
     return {
       events: verifiedEvents,
