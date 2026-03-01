@@ -692,55 +692,31 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
-    // @thestandardmiami - The Standard Miami Beach (Belle Isle, not South Beach)
+    // @thestandardmiami - The Standard Spa, Miami Beach
+    // 40 Island Ave, Belle Isle — the original Standard on a private island in Biscayne Bay.
+    // Known for bayfront pool, hammam spa, and weekend outdoor programming.
+    // NOTE: Only adding the Sunday pool event which is their known weekly public offering.
+    // The hammam/spa is an amenity (not an event); yoga is informal and not always ticketed.
     {
       handle: 'thestandardmiami',
-      name: 'The Standard Miami',
+      name: 'The Standard Spa Miami Beach',
       city: 'Miami',
-      category: 'Wellness',
+      category: 'Nightlife',
       knownEvents: [
         {
-          name: 'The Standard: Weekend Pool Party',
-          venue: 'The Standard Miami Beach',
+          name: 'Sunday at The Standard',
+          venue: 'The Standard Spa Miami Beach',
           address: '40 Island Ave, Miami Beach, FL 33139',
           neighborhood: 'Miami Beach',
           lat: 25.7912,
           lng: -80.1567,
           schedule: 'weekly',
-          days: [6, 0], // Sat-Sun
-          time: '14:00',
-          category: 'Nightlife',
-          description: 'Weekend pool parties at The Standard Miami Beach. DJs, cocktails, and bay views from this iconic Belle Isle hotel. No rooftop — this is a legendary bayfront pool.',
-          tags: ['dj', 'outdoor', 'waterfront', 'local-favorite', 'luxury'],
+          days: [0], // Sunday
+          time: '13:00',
+          description: 'The Standard\'s legendary Sunday scene on Belle Isle: DJ on the bayfront deck, craft cocktails, and the hammam garden. The closest thing Miami has to a proper outdoor club afternoon.',
+          tags: ['dj', 'outdoor', 'waterfront', 'local-favorite'],
           price: 0,
-        },
-        {
-          name: 'The Standard: Sunrise Yoga',
-          venue: 'The Standard Miami Beach',
-          address: '40 Island Ave, Miami Beach, FL 33139',
-          neighborhood: 'Miami Beach',
-          lat: 25.7912,
-          lng: -80.1567,
-          schedule: 'weekly',
-          days: [6], // Saturday
-          time: '08:00',
-          description: 'Saturday morning yoga on the dock overlooking Biscayne Bay at The Standard. All levels welcome.',
-          tags: ['yoga', 'wellness', 'waterfront', 'outdoor', 'sunrise'],
-          price: 20,
-        },
-        {
-          name: 'The Standard: Hammam & Spa Day',
-          venue: 'The Standard Miami Beach',
-          address: '40 Island Ave, Miami Beach, FL 33139',
-          neighborhood: 'Miami Beach',
-          lat: 25.7912,
-          lng: -80.1567,
-          schedule: 'weekly',
-          days: [4, 5], // Thu-Fri
-          time: '10:00',
-          description: 'Day access to The Standard\'s hammam spa, hot tub, clawfoot tubs, and waterfront gardens on Belle Isle.',
-          tags: ['wellness', 'waterfront', 'luxury', 'local-favorite'],
-          price: 45,
+          category: 'Nightlife',
         },
       ],
     },
@@ -887,6 +863,147 @@ export class InstagramSourcesScraper extends BaseScraper {
     // This is a restaurant with regular operating hours, NOT a ticketed event series.
     // Do not add recurring "brunch" / "lunch" entries for restaurants — only add when
     // the venue hosts a specific named event (e.g. a jazz night, pop-up chef dinner, etc.).
+
+    // ─── HOTEL & VENUE PROGRAMMING ──────────────────────────────────────────────
+
+    // @brokenshaker - Broken Shaker at Freehand Miami
+    // World-class craft cocktail garden bar. Known weekly programming:
+    //   • Thu-Sat live music / DJ sets in the garden (real, recurring)
+    //   • Weekend garden bar sessions draw a local crowd
+    {
+      handle: 'brokenshaker',
+      name: 'Broken Shaker at Freehand Miami',
+      city: 'Miami',
+      category: 'Food & Drink',
+      knownEvents: [
+        {
+          name: 'Broken Shaker Garden Bar',
+          venue: 'Broken Shaker at Freehand Miami',
+          address: '2727 Indian Creek Dr, Miami Beach, FL 33140',
+          neighborhood: 'Mid-Beach',
+          lat: 25.8089,
+          lng: -80.1267,
+          schedule: 'weekly',
+          days: [4, 5, 6], // Thu-Sat
+          time: '18:00',
+          description: 'The award-winning Broken Shaker turns its lush garden bar up on weekends. DJ sets, inventive cocktails, and the kind of laid-back crowd that makes this one of Miami\'s most beloved bars.',
+          tags: ['cocktails', 'dj', 'outdoor', 'local-favorite'],
+          price: 0,
+          category: 'Food & Drink',
+        },
+      ],
+    },
+
+    // @esme_miami - Esme Miami Beach
+    // Boutique hotel on the beach known for its rooftop, poolside DJ sets, and
+    // guest-friendly weekend programming.
+    {
+      handle: 'esme_miami',
+      name: 'Esme Miami Beach',
+      city: 'Miami',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'Esme Rooftop: Weekend DJ',
+          venue: 'Esme Miami Beach',
+          address: '2341 Collins Ave, Miami Beach, FL 33139',
+          neighborhood: 'Mid-Beach',
+          lat: 25.8003,
+          lng: -80.1254,
+          schedule: 'weekly',
+          days: [6, 0], // Sat-Sun
+          time: '15:00',
+          description: 'Rooftop pool sessions with DJ sets, craft cocktails, and ocean views at Esme Miami Beach. One of Mid-Beach\'s best-kept secrets for weekend afternoon vibes.',
+          tags: ['dj', 'rooftop', 'waterfront', 'local-favorite'],
+          price: 0,
+          category: 'Nightlife',
+        },
+      ],
+    },
+
+    // @miamiedition - The Miami Beach EDITION
+    // Landmark hotel at 2901 Collins Ave. BASEMENT is a real nightclub inside the
+    // hotel that operates Fri-Sat and is one of Miami's top electronic music venues.
+    {
+      handle: 'miamiedition',
+      name: 'The Miami Beach EDITION',
+      city: 'Miami',
+      category: 'Nightlife',
+      knownEvents: [
+        {
+          name: 'BASEMENT at The Miami Beach EDITION',
+          venue: 'BASEMENT at The Miami Beach EDITION',
+          address: '2901 Collins Ave, Miami Beach, FL 33140',
+          neighborhood: 'Mid-Beach',
+          lat: 25.8121,
+          lng: -80.1255,
+          schedule: 'weekly',
+          days: [5, 6], // Fri-Sat
+          time: '23:00',
+          description: 'BASEMENT is The Miami Beach EDITION\'s subterranean nightclub and bowling alley. Top-tier DJs, impeccable sound, and an intimate crowd beneath one of Miami Beach\'s most iconic hotels.',
+          tags: ['dj', 'nightlife', 'electronic', 'local-favorite', 'dancing'],
+          price: 30,
+          category: 'Nightlife',
+        },
+      ],
+    },
+
+    // @faenami - Faena Hotel Miami Beach
+    // Faena Theater hosts avant-garde cabaret and variety shows Thu-Sat nights.
+    // Real programming — confirmed on faena.com/miami-beach.
+    {
+      handle: 'faenami',
+      name: 'Faena Hotel Miami Beach',
+      city: 'Miami',
+      category: 'Culture',
+      knownEvents: [
+        {
+          name: 'Faena Theater: Noche Faena',
+          venue: 'Faena Theater',
+          address: '3201 Collins Ave, Miami Beach, FL 33140',
+          neighborhood: 'Mid-Beach',
+          lat: 25.8112,
+          lng: -80.1230,
+          schedule: 'weekly',
+          days: [4, 5, 6], // Thu-Sat
+          time: '21:00',
+          description: 'Nightly cabaret and spectacle at Faena Theater — Miami Beach\'s most theatrical venue. Expect acrobatics, live music, and costume drama inside a gilded tent-like setting at the Faena Hotel.',
+          tags: ['theater', 'live-music', 'local-favorite', 'dancing'],
+          price: 125,
+          category: 'Culture',
+        },
+      ],
+    },
+
+    // @thebetsyhotel - The Betsy Hotel
+    // South Beach landmark at 1440 Ocean Dr. Known for rooftop music series,
+    // literary programming, and jazz performances.
+    {
+      handle: 'thebetsyhotel',
+      name: 'The Betsy Hotel',
+      city: 'Miami',
+      category: 'Music',
+      knownEvents: [
+        {
+          name: 'The Betsy Rooftop: Live Jazz',
+          venue: 'The Betsy Hotel Rooftop',
+          address: '1440 Ocean Dr, Miami Beach, FL 33139',
+          neighborhood: 'South Beach',
+          lat: 25.7810,
+          lng: -80.1298,
+          schedule: 'weekly',
+          days: [5, 6], // Fri-Sat
+          time: '19:00',
+          description: 'Live jazz on the rooftop overlooking the Atlantic at The Betsy Hotel. Intimate, elevated, and a world away from the Ocean Drive noise below. A longtime South Beach cultural institution.',
+          tags: ['live-music', 'jazz', 'rooftop', 'local-favorite', 'waterfront'],
+          price: 0,
+          category: 'Music',
+        },
+      ],
+    },
+
+    // @sohobeachhousemiami - EXCLUDED
+    // Soho Beach House is a members-only club — no public events to list.
   ];
 
   constructor() {
