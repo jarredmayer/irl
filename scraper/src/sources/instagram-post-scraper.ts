@@ -9,6 +9,7 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
+import type { Message } from '@anthropic-ai/sdk/resources/messages.js';
 import type { RawEvent } from '../types.js';
 
 // Miami/FLL city-center fallback coords when venue not recognized
@@ -35,6 +36,27 @@ function getAnthropicClient(): Anthropic {
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) throw new Error('ANTHROPIC_API_KEY not set');
   return new Anthropic({ apiKey: key });
+}
+
+async function sleep(ms: number): Promise<void> {
+  return new Promise(r => setTimeout(r, ms));
+}
+
+/** Retry an async fn up to maxRetries on rate-limit (429) or overload (529) errors */
+async function withRetry<T>(fn: () => Promise<T>, maxRetries = 3): Promise<Awaited<T>> {
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (err: any) {
+      const status = err?.status ?? err?.statusCode;
+      const isRateLimit = status === 429 || status === 529;
+      if (!isRateLimit || attempt === maxRetries) throw err;
+      const delay = Math.pow(2, attempt + 1) * 1000; // 2s, 4s, 8s
+      console.warn(`  ⏳ Rate limit hit, retrying in ${delay / 1000}s...`);
+      await sleep(delay);
+    }
+  }
+  throw new Error('unreachable');
 }
 
 /**
@@ -122,11 +144,11 @@ Schema:
 
 Return [] if nothing concrete found. JSON only, no explanation.`;
 
-  const response = await client.messages.create({
+  const response = await withRetry(() => client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 1500,
     messages: [{ role: 'user', content: prompt }],
-  });
+  })) as Message;
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '';
   const match = text.match(/\[[\s\S]*\]/);
@@ -152,7 +174,8 @@ async function extractEventsFromImage(
 
   const today = new Date().toISOString().slice(0, 10);
 
-  const response = await client.messages.create({
+  const imageUrl = post.imageUrl!;
+  const response = await withRetry(() => client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 800,
     messages: [{
@@ -160,7 +183,7 @@ async function extractEventsFromImage(
       content: [
         {
           type: 'image',
-          source: { type: 'url', url: post.imageUrl },
+          source: { type: 'url', url: imageUrl },
         },
         {
           type: 'text',
@@ -175,7 +198,7 @@ JSON only.`,
         },
       ],
     }],
-  });
+  })) as Message;
 
   const text = response.content[0].type === 'text' ? response.content[0].text : '';
   const match = text.match(/\[[\s\S]*\]/);
@@ -242,7 +265,7 @@ export async function scrapeIGAccount(account: IGAccountConfig): Promise<RawEven
 
   // Vision extraction for posts with short/empty captions (likely flyers)
   const flyerPosts = posts.filter(p => p.caption.trim().length < 60 && p.imageUrl);
-  for (const post of flyerPosts.slice(0, 4)) { // cap at 4 vision calls per account
+  for (const post of flyerPosts.slice(0, 2)) { // cap at 2 vision calls per account to reduce rate limit risk
     const fromImage = await extractEventsFromImage(client, account, post);
     for (const e of fromImage) {
       const raw = toRawEvent(account, e);
