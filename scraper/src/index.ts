@@ -135,15 +135,27 @@ async function main() {
   const isTest = process.argv.includes('--test');
   const verifyLocations = process.argv.includes('--verify-locations');
   const generateEditorial = process.argv.includes('--ai-editorial');
+  const isFullPipeline = process.argv.includes('--full-pipeline');
+  const isPmReport = process.argv.includes('--pm-report');
   const startTime = Date.now();
   const dataDir = join(__dirname, '../../src/data');
+
+  // PMAgent weekly health report — runs standalone, doesn't scrape
+  if (isPmReport) {
+    const { PMAgent } = await import('./agents/orchestrator.js');
+    const pm = new PMAgent();
+    await pm.report();
+    return;
+  }
 
   try {
     // Run aggregator
     const aggregator = new EventAggregator();
     const { events, results, stats } = await aggregator.aggregate({
       verifyLocations,
-      generateEditorial,
+      // In fullPipeline mode, UXAgent generates editorial copy — skip the legacy batchGenerateEditorial
+      generateEditorial: !isFullPipeline && generateEditorial,
+      fullPipeline: isFullPipeline,
     });
 
     // Print stats

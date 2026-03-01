@@ -169,11 +169,14 @@ Use your tools to geocode the address and verify/correct the coordinates. Return
       }
       return result;
     } catch {
-      // Fallback: keep current coords, never cache parse failures
+      // Fallback: keep current coords, never cache parse failures.
+      // Use 'low' confidence (not 'unverified') when coords exist — transient parse
+      // errors should not cause ValidationAgent to hardblock valid events.
+      // Only 'unverified' when there are no coords to fall back to.
       return {
         lat: currentLat ?? 0,
         lng: currentLng ?? 0,
-        confidence: 'unverified',
+        confidence: currentLat != null ? 'low' : 'unverified',
         wasChanged: false,
         reasoning: 'Agent response unparseable — kept original coordinates',
       };
@@ -246,8 +249,12 @@ export async function agentVerifyLocations(
       report.cacheHits++;
     } else if (result.confidence === 'unverified') {
       report.unverified++;
-      report.unverifiedIds.push(event.id);
       report.confidenceBreakdown.unverified++;
+      // Only hardblock events that are genuinely unlocatable (no existing coords).
+      // Parse errors on events with valid coords return confidence='low', not 'unverified'.
+      if (event.lat == null || event.lng == null) {
+        report.unverifiedIds.push(event.id);
+      }
     } else {
       report.verified++;
       report.confidenceBreakdown[result.confidence]++;

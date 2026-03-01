@@ -53,6 +53,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['massive', 'legendary', 'techno', 'sunrise', 'marathon'],
     category: 'club',
     website: 'https://clubspace.com/',
+    imageUrl: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80',
   },
   'floyd-miami': {
     id: 'floyd-miami',
@@ -167,6 +168,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['iconic', 'concert-hall', 'historic'],
     category: 'concert-hall',
     website: 'https://fillmoremb.com/',
+    imageUrl: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80',
   },
   'north-beach-bandshell': {
     id: 'north-beach-bandshell',
@@ -236,6 +238,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['latin', 'salsa', 'historic', 'live-music', 'local-favorite'],
     category: 'bar',
     website: 'https://ballandchainmiami.com/',
+    imageUrl: 'https://images.unsplash.com/photo-1547153760-18fc86324498?w=800&q=80',
   },
   'gramps': {
     id: 'gramps',
@@ -365,6 +368,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['upscale', 'performing-arts', 'world-class'],
     category: 'theater',
     website: 'https://arshtcenter.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
   },
   'colony-theatre': {
     id: 'colony-theatre',
@@ -419,6 +423,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['performing-arts', 'broadway', 'concerts'],
     category: 'theater',
     website: 'https://www.browardcenter.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',
   },
   'revolution-live': {
     id: 'revolution-live',
@@ -433,6 +438,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['rock', 'indie', 'standing-room'],
     category: 'concert-hall',
     website: 'https://jointherevolution.net/',
+    imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',
   },
   'culture-room': {
     id: 'culture-room',
@@ -496,6 +502,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['museum', 'waterfront', 'contemporary-art'],
     category: 'museum',
     website: 'https://www.pamm.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80',
   },
   'the-bass': {
     id: 'the-bass',
@@ -510,6 +517,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['museum', 'contemporary-art', 'architecture'],
     category: 'museum',
     website: 'https://thebass.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80',
   },
   'ica-miami': {
     id: 'ica-miami',
@@ -524,6 +532,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['museum', 'free', 'contemporary-art', 'design-district'],
     category: 'museum',
     website: 'https://icamiami.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1575223970966-76ae61ee7838?w=800&q=80',
   },
   'vizcaya': {
     id: 'vizcaya',
@@ -538,6 +547,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['historic', 'gardens', 'waterfront', 'romantic', 'iconic'],
     category: 'museum',
     website: 'https://vizcaya.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
   },
   'frost-science': {
     id: 'frost-science',
@@ -552,6 +562,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['museum', 'family-friendly', 'planetarium', 'aquarium'],
     category: 'museum',
     website: 'https://frostscience.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80',
   },
   'nsu-art-museum': {
     id: 'nsu-art-museum',
@@ -566,6 +577,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['museum', 'contemporary-art'],
     category: 'museum',
     website: 'https://nsuartmuseum.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1575223970966-76ae61ee7838?w=800&q=80',
   },
   'deering-estate': {
     id: 'deering-estate',
@@ -594,6 +606,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['garden', 'nature', 'family-friendly', 'events'],
     category: 'outdoor',
     website: 'https://fairchildgarden.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',
   },
   'pinecrest-gardens': {
     id: 'pinecrest-gardens',
@@ -743,6 +756,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['upscale', 'hotel', 'pool-party', 'iconic'],
     category: 'hotel',
     website: 'https://www.fontainebleau.com/',
+    imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
   },
   'faena-hotel': {
     id: 'faena-hotel',

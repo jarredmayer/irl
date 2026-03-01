@@ -22,7 +22,7 @@ export class EventAggregator {
   /**
    * Run all scrapers and aggregate results
    */
-  async aggregate(options?: { verifyLocations?: boolean; generateEditorial?: boolean }): Promise<{
+  async aggregate(options?: { verifyLocations?: boolean; generateEditorial?: boolean; fullPipeline?: boolean }): Promise<{
     events: IRLEvent[];
     results: ScrapeResult[];
     stats: { total: number; deduplicated: number; bySource: Record<string, number> };
@@ -115,10 +115,16 @@ export class EventAggregator {
     }
 
     // Run the Orchestrator — always runs rule-based validation (free);
-    // location agent only runs when AI is enabled (cached, so very low cost)
+    // location agent only runs when AI is enabled (cached, so very low cost).
+    // In fullPipeline mode: reset heuristic editorPick so CurationAgent is sole source of truth.
+    const eventsForOrchestrator = options?.fullPipeline
+      ? irlEvents.map((e) => ({ ...e, editorPick: false }))
+      : irlEvents;
+
     const orchestrator = new OrchestratorAgent();
-    const orchResult = await orchestrator.run(irlEvents, {
+    const orchResult = await orchestrator.run(eventsForOrchestrator, {
       skipLocationAgent: !hasAIEnabled() || !options?.verifyLocations,
+      fullPipeline: options?.fullPipeline,
     });
     const verifiedEvents = orchResult.events;
 
