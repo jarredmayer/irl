@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-01T06:41:11.042Z",
+  "scrapedAt": "2026-03-01T07:13:05.154Z",
   "stats": {
-    "total": 1467,
-    "deduplicated": 1079,
+    "total": 1494,
+    "deduplicated": 1097,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -15,10 +15,9 @@
       "Miami Festivals": 1,
       "Dice.fm Real": 0,
       "Resident Advisor": 0,
-      "Shotgun": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 430,
-      "Pop-Ups": 30,
+      "Pop-Ups": 65,
       "Miami Improv": 0,
       "Fort Lauderdale Improv": 0,
       "Coral Gables": 0,
@@ -28,14 +27,14 @@
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
       "Fort Lauderdale": 268,
-      "Instagram Sources": 449
+      "Instagram Sources": 441
     }
   },
   "delta": {
-    "added": 45,
-    "removed": 388,
-    "modified": 0,
-    "unchanged": 1031
+    "added": 52,
+    "removed": 32,
+    "modified": 16,
+    "unchanged": 1026
   },
   "sources": [
     {
@@ -87,16 +86,11 @@
       "name": "Dice.fm Real",
       "count": 0,
       "errors": [
-        "this.page.setViewport is not a function"
+        "this.page.setUserAgent is not a function"
       ]
     },
     {
       "name": "Resident Advisor",
-      "count": 0,
-      "errors": []
-    },
-    {
-      "name": "Shotgun",
       "count": 0,
       "errors": []
     },
@@ -112,7 +106,7 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 30,
+      "count": 65,
       "errors": []
     },
     {
@@ -168,7 +162,7 @@
     },
     {
       "name": "Instagram Sources",
-      "count": 449,
+      "count": 441,
       "errors": []
     }
   ]
