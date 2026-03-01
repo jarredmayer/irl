@@ -218,7 +218,7 @@ export function getAllScrapers(): BaseScraper[] {
     new DiceRealScraper(), // Puppeteer-based real scraper
     new ResidentAdvisorScraper(), // Real RA GraphQL API — Miami area ID 38
     // new DiceFmScraper(),           // SYNTHETIC - fake events like "Keinemusik Miami"
-    new ShotgunScraper(),              // real Shotgun.live API
+    // new ShotgunScraper(), // DISABLED - API returning 404 (endpoint changed, auth required)
 
     // Manually curated REAL events (venues, concerts, cultural)
     new RealVenueEventsScraper(),
