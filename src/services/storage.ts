@@ -151,3 +151,44 @@ export function deleteUserSubmittedEvent(eventId: string): void {
     console.error('Failed to delete user-submitted event:', e);
   }
 }
+
+// User-submitted Instagram accounts
+export interface SubmittedAccount {
+  id: string;
+  handle: string; // @handle without the @
+  accountType: 'venue' | 'organizer' | 'artist' | 'pop-up';
+  city: 'Miami' | 'Fort Lauderdale' | 'Both';
+  description: string;
+  submittedAt: string;
+  status: 'pending' | 'approved' | 'rejected';
+}
+
+export function saveSubmittedAccount(account: SubmittedAccount): void {
+  try {
+    const accounts = getSubmittedAccounts();
+    accounts.push(account);
+    localStorage.setItem(STORAGE_KEYS.USER_SUBMITTED_ACCOUNTS, JSON.stringify(accounts));
+  } catch (e) {
+    console.error('Failed to save submitted account:', e);
+  }
+}
+
+export function getSubmittedAccounts(): SubmittedAccount[] {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEYS.USER_SUBMITTED_ACCOUNTS);
+    if (!stored) return [];
+    return JSON.parse(stored);
+  } catch {
+    return [];
+  }
+}
+
+export function deleteSubmittedAccount(accountId: string): void {
+  try {
+    const accounts = getSubmittedAccounts();
+    const filtered = accounts.filter((a) => a.id !== accountId);
+    localStorage.setItem(STORAGE_KEYS.USER_SUBMITTED_ACCOUNTS, JSON.stringify(filtered));
+  } catch (e) {
+    console.error('Failed to delete submitted account:', e);
+  }
+}

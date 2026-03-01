@@ -206,6 +206,7 @@ export const STORAGE_KEYS = {
   USER_STATE: 'irl_user_state',
   WEATHER_CACHE: 'irl_weather_cache',
   USER_SUBMITTED_EVENTS: 'irl_user_submitted_events',
+  USER_SUBMITTED_ACCOUNTS: 'irl_user_submitted_accounts',
 } as const;
 
 // Flat list of all neighborhoods for forms

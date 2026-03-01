@@ -7,6 +7,7 @@ import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { EventAggregator } from './aggregator.js';
+import { OrchestratorAgent } from './agents/orchestrator.js';
 import type { IRLEvent } from './types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -126,6 +127,7 @@ async function main() {
 
   const isTest = process.argv.includes('--test');
   const verifyLocations = process.argv.includes('--verify-locations');
+  const agentVerify = process.argv.includes('--agent-verify');
   const generateEditorial = process.argv.includes('--ai-editorial');
   const startTime = Date.now();
   const dataDir = join(__dirname, '../../src/data');
@@ -160,9 +162,19 @@ async function main() {
       }
     }
 
+    // Purge historical events — remove anything that started before today midnight
+    const todayMidnight = new Date();
+    todayMidnight.setHours(0, 0, 0, 0);
+    const beforePurge = events.length;
+    const freshEvents = events.filter((e) => new Date(e.startAt) >= todayMidnight);
+    const purged = beforePurge - freshEvents.length;
+    if (purged > 0) {
+      console.log(`\n  🗑️  Purged ${purged} historical events (before ${todayMidnight.toDateString()})`);
+    }
+
     // Split events by city
-    const miamiEvents = events.filter((e) => e.city === 'Miami');
-    const fllEvents = events.filter((e) => e.city === 'Fort Lauderdale');
+    const miamiEvents = freshEvents.filter((e) => e.city === 'Miami');
+    const fllEvents = freshEvents.filter((e) => e.city === 'Fort Lauderdale');
 
     console.log('');
     console.log(`  Miami events: ${miamiEvents.length}`);
@@ -171,7 +183,7 @@ async function main() {
     // Calculate and print delta
     const existingEvents = loadExistingEvents(dataDir);
     if (existingEvents.length > 0) {
-      const delta = calculateDelta(existingEvents, events);
+      const delta = calculateDelta(existingEvents, freshEvents);
       printDeltaReport(delta);
     }
 
@@ -195,13 +207,13 @@ async function main() {
 
       // Save combined events
       const combinedPath = join(dataDir, 'events.json');
-      writeFileSync(combinedPath, JSON.stringify(events, null, 2));
-      console.log(`  ✅ Saved ${events.length} combined events to ${combinedPath}`);
+      writeFileSync(combinedPath, JSON.stringify(freshEvents, null, 2));
+      console.log(`  ✅ Saved ${freshEvents.length} combined events to ${combinedPath}`);
 
       // Save scrape metadata with delta info
       const metaPath = join(dataDir, 'scrape-meta.json');
       const delta = existingEvents.length > 0
-        ? calculateDelta(existingEvents, events)
+        ? calculateDelta(existingEvents, freshEvents)
         : { added: [], removed: [], modified: [], unchanged: 0 };
       const meta = {
         scrapedAt: new Date().toISOString(),
@@ -231,6 +243,22 @@ async function main() {
       };
       writeFileSync(metaPath, JSON.stringify(meta, null, 2));
       console.log(`  ✅ Saved metadata to ${metaPath}`);
+
+      // Optional: run orchestrator agent verify pass on saved events
+      if (agentVerify) {
+        console.log('\n  🎭 Running Orchestrator Agent (location verification pass)...');
+        const orchestrator = new OrchestratorAgent();
+        const orchResult = await orchestrator.run(freshEvents, { locationVerifyOnly: true, maxEventsPerAgent: 50 });
+        if (orchResult.summary.locationVerification) {
+          // Re-save with corrected coordinates
+          const correctedMiami = orchResult.events.filter((e) => e.city === 'Miami');
+          const correctedFll = orchResult.events.filter((e) => e.city === 'Fort Lauderdale');
+          writeFileSync(join(dataDir, 'events.miami.json'), JSON.stringify(correctedMiami, null, 2));
+          writeFileSync(join(dataDir, 'events.fll.json'), JSON.stringify(correctedFll, null, 2));
+          writeFileSync(join(dataDir, 'events.json'), JSON.stringify(orchResult.events, null, 2));
+          console.log(`  ✅ Re-saved with agent-verified coordinates`);
+        }
+      }
     } else {
       console.log('\n  🧪 Test mode - no files saved');
 

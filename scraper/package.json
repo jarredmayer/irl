@@ -11,6 +11,7 @@
     "validate": "npx tsx src/validate.ts",
     "verify-locations": "npx tsx src/verify-locations.ts",
     "verify-locations:fix": "npx tsx src/verify-locations.ts --fix",
+    "scrape:agent-verify": "npx tsx src/index.ts --agent-verify",
     "scrape:ig": "npx tsx scrape-instagram-posts.mjs",
     "merge:fll": "npx tsx merge-fll.mjs",
     "merge:miami": "npx tsx merge-miami-venues.mjs"
