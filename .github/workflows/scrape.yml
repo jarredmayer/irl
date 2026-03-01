@@ -36,8 +36,18 @@ jobs:
         working-directory: scraper
         run: npm ci
 
+      - name: Run Instagram post scraper
+        if: ${{ secrets.INSTAGRAM_SESSION_ID != '' }}
+        working-directory: scraper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          INSTAGRAM_SESSION_ID: ${{ secrets.INSTAGRAM_SESSION_ID }}
+        run: npm run scrape:ig
+
       - name: Run scraper
         working-directory: scraper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: npm run scrape
 
       - name: Check for changes
@@ -54,7 +64,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/events*.json src/data/scrape-meta.json
+          git add src/data/events*.json src/data/scrape-meta.json src/data/instagram-posts-cache.json || true
           git commit -m "Update events data $(date +'%Y-%m-%d')"
           git push
 
