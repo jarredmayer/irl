@@ -37,8 +37,10 @@ export abstract class PuppeteerScraper extends BaseScraper {
 
     this.page = await this.browser.newPage();
 
-    // Set a realistic viewport
-    await this.page.setViewport({ width: 1920, height: 1080 });
+    // Set viewport (puppeteer-extra v3 may not proxy this on newer Puppeteer)
+    if (typeof this.page.setViewport === 'function') {
+      await this.page.setViewport({ width: 1920, height: 1080 });
+    }
 
     // Set user agent
     await this.page.setUserAgent(this.userAgent);

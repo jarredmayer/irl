@@ -16,6 +16,7 @@ const timeFilters: { value: TimeFilter; label: string }[] = [
   { value: 'tomorrow', label: 'Tomorrow' },
   { value: 'weekend', label: 'Weekend' },
   { value: 'this-week', label: 'This Week' },
+  { value: 'this-month', label: 'This Month' },
   { value: 'all', label: 'All' },
 ];
 

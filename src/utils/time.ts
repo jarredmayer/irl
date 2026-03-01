@@ -2,12 +2,12 @@ import {
   format,
   isToday,
   isTomorrow,
-  isThisWeek,
   differenceInHours,
   differenceInMinutes,
   parseISO,
   addDays,
   startOfDay,
+  endOfMonth,
   endOfDay,
 } from 'date-fns';
 import { toZonedTime, formatInTimeZone } from 'date-fns-tz';
@@ -142,8 +142,15 @@ export function filterEventsByTime(
         return isToday(eventDate);
       case 'tomorrow':
         return isTomorrow(eventDate);
-      case 'this-week':
-        return isThisWeek(eventDate, { weekStartsOn: 1 });
+      case 'this-week': {
+        // Rolling 7 days from now (not calendar week)
+        const in7Days = endOfDay(addDays(now, 7));
+        return eventDate >= startOfDay(now) && eventDate <= in7Days;
+      }
+      case 'this-month': {
+        const monthEnd = endOfMonth(now);
+        return eventDate >= startOfDay(now) && eventDate <= monthEnd;
+      }
       case 'weekend': {
         const weekend = getThisWeekend(now);
         return eventDate >= weekend.start && eventDate <= weekend.end;
