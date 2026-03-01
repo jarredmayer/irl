@@ -284,7 +284,11 @@ async function main() {
     console.log(`═══════════════════════════════════════════════════════════\n`);
   } catch (error) {
     console.error('\n❌ Fatal error:', error);
-    process.exit(1);
+    // Don't process.exit(1) — let the workflow step finish so the commit
+    // step can still save any partial data from previous successful runs.
+    // The non-zero exit from an unhandled error would mask partial success.
+    console.error('   Scraper will exit with code 1. Data files were NOT updated this run.');
+    process.exitCode = 1;
   }
 }
 
