@@ -1,10 +1,10 @@
 {
-  "scrapedAt": "2026-02-28T23:27:03.734Z",
+  "scrapedAt": "2026-03-01T06:41:11.042Z",
   "stats": {
-    "total": 1974,
-    "deduplicated": 1422,
+    "total": 1467,
+    "deduplicated": 1079,
     "bySource": {
-      "Miami New Times": 89,
+      "Miami New Times": 0,
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -14,33 +14,33 @@
       "Miami Spice": 0,
       "Miami Festivals": 1,
       "Dice.fm Real": 0,
-      "Resident Advisor": 152,
+      "Resident Advisor": 0,
       "Shotgun": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 430,
-      "Pop-Ups": 29,
-      "Miami Improv": 148,
-      "Fort Lauderdale Improv": 120,
-      "Coral Gables": 10,
+      "Pop-Ups": 30,
+      "Miami Improv": 0,
+      "Fort Lauderdale Improv": 0,
+      "Coral Gables": 0,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
-      "Free Yoga Miami": 75,
-      "Run Clubs": 18,
-      "Cycling Group Rides": 36,
-      "Fort Lauderdale": 272,
-      "Instagram Sources": 438
+      "Free Yoga Miami": 76,
+      "Run Clubs": 19,
+      "Cycling Group Rides": 38,
+      "Fort Lauderdale": 268,
+      "Instagram Sources": 449
     }
   },
   "delta": {
-    "added": 7,
-    "removed": 0,
+    "added": 45,
+    "removed": 388,
     "modified": 0,
-    "unchanged": 1415
+    "unchanged": 1031
   },
   "sources": [
     {
       "name": "Miami New Times",
-      "count": 89,
+      "count": 0,
       "errors": []
     },
     {
@@ -86,11 +86,13 @@
     {
       "name": "Dice.fm Real",
       "count": 0,
-      "errors": []
+      "errors": [
+        "this.page.setViewport is not a function"
+      ]
     },
     {
       "name": "Resident Advisor",
-      "count": 152,
+      "count": 0,
       "errors": []
     },
     {
@@ -110,23 +112,29 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 29,
+      "count": 30,
       "errors": []
     },
     {
       "name": "Miami Improv",
-      "count": 148,
-      "errors": []
+      "count": 0,
+      "errors": [
+        "fetch failed"
+      ]
     },
     {
       "name": "Fort Lauderdale Improv",
-      "count": 120,
-      "errors": []
+      "count": 0,
+      "errors": [
+        "fetch failed"
+      ]
     },
     {
       "name": "Coral Gables",
-      "count": 10,
-      "errors": []
+      "count": 0,
+      "errors": [
+        "fetch failed"
+      ]
     },
     {
       "name": "Verified Recurring",
@@ -140,27 +148,27 @@
     },
     {
       "name": "Free Yoga Miami",
-      "count": 75,
+      "count": 76,
       "errors": []
     },
     {
       "name": "Run Clubs",
-      "count": 18,
+      "count": 19,
       "errors": []
     },
     {
       "name": "Cycling Group Rides",
-      "count": 36,
+      "count": 38,
       "errors": []
     },
     {
       "name": "Fort Lauderdale",
-      "count": 272,
+      "count": 268,
       "errors": []
     },
     {
       "name": "Instagram Sources",
-      "count": 438,
+      "count": 449,
       "errors": []
     }
   ]
