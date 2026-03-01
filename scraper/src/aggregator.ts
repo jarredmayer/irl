@@ -9,7 +9,7 @@ import { createHash } from 'crypto';
 import { verifyEvents } from './verification.js';
 import { findVenue, CATEGORY_IMAGES, type Venue } from './venues.js';
 import { extractUniqueVenues, batchVerifyLocations, type VerificationResult } from './geocoding.js';
-import { agentVerifyLocations } from './agents/location-verifier.js';
+import { OrchestratorAgent } from './agents/orchestrator.js';
 import { hasAIEnabled, batchGenerateEditorial } from './ai.js';
 
 export class EventAggregator {
@@ -62,13 +62,28 @@ export class EventAggregator {
       results.push(result);
     }
 
-    // Filter out past events
+    // Filter out past events and sanity-check dates
     const now = new Date();
+    const currentYear = now.getFullYear();
+    const maxFutureDate = new Date(now);
+    maxFutureDate.setFullYear(currentYear + 2); // Cap at 2 years out
     const futureEvents = allRawEvents.filter((event) => {
       const eventDate = new Date(event.startAt);
+      if (isNaN(eventDate.getTime())) {
+        console.warn(`   ⚠️  Invalid date skipped: "${event.title}" startAt="${event.startAt}"`);
+        return false;
+      }
+      if (eventDate.getFullYear() < currentYear) {
+        console.warn(`   ⚠️  Past-year event blocked: "${event.title}" (${event.startAt.slice(0, 10)}) from ${event.sourceName}`);
+        return false;
+      }
+      if (eventDate > maxFutureDate) {
+        console.warn(`   ⚠️  Too-far-future event blocked: "${event.title}" (${event.startAt.slice(0, 10)})`);
+        return false;
+      }
       return eventDate >= now;
     });
-    console.log(`\n⏰ Filtered out ${allRawEvents.length - futureEvents.length} past events`);
+    console.log(`\n⏰ Filtered out ${allRawEvents.length - futureEvents.length} invalid/past events`);
 
     // Verify events (quality scoring + LLM verification)
     const verified = await verifyEvents(futureEvents);
@@ -100,15 +115,15 @@ export class EventAggregator {
       bySource[result.source] = result.events.length;
     }
 
-    // Verify locations using agent (agentic tool-use loop) or legacy batch verifier
+    // Run the Orchestrator (validation + optional enrichment)
     let locationIssues: VerificationResult[] | undefined;
     let verifiedEvents = irlEvents;
     if (options?.verifyLocations) {
       const useAgent = hasAIEnabled();
       if (useAgent) {
-        // Agent path: Claude reasons about each venue's coordinates
-        console.log(`\n🤖 Using Location Verifier Agent (Claude tool use)...`);
-        const result = await agentVerifyLocations(irlEvents, { maxEvents: 30 });
+        console.log(`\n🎭 Running Orchestrator (ValidationAgent)...`);
+        const orchestrator = new OrchestratorAgent();
+        const result = await orchestrator.run(irlEvents, { validateOnly: true });
         verifiedEvents = result.events;
       } else {
         // Legacy path: Nominatim batch geocode without AI reasoning

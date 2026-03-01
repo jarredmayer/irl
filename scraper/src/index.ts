@@ -248,8 +248,8 @@ async function main() {
       if (agentVerify) {
         console.log('\n  🎭 Running Orchestrator Agent (location verification pass)...');
         const orchestrator = new OrchestratorAgent();
-        const orchResult = await orchestrator.run(freshEvents, { locationVerifyOnly: true, maxEventsPerAgent: 50 });
-        if (orchResult.summary.locationVerification) {
+        const orchResult = await orchestrator.run(freshEvents, { validateOnly: true, maxEventsPerAgent: 50 });
+        if (orchResult.summary.validation) {
           // Re-save with corrected coordinates
           const correctedMiami = orchResult.events.filter((e) => e.city === 'Miami');
           const correctedFll = orchResult.events.filter((e) => e.city === 'Fort Lauderdale');
