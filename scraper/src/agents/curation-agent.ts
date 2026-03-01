@@ -68,7 +68,7 @@ Return JSON array only: [{"id": "...", "score": <1-10>}, ...]`;
     }
   }
 
-  async run(events: IRLEvent[]): Promise<IRLEvent[]> {
+  async run(events: IRLEvent[]): Promise<{ events: IRLEvent[]; cacheHits: number; newPicks: number }> {
     const result = [...events];
     const toScore: IRLEvent[] = [];
     let cacheHits = 0;
@@ -114,6 +114,6 @@ Return JSON array only: [{"id": "...", "score": <1-10>}, ...]`;
       `   CurationAgent: ${newPicks} new editor picks (threshold: ${EDITOR_PICK_THRESHOLD}/10),` +
       ` ${result.filter((e) => e.editorPick).length} total`
     );
-    return result;
+    return { events: result, cacheHits, newPicks };
   }
 }

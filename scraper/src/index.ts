@@ -136,6 +136,7 @@ async function main() {
   const verifyLocations = process.argv.includes('--verify-locations');
   const generateEditorial = process.argv.includes('--ai-editorial');
   const isFullPipeline = process.argv.includes('--full-pipeline');
+  const verifyEvents = process.argv.includes('--verify-events'); // EventVerifier without full pipeline
   const isPmReport = process.argv.includes('--pm-report');
   const startTime = Date.now();
   const dataDir = join(__dirname, '../../src/data');
@@ -156,6 +157,7 @@ async function main() {
       // In fullPipeline mode, UXAgent generates editorial copy — skip the legacy batchGenerateEditorial
       generateEditorial: !isFullPipeline && generateEditorial,
       fullPipeline: isFullPipeline,
+      verifyEvents: isFullPipeline || verifyEvents,
     });
 
     // Print stats

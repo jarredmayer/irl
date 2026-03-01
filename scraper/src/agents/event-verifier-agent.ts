@@ -184,8 +184,9 @@ Return JSON only.`;
       cache.set(key, result);
       return result;
     } catch {
-      // Parse error → assume verified (don't remove events due to agent failure)
-      return { verified: true, confidence: 'low', reasoning: 'Verification skipped (parse error)' };
+      // Parse error → mark unverified (not cancelled). Keep the event, but don't
+      // claim it's verified — that would be dishonest about what we know.
+      return { verified: false, confidence: 'low', reasoning: 'Verification skipped (parse error)' };
     }
   }
 }

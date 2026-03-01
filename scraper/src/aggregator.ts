@@ -22,7 +22,7 @@ export class EventAggregator {
   /**
    * Run all scrapers and aggregate results
    */
-  async aggregate(options?: { verifyLocations?: boolean; generateEditorial?: boolean; fullPipeline?: boolean }): Promise<{
+  async aggregate(options?: { verifyLocations?: boolean; generateEditorial?: boolean; fullPipeline?: boolean; verifyEvents?: boolean }): Promise<{
     events: IRLEvent[];
     results: ScrapeResult[];
     stats: { total: number; deduplicated: number; bySource: Record<string, number> };
@@ -125,6 +125,7 @@ export class EventAggregator {
     const orchResult = await orchestrator.run(eventsForOrchestrator, {
       skipLocationAgent: !hasAIEnabled() || !options?.verifyLocations,
       fullPipeline: options?.fullPipeline,
+      verifyEvents: options?.verifyEvents,
     });
     const verifiedEvents = orchResult.events;
 

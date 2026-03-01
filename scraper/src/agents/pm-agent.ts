@@ -20,14 +20,42 @@ const META_PATH = join(
   '../../../src/data/scrape-meta.json'
 );
 
-// Curated list of high-value Instagram accounts not yet monitored
-const SUGGESTED_IG_ACCOUNTS = [
-  '@broward_cultural  — Broward Cultural Division (FTL arts/culture events)',
-  '@mdc_theatre       — Miami Dade College theater productions',
-  '@calle_ocho_festival — Little Havana cultural events',
-  '@art_basel_miami   — Art Basel Miami Beach programming',
-  '@midtown_miami     — Midtown Miami neighborhood activations',
+const IG_SOURCES_PATH = join(
+  dirname(fileURLToPath(import.meta.url)),
+  '../sources/instagram-sources.ts'
+);
+
+// Full candidate pool — PMAgent filters out already-monitored handles dynamically
+const IG_CANDIDATE_POOL: Array<{ handle: string; description: string }> = [
+  { handle: 'broward_cultural',   description: 'Broward Cultural Division (FTL arts/culture events)' },
+  { handle: 'mdc_theatre',        description: 'Miami Dade College theater productions' },
+  { handle: 'calle_ocho_festival',description: 'Little Havana cultural events' },
+  { handle: 'art_basel_miami',    description: 'Art Basel Miami Beach programming' },
+  { handle: 'midtown_miami',      description: 'Midtown Miami neighborhood activations' },
+  { handle: 'southbeachmiami',    description: 'South Beach events and activations' },
+  { handle: 'miami_open',         description: 'Miami Open tennis tournament' },
+  { handle: 'ultramiami',         description: 'Ultra Music Festival Miami' },
+  { handle: 'sobe_arts',          description: 'South Beach arts & culture' },
+  { handle: 'miamibookfair',      description: 'Miami Book Fair International' },
 ];
+
+/** Read handles already in instagram-sources.ts to avoid duplicate suggestions */
+function getMonitoredHandles(): Set<string> {
+  try {
+    const src = readFileSync(IG_SOURCES_PATH, 'utf-8');
+    const matches = [...src.matchAll(/handle:\s*'([^']+)'/g)];
+    return new Set(matches.map((m) => m[1]));
+  } catch {
+    return new Set();
+  }
+}
+
+function getSuggestedAccounts(): string[] {
+  const monitored = getMonitoredHandles();
+  return IG_CANDIDATE_POOL
+    .filter((c) => !monitored.has(c.handle))
+    .map((c) => `@${c.handle} — ${c.description}`);
+}
 
 interface ScrapeMeta {
   scrapedAt: string;
@@ -65,9 +93,10 @@ export class PMAgent {
     const meta = this.readMeta();
 
     if (!meta) {
+      const suggested = getSuggestedAccounts();
       return {
         staleSources: [],
-        suggestedNewSources: SUGGESTED_IG_ACCOUNTS,
+        suggestedNewSources: suggested,
         healthReport: '⚠️  No scrape-meta.json found — run a scrape first.',
       };
     }
@@ -95,15 +124,16 @@ export class PMAgent {
     }
 
     lines.push('');
+    const suggested = getSuggestedAccounts();
     lines.push('💡 Suggested new sources:');
-    for (const s of SUGGESTED_IG_ACCOUNTS) {
+    for (const s of suggested) {
       lines.push(`   ${s}`);
     }
 
     const healthReport = lines.join('\n');
     console.log('\n' + healthReport);
 
-    return { staleSources, suggestedNewSources: SUGGESTED_IG_ACCOUNTS, healthReport };
+    return { staleSources, suggestedNewSources: suggested, healthReport };
   }
 
   /** Convenience: print health report to stdout and return stale source names */

@@ -57,6 +57,8 @@ export interface OrchestratorOptions {
   skipLocationAgent?: boolean;
   /** Max events to pass to each enrichment agent */
   maxEventsPerAgent?: number;
+  /** Run EventVerifier without requiring fullPipeline (use with --verify-events flag) */
+  verifyEvents?: boolean;
 }
 
 export interface OrchestratorResult {
@@ -108,32 +110,41 @@ export class OrchestratorAgent {
       };
     }
 
-    // ── FULL PIPELINE AGENTS ──────────────────────────────────────────────────
-    if (options.fullPipeline) {
-      // EventVerifierAgent: web-search to confirm events are real
-      //    Impact: high — removes cancelled events, surfaces unverified ones
-      //    Cost: medium (1 search per event, cached 7 days / 3 days for IG)
+    // ── EVENT VERIFICATION (fullPipeline or --verify-events flag) ────────────
+    //    Impact: high — removes cancelled events, surfaces unverified ones
+    //    Cost: medium (1 DuckDuckGo search per event, cached 7d / 3d for IG)
+    if (options.fullPipeline || options.verifyEvents) {
       const verifyResult = await verifyEventBatch(current, {
         max: options.maxEventsPerAgent ?? 20,
       });
       current = verifyResult.events;
       agentsRun.push('EventVerifierAgent');
       summary.eventVerifier = verifyResult.report;
+    }
 
+    // ── CURATION + UX (fullPipeline only) ────────────────────────────────────
+    if (options.fullPipeline) {
       // CurationAgent: score events, set editorPick on top 5–10%
       //    Impact: medium — improves app UX, gives users guidance
-      //    Cost: low (batch scoring, Haiku)
+      //    Cost: low (batch scoring, Haiku, 7-day cache)
       const curator = new CurationAgent();
-      current = await curator.run(current);
+      const curationResult = await curator.run(current);
+      current = curationResult.events;
       agentsRun.push('CurationAgent');
-      summary.curation = { editorPicks: current.filter((e) => e.editorPick).length };
+      summary.curation = {
+        editorPicks: current.filter((e) => e.editorPick).length,
+        newPicks: curationResult.newPicks,
+        cacheHits: curationResult.cacheHits,
+      };
 
       // UXAgent: generate shortWhy + editorialWhy for events with generic copy
       //    Impact: medium — better app copy, more engaging editorial voice
-      //    Cost: medium (batch generation, Sonnet)
+      //    Cost: medium (batch generation, Sonnet, 14-day cache)
       const uxAgent = new UXAgent();
-      current = await uxAgent.run(current);
+      const uxResult = await uxAgent.run(current);
+      current = uxResult.events;
       agentsRun.push('UXAgent');
+      summary.ux = { updated: uxResult.updated, cacheHits: uxResult.cacheHits };
     }
 
     // ── BRANDING (always runs — deterministic, zero API cost) ─────────────────

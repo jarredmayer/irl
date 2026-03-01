@@ -183,6 +183,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['outdoor', 'beachside', 'community', 'local-favorite'],
     category: 'outdoor',
     website: 'https://northbeachbandshell.com/',
+    imageUrl: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80',
   },
   'las-rosas': {
     id: 'las-rosas',
@@ -224,6 +225,7 @@ export const VENUES: Record<string, Venue> = {
     capacity: 100,
     vibeTags: ['intimate', 'wine-bar', 'jazz', 'courtyard', 'local-favorite'],
     category: 'bar',
+    imageUrl: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80',
   },
   'ball-and-chain': {
     id: 'ball-and-chain',
@@ -252,6 +254,7 @@ export const VENUES: Record<string, Venue> = {
     capacity: 200,
     vibeTags: ['divey', 'drag', 'queer', 'local-favorite'],
     category: 'bar',
+    imageUrl: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80',
   },
   'gramps-getaway': {
     id: 'gramps-getaway',
@@ -266,6 +269,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['waterfront', 'outdoor', 'sunset', 'local-favorite'],
     category: 'bar',
     website: 'https://www.grampsgetaway.com/',
+    imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
   },
 
   // ==========================================
@@ -284,6 +288,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['massive', 'arena', 'sports', 'concerts'],
     category: 'sports',
     website: 'https://www.kaseyacenter.com/',
+    imageUrl: 'https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80',
   },
   'hard-rock-live': {
     id: 'hard-rock-live',
@@ -298,6 +303,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['casino', 'concerts', 'big-acts'],
     category: 'concert-hall',
     website: 'https://www.seminolehardrockhollywood.com/',
+    imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',
   },
   'fpl-solar': {
     id: 'fpl-solar',
@@ -382,6 +388,7 @@ export const VENUES: Record<string, Venue> = {
     capacity: 465,
     vibeTags: ['intimate', 'art-deco', 'historic'],
     category: 'theater',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
   },
   'olympia-theater': {
     id: 'olympia-theater',
@@ -395,6 +402,7 @@ export const VENUES: Record<string, Venue> = {
     capacity: 1700,
     vibeTags: ['historic', 'ornate', 'atmospheric'],
     category: 'theater',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
   },
   'faena-theater': {
     id: 'faena-theater',
@@ -409,6 +417,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['upscale', 'intimate', 'cabaret', 'exclusive'],
     category: 'theater',
     website: 'https://www.faena.com/miami-beach/theater',
+    imageUrl: 'https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80',
   },
   'broward-center': {
     id: 'broward-center',
@@ -470,6 +479,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['comedy', 'standup', 'big-names'],
     category: 'theater',
     website: 'https://improv.com/miami/',
+    imageUrl: 'https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80',
   },
   'dania-improv': {
     id: 'dania-improv',
@@ -592,6 +602,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['historic', 'nature', 'waterfront', 'concerts'],
     category: 'outdoor',
     website: 'https://deeringestate.org/',
+    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
   },
   'fairchild': {
     id: 'fairchild',
@@ -666,6 +677,7 @@ export const VENUES: Record<string, Venue> = {
     capacity: 10000,
     vibeTags: ['outdoor', 'waterfront', 'festivals', 'free'],
     category: 'outdoor',
+    imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
   },
   'soundscape-park': {
     id: 'soundscape-park',
@@ -693,6 +705,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['outdoor', 'art', 'murals', 'iconic'],
     category: 'outdoor',
     website: 'https://thewynwoodwalls.com/',
+    imageUrl: 'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80',
   },
   'wynwood-marketplace': {
     id: 'wynwood-marketplace',
@@ -724,6 +737,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['outdoor', 'rooftop', 'romantic', 'sunset'],
     category: 'other',
     website: 'https://rooftopcinemaclub.com/miami/',
+    imageUrl: 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=800&q=80',
   },
   'o-cinema': {
     id: 'o-cinema',
@@ -771,6 +785,7 @@ export const VENUES: Record<string, Venue> = {
     vibeTags: ['luxury', 'exclusive', 'art', 'upscale'],
     category: 'hotel',
     website: 'https://www.faena.com/miami-beach',
+    imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
   },
 
   // ==========================================
@@ -948,6 +963,7 @@ export const VENUES: Record<string, Venue> = {
     capacity: 2000,
     vibeTags: ['outdoor', 'food', 'local-favorite', 'family-friendly'],
     category: 'outdoor',
+    imageUrl: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80',
   },
   'strawberry-moon': {
     id: 'strawberry-moon',

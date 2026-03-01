@@ -41,6 +41,17 @@ function appendNotFound(venueName: string, city: string): void {
   }
 }
 
+/** Load known not-found venues — avoids retrying previously failed lookups */
+function loadKnownNotFound(): Set<string> {
+  try {
+    if (!existsSync(NOT_FOUND_LOG)) return new Set();
+    const entries = JSON.parse(readFileSync(NOT_FOUND_LOG, 'utf-8')) as Array<{ venueName: string; city: string }>;
+    return new Set(entries.map((e) => `${e.venueName}|${e.city}`));
+  } catch {
+    return new Set();
+  }
+}
+
 // Shares the same cache file as LocationVerifierAgent — both verify venues
 const venueCache = new PersistentCache<{ lat: number; lng: number; confidence: string }>(
   'venue-locations.json',
@@ -158,16 +169,26 @@ export async function fillMissingCoordinates(
   }
 
   const cacheStats = venueCache.stats();
+  const knownNotFound = loadKnownNotFound();
   console.log(`\n🔍 VenueSearchAgent: ${missing.length} events missing coordinates`);
-  console.log(`   Cache: ${cacheStats.valid} valid entries`);
+  console.log(`   Cache: ${cacheStats.valid} valid entries | Known not-found: ${knownNotFound.size} venues`);
 
   const agent = new VenueSearchAgent();
   const eventMap = new Map(events.map((e) => [e.id, e]));
   let filled = 0;
   let notFound = 0;
   let dbHits = 0;
+  let skipped = 0;
 
   for (const event of missing) {
+    // Skip venues that previously couldn't be found — avoid wasting API calls
+    const notFoundKey = `${event.venueName || ''}|${event.city}`;
+    if (knownNotFound.has(notFoundKey)) {
+      skipped++;
+      notFound++;
+      continue;
+    }
+
     // Check VENUES db directly before calling agent (fast path, no API)
     const dbVenue = event.venueName ? findVenue(event.venueName) : undefined;
     if (dbVenue && inBounds(dbVenue.lat, dbVenue.lng)) {
@@ -194,7 +215,7 @@ export async function fillMissingCoordinates(
   }
 
   venueCache.flush();
-  console.log(`   VenueSearch: ${filled} filled (${dbHits} from DB, ${filled - dbHits} via geocoding), ${notFound} not found`);
+  console.log(`   VenueSearch: ${filled} filled (${dbHits} from DB, ${filled - dbHits} via geocoding), ${notFound} not found (${skipped} skipped-known)`);
 
   return { events: Array.from(eventMap.values()), filled, notFound, dbHits };
 }

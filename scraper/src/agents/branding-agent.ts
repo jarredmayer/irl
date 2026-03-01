@@ -51,6 +51,19 @@ const VIBE_IMAGES: Record<string, string> = {
   'free-event':      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80',
 };
 
+// Priority order for tag matching — most visually distinctive tags win
+// (evaluated top-to-bottom; first match in this list beats all later tags)
+const TAG_PRIORITY = [
+  'rooftop', 'waterfront', 'beach', 'sunset', 'sunrise',
+  'art-gallery', 'museum', 'theater',
+  'latin', 'jazz', 'dj', 'electronic', 'hip-hop', 'live-music',
+  'outdoor-dining', 'food-market', 'brunch', 'happy-hour', 'cocktails',
+  'wine-tasting', 'craft-beer',
+  'yoga', 'meditation', 'running', 'cycling', 'fitness-class',
+  'comedy', 'pop-up', 'networking', 'workshop',
+  'family-friendly', 'dog-friendly', 'dancing', 'free-event',
+];
+
 export class BrandingAgent {
   run(events: IRLEvent[]): IRLEvent[] {
     let updated = 0;
@@ -78,10 +91,13 @@ export class BrandingAgent {
       if (venue?.imageUrl) return venue.imageUrl;
     }
 
-    // 3. Vibe-aware: first matching tag → specific Unsplash photo
-    for (const tag of event.tags) {
-      const vibeImage = VIBE_IMAGES[tag];
-      if (vibeImage) return vibeImage;
+    // 3. Vibe-aware: best-matching tag → specific Unsplash photo.
+    // Priority order defined by TAG_PRIORITY — more specific tags beat generic ones.
+    // (e.g., 'rooftop' + 'live-music': rooftop wins because it's more visually distinctive)
+    for (const tag of TAG_PRIORITY) {
+      if (event.tags.includes(tag) && VIBE_IMAGES[tag]) {
+        return VIBE_IMAGES[tag];
+      }
     }
 
     // 4. Category fallback

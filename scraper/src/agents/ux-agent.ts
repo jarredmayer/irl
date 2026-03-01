@@ -89,7 +89,7 @@ Return JSON array only: [{"id": "...", "shortWhy": "...", "editorialWhy": "..."}
     }
   }
 
-  async run(events: IRLEvent[]): Promise<IRLEvent[]> {
+  async run(events: IRLEvent[]): Promise<{ events: IRLEvent[]; cacheHits: number; updated: number }> {
     const resultMap = new Map(events.map((e) => [e.id, e]));
     const toGenerate: IRLEvent[] = [];
     let cacheHits = 0;
@@ -108,7 +108,7 @@ Return JSON array only: [{"id": "...", "shortWhy": "...", "editorialWhy": "..."}
 
     if (toGenerate.length === 0) {
       console.log(`\n✍️  UXAgent: all events have good copy (${cacheHits} cache hits)`);
-      return Array.from(resultMap.values());
+      return { events: Array.from(resultMap.values()), cacheHits, updated };
     }
 
     console.log(
@@ -132,6 +132,6 @@ Return JSON array only: [{"id": "...", "shortWhy": "...", "editorialWhy": "..."}
 
     uxCache.flush();
     console.log(`   UXAgent: copy updated for ${updated} events`);
-    return Array.from(resultMap.values());
+    return { events: Array.from(resultMap.values()), cacheHits, updated };
   }
 }
