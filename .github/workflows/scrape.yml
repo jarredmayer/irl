@@ -48,7 +48,8 @@ jobs:
         run: npx puppeteer browsers install chrome || echo "⚠ Chrome install failed — Puppeteer scrapers will be skipped"
 
       - name: Run Instagram post scraper
-        if: ${{ secrets.INSTAGRAM_SESSION_ID != '' }}
+        if: ${{ secrets.INSTAGRAM_SESSION_ID != '' && secrets.ANTHROPIC_API_KEY != '' }}
+        continue-on-error: true
         working-directory: scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -56,6 +57,7 @@ jobs:
         run: npm run scrape:ig
 
       - name: Run scraper
+        continue-on-error: true
         working-directory: scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
