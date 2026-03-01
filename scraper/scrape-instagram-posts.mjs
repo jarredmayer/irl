@@ -77,8 +77,8 @@ async function sleep(ms) {
 
 async function main() {
   if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('❌ ANTHROPIC_API_KEY not set');
-    process.exit(1);
+    console.warn('⚠️  ANTHROPIC_API_KEY not set — skipping Instagram scraper (Claude needed to extract events from captions/images)');
+    process.exit(0);
   }
   if (!process.env.INSTAGRAM_SESSION_ID) {
     console.warn('⚠️  INSTAGRAM_SESSION_ID not set — Instagram may block unauthenticated requests');
