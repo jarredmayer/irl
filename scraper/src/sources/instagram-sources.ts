@@ -767,28 +767,17 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
-    // @rawfigspopup - Raw Figs pop-up dining & market
-    {
-      handle: 'rawfigspopup',
-      name: 'Raw Figs Pop-Up',
-      city: 'Miami',
-      category: 'Food & Drink',
-      knownEvents: [
-        {
-          name: 'Raw Figs Pop-Up Market',
-          venue: 'Wynwood Arts District',
-          address: 'NW 2nd Ave, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8011,
-          lng: -80.1996,
-          schedule: 'monthly',
-          time: '12:00',
-          description: 'Pop-up market featuring local makers, artisan food, vintage goods, and live music. Raw Figs brings together Miami\'s creative community.',
-          tags: ['pop-up', 'food-market', 'local-favorite', 'outdoor'],
-          price: 0,
-        },
-      ],
-    },
+    // @rawfigspopup - Raw Figs plant-based pop-up dining experience
+    // NOTE: Curator must verify exact date/venue from @rawfigspopup before enabling events
+    // Raw Figs is a curated plant-based pop-up dinner series at rotating Miami venues.
+    // Intentionally left empty — dates must be pulled from their IG stories/posts directly.
+    // {
+    //   handle: 'rawfigspopup',
+    //   name: 'Raw Figs',
+    //   city: 'Miami',
+    //   category: 'Food & Drink',
+    //   knownEvents: [] // populate from @rawfigspopup posts
+    // },
     // @wynwood_marketplace - Wynwood arts & food market
     {
       handle: 'wynwood_marketplace',
@@ -894,43 +883,10 @@ export class InstagramSourcesScraper extends BaseScraper {
         },
       ],
     },
-    // Soya e Pomodoro - Downtown Miami Italian brunch
-    {
-      handle: 'soyaepomodoro',
-      name: 'Soya e Pomodoro',
-      city: 'Miami',
-      category: 'Food & Drink',
-      knownEvents: [
-        {
-          name: 'Soya e Pomodoro: Weekend Brunch',
-          venue: 'Soya e Pomodoro',
-          address: '120 NE 1st St, Miami, FL 33132',
-          neighborhood: 'Downtown Miami',
-          lat: 25.7748,
-          lng: -80.1929,
-          schedule: 'weekly',
-          days: [6, 0], // Sat-Sun
-          time: '10:00',
-          description: 'Beloved Italian brunch spot in Downtown Miami. Outdoor patio, fresh pasta, espresso, and Aperol spritzes in a cozy courtyard.',
-          tags: ['brunch', 'outdoor', 'local-favorite'],
-          price: 20,
-        },
-        {
-          name: 'Soya e Pomodoro: Weekday Lunch',
-          venue: 'Soya e Pomodoro',
-          address: '120 NE 1st St, Miami, FL 33132',
-          neighborhood: 'Downtown Miami',
-          lat: 25.7748,
-          lng: -80.1929,
-          schedule: 'weekly',
-          days: [1, 2, 3, 4, 5], // Mon-Fri
-          time: '11:30',
-          description: 'Casual Italian lunch at one of Downtown Miami\'s most beloved spots. Fresh pasta, salads, and paninis in a charming courtyard.',
-          tags: ['outdoor', 'local-favorite'],
-          price: 15,
-        },
-      ],
-    },
+    // Soya e Pomodoro - REMOVED
+    // This is a restaurant with regular operating hours, NOT a ticketed event series.
+    // Do not add recurring "brunch" / "lunch" entries for restaurants — only add when
+    // the venue hosts a specific named event (e.g. a jazz night, pop-up chef dinner, etc.).
   ];
 
   constructor() {
