@@ -45,6 +45,25 @@ const verifierCache = new PersistentCache<VerificationResult>(
   7
 );
 
+// 3-day cache for Instagram-sourced events — IG events >14 days out need fresher verification
+// to prevent stale "verified" status on events that may have changed since first check
+const igVerifierCache = new PersistentCache<VerificationResult>(
+  'event-verification-ig.json',
+  3
+);
+
+/** Returns true if this event should use the shorter IG cache (3-day TTL) */
+function isInstagramSource(event: IRLEvent): boolean {
+  return (event.source?.name ?? '').startsWith('@');
+}
+
+/** Returns true if an Instagram event is far enough out to warrant fresher checks */
+function needsIgFreshnessCheck(event: IRLEvent): boolean {
+  if (!isInstagramSource(event)) return false;
+  const daysOut = (new Date(event.startAt).getTime() - Date.now()) / (1000 * 60 * 60 * 24);
+  return daysOut > 14;
+}
+
 export interface VerifierReport {
   total: number;
   skippedTrusted: number;
@@ -141,7 +160,9 @@ Rules:
 
   async verifyEvent(event: IRLEvent): Promise<VerificationResult> {
     const key = cacheKey(event.title, event.venueName ?? '', event.startAt.slice(0, 10));
-    const cached = verifierCache.get(key);
+    // Use shorter cache for IG events that are >14 days out (freshness check)
+    const cache = needsIgFreshnessCheck(event) ? igVerifierCache : verifierCache;
+    const cached = cache.get(key);
     if (cached) return cached;
 
     const dateStr = event.startAt.slice(0, 10);
@@ -160,7 +181,7 @@ Return JSON only.`;
       const response = await this.runLoop(prompt, { maxTurns: 4 });
       const cleaned = response.trim().replace(/^```json?\n?/, '').replace(/\n?```$/, '');
       const result = JSON.parse(cleaned) as VerificationResult;
-      verifierCache.set(key, result);
+      cache.set(key, result);
       return result;
     } catch {
       // Parse error → assume verified (don't remove events due to agent failure)
@@ -223,9 +244,10 @@ export async function verifyEventBatch(
   for (const event of toCheck) {
     report.checked++;
 
-    // Check cache first (without calling agent)
+    // Check cache first (without calling agent); IG events >14d out use shorter cache
     const key = cacheKey(event.title, event.venueName ?? '', event.startAt.slice(0, 10));
-    const cached = verifierCache.get(key);
+    const activeCache = needsIgFreshnessCheck(event) ? igVerifierCache : verifierCache;
+    const cached = activeCache.get(key);
     if (cached) {
       report.cacheHits++;
     }
@@ -248,6 +270,7 @@ export async function verifyEventBatch(
   }
 
   verifierCache.flush();
+  igVerifierCache.flush();
 
   const output = [...trusted, ...kept, ...unchecked];
   console.log(

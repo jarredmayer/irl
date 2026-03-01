@@ -6,10 +6,11 @@
  * this agent finds coords for events that have NONE.
  *
  * Strategy (cheapest first):
- *  1. Check venue cache — if we've seen this venue name before, reuse result
- *  2. Geocode the address if available
- *  3. Search by venue name + city if address fails
- *  4. If still unresolved, log and leave null (map will handle gracefully)
+ *  1. Check persistent cache — if we've seen this venue name before, reuse result
+ *  2. Check VENUES database — 39+ pre-verified venues with exact coords (zero API cost)
+ *  3. Geocode the address if available
+ *  4. Search by venue name + city if address fails
+ *  5. If still unresolved, log and leave null (map will handle gracefully)
  *
  * Results cached for 30 days — same as LocationVerifierAgent.
  */
@@ -17,6 +18,7 @@
 import { BaseAgent, type AgentTool } from './base-agent.js';
 import { geocodeAddress } from '../geocoding.js';
 import { PersistentCache, cacheKey } from './cache.js';
+import { findVenue } from '../venues.js';
 import type { IRLEvent } from '../types.js';
 
 // Shares the same cache file as LocationVerifierAgent — both verify venues
@@ -71,15 +73,28 @@ If nothing works, respond: {"lat": null, "lng": null, "confidence": "not-found",
     },
   ];
 
-  async findVenue(
+  async findVenueCoords(
     venueName: string,
     address: string | undefined,
     city: string
   ): Promise<{ lat: number | null; lng: number | null; confidence: string } | null> {
     const key = cacheKey(venueName, city);
+
+    // 1. Persistent cache check
     const cached = venueCache.get(key);
     if (cached) return cached;
 
+    // 2. VENUES database check — pre-verified coords, zero API cost
+    if (venueName) {
+      const dbVenue = findVenue(venueName);
+      if (dbVenue && inBounds(dbVenue.lat, dbVenue.lng)) {
+        const result = { lat: dbVenue.lat, lng: dbVenue.lng, confidence: 'high' };
+        venueCache.set(key, result);
+        return result;
+      }
+    }
+
+    // 3. LLM + Nominatim fallback
     const prompt = `Find coordinates for this venue:
 Name: ${venueName}
 ${address ? `Address: ${address}` : ''}
@@ -111,15 +126,15 @@ Try geocoding variations until you find metro-area coordinates. Return JSON only
 export async function fillMissingCoordinates(
   events: IRLEvent[],
   options: { max?: number } = {}
-): Promise<{ events: IRLEvent[]; filled: number; notFound: number }> {
-  const { max = 30 } = options;
+): Promise<{ events: IRLEvent[]; filled: number; notFound: number; dbHits: number }> {
+  const { max = 150 } = options;
 
   const missing = events
     .filter((e) => (e.lat == null || e.lng == null) && (e.venueName || e.address))
     .slice(0, max);
 
   if (missing.length === 0) {
-    return { events, filled: 0, notFound: 0 };
+    return { events, filled: 0, notFound: 0, dbHits: 0 };
   }
 
   const cacheStats = venueCache.stats();
@@ -130,9 +145,19 @@ export async function fillMissingCoordinates(
   const eventMap = new Map(events.map((e) => [e.id, e]));
   let filled = 0;
   let notFound = 0;
+  let dbHits = 0;
 
   for (const event of missing) {
-    const result = await agent.findVenue(
+    // Check VENUES db directly before calling agent (fast path, no API)
+    const dbVenue = event.venueName ? findVenue(event.venueName) : undefined;
+    if (dbVenue && inBounds(dbVenue.lat, dbVenue.lng)) {
+      filled++;
+      dbHits++;
+      eventMap.set(event.id, { ...event, lat: dbVenue.lat, lng: dbVenue.lng });
+      continue;
+    }
+
+    const result = await agent.findVenueCoords(
       event.venueName || '',
       event.address,
       event.city
@@ -148,7 +173,7 @@ export async function fillMissingCoordinates(
   }
 
   venueCache.flush();
-  console.log(`   VenueSearch: ${filled} filled, ${notFound} not found`);
+  console.log(`   VenueSearch: ${filled} filled (${dbHits} from DB, ${filled - dbHits} via geocoding), ${notFound} not found`);
 
-  return { events: Array.from(eventMap.values()), filled, notFound };
+  return { events: Array.from(eventMap.values()), filled, notFound, dbHits };
 }
