@@ -7,7 +7,8 @@
  * Checks (in order, cheapest first):
  *  1. Date sanity   – blocks past-year dates, invalid ISO strings, >2yr future
  *  2. Coord bounds  – blocks anything outside Miami/FLL metro bbox
- *  3. Location fix  – Claude tool-use to geocode & correct misplaced pins
+ *  3. Location fix  – Claude tool-use to geocode & correct misplaced pins;
+ *                     hardblocks events where location could not be verified
  *  4. Category fix  – re-assigns obviously wrong categories (rule-based)
  *
  * Only step 3 uses the LLM. Steps 1, 2, 4 are pure code → zero API cost.
@@ -43,7 +44,9 @@ export interface ValidationReport {
   totalOut: number;
   blockedByDate: number;
   blockedByBounds: number;
+  blockedByUnverifiedLocation: number;
   locationsCorrected: number;
+  locationConfidence: { high: number; medium: number; low: number; unverified: number };
   categoriesFixed: number;
 }
 
@@ -61,7 +64,9 @@ export class ValidationAgent {
       totalOut: 0,
       blockedByDate: 0,
       blockedByBounds: 0,
+      blockedByUnverifiedLocation: 0,
       locationsCorrected: 0,
+      locationConfidence: { high: 0, medium: 0, low: 0, unverified: 0 },
       categoriesFixed: 0,
     };
 
@@ -108,9 +113,21 @@ export class ValidationAgent {
     // Step 3: Location verification (Claude tool-use, only if AI enabled)
     if (!options.skipLocationAgent) {
       try {
-        const locResult = await agentVerifyLocations(after, { maxEvents: 40 });
+        const locResult = await agentVerifyLocations(after, { maxEvents: 100 });
         after = locResult.events;
         report.locationsCorrected = locResult.report?.corrected ?? 0;
+        report.locationConfidence = locResult.report?.confidenceBreakdown ?? report.locationConfidence;
+
+        // Hardblock events where location could not be verified
+        const unverifiedIds = new Set(locResult.report?.unverifiedIds ?? []);
+        if (unverifiedIds.size > 0) {
+          const before = after.length;
+          after = after.filter((e) => !unverifiedIds.has(e.id));
+          report.blockedByUnverifiedLocation = before - after.length;
+          if (report.blockedByUnverifiedLocation > 0) {
+            console.log(`  [Validation] 🚫 ${report.blockedByUnverifiedLocation} events blocked: location unverifiable`);
+          }
+        }
       } catch (err) {
         console.warn('  [Validation] ⚠️  Location agent error, skipping:', err);
       }
@@ -130,6 +147,7 @@ export class ValidationAgent {
     console.log(
       `\n✅ ValidationAgent: ${report.totalIn} in → ${report.totalOut} out` +
       ` (−${report.blockedByDate} date, −${report.blockedByBounds} bounds,` +
+      ` −${report.blockedByUnverifiedLocation} unverifiable,` +
       ` ${report.locationsCorrected} loc fixed, ${report.categoriesFixed} cat fixed)`
     );
 

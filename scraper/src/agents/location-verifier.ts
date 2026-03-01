@@ -48,7 +48,7 @@ Use your tools to:
 
 Rules:
 - If geocoding succeeds and the result is within metro bounds, prefer those coordinates
-- If current coordinates are already within 0.2 miles of geocoded result, they're fine — don't change them
+- If current coordinates are already within 0.05 miles of geocoded result, they're fine — don't change them
 - If current coordinates are outside metro bounds, always replace with geocoded result
 - If geocoding fails, keep current coordinates if they're in metro bounds; otherwise flag as unverified
 - Always respond in this exact JSON format (no markdown):
@@ -163,11 +163,13 @@ Use your tools to geocode the address and verify/correct the coordinates. Return
         wasChanged: parsed.wasChanged,
         reasoning: parsed.reasoning,
       };
-      // Cache the verified result
-      locationCache.set(key, result);
+      // Only cache successful verifications — don't cache 'unverified' (transient failures)
+      if (result.confidence !== 'unverified') {
+        locationCache.set(key, result);
+      }
       return result;
     } catch {
-      // Fallback: keep current coords, don't cache failures
+      // Fallback: keep current coords, never cache parse failures
       return {
         lat: currentLat ?? 0,
         lng: currentLng ?? 0,
@@ -188,7 +190,7 @@ export async function agentVerifyLocations(
   events: IRLEvent[],
   options: { onlyNullCoords?: boolean; maxEvents?: number } = {}
 ): Promise<{ events: IRLEvent[]; report: VerificationReport }> {
-  const { onlyNullCoords = false, maxEvents = 50 } = options;
+  const { onlyNullCoords = false, maxEvents = 100 } = options;
 
   const needsVerification = events.filter((e) => {
     if (!e.address && !e.venueName) return false;
@@ -203,7 +205,10 @@ export async function agentVerifyLocations(
 
   if (needsVerification.length === 0) {
     console.log('  ✅ No events need location verification');
-    return { events, report: { verified: 0, corrected: 0, unverified: 0, cacheHits: 0, issues: [] } };
+    return {
+      events,
+      report: { verified: 0, corrected: 0, unverified: 0, unverifiedIds: [], cacheHits: 0, confidenceBreakdown: { high: 0, medium: 0, low: 0, unverified: 0 }, issues: [] },
+    };
   }
 
   // Log cache stats before run
@@ -212,7 +217,15 @@ export async function agentVerifyLocations(
   console.log(`   Cache: ${cacheStats.valid} valid entries, ${cacheStats.expired} expired`);
 
   const agent = new LocationVerifierAgent();
-  const report: VerificationReport = { verified: 0, corrected: 0, unverified: 0, cacheHits: 0, issues: [] };
+  const report: VerificationReport = {
+    verified: 0,
+    corrected: 0,
+    unverified: 0,
+    unverifiedIds: [],
+    cacheHits: 0,
+    confidenceBreakdown: { high: 0, medium: 0, low: 0, unverified: 0 },
+    issues: [],
+  };
 
   const eventMap = new Map(events.map((e) => [e.id, e]));
 
@@ -233,8 +246,11 @@ export async function agentVerifyLocations(
       report.cacheHits++;
     } else if (result.confidence === 'unverified') {
       report.unverified++;
+      report.unverifiedIds.push(event.id);
+      report.confidenceBreakdown.unverified++;
     } else {
       report.verified++;
+      report.confidenceBreakdown[result.confidence]++;
       if (result.wasChanged) {
         report.corrected++;
         report.issues.push({
@@ -255,8 +271,8 @@ export async function agentVerifyLocations(
   locationCache.flush();
 
   console.log(
-    `  ✅ Location check: ${report.verified} verified, ${report.corrected} corrected,` +
-    ` ${report.cacheHits} cache hits, ${report.unverified} unverified`
+    `  ✅ Location check: ${report.verified} verified (${report.confidenceBreakdown.high} high/${report.confidenceBreakdown.medium} med/${report.confidenceBreakdown.low} low),` +
+    ` ${report.corrected} corrected, ${report.cacheHits} cache hits, ${report.unverified} unverified`
   );
   if (report.issues.length > 0) {
     console.log('  📍 Corrections made:');
@@ -269,11 +285,14 @@ export async function agentVerifyLocations(
   return { events: Array.from(eventMap.values()), report };
 }
 
-interface VerificationReport {
+export interface VerificationReport {
   verified: number;
   corrected: number;
   unverified: number;
+  /** Event IDs where location could not be verified — used by ValidationAgent to hardblock */
+  unverifiedIds: string[];
   cacheHits: number;
+  confidenceBreakdown: { high: number; medium: number; low: number; unverified: number };
   issues: Array<{
     eventId: string;
     venueName: string;

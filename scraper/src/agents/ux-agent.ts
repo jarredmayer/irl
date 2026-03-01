@@ -1,0 +1,121 @@
+/**
+ * UXAgent
+ *
+ * Generates shortWhy and editorialWhy for events with missing or generic copy.
+ * Replaces batchGenerateEditorial() in ai.ts with a proper agent interface.
+ *
+ * Voice: knowledgeable local — warm, opinionated, specific. Never generic.
+ * shortWhy:     1 punchy sentence, max 12 words. A reason to stop scrolling.
+ * editorialWhy: 2–3 sentences. The cultural story — neighborhood, crowd, context.
+ *
+ * Only updates events with empty or obviously generic copy.
+ * Batches 10 events per call. Uses Sonnet for copy quality.
+ */
+
+import { BaseAgent, type AgentTool } from './base-agent.js';
+import type { IRLEvent } from '../types.js';
+
+const BATCH_SIZE = 10;
+
+// Patterns that indicate generic/template copy — these events get rewritten
+const GENERIC_PATTERNS = [
+  /^the kind of/i,
+  /^join us/i,
+  /^discover/i,
+  /^experience/i,
+  /^explore/i,
+  /^don't miss/i,
+  /^come (?:enjoy|experience|discover)/i,
+  /^located in/i,
+  /^welcome to/i,
+];
+
+function isGenericCopy(text: string | undefined): boolean {
+  if (!text || text.trim().length < 15) return true;
+  return GENERIC_PATTERNS.some((p) => p.test(text.trim()));
+}
+
+interface CopyResult {
+  id: string;
+  shortWhy: string;
+  editorialWhy: string;
+}
+
+export class UXAgent extends BaseAgent {
+  protected systemPrompt = `You are an editorial writer for IRL, a Miami/Fort Lauderdale events discovery app.
+
+Voice: knowledgeable local. Warm, opinionated, specific. You've been to these places.
+
+For each event write:
+- shortWhy: 1 punchy sentence (max 12 words). A reason to STOP SCROLLING, not a genre label.
+  Never start with: "Join", "Discover", "Experience", "Explore", "Don't miss", "Come"
+  Good: "Rosalía's most ambitious show — and her first US performance of this album."
+  Bad: "Experience the magic of live Latin music at a legendary Miami venue."
+
+- editorialWhy: 2–3 sentences. Tell the cultural story. Mention at least one of:
+  neighborhood context, crowd vibe, price value, what makes THIS instance special.
+  Don't feature-dump. Don't describe what the venue has ("a bar with a dance floor").
+  Write what the night feels like.
+
+Return ONLY a JSON array, no markdown:
+[{"id": "<id>", "shortWhy": "...", "editorialWhy": "..."}, ...]`;
+
+  protected tools: AgentTool[] = []; // Pure generation — no tools needed
+
+  private async generateBatch(events: IRLEvent[]): Promise<CopyResult[]> {
+    const prompt = `Write editorial copy for these ${events.length} events:
+
+${events.map((e) => `ID: ${e.id}
+Title: ${e.title}
+Venue: ${e.venueName ?? 'Unknown'}, ${e.neighborhood}
+Category: ${e.category} | Tags: ${e.tags.slice(0, 6).join(', ')}
+Price: ${e.priceLabel ?? 'varies'} | Outdoor: ${e.isOutdoor}
+Recurring series: ${e.seriesId ? `Yes (${e.seriesName ?? ''})` : 'No'}
+Description: ${(e.description ?? '').slice(0, 250)}`).join('\n---\n')}
+
+Return JSON array only: [{"id": "...", "shortWhy": "...", "editorialWhy": "..."}, ...]`;
+
+    try {
+      const response = await this.runLoop(prompt, { maxTurns: 1, model: 'claude-sonnet-4-6' });
+      const cleaned = response.trim().replace(/^```json?\n?/, '').replace(/\n?```$/, '');
+      return JSON.parse(cleaned) as CopyResult[];
+    } catch {
+      return [];
+    }
+  }
+
+  async run(events: IRLEvent[]): Promise<IRLEvent[]> {
+    const needsUX = events.filter(
+      (e) => isGenericCopy(e.shortWhy) || isGenericCopy(e.editorialWhy)
+    );
+
+    if (needsUX.length === 0) {
+      console.log('\n✍️  UXAgent: all events already have good copy');
+      return events;
+    }
+
+    console.log(
+      `\n✍️  UXAgent: generating copy for ${needsUX.length} events` +
+      ` (${events.length - needsUX.length} already have good copy)`
+    );
+
+    const resultMap = new Map(events.map((e) => [e.id, e]));
+    let updated = 0;
+
+    for (let i = 0; i < needsUX.length; i += BATCH_SIZE) {
+      const batch = needsUX.slice(i, i + BATCH_SIZE);
+      const copies = await this.generateBatch(batch);
+
+      for (const { id, shortWhy, editorialWhy } of copies) {
+        const event = resultMap.get(id);
+        if (event && shortWhy && editorialWhy) {
+          resultMap.set(id, { ...event, shortWhy, editorialWhy });
+          updated++;
+        }
+      }
+    }
+
+    console.log(`   UXAgent: copy updated for ${updated} events`);
+    return Array.from(resultMap.values());
+  }
+}

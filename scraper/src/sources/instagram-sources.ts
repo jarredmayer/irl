@@ -573,6 +573,13 @@ export class InstagramSourcesScraper extends BaseScraper {
     { handle: 'wynwood_yoga', name: 'Wynwood Yoga', city: 'Miami', category: 'Wellness', knownEvents: [] },
     { handle: 'wynwoodmiami', name: 'Wynwood Miami', city: 'Miami', category: 'Art', knownEvents: [] },
     { handle: 'coffeeandbeatsofficial', name: 'Coffee and Beats', city: 'Miami', category: 'Community', knownEvents: [] },
+
+    // ── NEW SOURCES (PMAgent recommendation) ─────────────────────────────────
+    { handle: 'broward_cultural', name: 'Broward Cultural Division', city: 'Fort Lauderdale', category: 'Culture', knownEvents: [] },
+    { handle: 'mdc_theatre', name: 'MDC Theatre', city: 'Miami', category: 'Culture', knownEvents: [] },
+    { handle: 'calle_ocho_festival', name: 'Calle Ocho Festival', city: 'Miami', category: 'Culture', knownEvents: [] },
+    { handle: 'art_basel_miami', name: 'Art Basel Miami', city: 'Miami', category: 'Art', knownEvents: [] },
+    { handle: 'midtown_miami', name: 'Midtown Miami', city: 'Miami', category: 'Community', knownEvents: [] },
   ];
 
   constructor() {
