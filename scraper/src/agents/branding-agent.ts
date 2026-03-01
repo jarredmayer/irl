@@ -13,6 +13,21 @@
 import { findVenue, CATEGORY_IMAGES } from '../venues.js';
 import type { IRLEvent } from '../types.js';
 
+// Venue category → semantically appropriate image (more specific than event CATEGORY_IMAGES)
+// Used as tier 2.5: applies when venue is found but lacks an imageUrl
+const VENUE_CATEGORY_IMAGES: Record<string, string> = {
+  'club':          'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80',
+  'bar':           'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&q=80',
+  'concert-hall':  'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80',
+  'theater':       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+  'museum':        'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80',
+  'outdoor':       'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80',
+  'hotel':         'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
+  'restaurant':    'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+  'sports':        'https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80',
+  'other':         'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80',
+};
+
 // Tag → specific Unsplash photo (more semantically precise than category defaults)
 const VIBE_IMAGES: Record<string, string> = {
   'rooftop':         'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=800&q=80',
@@ -51,6 +66,19 @@ const VIBE_IMAGES: Record<string, string> = {
   'free-event':      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80',
 };
 
+// Priority order for tag matching — most visually distinctive tags win
+// (evaluated top-to-bottom; first match in this list beats all later tags)
+const TAG_PRIORITY = [
+  'rooftop', 'waterfront', 'beach', 'sunset', 'sunrise',
+  'art-gallery', 'museum', 'theater',
+  'latin', 'jazz', 'dj', 'electronic', 'hip-hop', 'live-music',
+  'outdoor-dining', 'food-market', 'brunch', 'happy-hour', 'cocktails',
+  'wine-tasting', 'craft-beer',
+  'yoga', 'meditation', 'running', 'cycling', 'fitness-class',
+  'comedy', 'pop-up', 'networking', 'workshop',
+  'family-friendly', 'dog-friendly', 'dancing', 'free-event',
+];
+
 export class BrandingAgent {
   run(events: IRLEvent[]): IRLEvent[] {
     let updated = 0;
@@ -73,15 +101,22 @@ export class BrandingAgent {
     if (event.image) return event.image;
 
     // 2. Venue DB image — pre-curated, specific to this venue
+    // 2.5. Venue category fallback — uses venue's category when imageUrl isn't set
     if (event.venueName) {
       const venue = findVenue(event.venueName);
       if (venue?.imageUrl) return venue.imageUrl;
+      if (venue?.category && VENUE_CATEGORY_IMAGES[venue.category]) {
+        return VENUE_CATEGORY_IMAGES[venue.category];
+      }
     }
 
-    // 3. Vibe-aware: first matching tag → specific Unsplash photo
-    for (const tag of event.tags) {
-      const vibeImage = VIBE_IMAGES[tag];
-      if (vibeImage) return vibeImage;
+    // 3. Vibe-aware: best-matching tag → specific Unsplash photo.
+    // Priority order defined by TAG_PRIORITY — more specific tags beat generic ones.
+    // (e.g., 'rooftop' + 'live-music': rooftop wins because it's more visually distinctive)
+    for (const tag of TAG_PRIORITY) {
+      if (event.tags.includes(tag) && VIBE_IMAGES[tag]) {
+        return VIBE_IMAGES[tag];
+      }
     }
 
     // 4. Category fallback

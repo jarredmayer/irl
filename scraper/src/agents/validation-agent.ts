@@ -75,6 +75,9 @@ export class ValidationAgent {
     const currentYear = now.getFullYear();
     const maxFuture = new Date(now);
     maxFuture.setFullYear(currentYear + 2);
+    // 1-hour grace period: allow events that started up to 60 minutes ago
+    // (catches early-morning events that might be ongoing, avoids blocking today's events)
+    const pastCutoff = new Date(now.getTime() - 60 * 60 * 1000);
 
     let after: IRLEvent[] = events.filter((e) => {
       const d = new Date(e.startAt);
@@ -82,9 +85,9 @@ export class ValidationAgent {
         report.blockedByDate++;
         return false;
       }
-      if (d.getFullYear() < currentYear || d < now) {
+      if (d.getFullYear() < currentYear || d < pastCutoff) {
         report.blockedByDate++;
-        console.log(`  [Validation] ❌ Past-year event blocked: "${e.title}" (${e.startAt.slice(0, 10)})`);
+        console.log(`  [Validation] ❌ Past event blocked: "${e.title}" (${e.startAt.slice(0, 10)})`);
         return false;
       }
       if (d > maxFuture) {

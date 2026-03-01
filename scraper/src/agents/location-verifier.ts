@@ -231,6 +231,7 @@ export async function agentVerifyLocations(
   };
 
   const eventMap = new Map(events.map((e) => [e.id, e]));
+  let parseErrors = 0; // Track non-cache misses that returned 'unverified' confidence
 
   for (const event of needsVerification) {
     const address = event.address || event.venueName || '';
@@ -250,6 +251,7 @@ export async function agentVerifyLocations(
     } else if (result.confidence === 'unverified') {
       report.unverified++;
       report.confidenceBreakdown.unverified++;
+      parseErrors++;
       // Only hardblock events that are genuinely unlocatable (no existing coords).
       // Parse errors on events with valid coords return confidence='low', not 'unverified'.
       if (event.lat == null || event.lng == null) {
@@ -276,6 +278,15 @@ export async function agentVerifyLocations(
 
   // Persist cache after batch
   locationCache.flush();
+
+  // Warn if geocoding appears degraded (high parse-error rate on non-cached events)
+  const nonCacheChecks = needsVerification.length - report.cacheHits;
+  if (nonCacheChecks > 0 && parseErrors / nonCacheChecks > 0.2) {
+    console.warn(
+      `  ⚠️  LocationVerifier DEGRADED: ${parseErrors}/${nonCacheChecks} non-cached verifications failed` +
+      ` (${Math.round((parseErrors / nonCacheChecks) * 100)}% error rate). Nominatim may be unreachable.`
+    );
+  }
 
   console.log(
     `  ✅ Location check: ${report.verified} verified (${report.confidenceBreakdown.high} high/${report.confidenceBreakdown.medium} med/${report.confidenceBreakdown.low} low),` +
