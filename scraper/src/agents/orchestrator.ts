@@ -34,6 +34,8 @@
 
 import type { IRLEvent } from '../types.js';
 import { ValidationAgent } from './validation-agent.js';
+import { fillMissingCoordinates } from './venue-search-agent.js';
+import { hasAIEnabled as hasAIForVenueSearch } from '../ai.js';
 
 export interface OrchestratorOptions {
   /** Run the full pipeline (validation + enrichment) */
@@ -80,17 +82,19 @@ export class OrchestratorAgent {
     agentsRun.push('ValidationAgent');
     summary.validation = validationResult.report;
 
-    // ── ENRICHMENT (uncomment as each agent is implemented) ───────────
+    // ── ENRICHMENT ────────────────────────────────────────────────────
+    if (options.fullPipeline || (!options.skipLocationAgent && hasAIForVenueSearch())) {
+      // VenueSearchAgent: fills lat/lng for events missing coordinates
+      const venueResult = await fillMissingCoordinates(current, {
+        max: options.maxEventsPerAgent ?? 30,
+      });
+      current = venueResult.events;
+      agentsRun.push('VenueSearchAgent');
+      summary.venueSearch = { filled: venueResult.filled, notFound: venueResult.notFound };
+    }
+
     if (options.fullPipeline) {
-      // Priority order — implement these next:
-      //
-      // 1. VenueSearchAgent: fills lat/lng for events where coords are null
-      //    Impact: high — many events lose map pin without this
-      //    Cost: medium (web search + geocode per venue)
-      //
-      // const { VenueSearchAgent } = await import('./venue-search-agent.js');
-      // current = await new VenueSearchAgent().run(current, { max: options.maxEventsPerAgent });
-      // agentsRun.push('VenueSearchAgent');
+      // Future enrichment agents:
       //
       // 2. EventVerifierAgent: web-search to confirm events are real
       //    Impact: high — removes synthetic/hallucinated events
