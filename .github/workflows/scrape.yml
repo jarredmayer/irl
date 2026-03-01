@@ -73,7 +73,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: scrape
-    if: needs.scrape.outputs.changed == 'true'
+    # Always build — ensures frontend code changes (merged via auto-merge) are deployed
+    # even when event data didn't change in this scrape run.
     steps:
       - uses: actions/checkout@v4
         with:
