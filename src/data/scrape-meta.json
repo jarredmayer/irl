@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-01T07:45:59.017Z",
+  "scrapedAt": "2026-03-01T07:48:36.332Z",
   "stats": {
-    "total": 1499,
-    "deduplicated": 1102,
+    "total": 1515,
+    "deduplicated": 1118,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -29,14 +29,14 @@
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
       "Fort Lauderdale": 268,
-      "Instagram Sources": 446
+      "Instagram Sources": 462
     }
   },
   "delta": {
-    "added": 8,
-    "removed": 8,
+    "added": 16,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 1091
+    "unchanged": 1099
   },
   "sources": [
     {
@@ -178,7 +178,7 @@
     },
     {
       "name": "Instagram Sources",
-      "count": 446,
+      "count": 462,
       "errors": []
     }
   ]
