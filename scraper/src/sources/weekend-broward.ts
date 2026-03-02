@@ -351,6 +351,16 @@ export class WeekendBrowardScraper extends BaseScraper {
     });
     const xml = await response.text();
 
+    // Detect Cloudflare challenge or non-XML response
+    if (!xml.includes('<rss') && !xml.includes('<item>') && !xml.includes('<?xml')) {
+      if (xml.includes('cf-') || xml.includes('cloudflare') || xml.includes('challenge-platform')) {
+        this.log(`  ⚠ Cloudflare challenge detected for ${url} — skipping`);
+      } else {
+        this.log(`  ⚠ Response is not valid RSS/XML for ${url} (${xml.length} chars)`);
+      }
+      return [];
+    }
+
     const itemPattern = /<item>([\s\S]*?)<\/item>/gi;
     const titlePattern = /<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>|<title>([\s\S]*?)<\/title>/i;
     const linkPattern = /<link>([\s\S]*?)<\/link>/i;

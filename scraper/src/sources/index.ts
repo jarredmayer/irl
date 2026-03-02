@@ -20,6 +20,9 @@ export { CulturalVenuesScraper } from './cultural-venues.js';
 // Fort Lauderdale sources
 export { FortLauderdaleScraper } from './fort-lauderdale.js';
 
+// Palm Beach sources
+export { PalmBeachScraper } from './palm-beach.js';
+
 // Nightlife & clubs
 export {
   NightlifeClubsScraper,
@@ -146,6 +149,7 @@ import { ProfessionalSportsScraper } from './professional-sports.js';
 import { WellnessFitnessScraper } from './wellness-fitness.js';
 import { CulturalVenuesScraper } from './cultural-venues.js';
 import { FortLauderdaleScraper } from './fort-lauderdale.js';
+import { PalmBeachScraper } from './palm-beach.js';
 import {
   NightlifeClubsScraper,
   LatinPartiesScraper,
@@ -289,6 +293,7 @@ export function getAllScrapers(): BaseScraper[] {
     // new WellnessFitnessScraper(),     // SYNTHETIC
     // new CulturalVenuesScraper(),      // SYNTHETIC
     new FortLauderdaleScraper(),          // recurring FLL venue events
+    new PalmBeachScraper(),                // recurring Palm Beach venue events
     // new NightlifeClubsScraper(),      // SYNTHETIC
     // new LatinPartiesScraper(),        // SYNTHETIC
     // new CandlelightConcertsScraper(), // SYNTHETIC
