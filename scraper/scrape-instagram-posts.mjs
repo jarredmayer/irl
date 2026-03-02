@@ -69,6 +69,11 @@ const ACCOUNTS = [
   { handle: 'lauderdalerunclub',   city: 'Fort Lauderdale',  locationHint: 'Fort Lauderdale running routes' },
   { handle: 'wynwood_yoga',        city: 'Miami',            locationHint: 'Wynwood Walls Garden, 2520 NW 2nd Ave' },
   { handle: 'coffeeandchillmiami', city: 'Miami',            locationHint: 'Miami community spaces' },
+
+  // Palm Beach accounts
+  { handle: 'inpalmbeach',        city: 'Palm Beach',       locationHint: 'Palm Beach County events and lifestyle' },
+  { handle: 'eventswpb',          city: 'Palm Beach',       locationHint: 'West Palm Beach Waterfront events' },
+  { handle: 'thepalmbeachweekender', city: 'Palm Beach',    locationHint: 'Palm Beach County weekend events' },
 ];
 
 async function sleep(ms) {

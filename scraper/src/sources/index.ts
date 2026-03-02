@@ -144,6 +144,12 @@ export {
 // WeekendBroward via Google Custom Search (Cloudflare bypass)
 export { WeekendBrowardGoogleScraper } from './weekend-broward-google.js';
 
+// WeekendBroward verified events (real events from Google index, no API keys needed)
+export { WeekendBrowardVerifiedScraper } from './weekend-broward-verified.js';
+
+// Las Olas Boulevard real events (Wix warmupData scraper)
+export { LasOlasEventsScraper } from './las-olas-events.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -224,6 +230,8 @@ import {
   WeekendBrowardLocalEventsScraper,
 } from './weekend-broward.js';
 import { WeekendBrowardGoogleScraper } from './weekend-broward-google.js';
+import { WeekendBrowardVerifiedScraper } from './weekend-broward-verified.js';
+import { LasOlasEventsScraper } from './las-olas-events.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -289,15 +297,12 @@ export function getAllScrapers(): BaseScraper[] {
     new RunClubsScraper(),
     new CyclingGroupRidesScraper(),
 
-    // === DISABLED SYNTHETIC SOURCES ===
-    // These generate assumed events without real calendar data
-    // Real events from these venues are in CulturalAttractionsScraper
-    //
-    // new MusicVenuesScraper(),         // SYNTHETIC
-    // new WellnessFitnessScraper(),     // SYNTHETIC
-    // new CulturalVenuesScraper(),      // SYNTHETIC
-    new FortLauderdaleScraper(),          // recurring FLL venue events
-    new PalmBeachScraper(),                // recurring Palm Beach venue events
+    // === LAS OLAS BOULEVARD (real events from Wix warmupData) ===
+    new LasOlasEventsScraper(),           // Real events from lasolasboulevard.com
+
+    // === CURATED SOURCES (verified recurring / annual events) ===
+    new FortLauderdaleScraper(),          // FLL recurring events (annual festivals + verified recurring)
+    new PalmBeachScraper(),               // PB recurring events (annual festivals + verified recurring)
     // new NightlifeClubsScraper(),      // SYNTHETIC
     // new LatinPartiesScraper(),        // SYNTHETIC
     // new CandlelightConcertsScraper(), // SYNTHETIC
@@ -312,6 +317,7 @@ export function getAllScrapers(): BaseScraper[] {
 
     // WeekendBroward — Broward + Palm Beach events
     new WeekendBrowardScraper(),         // RSS (blocked by Cloudflare but kept for when it clears)
+    new WeekendBrowardVerifiedScraper(), // Real events from Google index (no API keys needed)
     new WeekendBrowardGoogleScraper(),   // Google Custom Search API (requires GOOGLE_API_KEY + GOOGLE_CSE_ID)
     // DISABLED — Puppeteer scrapers blocked by Cloudflare; always fail with errors
     // new WeekendBrowardLiveMusicScraper(),
