@@ -9,7 +9,7 @@ export interface Venue {
   aliases: string[]; // Alternative names for matching
   address: string;
   neighborhood: string;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   lat: number;
   lng: number;
   capacity?: number; // Approximate capacity
@@ -1179,7 +1179,7 @@ export function getVenuesByVibe(vibe: string): Venue[] {
 /**
  * Get venues by city
  */
-export function getVenuesByCity(city: 'Miami' | 'Fort Lauderdale'): Venue[] {
+export function getVenuesByCity(city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach'): Venue[] {
   return Object.values(VENUES).filter(v => v.city === city);
 }
 
@@ -1199,7 +1199,7 @@ export function applyVenueData(event: {
   neighborhood: string;
   lat: number;
   lng: number;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
 }> | null {
   if (!event.venueName) return null;
 

@@ -27,7 +27,7 @@ export interface IGPost {
 
 export interface IGAccountConfig {
   handle: string;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   /** Approximate location hint to help Claude geocode events */
   locationHint?: string;
 }

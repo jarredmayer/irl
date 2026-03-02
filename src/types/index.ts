@@ -1,4 +1,4 @@
-export type City = 'Miami' | 'Fort Lauderdale';
+export type City = 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
 
 export type PriceLabel = 'Free' | '$' | '$$' | '$$$';
 

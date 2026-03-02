@@ -24,6 +24,7 @@ const cityFilters: { value: City | undefined; label: string }[] = [
   { value: undefined, label: 'All' },
   { value: 'Miami', label: 'Miami' },
   { value: 'Fort Lauderdale', label: 'FLL' },
+  { value: 'Palm Beach', label: 'PB' },
 ];
 
 const popularTags = TAGS.slice(0, 12);

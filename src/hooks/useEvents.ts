@@ -3,6 +3,7 @@ import { rankEvents, filterByDistance } from '../services/ranking';
 import { filterEventsByTime, getTimeSection, isEventPast } from '../utils/time';
 import miamiEvents from '../data/events.miami.json';
 import fllEvents from '../data/events.fll.json';
+import pbEvents from '../data/events.pb.json';
 import type {
   Event,
   ScoredEvent,
@@ -33,8 +34,8 @@ export function useEvents(options: UseEventsOptions) {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
 
   useEffect(() => {
-    // Combine events from both cities
-    const combined = [...(miamiEvents as Event[]), ...(fllEvents as Event[])];
+    // Combine events from all cities
+    const combined = [...(miamiEvents as Event[]), ...(fllEvents as Event[]), ...(pbEvents as Event[])];
     // Filter out past events
     const upcoming = combined.filter((e) => !isEventPast(e.startAt));
     setAllEvents(upcoming);

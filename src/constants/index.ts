@@ -138,6 +138,22 @@ export const NEIGHBORHOODS = {
     'Lauderdale-By-The-Sea',
     'Oakland Park',
   ],
+  'Palm Beach': [
+    'West Palm Beach',
+    'Boca Raton',
+    'Delray Beach',
+    'Boynton Beach',
+    'Lake Worth',
+    'Palm Beach Gardens',
+    'Jupiter',
+    'Wellington',
+    'North Palm Beach',
+    'Lantana',
+    'Riviera Beach',
+    'Royal Palm Beach',
+    'Greenacres',
+    'Deerfield Beach',
+  ],
 } as const;
 
 export const DEFAULT_PREFERENCES = {
@@ -186,6 +202,9 @@ export const POPULAR_NEIGHBORHOODS = [
   'Coral Gables',
   'Las Olas',
   'Downtown FLL',
+  'West Palm Beach',
+  'Boca Raton',
+  'Delray Beach',
 ] as const;
 
 // Miami city center for fallback
@@ -198,6 +217,12 @@ export const MIAMI_CENTER = {
 export const FLL_CENTER = {
   lat: 26.1224,
   lng: -80.1373,
+};
+
+// West Palm Beach center
+export const PB_CENTER = {
+  lat: 26.7153,
+  lng: -80.0534,
 };
 
 export const WEATHER_CACHE_TTL_MS = 30 * 60 * 1000; // 30 minutes
@@ -213,6 +238,7 @@ export const STORAGE_KEYS = {
 export const ALL_NEIGHBORHOODS = [
   ...NEIGHBORHOODS.Miami,
   ...NEIGHBORHOODS['Fort Lauderdale'],
+  ...NEIGHBORHOODS['Palm Beach'],
 ] as const;
 
 export const TIME_SECTIONS = {

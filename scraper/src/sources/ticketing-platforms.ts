@@ -230,7 +230,7 @@ export class ShotgunScraper extends BaseScraper {
 
     const venue = ev.venue;
     const rawCity = (venue?.city ?? '').toLowerCase();
-    const city: 'Miami' | 'Fort Lauderdale' = rawCity.includes('lauderdale') ? 'Fort Lauderdale' : 'Miami';
+    const city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach' = rawCity.includes('lauderdale') ? 'Fort Lauderdale' : rawCity.includes('palm') || rawCity.includes('boca') || rawCity.includes('delray') || rawCity.includes('jupiter') || rawCity.includes('wellington') || rawCity.includes('boynton') ? 'Palm Beach' : 'Miami';
 
     return {
       title: ev.name,

@@ -16,7 +16,7 @@ interface RealEvent {
   neighborhood: string;
   lat: number;
   lng: number;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   category: string;
   description: string;
   tags: string[];

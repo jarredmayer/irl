@@ -114,7 +114,7 @@ export interface UserSubmittedEvent {
   venueName?: string;
   address?: string;
   neighborhood: string;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   category: string;
   description: string;
   sourceUrl?: string;
@@ -157,7 +157,7 @@ export interface SubmittedAccount {
   id: string;
   handle: string; // @handle without the @
   accountType: 'venue' | 'organizer' | 'artist' | 'pop-up';
-  city: 'Miami' | 'Fort Lauderdale' | 'Both';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach' | 'Both';
   description: string;
   submittedAt: string;
   status: 'pending' | 'approved' | 'rejected';

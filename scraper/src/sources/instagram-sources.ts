@@ -20,7 +20,7 @@ import type { RawEvent } from '../types.js';
 interface InstagramAccount {
   handle: string;
   name: string;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   category: string;
   knownEvents: KnownEvent[];
   /** Venue website URL — used by VenueImageFetcher to grab real og:image photos */
