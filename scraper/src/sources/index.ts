@@ -141,6 +141,9 @@ export {
   WeekendBrowardLocalEventsScraper,
 } from './weekend-broward.js';
 
+// WeekendBroward via Google Custom Search (Cloudflare bypass)
+export { WeekendBrowardGoogleScraper } from './weekend-broward-google.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -220,6 +223,7 @@ import {
   WeekendBrowardPBLiveMusicScraper,
   WeekendBrowardLocalEventsScraper,
 } from './weekend-broward.js';
+import { WeekendBrowardGoogleScraper } from './weekend-broward-google.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -306,8 +310,9 @@ export function getAllScrapers(): BaseScraper[] {
     // new HotelsHospitalityScraper(),   // SYNTHETIC
     new InstagramSourcesScraper(),         // Verified recurring events from monitored IG accounts
 
-    // WeekendBroward — Broward + Palm Beach events (RSS + Puppeteer)
-    new WeekendBrowardScraper(),
+    // WeekendBroward — Broward + Palm Beach events
+    new WeekendBrowardScraper(),         // RSS (blocked by Cloudflare but kept for when it clears)
+    new WeekendBrowardGoogleScraper(),   // Google Custom Search API (requires GOOGLE_API_KEY + GOOGLE_CSE_ID)
     // DISABLED — Puppeteer scrapers blocked by Cloudflare; always fail with errors
     // new WeekendBrowardLiveMusicScraper(),
     // new WeekendBrowardComedyScraper(),
