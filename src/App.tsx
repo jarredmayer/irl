@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, lazy, Suspense } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -7,13 +7,9 @@ import {
 } from 'react-router-dom';
 import { AppShell } from './components/layout/AppShell';
 import { FeedView } from './components/feed/FeedView';
-import { EventDetail } from './components/detail/EventDetail';
-import { MapView } from './components/map/MapView';
-import { FollowingView } from './components/following/FollowingView';
-import { ProfileView } from './components/profile/ProfileView';
-import { ChatAssistant } from './components/ai/ChatAssistant';
-import { AISettingsModal } from './components/ai/AISettingsModal';
 import { InstallPrompt } from './components/pwa/InstallPrompt';
+import { UpdatePrompt } from './components/pwa/UpdatePrompt';
+import { OfflineBanner } from './components/pwa/OfflineBanner';
 import { useEvents } from './hooks/useEvents';
 import { usePreferences } from './hooks/usePreferences';
 import { useSavedEvents } from './hooks/useSavedEvents';
@@ -25,6 +21,22 @@ import { useNotifications } from './hooks/useNotifications';
 import { DEFAULT_FILTERS } from './constants';
 import type { FilterState } from './types';
 import './index.css';
+
+// Lazy-loaded route components (split into separate chunks)
+const MapView = lazy(() => import('./components/map/MapView').then(m => ({ default: m.MapView })));
+const FollowingView = lazy(() => import('./components/following/FollowingView').then(m => ({ default: m.FollowingView })));
+const ProfileView = lazy(() => import('./components/profile/ProfileView').then(m => ({ default: m.ProfileView })));
+const EventDetail = lazy(() => import('./components/detail/EventDetail').then(m => ({ default: m.EventDetail })));
+const ChatAssistant = lazy(() => import('./components/ai/ChatAssistant').then(m => ({ default: m.ChatAssistant })));
+const AISettingsModal = lazy(() => import('./components/ai/AISettingsModal').then(m => ({ default: m.AISettingsModal })));
+
+function RouteFallback() {
+  return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+      <div className="w-8 h-8 border-3 border-sky-200 border-t-sky-500 rounded-full animate-spin" />
+    </div>
+  );
+}
 
 function AppContent() {
   const [filters, setFilters] = useState<FilterState>({ ...DEFAULT_FILTERS });
@@ -42,6 +54,7 @@ function AppContent() {
     groupedEvents,
     getEventById,
     allEvents,
+    isLoading: eventsLoading,
   } = useEvents({
     preferences,
     location,
@@ -75,7 +88,7 @@ function AppContent() {
     });
   }, [filteredEvents, venueIds, seriesIds, neighborhoodIds]);
 
-  const isLoading = !prefsLoaded || !savedLoaded || !followingLoaded || !profileLoaded;
+  const isLoading = eventsLoading || !prefsLoaded || !savedLoaded || !followingLoaded || !profileLoaded;
 
   const clearFilters = () => setFilters({ ...DEFAULT_FILTERS });
 
@@ -107,75 +120,95 @@ function AppContent() {
         <Route
           path="map"
           element={
-            <MapView
-              events={filteredEvents}
-              userLocation={location}
-              filters={filters}
-              onFiltersChange={setFilters}
-              hasLocation={locationStatus === 'granted'}
-            />
+            <Suspense fallback={<RouteFallback />}>
+              <MapView
+                events={filteredEvents}
+                userLocation={location}
+                filters={filters}
+                onFiltersChange={setFilters}
+                hasLocation={locationStatus === 'granted'}
+              />
+            </Suspense>
           }
         />
         <Route
           path="following"
           element={
-            <FollowingView
-              events={followingEvents}
-              following={following}
-              onUnfollow={unfollow}
-              onFollow={toggleFollow}
-              followingVenueIds={venueIds}
-              followingSeriesIds={seriesIds}
-              followingNeighborhoods={neighborhoodIds}
-            />
+            <Suspense fallback={<RouteFallback />}>
+              <FollowingView
+                events={followingEvents}
+                following={following}
+                onUnfollow={unfollow}
+                onFollow={toggleFollow}
+                followingVenueIds={venueIds}
+                followingSeriesIds={seriesIds}
+                followingNeighborhoods={neighborhoodIds}
+              />
+            </Suspense>
           }
         />
         <Route
           path="profile"
           element={
-            <ProfileView
-              profile={profile}
-              onProfileChange={updateProfile}
-              preferences={preferences}
-              onPreferencesChange={updatePreferences}
-              locationStatus={locationStatus}
-              onRequestLocation={requestLocation}
-              onConfigureAI={() => setShowAISettings(true)}
-              notifications={notifications}
-            />
+            <Suspense fallback={<RouteFallback />}>
+              <ProfileView
+                profile={profile}
+                onProfileChange={updateProfile}
+                preferences={preferences}
+                onPreferencesChange={updatePreferences}
+                locationStatus={locationStatus}
+                onRequestLocation={requestLocation}
+                onConfigureAI={() => setShowAISettings(true)}
+                notifications={notifications}
+              />
+            </Suspense>
           }
         />
       </Route>
       <Route
         path="event/:id"
         element={
-          <EventDetailPage
-            getEventById={getEventById}
-            onFollow={toggleFollow}
-            followingVenueIds={venueIds}
-            followingSeriesIds={seriesIds}
-            followingNeighborhoods={neighborhoodIds}
-            weather={weather}
-          />
+          <Suspense fallback={<RouteFallback />}>
+            <EventDetailPage
+              getEventById={getEventById}
+              onFollow={toggleFollow}
+              followingVenueIds={venueIds}
+              followingSeriesIds={seriesIds}
+              followingNeighborhoods={neighborhoodIds}
+              weather={weather}
+            />
+          </Suspense>
         }
       />
     </Routes>
 
     {/* AI Chat Assistant */}
-    <ChatAssistant
-      events={filteredEvents}
-      preferences={preferences}
-      onConfigureAI={() => setShowAISettings(true)}
-    />
+    <Suspense fallback={null}>
+      <ChatAssistant
+        events={filteredEvents}
+        preferences={preferences}
+        onConfigureAI={() => setShowAISettings(true)}
+      />
+    </Suspense>
 
     {/* AI Settings Modal */}
-    <AISettingsModal
-      isOpen={showAISettings}
-      onClose={() => setShowAISettings(false)}
-    />
+    {showAISettings && (
+      <Suspense fallback={null}>
+        <AISettingsModal
+          isOpen={showAISettings}
+          onClose={() => setShowAISettings(false)}
+        />
+      </Suspense>
+    )}
 
     {/* PWA Install Prompt */}
     <InstallPrompt />
+
+    {/* PWA Update Notification */}
+    <UpdatePrompt />
+
+    {/* Offline Indicator */}
+    <OfflineBanner />
     </>
   );
 }

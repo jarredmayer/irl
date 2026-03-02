@@ -33,8 +33,8 @@ jobs:
           # keep the feature branch version (it has manual fixes)
           if ! git merge --no-ff "origin/$BRANCH" -m "Auto-merge: $BRANCH"; then
             echo "Merge conflict — resolving data files with feature branch version"
-            git checkout --theirs -- 'src/data/events*.json' 2>/dev/null || true
-            git add 'src/data/' 2>/dev/null || true
+            git checkout --theirs -- 'public/data/events*.json' 2>/dev/null || true
+            git add 'public/data/' 2>/dev/null || true
             git checkout --theirs -- 'scraper/src/' 2>/dev/null || true
             git add 'scraper/src/' 2>/dev/null || true
             git commit -m "Auto-merge: $BRANCH (conflict resolved, kept branch data)"
@@ -102,8 +102,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/events*.json src/data/scrape-meta.json \
-                  src/data/instagram-posts-cache.json src/data/venue-images.json 2>/dev/null || true
+          git add public/data/events*.json public/data/scrape-meta.json \
+                  public/data/instagram-posts-cache.json public/data/venue-images.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No data changes — skipping commit"
             exit 0

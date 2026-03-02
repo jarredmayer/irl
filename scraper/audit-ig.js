@@ -1,4 +1,4 @@
-const events = require('./src/data/events.json');
+const events = require('../public/data/events.json');
 const igEvents = events.filter(e => e.source && e.source.name && e.source.name.startsWith('@'));
 const bySource = {};
 igEvents.forEach(e => {
