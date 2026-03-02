@@ -33,8 +33,8 @@ jobs:
           # keep the feature branch version (it has manual fixes)
           if ! git merge --no-ff "origin/$BRANCH" -m "Auto-merge: $BRANCH"; then
             echo "Merge conflict — resolving data files with feature branch version"
-            git checkout --theirs -- 'src/data/events*.json' 2>/dev/null || true
-            git add 'src/data/' 2>/dev/null || true
+            git checkout --theirs -- 'public/data/events*.json' 2>/dev/null || true
+            git add 'public/data/' 2>/dev/null || true
             git checkout --theirs -- 'scraper/src/' 2>/dev/null || true
             git add 'scraper/src/' 2>/dev/null || true
             git commit -m "Auto-merge: $BRANCH (conflict resolved, kept branch data)"
@@ -52,3 +52,85 @@ jobs:
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches" \
             -d '{"ref":"main"}'
           echo "Deploy workflow dispatched on main"
+
+  # Run scraper after merge to refresh event data
+  scrape:
+    needs: merge-and-deploy
+    runs-on: ubuntu-latest
+    concurrency:
+      group: "scrape-pipeline"
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: scraper/package-lock.json
+
+      - name: Cache Puppeteer Chrome
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('scraper/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-puppeteer-
+
+      - name: Install scraper dependencies
+        working-directory: scraper
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
+        run: npm ci || (echo "npm ci failed, retrying..." && npm cache clean --force && npm ci)
+
+      - name: Install Puppeteer Chrome
+        working-directory: scraper
+        run: npx puppeteer browsers install chrome || echo "Chrome install failed"
+
+      - name: Run scraper
+        continue-on-error: true
+        timeout-minutes: 10
+        working-directory: scraper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run scrape
+
+      - name: Commit and push event data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/data/events*.json public/data/scrape-meta.json \
+                  public/data/instagram-posts-cache.json public/data/venue-images.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No data changes — skipping commit"
+            exit 0
+          fi
+          git commit -m "Update events data $(date +'%Y-%m-%d')"
+          PUSH_OK=false
+          for i in 1 2 3; do
+            echo "Push attempt $i/3..."
+            if git pull --rebase -X theirs origin main; then
+              if git push; then
+                echo "Pushed successfully on attempt $i"
+                PUSH_OK=true
+                break
+              fi
+            else
+              git rebase --abort 2>/dev/null || true
+            fi
+            [ "$i" -lt 3 ] && sleep 5 || true
+          done
+          $PUSH_OK && echo "Data pushed" || echo "Push failed — will retry next run"
+
+      - name: Trigger deploy with fresh data
+        if: success()
+        run: |
+          curl -s -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches" \
+            -d '{"ref":"main"}'
+          echo "Deploy triggered with fresh data"

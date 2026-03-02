@@ -13,7 +13,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 import { FortLauderdaleScraper } from './src/sources/fort-lauderdale.js';
 import { InstagramSourcesScraper } from './src/sources/instagram-sources.js';
 
-const dataDir = join(__dirname, '../src/data');
+const dataDir = join(__dirname, '../public/data');
 
 function generateId(event) {
   const key = `${event.title}|${event.startAt}|${event.venueName || ''}`;

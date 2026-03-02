@@ -9,7 +9,7 @@ import { createHash } from 'crypto';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 import { CulturalAttractionsScraper } from './src/sources/cultural-attractions.js';
 
-const dataDir = join(__dirname, '../src/data');
+const dataDir = join(__dirname, '../public/data');
 
 function generateId(event) {
   const key = `${event.title}|${event.startAt}|${event.venueName || ''}`;

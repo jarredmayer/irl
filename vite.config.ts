@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       includeAssets: [
         'favicon.svg',
         'icons/*.png',
@@ -75,7 +75,7 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff,woff2}'],
         runtimeCaching: [
           {
-            urlPattern: /\/irl\/.*\.json$/,
+            urlPattern: /\/irl\/data\/.*\.json$/,
             handler: 'NetworkFirst',
             options: {
               cacheName: 'event-data',
@@ -111,7 +111,7 @@ export default defineConfig({
         ],
         navigateFallback: '/irl/index.html',
         navigateFallbackDenylist: [/^\/api\//],
-        skipWaiting: true,
+        skipWaiting: false,
         clientsClaim: true,
         cleanupOutdatedCaches: true,
       },
@@ -123,5 +123,14 @@ export default defineConfig({
   ],
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-map': ['leaflet', 'react-leaflet'],
+          'vendor-date': ['date-fns', 'date-fns-tz'],
+        },
+      },
+    },
   },
 })
