@@ -308,12 +308,13 @@ export function getAllScrapers(): BaseScraper[] {
 
     // WeekendBroward — Broward + Palm Beach events (RSS + Puppeteer)
     new WeekendBrowardScraper(),
-    new WeekendBrowardLiveMusicScraper(),
-    new WeekendBrowardComedyScraper(),
-    new WeekendBrowardKaraokeScraper(),
-    new WeekendBrowardJazzScraper(),
-    new WeekendBrowardPBLiveMusicScraper(),
-    new WeekendBrowardLocalEventsScraper(),
+    // DISABLED — Puppeteer scrapers blocked by Cloudflare; always fail with errors
+    // new WeekendBrowardLiveMusicScraper(),
+    // new WeekendBrowardComedyScraper(),
+    // new WeekendBrowardKaraokeScraper(),
+    // new WeekendBrowardJazzScraper(),
+    // new WeekendBrowardPBLiveMusicScraper(),
+    // new WeekendBrowardLocalEventsScraper(),
     // new SoFloPopupsScraper(),         // SYNTHETIC
     // new DesignDistrictScraper(),      // SYNTHETIC
     // new DeeringEstateScraper(),       // SYNTHETIC

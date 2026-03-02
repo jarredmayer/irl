@@ -550,8 +550,8 @@ export class FortLauderdaleScraper extends BaseScraper {
       }
     } else if (template.days === 'monthly' || template.days === 'first-saturday') {
       // Generate monthly events (last Saturday or first Saturday)
-      for (let week = 0; week < weeksAhead; week++) {
-        const checkDate = addDays(today, week * 7);
+      for (let i = 0; i < daysToCheck; i++) {
+        const checkDate = addDays(today, i);
         const dayOfMonth = checkDate.getDate();
         const dayOfWeek = getDay(checkDate);
 

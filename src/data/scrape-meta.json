@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-02T03:26:30.869Z",
+  "scrapedAt": "2026-03-02T03:40:56.190Z",
   "stats": {
-    "total": 1286,
-    "deduplicated": 918,
+    "total": 1292,
+    "deduplicated": 924,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -29,20 +29,14 @@
       "Free Yoga Miami": 76,
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
-      "Fort Lauderdale": 82,
+      "Fort Lauderdale": 88,
       "Palm Beach": 182,
       "Instagram Sources": 236,
-      "WeekendBroward": 0,
-      "WeekendBrowardLiveMusic": 0,
-      "WeekendBrowardComedy": 0,
-      "WeekendBrowardKaraoke": 0,
-      "WeekendBrowardJazz": 0,
-      "WeekendBrowardPBLiveMusic": 0,
-      "WeekendBrowardLocalEvents": 0
+      "WeekendBroward": 0
     }
   },
   "delta": {
-    "added": 0,
+    "added": 6,
     "removed": 0,
     "modified": 0,
     "unchanged": 915
@@ -214,7 +208,7 @@
     },
     {
       "name": "Fort Lauderdale",
-      "count": 82,
+      "count": 88,
       "status": "ok",
       "errors": []
     },
@@ -235,60 +229,12 @@
       "count": 0,
       "status": "empty",
       "errors": []
-    },
-    {
-      "name": "WeekendBrowardLiveMusic",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
-      ]
-    },
-    {
-      "name": "WeekendBrowardComedy",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
-      ]
-    },
-    {
-      "name": "WeekendBrowardKaraoke",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
-      ]
-    },
-    {
-      "name": "WeekendBrowardJazz",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
-      ]
-    },
-    {
-      "name": "WeekendBrowardPBLiveMusic",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
-      ]
-    },
-    {
-      "name": "WeekendBrowardLocalEvents",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
-      ]
     }
   ],
   "sourceHealth": {
     "ok": 16,
     "empty": 6,
-    "errored": 13,
+    "errored": 7,
     "emptySources": [
       "Miami New Times",
       "III Points",
@@ -304,13 +250,7 @@
       "Hotel Events",
       "Miami Improv",
       "Fort Lauderdale Improv",
-      "Coral Gables",
-      "WeekendBrowardLiveMusic",
-      "WeekendBrowardComedy",
-      "WeekendBrowardKaraoke",
-      "WeekendBrowardJazz",
-      "WeekendBrowardPBLiveMusic",
-      "WeekendBrowardLocalEvents"
+      "Coral Gables"
     ]
   }
 }
