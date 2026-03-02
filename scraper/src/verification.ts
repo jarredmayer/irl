@@ -46,6 +46,7 @@ const VERIFIED_SOURCES = [
   'Fort Lauderdale',           // Real recurring venue events (markets, parks, arts)
   'Palm Beach',                // Real recurring venue events (WPB, Boca, Delray, Jupiter)
   'Instagram Sources',         // Verified recurring events from monitored IG accounts
+  'WeekendBroward Google',     // WeekendBroward events via Google Custom Search API
 ];
 
 // ALL OTHER SOURCES ARE SYNTHETIC - they generate assumed events
