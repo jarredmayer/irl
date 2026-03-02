@@ -17,11 +17,11 @@
 import type { IRLEvent } from '../types.js';
 import { agentVerifyLocations } from './location-verifier.js';
 
-// Miami/FLL/Palm Beach metro bounding box (generous margins)
+// South Florida metro bounding box (Homestead to Jupiter)
 const METRO_BOUNDS = {
-  minLat: 25.5,
+  minLat: 25.2,
   maxLat: 27.0,
-  minLng: -80.5,
+  minLng: -80.9,
   maxLng: -79.9,
 };
 
