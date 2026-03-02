@@ -17,10 +17,10 @@
 import type { IRLEvent } from '../types.js';
 import { agentVerifyLocations } from './location-verifier.js';
 
-// Miami/FLL metro bounding box (generous margins)
+// Miami/FLL/Palm Beach metro bounding box (generous margins)
 const METRO_BOUNDS = {
   minLat: 25.5,
-  maxLat: 26.5,
+  maxLat: 27.0,
   minLng: -80.5,
   maxLng: -79.9,
 };

@@ -17,10 +17,10 @@ import { geocodeAddress, calculateDistance } from '../geocoding.js';
 import { PersistentCache, cacheKey } from './cache.js';
 import type { IRLEvent } from '../types.js';
 
-// Miami/FLL metro bounding box (generous)
+// Miami/FLL/Palm Beach metro bounding box (generous)
 const METRO_BOUNDS = {
   minLat: 25.1,
-  maxLat: 26.5,
+  maxLat: 27.0,
   minLng: -80.9,
   maxLng: -79.9,
 };
