@@ -17,7 +17,7 @@ import { fileURLToPath } from 'url';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 
-const META_PATH = join(__dir, '../../../src/data/scrape-meta.json');
+const META_PATH = join(__dir, '../../../public/data/scrape-meta.json');
 const HISTORY_PATH = join(__dir, '../../cache/scrape-history.json');
 const IG_SOURCES_PATH = join(__dir, '../sources/instagram-sources.ts');
 

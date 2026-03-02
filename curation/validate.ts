@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import { EventsArraySchema } from '../src/data/schema';
 
-const dataDir = join(__dirname, '../src/data');
+const dataDir = join(__dirname, '../public/data');
 
 function validateFile(filename: string): boolean {
   console.log(`\nValidating ${filename}...`);

@@ -20,7 +20,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const dataDir = join(__dirname, '../src/data');
+const dataDir = join(__dirname, '../public/data');
 const cacheFile = join(dataDir, 'instagram-posts-cache.json');
 
 // All monitored Instagram accounts with city and location hints

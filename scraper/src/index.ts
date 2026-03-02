@@ -139,7 +139,7 @@ async function main() {
   const verifyEvents = process.argv.includes('--verify-events'); // EventVerifier without full pipeline
   const isPmReport = process.argv.includes('--pm-report');
   const startTime = Date.now();
-  const dataDir = join(__dirname, '../../src/data');
+  const dataDir = join(__dirname, '../../public/data');
 
   // PMAgent weekly health report — runs standalone, doesn't scrape
   if (isPmReport) {

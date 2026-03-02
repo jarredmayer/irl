@@ -1,9 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { rankEvents, filterByDistance } from '../services/ranking';
 import { filterEventsByTime, getTimeSection, isEventPast } from '../utils/time';
-import miamiEvents from '../data/events.miami.json';
-import fllEvents from '../data/events.fll.json';
-import pbEvents from '../data/events.pb.json';
 import type {
   Event,
   ScoredEvent,
@@ -13,6 +10,12 @@ import type {
   UserLocation,
   WeatherForecast,
 } from '../types';
+
+const DATA_FILES = [
+  `${import.meta.env.BASE_URL}data/events.miami.json`,
+  `${import.meta.env.BASE_URL}data/events.fll.json`,
+  `${import.meta.env.BASE_URL}data/events.pb.json`,
+];
 
 interface UseEventsOptions {
   preferences: UserPreferences;
@@ -32,13 +35,29 @@ interface GroupedEvents {
 export function useEvents(options: UseEventsOptions) {
   const { preferences, location, weather, filters } = options;
   const [allEvents, setAllEvents] = useState<Event[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Combine events from all cities
-    const combined = [...(miamiEvents as Event[]), ...(fllEvents as Event[]), ...(pbEvents as Event[])];
-    // Filter out past events
-    const upcoming = combined.filter((e) => !isEventPast(e.startAt));
-    setAllEvents(upcoming);
+    let cancelled = false;
+
+    async function loadEvents() {
+      try {
+        const results = await Promise.all(
+          DATA_FILES.map((url) => fetch(url).then((r) => r.json()))
+        );
+        if (cancelled) return;
+        const combined = results.flat() as Event[];
+        const upcoming = combined.filter((e) => !isEventPast(e.startAt));
+        setAllEvents(upcoming);
+      } catch (err) {
+        console.error('Failed to load events:', err);
+      } finally {
+        if (!cancelled) setIsLoading(false);
+      }
+    }
+
+    loadEvents();
+    return () => { cancelled = true; };
   }, []);
 
   const rankedEvents = useMemo(() => {
@@ -200,5 +219,6 @@ export function useEvents(options: UseEventsOptions) {
     getEventById,
     totalCount: allEvents.length,
     filteredCount: filteredEvents.length,
+    isLoading,
   };
 }
