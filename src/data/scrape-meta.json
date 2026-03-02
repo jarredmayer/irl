@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-02T03:40:56.190Z",
+  "scrapedAt": "2026-03-02T10:39:52.451Z",
   "stats": {
     "total": 1292,
-    "deduplicated": 924,
+    "deduplicated": 923,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -36,10 +36,10 @@
     }
   },
   "delta": {
-    "added": 6,
+    "added": 3,
     "removed": 0,
     "modified": 0,
-    "unchanged": 915
+    "unchanged": 920
   },
   "sources": [
     {
