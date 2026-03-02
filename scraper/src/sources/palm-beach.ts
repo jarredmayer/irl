@@ -518,37 +518,22 @@ export class PalmBeachScraper extends BaseScraper {
           events.push(this.createEvent(venue, template, d));
         }
       }
-    } else if (template.days === 'monthly' || template.days === 'first-saturday') {
-      for (let week = 0; week < weeksAhead; week++) {
-        const checkDate = addDays(today, week * 7);
+    } else if (template.days === 'monthly' || template.days === 'first-saturday' || template.days === 'first-friday' || template.days === 'first-sunday' || template.days === 'third-thursday') {
+      // Iterate over ALL days to find matching monthly patterns
+      for (let i = 0; i < daysToCheck; i++) {
+        const checkDate = addDays(today, i);
         const dayOfMonth = checkDate.getDate();
         const dayOfWeek = getDay(checkDate);
 
         if (template.days === 'first-saturday' && dayOfWeek === 6 && dayOfMonth <= 7) {
           events.push(this.createEvent(venue, template, checkDate));
-        }
-        if (template.days === 'monthly' && dayOfWeek === 6 && dayOfMonth >= 22) {
+        } else if (template.days === 'first-friday' && dayOfWeek === 5 && dayOfMonth <= 7) {
           events.push(this.createEvent(venue, template, checkDate));
-        }
-      }
-    } else if (template.days === 'first-friday') {
-      for (let week = 0; week < weeksAhead; week++) {
-        const checkDate = addDays(today, week * 7);
-        if (getDay(checkDate) === 5 && checkDate.getDate() <= 7) {
+        } else if (template.days === 'first-sunday' && dayOfWeek === 0 && dayOfMonth <= 7) {
           events.push(this.createEvent(venue, template, checkDate));
-        }
-      }
-    } else if (template.days === 'first-sunday') {
-      for (let week = 0; week < weeksAhead; week++) {
-        const checkDate = addDays(today, week * 7);
-        if (getDay(checkDate) === 0 && checkDate.getDate() <= 7) {
+        } else if (template.days === 'third-thursday' && dayOfWeek === 4 && dayOfMonth >= 15 && dayOfMonth <= 21) {
           events.push(this.createEvent(venue, template, checkDate));
-        }
-      }
-    } else if (template.days === 'third-thursday') {
-      for (let week = 0; week < weeksAhead; week++) {
-        const checkDate = addDays(today, week * 7);
-        if (getDay(checkDate) === 4 && checkDate.getDate() >= 15 && checkDate.getDate() <= 21) {
+        } else if (template.days === 'monthly' && dayOfWeek === 6 && dayOfMonth >= 22) {
           events.push(this.createEvent(venue, template, checkDate));
         }
       }

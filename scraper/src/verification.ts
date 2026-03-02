@@ -44,6 +44,7 @@ const VERIFIED_SOURCES = [
   'Coral Gables',              // Real city calendar events
   'Verified Recurring',        // Confirmed recurring events only
   'Fort Lauderdale',           // Real recurring venue events (markets, parks, arts)
+  'Palm Beach',                // Real recurring venue events (WPB, Boca, Delray, Jupiter)
   'Instagram Sources',         // Verified recurring events from monitored IG accounts
 ];
 

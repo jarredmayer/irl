@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-02T01:17:55.721Z",
+  "scrapedAt": "2026-03-02T03:26:30.869Z",
   "stats": {
-    "total": 1104,
-    "deduplicated": 736,
+    "total": 1286,
+    "deduplicated": 918,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -30,6 +30,7 @@
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
       "Fort Lauderdale": 82,
+      "Palm Beach": 182,
       "Instagram Sources": 236,
       "WeekendBroward": 0,
       "WeekendBrowardLiveMusic": 0,
@@ -44,7 +45,7 @@
     "added": 0,
     "removed": 0,
     "modified": 0,
-    "unchanged": 733
+    "unchanged": 915
   },
   "sources": [
     {
@@ -218,6 +219,12 @@
       "errors": []
     },
     {
+      "name": "Palm Beach",
+      "count": 182,
+      "status": "ok",
+      "errors": []
+    },
+    {
       "name": "Instagram Sources",
       "count": 236,
       "status": "ok",
@@ -279,7 +286,7 @@
     }
   ],
   "sourceHealth": {
-    "ok": 15,
+    "ok": 16,
     "empty": 6,
     "errored": 13,
     "emptySources": [

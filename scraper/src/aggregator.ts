@@ -503,9 +503,8 @@ export class EventAggregator {
    * Generate short editorial hook
    */
   private generateShortWhy(event: RawEvent): string {
-    const isMiami = event.city === 'Miami';
-    const cityName = isMiami ? 'Miami' : 'Fort Lauderdale';
-    const regionName = isMiami ? 'the Magic City' : 'the Venice of America';
+    const cityName = event.city === 'Miami' ? 'Miami' : event.city === 'Palm Beach' ? 'Palm Beach' : 'Fort Lauderdale';
+    const regionName = event.city === 'Miami' ? 'the Magic City' : event.city === 'Palm Beach' ? 'the Gold Coast' : 'the Venice of America';
 
     const templates: Record<string, string[]> = {
       Music: [
@@ -613,6 +612,14 @@ export class EventAggregator {
       'Las Olas',
       'FAT Village',
       'Riverwalk Fort Lauderdale',
+      // Palm Beach venues
+      'Norton Museum',
+      'Kravis Center',
+      'Clematis',
+      'Mizner Park',
+      'Morikami',
+      'SunFest',
+      'Flagler Museum',
     ].some((v) => event.venueName?.includes(v) || event.title.includes(v));
 
     return isLocalFavorite || isPopularVenue;

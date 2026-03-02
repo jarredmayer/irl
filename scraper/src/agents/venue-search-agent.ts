@@ -58,7 +58,7 @@ const venueCache = new PersistentCache<{ lat: number; lng: number; confidence: s
   30
 );
 
-const METRO_BOUNDS = { minLat: 25.1, maxLat: 26.5, minLng: -80.9, maxLng: -79.9 };
+const METRO_BOUNDS = { minLat: 25.1, maxLat: 27.0, minLng: -80.9, maxLng: -79.9 };
 
 function inBounds(lat: number, lng: number): boolean {
   return lat >= METRO_BOUNDS.minLat && lat <= METRO_BOUNDS.maxLat &&
