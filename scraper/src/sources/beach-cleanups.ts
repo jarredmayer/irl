@@ -13,7 +13,7 @@ interface CleanupEvent {
   venue: string;
   address: string;
   neighborhood: string;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   lat: number;
   lng: number;
   description: string;

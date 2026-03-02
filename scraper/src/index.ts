@@ -195,10 +195,12 @@ async function main() {
     // Split events by city
     const miamiEvents = freshEvents.filter((e) => e.city === 'Miami');
     const fllEvents = freshEvents.filter((e) => e.city === 'Fort Lauderdale');
+    const pbEvents = freshEvents.filter((e) => e.city === 'Palm Beach');
 
     console.log('');
     console.log(`  Miami events: ${miamiEvents.length}`);
     console.log(`  Fort Lauderdale events: ${fllEvents.length}`);
+    console.log(`  Palm Beach events: ${pbEvents.length}`);
 
     // Calculate and print delta
     const existingEvents = loadExistingEvents(dataDir);
@@ -224,6 +226,11 @@ async function main() {
       const fllPath = join(dataDir, 'events.fll.json');
       writeFileSync(fllPath, JSON.stringify(fllEvents, null, 2));
       console.log(`  ✅ Saved ${fllEvents.length} Fort Lauderdale events to ${fllPath}`);
+
+      // Save Palm Beach events
+      const pbPath = join(dataDir, 'events.pb.json');
+      writeFileSync(pbPath, JSON.stringify(pbEvents, null, 2));
+      console.log(`  ✅ Saved ${pbEvents.length} Palm Beach events to ${pbPath}`);
 
       // Save combined events
       const combinedPath = join(dataDir, 'events.json');

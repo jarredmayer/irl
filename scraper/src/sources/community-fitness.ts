@@ -33,7 +33,7 @@ interface RecurringEvent {
   tags: string[];
   price: number;
   sourceUrl: string;
-  city?: 'Miami' | 'Fort Lauderdale';
+  city?: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   // For bi-weekly or monthly events
   frequency?: 'weekly' | 'biweekly' | 'monthly' | 'last-friday' | 'second-tuesday' | 'third-saturday';
 }

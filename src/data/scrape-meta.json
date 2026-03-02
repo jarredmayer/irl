@@ -1,5 +1,5 @@
 {
-  "scrapedAt": "2026-03-02T00:54:18.641Z",
+  "scrapedAt": "2026-03-02T01:17:55.721Z",
   "stats": {
     "total": 1104,
     "deduplicated": 736,
@@ -32,14 +32,19 @@
       "Fort Lauderdale": 82,
       "Instagram Sources": 236,
       "WeekendBroward": 0,
-      "WeekendBrowardLiveMusic": 0
+      "WeekendBrowardLiveMusic": 0,
+      "WeekendBrowardComedy": 0,
+      "WeekendBrowardKaraoke": 0,
+      "WeekendBrowardJazz": 0,
+      "WeekendBrowardPBLiveMusic": 0,
+      "WeekendBrowardLocalEvents": 0
     }
   },
   "delta": {
-    "added": 23,
-    "removed": 5,
+    "added": 0,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 710
+    "unchanged": 733
   },
   "sources": [
     {
@@ -231,12 +236,52 @@
       "errors": [
         "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
       ]
+    },
+    {
+      "name": "WeekendBrowardComedy",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
+    },
+    {
+      "name": "WeekendBrowardKaraoke",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
+    },
+    {
+      "name": "WeekendBrowardJazz",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
+    },
+    {
+      "name": "WeekendBrowardPBLiveMusic",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
+    },
+    {
+      "name": "WeekendBrowardLocalEvents",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
     }
   ],
   "sourceHealth": {
     "ok": 15,
     "empty": 6,
-    "errored": 8,
+    "errored": 13,
     "emptySources": [
       "Miami New Times",
       "III Points",
@@ -253,7 +298,12 @@
       "Miami Improv",
       "Fort Lauderdale Improv",
       "Coral Gables",
-      "WeekendBrowardLiveMusic"
+      "WeekendBrowardLiveMusic",
+      "WeekendBrowardComedy",
+      "WeekendBrowardKaraoke",
+      "WeekendBrowardJazz",
+      "WeekendBrowardPBLiveMusic",
+      "WeekendBrowardLocalEvents"
     ]
   }
 }

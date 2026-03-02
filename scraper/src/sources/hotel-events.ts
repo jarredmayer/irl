@@ -31,7 +31,7 @@ interface HotelSource {
   address: string;
   lat: number;
   lng: number;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
 }
 
 const HOTEL_SOURCES: HotelSource[] = [

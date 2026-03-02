@@ -276,7 +276,7 @@ export class ResidentAdvisorScraper extends BaseScraper {
     return text.includes('fort lauderdale') || text.includes('broward') ? 'Fort Lauderdale' : 'Miami';
   }
 
-  private cityFromAddress(address: string): 'Miami' | 'Fort Lauderdale' {
+  private cityFromAddress(address: string): 'Miami' | 'Fort Lauderdale' | 'Palm Beach' {
     const lower = address.toLowerCase();
     if (
       lower.includes('fort lauderdale') ||
@@ -288,6 +288,16 @@ export class ResidentAdvisorScraper extends BaseScraper {
       lower.includes('pompano')
     ) {
       return 'Fort Lauderdale';
+    }
+    if (
+      lower.includes('palm beach') ||
+      lower.includes('boca raton') ||
+      lower.includes('delray') ||
+      lower.includes('boynton') ||
+      lower.includes('jupiter') ||
+      lower.includes('wellington')
+    ) {
+      return 'Palm Beach';
     }
     return 'Miami';
   }

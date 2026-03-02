@@ -13,7 +13,7 @@ export interface UserSubmittedEvent {
   venueName?: string;
   address?: string;
   neighborhood: string;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   category: string;
   description: string;
   sourceUrl?: string;
@@ -28,7 +28,7 @@ export function SubmitEventForm({ onClose, onSubmit }: SubmitEventFormProps) {
   const [venueName, setVenueName] = useState('');
   const [address, setAddress] = useState('');
   const [neighborhood, setNeighborhood] = useState('');
-  const [city, setCity] = useState<'Miami' | 'Fort Lauderdale'>('Miami');
+  const [city, setCity] = useState<'Miami' | 'Fort Lauderdale' | 'Palm Beach'>('Miami');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
   const [sourceUrl, setSourceUrl] = useState('');
@@ -195,11 +195,12 @@ export function SubmitEventForm({ onClose, onSubmit }: SubmitEventFormProps) {
               </label>
               <select
                 value={city}
-                onChange={(e) => setCity(e.target.value as 'Miami' | 'Fort Lauderdale')}
+                onChange={(e) => setCity(e.target.value as 'Miami' | 'Fort Lauderdale' | 'Palm Beach')}
                 className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
               >
                 <option value="Miami">Miami</option>
                 <option value="Fort Lauderdale">Fort Lauderdale</option>
+                <option value="Palm Beach">Palm Beach</option>
               </select>
             </div>
             <div>

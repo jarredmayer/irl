@@ -12,7 +12,7 @@ export interface RawEvent {
   neighborhood?: string;
   lat?: number | null;
   lng?: number | null;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   tags: string[];
   category: string;
   priceLabel?: 'Free' | '$' | '$$' | '$$$';
@@ -39,7 +39,7 @@ export interface IRLEvent {
   neighborhood: string;
   lat: number | null;
   lng: number | null;
-  city: 'Miami' | 'Fort Lauderdale';
+  city: 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
   tags: string[];
   category: string;
   priceLabel?: 'Free' | '$' | '$$' | '$$$';

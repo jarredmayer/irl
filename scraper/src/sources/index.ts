@@ -127,8 +127,16 @@ export {
   CyclingGroupRidesScraper,
 } from './community-fitness.js';
 
-// WeekendBroward — Broward County events calendar + live music
-export { WeekendBrowardScraper, WeekendBrowardLiveMusicScraper } from './weekend-broward.js';
+// WeekendBroward — Broward + Palm Beach events (live music, comedy, karaoke, jazz, local events)
+export {
+  WeekendBrowardScraper,
+  WeekendBrowardLiveMusicScraper,
+  WeekendBrowardComedyScraper,
+  WeekendBrowardKaraokeScraper,
+  WeekendBrowardJazzScraper,
+  WeekendBrowardPBLiveMusicScraper,
+  WeekendBrowardLocalEventsScraper,
+} from './weekend-broward.js';
 
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
@@ -199,7 +207,15 @@ import {
   RunClubsScraper,
   CyclingGroupRidesScraper,
 } from './community-fitness.js';
-import { WeekendBrowardScraper, WeekendBrowardLiveMusicScraper } from './weekend-broward.js';
+import {
+  WeekendBrowardScraper,
+  WeekendBrowardLiveMusicScraper,
+  WeekendBrowardComedyScraper,
+  WeekendBrowardKaraokeScraper,
+  WeekendBrowardJazzScraper,
+  WeekendBrowardPBLiveMusicScraper,
+  WeekendBrowardLocalEventsScraper,
+} from './weekend-broward.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -285,9 +301,14 @@ export function getAllScrapers(): BaseScraper[] {
     // new HotelsHospitalityScraper(),   // SYNTHETIC
     new InstagramSourcesScraper(),         // Verified recurring events from monitored IG accounts
 
-    // WeekendBroward — Broward County events RSS + live music (Puppeteer)
+    // WeekendBroward — Broward + Palm Beach events (RSS + Puppeteer)
     new WeekendBrowardScraper(),
     new WeekendBrowardLiveMusicScraper(),
+    new WeekendBrowardComedyScraper(),
+    new WeekendBrowardKaraokeScraper(),
+    new WeekendBrowardJazzScraper(),
+    new WeekendBrowardPBLiveMusicScraper(),
+    new WeekendBrowardLocalEventsScraper(),
     // new SoFloPopupsScraper(),         // SYNTHETIC
     // new DesignDistrictScraper(),      // SYNTHETIC
     // new DeeringEstateScraper(),       // SYNTHETIC
