@@ -32,7 +32,9 @@ interface PBEventTemplate {
 
 export class PalmBeachScraper extends BaseScraper {
   private venues: PBVenue[] = [
-    // ── West Palm Beach ─────────────────────────────────────────────
+    // ── VERIFIED RECURRING EVENTS (confirmed from official sources) ────
+
+    // West Palm Beach — Clematis by Night (verified: wpb.org)
     {
       name: 'Clematis Street Waterfront',
       address: '101 N Clematis St, West Palm Beach, FL 33401',
@@ -52,6 +54,7 @@ export class PalmBeachScraper extends BaseScraper {
         },
       ],
     },
+    // West Palm Beach GreenMarket (verified: wpb.org/greenmarket)
     {
       name: 'West Palm Beach GreenMarket',
       address: 'Waterfront Commons, 101 S Flagler Dr, West Palm Beach, FL 33401',
@@ -71,6 +74,7 @@ export class PalmBeachScraper extends BaseScraper {
         },
       ],
     },
+    // Art After Dark at Norton Museum (verified: norton.org)
     {
       name: 'Norton Museum of Art',
       address: '1450 S Dixie Hwy, West Palm Beach, FL 33401',
@@ -90,45 +94,7 @@ export class PalmBeachScraper extends BaseScraper {
         },
       ],
     },
-    {
-      name: 'Kravis Center for the Performing Arts',
-      address: '701 Okeechobee Blvd, West Palm Beach, FL 33401',
-      neighborhood: 'West Palm Beach',
-      lat: 26.7142,
-      lng: -80.0635,
-      url: 'https://www.kravis.org/',
-      events: [
-        {
-          name: 'Kravis Center: Free Concert in the Plaza',
-          days: 'first-saturday',
-          time: '19:00',
-          category: 'Music',
-          description: 'Free outdoor concert series in the Kravis Center plaza featuring diverse genres — jazz, Latin, pop, and classical.',
-          tags: ['live-music', 'free-event', 'outdoor', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    {
-      name: 'The Square (formerly Rosemary Square)',
-      address: '700 S Rosemary Ave, West Palm Beach, FL 33401',
-      neighborhood: 'West Palm Beach',
-      lat: 26.7106,
-      lng: -80.0589,
-      url: 'https://thesquarewestpalm.com/',
-      events: [
-        {
-          name: 'Live Music at The Square',
-          days: [5, 6], // Fri–Sat
-          time: '19:00',
-          category: 'Music',
-          description: 'Free live music in the courtyard at The Square (formerly Rosemary Square). Enjoy dining, shopping, and entertainment in Downtown WPB.',
-          tags: ['live-music', 'free-event', 'outdoor', 'nightlife'],
-          price: 0,
-        },
-      ],
-    },
-    // ── Delray Beach ─────────────────────────────────────────────────
+    // Delray Beach GreenMarket (verified: oldschoolsquare.org)
     {
       name: 'Old School Square',
       address: '51 N Swinton Ave, Delray Beach, FL 33444',
@@ -148,228 +114,7 @@ export class PalmBeachScraper extends BaseScraper {
         },
       ],
     },
-    {
-      name: 'Atlantic Avenue',
-      address: 'E Atlantic Ave, Delray Beach, FL 33483',
-      neighborhood: 'Delray Beach',
-      lat: 26.4618,
-      lng: -80.0686,
-      url: 'https://downtowndelraybeach.com/',
-      events: [
-        {
-          name: 'First Friday Art Walk on Atlantic Ave',
-          days: 'first-friday',
-          time: '18:00',
-          category: 'Art',
-          description: 'Monthly gallery walk along Atlantic Avenue and Pineapple Grove. Galleries, studios, and pop-up art with live music and dining.',
-          tags: ['art-gallery', 'free-event', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    {
-      name: 'Delray Beach Playhouse',
-      address: '950 NW 9th St, Delray Beach, FL 33444',
-      neighborhood: 'Delray Beach',
-      lat: 26.4720,
-      lng: -80.0834,
-      url: 'https://delraybeachplayhouse.com/',
-      events: [
-        {
-          name: 'Delray Beach Playhouse: Saturday Matinee',
-          days: [6], // Saturday
-          time: '14:00',
-          category: 'Culture',
-          description: 'Community theater productions at one of South Florida\'s oldest playhouses. Musicals, dramas, and comedies performed by talented local casts.',
-          tags: ['local-favorite', 'community'],
-          price: 35,
-        },
-      ],
-    },
-    // ── Boca Raton ─────────────────────────────────────────────────
-    {
-      name: 'Mizner Park Amphitheater',
-      address: '590 Plaza Real, Boca Raton, FL 33432',
-      neighborhood: 'Boca Raton',
-      lat: 26.3569,
-      lng: -80.0832,
-      url: 'https://mizneramphitheater.com/',
-      events: [
-        {
-          name: 'Screen on the Green at Mizner Park',
-          days: 'first-friday',
-          time: '19:00',
-          category: 'Community',
-          description: 'Free outdoor movie night at the Mizner Park Amphitheater. Bring a blanket, grab food from nearby restaurants, and enjoy a film under the stars.',
-          tags: ['free-event', 'outdoor', 'family-friendly', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    {
-      name: 'Boca Raton Museum of Art',
-      address: '501 Plaza Real, Boca Raton, FL 33432',
-      neighborhood: 'Boca Raton',
-      lat: 26.3564,
-      lng: -80.0838,
-      url: 'https://bocamuseum.org/',
-      events: [
-        {
-          name: 'Free First Sunday at Boca Museum of Art',
-          days: 'first-sunday',
-          time: '11:00',
-          category: 'Art',
-          description: 'Free admission on the first Sunday of every month. Rotating exhibitions, guided tours, and family activities.',
-          tags: ['museum', 'art-gallery', 'free-event', 'family-friendly'],
-          price: 0,
-        },
-      ],
-    },
-    {
-      name: 'Royal Palm Place',
-      address: '101 Plaza Real S, Boca Raton, FL 33432',
-      neighborhood: 'Boca Raton',
-      lat: 26.3515,
-      lng: -80.0838,
-      url: 'https://royalpalmplace.com/',
-      events: [
-        {
-          name: 'Royal Palm Place Art Walk',
-          days: 'first-friday',
-          time: '18:00',
-          category: 'Art',
-          description: 'Monthly art walk through Royal Palm Place featuring local artists, live entertainment, and gallery openings in Boca Raton.',
-          tags: ['art-gallery', 'free-event', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    {
-      name: 'Red Reef Park',
-      address: '1400 N Ocean Blvd, Boca Raton, FL 33432',
-      neighborhood: 'Boca Raton',
-      lat: 26.3621,
-      lng: -80.0671,
-      url: 'https://www.myboca.us/Facilities/Facility/Details/Red-Reef-Park-16',
-      events: [
-        {
-          name: 'Sunday Sunrise Yoga at Red Reef Park',
-          days: [0], // Sunday
-          time: '07:30',
-          category: 'Wellness',
-          description: 'Free community yoga session on the beach at Red Reef Park. Bring a mat and enjoy oceanside practice.',
-          tags: ['yoga', 'beach', 'outdoor', 'free-event', 'wellness'],
-          price: 0,
-        },
-      ],
-    },
-    // ── Jupiter ─────────────────────────────────────────────────────
-    {
-      name: 'Jupiter Inlet Lighthouse & Museum',
-      address: '500 Captain Armour\'s Way, Jupiter, FL 33469',
-      neighborhood: 'Jupiter',
-      lat: 26.9483,
-      lng: -80.0813,
-      url: 'https://www.jupiterlighthouse.org/',
-      events: [
-        {
-          name: 'Lighthouse Sunset Tour',
-          days: [3], // Wednesday
-          time: '17:30',
-          category: 'Culture',
-          description: 'Climb the 1860 Jupiter Inlet Lighthouse at sunset. 105 steps to the top for panoramic views of the inlet, ocean, and Intracoastal Waterway.',
-          tags: ['museum', 'waterfront', 'local-favorite', 'outdoor'],
-          price: 15,
-        },
-      ],
-    },
-    {
-      name: 'Harbourside Place',
-      address: '200 N US Hwy 1, Jupiter, FL 33477',
-      neighborhood: 'Jupiter',
-      lat: 26.9389,
-      lng: -80.0892,
-      url: 'https://harboursideplace.com/',
-      events: [
-        {
-          name: 'Live Music at Harbourside Place',
-          days: [5, 6], // Fri–Sat
-          time: '18:00',
-          category: 'Music',
-          description: 'Free outdoor live music along the Jupiter waterfront at Harbourside Place. Enjoy dining, shops, and entertainment with Intracoastal views.',
-          tags: ['live-music', 'free-event', 'outdoor', 'waterfront'],
-          price: 0,
-        },
-        {
-          name: 'Harbourside Farmers Market',
-          days: [0], // Sunday
-          time: '10:00',
-          category: 'Food & Drink',
-          description: 'Sunday waterfront farmers market at Harbourside Place with local produce, artisan goods, and live music.',
-          tags: ['farmers-market', 'free-event', 'outdoor', 'waterfront', 'food'],
-          price: 0,
-        },
-      ],
-    },
-    {
-      name: 'Loggerhead Marinelife Center',
-      address: '14200 US Hwy 1, Juno Beach, FL 33408',
-      neighborhood: 'Jupiter',
-      lat: 26.8799,
-      lng: -80.0554,
-      url: 'https://www.marinelife.org/',
-      events: [
-        {
-          name: 'Loggerhead Marinelife Center: Sea Turtle Exhibit',
-          days: [1, 2, 3, 4, 5, 6, 0], // Daily
-          time: '10:00',
-          category: 'Culture',
-          description: 'Free admission to Loggerhead Marinelife Center. Visit recovering sea turtles, interactive exhibits, and the outdoor nature trail in Juno Beach.',
-          tags: ['museum', 'free-event', 'family-friendly', 'outdoor', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    // ── Lake Worth ──────────────────────────────────────────────────
-    {
-      name: 'Lake Worth Beach',
-      address: '10 S Ocean Blvd, Lake Worth, FL 33460',
-      neighborhood: 'Lake Worth',
-      lat: 26.6130,
-      lng: -80.0349,
-      url: 'https://www.lakeworthbeachfl.gov/',
-      events: [
-        {
-          name: 'Lake Worth Beach: Sunday Jazz on the Beach',
-          days: [0], // Sunday
-          time: '16:00',
-          category: 'Music',
-          description: 'Free Sunday jazz sessions at the Lake Worth Beach casino building. Live jazz on the patio with ocean views.',
-          tags: ['jazz', 'live-music', 'free-event', 'beach', 'outdoor'],
-          price: 0,
-        },
-      ],
-    },
-    {
-      name: 'Cultural Council for Palm Beach County',
-      address: '601 Lake Ave, Lake Worth, FL 33460',
-      neighborhood: 'Lake Worth',
-      lat: 26.6170,
-      lng: -80.0565,
-      url: 'https://www.palmbeachculture.com/',
-      events: [
-        {
-          name: 'Lake Worth Art Walk',
-          days: 'first-friday',
-          time: '18:00',
-          category: 'Art',
-          description: 'Monthly gallery walk through Lake Worth\'s arts district along Lake and Lucerne Avenues. 30+ galleries, studios, live music, and food.',
-          tags: ['art-gallery', 'free-event', 'local-favorite', 'community'],
-          price: 0,
-        },
-      ],
-    },
-    // ── Delray Beach / Morikami ──────────────────────────────────────
+    // Sushi & Stroll at Morikami (verified: morikami.org)
     {
       name: 'Morikami Museum & Japanese Gardens',
       address: '4000 Morikami Park Rd, Delray Beach, FL 33446',
@@ -379,15 +124,6 @@ export class PalmBeachScraper extends BaseScraper {
       url: 'https://morikami.org/',
       events: [
         {
-          name: 'Morikami Stroll for Well-Being',
-          days: [6], // Saturday
-          time: '09:00',
-          category: 'Wellness',
-          description: 'Guided meditation walk through the Morikami Japanese Gardens. Practice mindfulness while exploring six distinct garden environments.',
-          tags: ['meditation', 'park', 'outdoor', 'wellness', 'local-favorite'],
-          price: 16,
-        },
-        {
           name: 'Sushi & Stroll at Morikami',
           days: 'third-thursday',
           time: '17:30',
@@ -395,46 +131,6 @@ export class PalmBeachScraper extends BaseScraper {
           description: 'Monthly evening event with sushi, taiko drumming, Japanese performances, garden tours, and sake tastings at the Morikami Museum.',
           tags: ['food', 'live-music', 'museum', 'outdoor', 'local-favorite'],
           price: 15,
-        },
-      ],
-    },
-    // ── Boynton Beach ───────────────────────────────────────────────
-    {
-      name: 'Boynton Beach Amphitheater',
-      address: '129 E Ocean Ave, Boynton Beach, FL 33435',
-      neighborhood: 'Boynton Beach',
-      lat: 26.5254,
-      lng: -80.0595,
-      url: 'https://www.boynton-beach.org/',
-      events: [
-        {
-          name: 'Boynton Beach: Music on the Rocks',
-          days: 'first-friday',
-          time: '18:30',
-          category: 'Music',
-          description: 'Free monthly outdoor concert at the Boynton Beach Amphitheater. Live bands, food trucks, and community vibes.',
-          tags: ['live-music', 'free-event', 'outdoor', 'community'],
-          price: 0,
-        },
-      ],
-    },
-    // ── Palm Beach Gardens ─────────────────────────────────────────
-    {
-      name: 'Downtown at the Gardens',
-      address: '11701 Lake Victoria Gardens Ave, Palm Beach Gardens, FL 33410',
-      neighborhood: 'Palm Beach Gardens',
-      lat: 26.8395,
-      lng: -80.1404,
-      url: 'https://downtownatthegardens.com/',
-      events: [
-        {
-          name: 'Live Music at Downtown at the Gardens',
-          days: [5, 6], // Fri–Sat
-          time: '18:00',
-          category: 'Music',
-          description: 'Free outdoor live music and entertainment at Downtown at the Gardens. Family-friendly with dining and shopping.',
-          tags: ['live-music', 'free-event', 'outdoor', 'family-friendly'],
-          price: 0,
         },
       ],
     },
@@ -478,66 +174,7 @@ export class PalmBeachScraper extends BaseScraper {
         },
       ],
     },
-    // ── WeekendBroward-sourced events (verified via Google index) ──────
-    {
-      name: 'Carlin Park',
-      address: '400 S State Rd A1A, Jupiter, FL 33477',
-      neighborhood: 'Jupiter',
-      lat: 26.9212,
-      lng: -80.0711,
-      url: 'https://weekendbroward.com/events/jupiter-seafood-festival/',
-      events: [
-        {
-          name: 'Jupiter Seafood Festival',
-          days: 'specific-dates',
-          specificDates: ['2026-02-21', '2026-02-22'],
-          time: '11:00',
-          category: 'Food & Drink',
-          description: 'Family-friendly festival at Carlin Park in Jupiter with live music from local and international recording artists, fresh seafood, craft vendors, and ocean views.',
-          tags: ['food', 'live-music', 'outdoor', 'festival', 'family-friendly'],
-          price: 12,
-        },
-      ],
-    },
-    {
-      name: 'Downtown Delray Beach',
-      address: 'E Atlantic Ave, Delray Beach, FL 33483',
-      neighborhood: 'Delray Beach',
-      lat: 26.4618,
-      lng: -80.0686,
-      url: 'https://weekendbroward.com/events/art-jazz-on-the-avenue-in-delray-beach/',
-      events: [
-        {
-          name: 'Art & Jazz on the Avenue — Delray Beach',
-          days: 'specific-dates',
-          specificDates: ['2026-02-25', '2026-05-27', '2026-08-26', '2026-11-25'],
-          time: '18:00',
-          category: 'Music',
-          description: 'Quarterly event with multiple stages of live music plus pop-up entertainment throughout downtown Delray Beach. All genres — country, R&B, pop, rock, and blues.',
-          tags: ['jazz', 'live-music', 'free-event', 'outdoor', 'art-gallery', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
-    {
-      name: 'West Palm Beach Waterfront (Great Lawn)',
-      address: 'Flagler Dr, West Palm Beach, FL 33401',
-      neighborhood: 'West Palm Beach',
-      lat: 26.7140,
-      lng: -80.0498,
-      url: 'https://weekendbroward.com/events/',
-      events: [
-        {
-          name: 'Free Thursday Concert — WPB Waterfront',
-          days: [4], // Thursday
-          time: '18:00',
-          category: 'Music',
-          description: 'Free outdoor concerts every Thursday at Centennial Square & Great Lawn on the West Palm Beach Waterfront. Tribute bands and live acts from 6–9 PM. Bring a lawn chair or beach blanket.',
-          tags: ['live-music', 'free-event', 'outdoor', 'waterfront', 'local-favorite'],
-          price: 0,
-        },
-      ],
-    },
+    // NOTE: WeekendBroward-sourced events moved to weekend-broward-verified.ts
   ];
 
   constructor() {

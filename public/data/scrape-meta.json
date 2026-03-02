@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-02T10:53:09.500Z",
+  "scrapedAt": "2026-03-02T21:18:24.466Z",
   "stats": {
-    "total": 1312,
-    "deduplicated": 943,
+    "total": 1144,
+    "deduplicated": 781,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -29,17 +29,20 @@
       "Free Yoga Miami": 76,
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
-      "Fort Lauderdale": 102,
-      "Palm Beach": 188,
+      "Las Olas Boulevard": 0,
+      "Fort Lauderdale": 23,
+      "Palm Beach": 55,
       "Instagram Sources": 236,
-      "WeekendBroward": 0
+      "WeekendBroward": 0,
+      "WeekendBroward Verified": 44,
+      "WeekendBroward Google": 0
     }
   },
   "delta": {
-    "added": 20,
+    "added": 0,
     "removed": 0,
     "modified": 0,
-    "unchanged": 923
+    "unchanged": 781
   },
   "sources": [
     {
@@ -207,14 +210,20 @@
       "errors": []
     },
     {
+      "name": "Las Olas Boulevard",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
       "name": "Fort Lauderdale",
-      "count": 102,
+      "count": 23,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Palm Beach",
-      "count": 188,
+      "count": 55,
       "status": "ok",
       "errors": []
     },
@@ -229,11 +238,23 @@
       "count": 0,
       "status": "empty",
       "errors": []
+    },
+    {
+      "name": "WeekendBroward Verified",
+      "count": 44,
+      "status": "ok",
+      "errors": []
+    },
+    {
+      "name": "WeekendBroward Google",
+      "count": 0,
+      "status": "empty",
+      "errors": []
     }
   ],
   "sourceHealth": {
-    "ok": 16,
-    "empty": 6,
+    "ok": 17,
+    "empty": 8,
     "errored": 7,
     "emptySources": [
       "Miami New Times",
@@ -241,7 +262,9 @@
       "SOBEWFF",
       "Miami Spice",
       "Resident Advisor",
-      "WeekendBroward"
+      "Las Olas Boulevard",
+      "WeekendBroward",
+      "WeekendBroward Google"
     ],
     "erroredSources": [
       "Dice.fm Real",
