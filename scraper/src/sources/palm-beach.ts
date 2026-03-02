@@ -478,6 +478,66 @@ export class PalmBeachScraper extends BaseScraper {
         },
       ],
     },
+    // ── WeekendBroward-sourced events (verified via Google index) ──────
+    {
+      name: 'Carlin Park',
+      address: '400 S State Rd A1A, Jupiter, FL 33477',
+      neighborhood: 'Jupiter',
+      lat: 26.9212,
+      lng: -80.0711,
+      url: 'https://weekendbroward.com/events/jupiter-seafood-festival/',
+      events: [
+        {
+          name: 'Jupiter Seafood Festival',
+          days: 'specific-dates',
+          specificDates: ['2026-02-21', '2026-02-22'],
+          time: '11:00',
+          category: 'Food & Drink',
+          description: 'Family-friendly festival at Carlin Park in Jupiter with live music from local and international recording artists, fresh seafood, craft vendors, and ocean views.',
+          tags: ['food', 'live-music', 'outdoor', 'festival', 'family-friendly'],
+          price: 12,
+        },
+      ],
+    },
+    {
+      name: 'Downtown Delray Beach',
+      address: 'E Atlantic Ave, Delray Beach, FL 33483',
+      neighborhood: 'Delray Beach',
+      lat: 26.4618,
+      lng: -80.0686,
+      url: 'https://weekendbroward.com/events/art-jazz-on-the-avenue-in-delray-beach/',
+      events: [
+        {
+          name: 'Art & Jazz on the Avenue — Delray Beach',
+          days: 'specific-dates',
+          specificDates: ['2026-02-25', '2026-05-27', '2026-08-26', '2026-11-25'],
+          time: '18:00',
+          category: 'Music',
+          description: 'Quarterly event with multiple stages of live music plus pop-up entertainment throughout downtown Delray Beach. All genres — country, R&B, pop, rock, and blues.',
+          tags: ['jazz', 'live-music', 'free-event', 'outdoor', 'art-gallery', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
+    {
+      name: 'West Palm Beach Waterfront (Great Lawn)',
+      address: 'Flagler Dr, West Palm Beach, FL 33401',
+      neighborhood: 'West Palm Beach',
+      lat: 26.7140,
+      lng: -80.0498,
+      url: 'https://weekendbroward.com/events/',
+      events: [
+        {
+          name: 'Free Thursday Concert — WPB Waterfront',
+          days: [4], // Thursday
+          time: '18:00',
+          category: 'Music',
+          description: 'Free outdoor concerts every Thursday at Centennial Square & Great Lawn on the West Palm Beach Waterfront. Tribute bands and live acts from 6–9 PM. Bring a lawn chair or beach blanket.',
+          tags: ['live-music', 'free-event', 'outdoor', 'waterfront', 'local-favorite'],
+          price: 0,
+        },
+      ],
+    },
   ];
 
   constructor() {
