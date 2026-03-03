@@ -146,15 +146,31 @@ export class HotelEventsScraper extends BaseScraper {
     const events: RawEvent[] = [];
     const now = new Date();
 
-    for (const hotel of HOTEL_SOURCES) {
-      try {
+    // Run all hotels in parallel with per-hotel 12s timeout
+    // to avoid hitting the 120s aggregate scraper timeout
+    const PER_HOTEL_TIMEOUT_MS = 12_000;
+
+    const results = await Promise.allSettled(
+      HOTEL_SOURCES.map(async (hotel) => {
         this.log(`Fetching ${hotel.name} events...`);
-        const hotelEvents = await this.fetchHotelEvents(hotel, now);
+        const hotelEvents = await Promise.race([
+          this.fetchHotelEvents(hotel, now),
+          new Promise<RawEvent[]>((_, reject) =>
+            setTimeout(() => reject(new Error(`${hotel.name} timed out`)), PER_HOTEL_TIMEOUT_MS)
+          ),
+        ]);
         this.log(`  → ${hotelEvents.length} events from ${hotel.name}`);
-        events.push(...hotelEvents);
-      } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
-        this.log(`  ⚠ ${hotel.name}: ${msg}`);
+        return hotelEvents;
+      })
+    );
+
+    for (let i = 0; i < results.length; i++) {
+      const result = results[i];
+      if (result.status === 'fulfilled') {
+        events.push(...result.value);
+      } else {
+        const msg = result.reason instanceof Error ? result.reason.message : String(result.reason);
+        this.log(`  ⚠ ${HOTEL_SOURCES[i].name}: ${msg}`);
       }
     }
 

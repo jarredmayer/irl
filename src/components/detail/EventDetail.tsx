@@ -4,6 +4,7 @@ import {
   formatEventDateLong,
   formatEventTimeRange,
   isHappeningNow,
+  isNewlyAdded,
 } from '../../utils/time';
 import { formatDistance } from '../../utils/distance';
 import { getWeatherForTime, getWeatherIcon } from '../../services/weather';
@@ -34,6 +35,7 @@ export function EventDetail({
   const [copiedAddress, setCopiedAddress] = useState(false);
   const eventWeather = event && weather ? getWeatherForTime(weather, event.startAt) : null;
   const happeningNow = event ? isHappeningNow(event.startAt, event.endAt) : false;
+  const isNew = event ? isNewlyAdded(event.addedAt) : false;
 
   const handleCopyAddress = async () => {
     if (!event?.address) return;
@@ -137,6 +139,11 @@ export function EventDetail({
             {event.isOutdoor && (
               <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded-full">
                 Outdoor
+              </span>
+            )}
+            {isNew && !happeningNow && (
+              <span className="px-2 py-0.5 bg-sky-100 text-sky-700 text-xs font-medium rounded-full">
+                New
               </span>
             )}
           </div>
@@ -290,12 +297,13 @@ export function EventDetail({
           </div>
         )}
 
-        {/* Editorial why */}
+        {/* Why this, why now — contextual reasoning */}
         <div className="pt-2">
           <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">
             Why we recommend it
           </h3>
-          <p className="text-slate-700 leading-relaxed">{event.editorialWhy}</p>
+          <WhyThisWhyNow event={event} isNew={isNew} />
+          <p className="text-slate-700 leading-relaxed mt-2">{event.editorialWhy}</p>
         </div>
 
         {/* Description */}
@@ -332,6 +340,52 @@ export function EventDetail({
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+// Local neighborhoods that signal hidden gem quality
+const LOCAL_NEIGHBORHOODS = [
+  'Little Havana', 'Little Haiti', 'Allapattah', 'Little River',
+  'Hialeah', 'Overtown', 'Liberty City', 'Flagler Village',
+];
+
+/**
+ * Contextual reasoning chips — explains *why* this event is surfaced.
+ * Shown only on detail page to avoid feed clutter.
+ */
+function WhyThisWhyNow({ event, isNew }: { event: Event | ScoredEvent; isNew: boolean }) {
+  const reasons: { label: string; className: string }[] = [];
+
+  if (event.editorPick) {
+    reasons.push({ label: 'Curated pick — rare or culturally significant', className: 'bg-amber-50 text-amber-700' });
+  }
+
+  if (LOCAL_NEIGHBORHOODS.some(n => event.neighborhood?.toLowerCase() === n.toLowerCase())) {
+    reasons.push({ label: `Hidden gem — ${event.neighborhood}`, className: 'bg-purple-50 text-purple-700' });
+  }
+
+  if (event.priceLabel === 'Free') {
+    reasons.push({ label: 'Free to attend', className: 'bg-emerald-50 text-emerald-700' });
+  }
+
+  if (event.isOutdoor) {
+    reasons.push({ label: 'Outdoor event — check weather', className: 'bg-sky-50 text-sky-700' });
+  }
+
+  if (isNew) {
+    reasons.push({ label: 'Just added to the feed', className: 'bg-sky-50 text-sky-700' });
+  }
+
+  if (reasons.length === 0) return null;
+
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {reasons.map(({ label, className }) => (
+        <span key={label} className={`text-xs px-2 py-1 rounded-lg ${className}`}>
+          {label}
+        </span>
+      ))}
     </div>
   );
 }

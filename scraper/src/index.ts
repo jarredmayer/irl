@@ -217,6 +217,16 @@ async function main() {
         mkdirSync(dataDir, { recursive: true });
       }
 
+      // Stamp addedAt — preserve existing timestamps, add current time for new events
+      const existingAddedAt = new Map<string, string>();
+      for (const e of existingEvents) {
+        if (e.addedAt) existingAddedAt.set(e.id, e.addedAt);
+      }
+      const nowIso = new Date().toISOString();
+      for (const e of freshEvents) {
+        e.addedAt = existingAddedAt.get(e.id) || nowIso;
+      }
+
       // Save Miami events
       const miamiPath = join(dataDir, 'events.miami.json');
       writeFileSync(miamiPath, JSON.stringify(miamiEvents, null, 2));

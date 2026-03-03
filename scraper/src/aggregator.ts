@@ -498,86 +498,115 @@ export class EventAggregator {
   }
 
   /**
-   * Generate short editorial hook
+   * Generate short editorial hook using actual event details.
+   * Avoids generic templates — every shortWhy should feel specific to the event.
    */
   private generateShortWhy(event: RawEvent): string {
-    const cityName = event.city === 'Miami' ? 'Miami' : event.city === 'Palm Beach' ? 'Palm Beach' : 'Fort Lauderdale';
-    const regionName = event.city === 'Miami' ? 'the Magic City' : event.city === 'Palm Beach' ? 'the Gold Coast' : 'the Venice of America';
+    const venue = event.venueName || '';
+    const hood = event.neighborhood || '';
+    const title = event.title;
+    const isFree = event.priceLabel === 'Free' || event.priceAmount === 0;
+    const isOutdoor = event.isOutdoor;
 
-    const templates: Record<string, string[]> = {
-      Music: [
-        `Live sounds in one of ${cityName}'s best spots.`,
-        'Get your music fix with locals who know.',
-        `The kind of night ${cityName} does best.`,
-      ],
-      'Food & Drink': [
-        `Taste what makes ${cityName}'s food scene special.`,
-        'Local flavors and community vibes.',
-        'Fresh, local, and full of character.',
-      ],
-      Fitness: [
-        `Move your body with ${cityName}'s fitness community.`,
-        'Free workout with good people.',
-        'Start your day right with locals.',
-      ],
-      Wellness: [
-        `Find your calm in ${regionName}.`,
-        'Wellness done right.',
-        'Reset and recharge.',
-      ],
-      Sports: [
-        `Cheer on ${cityName}'s finest.`,
-        'Game day energy at its peak.',
-        'Nothing beats live sports.',
-      ],
-      Art: [
-        `See what ${cityName}'s art scene is about.`,
-        'Culture in full color.',
-        'Art worth the trip.',
-      ],
-      Culture: [
-        `Dive into ${cityName}'s cultural richness.`,
-        'History and culture, local-style.',
-        'Experience local heritage.',
-      ],
-      Community: [
-        `Connect with the ${cityName} community.`,
-        'Local vibes, real connections.',
-        `Where ${cityName} comes together.`,
-      ],
-      Nightlife: [
-        'Where South Florida comes alive after dark.',
-        'The kind of night you\'ll remember.',
-        'Dance floors and good energy.',
-      ],
-      Comedy: [
-        `Laugh out loud with ${cityName}'s comedy scene.`,
-        'Comedians who know how to deliver.',
-        'The perfect night out.',
-      ],
-    };
+    // Try to extract a performer/artist name from the title
+    // Common patterns: "Artist at Venue", "Artist: Tour Name", "Artist Live"
+    const artistMatch = title.match(/^(.+?)(?:\s+at\s+|\s*[-–:]\s*|\s+live\s+at\s+)/i);
+    const artist = artistMatch ? artistMatch[1].trim() : '';
 
-    const categoryTemplates = templates[event.category] || templates.Community;
-    return categoryTemplates[Math.floor(Math.random() * categoryTemplates.length)];
+    // Build context-specific shortWhy based on what we know
+    if (artist && venue) {
+      return `${artist} live at ${venue}.`;
+    }
+
+    if (artist) {
+      return `${artist} live in ${hood || event.city}.`;
+    }
+
+    // Category-specific with real details
+    switch (event.category) {
+      case 'Music':
+        if (venue && hood) return `Live music at ${venue}, ${hood}.`;
+        if (venue) return `Live music at ${venue} tonight.`;
+        return `Live music in ${hood || event.city}.`;
+
+      case 'Food & Drink':
+        if (isFree && venue) return `Free tasting at ${venue}.`;
+        if (venue && hood) return `${venue} in ${hood} — worth the trip.`;
+        return `Good food, good people in ${hood || event.city}.`;
+
+      case 'Fitness':
+        if (isFree) return `Free workout in ${hood || event.city}.`;
+        if (venue) return `Get moving at ${venue}.`;
+        return `Fitness in ${hood || event.city}.`;
+
+      case 'Wellness':
+        if (isFree && isOutdoor) return `Free outdoor wellness in ${hood || event.city}.`;
+        if (venue) return `Reset at ${venue}.`;
+        return `Wellness in ${hood || event.city}.`;
+
+      case 'Comedy':
+        if (venue) return `Laughs at ${venue} — locals know.`;
+        return `Live comedy in ${hood || event.city}.`;
+
+      case 'Sports':
+        if (venue) return `Game day at ${venue}.`;
+        return `Live sports in ${event.city}.`;
+
+      case 'Art':
+        if (venue) return `Art at ${venue}, ${hood}.`;
+        return `Art in ${hood || event.city}.`;
+
+      case 'Culture':
+        if (venue) return `Culture at ${venue}, ${hood}.`;
+        return `Cultural experience in ${hood || event.city}.`;
+
+      case 'Nightlife':
+        if (venue && hood) return `${venue} in ${hood} after dark.`;
+        return `Night out in ${hood || event.city}.`;
+
+      case 'Community':
+        if (isFree) return `Free community event in ${hood || event.city}.`;
+        if (venue) return `Community at ${venue}.`;
+        return `${hood || event.city} comes together.`;
+
+      default:
+        if (venue && hood) return `${venue} in ${hood}.`;
+        if (hood) return `Happening in ${hood}.`;
+        return `Happening in ${event.city}.`;
+    }
   }
 
   /**
-   * Generate longer editorial description
+   * Generate longer editorial description with venue and neighborhood context.
+   * Avoids generic "is a local favorite" suffix — uses specific details instead.
    */
   private generateEditorialWhy(event: RawEvent): string {
-    let why = event.description;
+    const parts: string[] = [];
 
-    // Add venue context if available
+    // Lead with the event description
+    if (event.description && event.description.length > 20) {
+      parts.push(event.description);
+    } else {
+      parts.push(`${event.title} in ${event.neighborhood || event.city}.`);
+    }
+
+    // Add neighborhood context only if it adds value
     if (event.venueName && event.neighborhood) {
-      why += ` Located in ${event.neighborhood}, ${event.venueName} is a local favorite.`;
+      if (event.isOutdoor) {
+        parts.push(`Outdoors at ${event.venueName} in ${event.neighborhood}.`);
+      } else {
+        parts.push(`At ${event.venueName} in ${event.neighborhood}.`);
+      }
     }
 
     // Add price context
-    if (event.priceLabel === 'Free') {
-      why += ' Best of all, it\'s free.';
+    if (event.priceLabel === 'Free' || event.priceAmount === 0) {
+      parts.push('Free to attend.');
+    } else if (event.priceAmount && event.priceAmount > 0) {
+      parts.push(`Tickets from $${event.priceAmount}.`);
     }
 
-    return why;
+    return parts.join(' ');
   }
 
   /**

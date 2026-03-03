@@ -42,6 +42,7 @@ export interface Event {
   isRecurring?: boolean;
   organizerId?: string;
   organizerName?: string;
+  addedAt?: string; // ISO 8601 — when this event first appeared in the feed
 }
 
 export interface FollowItem {

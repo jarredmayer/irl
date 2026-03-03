@@ -90,7 +90,10 @@ export class DiceMiamiScraper extends BaseScraper {
 
 // === MIAMI IMPROV ===
 export class MiamiImprovRealScraper extends BaseScraper {
-  private url = 'https://www.miamiimprov.com/events';
+  private urls = [
+    'https://www.miamiimprov.com/events',
+    'https://www.miamiimprov.com/calendar',
+  ];
 
   constructor() {
     super('Miami Improv', { weight: 1.3, rateLimit: 2000 });
@@ -98,27 +101,36 @@ export class MiamiImprovRealScraper extends BaseScraper {
 
   async scrape(): Promise<RawEvent[]> {
     this.log('Scraping Miami Improv...');
-    const $ = await this.fetchHTML(this.url);
     const events: RawEvent[] = [];
 
-    // JSON-LD has Place with Events array
-    $('script[type="application/ld+json"]').each((_, el) => {
+    for (const url of this.urls) {
       try {
-        const data = JSON.parse($(el).html() || '');
-        // Handle Place with Events array
-        if (data.Events && Array.isArray(data.Events)) {
-          for (const evt of data.Events) {
-            if (evt.name && evt.startDate && !evt.name.toLowerCase().includes('closed')) {
-              events.push(this.parseJsonLd(evt));
+        const $ = await this.fetchHTML(url);
+
+        // JSON-LD has Place with Events array
+        $('script[type="application/ld+json"]').each((_, el) => {
+          try {
+            const data = JSON.parse($(el).html() || '');
+            // Handle Place with Events array
+            if (data.Events && Array.isArray(data.Events)) {
+              for (const evt of data.Events) {
+                if (evt.name && evt.startDate && !evt.name.toLowerCase().includes('closed')) {
+                  events.push(this.parseJsonLd(evt));
+                }
+              }
             }
-          }
-        }
-        // Handle direct Event
-        if (data['@type'] === 'Event' && data.name) {
-          events.push(this.parseJsonLd(data));
-        }
-      } catch { /* skip */ }
-    });
+            // Handle direct Event
+            if (data['@type'] === 'Event' && data.name) {
+              events.push(this.parseJsonLd(data));
+            }
+          } catch { /* skip */ }
+        });
+
+        if (events.length > 0) break; // Got events, stop trying URLs
+      } catch (e) {
+        this.log(`  URL ${url} failed, trying next...`);
+      }
+    }
 
     this.log(`Found ${events.length} Miami Improv events`);
     return events;
@@ -138,14 +150,17 @@ export class MiamiImprovRealScraper extends BaseScraper {
       priceAmount: data.offers?.price,
       isOutdoor: false,
       sourceName: this.name,
-      sourceUrl: data.url || this.url,
+      sourceUrl: data.url || this.urls[0],
     };
   }
 }
 
 // === FORT LAUDERDALE IMPROV ===
 export class FortLauderdaleImprovScraper extends BaseScraper {
-  private url = 'https://www.improvftl.com/events';
+  private urls = [
+    'https://www.improvftl.com/events',
+    'https://www.improvftl.com/calendar',
+  ];
 
   constructor() {
     super('Fort Lauderdale Improv', { weight: 1.3, rateLimit: 2000 });
@@ -153,36 +168,45 @@ export class FortLauderdaleImprovScraper extends BaseScraper {
 
   async scrape(): Promise<RawEvent[]> {
     this.log('Scraping Fort Lauderdale Improv...');
-    const $ = await this.fetchHTML(this.url);
     const events: RawEvent[] = [];
 
-    // JSON-LD has Place with Events array
-    $('script[type="application/ld+json"]').each((_, el) => {
+    for (const url of this.urls) {
       try {
-        const data = JSON.parse($(el).html() || '');
-        if (data.Events && Array.isArray(data.Events)) {
-          for (const evt of data.Events) {
-            if (evt.name && evt.startDate && !evt.name.toLowerCase().includes('closed')) {
-              events.push({
-                title: this.cleanText(evt.name),
-                startAt: evt.startDate?.replace('Z', ''),
-                      venueName: 'Fort Lauderdale Improv',
-                address: '5700 Seminole Way, Hollywood, FL 33314',
-                neighborhood: 'Hollywood',
-                city: 'Fort Lauderdale',
-                description: `${evt.name} at Fort Lauderdale Improv. 21+ with two-drink minimum.`,
-                category: 'Comedy',
-                tags: ['comedy', 'live-entertainment'],
-                priceAmount: evt.offers?.price,
-                isOutdoor: false,
-                sourceName: this.name,
-                sourceUrl: evt.url || this.url,
-              });
+        const $ = await this.fetchHTML(url);
+
+        // JSON-LD has Place with Events array
+        $('script[type="application/ld+json"]').each((_, el) => {
+          try {
+            const data = JSON.parse($(el).html() || '');
+            if (data.Events && Array.isArray(data.Events)) {
+              for (const evt of data.Events) {
+                if (evt.name && evt.startDate && !evt.name.toLowerCase().includes('closed')) {
+                  events.push({
+                    title: this.cleanText(evt.name),
+                    startAt: evt.startDate?.replace('Z', ''),
+                    venueName: 'Fort Lauderdale Improv',
+                    address: '5700 Seminole Way, Hollywood, FL 33314',
+                    neighborhood: 'Hollywood',
+                    city: 'Fort Lauderdale',
+                    description: `${evt.name} at Fort Lauderdale Improv. 21+ with two-drink minimum.`,
+                    category: 'Comedy',
+                    tags: ['comedy', 'live-entertainment'],
+                    priceAmount: evt.offers?.price,
+                    isOutdoor: false,
+                    sourceName: this.name,
+                    sourceUrl: evt.url || url,
+                  });
+                }
+              }
             }
-          }
-        }
-      } catch { /* skip */ }
-    });
+          } catch { /* skip */ }
+        });
+
+        if (events.length > 0) break;
+      } catch (e) {
+        this.log(`  URL ${url} failed, trying next...`);
+      }
+    }
 
     this.log(`Found ${events.length} FTL Improv events`);
     return events;
@@ -547,7 +571,11 @@ export class RevolutionLiveScraper extends BaseScraper {
 
 // === CORAL GABLES CITY ===
 export class CoralGablesScraper extends BaseScraper {
-  private url = 'https://www.coralgables.com/events-calendar';
+  private urls = [
+    'https://www.coralgables.com/events-calendar',
+    'https://www.coralgables.com/events',
+    'https://www.coralgables.com/calendar',
+  ];
 
   constructor() {
     super('Coral Gables', { weight: 1.2, rateLimit: 2000 });
@@ -555,7 +583,22 @@ export class CoralGablesScraper extends BaseScraper {
 
   async scrape(): Promise<RawEvent[]> {
     this.log('Scraping Coral Gables events...');
-    const $ = await this.fetchHTML(this.url);
+    let $: ReturnType<typeof import('cheerio').load> | null = null;
+
+    for (const url of this.urls) {
+      try {
+        $ = await this.fetchHTML(url);
+        break;
+      } catch (e) {
+        this.log(`  URL ${url} failed, trying next...`);
+      }
+    }
+
+    if (!$) {
+      this.log('All Coral Gables URLs failed');
+      return [];
+    }
+
     const events: RawEvent[] = [];
 
     // Cards with about="/events/..." attribute

@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { formatEventTime, getRelativeTimeLabel, isHappeningNow } from '../../utils/time';
+import { formatEventTime, getRelativeTimeLabel, isHappeningNow, isNewlyAdded } from '../../utils/time';
 import { formatDistance } from '../../utils/distance';
 import { getWeatherIcon } from '../../services/weather';
 import { Chip } from '../ui/Chip';
@@ -42,6 +42,7 @@ export function EventCard({
   const categoryColor = CATEGORY_COLORS[event.category] || CATEGORY_COLORS['Other'];
 
   const happeningNow = useMemo(() => isHappeningNow(event.startAt, event.endAt), [event.startAt, event.endAt]);
+  const isNew = useMemo(() => isNewlyAdded(event.addedAt), [event.addedAt]);
 
   const { swipeState, handlers } = useSwipeGesture({
     threshold: 80,
@@ -281,6 +282,7 @@ export function EventCard({
               <div className="flex items-center justify-between mt-3">
                 <div className="flex flex-wrap gap-1.5">
                   {happeningNow && <Chip label="Live" size="sm" variant="success" />}
+                  {isNew && !happeningNow && <Chip label="New" size="sm" variant="info" />}
                   {event.isOutdoor && <Chip label="Outdoor" size="sm" />}
                   {event.tags.slice(0, 2).map((tag) => (
                     <Chip key={tag} label={tag.replace(/-/g, ' ')} size="sm" />
