@@ -154,6 +154,17 @@ export { WeekendBrowardEnhancedScraper } from './weekend-broward-enhanced.js';
 // Las Olas Boulevard real events (Wix warmupData scraper)
 export { LasOlasEventsScraper } from './las-olas-events.js';
 
+// Broward venue scrapers (Culture Room, Bonnet House, Funky Buddha, Savor Cinema)
+export {
+  CultureRoomScraper,
+  BonnetHouseScraper,
+  FunkyBuddhaScraper,
+  SavorCinemaScraper,
+} from './broward-venues.js';
+
+// WeekendBroward PoW solver (SiteGround proof-of-work bypass)
+export { WeekendBrowardPowScraper } from './weekend-broward-pow.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -238,6 +249,13 @@ import { WeekendBrowardGoogleScraper } from './weekend-broward-google.js';
 import { WeekendBrowardVerifiedScraper } from './weekend-broward-verified.js';
 import { WeekendBrowardEnhancedScraper } from './weekend-broward-enhanced.js';
 import { LasOlasEventsScraper } from './las-olas-events.js';
+import {
+  CultureRoomScraper,
+  BonnetHouseScraper,
+  FunkyBuddhaScraper,
+  SavorCinemaScraper,
+} from './broward-venues.js';
+import { WeekendBrowardPowScraper } from './weekend-broward-pow.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -322,7 +340,14 @@ export function getAllScrapers(): BaseScraper[] {
     // new HotelsHospitalityScraper(),   // SYNTHETIC
     new InstagramSourcesScraper(),         // Verified recurring events from monitored IG accounts
 
+    // === BROWARD VENUE SCRAPERS (real calendar data from venue websites) ===
+    new CultureRoomScraper(),            // Culture Room — FLL live music, Ticketmaster links
+    new BonnetHouseScraper(),            // Bonnet House — museum/garden events via Tribe Events API
+    new FunkyBuddhaScraper(),            // Funky Buddha Brewery — tap room events, run club
+    new SavorCinemaScraper(),            // Savor Cinema / FLIFF — independent film screenings
+
     // WeekendBroward — Broward + Palm Beach events
+    new WeekendBrowardPowScraper(),      // PoW solver: bypasses SiteGround challenge in Node.js (no browser needed)
     new WeekendBrowardEnhancedScraper(), // Enhanced Puppeteer: stealth + SiteGround challenge handling (all 6 pages)
     new WeekendBrowardVerifiedScraper(), // Verified specific events (real artist names, venues, dates — no API keys)
     new WeekendBrowardScraper(),         // RSS (blocked by Cloudflare but kept for when it clears)
