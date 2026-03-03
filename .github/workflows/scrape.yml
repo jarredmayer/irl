@@ -30,12 +30,11 @@ jobs:
           cache-dependency-path: scraper/package-lock.json
 
       - name: Cache Puppeteer Chrome
+        id: puppeteer-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/puppeteer
-          key: ${{ runner.os }}-puppeteer-${{ hashFiles('scraper/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-puppeteer-
+          key: ${{ runner.os }}-puppeteer-v2-${{ hashFiles('scraper/package-lock.json') }}
 
       - name: Install scraper dependencies
         working-directory: scraper
@@ -45,7 +44,16 @@ jobs:
 
       - name: Install Puppeteer Chrome
         working-directory: scraper
-        run: npx puppeteer browsers install chrome || echo "⚠ Chrome install failed — Puppeteer scrapers will be skipped"
+        run: |
+          npx puppeteer browsers install chrome
+          # Verify Chrome is actually executable
+          CHROME_PATH=$(find ~/.cache/puppeteer -name "chrome" -type f -perm -u+x 2>/dev/null | head -1)
+          if [ -n "$CHROME_PATH" ]; then
+            echo "✅ Chrome installed at: $CHROME_PATH"
+            echo "   Version: $($CHROME_PATH --version 2>/dev/null || echo 'unknown')"
+          else
+            echo "⚠ Chrome binary not found after install — Puppeteer scrapers will fail"
+          fi
 
       - name: Run Instagram post scraper
         if: ${{ secrets.INSTAGRAM_SESSION_ID != '' && secrets.ANTHROPIC_API_KEY != '' }}

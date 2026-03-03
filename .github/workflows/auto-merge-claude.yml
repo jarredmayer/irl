@@ -76,9 +76,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/puppeteer
-          key: ${{ runner.os }}-puppeteer-${{ hashFiles('scraper/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-puppeteer-
+          key: ${{ runner.os }}-puppeteer-v2-${{ hashFiles('scraper/package-lock.json') }}
 
       - name: Install scraper dependencies
         working-directory: scraper
@@ -88,7 +86,7 @@ jobs:
 
       - name: Install Puppeteer Chrome
         working-directory: scraper
-        run: npx puppeteer browsers install chrome || echo "Chrome install failed"
+        run: npx puppeteer browsers install chrome
 
       - name: Run scraper
         continue-on-error: true
