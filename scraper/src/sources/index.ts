@@ -147,6 +147,9 @@ export { WeekendBrowardGoogleScraper } from './weekend-broward-google.js';
 // WeekendBroward verified events (real events from Google index, no API keys needed)
 export { WeekendBrowardVerifiedScraper } from './weekend-broward-verified.js';
 
+// WeekendBroward enhanced Puppeteer scraper (handles SiteGround challenge)
+export { WeekendBrowardEnhancedScraper } from './weekend-broward-enhanced.js';
+
 // Las Olas Boulevard real events (Wix warmupData scraper)
 export { LasOlasEventsScraper } from './las-olas-events.js';
 
@@ -231,6 +234,7 @@ import {
 } from './weekend-broward.js';
 import { WeekendBrowardGoogleScraper } from './weekend-broward-google.js';
 import { WeekendBrowardVerifiedScraper } from './weekend-broward-verified.js';
+import { WeekendBrowardEnhancedScraper } from './weekend-broward-enhanced.js';
 import { LasOlasEventsScraper } from './las-olas-events.js';
 import type { BaseScraper } from './base.js';
 
@@ -316,10 +320,11 @@ export function getAllScrapers(): BaseScraper[] {
     new InstagramSourcesScraper(),         // Verified recurring events from monitored IG accounts
 
     // WeekendBroward — Broward + Palm Beach events
+    new WeekendBrowardEnhancedScraper(), // Enhanced Puppeteer: stealth + SiteGround challenge handling (all 6 pages)
+    new WeekendBrowardVerifiedScraper(), // Verified specific events (real artist names, venues, dates — no API keys)
     new WeekendBrowardScraper(),         // RSS (blocked by Cloudflare but kept for when it clears)
-    new WeekendBrowardVerifiedScraper(), // Real events from Google index (no API keys needed)
     new WeekendBrowardGoogleScraper(),   // Google Custom Search API (requires GOOGLE_API_KEY + GOOGLE_CSE_ID)
-    // DISABLED — Puppeteer scrapers blocked by Cloudflare; always fail with errors
+    // DISABLED — Individual Puppeteer scrapers replaced by WeekendBrowardEnhancedScraper above
     // new WeekendBrowardLiveMusicScraper(),
     // new WeekendBrowardComedyScraper(),
     // new WeekendBrowardKaraokeScraper(),
