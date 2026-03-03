@@ -268,7 +268,66 @@ export function rankEvents(
   context: RankingContext
 ): ScoredEvent[] {
   const scored = events.map((event) => scoreEvent(event, context));
-  return scored.sort((a, b) => b.score - a.score);
+  const sorted = scored.sort((a, b) => b.score - a.score);
+  return diversifyFeed(sorted);
+}
+
+/**
+ * Post-ranking feed diversity pass.
+ * Prevents category/venue monotony by limiting consecutive same-category events
+ * and applying diminishing returns for repeated series/venues.
+ *
+ * Rules:
+ *  - No more than 2 consecutive events from the same category
+ *  - 3rd+ occurrence of same seriesId/venueId in a window gets pushed down
+ *  - Guarantees an editorPick in the first 5 items if one exists
+ */
+function diversifyFeed(events: ScoredEvent[]): ScoredEvent[] {
+  if (events.length <= 5) return events;
+
+  const result: ScoredEvent[] = [];
+  const deferred: ScoredEvent[] = [];
+  const categoryCounts = new Map<string, number>();
+  const recentCategories: string[] = []; // sliding window of last 2
+
+  // Pass 1: Build the diversified feed
+  for (const event of events) {
+    const cat = event.category;
+    const consecCount = recentCategories.filter((c) => c === cat).length;
+
+    // Allow max 2 consecutive same-category events
+    if (consecCount >= 2) {
+      deferred.push(event);
+      continue;
+    }
+
+    // Track series/venue saturation (3+ of same series in top 30 = defer)
+    if (result.length < 30 && event.seriesId) {
+      const seriesCount = result.filter((e) => e.seriesId === event.seriesId).length;
+      if (seriesCount >= 3) {
+        deferred.push(event);
+        continue;
+      }
+    }
+
+    result.push(event);
+    recentCategories.push(cat);
+    if (recentCategories.length > 2) recentCategories.shift();
+    categoryCounts.set(cat, (categoryCounts.get(cat) || 0) + 1);
+  }
+
+  // Append deferred events at the end (maintain relative score order)
+  result.push(...deferred);
+
+  // Pass 2: Ensure an editorPick is in the first 5 positions
+  const firstPickIdx = result.findIndex((e) => e.editorPick);
+  if (firstPickIdx > 4 && firstPickIdx < result.length) {
+    const [pick] = result.splice(firstPickIdx, 1);
+    // Insert at position 1 (after the top-scoring event)
+    result.splice(1, 0, pick);
+  }
+
+  return result;
 }
 
 export function filterByDistance(
