@@ -138,12 +138,20 @@ export abstract class PuppeteerScraper extends BaseScraper {
   }
 
   /**
-   * Override scrape to ensure browser cleanup
+   * Override scrape to ensure browser cleanup.
+   * Gracefully handles missing Chrome — returns empty instead of crashing the aggregator.
    */
   async scrape(): Promise<RawEvent[]> {
     try {
       await this.initBrowser();
       return await this.scrapeWithBrowser();
+    } catch (error) {
+      const msg = error instanceof Error ? error.message : String(error);
+      if (msg.includes('Could not find') && msg.includes('Chrome')) {
+        this.log('⚠ Chrome not installed — run: npx puppeteer browsers install chrome');
+        return [];
+      }
+      throw error;
     } finally {
       await this.closeBrowser();
     }
