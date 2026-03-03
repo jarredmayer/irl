@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-02T21:18:24.466Z",
+  "scrapedAt": "2026-03-03T00:31:00.202Z",
   "stats": {
-    "total": 1144,
-    "deduplicated": 781,
+    "total": 1159,
+    "deduplicated": 797,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -20,7 +20,7 @@
       "Hotel Events": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 430,
-      "Pop-Ups": 66,
+      "Pop-Ups": 65,
       "Miami Improv": 0,
       "Fort Lauderdale Improv": 0,
       "Coral Gables": 0,
@@ -33,16 +33,17 @@
       "Fort Lauderdale": 23,
       "Palm Beach": 55,
       "Instagram Sources": 236,
+      "WeekendBroward Enhanced": 0,
+      "WeekendBroward Verified": 60,
       "WeekendBroward": 0,
-      "WeekendBroward Verified": 44,
       "WeekendBroward Google": 0
     }
   },
   "delta": {
-    "added": 0,
-    "removed": 0,
-    "modified": 0,
-    "unchanged": 781
+    "added": 52,
+    "removed": 36,
+    "modified": 10,
+    "unchanged": 735
   },
   "sources": [
     {
@@ -151,7 +152,7 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 66,
+      "count": 65,
       "status": "ok",
       "errors": []
     },
@@ -234,15 +235,23 @@
       "errors": []
     },
     {
-      "name": "WeekendBroward",
+      "name": "WeekendBroward Enhanced",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+      ]
     },
     {
       "name": "WeekendBroward Verified",
-      "count": 44,
+      "count": 60,
       "status": "ok",
+      "errors": []
+    },
+    {
+      "name": "WeekendBroward",
+      "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
@@ -255,7 +264,7 @@
   "sourceHealth": {
     "ok": 17,
     "empty": 8,
-    "errored": 7,
+    "errored": 8,
     "emptySources": [
       "Miami New Times",
       "III Points",
@@ -273,7 +282,8 @@
       "Hotel Events",
       "Miami Improv",
       "Fort Lauderdale Improv",
-      "Coral Gables"
+      "Coral Gables",
+      "WeekendBroward Enhanced"
     ]
   }
 }

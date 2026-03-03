@@ -48,6 +48,7 @@ const VERIFIED_SOURCES = [
   'Instagram Sources',         // Verified recurring events from monitored IG accounts
   'WeekendBroward Google',     // WeekendBroward events via Google Custom Search API
   'WeekendBroward Verified',   // WeekendBroward real events from Google index
+  'WeekendBroward Enhanced',   // Enhanced Puppeteer scraper (SiteGround challenge handling)
   'Las Olas Boulevard',        // Real events from lasolasboulevard.com warmupData
 ];
 
