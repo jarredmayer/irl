@@ -116,6 +116,7 @@ export {
   MiamiImprovRealScraper,
   FortLauderdaleImprovScraper,
   BrowardCenterScraper,
+  RevolutionLiveScraper,
   CoralGablesScraper,
 } from './real-scrapers.js';
 
@@ -214,6 +215,7 @@ import {
   MiamiImprovRealScraper,
   FortLauderdaleImprovScraper,
   BrowardCenterScraper,
+  RevolutionLiveScraper,
   CoralGablesScraper,
 } from './real-scrapers.js';
 import { VerifiedRecurringScraper } from './verified-recurring.js';
@@ -289,8 +291,9 @@ export function getAllScrapers(): BaseScraper[] {
     new MiamiImprovRealScraper(),
     new FortLauderdaleImprovScraper(),
     new CoralGablesScraper(),
-    // new DiceMiamiScraper(),      // NEEDS PUPPETEER - JS rendered
-    // new BrowardCenterScraper(),  // NEEDS PUPPETEER - JS rendered
+    new BrowardCenterScraper(),       // Re-enabled — HTML is server-rendered, no Puppeteer needed
+    new RevolutionLiveScraper(),      // FLL's premier live music venue — real concerts with prices
+    // new DiceMiamiScraper(),        // NEEDS PUPPETEER - JS rendered
 
     // Verified recurring (confirmed from official sources only)
     new VerifiedRecurringScraper(),
