@@ -187,3 +187,14 @@ export function isEventHappeningNow(startAt: string, endAt?: string): boolean {
 
 // Alias for shorter import
 export const isHappeningNow = isEventHappeningNow;
+
+/**
+ * Check if an event was recently added to the feed (within last 48 hours).
+ * Used to display a "New" badge on fresh events.
+ */
+export function isNewlyAdded(addedAt?: string): boolean {
+  if (!addedAt) return false;
+  const added = parseISO(addedAt);
+  const hoursSinceAdded = differenceInHours(new Date(), added);
+  return hoursSinceAdded >= 0 && hoursSinceAdded <= 48;
+}

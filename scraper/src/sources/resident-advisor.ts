@@ -167,10 +167,13 @@ export class ResidentAdvisorScraper extends BaseScraper {
   private mapEvent(event: RAEvent): RawEvent | null {
     if (!event.venue) return null;
 
-    // Need at least a real lineup or RA editorial pick to include
+    // Include events with lineup, editorial pick, OR a named venue+title
+    // RA events are already quality-curated — no need to over-filter
     const hasLineup = event.artists.length > 0;
     const hasPick = !!event.pick?.blurb;
-    if (!hasLineup && !hasPick) return null;
+    const hasGenres = event.genres.length > 0;
+    const hasTitle = event.title.length > 3;
+    if (!hasLineup && !hasPick && !hasGenres && !hasTitle) return null;
 
     const venue = event.venue;
     const address = venue.address || '';

@@ -58,6 +58,7 @@ export interface IRLEvent {
   seriesId?: string;
   seriesName?: string;
   venueId?: string;
+  addedAt?: string; // ISO 8601 — when this event first appeared in the feed
 }
 
 // Source configuration
