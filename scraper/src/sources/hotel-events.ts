@@ -6,12 +6,16 @@
  * then falls back to HTML parsing. Hotels that render events server-side will work
  * immediately; JS-rendered ones will return empty (flagged in logs).
  *
- * Hotels covered:
+ * Hotels & venues covered:
  *  - The Biltmore Hotel (biltmorehotel.com)
  *  - Faena Hotel Miami Beach (faena.com)
  *  - Esme Miami Beach (esmehotel.com)
  *  - The Betsy Hotel (thebetsyhotel.com)
  *  - The Standard Spa Miami Beach (standardhotels.com)
+ *  - The Wilder, Fort Lauderdale (intothewilder.com)
+ *  - Broken Shaker at Freehand Miami (brokenshaker.com)
+ *  - Mr. C Hotel Coconut Grove (mrccoconutgrove.com)
+ *  - Hotel Colonnade Coral Gables (hotelcolonnade.com)
  */
 
 import * as cheerio from 'cheerio';
@@ -80,11 +84,47 @@ const HOTEL_SOURCES: HotelSource[] = [
     lng: -80.1567,
     city: 'Miami',
   },
-  // REMOVED: EDITION (events page is for venue rentals, not public events)
-  // REMOVED: The Wilder (returns 403)
-  // REMOVED: Broken Shaker / Freehand (site has no events content)
-  // REMOVED: Mr. C Coconut Grove (site returns 404)
-  // REMOVED: Colonnade Hotel (not a Miami property)
+  {
+    name: 'The Wilder',
+    eventsUrl: 'https://www.intothewilder.com/events/',
+    fallbackUrl: 'https://www.intothewilder.com/',
+    neighborhood: 'Downtown FLL',
+    address: '701 E Broward Blvd, Fort Lauderdale, FL 33301',
+    lat: 26.1224,
+    lng: -80.1373,
+    city: 'Fort Lauderdale',
+  },
+  {
+    name: 'Broken Shaker at Freehand Miami',
+    eventsUrl: 'https://www.brokenshaker.com/happenings-miami/',
+    fallbackUrl: 'https://freehandhotels.com/miami/events-activities/',
+    neighborhood: 'Mid-Beach',
+    address: '2727 Indian Creek Dr, Miami Beach, FL 33140',
+    lat: 25.8089,
+    lng: -80.1267,
+    city: 'Miami',
+  },
+  {
+    name: 'Mr. C Hotel Coconut Grove',
+    eventsUrl: 'https://www.mrccoconutgrove.com/experiences/',
+    fallbackUrl: 'https://www.mrccoconutgrove.com/',
+    neighborhood: 'Coconut Grove',
+    address: '2988 McFarlane Rd, Miami, FL 33133',
+    lat: 25.7290,
+    lng: -80.2385,
+    city: 'Miami',
+  },
+  {
+    name: 'Hotel Colonnade Coral Gables',
+    eventsUrl: 'https://hotelcolonnade.com/',
+    fallbackUrl: 'https://event.marriott.com/miaao-hotel-colonnade-coral-gables-autograph-collection/events',
+    neighborhood: 'Coral Gables',
+    address: '180 Aragon Ave, Coral Gables, FL 33134',
+    lat: 25.7479,
+    lng: -80.2584,
+    city: 'Miami',
+  },
+  // SKIPPED: EDITION Basement (only open for private events, no public calendar)
 ];
 
 export class HotelEventsScraper extends BaseScraper {
