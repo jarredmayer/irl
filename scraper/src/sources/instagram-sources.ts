@@ -274,22 +274,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       city: 'Miami',
       category: 'Music',
       websiteUrl: 'https://www.lagniappehouse.com/',
-      knownEvents: [
-        {
-          name: 'Lagniappe: Jazz & Wine',
-          venue: 'Lagniappe House',
-          address: '3425 NE 2nd Ave, Miami, FL 33137',
-          neighborhood: 'Midtown',
-          lat: 25.8089,
-          lng: -80.1917,
-          schedule: 'weekly',
-          days: [4, 5, 6, 0], // Thu–Sun
-          time: '20:00',
-          description: 'Live jazz in an intimate wine-bar setting. Rotating wine list, cheese boards, and nightly jazz acts in this beloved Miami institution.',
-          tags: ['jazz', 'live-music', 'wine-tasting', 'local-favorite', 'intimate'],
-          price: 0,
-        },
-      ],
+      knownEvents: [],
     },
 
     // @miamibloco — Afro-Brazilian drum & dance collective, Sunday at Lummus Park
@@ -334,36 +319,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       city: 'Miami',
       category: 'Music',
       websiteUrl: 'https://www.gramps.com/',
-      knownEvents: [
-        {
-          name: 'Gramps: Reggae Wednesday',
-          venue: 'Gramps',
-          address: '176 NW 24th St, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8010,
-          lng: -80.1979,
-          schedule: 'weekly',
-          days: [3], // Wednesday
-          time: '22:00',
-          description: 'Weekly reggae night at Gramps. Live DJs, drink specials, and the best outdoor patio in Wynwood.',
-          tags: ['dj', 'nightlife', 'local-favorite', 'dancing'],
-          price: 0,
-        },
-        {
-          name: 'Gramps: Trivia Tuesday',
-          venue: 'Gramps',
-          address: '176 NW 24th St, Miami, FL 33127',
-          neighborhood: 'Wynwood',
-          lat: 25.8010,
-          lng: -80.1979,
-          schedule: 'weekly',
-          days: [2], // Tuesday
-          time: '20:00',
-          description: 'Weekly bar trivia at Gramps. Teams of up to 6 compete for bar tabs.',
-          tags: ['bar', 'community', 'local-favorite'],
-          price: 0,
-        },
-      ],
+      knownEvents: [],
     },
 
     // @churchillspub — Churchill's Pub: live music Fri–Sat since 1979 (confirmed)
@@ -373,22 +329,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       city: 'Miami',
       category: 'Music',
       websiteUrl: 'https://www.churchillspub.com/',
-      knownEvents: [
-        {
-          name: "Churchill's: Live Music Weekend",
-          venue: "Churchill's Pub",
-          address: '5501 NE 2nd Ave, Miami, FL 33137',
-          neighborhood: 'Little Haiti',
-          lat: 25.8255,
-          lng: -80.1859,
-          schedule: 'weekly',
-          days: [5, 6], // Fri–Sat
-          time: '21:00',
-          description: "Live bands at Miami's legendary dive bar. Rock, punk, indie, and everything in between since 1979.",
-          tags: ['live-music', 'nightlife', 'local-favorite'],
-          price: 10,
-        },
-      ],
+      knownEvents: [],
     },
 
     // @lasrosasmiami — Las Rosas Allapattah (real venue, Fri–Sat DJ programming documented)
@@ -398,22 +339,7 @@ export class InstagramSourcesScraper extends BaseScraper {
       city: 'Miami',
       category: 'Nightlife',
       websiteUrl: 'https://www.lasrosasbar.com/',
-      knownEvents: [
-        {
-          name: 'Las Rosas: DJ Night',
-          venue: 'Las Rosas',
-          address: '2898 NW 7th Ave, Miami, FL 33127',
-          neighborhood: 'Allapattah',
-          lat: 25.7972,
-          lng: -80.2050,
-          schedule: 'weekly',
-          days: [5, 6], // Fri–Sat
-          time: '22:00',
-          description: 'Rotating DJs spinning cumbia to techno at one of Miami\'s coolest neighborhood bars in Allapattah.',
-          tags: ['dj', 'nightlife', 'local-favorite', 'dancing', 'underground'],
-          price: 0,
-        },
-      ],
+      knownEvents: [],
     },
 
     // @thewharfmiami — The Wharf Miami outdoor waterfront bar (confirmed Fri–Sun, wharfmiami.com)
