@@ -6,6 +6,8 @@ on:
     - cron: '0 11 * * *'
     - cron: '0 23 * * *'
   workflow_dispatch: # Allow manual trigger
+  # Handle PR check-runs gracefully (skip instead of fail)
+  pull_request:
 
 permissions:
   contents: write   # push event data to main
@@ -17,6 +19,8 @@ concurrency:
 
 jobs:
   scrape:
+    # Only run on schedule or manual trigger — skip cleanly on PR events
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
 
     steps:
