@@ -4,6 +4,8 @@
  */
 
 import * as cheerio from 'cheerio';
+import * as https from 'https';
+import * as http from 'http';
 import type { RawEvent, SourceConfig } from '../types.js';
 
 export abstract class BaseScraper {
@@ -304,5 +306,79 @@ export abstract class BaseScraper {
    */
   protected logError(message: string, error?: unknown): void {
     console.error(`[${this.name}] ERROR: ${message}`, error || '');
+  }
+
+  /**
+   * Fetch HTML using Node.js built-in https/http module instead of undici-based fetch.
+   * Some sites reject connections from Node.js native fetch (undici) due to TLS
+   * incompatibilities or IP-based blocking. The built-in https module uses OpenSSL
+   * and behaves more like a traditional browser HTTP stack.
+   */
+  protected fetchHTMLNative(url: string, timeoutMs = 10_000): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const mod = url.startsWith('https') ? https : http;
+      const req = mod.get(
+        url,
+        {
+          headers: {
+            'User-Agent': this.userAgent,
+            Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'identity',
+          },
+          ...(url.startsWith('https')
+            ? { rejectUnauthorized: true, minVersion: 'TLSv1.2' as any }
+            : {}),
+        },
+        (res) => {
+          if (
+            res.statusCode &&
+            res.statusCode >= 300 &&
+            res.statusCode < 400 &&
+            res.headers.location
+          ) {
+            req.destroy();
+            this.fetchHTMLNative(res.headers.location, timeoutMs).then(resolve, reject);
+            return;
+          }
+          if (res.statusCode && res.statusCode >= 400) {
+            req.destroy();
+            reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
+            return;
+          }
+          const chunks: Buffer[] = [];
+          res.on('data', (chunk) => chunks.push(chunk));
+          res.on('end', () => resolve(Buffer.concat(chunks).toString('utf-8')));
+          res.on('error', reject);
+        },
+      );
+      req.setTimeout(timeoutMs, () => {
+        req.destroy();
+        reject(new Error('Request timed out'));
+      });
+      req.on('error', reject);
+    });
+  }
+
+  /**
+   * Fetch and parse HTML using the native https module with retry.
+   * Use this instead of fetchHTML() for sites that block undici-based fetch.
+   */
+  protected async fetchHTMLNativeRetry(url: string, maxRetries = 2, timeoutMs = 10_000): Promise<cheerio.CheerioAPI> {
+    let lastError: Error | undefined;
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        const html = await this.fetchHTMLNative(url, timeoutMs);
+        return cheerio.load(html);
+      } catch (err) {
+        lastError = err instanceof Error ? err : new Error(String(err));
+        if (attempt < maxRetries) {
+          const delay = Math.pow(2, attempt) * 1000;
+          this.log(`  ↻ Attempt ${attempt} failed (${lastError.message}), retrying in ${delay / 1000}s...`);
+          await this.sleep(delay);
+        }
+      }
+    }
+    throw lastError || new Error(`Failed to fetch ${url}`);
   }
 }

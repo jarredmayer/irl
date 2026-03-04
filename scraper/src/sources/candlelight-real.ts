@@ -1,240 +1,247 @@
 /**
- * Candlelight Concerts — Real Scraper
+ * Candlelight Concerts -- Real Scraper
  * Source: https://feverup.com/en/miami/candlelight
  *
- * Scrapes actual scheduled Candlelight concerts from the dedicated Fever
- * Candlelight page (not the generic Fever Miami feed). These are legitimate
- * ticketed classical music events held at iconic Miami venues.
+ * Scrapes actual scheduled Candlelight concerts by:
+ *  1. Fetching the listing page to get event URLs from JSON-LD ItemList
+ *  2. Fetching each event page to extract Event JSON-LD with dates/venues/prices
  *
- * Replaces the synthetic CandlelightConcertsScraper in nightlife-clubs.ts
- * which generated fake dates/programs without real schedule data.
+ * No Puppeteer/Chrome required -- uses plain HTTP requests with cheerio.
  *
- * ⚠️  CURATOR REVIEW RECOMMENDED
+ * CURATOR REVIEW RECOMMENDED
  * Verify the venue exists and show is still on sale before each publish run.
  */
 
-import { PuppeteerScraper } from './puppeteer-base.js';
+import * as cheerio from 'cheerio';
+import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 
-export class CandlelightRealScraper extends PuppeteerScraper {
-  private readonly URL = 'https://feverup.com/en/miami/candlelight';
+interface FeverEventData {
+  name: string;
+  startDate: string;
+  endDate?: string;
+  url: string;
+  description?: string;
+  image?: string;
+  location?: {
+    name?: string;
+    address?: {
+      addressLocality?: string;
+      streetAddress?: string;
+      addressRegion?: string;
+    };
+    geo?: {
+      latitude?: number;
+      longitude?: number;
+    };
+  };
+  offers?: Array<{
+    price?: number;
+    priceCurrency?: string;
+    name?: string;
+  }>;
+}
+
+export class CandlelightRealScraper extends BaseScraper {
+  private readonly LISTING_URL = 'https://feverup.com/en/miami/candlelight';
 
   constructor() {
     super('Candlelight Concerts (Fever)', { weight: 1.5, rateLimit: 3000 });
   }
 
-  protected async scrapeWithBrowser(): Promise<RawEvent[]> {
-    this.log('Scraping Fever Candlelight Miami page...');
+  async scrape(): Promise<RawEvent[]> {
+    this.log('Fetching Candlelight listing page...');
 
-    await this.navigateTo(this.URL);
-    await this.sleep(4000); // Fever is a heavy SPA
+    // Step 1: Get the list of event URLs from the listing page
+    const eventUrls = await this.fetchEventUrls();
+    if (eventUrls.length === 0) {
+      this.log('No event URLs found on listing page');
+      return [];
+    }
+    this.log(`Found ${eventUrls.length} Candlelight event URLs`);
 
-    await this.scrollPage(5);
-    await this.sleep(2000);
+    // Step 2: Fetch each event page and extract JSON-LD
+    const events: RawEvent[] = [];
+    const now = new Date();
 
-    // Try JSON-LD structured data first
-    const jsonLdEvents = await this.extractJsonLdEvents();
-    if (jsonLdEvents.length > 0) {
-      this.log(`Found ${jsonLdEvents.length} Candlelight shows via JSON-LD`);
-      return jsonLdEvents;
+    for (const url of eventUrls) {
+      try {
+        const eventData = await this.fetchEventData(url);
+        if (!eventData) continue;
+
+        const event = this.buildEvent(eventData, now);
+        if (event) events.push(event);
+      } catch (err) {
+        this.logError(`Failed to fetch event: ${url}`, err);
+      }
     }
 
-    // Fallback: parse DOM event cards
-    const domEvents = await this.extractDomEvents();
-    this.log(`Found ${domEvents.length} Candlelight shows via DOM`);
-    return domEvents;
+    this.log(`Extracted ${events.length} future Candlelight events from ${eventUrls.length} pages`);
+    return events;
   }
 
-  private async extractJsonLdEvents(): Promise<RawEvent[]> {
-    const events: RawEvent[] = [];
+  /**
+   * Fetch the listing page and extract event URLs from the ItemList JSON-LD.
+   */
+  private async fetchEventUrls(): Promise<string[]> {
     try {
-      const scripts = await this.extractData(() => {
-        return Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map(
-          (s) => s.textContent || ''
-        );
-      });
+      const response = await this.fetch(this.LISTING_URL);
+      const html = await response.text();
+      const $ = cheerio.load(html);
 
-      for (const raw of scripts) {
+      const urls: string[] = [];
+
+      $('script[type="application/ld+json"]').each((_, el) => {
         try {
-          const parsed = JSON.parse(raw);
-          const items = Array.isArray(parsed) ? parsed : [parsed];
-          for (const item of items) {
-            if (item['@type'] !== 'Event') continue;
-            if (!item.name || !item.startDate) continue;
-            // Only keep actual Candlelight entries
-            if (!/candlelight/i.test(item.name)) continue;
-
-            const startAt = this.toIsoDateTime(item.startDate);
-            if (!startAt) continue;
-            if (new Date(startAt) < new Date()) continue;
-
-            const venueName = item.location?.name || 'TBA';
-            const address = item.location?.address
-              ? typeof item.location.address === 'string'
-                ? item.location.address
-                : [
-                    item.location.address.streetAddress,
-                    item.location.address.addressLocality,
-                    item.location.address.addressRegion,
-                  ]
-                    .filter(Boolean)
-                    .join(', ')
-              : '';
-
-            events.push(
-              this.buildEvent({
-                title: item.name,
-                startAt,
-                venueName,
-                address,
-                description: item.description || '',
-                url: item.url || item['@id'] || this.URL,
-                image: item.image?.url || item.image || '',
-                priceText: String(item.offers?.price ?? ''),
-              })
-            );
+          const data = JSON.parse($(el).text());
+          if (data['@type'] === 'ItemList' && Array.isArray(data.itemListElement)) {
+            for (const item of data.itemListElement) {
+              if (item.url) {
+                urls.push(item.url);
+              }
+            }
           }
         } catch {
-          // skip malformed blocks
+          // skip malformed JSON-LD
         }
-      }
-    } catch {
-      // extraction failed; caller will try DOM fallback
-    }
-    return events;
-  }
-
-  private async extractDomEvents(): Promise<RawEvent[]> {
-    const events: RawEvent[] = [];
-    try {
-      const cards = await this.extractData(() => {
-        const results: Array<{
-          title: string;
-          dateText: string;
-          venue: string;
-          price: string;
-          url: string;
-          image: string;
-        }> = [];
-
-        // Fever uses a variety of CSS class patterns
-        const selectors = [
-          '[data-testid="experience-card"]',
-          '[class*="ExperienceCard"]',
-          '[class*="experience-card"]',
-          '[class*="EventCard"]',
-          'a[href*="/experience/"]',
-        ];
-
-        let els: NodeListOf<Element> | null = null;
-        for (const sel of selectors) {
-          const found = document.querySelectorAll(sel);
-          if (found.length > 0) {
-            els = found;
-            break;
-          }
-        }
-        if (!els) return results;
-
-        els.forEach((el) => {
-          const title =
-            el.querySelector('[class*="title"], [class*="name"], h2, h3')?.textContent?.trim() || '';
-          // Only include Candlelight events
-          if (!title.toLowerCase().includes('candlelight')) return;
-
-          const dateText =
-            el.querySelector('[class*="date"], time, [class*="when"]')?.textContent?.trim() || '';
-          const venue =
-            el.querySelector('[class*="venue"], [class*="location"]')?.textContent?.trim() || '';
-          const price =
-            el.querySelector('[class*="price"], [class*="cost"]')?.textContent?.trim() || '';
-          const link = (el.closest('a') as HTMLAnchorElement)?.href || (el.querySelector('a') as HTMLAnchorElement)?.href || '';
-          const img = (el.querySelector('img') as HTMLImageElement)?.src || '';
-
-          if (title && dateText) {
-            results.push({ title, dateText, venue, price, url: link, image: img });
-          }
-        });
-
-        return results;
       });
 
-      for (const card of cards) {
-        const startAt = this.parseFeverDate(card.dateText);
-        if (!startAt) continue;
-        if (new Date(startAt) < new Date()) continue;
-
-        events.push(
-          this.buildEvent({
-            title: card.title,
-            startAt,
-            venueName: card.venue || 'TBA',
-            address: '',
-            description: `${card.title} — a live candlelit concert experience in Miami.`,
-            url: card.url || this.URL,
-            image: card.image,
-            priceText: card.price,
-          })
-        );
-      }
-    } catch {
-      // DOM extraction failed
+      return urls;
+    } catch (err) {
+      this.logError('Failed to fetch listing page', err);
+      return [];
     }
-    return events;
   }
 
-  private buildEvent(opts: {
-    title: string;
-    startAt: string;
-    venueName: string;
-    address: string;
-    description: string;
-    url: string;
-    image: string;
-    priceText: string;
-  }): RawEvent {
-    const { label: priceLabel, amount: priceAmount } = opts.priceText
-      ? this.parsePrice(opts.priceText)
-      : { label: '$$' as const, amount: 45 };
+  /**
+   * Fetch an individual event page and extract the Event JSON-LD.
+   */
+  private async fetchEventData(url: string): Promise<FeverEventData | null> {
+    const response = await this.fetch(url);
+    const html = await response.text();
+    const $ = cheerio.load(html);
 
-    const neighborhood = this.inferNeighborhoodFromVenue(opts.venueName);
+    let eventData: FeverEventData | null = null;
+
+    $('script[type="application/ld+json"]').each((_, el) => {
+      try {
+        const data = JSON.parse($(el).text());
+        if (data['@type'] === 'Event' && data.name && data.startDate) {
+          // Only keep Candlelight entries
+          if (!/candlelight/i.test(data.name)) return;
+
+          const location = data.location || {};
+          const address = typeof location.address === 'string'
+            ? { addressLocality: location.address }
+            : location.address || {};
+
+          eventData = {
+            name: data.name,
+            startDate: data.startDate,
+            endDate: data.endDate,
+            url: data.url || url,
+            description: data.description,
+            image: typeof data.image === 'string' ? data.image : data.image?.contentUrl || data.image?.url,
+            location: {
+              name: location.name,
+              address: {
+                addressLocality: address.addressLocality,
+                streetAddress: address.streetAddress,
+                addressRegion: address.addressRegion,
+              },
+              geo: location.geo
+                ? {
+                    latitude: location.geo.latitude,
+                    longitude: location.geo.longitude,
+                  }
+                : undefined,
+            },
+            offers: Array.isArray(data.offers)
+              ? data.offers.map((o: Record<string, unknown>) => ({
+                  price: typeof o.price === 'number' ? o.price : parseFloat(String(o.price || '0')),
+                  priceCurrency: String(o.priceCurrency || 'USD'),
+                  name: String(o.name || ''),
+                }))
+              : data.offers
+                ? [{
+                    price: typeof data.offers.price === 'number' ? data.offers.price : parseFloat(String(data.offers.price || '0')),
+                    priceCurrency: String(data.offers.priceCurrency || 'USD'),
+                    name: String(data.offers.name || ''),
+                  }]
+                : [],
+          };
+        }
+      } catch {
+        // skip malformed JSON-LD
+      }
+    });
+
+    return eventData;
+  }
+
+  /**
+   * Convert extracted event data into a RawEvent.
+   */
+  private buildEvent(data: FeverEventData, now: Date): RawEvent | null {
+    const startAt = this.toIsoDateTime(data.startDate);
+    if (!startAt) return null;
+    if (new Date(startAt) < now) return null;
+
+    const venueName = data.location?.name || 'TBA';
+    const neighborhood = this.inferNeighborhoodFromVenue(venueName);
+
+    const addressParts = [
+      data.location?.address?.streetAddress,
+      data.location?.address?.addressLocality,
+      data.location?.address?.addressRegion,
+    ].filter(Boolean);
+    const address = addressParts.join(', ') || undefined;
+
+    // Extract lowest price from offers
+    const prices = (data.offers || [])
+      .map((o) => o.price)
+      .filter((p): p is number => typeof p === 'number' && p > 0);
+    const lowestPrice = prices.length > 0 ? Math.min(...prices) : 45;
+
+    const { label: priceLabel, amount: priceAmount } = this.parsePrice(`$${Math.round(lowestPrice)}`);
+
+    // Clean description: strip emojis and excessive whitespace
+    const description = this.cleanDescription(data.description || data.name);
 
     return {
-      title: opts.title,
-      startAt: opts.startAt,
-      venueName: opts.venueName || undefined,
-      address: opts.address || undefined,
+      title: data.name,
+      startAt,
+      venueName: venueName || undefined,
+      address,
       neighborhood,
-      lat: null,
-      lng: null,
+      lat: data.location?.geo?.latitude ?? null,
+      lng: data.location?.geo?.longitude ?? null,
       city: 'Miami',
       tags: ['live-music', 'local-favorite'],
       category: 'Music',
       priceLabel,
       priceAmount,
       isOutdoor: false,
-      description: opts.description,
-      sourceUrl: opts.url,
+      description,
+      sourceUrl: data.url,
       sourceName: this.name,
-      ticketUrl: opts.url || undefined,
-      image: opts.image || undefined,
+      ticketUrl: data.url || undefined,
+      image: data.image || undefined,
     };
   }
 
   private toIsoDateTime(s: string): string | null {
     if (!s) return null;
     const d = new Date(s);
-    return isNaN(d.getTime()) ? null : d.toISOString().replace('Z', '');
+    return isNaN(d.getTime()) ? null : d.toISOString().replace('Z', '').split('.')[0];
   }
 
-  private parseFeverDate(text: string): string | null {
-    if (!text) return null;
-    // Fever formats: "Sat, Mar 15 · 8:00 PM", "March 15, 2026 8:00 PM"
-    const d = new Date(text.replace(/·/g, '').trim());
-    if (!isNaN(d.getTime())) {
-      return d.toISOString().replace('Z', '').split('.')[0];
-    }
-    return null;
+  private cleanDescription(text: string): string {
+    return text
+      .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 500);
   }
 
   private inferNeighborhoodFromVenue(venue: string): string {
@@ -246,6 +253,7 @@ export class CandlelightRealScraper extends PuppeteerScraper {
     if (v.includes('wynwood')) return 'Wynwood';
     if (v.includes('arsht')) return 'Downtown Miami';
     if (v.includes('fillmore') || v.includes('miami beach')) return 'Miami Beach';
+    if (v.includes('scottish rite') || v.includes('scottish')) return 'Miami';
     return 'Miami';
   }
 }

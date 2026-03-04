@@ -170,14 +170,15 @@ export class HotelEventsScraper extends BaseScraper {
 
   private async fetchHotelEvents(hotel: HotelSource, now: Date): Promise<RawEvent[]> {
     // Try primary events URL first, then fallback
+    // Use native https module to avoid undici-based fetch blocking
     let $: cheerio.CheerioAPI | null = null;
     let usedUrl = hotel.eventsUrl;
 
     try {
-      $ = await this.fetchHTML(hotel.eventsUrl);
+      $ = await this.fetchHTMLNativeRetry(hotel.eventsUrl, 2, 8_000);
     } catch {
       try {
-        $ = await this.fetchHTML(hotel.fallbackUrl);
+        $ = await this.fetchHTMLNativeRetry(hotel.fallbackUrl, 2, 8_000);
         usedUrl = hotel.fallbackUrl;
       } catch {
         return [];
