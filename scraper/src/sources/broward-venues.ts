@@ -43,7 +43,7 @@ export class CultureRoomScraper extends BaseScraper {
   async scrape(): Promise<RawEvent[]> {
     this.log('Fetching Culture Room events...');
 
-    const $ = await this.fetchHTML('https://cultureroom.net/');
+    const $ = await this.fetchHTMLNativeRetry('https://cultureroom.net/');
     const events: RawEvent[] = [];
     const now = new Date();
 
@@ -192,7 +192,7 @@ export class BonnetHouseScraper extends BaseScraper {
     const today = new Date().toISOString().split('T')[0];
     const url = `https://www.bonnethouse.org/wp-json/tribe/events/v1/events?per_page=50&start_date=${today}`;
 
-    const data = await this.fetchJSON<TribeResponse>(url);
+    const data = await this.fetchJSONNativeGet<TribeResponse>(url);
     const events: RawEvent[] = [];
     const now = new Date();
 
@@ -274,7 +274,7 @@ export class FunkyBuddhaScraper extends BaseScraper {
   async scrape(): Promise<RawEvent[]> {
     this.log('Fetching Funky Buddha Brewery events...');
 
-    const $ = await this.fetchHTML('https://funkybuddha.com/events/');
+    const $ = await this.fetchHTMLNativeRetry('https://funkybuddha.com/events/');
     const events: RawEvent[] = [];
     const now = new Date();
 
@@ -382,7 +382,7 @@ export class SavorCinemaScraper extends BaseScraper {
     this.log('Fetching Savor Cinema / FLIFF events...');
 
     const url = 'https://fliff.com/event-grid-all/?_filter_sort=title&_venues=savor-cinema-fort-lauderdale';
-    const $ = await this.fetchHTML(url);
+    const $ = await this.fetchHTMLNativeRetry(url);
     const events: RawEvent[] = [];
     const now = new Date();
 
@@ -409,7 +409,7 @@ export class SavorCinemaScraper extends BaseScraper {
     // For each event, fetch the individual page to get date info
     for (const link of eventLinks.slice(0, 20)) {
       try {
-        const eventPage = await this.fetchHTML(link.url);
+        const eventPage = await this.fetchHTMLNativeRetry(link.url);
         const pageText = eventPage('body').text();
 
         // Look for date patterns in the page

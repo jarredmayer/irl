@@ -381,4 +381,109 @@ export abstract class BaseScraper {
     }
     throw lastError || new Error(`Failed to fetch ${url}`);
   }
+
+  /**
+   * POST JSON using native https module and return parsed JSON response.
+   * Use for APIs (like Algolia) that fail with undici-based fetch.
+   */
+  protected fetchJSONNative<T>(url: string, body: string, headers: Record<string, string> = {}, timeoutMs = 15_000): Promise<T> {
+    return new Promise((resolve, reject) => {
+      const parsed = new URL(url);
+      const options: https.RequestOptions = {
+        hostname: parsed.hostname,
+        port: parsed.port || 443,
+        path: parsed.pathname + parsed.search,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Content-Length': Buffer.byteLength(body),
+          ...headers,
+        },
+        rejectUnauthorized: true,
+        minVersion: 'TLSv1.2' as any,
+      };
+
+      const req = https.request(options, (res) => {
+        if (res.statusCode && res.statusCode >= 400) {
+          req.destroy();
+          reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
+          return;
+        }
+        const chunks: Buffer[] = [];
+        res.on('data', (chunk) => chunks.push(chunk));
+        res.on('end', () => {
+          try {
+            resolve(JSON.parse(Buffer.concat(chunks).toString('utf-8')));
+          } catch (e) {
+            reject(new Error('Invalid JSON response'));
+          }
+        });
+        res.on('error', reject);
+      });
+
+      req.setTimeout(timeoutMs, () => {
+        req.destroy();
+        reject(new Error('Request timed out'));
+      });
+      req.on('error', reject);
+      req.write(body);
+      req.end();
+    });
+  }
+
+  /**
+   * Fetch JSON using native https GET.
+   * Use for REST APIs that fail with undici-based fetch.
+   */
+  protected fetchJSONNativeGet<T>(url: string, timeoutMs = 10_000): Promise<T> {
+    return new Promise((resolve, reject) => {
+      const mod = url.startsWith('https') ? https : http;
+      const req = mod.get(
+        url,
+        {
+          headers: {
+            'User-Agent': this.userAgent,
+            Accept: 'application/json',
+            'Accept-Language': 'en-US,en;q=0.5',
+          },
+          ...(url.startsWith('https')
+            ? { rejectUnauthorized: true, minVersion: 'TLSv1.2' as any }
+            : {}),
+        },
+        (res) => {
+          if (
+            res.statusCode &&
+            res.statusCode >= 300 &&
+            res.statusCode < 400 &&
+            res.headers.location
+          ) {
+            req.destroy();
+            this.fetchJSONNativeGet<T>(res.headers.location, timeoutMs).then(resolve, reject);
+            return;
+          }
+          if (res.statusCode && res.statusCode >= 400) {
+            req.destroy();
+            reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
+            return;
+          }
+          const chunks: Buffer[] = [];
+          res.on('data', (chunk) => chunks.push(chunk));
+          res.on('end', () => {
+            try {
+              resolve(JSON.parse(Buffer.concat(chunks).toString('utf-8')));
+            } catch (e) {
+              reject(new Error('Invalid JSON response'));
+            }
+          });
+          res.on('error', reject);
+        },
+      );
+      req.setTimeout(timeoutMs, () => {
+        req.destroy();
+        reject(new Error('Request timed out'));
+      });
+      req.on('error', reject);
+    });
+  }
 }
