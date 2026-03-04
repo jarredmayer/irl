@@ -18,8 +18,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Fast pass-through so PR checks show green instead of "No jobs were run" failure
+  pr-ok:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Scrape only runs on schedule — skipping"
+
   scrape:
-    # Only run on schedule or manual trigger — skip cleanly on PR events
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
 
