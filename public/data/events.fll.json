@@ -20,8 +20,8 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Inaugural Scottish Celtic Music Festival — Seven Nations, Clovers Revenge, Gaelica, Blue Skye, Femme Celtique. Pipe bands, Scottish country dancing, clan tents, children's activities. Located in Davie, Bergeron Rodeo Grounds is a local favorite.",
+    "shortWhy": "Scottish Celtic Music Festival live at Bergeron Rodeo Grounds.",
+    "editorialWhy": "Inaugural Scottish Celtic Music Festival — Seven Nations, Clovers Revenge, Gaelica, Blue Skye, Femme Celtique. Pipe bands, Scottish country dancing, clan tents, children's activities. Outdoors at Bergeron Rodeo Grounds in Davie. Tickets from $25.",
     "description": "Inaugural Scottish Celtic Music Festival — Seven Nations, Clovers Revenge, Gaelica, Blue Skye, Femme Celtique. Pipe bands, Scottish country dancing, clan tents, children's activities.",
     "ticketUrl": "https://www.sassf.org/event-6325690",
     "source": {
@@ -30,7 +30,8 @@
     },
     "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80",
     "editorPick": false,
-    "venueId": "4815bb154102"
+    "venueId": "4815bb154102",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "3670cf016724f0d3",
@@ -51,8 +52,8 @@
     "category": "Art",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. Located in Fort Lauderdale Beach, Broward County Convention Center is a local favorite.",
+    "shortWhy": "Broward County Convention Center in Fort Lauderdale Beach.",
+    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. At Broward County Convention Center in Fort Lauderdale Beach. Tickets from $148.",
     "description": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases.",
     "ticketUrl": "https://www.barbiedreamfest.com/",
     "source": {
@@ -61,7 +62,8 @@
     },
     "image": "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?w=800&q=80",
     "editorPick": false,
-    "venueId": "57b9d5286189"
+    "venueId": "57b9d5286189",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "5d2e823053957744",
@@ -82,8 +84,8 @@
     "category": "Art",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. Located in Fort Lauderdale Beach, Broward County Convention Center is a local favorite.",
+    "shortWhy": "Broward County Convention Center in Fort Lauderdale Beach.",
+    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. At Broward County Convention Center in Fort Lauderdale Beach. Tickets from $148.",
     "description": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases.",
     "ticketUrl": "https://www.barbiedreamfest.com/",
     "source": {
@@ -92,7 +94,8 @@
     },
     "image": "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?w=800&q=80",
     "editorPick": false,
-    "venueId": "57b9d5286189"
+    "venueId": "57b9d5286189",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "e1c64c5cc89d395e",
@@ -113,8 +116,8 @@
     "category": "Art",
     "priceLabel": "$$$",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. Located in Fort Lauderdale Beach, Broward County Convention Center is a local favorite.",
+    "shortWhy": "Broward County Convention Center in Fort Lauderdale Beach.",
+    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. At Broward County Convention Center in Fort Lauderdale Beach. Tickets from $148.",
     "description": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases.",
     "ticketUrl": "https://www.barbiedreamfest.com/",
     "source": {
@@ -123,7 +126,78 @@
     },
     "image": "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?w=800&q=80",
     "editorPick": false,
-    "venueId": "57b9d5286189"
+    "venueId": "57b9d5286189",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "5bca743e20600209",
+    "title": "Savor SoFLO Festival",
+    "startAt": "2026-04-18T13:00:00",
+    "endAt": "2026-04-18T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hollywood Beach Broadwalk",
+    "address": "911 N Broadwalk, Hollywood, FL 33019",
+    "neighborhood": "Hollywood",
+    "lat": 26.0206,
+    "lng": -80.117,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "food",
+      "wine-tasting",
+      "craft-beer",
+      "outdoor",
+      "beach"
+    ],
+    "category": "Food & Drink",
+    "priceLabel": "$$$",
+    "isOutdoor": true,
+    "shortWhy": "Hollywood Beach Broadwalk in Hollywood — worth the trip.",
+    "editorialWhy": "Food, wine, craft beer, and spirits celebration on the Hollywood Beach Broadwalk. Local chef rock stars. All-inclusive tastings. Benefits Gilda's Club South Florida. Outdoors at Hollywood Beach Broadwalk in Hollywood. Tickets from $115.",
+    "description": "Food, wine, craft beer, and spirits celebration on the Hollywood Beach Broadwalk. Local chef rock stars. All-inclusive tastings. Benefits Gilda's Club South Florida.",
+    "ticketUrl": "https://savorsoflo.com/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://savorsoflo.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
+    "editorPick": false,
+    "venueId": "f957fbe2d7a7",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "32068cd4243989c8",
+    "title": "Savor SoFLO Festival",
+    "startAt": "2026-04-19T13:00:00",
+    "endAt": "2026-04-19T16:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hollywood Beach Broadwalk",
+    "address": "911 N Broadwalk, Hollywood, FL 33019",
+    "neighborhood": "Hollywood",
+    "lat": 26.0206,
+    "lng": -80.117,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "food",
+      "wine-tasting",
+      "craft-beer",
+      "outdoor",
+      "beach"
+    ],
+    "category": "Food & Drink",
+    "priceLabel": "$$$",
+    "isOutdoor": true,
+    "shortWhy": "Hollywood Beach Broadwalk in Hollywood — worth the trip.",
+    "editorialWhy": "Food, wine, craft beer, and spirits celebration on the Hollywood Beach Broadwalk. Local chef rock stars. All-inclusive tastings. Benefits Gilda's Club South Florida. Outdoors at Hollywood Beach Broadwalk in Hollywood. Tickets from $115.",
+    "description": "Food, wine, craft beer, and spirits celebration on the Hollywood Beach Broadwalk. Local chef rock stars. All-inclusive tastings. Benefits Gilda's Club South Florida.",
+    "ticketUrl": "https://savorsoflo.com/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://savorsoflo.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
+    "editorPick": false,
+    "venueId": "f957fbe2d7a7",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "4402ebfe948e81bf",
@@ -147,8 +221,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary Season — Private Stock performs live on the beach. Free beachfront concert with lawn games, artisan vendors, food trucks. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Friday Night Sound Waves live at Las Olas Oceanside Park.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary Season — Private Stock performs live on the beach. Free beachfront concert with lawn games, artisan vendors, food trucks. Outdoors at Las Olas Oceanside Park in Fort Lauderdale Beach. Free to attend.",
     "description": "Friday Night Sound Waves 10th Anniversary Season — Private Stock performs live on the beach. Free beachfront concert with lawn games, artisan vendors, food trucks.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -156,7 +230,8 @@
     },
     "image": "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&q=80",
     "editorPick": true,
-    "venueId": "e7fa45df1d75"
+    "venueId": "e7fa45df1d75",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "4abe11605bd43fe0",
@@ -177,8 +252,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -186,7 +261,8 @@
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "8c90e1cf57a08d10",
@@ -207,8 +283,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -216,7 +292,8 @@
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "374f2b9581ff9272",
@@ -237,8 +314,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -246,7 +323,8 @@
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "b4653a1dec0c0e85",
@@ -267,8 +345,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -276,7 +354,8 @@
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "20be471c74b8a906",
@@ -297,8 +376,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -306,7 +385,8 @@
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "e2d196ba19ae6253",
@@ -327,8 +407,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -336,7 +416,8 @@
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "2bca965b60d358f4",
@@ -357,8 +438,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -366,7 +447,8 @@
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "3390b218e0287834",
@@ -387,8 +469,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -396,7 +478,8 @@
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "9dce261afd394240",
@@ -417,8 +500,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -426,7 +509,8 @@
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "581517aa2435125f",
@@ -447,8 +531,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -456,7 +540,8 @@
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "eb0709ac9ae50461",
@@ -477,8 +562,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -486,7 +571,8 @@
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "5454c3c58021df4f",
@@ -507,8 +593,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -516,7 +602,8 @@
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "ecb8e2a7b6949624",
@@ -537,8 +624,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -546,7 +633,8 @@
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "81b1b4eb83f99131",
@@ -567,8 +655,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -576,7 +664,8 @@
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "dd11516ed7effcaf",
@@ -597,8 +686,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -606,7 +695,8 @@
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "e067028a637d71fb",
@@ -627,8 +717,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
     "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -636,7 +726,8 @@
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9"
+    "venueId": "c978f32b94d9",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "53e6bb776869d92c",
@@ -659,8 +750,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Rock the Park free concert series — Good Bread and Bread Zeppelin (Led Zeppelin tribute) perform live. Food trucks open at 6 PM. Lawn chairs and blankets welcome. Located in Plantation, Pine Island Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Rock the Park live at Pine Island Park.",
+    "editorialWhy": "Rock the Park free concert series — Good Bread and Bread Zeppelin (Led Zeppelin tribute) perform live. Food trucks open at 6 PM. Lawn chairs and blankets welcome. Outdoors at Pine Island Park in Plantation. Free to attend.",
     "description": "Rock the Park free concert series — Good Bread and Bread Zeppelin (Led Zeppelin tribute) perform live. Food trucks open at 6 PM. Lawn chairs and blankets welcome.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -668,7 +759,8 @@
     },
     "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800&q=80",
     "editorPick": false,
-    "venueId": "9decd5e6d578"
+    "venueId": "9decd5e6d578",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "28753fa5f8c0acfd",
@@ -690,8 +782,8 @@
     "category": "Community",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "shortWhy": "Culture at Quiet Waters Park, Deerfield Beach.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Outdoors at Quiet Waters Park in Deerfield Beach. Tickets from $39.",
     "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
@@ -700,7 +792,8 @@
     },
     "image": "https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=800&q=80",
     "editorPick": true,
-    "venueId": "3a65ca9e442a"
+    "venueId": "3a65ca9e442a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "6e81906d8f8ef6c6",
@@ -722,8 +815,8 @@
     "category": "Community",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "shortWhy": "Culture at Quiet Waters Park, Deerfield Beach.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Outdoors at Quiet Waters Park in Deerfield Beach. Tickets from $39.",
     "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
@@ -732,7 +825,8 @@
     },
     "image": "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?w=800&q=80",
     "editorPick": true,
-    "venueId": "3a65ca9e442a"
+    "venueId": "3a65ca9e442a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "f00fcb7f627094a7",
@@ -754,8 +848,8 @@
     "category": "Community",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "shortWhy": "Culture at Quiet Waters Park, Deerfield Beach.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Outdoors at Quiet Waters Park in Deerfield Beach. Tickets from $39.",
     "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
@@ -764,7 +858,8 @@
     },
     "image": "https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=800&q=80",
     "editorPick": true,
-    "venueId": "3a65ca9e442a"
+    "venueId": "3a65ca9e442a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "9a98e03bb24c7d85",
@@ -786,8 +881,8 @@
     "category": "Community",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "shortWhy": "Culture at Quiet Waters Park, Deerfield Beach.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Outdoors at Quiet Waters Park in Deerfield Beach. Tickets from $39.",
     "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
@@ -796,7 +891,8 @@
     },
     "image": "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?w=800&q=80",
     "editorPick": true,
-    "venueId": "3a65ca9e442a"
+    "venueId": "3a65ca9e442a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "330b204822e3d5ea",
@@ -818,8 +914,8 @@
     "category": "Community",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "shortWhy": "Culture at Quiet Waters Park, Deerfield Beach.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Outdoors at Quiet Waters Park in Deerfield Beach. Tickets from $39.",
     "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
@@ -828,7 +924,8 @@
     },
     "image": "https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=800&q=80",
     "editorPick": true,
-    "venueId": "3a65ca9e442a"
+    "venueId": "3a65ca9e442a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "13b4972d272eadec",
@@ -850,8 +947,8 @@
     "category": "Community",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "shortWhy": "Culture at Quiet Waters Park, Deerfield Beach.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Outdoors at Quiet Waters Park in Deerfield Beach. Tickets from $39.",
     "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
@@ -860,7 +957,8 @@
     },
     "image": "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?w=800&q=80",
     "editorPick": true,
-    "venueId": "3a65ca9e442a"
+    "venueId": "3a65ca9e442a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "24bbe6f3c99b0b22",
@@ -882,8 +980,8 @@
     "category": "Community",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "shortWhy": "Culture at Quiet Waters Park, Deerfield Beach.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Outdoors at Quiet Waters Park in Deerfield Beach. Tickets from $39.",
     "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
@@ -892,7 +990,8 @@
     },
     "image": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=800&q=80",
     "editorPick": true,
-    "venueId": "3a65ca9e442a"
+    "venueId": "3a65ca9e442a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "eac5646f942f40f3",
@@ -914,8 +1013,8 @@
     "category": "Community",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "shortWhy": "Culture at Quiet Waters Park, Deerfield Beach.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Outdoors at Quiet Waters Park in Deerfield Beach. Tickets from $39.",
     "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
@@ -924,7 +1023,147 @@
     },
     "image": "https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=800&q=80",
     "editorPick": true,
-    "venueId": "3a65ca9e442a"
+    "venueId": "3a65ca9e442a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "e95ed62f456cb394",
+    "title": "Las Olas Wine & Food Festival (30th Anniversary)",
+    "startAt": "2026-04-24T19:30:00",
+    "endAt": "2026-04-24T22:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Las Olas Boulevard",
+    "address": "Las Olas Blvd between SE 6th Ave and SE 11th Ave, Fort Lauderdale, FL 33301",
+    "neighborhood": "Las Olas",
+    "lat": 26.1195,
+    "lng": -80.1365,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "wine-tasting",
+      "food",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Food & Drink",
+    "priceLabel": "$$$",
+    "isOutdoor": true,
+    "shortWhy": "Las Olas Boulevard in Las Olas — worth the trip.",
+    "editorialWhy": "30th Anniversary — 40+ premier restaurants with pop-up stations. Wines and spirits curated by Southern Glazer's. Benefits American Lung Association. 21+ only. Outdoors at Las Olas Boulevard in Las Olas. Tickets from $125.",
+    "description": "30th Anniversary — 40+ premier restaurants with pop-up stations. Wines and spirits curated by Southern Glazer's. Benefits American Lung Association. 21+ only.",
+    "ticketUrl": "https://lasolaswff.com/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://lasolaswff.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "d0dbc7393da7",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "7cacd5ee3d0d791a",
+    "title": "FATVillage ArtWalk",
+    "startAt": "2026-03-28T18:00:00",
+    "endAt": "2026-03-28T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "ATV Records",
+    "address": "1306 N Miami Ave, Miami, FL 33136",
+    "neighborhood": "Wynwood",
+    "lat": 25.7889,
+    "lng": -80.1967,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "outdoor",
+      "live-music",
+      "local-favorite",
+      "intimate"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Art at FATVillage Arts District, Flagler Village.",
+    "editorialWhy": "Monthly last-Saturday art walk in Flagler Village. Local vendors, street artists, musicians, food trucks, pop-up bars. Free parking. Child and pet friendly. Outdoors at FATVillage Arts District in Flagler Village. Free to attend.",
+    "description": "Monthly last-Saturday art walk in Flagler Village. Local vendors, street artists, musicians, food trucks, pop-up bars. Free parking. Child and pet friendly.",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.fatvillage.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800&q=80",
+    "editorPick": true,
+    "venueId": "atv-records",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "a0fbdebd8c7a887b",
+    "title": "FATVillage ArtWalk",
+    "startAt": "2026-04-25T18:00:00",
+    "endAt": "2026-04-25T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "ATV Records",
+    "address": "1306 N Miami Ave, Miami, FL 33136",
+    "neighborhood": "Wynwood",
+    "lat": 25.7889,
+    "lng": -80.1967,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "outdoor",
+      "live-music",
+      "local-favorite",
+      "intimate"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Art at FATVillage Arts District, Flagler Village.",
+    "editorialWhy": "Monthly last-Saturday art walk in Flagler Village. Local vendors, street artists, musicians, food trucks, pop-up bars. Free parking. Child and pet friendly. Outdoors at FATVillage Arts District in Flagler Village. Free to attend.",
+    "description": "Monthly last-Saturday art walk in Flagler Village. Local vendors, street artists, musicians, food trucks, pop-up bars. Free parking. Child and pet friendly.",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.fatvillage.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800&q=80",
+    "editorPick": true,
+    "venueId": "atv-records",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "aec3149908f7ea9b",
+    "title": "FATVillage ArtWalk",
+    "startAt": "2026-05-23T18:00:00",
+    "endAt": "2026-05-23T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "ATV Records",
+    "address": "1306 N Miami Ave, Miami, FL 33136",
+    "neighborhood": "Wynwood",
+    "lat": 25.7889,
+    "lng": -80.1967,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "art-gallery",
+      "free-event",
+      "outdoor",
+      "live-music",
+      "local-favorite",
+      "intimate"
+    ],
+    "category": "Art",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Art at FATVillage Arts District, Flagler Village.",
+    "editorialWhy": "Monthly last-Saturday art walk in Flagler Village. Local vendors, street artists, musicians, food trucks, pop-up bars. Free parking. Child and pet friendly. Outdoors at FATVillage Arts District in Flagler Village. Free to attend.",
+    "description": "Monthly last-Saturday art walk in Flagler Village. Local vendors, street artists, musicians, food trucks, pop-up bars. Free parking. Child and pet friendly.",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.fatvillage.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1545128485-c400e7702796?w=800&q=80",
+    "editorPick": true,
+    "venueId": "atv-records",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "8e67ac110d7bc475",
@@ -950,8 +1189,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public. Located in Pompano Beach, Pompano Beach Shoreline is a local favorite. Best of all, it's free.",
+    "shortWhy": "Live music at Pompano Beach Shoreline, Pompano Beach.",
+    "editorialWhy": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public. Outdoors at Pompano Beach Shoreline in Pompano Beach. Free to attend.",
     "description": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -959,7 +1198,8 @@
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     "editorPick": true,
-    "venueId": "3af6a4f2a315"
+    "venueId": "3af6a4f2a315",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "e57eb57a6946e575",
@@ -985,8 +1225,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public. Located in Pompano Beach, Pompano Beach Shoreline is a local favorite. Best of all, it's free.",
+    "shortWhy": "Live music at Pompano Beach Shoreline, Pompano Beach.",
+    "editorialWhy": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public. Outdoors at Pompano Beach Shoreline in Pompano Beach. Free to attend.",
     "description": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -994,7 +1234,8 @@
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     "editorPick": true,
-    "venueId": "3af6a4f2a315"
+    "venueId": "3af6a4f2a315",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "1f156b1c77e61db6",
@@ -1018,8 +1259,8 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary — Joel DaSilva & Friends host an All Star Blues Jam on the beach. Free admission, food trucks, artisan vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Friday Night Sound Waves live at Las Olas Oceanside Park.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary — Joel DaSilva & Friends host an All Star Blues Jam on the beach. Free admission, food trucks, artisan vendors. Outdoors at Las Olas Oceanside Park in Fort Lauderdale Beach. Free to attend.",
     "description": "Friday Night Sound Waves 10th Anniversary — Joel DaSilva & Friends host an All Star Blues Jam on the beach. Free admission, food trucks, artisan vendors.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1027,7 +1268,8 @@
     },
     "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
     "editorPick": true,
-    "venueId": "e7fa45df1d75"
+    "venueId": "e7fa45df1d75",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "a50146b18553b67c",
@@ -1051,8 +1293,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Annual St. Patrick's Day parade and festival through downtown Fort Lauderdale. Marching bands, floats, Irish food and drinks, live music. Free to attend. Located in Las Olas, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Las Olas.",
+    "editorialWhy": "Annual St. Patrick's Day parade and festival through downtown Fort Lauderdale. Marching bands, floats, Irish food and drinks, live music. Free to attend. Outdoors at Downtown Fort Lauderdale in Las Olas. Free to attend.",
     "description": "Annual St. Patrick's Day parade and festival through downtown Fort Lauderdale. Marching bands, floats, Irish food and drinks, live music. Free to attend.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1060,7 +1302,8 @@
     },
     "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
     "editorPick": true,
-    "venueId": "2f3e26b9985c"
+    "venueId": "2f3e26b9985c",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "f96a991a0457e891",
@@ -1085,8 +1328,8 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Fort Lauderdale's food scene special.",
-    "editorialWhy": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Located in Pompano Beach, Downtown Pompano Beach is a local favorite. Best of all, it's free.",
+    "shortWhy": "Old Town Untapped live at Downtown Pompano Beach.",
+    "editorialWhy": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Outdoors at Downtown Pompano Beach in Pompano Beach. Free to attend.",
     "description": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1094,7 +1337,8 @@
     },
     "image": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&q=80",
     "editorPick": true,
-    "venueId": "24b8bac0254d"
+    "venueId": "24b8bac0254d",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "1d6a709a3fc59e91",
@@ -1119,8 +1363,8 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local flavors and community vibes.",
-    "editorialWhy": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Located in Pompano Beach, Downtown Pompano Beach is a local favorite. Best of all, it's free.",
+    "shortWhy": "Old Town Untapped live at Downtown Pompano Beach.",
+    "editorialWhy": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Outdoors at Downtown Pompano Beach in Pompano Beach. Free to attend.",
     "description": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1128,7 +1372,8 @@
     },
     "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
     "editorPick": true,
-    "venueId": "24b8bac0254d"
+    "venueId": "24b8bac0254d",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "91d799cdf280d724",
@@ -1153,8 +1398,8 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Taste what makes Fort Lauderdale's food scene special.",
-    "editorialWhy": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Located in Pompano Beach, Downtown Pompano Beach is a local favorite. Best of all, it's free.",
+    "shortWhy": "Old Town Untapped live at Downtown Pompano Beach.",
+    "editorialWhy": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Outdoors at Downtown Pompano Beach in Pompano Beach. Free to attend.",
     "description": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1162,7 +1407,8 @@
     },
     "image": "https://images.unsplash.com/photo-1531913764164-f85c3e01b2aa?w=800&q=80",
     "editorPick": true,
-    "venueId": "24b8bac0254d"
+    "venueId": "24b8bac0254d",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "b4333ea31344df9d",
@@ -1186,8 +1432,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary SEASON FINALE — Mr. Nice Guy & Friends close out the season. Free beachfront concert with food and vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Friday Night Sound Waves live at Las Olas Oceanside Park.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary SEASON FINALE — Mr. Nice Guy & Friends close out the season. Free beachfront concert with food and vendors. Outdoors at Las Olas Oceanside Park in Fort Lauderdale Beach. Free to attend.",
     "description": "Friday Night Sound Waves 10th Anniversary SEASON FINALE — Mr. Nice Guy & Friends close out the season. Free beachfront concert with food and vendors.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1195,7 +1441,8 @@
     },
     "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
     "editorPick": true,
-    "venueId": "e7fa45df1d75"
+    "venueId": "e7fa45df1d75",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "b395222c30b66e1e",
@@ -1219,8 +1466,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary — Shauna Sweeney & Friends take the stage. Free beachfront concert with food, drinks, and artisan vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Friday Night Sound Waves live at Las Olas Oceanside Park.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary — Shauna Sweeney & Friends take the stage. Free beachfront concert with food, drinks, and artisan vendors. Outdoors at Las Olas Oceanside Park in Fort Lauderdale Beach. Free to attend.",
     "description": "Friday Night Sound Waves 10th Anniversary — Shauna Sweeney & Friends take the stage. Free beachfront concert with food, drinks, and artisan vendors.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1228,7 +1475,8 @@
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     "editorPick": true,
-    "venueId": "e7fa45df1d75"
+    "venueId": "e7fa45df1d75",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "caa7cc23e2dac904",
@@ -1251,8 +1499,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Rock the Park free concert — Ultimate Garth (Garth Brooks tribute) and She's So Shania (Shania Twain tribute). Food trucks at 6 PM. Free admission. Located in Plantation, Pine Island Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Rock the Park live at Pine Island Park.",
+    "editorialWhy": "Rock the Park free concert — Ultimate Garth (Garth Brooks tribute) and She's So Shania (Shania Twain tribute). Food trucks at 6 PM. Free admission. Outdoors at Pine Island Park in Plantation. Free to attend.",
     "description": "Rock the Park free concert — Ultimate Garth (Garth Brooks tribute) and She's So Shania (Shania Twain tribute). Food trucks at 6 PM. Free admission.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1260,7 +1508,113 @@
     },
     "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80",
     "editorPick": false,
-    "venueId": "9decd5e6d578"
+    "venueId": "9decd5e6d578",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "5b504c39e69f6692",
+    "title": "Tortuga Music Festival 2026",
+    "startAt": "2026-04-10T12:00:00",
+    "endAt": "2026-04-10T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "1100 Seabreeze Blvd, Fort Lauderdale, FL 33316",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.11,
+    "lng": -80.1025,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "festival",
+      "beach",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": true,
+    "shortWhy": "Live music at Fort Lauderdale Beach Park, Fort Lauderdale Beach.",
+    "editorialWhy": "Three-day oceanfront music festival. Headliners: Post Malone, Riley Green, Kenny Chesney. Three stages. All ages. Marine conservation fundraising. Outdoors at Fort Lauderdale Beach Park in Fort Lauderdale Beach. Tickets from $150.",
+    "description": "Three-day oceanfront music festival. Headliners: Post Malone, Riley Green, Kenny Chesney. Three stages. All ages. Marine conservation fundraising.",
+    "ticketUrl": "https://tortugamusicfestival.com/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://tortugamusicfestival.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+    "editorPick": true,
+    "venueId": "a10dd744543f",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "99e30c37b1dfdd74",
+    "title": "Tortuga Music Festival 2026",
+    "startAt": "2026-04-11T12:00:00",
+    "endAt": "2026-04-11T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "1100 Seabreeze Blvd, Fort Lauderdale, FL 33316",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.11,
+    "lng": -80.1025,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "festival",
+      "beach",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": true,
+    "shortWhy": "Live music at Fort Lauderdale Beach Park, Fort Lauderdale Beach.",
+    "editorialWhy": "Three-day oceanfront music festival. Headliners: Post Malone, Riley Green, Kenny Chesney. Three stages. All ages. Marine conservation fundraising. Outdoors at Fort Lauderdale Beach Park in Fort Lauderdale Beach. Tickets from $150.",
+    "description": "Three-day oceanfront music festival. Headliners: Post Malone, Riley Green, Kenny Chesney. Three stages. All ages. Marine conservation fundraising.",
+    "ticketUrl": "https://tortugamusicfestival.com/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://tortugamusicfestival.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
+    "editorPick": true,
+    "venueId": "a10dd744543f",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "06b33062a02f9a9b",
+    "title": "Tortuga Music Festival 2026",
+    "startAt": "2026-04-12T12:00:00",
+    "endAt": "2026-04-12T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Fort Lauderdale Beach Park",
+    "address": "1100 Seabreeze Blvd, Fort Lauderdale, FL 33316",
+    "neighborhood": "Fort Lauderdale Beach",
+    "lat": 26.11,
+    "lng": -80.1025,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "festival",
+      "beach",
+      "outdoor",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": true,
+    "shortWhy": "Live music at Fort Lauderdale Beach Park, Fort Lauderdale Beach.",
+    "editorialWhy": "Three-day oceanfront music festival. Headliners: Post Malone, Riley Green, Kenny Chesney. Three stages. All ages. Marine conservation fundraising. Outdoors at Fort Lauderdale Beach Park in Fort Lauderdale Beach. Tickets from $150.",
+    "description": "Three-day oceanfront music festival. Headliners: Post Malone, Riley Green, Kenny Chesney. Three stages. All ages. Marine conservation fundraising.",
+    "ticketUrl": "https://tortugamusicfestival.com/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://tortugamusicfestival.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+    "editorPick": true,
+    "venueId": "a10dd744543f",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "e286a0d2cf9b1e5b",
@@ -1283,8 +1637,8 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Fresh, local, and full of character.",
-    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free tasting at Esplanade Park.",
+    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition.",
     "source": {
       "name": "Fort Lauderdale",
@@ -1294,7 +1648,8 @@
     "editorPick": true,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "7071d927cd755aa2",
@@ -1317,8 +1672,8 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Fresh, local, and full of character.",
-    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free tasting at Esplanade Park.",
+    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition.",
     "source": {
       "name": "Fort Lauderdale",
@@ -1328,7 +1683,8 @@
     "editorPick": true,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "c2b3ffdcb0503a3f",
@@ -1351,8 +1707,8 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local flavors and community vibes.",
-    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free tasting at Esplanade Park.",
+    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition.",
     "source": {
       "name": "Fort Lauderdale",
@@ -1362,7 +1718,8 @@
     "editorPick": true,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "f66e7ec8bccc6b3b",
@@ -1385,8 +1742,8 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Taste what makes Fort Lauderdale's food scene special.",
-    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free tasting at Esplanade Park.",
+    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition.",
     "source": {
       "name": "Fort Lauderdale",
@@ -1396,7 +1753,8 @@
     "editorPick": true,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "0d8e163318cfa18a",
@@ -1419,8 +1777,8 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local flavors and community vibes.",
-    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free tasting at Esplanade Park.",
+    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition.",
     "source": {
       "name": "Fort Lauderdale",
@@ -1430,7 +1788,8 @@
     "editorPick": true,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "5c9656bde7b5ab69",
@@ -1453,8 +1812,8 @@
     "category": "Food & Drink",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local flavors and community vibes.",
-    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free tasting at Esplanade Park.",
+    "editorialWhy": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Open-air farmers market along the New River with local produce, artisan food, plants, and handmade goods. A beloved Saturday morning tradition.",
     "source": {
       "name": "Fort Lauderdale",
@@ -1464,7 +1823,8 @@
     "editorPick": true,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "4482acd0ddc68904",
@@ -1487,8 +1847,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Sounds of the Town free concert featuring Havoc 305. Food trucks, festival seating. Bands start at 6:30 PM. Bring lawn chairs and blankets. Located in Davie, Bamford Sports Complex is a local favorite. Best of all, it's free.",
+    "shortWhy": "Sounds of the Town live at Bamford Sports Complex.",
+    "editorialWhy": "Sounds of the Town free concert featuring Havoc 305. Food trucks, festival seating. Bands start at 6:30 PM. Bring lawn chairs and blankets. Outdoors at Bamford Sports Complex in Davie. Free to attend.",
     "description": "Sounds of the Town free concert featuring Havoc 305. Food trucks, festival seating. Bands start at 6:30 PM. Bring lawn chairs and blankets.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1496,7 +1856,8 @@
     },
     "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": false,
-    "venueId": "470f2d0bab5c"
+    "venueId": "470f2d0bab5c",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "89bb91105d3fe746",
@@ -1519,8 +1880,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Rock the Park free concert — All Fired Up performs Pat Benatar and Heart tributes. Food trucks at 6 PM. Free parking. Lawn chairs welcome. Located in Plantation, Pine Island Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Rock the Park live at Pine Island Park.",
+    "editorialWhy": "Rock the Park free concert — All Fired Up performs Pat Benatar and Heart tributes. Food trucks at 6 PM. Free parking. Lawn chairs welcome. Outdoors at Pine Island Park in Plantation. Free to attend.",
     "description": "Rock the Park free concert — All Fired Up performs Pat Benatar and Heart tributes. Food trucks at 6 PM. Free parking. Lawn chairs welcome.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1528,112 +1889,8 @@
     },
     "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800&q=80",
     "editorPick": false,
-    "venueId": "9decd5e6d578"
-  },
-  {
-    "id": "c4a521a18ffe9ce9",
-    "title": "Tortuga Music Festival",
-    "startAt": "2026-04-10T12:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Tortuga Music Festival",
-    "address": "Fort Lauderdale Beach Park, Fort Lauderdale, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "live-music",
-      "outdoor",
-      "beach",
-      "festival",
-      "local-favorite"
-    ],
-    "category": "Music",
-    "priceLabel": "$$",
-    "isOutdoor": true,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages. Located in Fort Lauderdale Beach, Tortuga Music Festival is a local favorite.",
-    "description": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages.",
-    "ticketUrl": "https://www.tortugamusicfestival.com/",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.tortugamusicfestival.com/"
-    },
-    "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
-    "editorPick": true,
-    "seriesId": "a62f3688e42e",
-    "seriesName": "Tortuga Music Festival",
-    "venueId": "17e4d54c0d4b"
-  },
-  {
-    "id": "34e9c481684d2042",
-    "title": "Tortuga Music Festival",
-    "startAt": "2026-04-11T12:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Tortuga Music Festival",
-    "address": "Fort Lauderdale Beach Park, Fort Lauderdale, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "live-music",
-      "outdoor",
-      "beach",
-      "festival",
-      "local-favorite"
-    ],
-    "category": "Music",
-    "priceLabel": "$$",
-    "isOutdoor": true,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages. Located in Fort Lauderdale Beach, Tortuga Music Festival is a local favorite.",
-    "description": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages.",
-    "ticketUrl": "https://www.tortugamusicfestival.com/",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.tortugamusicfestival.com/"
-    },
-    "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
-    "editorPick": true,
-    "seriesId": "a62f3688e42e",
-    "seriesName": "Tortuga Music Festival",
-    "venueId": "17e4d54c0d4b"
-  },
-  {
-    "id": "88b38653316394ad",
-    "title": "Tortuga Music Festival",
-    "startAt": "2026-04-12T12:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Tortuga Music Festival",
-    "address": "Fort Lauderdale Beach Park, Fort Lauderdale, FL 33304",
-    "neighborhood": "Fort Lauderdale Beach",
-    "lat": 26.1224,
-    "lng": -80.1028,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "live-music",
-      "outdoor",
-      "beach",
-      "festival",
-      "local-favorite"
-    ],
-    "category": "Music",
-    "priceLabel": "$$",
-    "isOutdoor": true,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages. Located in Fort Lauderdale Beach, Tortuga Music Festival is a local favorite.",
-    "description": "Three-day country and rock festival on Fort Lauderdale Beach benefiting ocean conservation. Major headliners, food, and beachside stages.",
-    "ticketUrl": "https://www.tortugamusicfestival.com/",
-    "source": {
-      "name": "Fort Lauderdale",
-      "url": "https://www.tortugamusicfestival.com/"
-    },
-    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    "editorPick": true,
-    "seriesId": "a62f3688e42e",
-    "seriesName": "Tortuga Music Festival",
-    "venueId": "17e4d54c0d4b"
+    "venueId": "9decd5e6d578",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "a0788dbdccacb1b2",
@@ -1657,8 +1914,8 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary — Spred the Dub brings reggae vibes to the beach. Free admission, food trucks, artisan vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Friday Night Sound Waves live at Las Olas Oceanside Park.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary — Spred the Dub brings reggae vibes to the beach. Free admission, food trucks, artisan vendors. Outdoors at Las Olas Oceanside Park in Fort Lauderdale Beach. Free to attend.",
     "description": "Friday Night Sound Waves 10th Anniversary — Spred the Dub brings reggae vibes to the beach. Free admission, food trucks, artisan vendors.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -1666,7 +1923,42 @@
     },
     "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
     "editorPick": true,
-    "venueId": "e7fa45df1d75"
+    "venueId": "e7fa45df1d75",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "abc8572e6935f706",
+    "title": "Fort Lauderdale Beer, Wine & Spirits Fest",
+    "startAt": "2026-03-28T13:00:00",
+    "endAt": "2026-03-28T21:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Esplanade Park",
+    "address": "400 SW 2nd St, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.1165,
+    "lng": -80.1495,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "craft-beer",
+      "wine-tasting",
+      "outdoor",
+      "live-music"
+    ],
+    "category": "Food & Drink",
+    "priceLabel": "$$",
+    "isOutdoor": true,
+    "shortWhy": "Esplanade Park in Riverwalk — worth the trip.",
+    "editorialWhy": "100+ beer, wine, and spirit samples. Live entertainment, food trucks, interactive games. 21+ only. Two sessions: 1-4:30 PM and 6-9:30 PM. Outdoors at Esplanade Park in Riverwalk. Tickets from $29.",
+    "description": "100+ beer, wine, and spirit samples. Live entertainment, food trucks, interactive games. 21+ only. Two sessions: 1-4:30 PM and 6-9:30 PM.",
+    "ticketUrl": "https://www.fortlauderdale.gov/Home/Components/Calendar/Event/24348/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.fortlauderdale.gov/Home/Components/Calendar/Event/24348/"
+    },
+    "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80",
+    "editorPick": false,
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "f786026fa72a333f",
@@ -1687,8 +1979,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1699,7 +1991,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "913aeea5862a3a05",
@@ -1720,8 +2013,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1732,7 +2025,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "c9c0901f2dbb2889",
@@ -1753,8 +2047,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1765,7 +2059,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "fc6c09a150b90cad",
@@ -1786,8 +2081,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1798,7 +2093,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "1dfb2dd7084c45c2",
@@ -1819,8 +2115,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1831,7 +2127,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "d1f35c844063894c",
@@ -1852,8 +2149,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1864,7 +2161,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "b0d5e7e11badb8a4",
@@ -1885,8 +2183,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1897,7 +2195,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "4b8905fb28f11334",
@@ -1918,8 +2217,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1930,7 +2229,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "452cddb0351c5df3",
@@ -1951,8 +2251,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1963,7 +2263,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "a618e810392489a9",
@@ -1984,8 +2285,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -1996,7 +2297,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "703384a1bb374529",
@@ -2017,8 +2319,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -2029,7 +2331,8 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "3f0f419789a4d08a",
@@ -2050,8 +2353,8 @@
     "category": "Culture",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Located in Downtown FLL, Stranahan House Museum is a local favorite.",
+    "shortWhy": "Ghost Tour live at Stranahan House Museum.",
+    "editorialWhy": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity. Outdoors at Stranahan House Museum in Downtown FLL. Tickets from $30.",
     "description": "Candlelit ghost tour of Fort Lauderdale's most haunted house. Hear true tales of the Stranahan family and reported paranormal activity.",
     "ticketUrl": "https://stranahanhouse.org/",
     "source": {
@@ -2062,7 +2365,483 @@
     "editorPick": true,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
-    "venueId": "bc6df03c3a99"
+    "venueId": "bc6df03c3a99",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "f9284441eae27a51",
+    "title": "Paul Anka: A Man and His Music",
+    "startAt": "2026-03-04T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Paul Anka live at Broward Center for the Performing Arts.",
+    "editorialWhy": "Legendary singer-songwriter Paul Anka — \"Put Your Head on My Shoulder,\" \"Diana,\" and dozens of timeless hits live at Broward Center. At Broward Center for the Performing Arts in Riverwalk. Tickets from $60.",
+    "description": "Legendary singer-songwriter Paul Anka — \"Put Your Head on My Shoulder,\" \"Diana,\" and dozens of timeless hits live at Broward Center.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "96859118504a8ae6",
+    "title": "Dania Beach Wine & Seafood Festival",
+    "startAt": "2026-03-14T16:00:00",
+    "endAt": "2026-03-14T21:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach City Hall Plaza",
+    "address": "100 W Dania Beach Blvd, Dania Beach, FL 33004",
+    "neighborhood": "Dania Beach",
+    "lat": 26.0545,
+    "lng": -80.1473,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "wine-tasting",
+      "food",
+      "outdoor",
+      "live-music",
+      "family-friendly"
+    ],
+    "category": "Food & Drink",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Free tasting at Dania Beach City Hall Plaza.",
+    "editorialWhy": "40+ wine brands, 10+ breweries, seafood vendors, kids zone, live music, paint & sip. Pet-friendly. Free entry; sampling ticket $55. Outdoors at Dania Beach City Hall Plaza in Dania Beach. Free to attend.",
+    "description": "40+ wine brands, 10+ breweries, seafood vendors, kids zone, live music, paint & sip. Pet-friendly. Free entry; sampling ticket $55.",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://daniabeachwineandseafoodfest.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80",
+    "editorPick": false,
+    "venueId": "4d3052c8282b",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "d253203f5f33df53",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-10T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "3d6238e3d8accc19",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-11T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "2ea670a04ec740f6",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-12T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "a0126e9bbe1722ab",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-13T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "696a6b2f7da8c9b1",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-14T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "be17857584144539",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-15T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "ec4cd81e4ee659d2",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-17T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "116331321ccf0aee",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-18T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "2b8561ec09aaf140",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-19T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "a7298563790a6039",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-20T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "c44458945fe258f4",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-21T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "402dcc7867cedce0",
+    "title": "Hell's Kitchen (Broadway)",
+    "startAt": "2026-03-22T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-entertainment",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Culture at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $82.",
+    "description": "Broadway's Hell's Kitchen — the new musical inspired by Alicia Keys' journey from Harlem to superstardom. Tony-nominated sensation.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "bb2de3f64cdd7da2",
@@ -2086,8 +2865,8 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "South Florida's largest street hockey festival. Adult tournament presented by Coors Light & Youth tournament powered by Verizon. Located in Sunrise, Amerant Bank Arena is a local favorite. Best of all, it's free.",
+    "shortWhy": "Game day at Amerant Bank Arena.",
+    "editorialWhy": "South Florida's largest street hockey festival. Adult tournament presented by Coors Light & Youth tournament powered by Verizon. At Amerant Bank Arena in Sunrise. Free to attend.",
     "description": "South Florida's largest street hockey festival. Adult tournament presented by Coors Light & Youth tournament powered by Verizon.",
     "ticketUrl": "https://www.ftlwarmemorial.com/events/detail/cats-cup",
     "source": {
@@ -2096,7 +2875,8 @@
     },
     "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
-    "venueId": "amerant-bank-arena"
+    "venueId": "amerant-bank-arena",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "0da7159b3b6df549",
@@ -2119,8 +2899,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Sounds of the Town free concert featuring Big Rock Band. Food trucks, festival seating. Season finale — bands start at 6:30 PM. Located in Davie, Bamford Sports Complex is a local favorite. Best of all, it's free.",
+    "shortWhy": "Sounds of the Town live at Bamford Sports Complex.",
+    "editorialWhy": "Sounds of the Town free concert featuring Big Rock Band. Food trucks, festival seating. Season finale — bands start at 6:30 PM. Outdoors at Bamford Sports Complex in Davie. Free to attend.",
     "description": "Sounds of the Town free concert featuring Big Rock Band. Food trucks, festival seating. Season finale — bands start at 6:30 PM.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -2128,7 +2908,74 @@
     },
     "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": false,
-    "venueId": "470f2d0bab5c"
+    "venueId": "470f2d0bab5c",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "3b3debb2832a4fc5",
+    "title": "Darius Rucker",
+    "startAt": "2026-03-07T20:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Broward Center for the Performing Arts, Riverwalk.",
+    "editorialWhy": "Country/rock star Darius Rucker (Hootie & the Blowfish) live at Broward Center. An evening of \"Wagon Wheel\" and Southern charm. At Broward Center for the Performing Arts in Riverwalk. Tickets from $117.",
+    "description": "Country/rock star Darius Rucker (Hootie & the Blowfish) live at Broward Center. An evening of \"Wagon Wheel\" and Southern charm.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "ea91672f39de31c1",
+    "title": "Jim Jefferies",
+    "startAt": "2026-04-25T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Laughs at Au-Rene Theater at Broward Center — locals know.",
+    "editorialWhy": "Australian comedian Jim Jefferies live at Broward Center. Known for his Netflix specials and unfiltered, confrontational style. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $65.",
+    "description": "Australian comedian Jim Jefferies live at Broward Center. Known for his Netflix specials and unfiltered, confrontational style.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "28d8d93f66e33401",
@@ -2151,8 +2998,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. At Las Olas Riverfront in Las Olas. Free to attend.",
     "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -2162,7 +3009,8 @@
     "editorPick": true,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
-    "venueId": "6f313a06da9a"
+    "venueId": "6f313a06da9a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "01fb30cbac8156df",
@@ -2185,8 +3033,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. At Las Olas Riverfront in Las Olas. Free to attend.",
     "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -2196,7 +3044,8 @@
     "editorPick": true,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
-    "venueId": "6f313a06da9a"
+    "venueId": "6f313a06da9a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "189e620dd61a9001",
@@ -2219,8 +3068,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. At Las Olas Riverfront in Las Olas. Free to attend.",
     "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -2230,7 +3079,8 @@
     "editorPick": true,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
-    "venueId": "6f313a06da9a"
+    "venueId": "6f313a06da9a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "2fef2cbd5025a6d5",
@@ -2253,8 +3103,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. At Las Olas Riverfront in Las Olas. Free to attend.",
     "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -2264,7 +3114,8 @@
     "editorPick": true,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
-    "venueId": "6f313a06da9a"
+    "venueId": "6f313a06da9a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "758431ab35b700ab",
@@ -2287,8 +3138,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. At Las Olas Riverfront in Las Olas. Free to attend.",
     "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -2298,7 +3149,8 @@
     "editorPick": true,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
-    "venueId": "6f313a06da9a"
+    "venueId": "6f313a06da9a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "808c5819cdc44e98",
@@ -2321,8 +3173,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. At Las Olas Riverfront in Las Olas. Free to attend.",
     "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -2332,7 +3184,8 @@
     "editorPick": true,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
-    "venueId": "6f313a06da9a"
+    "venueId": "6f313a06da9a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "204082ac589c6a97",
@@ -2355,8 +3208,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. At Las Olas Riverfront in Las Olas. Free to attend.",
     "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -2366,7 +3219,8 @@
     "editorPick": true,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
-    "venueId": "6f313a06da9a"
+    "venueId": "6f313a06da9a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "999cdbc42d00e61d",
@@ -2389,8 +3243,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. At Las Olas Riverfront in Las Olas. Free to attend.",
     "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -2400,7 +3254,8 @@
     "editorPick": true,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
-    "venueId": "6f313a06da9a"
+    "venueId": "6f313a06da9a",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "5361b6b5cfd9c0ea",
@@ -2422,8 +3277,8 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "shortWhy": "Fort Lauderdale Beach in Fort Lauderdale Beach.",
+    "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Outdoors at Fort Lauderdale Beach in Fort Lauderdale Beach. Free to attend.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
       "name": "Beach Cleanups",
@@ -2431,7 +3286,8 @@
     },
     "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
     "editorPick": false,
-    "venueId": "d26aa89ab44b"
+    "venueId": "d26aa89ab44b",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "4c14f9848d14cfb3",
@@ -2453,8 +3309,8 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
+    "shortWhy": "Fort Lauderdale Beach in Fort Lauderdale Beach.",
+    "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Outdoors at Fort Lauderdale Beach in Fort Lauderdale Beach. Free to attend.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
       "name": "Beach Cleanups",
@@ -2462,7 +3318,8 @@
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     "editorPick": false,
-    "venueId": "d26aa89ab44b"
+    "venueId": "d26aa89ab44b",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "9f01cc9d129c768c",
@@ -2484,8 +3341,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Annual Broward County waterway and shoreline cleanup. No boat needed. Free volunteer event across multiple locations. Located in Downtown FLL, Various Locations is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Downtown FLL.",
+    "editorialWhy": "Annual Broward County waterway and shoreline cleanup. No boat needed. Free volunteer event across multiple locations. Outdoors at Various Locations in Downtown FLL. Free to attend.",
     "description": "Annual Broward County waterway and shoreline cleanup. No boat needed. Free volunteer event across multiple locations.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -2493,7 +3350,72 @@
     },
     "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
     "editorPick": false,
-    "venueId": "ab90e6dbf06e"
+    "venueId": "ab90e6dbf06e",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "ff77af88968504e1",
+    "title": "Gary Gulman: Grandiloquent",
+    "startAt": "2026-03-13T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Amaturo Theater",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.1184,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Gary Gulman live at Amaturo Theater.",
+    "editorialWhy": "Comedian Gary Gulman brings his Grandiloquent tour to Amaturo Theater. Known for his HBO special \"The Great Depresh.\" At Amaturo Theater in Riverwalk. Tickets from $40.",
+    "description": "Comedian Gary Gulman brings his Grandiloquent tour to Amaturo Theater. Known for his HBO special \"The Great Depresh.\"",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1585699324551-f6c309eedeca?w=800&q=80",
+    "editorPick": false,
+    "venueId": "98c3e3292dad",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "59a2453a07c56a3f",
+    "title": "Bill Murray & his Blood Brothers and Big Sky",
+    "startAt": "2026-04-18T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 26.1189,
+    "lng": -80.1471,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "comedy",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Au-Rene Theater at Broward Center, Riverwalk.",
+    "editorialWhy": "Bill Murray performs with his Blood Brothers and Big Sky band. An unexpected, irreverent evening of music and comedy. At Au-Rene Theater at Broward Center in Riverwalk. Tickets from $75.",
+    "description": "Bill Murray performs with his Blood Brothers and Big Sky band. An unexpected, irreverent evening of music and comedy.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "broward-center",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "751aed55d735e338",
@@ -2516,8 +3438,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Riverwalk.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
     "source": {
       "name": "@sunnysideupmarket",
@@ -2527,7 +3449,8 @@
     "editorPick": true,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "a13cb255af59539d",
@@ -2550,8 +3473,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Riverwalk.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
     "source": {
       "name": "@sunnysideupmarket",
@@ -2561,7 +3484,8 @@
     "editorPick": true,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "da63a79c7a118756",
@@ -2584,8 +3508,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Riverwalk.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
     "source": {
       "name": "@sunnysideupmarket",
@@ -2595,7 +3519,8 @@
     "editorPick": true,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "3e4b7dfe618eacd7",
@@ -2618,8 +3543,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Riverwalk.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
     "source": {
       "name": "@sunnysideupmarket",
@@ -2629,7 +3554,8 @@
     "editorPick": true,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "961f90b0f85e8d39",
@@ -2652,8 +3578,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Riverwalk.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
     "source": {
       "name": "@sunnysideupmarket",
@@ -2663,7 +3589,8 @@
     "editorPick": true,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "fdd48330addfb2ef",
@@ -2686,8 +3613,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Riverwalk.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
     "source": {
       "name": "@sunnysideupmarket",
@@ -2697,7 +3624,8 @@
     "editorPick": true,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "e02dc1a51bfa80da",
@@ -2720,8 +3648,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Riverwalk.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
     "source": {
       "name": "@sunnysideupmarket",
@@ -2731,7 +3659,8 @@
     "editorPick": true,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "a714cd66b650f640",
@@ -2754,8 +3683,8 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. Located in Riverwalk, Esplanade Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Riverwalk.",
+    "editorialWhy": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods. At Esplanade Park in Riverwalk. Free to attend.",
     "description": "Weekly Sunday pop-up market in Fort Lauderdale with local vendors, artisan food, fresh produce, and handmade goods.",
     "source": {
       "name": "@sunnysideupmarket",
@@ -2765,7 +3694,43 @@
     "editorPick": true,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
-    "venueId": "0e0bf5e295d0"
+    "venueId": "0e0bf5e295d0",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "56ee621f7b7fb6b6",
+    "title": "Santana: Oneness Tour 2026",
+    "startAt": "2026-04-11T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "latin",
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Santana live at Hard Rock Live.",
+    "editorialWhy": "Carlos Santana and his band bring the Oneness Tour to Hard Rock Live. A night of legendary guitar and Latin rock. At Hard Rock Live in Hollywood. Tickets from $111.",
+    "description": "Carlos Santana and his band bring the Oneness Tour to Hard Rock Live. A night of legendary guitar and Latin rock.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": true,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "50d755b5cf5b8832",
@@ -2788,8 +3753,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Sounds of the Town free concert featuring Sucker Punch. Food trucks, festival seating. Bands start at 6:30 PM. Located in Davie, Bamford Sports Complex is a local favorite. Best of all, it's free.",
+    "shortWhy": "Sounds of the Town live at Bamford Sports Complex.",
+    "editorialWhy": "Sounds of the Town free concert featuring Sucker Punch. Food trucks, festival seating. Bands start at 6:30 PM. Outdoors at Bamford Sports Complex in Davie. Free to attend.",
     "description": "Sounds of the Town free concert featuring Sucker Punch. Food trucks, festival seating. Bands start at 6:30 PM.",
     "source": {
       "name": "WeekendBroward Verified",
@@ -2797,7 +3762,8 @@
     },
     "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": false,
-    "venueId": "470f2d0bab5c"
+    "venueId": "470f2d0bab5c",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "e76415013990fa2e",
@@ -2818,8 +3784,8 @@
     "category": "Fitness",
     "priceLabel": "$$",
     "isOutdoor": true,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Annual Shamrock Run — 4-mile race followed by kids' leprechaun bash, then parade and concert starting at noon. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite.",
+    "shortWhy": "Shamrock Run 4 live at Downtown Fort Lauderdale.",
+    "editorialWhy": "Annual Shamrock Run — 4-mile race followed by kids' leprechaun bash, then parade and concert starting at noon. Outdoors at Downtown Fort Lauderdale in Downtown FLL. Tickets from $35.",
     "description": "Annual Shamrock Run — 4-mile race followed by kids' leprechaun bash, then parade and concert starting at noon.",
     "ticketUrl": "https://weekendbroward.com/st-patricks-day-events-around-town-2/",
     "source": {
@@ -2828,7 +3794,71 @@
     },
     "image": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80",
     "editorPick": false,
-    "venueId": "2f3e26b9985c"
+    "venueId": "2f3e26b9985c",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "f8b2c23a7af965f6",
+    "title": "7 Bridges: The Ultimate EAGLES Experience",
+    "startAt": "2026-03-28T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Amaturo Theater",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.1184,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "7 Bridges live at Amaturo Theater.",
+    "editorialWhy": "7 Bridges — the premier Eagles tribute band performs Hotel California and all the classics at Amaturo Theater. At Amaturo Theater in Riverwalk. Tickets from $35.",
+    "description": "7 Bridges — the premier Eagles tribute band performs Hotel California and all the classics at Amaturo Theater.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800&q=80",
+    "editorPick": false,
+    "venueId": "98c3e3292dad",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "14da0583ff611c1d",
+    "title": "Martin Lawrence: Y'all Still Know What It Is! Tour",
+    "startAt": "2026-03-21T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Martin Lawrence live at Hard Rock Live.",
+    "editorialWhy": "Martin Lawrence returns to the stage with his \"Y'all Still Know What It Is!\" stand-up tour at Hard Rock Live. At Hard Rock Live in Hollywood. Tickets from $89.",
+    "description": "Martin Lawrence returns to the stage with his \"Y'all Still Know What It Is!\" stand-up tour at Hard Rock Live.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "3b0cfec7ac6ff3f2",
@@ -2849,8 +3879,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Downtown FLL.",
+    "editorialWhy": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. At Downtown Fort Lauderdale in Downtown FLL. Free to attend.",
     "description": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
     "source": {
       "name": "@fortlauderdaledowntown",
@@ -2860,7 +3890,8 @@
     "editorPick": true,
     "seriesId": "2de5f55194f5",
     "seriesName": "First Friday Art Walk",
-    "venueId": "2f3e26b9985c"
+    "venueId": "2f3e26b9985c",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "56116d670697e6f7",
@@ -2881,8 +3912,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Downtown FLL.",
+    "editorialWhy": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. At Downtown Fort Lauderdale in Downtown FLL. Free to attend.",
     "description": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
     "source": {
       "name": "@fortlauderdaledowntown",
@@ -2892,7 +3923,8 @@
     "editorPick": true,
     "seriesId": "2de5f55194f5",
     "seriesName": "First Friday Art Walk",
-    "venueId": "2f3e26b9985c"
+    "venueId": "2f3e26b9985c",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "886123de96a9192b",
@@ -2913,8 +3945,8 @@
     "category": "Music",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite. Best of all, it's free.",
+    "shortWhy": "Free community event in Downtown FLL.",
+    "editorialWhy": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. At Downtown Fort Lauderdale in Downtown FLL. Free to attend.",
     "description": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
     "source": {
       "name": "@fortlauderdaledowntown",
@@ -2924,7 +3956,170 @@
     "editorPick": true,
     "seriesId": "2de5f55194f5",
     "seriesName": "First Friday Art Walk",
-    "venueId": "2f3e26b9985c"
+    "venueId": "2f3e26b9985c",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "193bc48b9232f365",
+    "title": "Diana Ross",
+    "startAt": "2026-03-19T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Hard Rock Live, Hollywood.",
+    "editorialWhy": "The legendary Diana Ross live at Hard Rock Live Hollywood. An evening of Motown classics and timeless hits. At Hard Rock Live in Hollywood. Tickets from $87.",
+    "description": "The legendary Diana Ross live at Hard Rock Live Hollywood. An evening of Motown classics and timeless hits.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "dc9ead4c106545c3",
+    "title": "Jason Robert Brown",
+    "startAt": "2026-03-12T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amaturo Theater",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Riverwalk",
+    "lat": 26.1184,
+    "lng": -80.1467,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "theater"
+    ],
+    "category": "Community",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Amaturo Theater, Riverwalk.",
+    "editorialWhy": "Tony Award-winning songwriter Jason Robert Brown (The Last Five Years, Parade) performs at Amaturo Theater. At Amaturo Theater in Riverwalk. Tickets from $50.",
+    "description": "Tony Award-winning songwriter Jason Robert Brown (The Last Five Years, Parade) performs at Amaturo Theater.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    "editorPick": false,
+    "venueId": "98c3e3292dad",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "d254b91465289be1",
+    "title": "Dancing With The Stars: Live! 2026 Tour",
+    "startAt": "2026-03-29T15:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-entertainment",
+      "family-friendly",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Dancing With The Stars live at Hard Rock Live.",
+    "editorialWhy": "Dancing With The Stars Live! 2026 tour featuring fan-favorite pros and mirrorball magic at Hard Rock Live. At Hard Rock Live in Hollywood. Tickets from $31.",
+    "description": "Dancing With The Stars Live! 2026 tour featuring fan-favorite pros and mirrorball magic at Hard Rock Live.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "6dd2e89fa352ee70",
+    "title": "Pigeons Playing Ping Pong",
+    "startAt": "2026-03-08T18:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Culture Room",
+    "address": "3045 N Federal Hwy, Fort Lauderdale, FL 33306",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.1535,
+    "lng": -80.1197,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "intimate",
+      "rock",
+      "indie",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Culture Room, Victoria Park.",
+    "editorialWhy": "Pigeons Playing Ping Pong bring their high-energy funk/jam/rock to Culture Room. Intimate 650-cap venue. At Culture Room in Victoria Park. Tickets from $71.",
+    "description": "Pigeons Playing Ping Pong bring their high-energy funk/jam/rock to Culture Room. Intimate 650-cap venue.",
+    "ticketUrl": "https://cultureroom.net/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://cultureroom.net/"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": false,
+    "venueId": "culture-room",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "1ff2e1c04fb7b24e",
+    "title": "Mae Martin: The Possum",
+    "startAt": "2026-03-06T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "The Parker",
+    "address": "707 NE 8th St, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1291,
+    "lng": -80.1356,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Mae Martin live at The Parker.",
+    "editorialWhy": "Netflix star and comedian Mae Martin brings their \"The Possum\" show to The Parker in Fort Lauderdale. At The Parker in Victoria Park. Tickets from $45.",
+    "description": "Netflix star and comedian Mae Martin brings their \"The Possum\" show to The Parker in Fort Lauderdale.",
+    "ticketUrl": "https://www.browardcenter.org/events",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80",
+    "editorPick": false,
+    "venueId": "4822b9a182b8",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "df404c8c5b7432e9",
@@ -2948,8 +4143,8 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Guided Nature Tour live at Snyder Park.",
+    "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Outdoors at Snyder Park in Fort Lauderdale. Free to attend.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
       "name": "Beach Cleanups",
@@ -2957,7 +4152,8 @@
     },
     "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
     "editorPick": false,
-    "venueId": "snyder-park"
+    "venueId": "snyder-park",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "a1d7f15076787120",
@@ -2981,8 +4177,8 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Where Fort Lauderdale comes together.",
-    "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Guided Nature Tour live at Snyder Park.",
+    "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Outdoors at Snyder Park in Fort Lauderdale. Free to attend.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
       "name": "Beach Cleanups",
@@ -2990,7 +4186,8 @@
     },
     "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
     "editorPick": false,
-    "venueId": "snyder-park"
+    "venueId": "snyder-park",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "71db309029f6d9d4",
@@ -3010,8 +4207,8 @@
     "category": "Art",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Featuring Wheeldon's This Bitter Earth, Balanchine's Tarantella, and works by Miami choreographers. Located in Downtown, The Parker is a local favorite.",
+    "shortWhy": "Miami City Ballet live at The Parker.",
+    "editorialWhy": "Featuring Wheeldon's This Bitter Earth, Balanchine's Tarantella, and works by Miami choreographers. At The Parker in Downtown. Tickets from $35.",
     "description": "Featuring Wheeldon's This Bitter Earth, Balanchine's Tarantella, and works by Miami choreographers.",
     "ticketUrl": "https://www.miamicityballet.org/tickets-and-events/",
     "source": {
@@ -3020,41 +4217,8 @@
     },
     "image": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
     "editorPick": true,
-    "venueId": "4822b9a182b8"
-  },
-  {
-    "id": "90226056167560f0",
-    "title": "Santana: Oneness Tour",
-    "startAt": "2026-04-11T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Hard Rock Live",
-    "address": "1 Seminole Way, Hollywood, FL 33314",
-    "neighborhood": "Hollywood",
-    "lat": 26.051,
-    "lng": -80.2112,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "live-music",
-      "latin",
-      "local-favorite",
-      "casino",
-      "concerts",
-      "big-acts"
-    ],
-    "category": "Music",
-    "priceLabel": "$$$",
-    "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Guitar legend Carlos Santana brings his Oneness Tour, celebrating decades of Latin rock fusion. Located in Hollywood, Hard Rock Live is a local favorite.",
-    "description": "Guitar legend Carlos Santana brings his Oneness Tour, celebrating decades of Latin rock fusion.",
-    "ticketUrl": "https://casino.hardrock.com/hollywood/events/santana",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://casino.hardrock.com/hollywood/events/santana"
-    },
-    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
-    "venueId": "hard-rock-live"
+    "venueId": "4822b9a182b8",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "66a3e9d5bb4c840a",
@@ -3078,8 +4242,8 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Snyder Park in Fort Lauderdale.",
+    "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Outdoors at Snyder Park in Fort Lauderdale. Free to attend.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
       "name": "Beach Cleanups",
@@ -3087,7 +4251,8 @@
     },
     "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
     "editorPick": false,
-    "venueId": "snyder-park"
+    "venueId": "snyder-park",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "8daa6debf103e615",
@@ -3109,8 +4274,8 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Art worth the trip.",
-    "editorialWhy": "Monthly art walk in Flagler Village featuring galleries, studios, food trucks, and live music. Located in Flagler Village, FAT Village Arts District is a local favorite. Best of all, it's free.",
+    "shortWhy": "Art at FAT Village Arts District, Flagler Village.",
+    "editorialWhy": "Monthly art walk in Flagler Village featuring galleries, studios, food trucks, and live music. At FAT Village Arts District in Flagler Village. Free to attend.",
     "description": "Monthly art walk in Flagler Village featuring galleries, studios, food trucks, and live music.",
     "source": {
       "name": "Fort Lauderdale",
@@ -3120,7 +4285,74 @@
     "editorPick": true,
     "seriesId": "599cce768c76",
     "seriesName": "FAT Village Art Walk",
-    "venueId": "76fb681d761c"
+    "venueId": "76fb681d761c",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "464fadb03d4bee83",
+    "title": "Miranda Lambert",
+    "startAt": "2026-03-12T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Hard Rock Live, Hollywood.",
+    "editorialWhy": "Country superstar Miranda Lambert live at Hard Rock Live Hollywood. Free self-parking on site. At Hard Rock Live in Hollywood. Tickets from $60.",
+    "description": "Country superstar Miranda Lambert live at Hard Rock Live Hollywood. Free self-parking on site.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "b852b0f509ffbb2f",
+    "title": "The Offspring: SUPERCHARGED Worldwide Tour",
+    "startAt": "2026-03-05T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "The Offspring live at Hard Rock Live.",
+    "editorialWhy": "The Offspring bring their SUPERCHARGED Worldwide tour to Hard Rock Live. Free self-parking. At Hard Rock Live in Hollywood. Tickets from $60.",
+    "description": "The Offspring bring their SUPERCHARGED Worldwide tour to Hard Rock Live. Free self-parking.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "8be9bee7253752b9",
@@ -3144,8 +4376,8 @@
     "category": "Sports",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Game day energy at its peak.",
-    "editorialWhy": "Day 2 of South Florida's largest street hockey festival. Finals and championship games. Located in Sunrise, Amerant Bank Arena is a local favorite. Best of all, it's free.",
+    "shortWhy": "Game day at Amerant Bank Arena.",
+    "editorialWhy": "Day 2 of South Florida's largest street hockey festival. Finals and championship games. At Amerant Bank Arena in Sunrise. Free to attend.",
     "description": "Day 2 of South Florida's largest street hockey festival. Finals and championship games.",
     "ticketUrl": "https://www.ftlwarmemorial.com/events/detail/cats-cup",
     "source": {
@@ -3154,7 +4386,8 @@
     },
     "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80",
     "editorPick": true,
-    "venueId": "amerant-bank-arena"
+    "venueId": "amerant-bank-arena",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "97a4e6295e7d7bd9",
@@ -3177,8 +4410,8 @@
     "category": "Art",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "See what Fort Lauderdale's art scene is about.",
-    "editorialWhy": "Opening of \"Lost & Found\" - annual Teen Art Exhibition showcasing Broward teen artists. Located in Downtown, NSU Art Museum is a local favorite. Best of all, it's free.",
+    "shortWhy": "NSU Art Museum live at NSU Art Museum.",
+    "editorialWhy": "Opening of \"Lost & Found\" - annual Teen Art Exhibition showcasing Broward teen artists. At NSU Art Museum in Downtown. Free to attend.",
     "description": "Opening of \"Lost & Found\" - annual Teen Art Exhibition showcasing Broward teen artists.",
     "ticketUrl": "https://nsuartmuseum.org/event/teen-art-exhibition-2026/",
     "source": {
@@ -3187,40 +4420,75 @@
     },
     "image": "https://images.unsplash.com/photo-1575223970966-76ae61ee7838?w=800&q=80",
     "editorPick": true,
-    "venueId": "nsu-art-museum"
+    "venueId": "nsu-art-museum",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "eef56687b5e09add",
-    "title": "Lauderdale Run Club: Weekday Run",
-    "startAt": "2026-03-04T06:30:00",
+    "id": "0f18cd7a440ff048",
+    "title": "Buzzcocks / Redd Kross",
+    "startAt": "2026-04-02T19:30:00",
     "timezone": "America/New_York",
-    "venueName": "Holiday Park",
-    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
-    "neighborhood": "Victoria Park",
-    "lat": 26.1418,
-    "lng": -80.1248,
+    "venueName": "Culture Room",
+    "address": "3045 N Federal Hwy, Fort Lauderdale, FL 33306",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.1535,
+    "lng": -80.1197,
     "city": "Fort Lauderdale",
     "tags": [
-      "running",
-      "free-event",
-      "community",
-      "outdoor"
+      "live-music",
+      "intimate",
+      "rock",
+      "indie",
+      "local-favorite"
     ],
-    "category": "Fitness",
-    "priceLabel": "Free",
+    "category": "Culture",
+    "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
-    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "shortWhy": "Live music at Culture Room, Victoria Park.",
+    "editorialWhy": "Punk legends Buzzcocks with Redd Kross at Culture Room. One of FLL's best small venues. At Culture Room in Victoria Park. Tickets from $57.",
+    "description": "Punk legends Buzzcocks with Redd Kross at Culture Room. One of FLL's best small venues.",
+    "ticketUrl": "https://cultureroom.net/",
     "source": {
-      "name": "@lauderdalerunclub",
-      "url": "https://instagram.com/@lauderdalerunclub"
+      "name": "WeekendBroward Verified",
+      "url": "https://cultureroom.net/"
     },
-    "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     "editorPick": false,
-    "seriesId": "7ab26efc8104",
-    "seriesName": "Lauderdale Run Club: Weekday Run",
-    "venueId": "ada49f625f52"
+    "venueId": "culture-room",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "aad290dc328775c1",
+    "title": "Eric Church: Free The Machine Tour",
+    "startAt": "2026-03-27T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Eric Church live at Hard Rock Live.",
+    "editorialWhy": "Country star Eric Church brings the Free The Machine Tour to Hard Rock Live Hollywood. At Hard Rock Live in Hollywood. Tickets from $75.",
+    "description": "Country star Eric Church brings the Free The Machine Tour to Hard Rock Live Hollywood.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "4468423233e6b37e",
@@ -3242,8 +4510,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Holiday Park.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. At Holiday Park in Victoria Park. Free to attend.",
     "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -3253,7 +4521,8 @@
     "editorPick": false,
     "seriesId": "7ab26efc8104",
     "seriesName": "Lauderdale Run Club: Weekday Run",
-    "venueId": "ada49f625f52"
+    "venueId": "ada49f625f52",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "083efcec7bbca071",
@@ -3275,8 +4544,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Holiday Park.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. At Holiday Park in Victoria Park. Free to attend.",
     "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -3286,7 +4555,8 @@
     "editorPick": false,
     "seriesId": "7ab26efc8104",
     "seriesName": "Lauderdale Run Club: Weekday Run",
-    "venueId": "ada49f625f52"
+    "venueId": "ada49f625f52",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "16da23bdf3bb8dc4",
@@ -3308,8 +4578,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Holiday Park.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. At Holiday Park in Victoria Park. Free to attend.",
     "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -3319,7 +4589,8 @@
     "editorPick": false,
     "seriesId": "7ab26efc8104",
     "seriesName": "Lauderdale Run Club: Weekday Run",
-    "venueId": "ada49f625f52"
+    "venueId": "ada49f625f52",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "de8ae15fc4fa5076",
@@ -3341,8 +4612,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Holiday Park.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. At Holiday Park in Victoria Park. Free to attend.",
     "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -3352,7 +4623,8 @@
     "editorPick": false,
     "seriesId": "7ab26efc8104",
     "seriesName": "Lauderdale Run Club: Weekday Run",
-    "venueId": "ada49f625f52"
+    "venueId": "ada49f625f52",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "ae2859ec50cb2ebe",
@@ -3374,8 +4646,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Holiday Park.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. At Holiday Park in Victoria Park. Free to attend.",
     "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -3385,7 +4657,8 @@
     "editorPick": false,
     "seriesId": "7ab26efc8104",
     "seriesName": "Lauderdale Run Club: Weekday Run",
-    "venueId": "ada49f625f52"
+    "venueId": "ada49f625f52",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "26bbd337372c70e3",
@@ -3407,8 +4680,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Holiday Park.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. At Holiday Park in Victoria Park. Free to attend.",
     "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -3418,7 +4691,8 @@
     "editorPick": false,
     "seriesId": "7ab26efc8104",
     "seriesName": "Lauderdale Run Club: Weekday Run",
-    "venueId": "ada49f625f52"
+    "venueId": "ada49f625f52",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "fb4280e3b68add75",
@@ -3440,8 +4714,8 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
+    "shortWhy": "Lauderdale Run Club live at Holiday Park.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. At Holiday Park in Victoria Park. Free to attend.",
     "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
     "source": {
       "name": "@lauderdalerunclub",
@@ -3451,7 +4725,76 @@
     "editorPick": false,
     "seriesId": "7ab26efc8104",
     "seriesName": "Lauderdale Run Club: Weekday Run",
-    "venueId": "ada49f625f52"
+    "venueId": "ada49f625f52",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "465dc10e4e54187a",
+    "title": "The Growlers",
+    "startAt": "2026-04-10T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Culture Room",
+    "address": "3045 N Federal Hwy, Fort Lauderdale, FL 33306",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.1535,
+    "lng": -80.1197,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "intimate",
+      "rock",
+      "indie",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Culture Room, Victoria Park.",
+    "editorialWhy": "The Growlers' beachy psychedelic rock at Culture Room. Standing room, 650 capacity. At Culture Room in Victoria Park. Tickets from $76.",
+    "description": "The Growlers' beachy psychedelic rock at Culture Room. Standing room, 650 capacity.",
+    "ticketUrl": "https://cultureroom.net/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://cultureroom.net/"
+    },
+    "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80",
+    "editorPick": false,
+    "venueId": "culture-room",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "f6194e07bcf25fc2",
+    "title": "Lacuna Coil: Sleepless Empire Tour 2026",
+    "startAt": "2026-04-22T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Culture Room",
+    "address": "3045 N Federal Hwy, Fort Lauderdale, FL 33306",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.1535,
+    "lng": -80.1197,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "intimate",
+      "rock",
+      "indie",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Lacuna Coil live at Culture Room.",
+    "editorialWhy": "Italian metal/rock band Lacuna Coil on their Sleepless Empire Tour at Culture Room. At Culture Room in Victoria Park. Tickets from $50.",
+    "description": "Italian metal/rock band Lacuna Coil on their Sleepless Empire Tour at Culture Room.",
+    "ticketUrl": "https://cultureroom.net/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://cultureroom.net/"
+    },
+    "image": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800&q=80",
+    "editorPick": false,
+    "venueId": "culture-room",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "761682b49331c866",
@@ -3474,8 +4817,8 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
+    "shortWhy": "Live music at FTL War Memorial, Fort Lauderdale.",
+    "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2. At FTL War Memorial in Fort Lauderdale. Tickets from $65.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 1 of 2.",
     "ticketUrl": "https://www.ftlwarmemorial.com/events",
     "source": {
@@ -3484,7 +4827,8 @@
     },
     "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
     "editorPick": true,
-    "venueId": "ftl-war-memorial"
+    "venueId": "ftl-war-memorial",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "3cbe6da8fa88aaf9",
@@ -3507,8 +4851,8 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
+    "shortWhy": "Live music at FTL War Memorial, Fort Lauderdale.",
+    "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2. At FTL War Memorial in Fort Lauderdale. Tickets from $65.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2.",
     "ticketUrl": "https://www.ftlwarmemorial.com/events",
     "source": {
@@ -3517,7 +4861,8 @@
     },
     "image": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80",
     "editorPick": true,
-    "venueId": "ftl-war-memorial"
+    "venueId": "ftl-war-memorial",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "ac00091da8077b5d",
@@ -3540,8 +4885,8 @@
     "category": "Sports",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Cheer on Fort Lauderdale's finest.",
-    "editorialWhy": "NHL hockey: Florida Panthers face the Detroit Red Wings at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "shortWhy": "Game day at Amerant Bank Arena.",
+    "editorialWhy": "NHL hockey: Florida Panthers face the Detroit Red Wings at Amerant Bank Arena. At Amerant Bank Arena in Sunrise. Tickets from $40.",
     "description": "NHL hockey: Florida Panthers face the Detroit Red Wings at Amerant Bank Arena.",
     "ticketUrl": "https://www.floridapanthers.com/schedule",
     "source": {
@@ -3550,7 +4895,110 @@
     },
     "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
-    "venueId": "amerant-bank-arena"
+    "venueId": "amerant-bank-arena",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "e7eb4a3825f1b01b",
+    "title": "Reik Tour 2026",
+    "startAt": "2026-03-22T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "latin",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Hard Rock Live, Hollywood.",
+    "editorialWhy": "Latin pop group Reik on their 2026 world tour at Hard Rock Live Hollywood. At Hard Rock Live in Hollywood. Tickets from $65.",
+    "description": "Latin pop group Reik on their 2026 world tour at Hard Rock Live Hollywood.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "e21819f588a9502c",
+    "title": "VNV Nation",
+    "startAt": "2026-04-17T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Culture Room",
+    "address": "3045 N Federal Hwy, Fort Lauderdale, FL 33306",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.1535,
+    "lng": -80.1197,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "electronic",
+      "intimate",
+      "rock",
+      "indie",
+      "local-favorite"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Culture Room, Victoria Park.",
+    "editorialWhy": "Electronic/industrial act VNV Nation live at Culture Room Fort Lauderdale. At Culture Room in Victoria Park. Tickets from $64.",
+    "description": "Electronic/industrial act VNV Nation live at Culture Room Fort Lauderdale.",
+    "ticketUrl": "https://cultureroom.net/",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://cultureroom.net/"
+    },
+    "image": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800&q=80",
+    "editorPick": false,
+    "venueId": "culture-room",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "a742a4a0b4aeb24c",
+    "title": "The Black Keys with Miles Kane",
+    "startAt": "2026-04-24T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Hard Rock Live, Hollywood.",
+    "editorialWhy": "The Black Keys with special guest Miles Kane at Hard Rock Live Hollywood. At Hard Rock Live in Hollywood. Tickets from $95.",
+    "description": "The Black Keys with special guest Miles Kane at Hard Rock Live Hollywood.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "33dbd465b1c99962",
@@ -3573,8 +5021,8 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "50 years of punk rock pioneers Buzzcocks with special guests Redd Kross. Located in Fort Lauderdale, Culture Room is a local favorite.",
+    "shortWhy": "Buzzcocks live at Culture Room.",
+    "editorialWhy": "50 years of punk rock pioneers Buzzcocks with special guests Redd Kross. At Culture Room in Fort Lauderdale. Tickets from $50.",
     "description": "50 years of punk rock pioneers Buzzcocks with special guests Redd Kross.",
     "ticketUrl": "https://cultureroom.net/",
     "source": {
@@ -3583,7 +5031,74 @@
     },
     "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800&q=80",
     "editorPick": true,
-    "venueId": "culture-room"
+    "venueId": "culture-room",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "d98d196bddb7b2c1",
+    "title": "Ali Wong Live",
+    "startAt": "2026-04-03T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Laughs at Hard Rock Live — locals know.",
+    "editorialWhy": "Ali Wong brings her razor-sharp stand-up to Hard Rock Live Hollywood. At Hard Rock Live in Hollywood. Tickets from $94.",
+    "description": "Ali Wong brings her razor-sharp stand-up to Hard Rock Live Hollywood.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "4e1dd6986ab312b7",
+    "title": "Gladys Knight",
+    "startAt": "2026-04-02T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live music at Hard Rock Live, Hollywood.",
+    "editorialWhy": "The Empress of Soul Gladys Knight live at Hard Rock Live Hollywood. At Hard Rock Live in Hollywood. Tickets from $95.",
+    "description": "The Empress of Soul Gladys Knight live at Hard Rock Live Hollywood.",
+    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
+    "source": {
+      "name": "WeekendBroward Verified",
+      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
+    },
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    "editorPick": false,
+    "venueId": "hard-rock-live",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
     "id": "4a0e48bf900562b8",
@@ -3605,8 +5120,8 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Live music performance at the War Memorial Auditorium. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
+    "shortWhy": "Live music at FTL War Memorial, Fort Lauderdale.",
+    "editorialWhy": "Live music performance at the War Memorial Auditorium. At FTL War Memorial in Fort Lauderdale. Tickets from $35.",
     "description": "Live music performance at the War Memorial Auditorium.",
     "ticketUrl": "https://www.ftlwarmemorial.com/events",
     "source": {
@@ -3615,6 +5130,7 @@
     },
     "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
-    "venueId": "ftl-war-memorial"
+    "venueId": "ftl-war-memorial",
+    "addedAt": "2026-03-04T15:38:09.092Z"
   }
 ]
