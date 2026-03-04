@@ -6,28 +6,31 @@ on:
     - cron: '0 11 * * *'
     - cron: '0 23 * * *'
   workflow_dispatch: # Allow manual trigger
-  # Handle PR check-runs gracefully (skip instead of fail)
+  # GitHub registers checks for ALL workflow files on a pushed branch.
+  # Without these triggers, the check is "expected" but never runs → red X.
+  # Adding them lets the 'check-ok' job run and pass → green check.
+  push:
+    branches: ['claude/**', main]
   pull_request:
 
 permissions:
   contents: write   # push event data to main
   actions: write    # dispatch deploy.yml after successful scrape
 
-concurrency:
-  group: "scrape-pipeline"
-  cancel-in-progress: false
-
 jobs:
-  # Fast pass-through so PR checks show green instead of "No jobs were run" failure
-  pr-ok:
-    if: github.event_name == 'pull_request'
+  # Instant pass for push/PR events so GitHub check shows green
+  check-ok:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Scrape only runs on schedule — skipping"
+      - run: echo "Scrape runs on schedule/dispatch only"
 
   scrape:
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    concurrency:
+      group: "scrape-pipeline"
+      cancel-in-progress: false
 
     steps:
       - uses: actions/checkout@v4
@@ -50,20 +53,18 @@ jobs:
         working-directory: scraper
         env:
           PUPPETEER_SKIP_DOWNLOAD: 'true'
-        run: npm ci || (echo "⚠ npm ci failed on first attempt, retrying..." && npm cache clean --force && npm ci) || echo "⚠ npm ci failed after retry — scrapers will be skipped this run"
+        run: npm ci || (echo "npm ci failed, retrying..." && npm cache clean --force && npm ci) || echo "npm ci failed — scrapers will be skipped"
 
       - name: Install Puppeteer Chrome
         continue-on-error: true
         working-directory: scraper
         run: |
-          npx puppeteer browsers install chrome
-          # Verify Chrome is actually executable
+          npx puppeteer browsers install chrome || echo "Chrome install failed — Puppeteer scrapers will return empty"
           CHROME_PATH=$(find ~/.cache/puppeteer -name "chrome" -type f -perm -u+x 2>/dev/null | head -1)
           if [ -n "$CHROME_PATH" ]; then
-            echo "✅ Chrome installed at: $CHROME_PATH"
-            echo "   Version: $($CHROME_PATH --version 2>/dev/null || echo 'unknown')"
+            echo "Chrome installed at: $CHROME_PATH"
           else
-            echo "⚠ Chrome binary not found — Puppeteer scrapers will return empty"
+            echo "Chrome not found — Puppeteer scrapers will return empty arrays"
           fi
 
       - name: Run Instagram post scraper
@@ -114,7 +115,7 @@ jobs:
             fi
             [ "$i" -lt 3 ] && sleep 5 || true
           done
-          $PUSH_OK && echo "✅ Data pushed" || echo "⚠️  Push failed after 3 attempts — will retry next scheduled run"
+          $PUSH_OK && echo "Data pushed" || echo "Push failed — will retry next scheduled run"
 
       - name: Trigger deploy
         continue-on-error: true
