@@ -80,17 +80,10 @@ export class MiamiBeachesEventsScraper extends BaseScraper {
         ],
       });
 
-      const response = await this.fetch(ALGOLIA_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Algolia-Application-Id': ALGOLIA_APP_ID,
-          'X-Algolia-API-Key': ALGOLIA_API_KEY,
-        },
-        body,
+      const data = await this.fetchJSONNative<AlgoliaResponse>(ALGOLIA_URL, body, {
+        'X-Algolia-Application-Id': ALGOLIA_APP_ID,
+        'X-Algolia-API-Key': ALGOLIA_API_KEY,
       });
-
-      const data: AlgoliaResponse = await response.json();
       allHits.push(...data.hits);
 
       totalPages = data.nbPages;
