@@ -9,14 +9,9 @@
  * Hotels covered:
  *  - The Biltmore Hotel (biltmorehotel.com)
  *  - Faena Hotel Miami Beach (faena.com)
- *  - The Miami Beach EDITION (editionhotels.com)
  *  - Esme Miami Beach (esmehotel.com)
- *  - Broken Shaker / Freehand Miami (freehandhotels.com)
  *  - The Betsy Hotel (thebetsyhotel.com)
- *  - Mr. C Hotel Coconut Grove (mrchotels.com)
  *  - The Standard Spa Miami Beach (standardhotels.com)
- *  - The Colonnade Hotel Coral Gables (colonnadehotel.com)
- *  - The Wilder Miami (thewildermiami.com)
  */
 
 import * as cheerio from 'cheerio';
@@ -37,8 +32,8 @@ interface HotelSource {
 const HOTEL_SOURCES: HotelSource[] = [
   {
     name: 'The Biltmore Hotel',
-    eventsUrl: 'https://www.biltmorehotel.com/events/',
-    fallbackUrl: 'https://www.biltmorehotel.com/whats-on/',
+    eventsUrl: 'https://www.biltmorehotel.com/miami-resort-calendar/',
+    fallbackUrl: 'https://www.biltmorehotel.com/',
     neighborhood: 'Coral Gables',
     address: '1200 Anastasia Ave, Coral Gables, FL 33134',
     lat: 25.7267,
@@ -48,7 +43,7 @@ const HOTEL_SOURCES: HotelSource[] = [
   {
     name: 'Faena Hotel Miami Beach',
     eventsUrl: 'https://faena.com/miami-beach',
-    fallbackUrl: 'https://faena.com/miami-beach/whats-on',
+    fallbackUrl: 'https://faena.com/',
     neighborhood: 'Mid-Beach',
     address: '3201 Collins Ave, Miami Beach, FL 33140',
     lat: 25.8112,
@@ -56,43 +51,13 @@ const HOTEL_SOURCES: HotelSource[] = [
     city: 'Miami',
   },
   {
-    name: 'The Miami Beach EDITION',
-    eventsUrl: 'https://www.editionhotels.com/miami-beach/events/',
-    fallbackUrl: 'https://www.editionhotels.com/miami-beach/',
-    neighborhood: 'Mid-Beach',
-    address: '2901 Collins Ave, Miami Beach, FL 33140',
-    lat: 25.8121,
-    lng: -80.1255,
-    city: 'Miami',
-  },
-  {
     name: 'Esme Miami Beach',
-    eventsUrl: 'https://esmehotel.com/experiences/',
-    fallbackUrl: 'https://esmehotel.com/',
+    eventsUrl: 'https://esmehotel.com/events/happenings',
+    fallbackUrl: 'https://esmehotel.com/events',
     neighborhood: 'South Beach',
     address: '1438 Washington Ave, Miami Beach, FL 33139',
     lat: 25.7867,
     lng: -80.1350,
-    city: 'Miami',
-  },
-  {
-    name: 'The Wilder Miami',
-    eventsUrl: 'https://www.thewildermiami.com/events',
-    fallbackUrl: 'https://www.thewildermiami.com/',
-    neighborhood: 'Wynwood',
-    address: '2119 NW 2nd Ave, Miami, FL 33127',
-    lat: 25.7965,
-    lng: -80.1996,
-    city: 'Miami',
-  },
-  {
-    name: 'Broken Shaker at Freehand Miami',
-    eventsUrl: 'https://freehandhotels.com/miami/events/',
-    fallbackUrl: 'https://freehandhotels.com/miami/',
-    neighborhood: 'Mid-Beach',
-    address: '2727 Indian Creek Dr, Miami Beach, FL 33140',
-    lat: 25.8089,
-    lng: -80.1267,
     city: 'Miami',
   },
   {
@@ -106,35 +71,20 @@ const HOTEL_SOURCES: HotelSource[] = [
     city: 'Miami',
   },
   {
-    name: 'Mr. C Hotel Coconut Grove',
-    eventsUrl: 'https://mrchotels.com/coconut-grove/whats-on/',
-    fallbackUrl: 'https://mrchotels.com/coconut-grove/',
-    neighborhood: 'Coconut Grove',
-    address: '2988 McFarlane Rd, Miami, FL 33133',
-    lat: 25.7290,
-    lng: -80.2385,
-    city: 'Miami',
-  },
-  {
     name: 'The Standard Spa Miami Beach',
-    eventsUrl: 'https://www.standardhotels.com/miami-beach/features/',
-    fallbackUrl: 'https://www.standardhotels.com/miami-beach/',
+    eventsUrl: 'https://www.standardhotels.com/happenings',
+    fallbackUrl: 'https://www.standardhotels.com/miami/properties/miami-beach',
     neighborhood: 'Miami Beach',
     address: '40 Island Ave, Miami Beach, FL 33139',
     lat: 25.7912,
     lng: -80.1567,
     city: 'Miami',
   },
-  {
-    name: 'The Colonnade Hotel Coral Gables',
-    eventsUrl: 'https://www.colonnadehotel.com/coral-gables-hotel-events',
-    fallbackUrl: 'https://www.colonnadehotel.com/',
-    neighborhood: 'Coral Gables',
-    address: '180 Aragon Ave, Coral Gables, FL 33134',
-    lat: 25.7479,
-    lng: -80.2584,
-    city: 'Miami',
-  },
+  // REMOVED: EDITION (events page is for venue rentals, not public events)
+  // REMOVED: The Wilder (returns 403)
+  // REMOVED: Broken Shaker / Freehand (site has no events content)
+  // REMOVED: Mr. C Coconut Grove (site returns 404)
+  // REMOVED: Colonnade Hotel (not a Miami property)
 ];
 
 export class HotelEventsScraper extends BaseScraper {
