@@ -82,11 +82,12 @@ jobs:
         working-directory: scraper
         env:
           PUPPETEER_SKIP_DOWNLOAD: 'true'
-        run: npm ci || (echo "npm ci failed, retrying..." && npm cache clean --force && npm ci)
+        run: npm ci || (echo "npm ci failed, retrying..." && npm cache clean --force && npm ci) || echo "⚠ npm ci failed — scrapers will be skipped"
 
       - name: Install Puppeteer Chrome
+        continue-on-error: true
         working-directory: scraper
-        run: npx puppeteer browsers install chrome
+        run: npx puppeteer browsers install chrome || echo "⚠ Chrome install failed — Puppeteer scrapers will return empty"
 
       - name: Run scraper
         continue-on-error: true
@@ -97,6 +98,7 @@ jobs:
         run: npm run scrape
 
       - name: Commit and push event data
+        continue-on-error: true
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -124,7 +126,7 @@ jobs:
           $PUSH_OK && echo "Data pushed" || echo "Push failed — will retry next run"
 
       - name: Trigger deploy with fresh data
-        if: success()
+        continue-on-error: true
         run: |
           curl -s -X POST \
             -H "Accept: application/vnd.github.v3+json" \

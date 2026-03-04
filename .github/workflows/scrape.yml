@@ -43,6 +43,7 @@ jobs:
         run: npm ci || (echo "⚠ npm ci failed on first attempt, retrying..." && npm cache clean --force && npm ci) || echo "⚠ npm ci failed after retry — scrapers will be skipped this run"
 
       - name: Install Puppeteer Chrome
+        continue-on-error: true
         working-directory: scraper
         run: |
           npx puppeteer browsers install chrome
@@ -52,7 +53,7 @@ jobs:
             echo "✅ Chrome installed at: $CHROME_PATH"
             echo "   Version: $($CHROME_PATH --version 2>/dev/null || echo 'unknown')"
           else
-            echo "⚠ Chrome binary not found after install — Puppeteer scrapers will fail"
+            echo "⚠ Chrome binary not found — Puppeteer scrapers will return empty"
           fi
 
       - name: Run Instagram post scraper
@@ -76,6 +77,7 @@ jobs:
         run: npm run scrape
 
       - name: Commit and push event data
+        continue-on-error: true
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
