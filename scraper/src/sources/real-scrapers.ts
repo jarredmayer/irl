@@ -4,9 +4,92 @@
  */
 
 import * as cheerio from 'cheerio';
+import * as https from 'https';
 import { addDays, format, parse } from 'date-fns';
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
+
+/**
+ * Fetch HTML using Node.js built-in https module instead of undici-based fetch.
+ * SeatEngine sites (miamiimprov.com, improvftl.com) reject connections from
+ * Node.js native fetch (undici) due to TLS/SSL incompatibilities or IP-based
+ * blocking heuristics. The built-in https module uses OpenSSL and behaves more
+ * like a traditional browser HTTP stack.
+ */
+function httpsGet(url: string, timeoutMs = 15_000): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const req = https.get(
+      url,
+      {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+          'Accept-Encoding': 'identity',
+        },
+        // Use a more permissive TLS configuration
+        rejectUnauthorized: true,
+        minVersion: 'TLSv1.2' as any,
+      },
+      (res) => {
+        // Follow redirects (up to 3)
+        if (
+          res.statusCode &&
+          res.statusCode >= 300 &&
+          res.statusCode < 400 &&
+          res.headers.location
+        ) {
+          req.destroy();
+          httpsGet(res.headers.location, timeoutMs).then(resolve, reject);
+          return;
+        }
+
+        if (res.statusCode && res.statusCode >= 400) {
+          req.destroy();
+          reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
+          return;
+        }
+
+        const chunks: Buffer[] = [];
+        res.on('data', (chunk) => chunks.push(chunk));
+        res.on('end', () => resolve(Buffer.concat(chunks).toString('utf-8')));
+        res.on('error', reject);
+      },
+    );
+
+    req.setTimeout(timeoutMs, () => {
+      req.destroy();
+      reject(new Error('Request timed out'));
+    });
+    req.on('error', reject);
+  });
+}
+
+/**
+ * Fetch HTML via https module with retry logic for SeatEngine-based sites.
+ */
+async function fetchHTMLWithRetry(
+  url: string,
+  maxRetries = 3,
+  log?: (msg: string) => void,
+): Promise<cheerio.CheerioAPI> {
+  let lastError: Error | undefined;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const html = await httpsGet(url);
+      return cheerio.load(html);
+    } catch (err) {
+      lastError = err instanceof Error ? err : new Error(String(err));
+      if (attempt < maxRetries) {
+        const delay = Math.pow(2, attempt) * 1000;
+        log?.(`  Attempt ${attempt} failed (${lastError.message}), retrying in ${delay / 1000}s...`);
+        await new Promise((r) => setTimeout(r, delay));
+      }
+    }
+  }
+  throw lastError || new Error(`Failed to fetch ${url} after ${maxRetries} attempts`);
+}
 
 // === DICE.FM MIAMI ===
 export class DiceMiamiScraper extends BaseScraper {
@@ -90,8 +173,11 @@ export class DiceMiamiScraper extends BaseScraper {
 
 // === MIAMI IMPROV ===
 export class MiamiImprovRealScraper extends BaseScraper {
+  // Primary domain first, then SeatEngine mirror as fallback (different IP/TLS config,
+  // avoids GitHub Actions IP-blocking and undici TLS incompatibilities)
   private urls = [
     'https://www.miamiimprov.com/events',
+    'https://www-miamiimprov-com.seatengine.com/events',
     'https://www.miamiimprov.com/calendar',
   ];
 
@@ -105,7 +191,9 @@ export class MiamiImprovRealScraper extends BaseScraper {
 
     for (const url of this.urls) {
       try {
-        const $ = await this.fetchHTML(url);
+        // Use Node.js https module instead of undici-based fetch to avoid
+        // TLS/SSL issues with SeatEngine sites in GitHub Actions
+        const $ = await fetchHTMLWithRetry(url, 3, (msg) => this.log(msg));
 
         // JSON-LD has Place with Events array
         $('script[type="application/ld+json"]').each((_, el) => {
@@ -150,15 +238,20 @@ export class MiamiImprovRealScraper extends BaseScraper {
       priceAmount: data.offers?.price,
       isOutdoor: false,
       sourceName: this.name,
-      sourceUrl: data.url || this.urls[0],
+      sourceUrl: data.url
+        ? data.url.replace('seatengine.com', 'miamiimprov.com').replace('www-miamiimprov-com.', 'www.')
+        : 'https://www.miamiimprov.com/events',
     };
   }
 }
 
 // === FORT LAUDERDALE IMPROV ===
 export class FortLauderdaleImprovScraper extends BaseScraper {
+  // Primary domain first, then SeatEngine mirror as fallback (different IP/TLS config,
+  // avoids GitHub Actions IP-blocking and undici TLS incompatibilities)
   private urls = [
     'https://www.improvftl.com/events',
+    'https://www-improvftl-com.seatengine.com/events',
     'https://www.improvftl.com/calendar',
   ];
 
@@ -172,7 +265,9 @@ export class FortLauderdaleImprovScraper extends BaseScraper {
 
     for (const url of this.urls) {
       try {
-        const $ = await this.fetchHTML(url);
+        // Use Node.js https module instead of undici-based fetch to avoid
+        // TLS/SSL issues with SeatEngine sites in GitHub Actions
+        const $ = await fetchHTMLWithRetry(url, 3, (msg) => this.log(msg));
 
         // JSON-LD has Place with Events array
         $('script[type="application/ld+json"]').each((_, el) => {
@@ -194,7 +289,9 @@ export class FortLauderdaleImprovScraper extends BaseScraper {
                     priceAmount: evt.offers?.price,
                     isOutdoor: false,
                     sourceName: this.name,
-                    sourceUrl: evt.url || url,
+                    sourceUrl: evt.url
+                      ? evt.url.replace('seatengine.com', 'improvftl.com').replace('www-improvftl-com.', 'www.')
+                      : 'https://www.improvftl.com/events',
                   });
                 }
               }
@@ -570,11 +667,17 @@ export class RevolutionLiveScraper extends BaseScraper {
 }
 
 // === CORAL GABLES CITY ===
+// Uses httpsGet (Node.js built-in https module) instead of undici-based fetch
+// because coralgables.com blocks server-side fetches from GitHub Actions.
 export class CoralGablesScraper extends BaseScraper {
-  private urls = [
-    'https://www.coralgables.com/events-calendar',
-    'https://www.coralgables.com/events',
-    'https://www.coralgables.com/calendar',
+  private baseUrl = 'https://www.coralgables.com/events-calendar';
+  private maxPages = 4;
+
+  // City meeting types to skip (board meetings, commission hearings, etc.)
+  private readonly meetingKeywords = [
+    'advisory board', 'advisory panel', 'city commission', 'board of architects',
+    'code enforcement', 'ticket hearing', 'planning and zoning',
+    'historic preservation', 'budget advisory', 'finance committee',
   ];
 
   constructor() {
@@ -583,68 +686,260 @@ export class CoralGablesScraper extends BaseScraper {
 
   async scrape(): Promise<RawEvent[]> {
     this.log('Scraping Coral Gables events...');
-    let $: ReturnType<typeof import('cheerio').load> | null = null;
+    const events: RawEvent[] = [];
+    const seenTitles = new Set<string>();
 
-    for (const url of this.urls) {
+    for (let page = 0; page < this.maxPages; page++) {
+      const url = page === 0 ? this.baseUrl : `${this.baseUrl}?page=${page}`;
       try {
-        $ = await this.fetchHTML(url);
-        break;
+        const $ = await fetchHTMLWithRetry(url, 3, (msg) => this.log(msg));
+        const pageEvents = this.parseEventsFromPage($, seenTitles);
+        events.push(...pageEvents);
+        this.log(`  Page ${page}: found ${pageEvents.length} events`);
+
+        // Stop paginating if we got no events from this page
+        if (pageEvents.length === 0) break;
+
+        // Rate-limit between pages
+        if (page < this.maxPages - 1) {
+          await this.sleep(this.config.rateLimit);
+        }
       } catch (e) {
-        this.log(`  URL ${url} failed, trying next...`);
+        this.log(`  Page ${page} failed: ${e instanceof Error ? e.message : String(e)}`);
+        // If the first page fails, try to fall back to alternate URLs
+        if (page === 0) {
+          const fallbackUrls = [
+            'https://www.coralgables.com/events',
+            'https://www.coralgables.com/calendar',
+          ];
+          for (const fallbackUrl of fallbackUrls) {
+            try {
+              const $ = await fetchHTMLWithRetry(fallbackUrl, 2, (msg) => this.log(msg));
+              const pageEvents = this.parseEventsFromPage($, seenTitles);
+              events.push(...pageEvents);
+              this.log(`  Fallback ${fallbackUrl}: found ${pageEvents.length} events`);
+              break;
+            } catch {
+              this.log(`  Fallback ${fallbackUrl} also failed`);
+            }
+          }
+        }
+        break;
       }
     }
-
-    if (!$) {
-      this.log('All Coral Gables URLs failed');
-      return [];
-    }
-
-    const events: RawEvent[] = [];
-
-    // Cards with about="/events/..." attribute
-    $('.card[about*="/events/"]').each((_, el) => {
-      try {
-        const $el = $(el);
-        const title = this.cleanText($el.find('h3, h4, .card-title, a').first().text());
-        const description = this.cleanText($el.find('p, .card-text').first().text());
-        const link = $el.attr('about') || $el.find('a').attr('href') || '';
-        const dateText = $el.find('time, .date').first().text();
-
-        if (!title || title.length < 5) return;
-
-        // Extract date from link if available (e.g., /events/music-mcbride-plaza)
-        const startAt = this.parseCityDate(dateText) || this.getNextWeekday();
-
-        events.push({
-          title,
-          startAt,
-          venueName: this.extractVenue(title, description),
-          neighborhood: 'Coral Gables',
-          city: 'Miami',
-          description: description || `${title} - City of Coral Gables event.`,
-          category: this.categorize(title, description),
-          tags: ['community', 'local-favorite'],
-          isOutdoor: /plaza|park|outdoor/i.test(title + description),
-          sourceName: this.name,
-          sourceUrl: `https://www.coralgables.com${link}`,
-        });
-      } catch { /* skip */ }
-    });
 
     this.log(`Found ${events.length} Coral Gables events`);
     return events;
   }
 
+  private parseEventsFromPage($: cheerio.CheerioAPI, seenTitles: Set<string>): RawEvent[] {
+    const events: RawEvent[] = [];
+
+    // Strategy 1: Cards with about="/events/..." attribute (original Drupal structure)
+    $('[about*="/events/"]').each((_, el) => {
+      try {
+        const event = this.parseCardElement($, el);
+        if (event && !seenTitles.has(event.title)) {
+          seenTitles.add(event.title);
+          events.push(event);
+        }
+      } catch { /* skip */ }
+    });
+
+    // Strategy 2: Links pointing to /events/* within listing containers
+    if (events.length === 0) {
+      $('a[href*="/events/"]').each((_, el) => {
+        try {
+          const event = this.parseLinkElement($, el);
+          if (event && !seenTitles.has(event.title)) {
+            seenTitles.add(event.title);
+            events.push(event);
+          }
+        } catch { /* skip */ }
+      });
+    }
+
+    // Strategy 3: Text-based fallback — scan the full HTML for event patterns
+    if (events.length === 0) {
+      const html = $.html();
+      const textEvents = this.parseEventsFromText(html);
+      for (const event of textEvents) {
+        if (!seenTitles.has(event.title)) {
+          seenTitles.add(event.title);
+          events.push(event);
+        }
+      }
+    }
+
+    return events;
+  }
+
+  private parseCardElement($: cheerio.CheerioAPI, el: any): RawEvent | null {
+    const $el = $(el);
+    const title = this.cleanText($el.find('h3, h4, h2, .card-title').first().text())
+      || this.cleanText($el.find('a').first().text());
+    const description = this.cleanText($el.find('p, .card-text, .field--name-body').first().text());
+    const link = $el.attr('about') || $el.find('a[href*="/events/"]').attr('href') || '';
+    const dateText = this.cleanText(
+      $el.find('time, .date, .datetime, .field--name-field-date').first().text()
+      || $el.closest('.views-row, .listing').find('time, .date').first().text()
+    );
+
+    // Get category text from taxonomy labels
+    const categoryText = this.cleanText(
+      $el.find('.field--name-field-event-type, .taxonomy-term, .badge, .label').text()
+    );
+
+    if (!title || title.length < 5) return null;
+    if (this.isMeetingEvent(title, categoryText)) return null;
+
+    const startAt = this.parseCityDate(dateText) || this.getNextWeekday();
+
+    return {
+      title,
+      startAt,
+      venueName: this.extractVenue(title, description),
+      neighborhood: 'Coral Gables',
+      city: 'Miami',
+      description: description || `${title} - City of Coral Gables event.`,
+      category: this.categorizeWithType(title, description, categoryText),
+      tags: this.generateCityTags(title, description, categoryText),
+      isOutdoor: /plaza|park|outdoor|moonlight/i.test(title + description),
+      sourceName: this.name,
+      sourceUrl: link.startsWith('http') ? link : `https://www.coralgables.com${link}`,
+    };
+  }
+
+  private parseLinkElement($: cheerio.CheerioAPI, el: any): RawEvent | null {
+    const $el = $(el);
+    const href = $el.attr('href') || '';
+    if (!href.includes('/events/') || href === '/events/' || href === '/events') return null;
+
+    const title = this.cleanText($el.text());
+    if (!title || title.length < 5) return null;
+
+    // Walk up to find the parent container with date info
+    const $parent = $el.closest('.views-row, .listing, .card, article, li, div');
+    const dateText = this.cleanText(
+      $parent.find('time, .date, .datetime').first().text()
+    );
+    const description = this.cleanText($parent.find('p').first().text());
+    const categoryText = this.cleanText(
+      $parent.find('.field--name-field-event-type, .taxonomy-term, .badge, .label').text()
+    );
+
+    if (this.isMeetingEvent(title, categoryText)) return null;
+
+    const startAt = this.parseCityDate(dateText) || this.getNextWeekday();
+
+    return {
+      title,
+      startAt,
+      venueName: this.extractVenue(title, description),
+      neighborhood: 'Coral Gables',
+      city: 'Miami',
+      description: description || `${title} - City of Coral Gables event.`,
+      category: this.categorizeWithType(title, description, categoryText),
+      tags: this.generateCityTags(title, description, categoryText),
+      isOutdoor: /plaza|park|outdoor|moonlight/i.test(title + description),
+      sourceName: this.name,
+      sourceUrl: `https://www.coralgables.com${href}`,
+    };
+  }
+
+  /**
+   * Fallback: extract events from raw HTML text when selectors fail.
+   * Looks for date headings followed by event titles and /events/ links.
+   */
+  private parseEventsFromText(html: string): RawEvent[] {
+    const events: RawEvent[] = [];
+    // Match patterns like: "March 5, 2026" ... "/events/some-slug" ... "Event Title"
+    const eventPattern = /href="(\/events\/[^"]+)"[^>]*>([^<]+)</gi;
+    let match: RegExpExecArray | null;
+
+    // First find all dates in the document
+    const datePattern = /(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s*(\d{4})?/gi;
+    const dates: { date: string; index: number }[] = [];
+    let dateMatch: RegExpExecArray | null;
+    while ((dateMatch = datePattern.exec(html)) !== null) {
+      const parsed = this.parseCityDate(dateMatch[0]);
+      if (parsed) dates.push({ date: parsed, index: dateMatch.index });
+    }
+
+    while ((match = eventPattern.exec(html)) !== null) {
+      const link = match[1];
+      const title = this.cleanText(match[2]);
+
+      if (!title || title.length < 5) continue;
+      if (this.isMeetingEvent(title, '')) continue;
+
+      // Find the closest preceding date
+      let startAt = this.getNextWeekday();
+      for (let i = dates.length - 1; i >= 0; i--) {
+        if (dates[i].index < match.index) {
+          startAt = dates[i].date;
+          break;
+        }
+      }
+
+      events.push({
+        title,
+        startAt,
+        venueName: this.extractVenue(title, ''),
+        neighborhood: 'Coral Gables',
+        city: 'Miami',
+        description: `${title} - City of Coral Gables event.`,
+        category: this.categorize(title, ''),
+        tags: this.generateCityTags(title, '', ''),
+        isOutdoor: /plaza|park|outdoor|moonlight/i.test(title),
+        sourceName: this.name,
+        sourceUrl: `https://www.coralgables.com${link}`,
+      });
+    }
+
+    return events;
+  }
+
+  private isMeetingEvent(title: string, categoryText: string): boolean {
+    const text = `${title} ${categoryText}`.toLowerCase();
+    // Skip if explicitly tagged as "City Meetings" category
+    if (/city\s*meetings?/i.test(categoryText)) return true;
+    return this.meetingKeywords.some((kw) => text.includes(kw));
+  }
+
   private extractVenue(title: string, desc: string): string | undefined {
     const text = `${title} ${desc}`;
     if (/mcbride plaza/i.test(text)) return 'McBride Plaza';
-    if (/merrick park/i.test(text)) return 'Merrick Park';
+    if (/merrick (park|house)/i.test(text)) return 'Merrick Park';
     if (/biltmore/i.test(text)) return 'Biltmore Hotel';
     if (/country club/i.test(text)) return 'Coral Gables Country Club';
     if (/alhambra circle/i.test(text)) return 'Alhambra Circle';
     if (/chamber of commerce/i.test(text)) return 'Coral Gables Chamber of Commerce';
-    // Don't return generic location name - leave as undefined
+    if (/giralda/i.test(text)) return 'Giralda Avenue';
+    if (/pinewood/i.test(text)) return 'Pinewood Cemetery';
     return undefined;
+  }
+
+  private categorizeWithType(title: string, description: string, categoryText: string): string {
+    const allText = `${title} ${description} ${categoryText}`;
+    // Use the city's own category tags when available
+    if (/arts?\/?culture/i.test(categoryText)) return 'Art';
+    if (/festival/i.test(categoryText)) return 'Community';
+    if (/recreation/i.test(categoryText)) return 'Wellness';
+    if (/green\s*initiative/i.test(categoryText)) return 'Outdoors';
+    if (/shopping|dining/i.test(categoryText)) return 'Food & Drink';
+    if (/community\s*relations/i.test(categoryText)) return 'Community';
+    if (/holiday/i.test(categoryText)) return 'Family';
+    // Fall back to keyword-based categorization
+    return this.categorize(title, allText);
+  }
+
+  private generateCityTags(title: string, description: string, categoryText: string): string[] {
+    const category = this.categorizeWithType(title, description, categoryText);
+    const tags = this.generateTags(title, description, category);
+    if (!tags.includes('community')) tags.push('community');
+    if (!tags.includes('local-favorite')) tags.push('local-favorite');
+    return tags.slice(0, 5);
   }
 
   private parseCityDate(text: string): string | null {
