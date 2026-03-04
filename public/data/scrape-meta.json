@@ -1,5 +1,5 @@
 {
-  "scrapedAt": "2026-03-04T15:38:09.113Z",
+  "scrapedAt": "2026-03-04T15:54:57.267Z",
   "stats": {
     "total": 1088,
     "deduplicated": 750,
@@ -47,10 +47,10 @@
     }
   },
   "delta": {
-    "added": 50,
-    "removed": 4,
+    "added": 0,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 700
+    "unchanged": 750
   },
   "sources": [
     {
@@ -124,7 +124,7 @@
       "count": 0,
       "status": "error",
       "errors": [
-        "fetch failed"
+        "getaddrinfo EAI_AGAIN y72zzu5ph1-dsn.algolia.net"
       ]
     },
     {
@@ -246,7 +246,7 @@
       "count": 0,
       "status": "error",
       "errors": [
-        "fetch failed"
+        "getaddrinfo EAI_AGAIN cultureroom.net"
       ]
     },
     {
@@ -254,7 +254,7 @@
       "count": 0,
       "status": "error",
       "errors": [
-        "fetch failed"
+        "getaddrinfo EAI_AGAIN www.bonnethouse.org"
       ]
     },
     {
@@ -262,7 +262,7 @@
       "count": 0,
       "status": "error",
       "errors": [
-        "fetch failed"
+        "getaddrinfo EAI_AGAIN funkybuddha.com"
       ]
     },
     {
@@ -270,7 +270,7 @@
       "count": 0,
       "status": "error",
       "errors": [
-        "fetch failed"
+        "getaddrinfo EAI_AGAIN fliff.com"
       ]
     },
     {
