@@ -18,7 +18,7 @@ interface DiceEvent {
 }
 
 export class DiceRealScraper extends PuppeteerScraper {
-  private baseUrl = 'https://dice.fm/browse/miami';
+  private baseUrl = 'https://dice.fm/browse/miami-5e3bf1b0fe75488ec46cdf9f';
 
   constructor() {
     super('Dice.fm Real', { weight: 1.5, rateLimit: 2000 });
