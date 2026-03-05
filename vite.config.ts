@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'prompt',
+      registerType: 'autoUpdate',
       includeAssets: [
         'favicon.svg',
         'icons/*.png',
@@ -111,7 +111,7 @@ export default defineConfig({
         ],
         navigateFallback: '/irl/index.html',
         navigateFallbackDenylist: [/^\/api\//],
-        skipWaiting: false,
+        skipWaiting: true,
         clientsClaim: true,
         cleanupOutdatedCaches: true,
       },
