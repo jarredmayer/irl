@@ -75,22 +75,27 @@ export class SofarSoundsScraper extends BaseScraper {
   async scrape(): Promise<RawEvent[]> {
     this.log('Fetching Sofar Sounds Miami events via GraphQL...');
 
-    const response = await this.fetch('https://www.sofarsounds.com/api/v2/graphql', {
-      method: 'POST',
-      headers: {
+    const data = await this.fetchJSONNative<{
+      data?: { events?: { events?: SofarEvent[] } };
+      errors?: unknown[];
+    }>(
+      'https://www.sofarsounds.com/api/v2/graphql',
+      JSON.stringify({ query: GRAPHQL_QUERY }),
+      {
         'Content-Type': 'application/json',
-        'User-Agent': this.userAgent,
-      },
-      body: JSON.stringify({ query: GRAPHQL_QUERY }),
-    });
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        Referer: 'https://www.sofarsounds.com/miami',
+        Origin: 'https://www.sofarsounds.com',
+        Accept: 'application/json',
+      }
+    );
 
-    const json = await response.json() as { data?: { events?: { events?: SofarEvent[] } }; errors?: unknown[] };
-
-    if (json.errors) {
-      this.log(`GraphQL errors: ${JSON.stringify(json.errors).slice(0, 200)}`);
+    if (data.errors) {
+      this.log(`GraphQL errors: ${JSON.stringify(data.errors).slice(0, 200)}`);
+      return [];
     }
 
-    const sofarEvents = json.data?.events?.events ?? [];
+    const sofarEvents = data.data?.events?.events ?? [];
     this.log(`Found ${sofarEvents.length} upcoming Sofar events`);
 
     const events: RawEvent[] = [];

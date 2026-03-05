@@ -335,13 +335,7 @@ export class BrowardCenterScraper extends BaseScraper {
     for (let page = 1; page <= 6; page++) {
       try {
         const url = page === 1 ? this.baseUrl : `${this.baseUrl}?page=${page}`;
-        // Use native fetch for DNS fallback in CI
-        let $: ReturnType<typeof import('cheerio').load>;
-        try {
-          $ = await this.fetchHTMLNativeRetry(url, 2, 12_000);
-        } catch {
-          $ = await this.fetchHTML(url);
-        }
+        const $ = await this.fetchHTMLNativeRetry(url, 2, 12_000);
         let pageCount = 0;
 
         // The site uses h3 > a for event titles inside event card containers
@@ -499,13 +493,7 @@ export class RevolutionLiveScraper extends BaseScraper {
     const seen = new Set<string>();
 
     try {
-      // Use native fetch for DNS fallback in CI
-      let $: ReturnType<typeof import('cheerio').load>;
-      try {
-        $ = await this.fetchHTMLNativeRetry(this.url, 2, 12_000);
-      } catch {
-        $ = await this.fetchHTML(this.url);
-      }
+      const $ = await this.fetchHTMLNativeRetry(this.url, 2, 15_000);
 
       // Revolution Live uses WordPress with event listing elements
       // Each concert has: title, date, time, price, age restriction, ticket link

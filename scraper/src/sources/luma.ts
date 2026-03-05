@@ -230,24 +230,33 @@ export class LumaScraper extends BaseScraper {
   }
 
   private findEvents(data: any): LumaEventRaw[] {
-    // Common paths in Luma's Next.js data
-    const possiblePaths = [
-      data?.props?.pageProps?.events,
-      data?.props?.pageProps?.initialData?.events,
-      data?.props?.pageProps?.data?.events,
-      data?.props?.pageProps?.calendar?.events,
-      data?.props?.pageProps?.entries,
-      data?.props?.pageProps?.initialData?.entries,
-    ];
+    // Actual Luma Next.js data path (confirmed 2026-03-05)
+    const wrappers = data?.props?.pageProps?.initialData?.data?.events
+      ?? data?.props?.pageProps?.initialData?.data?.featured_events
+      ?? data?.props?.pageProps?.events
+      ?? data?.props?.pageProps?.initialData?.events;
 
-    for (const path of possiblePaths) {
-      if (Array.isArray(path) && path.length > 0) {
-        // Some paths wrap events in { event: {...} } objects
-        return path.map((item: any) => item.event || item);
-      }
+    if (Array.isArray(wrappers) && wrappers.length > 0) {
+      // Wrappers have shape: { start_at, event: { name, url, coordinate, geo_address_info, ... } }
+      return wrappers.map((wrapper: any) => {
+        const inner = wrapper.event || wrapper;
+        return {
+          ...inner,
+          // Prefer top-level start_at (more reliable), fall back to inner
+          start_at: wrapper.start_at || inner.start_at,
+          // Map geo_address_info → geo_address_json expected by mapEvent()
+          geo_address_json: inner.geo_address_info ? {
+            full_address: inner.geo_address_info.full_address,
+            city: inner.geo_address_info.city,
+            latitude: inner.coordinate?.latitude,
+            longitude: inner.coordinate?.longitude,
+          } : undefined,
+          geo_latitude: inner.coordinate?.latitude,
+          geo_longitude: inner.coordinate?.longitude,
+        };
+      });
     }
 
-    // Deep search
     return this.findEventsDeep(data);
   }
 

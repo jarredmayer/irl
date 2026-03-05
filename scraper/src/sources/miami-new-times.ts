@@ -59,8 +59,8 @@ export class MiamiNewTimesScraper extends BaseScraper {
       return apiEvents;
     }
 
-    // Strategy 2: HTML scraping with updated selectors
-    this.log('Tribe API unavailable, falling back to HTML scraping...');
+    // Strategy 2: HTML scraping — limited to 3 days to avoid 120s timeout
+    this.log('Tribe API unavailable, falling back to HTML scraping (3 days only)...');
     const htmlEvents = await this.scrapeHtml();
     this.log(`Total: ${htmlEvents.length} events from HTML scraping`);
     return htmlEvents;
@@ -140,7 +140,7 @@ export class MiamiNewTimesScraper extends BaseScraper {
 
   private async scrapeHtml(): Promise<RawEvent[]> {
     const events: RawEvent[] = [];
-    const daysAhead = 14;
+    const daysAhead = 3; // Limited to avoid 120s scraper timeout when API is down
 
     this.log(`Scraping HTML events for next ${daysAhead} days...`);
 
