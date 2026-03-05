@@ -488,6 +488,8 @@ export class InstagramSourcesScraper extends BaseScraper {
     { handle: 'wiltonmanorsfl', name: 'Wilton Manors', city: 'Fort Lauderdale', category: 'Community', knownEvents: [] },
     { handle: 'lauderale', name: 'Lauder Ale FTL', city: 'Fort Lauderdale', category: 'Community', knownEvents: [] },
     { handle: 'thirdspacesmiami', name: 'Third Spaces Miami', city: 'Miami', category: 'Community', knownEvents: [] },
+    { handle: 'miamifriendors', name: 'Miami Friendors', city: 'Miami', category: 'Community', knownEvents: [] },
+    { handle: 'sofarsoundsmiami', name: 'Sofar Sounds Miami', city: 'Miami', category: 'Music', websiteUrl: 'https://www.sofarsounds.com/cities/miami', knownEvents: [] },
     { handle: 'miamiconcours', name: 'Miami Concours', city: 'Miami', category: 'Culture', knownEvents: [] },
     { handle: 'miamijazzbooking', name: 'Miami Jazz Booking', city: 'Miami', category: 'Music', knownEvents: [] },
     { handle: 'coffeeandchillmiami', name: 'Coffee and Chill Miami', city: 'Miami', category: 'Community', knownEvents: [] },
