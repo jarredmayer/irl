@@ -69,14 +69,18 @@ jobs:
           fi
 
       - name: Run Instagram post scraper
-        if: ${{ secrets.INSTAGRAM_SESSION_ID != '' && secrets.ANTHROPIC_API_KEY != '' }}
         continue-on-error: true
         timeout-minutes: 5
         working-directory: scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           INSTAGRAM_SESSION_ID: ${{ secrets.INSTAGRAM_SESSION_ID }}
-        run: npm run scrape:ig
+        run: |
+          if [ -z "$INSTAGRAM_SESSION_ID" ] || [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "Skipping Instagram scraper: secrets not configured"
+            exit 0
+          fi
+          npm run scrape:ig
 
       - name: Run scraper
         continue-on-error: true
