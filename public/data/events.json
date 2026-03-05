@@ -1522,39 +1522,6 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "859f82c4e6c5e181",
-    "title": "Flagler Museum: Gilded Age Tour",
-    "startAt": "2026-03-05T10:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Flagler Museum",
-    "address": "1 Whitehall Way, Palm Beach, FL 33480",
-    "neighborhood": "West Palm Beach",
-    "lat": 26.719,
-    "lng": -80.0383,
-    "city": "Palm Beach",
-    "tags": [
-      "museum",
-      "local-favorite"
-    ],
-    "category": "Culture",
-    "priceLabel": "$$",
-    "isOutdoor": false,
-    "shortWhy": "Flagler Museum live at Flagler Museum.",
-    "editorialWhy": "Tour the stunning Whitehall mansion, Henry Flagler's 75-room Gilded Age estate. See the private railcar, art collection, and learn the history that built Florida. At Flagler Museum in West Palm Beach. Tickets from $26.",
-    "description": "Tour the stunning Whitehall mansion, Henry Flagler's 75-room Gilded Age estate. See the private railcar, art collection, and learn the history that built Florida.",
-    "ticketUrl": "https://www.flaglermuseum.us/",
-    "source": {
-      "name": "Palm Beach",
-      "url": "https://www.flaglermuseum.us/"
-    },
-    "image": "https://images.unsplash.com/photo-1566054757965-8c4085344c96?w=800&q=80",
-    "editorPick": true,
-    "seriesId": "a76c4454e51e",
-    "seriesName": "Flagler Museum: Gilded Age Tour",
-    "venueId": "9c0474a82a79",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
     "id": "cf31768ca01488e8",
     "title": "Flagler Museum: Gilded Age Tour",
     "startAt": "2026-03-06T10:00:00",
@@ -5215,41 +5182,6 @@
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     "editorPick": true,
     "venueId": "a10dd744543f",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
-    "id": "f7dc981679613eb7",
-    "title": "PAMM: Free First Thursday",
-    "startAt": "2026-03-05T12:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
-    "address": "1103 Biscayne Blvd, Miami, FL 33132",
-    "neighborhood": "Downtown",
-    "lat": 25.7859,
-    "lng": -80.1863,
-    "city": "Miami",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event",
-      "waterfront",
-      "local-favorite",
-      "contemporary-art"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "PAMM live at Pérez Art Museum Miami.",
-    "editorialWhy": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus. At Pérez Art Museum Miami in Downtown Miami. Free to attend.",
-    "description": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
-    "ticketUrl": "https://www.pamm.org/visit/",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://www.pamm.org/visit/"
-    },
-    "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80",
-    "editorPick": true,
-    "venueId": "pamm",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
