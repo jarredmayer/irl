@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-04T15:54:57.267Z",
+  "scrapedAt": "2026-03-05T04:18:02.056Z",
   "stats": {
-    "total": 1088,
-    "deduplicated": 750,
+    "total": 1087,
+    "deduplicated": 751,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -41,7 +41,7 @@
       "SavorCinema": 0,
       "WeekendBroward PoW": 0,
       "WeekendBroward Enhanced": 0,
-      "WeekendBroward Verified": 106,
+      "WeekendBroward Verified": 105,
       "WeekendBroward": 0,
       "WeekendBroward Google": 0
     }
@@ -50,7 +50,7 @@
     "added": 0,
     "removed": 0,
     "modified": 0,
-    "unchanged": 750
+    "unchanged": 751
   },
   "sources": [
     {
@@ -289,7 +289,7 @@
     },
     {
       "name": "WeekendBroward Verified",
-      "count": 106,
+      "count": 105,
       "status": "ok",
       "errors": []
     },

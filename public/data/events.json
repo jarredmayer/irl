@@ -2479,6 +2479,39 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
+    "id": "7f032cf9c55d8ed7",
+    "title": "Flagler Museum: Gilded Age Tour",
+    "startAt": "2026-04-15T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Flagler Museum",
+    "address": "1 Whitehall Way, Palm Beach, FL 33480",
+    "neighborhood": "West Palm Beach",
+    "lat": 26.719,
+    "lng": -80.0383,
+    "city": "Palm Beach",
+    "tags": [
+      "museum",
+      "local-favorite"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Flagler Museum live at Flagler Museum.",
+    "editorialWhy": "Tour the stunning Whitehall mansion, Henry Flagler's 75-room Gilded Age estate. See the private railcar, art collection, and learn the history that built Florida. At Flagler Museum in West Palm Beach. Tickets from $26.",
+    "description": "Tour the stunning Whitehall mansion, Henry Flagler's 75-room Gilded Age estate. See the private railcar, art collection, and learn the history that built Florida.",
+    "ticketUrl": "https://www.flaglermuseum.us/",
+    "source": {
+      "name": "Palm Beach",
+      "url": "https://www.flaglermuseum.us/"
+    },
+    "image": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&q=80",
+    "editorPick": true,
+    "seriesId": "a76c4454e51e",
+    "seriesName": "Flagler Museum: Gilded Age Tour",
+    "venueId": "9c0474a82a79",
+    "addedAt": "2026-03-05T01:57:57.127Z"
+  },
+  {
     "id": "53e6bb776869d92c",
     "title": "Rock the Park: Good Bread & Bread Zeppelin",
     "startAt": "2026-03-07T19:00:00",
@@ -4421,7 +4454,7 @@
       "name": "@biltmorehotel",
       "url": "https://instagram.com/@biltmorehotel"
     },
-    "image": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80",
+    "image": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
     "editorPick": true,
     "seriesId": "e926191d5bda",
     "seriesName": "Sunday Jazz Brunch at The Biltmore",
@@ -4456,7 +4489,7 @@
       "name": "@biltmorehotel",
       "url": "https://instagram.com/@biltmorehotel"
     },
-    "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80",
+    "image": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
     "editorPick": true,
     "seriesId": "e926191d5bda",
     "seriesName": "Sunday Jazz Brunch at The Biltmore",
@@ -4491,7 +4524,7 @@
       "name": "@biltmorehotel",
       "url": "https://instagram.com/@biltmorehotel"
     },
-    "image": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&q=80",
+    "image": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
     "editorPick": true,
     "seriesId": "e926191d5bda",
     "seriesName": "Sunday Jazz Brunch at The Biltmore",
@@ -4526,7 +4559,7 @@
       "name": "@biltmorehotel",
       "url": "https://instagram.com/@biltmorehotel"
     },
-    "image": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80",
+    "image": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
     "editorPick": true,
     "seriesId": "e926191d5bda",
     "seriesName": "Sunday Jazz Brunch at The Biltmore",
@@ -4561,7 +4594,7 @@
       "name": "@biltmorehotel",
       "url": "https://instagram.com/@biltmorehotel"
     },
-    "image": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&q=80",
+    "image": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
     "editorPick": true,
     "seriesId": "e926191d5bda",
     "seriesName": "Sunday Jazz Brunch at The Biltmore",
@@ -4596,7 +4629,7 @@
       "name": "@biltmorehotel",
       "url": "https://instagram.com/@biltmorehotel"
     },
-    "image": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&q=80",
+    "image": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
     "editorPick": true,
     "seriesId": "e926191d5bda",
     "seriesName": "Sunday Jazz Brunch at The Biltmore",
@@ -4631,7 +4664,7 @@
       "name": "@biltmorehotel",
       "url": "https://instagram.com/@biltmorehotel"
     },
-    "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80",
+    "image": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
     "editorPick": true,
     "seriesId": "e926191d5bda",
     "seriesName": "Sunday Jazz Brunch at The Biltmore",
@@ -4666,7 +4699,7 @@
       "name": "@biltmorehotel",
       "url": "https://instagram.com/@biltmorehotel"
     },
-    "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80",
+    "image": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
     "editorPick": true,
     "seriesId": "e926191d5bda",
     "seriesName": "Sunday Jazz Brunch at The Biltmore",
@@ -7424,40 +7457,6 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "7c6542ec1a98dc81",
-    "title": "Yoga at Peacock Park",
-    "startAt": "2026-03-04T18:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Peacock Park",
-    "address": "2820 McFarlane Rd, Miami, FL 33133",
-    "neighborhood": "Coconut Grove",
-    "lat": 25.7267,
-    "lng": -80.242,
-    "city": "Miami",
-    "tags": [
-      "wellness",
-      "free-event",
-      "outdoor",
-      "park",
-      "local-favorite",
-      "waterfront"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Yoga live at Peacock Park.",
-    "editorialWhy": "Free outdoor yoga in Coconut Grove's Peacock Park. Open Door Yoga with instructor Natalie Morales. All ages and fitness levels welcome. Outdoors at Peacock Park in Coconut Grove. Free to attend.",
-    "description": "Free outdoor yoga in Coconut Grove's Peacock Park. Open Door Yoga with instructor Natalie Morales. All ages and fitness levels welcome.",
-    "source": {
-      "name": "Free Yoga Miami",
-      "url": "https://www.miamiandbeaches.com/things-to-do/spa-wellness/free-yoga-in-miami"
-    },
-    "image": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80",
-    "editorPick": true,
-    "venueId": "peacock-park",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
     "id": "a27c0d92d14a6c8b",
     "title": "Yoga at Peacock Park",
     "startAt": "2026-03-11T18:30:00",
@@ -7694,6 +7693,40 @@
     "editorPick": true,
     "venueId": "peacock-park",
     "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "865a4bdea598d003",
+    "title": "Yoga at Peacock Park",
+    "startAt": "2026-04-29T18:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Peacock Park",
+    "address": "2820 McFarlane Rd, Miami, FL 33133",
+    "neighborhood": "Coconut Grove",
+    "lat": 25.7267,
+    "lng": -80.242,
+    "city": "Miami",
+    "tags": [
+      "wellness",
+      "free-event",
+      "outdoor",
+      "park",
+      "local-favorite",
+      "waterfront"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Yoga live at Peacock Park.",
+    "editorialWhy": "Free outdoor yoga in Coconut Grove's Peacock Park. Open Door Yoga with instructor Natalie Morales. All ages and fitness levels welcome. Outdoors at Peacock Park in Coconut Grove. Free to attend.",
+    "description": "Free outdoor yoga in Coconut Grove's Peacock Park. Open Door Yoga with instructor Natalie Morales. All ages and fitness levels welcome.",
+    "source": {
+      "name": "Free Yoga Miami",
+      "url": "https://www.miamiandbeaches.com/things-to-do/spa-wellness/free-yoga-in-miami"
+    },
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+    "editorPick": true,
+    "venueId": "peacock-park",
+    "addedAt": "2026-03-05T01:57:57.127Z"
   },
   {
     "id": "f786026fa72a333f",
@@ -9422,39 +9455,6 @@
     "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "underline-brickell",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
-    "id": "f9284441eae27a51",
-    "title": "Paul Anka: A Man and His Music",
-    "startAt": "2026-03-04T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Broward Center",
-    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1471,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "live-music",
-      "performing-arts",
-      "broadway",
-      "concerts"
-    ],
-    "category": "Music",
-    "priceLabel": "$$$",
-    "isOutdoor": false,
-    "shortWhy": "Paul Anka live at Broward Center for the Performing Arts.",
-    "editorialWhy": "Legendary singer-songwriter Paul Anka — \"Put Your Head on My Shoulder,\" \"Diana,\" and dozens of timeless hits live at Broward Center. At Broward Center for the Performing Arts in Riverwalk. Tickets from $60.",
-    "description": "Legendary singer-songwriter Paul Anka — \"Put Your Head on My Shoulder,\" \"Diana,\" and dozens of timeless hits live at Broward Center.",
-    "ticketUrl": "https://www.browardcenter.org/events",
-    "source": {
-      "name": "WeekendBroward Verified",
-      "url": "https://www.browardcenter.org/events"
-    },
-    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
-    "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
@@ -12419,7 +12419,7 @@
       "name": "@wynwoodwalls",
       "url": "https://instagram.com/@wynwoodwalls"
     },
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
+    "image": "https://thewynwoodwalls.com/wp-content/uploads/2025/02/Goldman-Properties-Hero-Banner-scaled.jpg",
     "editorPick": true,
     "seriesId": "a0084b00cc69",
     "seriesName": "Wynwood Walls: Second Saturday Art Walk",
@@ -12455,7 +12455,7 @@
       "name": "@wynwoodwalls",
       "url": "https://instagram.com/@wynwoodwalls"
     },
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
+    "image": "https://thewynwoodwalls.com/wp-content/uploads/2025/02/Goldman-Properties-Hero-Banner-scaled.jpg",
     "editorPick": true,
     "seriesId": "a0084b00cc69",
     "seriesName": "Wynwood Walls: Second Saturday Art Walk",
@@ -12491,7 +12491,7 @@
       "name": "@wynwoodwalls",
       "url": "https://instagram.com/@wynwoodwalls"
     },
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
+    "image": "https://thewynwoodwalls.com/wp-content/uploads/2025/02/Goldman-Properties-Hero-Banner-scaled.jpg",
     "editorPick": true,
     "seriesId": "a0084b00cc69",
     "seriesName": "Wynwood Walls: Second Saturday Art Walk",
@@ -14542,39 +14542,6 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "7bf6c05330b6b213",
-    "title": "On Running Club Miami",
-    "startAt": "2026-03-04T18:30:00",
-    "timezone": "America/New_York",
-    "venueName": "On Store Miami Design District",
-    "address": "125 NE 40th St, Miami, FL 33137",
-    "neighborhood": "Design District",
-    "lat": 25.8135,
-    "lng": -80.1918,
-    "city": "Miami",
-    "tags": [
-      "fitness",
-      "free-event",
-      "community",
-      "running",
-      "free"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout in Design District.",
-    "editorialWhy": "Weekly run club at On Running's Design District store. All levels welcome, from beginners to competitive runners. Outdoors at On Store Miami Design District in Design District. Free to attend.",
-    "description": "Weekly run club at On Running's Design District store. All levels welcome, from beginners to competitive runners.",
-    "source": {
-      "name": "Run Clubs",
-      "url": "https://miami.weekly.run.events.on-running.com/"
-    },
-    "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
-    "editorPick": false,
-    "venueId": "on-store-design-district",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
     "id": "df2de4d036435d61",
     "title": "On Running Club Miami",
     "startAt": "2026-03-11T18:30:00",
@@ -14804,6 +14771,39 @@
     "editorPick": false,
     "venueId": "on-store-design-district",
     "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "daabce02fb62cb93",
+    "title": "On Running Club Miami",
+    "startAt": "2026-04-29T18:30:00",
+    "timezone": "America/New_York",
+    "venueName": "On Store Miami Design District",
+    "address": "125 NE 40th St, Miami, FL 33137",
+    "neighborhood": "Design District",
+    "lat": 25.8135,
+    "lng": -80.1918,
+    "city": "Miami",
+    "tags": [
+      "fitness",
+      "free-event",
+      "community",
+      "running",
+      "free"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Free workout in Design District.",
+    "editorialWhy": "Weekly run club at On Running's Design District store. All levels welcome, from beginners to competitive runners. Outdoors at On Store Miami Design District in Design District. Free to attend.",
+    "description": "Weekly run club at On Running's Design District store. All levels welcome, from beginners to competitive runners.",
+    "source": {
+      "name": "Run Clubs",
+      "url": "https://miami.weekly.run.events.on-running.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
+    "editorPick": false,
+    "venueId": "on-store-design-district",
+    "addedAt": "2026-03-05T01:57:57.127Z"
   },
   {
     "id": "56ee621f7b7fb6b6",
@@ -17893,39 +17893,6 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "2311c029cdd55f5f",
-    "title": "Don't Tell Comedy - Secret Show",
-    "startAt": "2026-03-05T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Secret Location (Wynwood)",
-    "address": "Wynwood, Miami, FL 33127",
-    "neighborhood": "Wynwood",
-    "lat": 25.8011,
-    "lng": -80.1996,
-    "city": "Miami",
-    "tags": [
-      "comedy",
-      "local-favorite"
-    ],
-    "category": "Comedy",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Don't Tell Comedy live at Secret Location (Wynwood).",
-    "editorialWhy": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged. At Secret Location (Wynwood) in Wynwood. Tickets from $20.",
-    "description": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged.",
-    "ticketUrl": "https://www.donttellcomedy.com/miami",
-    "source": {
-      "name": "Don't Tell Comedy",
-      "url": "https://www.donttellcomedy.com/miami"
-    },
-    "image": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80",
-    "editorPick": true,
-    "seriesId": "cadae11ec26c",
-    "seriesName": "Don't Tell Comedy - Secret Show",
-    "venueId": "6a7796b66e76",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
     "id": "a7bd0814ef31fe86",
     "title": "Don't Tell Comedy - Secret Show",
     "startAt": "2026-03-12T20:00:00",
@@ -18155,6 +18122,39 @@
     "seriesName": "Don't Tell Comedy - Secret Show",
     "venueId": "6a7796b66e76",
     "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "d9e7d569b6b583eb",
+    "title": "Don't Tell Comedy - Secret Show",
+    "startAt": "2026-04-30T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Secret Location (Wynwood)",
+    "address": "Wynwood, Miami, FL 33127",
+    "neighborhood": "Wynwood",
+    "lat": 25.8011,
+    "lng": -80.1996,
+    "city": "Miami",
+    "tags": [
+      "comedy",
+      "local-favorite"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Don't Tell Comedy live at Secret Location (Wynwood).",
+    "editorialWhy": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged. At Secret Location (Wynwood) in Wynwood. Tickets from $20.",
+    "description": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged.",
+    "ticketUrl": "https://www.donttellcomedy.com/miami",
+    "source": {
+      "name": "Don't Tell Comedy",
+      "url": "https://www.donttellcomedy.com/miami"
+    },
+    "image": "https://images.unsplash.com/photo-1585699324551-f6c309eedeca?w=800&q=80",
+    "editorPick": true,
+    "seriesId": "cadae11ec26c",
+    "seriesName": "Don't Tell Comedy - Secret Show",
+    "venueId": "6a7796b66e76",
+    "addedAt": "2026-03-05T01:57:57.127Z"
   },
   {
     "id": "cd3633a17db41679",
@@ -19405,9 +19405,9 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "152c66a09546785f",
+    "id": "6e7088fc14cbad82",
     "title": "260 Sample Sale Weekly Drop",
-    "startAt": "2026-03-05T11:00:00",
+    "startAt": "2026-03-11T11:00:00",
     "timezone": "America/New_York",
     "venueName": "260 Sample Sale",
     "address": "2450 NW 2nd Ave, Miami, FL 33127",
@@ -19431,7 +19431,7 @@
       "name": "Pop-Ups",
       "url": "https://260samplesale.com/"
     },
-    "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
     "editorPick": false,
     "seriesId": "b9086c6ae372",
     "seriesName": "260 Sample Sale Weekly Drop",
@@ -19541,9 +19541,9 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "6e7088fc14cbad82",
+    "id": "3c90dfafc69fe5ce",
     "title": "260 Sample Sale Weekly Drop",
-    "startAt": "2026-03-11T11:00:00",
+    "startAt": "2026-03-18T11:00:00",
     "timezone": "America/New_York",
     "venueName": "260 Sample Sale",
     "address": "2450 NW 2nd Ave, Miami, FL 33127",
@@ -19711,9 +19711,9 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "3c90dfafc69fe5ce",
+    "id": "dc45f91696140677",
     "title": "260 Sample Sale Weekly Drop",
-    "startAt": "2026-03-18T11:00:00",
+    "startAt": "2026-03-25T11:00:00",
     "timezone": "America/New_York",
     "venueName": "260 Sample Sale",
     "address": "2450 NW 2nd Ave, Miami, FL 33127",
@@ -19737,7 +19737,7 @@
       "name": "Pop-Ups",
       "url": "https://260samplesale.com/"
     },
-    "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
     "editorPick": false,
     "seriesId": "b9086c6ae372",
     "seriesName": "260 Sample Sale Weekly Drop",
@@ -19881,9 +19881,9 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "dc45f91696140677",
+    "id": "b4059c761881295b",
     "title": "260 Sample Sale Weekly Drop",
-    "startAt": "2026-03-25T11:00:00",
+    "startAt": "2026-04-01T11:00:00",
     "timezone": "America/New_York",
     "venueName": "260 Sample Sale",
     "address": "2450 NW 2nd Ave, Miami, FL 33127",
@@ -19912,7 +19912,7 @@
     "seriesId": "b9086c6ae372",
     "seriesName": "260 Sample Sale Weekly Drop",
     "venueId": "260-sample-sale",
-    "addedAt": "2026-03-04T15:38:09.092Z"
+    "addedAt": "2026-03-05T01:57:57.127Z"
   },
   {
     "id": "d6d092a34ea25511",
@@ -21855,40 +21855,6 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "17b0900b0b222cf2",
-    "title": "Yoga at Collins Park",
-    "startAt": "2026-03-04T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "The Bass",
-    "address": "2100 Collins Ave, Miami Beach, FL 33139",
-    "neighborhood": "South Beach",
-    "lat": 25.795,
-    "lng": -80.1302,
-    "city": "Miami",
-    "tags": [
-      "wellness",
-      "free-event",
-      "outdoor",
-      "park",
-      "museum",
-      "contemporary-art"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Yoga live at Collins Park at The Bass.",
-    "editorialWhy": "Free outdoor yoga in Collins Park presented by City of Miami Beach Parks and Recreation. Outdoors at Collins Park at The Bass in South Beach. Free to attend.",
-    "description": "Free outdoor yoga in Collins Park presented by City of Miami Beach Parks and Recreation.",
-    "source": {
-      "name": "Free Yoga Miami",
-      "url": "https://www.miamiandbeaches.com/things-to-do/spa-wellness/free-yoga-in-miami"
-    },
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
-    "editorPick": false,
-    "venueId": "the-bass",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
     "id": "cd6edb6497a1f42c",
     "title": "Yoga at Collins Park",
     "startAt": "2026-03-11T18:00:00",
@@ -22125,6 +22091,40 @@
     "editorPick": false,
     "venueId": "the-bass",
     "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "cdce3cb96ac01c09",
+    "title": "Yoga at Collins Park",
+    "startAt": "2026-04-29T18:00:00",
+    "timezone": "America/New_York",
+    "venueName": "The Bass",
+    "address": "2100 Collins Ave, Miami Beach, FL 33139",
+    "neighborhood": "South Beach",
+    "lat": 25.795,
+    "lng": -80.1302,
+    "city": "Miami",
+    "tags": [
+      "wellness",
+      "free-event",
+      "outdoor",
+      "park",
+      "museum",
+      "contemporary-art"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Yoga live at Collins Park at The Bass.",
+    "editorialWhy": "Free outdoor yoga in Collins Park presented by City of Miami Beach Parks and Recreation. Outdoors at Collins Park at The Bass in South Beach. Free to attend.",
+    "description": "Free outdoor yoga in Collins Park presented by City of Miami Beach Parks and Recreation.",
+    "source": {
+      "name": "Free Yoga Miami",
+      "url": "https://www.miamiandbeaches.com/things-to-do/spa-wellness/free-yoga-in-miami"
+    },
+    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
+    "editorPick": false,
+    "venueId": "the-bass",
+    "addedAt": "2026-03-05T01:57:57.127Z"
   },
   {
     "id": "8be9bee7253752b9",
@@ -23408,6 +23408,40 @@
     "seriesName": "Lauderdale Run Club: Weekday Run",
     "venueId": "ada49f625f52",
     "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "da919f0fecdf72aa",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-04-29T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Lauderdale Run Club live at Holiday Park.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. At Holiday Park in Victoria Park. Free to attend.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/@lauderdalerunclub"
+    },
+    "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
+    "editorPick": false,
+    "seriesId": "7ab26efc8104",
+    "seriesName": "Lauderdale Run Club: Weekday Run",
+    "venueId": "ada49f625f52",
+    "addedAt": "2026-03-05T01:57:57.127Z"
   },
   {
     "id": "ac62781558260c25",

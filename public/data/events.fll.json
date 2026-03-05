@@ -2369,39 +2369,6 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "f9284441eae27a51",
-    "title": "Paul Anka: A Man and His Music",
-    "startAt": "2026-03-04T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Broward Center",
-    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1471,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "live-music",
-      "performing-arts",
-      "broadway",
-      "concerts"
-    ],
-    "category": "Music",
-    "priceLabel": "$$$",
-    "isOutdoor": false,
-    "shortWhy": "Paul Anka live at Broward Center for the Performing Arts.",
-    "editorialWhy": "Legendary singer-songwriter Paul Anka — \"Put Your Head on My Shoulder,\" \"Diana,\" and dozens of timeless hits live at Broward Center. At Broward Center for the Performing Arts in Riverwalk. Tickets from $60.",
-    "description": "Legendary singer-songwriter Paul Anka — \"Put Your Head on My Shoulder,\" \"Diana,\" and dozens of timeless hits live at Broward Center.",
-    "ticketUrl": "https://www.browardcenter.org/events",
-    "source": {
-      "name": "WeekendBroward Verified",
-      "url": "https://www.browardcenter.org/events"
-    },
-    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
-    "venueId": "broward-center",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
     "id": "96859118504a8ae6",
     "title": "Dania Beach Wine & Seafood Festival",
     "startAt": "2026-03-14T16:00:00",
@@ -4727,6 +4694,40 @@
     "seriesName": "Lauderdale Run Club: Weekday Run",
     "venueId": "ada49f625f52",
     "addedAt": "2026-03-04T15:38:09.092Z"
+  },
+  {
+    "id": "da919f0fecdf72aa",
+    "title": "Lauderdale Run Club: Weekday Run",
+    "startAt": "2026-04-29T06:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Holiday Park",
+    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
+    "neighborhood": "Victoria Park",
+    "lat": 26.1418,
+    "lng": -80.1248,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "running",
+      "free-event",
+      "community",
+      "outdoor"
+    ],
+    "category": "Fitness",
+    "priceLabel": "Free",
+    "isOutdoor": false,
+    "shortWhy": "Lauderdale Run Club live at Holiday Park.",
+    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. At Holiday Park in Victoria Park. Free to attend.",
+    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+    "source": {
+      "name": "@lauderdalerunclub",
+      "url": "https://instagram.com/@lauderdalerunclub"
+    },
+    "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
+    "editorPick": false,
+    "seriesId": "7ab26efc8104",
+    "seriesName": "Lauderdale Run Club: Weekday Run",
+    "venueId": "ada49f625f52",
+    "addedAt": "2026-03-05T01:57:57.127Z"
   },
   {
     "id": "465dc10e4e54187a",

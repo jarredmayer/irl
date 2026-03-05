@@ -1,4 +1,117 @@
 {
   "version": 2,
-  "entries": {}
+  "entries": {
+    "https://thewynwoodwalls.com/": {
+      "url": "https://thewynwoodwalls.com/wp-content/uploads/2025/02/Goldman-Properties-Hero-Banner-scaled.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://wynwoodwalls.com/": {
+      "url": "https://thewynwoodwalls.com/wp-content/uploads/2025/02/Goldman-Properties-Hero-Banner-scaled.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://biltmorehotel.com/": {
+      "url": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.biltmorehotel.com/": {
+      "url": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.biltmorehotel.com/miami-resort-calendar/": {
+      "url": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.miamiimprov.com/": {
+      "url": "https://files.seatengine.com/styles/logos/330/original/improv-logo-373w.png?1539262913",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.miamiimprov.com/events": {
+      "url": "https://files.seatengine.com/styles/logos/330/original/improv-logo-373w.png?1539262913",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://churchillspub.com/": {
+      "url": "https://churchillspub.com/wp-content/uploads/2025/07/WereBack_01_ChurchillsPub-scaled-1-e1753286175613.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.thebetsyhotel.com/": {
+      "url": "https://www.thebetsyhotel.com/sites/default/files/styles/hero_desktop/public/2024-04/betsy-facade_1920x857.jpg?h=e01c0516&itok=nvqjtq3y",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.thebetsyhotel.com/events/": {
+      "url": "https://www.thebetsyhotel.com/sites/default/files/styles/hero_desktop/public/2024-04/betsy-facade_1920x857.jpg?h=e01c0516&itok=nvqjtq3y",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.jungleisland.com/": {
+      "url": "https://www.jungleisland.com/wp-content/uploads/2022/09/Social-Featured-v2.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.jungleisland.com/calendar-of-events/": {
+      "url": "https://www.jungleisland.com/wp-content/uploads/2022/09/Social-Featured-v2.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://historymiami.org/": {
+      "url": "https://historymiami.org/wp-content/uploads/Discount.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.historymiami.org/": {
+      "url": "https://historymiami.org/wp-content/uploads/Discount.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://deeringestate.org/": {
+      "url": "https://deeringestate.org/wp-content/uploads/2023/11/Babylonischer-Turm-II-in-nature-474x324.jpeg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.deeringestate.org/": {
+      "url": "https://deeringestate.org/wp-content/uploads/2023/11/Babylonischer-Turm-II-in-nature-474x324.jpeg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.deeringestate.org/deering-events/signature-events/": {
+      "url": "https://deeringestate.org/wp-content/uploads/2023/11/Babylonischer-Turm-II-in-nature-474x324.jpeg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://oolitearts.org/": {
+      "url": "https://oolitearts.org/wp-content/uploads/2023/10/Tony-Ulloa-Bow-Ty-Amanda-Rosa-Cesar-Trasobares-Liz-Ferrer-Diana-Eusebio-Cornelius-Tulloch-1-scaled.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.artcentersf.org/": {
+      "url": "https://oolitearts.org/wp-content/uploads/2023/10/Tony-Ulloa-Bow-Ty-Amanda-Rosa-Cesar-Trasobares-Liz-Ferrer-Diana-Eusebio-Cornelius-Tulloch-1-scaled.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://esmehotel.com/": {
+      "url": "https://image-tc.galaxy.tf/wijpeg-7zk3d48l0hvzkovx9zyn71ssc/exterior-el-saloi-n-5.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://esmehotel.com/events/happenings": {
+      "url": "https://image-tc.galaxy.tf/wijpeg-7zk3d48l0hvzkovx9zyn71ssc/exterior-el-saloi-n-5.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://www.standardhotels.com/miami/properties/miami-beach": {
+      "url": "https://duvx7h32ggrur.cloudfront.net/attachments/fd5ecb7f123b44e28da06403052d36d57b102e79/store/fill/1200/630/6bd7e9c0d1e8561178be80bcaf3a59705d35cbb843e75e059cfe54c47b9e/stmia_2024_johannvazquez_gardens_04.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://instagram.com/@biltmorehotel": {
+      "url": "https://biltmorehotel.com/wp-content/uploads/Biltmore-Hotel-Miami-Coral-Gables-Exterior-Overlooking-Biltmore-Golf-Course-lg.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://instagram.com/@churchillspub": {
+      "url": "https://churchillspub.com/wp-content/uploads/2025/07/WereBack_01_ChurchillsPub-scaled-1-e1753286175613.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://instagram.com/@wynwoodwalls": {
+      "url": "https://thewynwoodwalls.com/wp-content/uploads/2025/02/Goldman-Properties-Hero-Banner-scaled.jpg",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://instagram.com/@pamm_museum": {
+      "url": "",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://instagram.com/@miamiedition": {
+      "url": "",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    },
+    "https://instagram.com/@miamibloco": {
+      "url": "",
+      "fetchedAt": "2026-03-05T02:00:00.000Z"
+    }
+  }
 }
