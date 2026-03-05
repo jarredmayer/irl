@@ -64,8 +64,14 @@ export class LasOlasEventsScraper extends BaseScraper {
 
   private async scrapeFromWarmupData(): Promise<RawEvent[]> {
     try {
-      const response = await this.fetch(this.PAGE_URL);
-      const html = await response.text();
+      // Use native fetch for DNS fallback in CI
+      let html: string;
+      try {
+        html = await this.fetchHTMLNative(this.PAGE_URL, 15_000);
+      } catch {
+        const response = await this.fetch(this.PAGE_URL);
+        html = await response.text();
+      }
 
       // Find the events JSON array in warmupData
       // Pattern: "events":{"events":[...]}
@@ -212,8 +218,13 @@ export class LasOlasEventsScraper extends BaseScraper {
   // Fallback: parse event URLs from sitemap
   private async scrapeFromSitemap(): Promise<RawEvent[]> {
     try {
-      const response = await this.fetch(this.SITEMAP_URL);
-      const xml = await response.text();
+      let xml: string;
+      try {
+        xml = await this.fetchHTMLNative(this.SITEMAP_URL, 15_000);
+      } catch {
+        const response = await this.fetch(this.SITEMAP_URL);
+        xml = await response.text();
+      }
 
       const urlMatches = xml.match(/<loc>([^<]+)<\/loc>/g);
       if (!urlMatches) return [];
