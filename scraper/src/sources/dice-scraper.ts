@@ -1,45 +1,51 @@
 /**
- * Dice.fm Scraper via Apify
+ * Dice.fm Scraper via __NEXT_DATA__
  *
- * Uses the Apify actor "lexis-solutions/dice-fm" to scrape Dice.fm Miami events.
- * The direct Dice.fm site is a React SPA with no server-side data, so we use
- * Apify's pre-built actor to handle the browser rendering.
+ * Dice.fm is a Next.js app that embeds event data in a <script id="__NEXT_DATA__">
+ * tag on the Miami browse page. No Apify or Puppeteer needed — just fetch the HTML
+ * and parse the embedded JSON.
  *
- * Requires APIFY_TOKEN environment variable.
+ * Browse URL: https://dice.fm/browse/miami-5e3bf1b0fe75488ec46cdf9f
+ * Returns ~30 upcoming events with full venue, price, and image data.
  */
 
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 import { findVenue } from '../venues.js';
 
-interface ApifyDiceEvent {
-  name?: string;
-  title?: string;
-  date?: string;
-  startDate?: string;
-  start_date?: string;
-  endDate?: string;
-  end_date?: string;
-  venue?: string;
-  venueName?: string;
-  venue_name?: string;
-  location?: string | { name?: string; address?: string; city?: string };
-  address?: string;
-  url?: string;
-  link?: string;
-  image?: string;
-  imageUrl?: string;
-  image_url?: string;
-  price?: string | number;
-  lineup?: string[];
-  artists?: string[] | Array<{ name?: string }>;
-  genre?: string;
-  genres?: string[];
-  description?: string;
+interface DiceVenue {
+  id: string;
+  name: string;
+  address: string;
+  location?: { lat: number; lng: number };
+}
+
+interface DiceNextDataEvent {
+  id: string;
+  name: string;
+  date_unix: number;
+  perm_name?: string;
+  status?: string;
+  venues?: DiceVenue[];
+  images?: {
+    square?: string;
+    landscape?: string;
+    portrait?: string;
+  };
+  about?: {
+    description?: string;
+    highlights?: Array<{ type: string; title: string }>;
+  };
+  price?: {
+    currency?: string;
+    amount?: number | null;
+    amount_from?: number | null;
+  };
+  summary_lineup?: Array<{ name?: string }>;
+  tags_types?: string[];
 }
 
 export class DiceRealScraper extends BaseScraper {
-  private actorId = 'lexis-solutions~dice-fm';
   private browseUrl = 'https://dice.fm/browse/miami-5e3bf1b0fe75488ec46cdf9f';
 
   constructor() {
@@ -47,196 +53,139 @@ export class DiceRealScraper extends BaseScraper {
   }
 
   async scrape(): Promise<RawEvent[]> {
-    const token = process.env.APIFY_TOKEN;
-    if (!token) {
-      this.log('APIFY_TOKEN not set — skipping Dice.fm scraper');
-      return [];
-    }
-
-    this.log('Starting Apify Dice.fm actor run...');
+    this.log('Fetching Dice.fm Miami via __NEXT_DATA__...');
 
     try {
-      // 1. Start the actor run
-      const runId = await this.startActorRun(token);
-      if (!runId) {
-        this.log('Failed to start Apify actor run');
-        return [];
-      }
-      this.log(`  Actor run started: ${runId}`);
+      // Fetch the browse page HTML
+      const html = await this.fetchHTMLNative(this.browseUrl, 20_000);
 
-      // 2. Poll until complete (max ~3 minutes)
-      const datasetId = await this.waitForCompletion(token, runId);
-      if (!datasetId) {
-        this.log('Actor run did not complete successfully');
+      // Extract __NEXT_DATA__ JSON
+      const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>(.*?)<\/script>/s);
+      if (!nextDataMatch) {
+        this.log('No __NEXT_DATA__ found on Dice.fm browse page');
         return [];
       }
 
-      // 3. Fetch results from dataset
-      const items = await this.fetchDataset(token, datasetId);
-      this.log(`  Fetched ${items.length} items from dataset`);
+      let nextData: any;
+      try {
+        nextData = JSON.parse(nextDataMatch[1]);
+      } catch {
+        this.log('Failed to parse __NEXT_DATA__ JSON');
+        return [];
+      }
 
-      // 4. Map to RawEvent
+      const diceEvents: DiceNextDataEvent[] = nextData?.props?.pageProps?.events || [];
+      this.log(`Found ${diceEvents.length} events in __NEXT_DATA__`);
+
+      if (diceEvents.length === 0) return [];
+
       const now = new Date();
       const events: RawEvent[] = [];
       let skipped = 0;
-      let failed = 0;
 
-      for (const item of items) {
+      for (const item of diceEvents) {
         try {
-          const event = this.mapApifyEvent(item, now);
+          const event = this.mapDiceEvent(item, now);
           if (event) {
             events.push(event);
           } else {
             skipped++;
           }
         } catch {
-          failed++;
+          skipped++;
         }
       }
 
-      this.log(`Found ${events.length} events (${skipped} skipped, ${failed} failed to parse)`);
+      this.log(`Returning ${events.length} Dice.fm events (${skipped} skipped)`);
       return events;
     } catch (error) {
-      this.logError('Apify Dice.fm scraper failed', error);
+      this.logError('Dice.fm scraper failed', error);
       return [];
     }
   }
 
-  private async startActorRun(token: string): Promise<string | null> {
-    const now = new Date();
-    const dateFrom = now.toISOString().slice(0, 10);
-    const dateTo = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
-
-    const input = {
-      startUrls: [{ url: this.browseUrl }],
-      maxItems: 100,
-      dateFrom,
-      dateUntil: dateTo,
-    };
-
-    const url = `https://api.apify.com/v2/acts/${this.actorId}/runs?token=${token}`;
-    const body = JSON.stringify(input);
-
-    const data = await this.fetchJSONNative<{ data?: { id?: string } }>(
-      url,
-      body,
-      {
-        'Content-Type': 'application/json',
-      },
-      30_000,
-    );
-
-    return data?.data?.id || null;
-  }
-
-  private async waitForCompletion(token: string, runId: string): Promise<string | null> {
-    const maxAttempts = 36; // 36 * 5s = 3 minutes
-    const pollInterval = 5_000;
-
-    for (let i = 0; i < maxAttempts; i++) {
-      await this.sleep(pollInterval);
-
-      const url = `https://api.apify.com/v2/actor-runs/${runId}?token=${token}`;
-      const data = await this.fetchJSONNativeGet<{
-        data?: { status?: string; defaultDatasetId?: string };
-      }>(url, 10_000);
-
-      const status = data?.data?.status;
-      if (status === 'SUCCEEDED') {
-        return data?.data?.defaultDatasetId || null;
-      }
-      if (status === 'FAILED' || status === 'ABORTED' || status === 'TIMED-OUT') {
-        this.log(`  Actor run ${status}`);
-        return null;
-      }
-
-      // Still RUNNING or READY — continue polling
-      if (i % 6 === 0) {
-        this.log(`  Still waiting for actor run (status: ${status})...`);
-      }
-    }
-
-    this.log('  Actor run timed out after 3 minutes');
-    return null;
-  }
-
-  private async fetchDataset(token: string, datasetId: string): Promise<ApifyDiceEvent[]> {
-    const url = `https://api.apify.com/v2/datasets/${datasetId}/items?token=${token}&format=json&limit=100`;
-    return this.fetchJSONNativeGet<ApifyDiceEvent[]>(url, 15_000);
-  }
-
-  private mapApifyEvent(item: ApifyDiceEvent, now: Date): RawEvent | null {
-    const title = item.name || item.title;
+  private mapDiceEvent(item: DiceNextDataEvent, now: Date): RawEvent | null {
+    const title = item.name;
     if (!title || title.length < 3) return null;
 
-    // Parse date
-    const dateStr = item.date || item.startDate || item.start_date;
-    const startAt = dateStr ? this.parseDate(dateStr) : null;
-    if (!startAt) return null;
-    if (new Date(startAt) < now) return null;
+    // Parse date from unix timestamp (seconds)
+    if (!item.date_unix) return null;
+    const eventDate = new Date(item.date_unix * 1000);
+    if (eventDate < now) return null;
 
-    // Parse venue
-    let venueName = 'Miami Venue';
-    let address: string | undefined;
+    const startAt = eventDate.toISOString().replace('Z', '').replace(/\.\d+$/, '');
 
-    if (item.venueName || item.venue_name || (typeof item.venue === 'string' && item.venue)) {
-      venueName = (item.venueName || item.venue_name || item.venue) as string;
-    } else if (typeof item.location === 'object' && item.location) {
-      venueName = item.location.name || venueName;
-      address = item.location.address;
-    } else if (typeof item.location === 'string') {
-      venueName = item.location;
-    }
+    // Parse venue from venues array
+    const venue = item.venues?.[0];
+    let venueName = venue?.name || 'Miami Venue';
+    let address = venue?.address;
+    let lat = venue?.location?.lat;
+    let lng = venue?.location?.lng;
 
-    if (!address && item.address) {
-      address = item.address;
-    }
-
+    // Check known venue database
     const knownVenue = findVenue(venueName);
+    if (knownVenue) {
+      venueName = knownVenue.name;
+      address = knownVenue.address || address;
+      lat = knownVenue.lat ?? lat;
+      lng = knownVenue.lng ?? lng;
+    }
 
-    // Parse price
-    const price = this.parsePriceAmount(item.price);
+    // Parse price (amount_from is in cents)
+    const priceFromCents = item.price?.amount_from;
+    const priceAmount = priceFromCents ? Math.round(priceFromCents / 100) : 0;
+    const priceLabel = priceAmount === 0 ? 'Free' as const
+      : priceAmount <= 25 ? '$' as const
+      : priceAmount <= 75 ? '$$' as const
+      : '$$$' as const;
 
-    // Build URL
-    const sourceUrl = item.url || item.link || this.browseUrl;
+    // Build event URL from perm_name
+    const sourceUrl = item.perm_name
+      ? `https://dice.fm/event/${item.perm_name}`
+      : this.browseUrl;
 
-    // Parse image
-    const image = item.image || item.imageUrl || item.image_url;
+    // Image (prefer landscape, fallback to square)
+    const image = item.images?.landscape || item.images?.square;
+
+    // Description from about
+    const description = item.about?.description?.slice(0, 400) || '';
 
     // Lineup
-    const artists = item.lineup || item.artists || [];
-    const lineup = artists
-      .map((a: string | { name?: string }) => (typeof a === 'string' ? a : a.name))
+    const lineup = item.summary_lineup
+      ?.map(a => a.name)
       .filter(Boolean)
-      .join(', ');
+      .join(', ') || '';
 
-    const endAt = item.endDate || item.end_date;
+    // Check age restriction
+    const is21Plus = item.about?.highlights?.some(h => h.title?.includes('21+'));
 
-    const category = this.categorize(title, item.description || '', venueName);
-    const tags = this.generateTags(title, item.description || '', category);
+    // Categorize
+    const category = this.categorize(title, description, venueName);
+    const tags = this.generateTags(title, description, category);
     if (!tags.includes('live-music') && !tags.includes('dj')) {
       tags.unshift('live-music');
       if (tags.length > 5) tags.pop();
     }
 
+    const neighborhood = knownVenue?.neighborhood || this.inferNeighborhood(venueName, address || '');
+
     return {
       title,
       startAt,
-      endAt: endAt ? this.parseDate(endAt) || undefined : undefined,
-      venueName: knownVenue?.name || venueName,
-      address: knownVenue?.address || address,
-      neighborhood: knownVenue?.neighborhood || this.inferNeighborhood(venueName),
-      lat: knownVenue?.lat,
-      lng: knownVenue?.lng,
+      venueName,
+      address,
+      neighborhood,
+      lat: lat ?? null,
+      lng: lng ?? null,
       city: 'Miami',
       tags: tags.slice(0, 5),
       category,
-      priceLabel: price === 0 ? 'Free' : price > 50 ? '$$' : '$',
-      priceAmount: price,
-      isOutdoor: this.isOutdoor(title, item.description || '', venueName),
+      priceLabel,
+      priceAmount,
+      isOutdoor: this.isOutdoor(title, description, venueName),
       description: lineup
-        ? `${title} ft. ${lineup} at ${venueName}. Get tickets on Dice.fm.`
-        : `${title} at ${venueName}. Get tickets on Dice.fm.`,
+        ? `${title} ft. ${lineup} at ${venueName}.${is21Plus ? ' 21+.' : ''} Get tickets on Dice.fm.`
+        : `${title} at ${venueName}.${is21Plus ? ' 21+.' : ''} ${description ? description.slice(0, 200) : 'Get tickets on Dice.fm.'}`,
       sourceUrl,
       sourceName: this.name,
       image,
@@ -245,79 +194,17 @@ export class DiceRealScraper extends BaseScraper {
     };
   }
 
-  private parseDate(dateStr: string): string | null {
-    if (!dateStr) return null;
-    const currentYear = new Date().getFullYear();
-
-    // ISO format: "2026-03-15T21:00:00" or "2026-03-15T21:00:00Z"
-    if (/^\d{4}-\d{2}-\d{2}T/.test(dateStr)) {
-      return dateStr.replace('Z', '').replace(/\.\d+$/, '');
-    }
-
-    // ISO date only: "2026-03-15"
-    const isoMatch = dateStr.match(/^(\d{4}-\d{2}-\d{2})$/);
-    if (isoMatch) {
-      return `${isoMatch[1]}T21:00:00`;
-    }
-
-    // "Sat 25 Jan" or "25 Jan" format
-    const dayMonthMatch = dateStr.match(/(\d{1,2})\s*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i);
-    if (dayMonthMatch) {
-      const day = parseInt(dayMonthMatch[1], 10);
-      const monthStr = dayMonthMatch[2].toLowerCase();
-      const months: Record<string, number> = {
-        jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
-        jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11,
-      };
-      const month = months[monthStr];
-      if (month !== undefined) {
-        const now = new Date();
-        let year = currentYear;
-        if (month < now.getMonth()) year = currentYear + 1;
-        const date = new Date(year, month, day);
-        return `${date.toISOString().slice(0, 10)}T21:00:00`;
-      }
-    }
-
-    // "March 15, 2026" format
-    const fullDateMatch = dateStr.match(/(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2}),?\s*(\d{4})?/i);
-    if (fullDateMatch) {
-      const monthMap: Record<string, string> = {
-        january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
-        july: '07', august: '08', september: '09', october: '10', november: '11', december: '12',
-      };
-      const month = monthMap[fullDateMatch[1].toLowerCase()];
-      if (month) {
-        const day = fullDateMatch[2].padStart(2, '0');
-        const year = fullDateMatch[3] || currentYear;
-        return `${year}-${month}-${day}T21:00:00`;
-      }
-    }
-
-    return null;
-  }
-
-  private parsePriceAmount(price: string | number | undefined): number {
-    if (price === undefined || price === null) return 0;
-    if (typeof price === 'number') return price;
-
-    const lower = price.toLowerCase();
-    if (lower.includes('free') || lower.includes('rsvp')) return 0;
-
-    const match = price.match(/\$?\s*(\d+(?:\.\d{2})?)/);
-    if (match) return parseFloat(match[1]);
-
-    return 20; // Default estimate for Dice events
-  }
-
-  private inferNeighborhood(venue: string): string {
-    const v = venue.toLowerCase();
-    if (v.includes('wynwood') || v.includes('do not sit') || v.includes('bardot')) return 'Wynwood';
-    if (v.includes('space') || v.includes('ground') || v.includes('club space')) return 'Downtown Miami';
+  private inferNeighborhood(venue: string, address: string): string {
+    const v = `${venue} ${address}`.toLowerCase();
+    if (v.includes('wynwood') || v.includes('do not sit') || v.includes('bardot') || v.includes('nw 2')) return 'Wynwood';
+    if (v.includes('club space') || v.includes('ground') || v.includes('ne 11th')) return 'Downtown Miami';
     if (v.includes('floyd') || v.includes('jolene')) return 'Edgewater';
-    if (v.includes('beach') || v.includes('faena') || v.includes('edition')) return 'South Beach';
+    if (v.includes('beach') || v.includes('faena') || v.includes('edition') || v.includes('collins')) return 'South Beach';
     if (v.includes('brickell')) return 'Brickell';
-    if (v.includes('little havana') || v.includes('ball & chain')) return 'Little Havana';
+    if (v.includes('little havana') || v.includes('ball & chain') || v.includes('sw 8th')) return 'Little Havana';
+    if (v.includes('factory town') || v.includes('nw 37th')) return 'Allapattah';
+    if (v.includes('coconut grove')) return 'Coconut Grove';
+    if (v.includes('design district')) return 'Design District';
     return 'Miami';
   }
 }

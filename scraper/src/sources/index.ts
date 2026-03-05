@@ -180,6 +180,21 @@ export { ResyEventsScraper } from './resy-events.js';
 // Venue Watchlist — curated venues checked via WP Tribe API / future APIs
 export { VenueWatchlistScraper } from './venue-watchlist.js';
 
+// Eventbrite Miami — real events via Eventbrite destination search API
+export { EventbriteMiamiScraper } from './eventbrite-miami.js';
+
+// Fever Miami — curated experiences (Candlelight, immersive art, etc.) via plan pages
+export { FeverMiamiScraper } from './fever-miami.js';
+
+// Shotgun Miami — electronic music / nightlife (Vercel-protected, graceful fallback)
+export { ShotgunMiamiScraper } from './shotgun-miami.js';
+
+// Do305 — Miami-specific events platform (DNS issues, graceful fallback)
+export { Do305Scraper } from './do305.js';
+
+// Club Space — real events via Dice.fm partners widget API
+export { ClubSpaceScraper } from './club-space.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -276,6 +291,11 @@ import { LumaScraper } from './luma.js';
 import { HistoryMiamiScraper } from './wp-tribe-venues.js';
 import { ResyEventsScraper } from './resy-events.js';
 import { VenueWatchlistScraper } from './venue-watchlist.js';
+import { EventbriteMiamiScraper } from './eventbrite-miami.js';
+import { FeverMiamiScraper } from './fever-miami.js';
+import { ShotgunMiamiScraper } from './shotgun-miami.js';
+import { Do305Scraper } from './do305.js';
+import { ClubSpaceScraper } from './club-space.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -308,7 +328,7 @@ export function getAllScrapers(): BaseScraper[] {
     new MiamiFestivalsScraper(),
 
     // Real ticketing platforms
-    new DiceRealScraper(),  // Dice.fm via Apify actor (requires APIFY_TOKEN, gracefully skips if missing)
+    new DiceRealScraper(),  // Dice.fm via __NEXT_DATA__ scraping (no API key needed)
     new ResidentAdvisorScraper(), // Real RA GraphQL API — Miami area ID 38
     // DISABLED: MiamiBeachesEventsScraper — DNS failure on Algolia CDN, blocked in all CI environments
     // new MiamiBeachesEventsScraper(),
@@ -377,6 +397,21 @@ export function getAllScrapers(): BaseScraper[] {
 
     // === VENUE WATCHLIST (curated venues checked via WP Tribe API) ===
     new VenueWatchlistScraper(),
+
+    // === EVENTBRITE MIAMI (real events via destination search API) ===
+    new EventbriteMiamiScraper(),
+
+    // === FEVER MIAMI (curated experiences — Candlelight, immersive art, Cirque du Soleil) ===
+    new FeverMiamiScraper(),
+
+    // === SHOTGUN MIAMI (electronic music / nightlife — Vercel-protected, graceful fallback) ===
+    new ShotgunMiamiScraper(),
+
+    // === DO305 (Miami-specific events platform — DNS issues, graceful fallback) ===
+    new Do305Scraper(),
+
+    // === CLUB SPACE (real events via Dice.fm partners widget API) ===
+    new ClubSpaceScraper(),
 
     // === BROWARD VENUE SCRAPERS (real calendar data from venue websites) ===
     new CultureRoomScraper(),            // Culture Room — FLL live music, Ticketmaster links

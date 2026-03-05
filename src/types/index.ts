@@ -104,6 +104,7 @@ export interface RankingContext {
   preferences: UserPreferences;
   weather?: WeatherForecast;
   now: Date;
+  allEvents?: Event[]; // Full event list for proportion-based scoring (diversity, editor pick ratio)
 }
 
 export interface ScoredEvent extends Event {

@@ -331,75 +331,57 @@ export class BrowardCenterScraper extends BaseScraper {
     const events: RawEvent[] = [];
     const seen = new Set<string>();
 
-    // Scrape first 6 pages (16 events/page = ~96 events, site has 11 pages)
-    for (let page = 1; page <= 6; page++) {
+    // Broward Center uses pagination via /events/index/N (16 events per page, 11 pages total)
+    // Page 1: /events, Page 2: /events/index/16, Page 3: /events/index/32, etc.
+    const pageOffsets = [0, 16, 32, 48, 64, 80]; // 6 pages
+
+    for (let i = 0; i < pageOffsets.length; i++) {
       try {
-        const url = page === 1 ? this.baseUrl : `${this.baseUrl}?page=${page}`;
+        const url = pageOffsets[i] === 0 ? this.baseUrl : `${this.baseUrl}/index/${pageOffsets[i]}`;
         const $ = await this.fetchHTMLNativeRetry(url, 2, 12_000);
         let pageCount = 0;
 
-        // The site uses h3 > a for event titles inside event card containers
-        // Each event card contains: title (h3 a), date text, venue name, and buy/info links
-        // Strategy: find all links to /events/detail/ which are the event detail pages
-        const eventLinks = $('a[href*="/events/detail/"]');
-
-        // Group by unique href to avoid duplicates from Info + Buy links
-        const hrefs = new Map<string, ReturnType<typeof $>>();
-        eventLinks.each((_, el) => {
-          const href = $(el).attr('href') || '';
-          if (href.includes('/events/detail/') && !hrefs.has(href)) {
-            hrefs.set(href, $(el));
-          }
-        });
-
-        // Also try broader selectors for the event card structure
-        // Broward Center uses img[alt*="More Info for"] which contain the event name
-        $('img[alt*="More Info for"]').each((_, el) => {
-          const alt = $(el).attr('alt') || '';
-          const title = alt.replace(/^More Info for\s*/i, '').trim();
-          const $parent = $(el).closest('a, div');
-          const link = $parent.attr('href') || $parent.find('a[href*="/events/detail/"]').attr('href') || '';
-
-          if (title && title.length > 3 && link) {
-            hrefs.set(link, $parent);
-          }
-        });
-
-        // Parse the full page text for date/venue associations
-        const pageText = $('body').text();
-
-        // Extract events from link text and surrounding context
-        hrefs.forEach(($el, href) => {
+        // Each event is a .entry div inside #list container with structure:
+        //   .thumb > .m-buttons-grid > a[href*="/events/detail/"] (Info + Buy links)
+        //   .thumb > a > img[alt="More Info for TITLE"]
+        //   .info > .m-event-date (date text like "Mar 5, 2026")
+        //   .info > .m-event-venue (venue name like "The Parker")
+        //   .info > h3 > a (title text + link)
+        //   .info > a.tickets[href*="ticketmaster"] (buy link)
+        $('.entry').each((_, el) => {
           try {
-            // Get the title from the link text, or from nearby h3
-            let title = this.cleanText($el.find('h3').text() || $el.text());
-            // Also check img alt attribute
+            const $el = $(el);
+
+            // Extract title from h3 > a
+            let title = this.cleanText($el.find('.info h3 a').text());
+
+            // Fallback: extract from img alt
             if (!title || title.length < 3) {
-              const imgAlt = $el.find('img[alt*="More Info"]').attr('alt') || '';
+              const imgAlt = $el.find('img[alt*="More Info for"]').attr('alt') || '';
               title = imgAlt.replace(/^More Info for\s*/i, '').trim();
             }
             if (!title || title.length < 3) return;
-
-            // Skip "Info" and "Buy" button texts that aren't real titles
-            if (/^(Info|Buy|Buy Tickets|More Info|Read More)$/i.test(title)) return;
 
             const dedup = title.toLowerCase().replace(/\s+/g, ' ');
             if (seen.has(dedup)) return;
             seen.add(dedup);
 
-            // Extract venue name from the card's surrounding context
-            const $card = $el.closest('[class*="event"], [class*="card"], li, article') || $el.parent().parent();
-            const cardText = $card.text();
-            const venue = this.extractVenue(cardText);
-
-            // Extract date from context — look for "Mar 3, 2026" pattern
-            const dateMatch = cardText.match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})(?:\s*[-–]\s*(\d{1,2}))?,?\s*(\d{4})?/i);
+            // Extract date from .m-event-date
+            const dateText = this.cleanText($el.find('.m-event-date').text());
+            const dateMatch = dateText.match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})(?:\s*[-–]\s*(\d{1,2}))?,?\s*(\d{4})?/i);
             const startAt = dateMatch ? this.parseDateMatch(dateMatch) : null;
             if (!startAt) return;
 
-            // Extract ticket URL (Ticketmaster link)
+            // Extract venue from .m-event-venue
+            const venueText = this.cleanText($el.find('.m-event-venue').text());
+            const venue = this.extractVenue(venueText || $el.text());
+
+            // Extract event detail URL
+            const detailLink = $el.find('a[href*="/events/detail/"]').first().attr('href') || '';
+
+            // Extract Ticketmaster buy link
             let ticketUrl: string | undefined;
-            $card.find('a[href*="ticketmaster.com"]').each((_, a) => {
+            $el.find('a[href*="ticketmaster.com"]').each((_, a) => {
               if (!ticketUrl) ticketUrl = $(a).attr('href') || undefined;
             });
 
@@ -420,20 +402,20 @@ export class BrowardCenterScraper extends BaseScraper {
               tags: this.generateTags(title, '', category),
               isOutdoor: false,
               sourceName: this.name,
-              sourceUrl: href.startsWith('http') ? href : `https://www.browardcenter.org${href}`,
+              sourceUrl: detailLink.startsWith('http') ? detailLink : `https://www.browardcenter.org${detailLink}`,
               ticketUrl,
             });
             pageCount++;
           } catch { /* skip individual event */ }
         });
 
-        this.log(`  Page ${page}: ${pageCount} events`);
+        this.log(`  Page ${i + 1}: ${pageCount} events`);
 
         // Stop if we got no events on this page (end of listings)
-        if (pageCount === 0 && page > 1) break;
+        if (pageCount === 0 && i > 0) break;
       } catch (e) {
-        this.logError(`Failed page ${page}`, e);
-        if (page === 1) break; // If page 1 fails, don't try more
+        this.logError(`Failed page ${i + 1}`, e);
+        if (i === 0) break; // If page 1 fails, don't try more
       }
     }
 
@@ -495,112 +477,77 @@ export class RevolutionLiveScraper extends BaseScraper {
     try {
       const $ = await this.fetchHTMLNativeRetry(this.url, 2, 15_000);
 
-      // Revolution Live uses WordPress with event listing elements
-      // Each concert has: title, date, time, price, age restriction, ticket link
-      // Try multiple selectors for the event cards
-      const selectors = [
-        '.concert-listing', '.event-listing', 'article', '.event-card',
-        '.concerts-list li', '[class*="concert"]', '[class*="event-item"]',
-      ];
+      // Revolution Live uses WordPress Events Manager plugin.
+      // Each event is a .em-item.em-event div with:
+      //   .em-item-image img (poster image)
+      //   .em-item-name a (title + link to event detail page)
+      //   .em-event-date span (date like "Mar 5, 2026")
+      //   .em-event-time (time like "6:00pm to 11:00pm")
+      //   .em-event-location span (location text)
+      //   Google Calendar link with event details (title, dates, description)
+      //   Ticketmaster links for purchasing
 
-      let foundEvents = false;
+      $('.em-item.em-event, .em-item').each((_, el) => {
+        try {
+          const $el = $(el);
 
-      for (const selector of selectors) {
-        if (foundEvents) break;
-        $(selector).each((_, el) => {
-          try {
-            const $el = $(el);
-            const text = $el.text();
-            // Must contain a date pattern to be an event
-            if (!/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}/i.test(text)) return;
+          // Extract title from .em-item-name a
+          const $nameLink = $el.find('.em-item-name a').first();
+          let title = this.cleanText($nameLink.text());
+          if (!title || title.length < 3) return;
 
-            const title = this.cleanText($el.find('h2, h3, h4, .title, a[href*="event"]').first().text());
-            if (!title || title.length < 3) return;
-            if (/^(Buy|Tickets|More Info|Read More)$/i.test(title)) return;
-
-            const dedup = title.toLowerCase().replace(/\s+/g, ' ');
-            if (seen.has(dedup)) return;
-            seen.add(dedup);
-
-            const startAt = this.parseDateFromText(text);
-            if (!startAt) return;
-
-            const priceMatch = text.match(/\$(\d+(?:\.\d{2})?)/);
-            const price = priceMatch ? parseFloat(priceMatch[1]) : undefined;
-            const isAllAges = /all ages/i.test(text);
-            const is21Plus = /21\+|21 and over/i.test(text);
-
-            let ticketUrl: string | undefined;
-            $el.find('a[href*="ticketmaster.com"]').each((_, a) => {
-              if (!ticketUrl) ticketUrl = $(a).attr('href') || undefined;
-            });
-
-            events.push({
-              title,
-              startAt,
-              venueName: 'Revolution Live',
-              address: '100 SW 3rd Ave, Fort Lauderdale, FL 33312',
-              neighborhood: 'Downtown FLL',
-              lat: 26.1190,
-              lng: -80.1460,
-              city: 'Fort Lauderdale',
-              description: `${title} at Revolution Live. ${isAllAges ? 'All ages.' : is21Plus ? '21+ only.' : ''}${price ? ` Tickets from $${price}.` : ''}`,
-              category: this.categorize(title, ''),
-              tags: this.generateRevTags(title, is21Plus),
-              priceAmount: price,
-              isOutdoor: false,
-              sourceName: this.name,
-              sourceUrl: this.url,
-              ticketUrl,
-            });
-            foundEvents = true;
-          } catch { /* skip */ }
-        });
-      }
-
-      // Fallback: parse the full page text for event patterns
-      // Revolution Live events follow pattern: "Artist Name\nDay, Month DD, YYYY\nTime\nPrice\nAge"
-      if (events.length === 0) {
-        this.log('  Trying text-based parsing...');
-        const fullText = $('body').text();
-        const eventBlocks = fullText.split(/(?=(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s+(?:January|February|March|April|May|June|July|August|September|October|November|December))/i);
-
-        for (const block of eventBlocks) {
-          const lines = block.split('\n').map((l: string) => l.trim()).filter(Boolean);
-          if (lines.length < 2) continue;
-
-          const dateMatch = block.match(/(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s*(\d{4})/i);
-          if (!dateMatch) continue;
-
-          // The title is usually the line(s) before the date
-          const dateIndex = lines.findIndex((l: string) => dateMatch[0] && l.includes(dateMatch[2]));
-          if (dateIndex <= 0) continue;
-
-          const title = lines.slice(Math.max(0, dateIndex - 2), dateIndex)
-            .filter((l: string) => l.length > 3 && !/^(concerts|events|all|page)/i.test(l))
-            .join(' – ')
-            .trim();
-
-          if (!title || title.length < 3) continue;
+          // Skip non-event items
+          if (/^(Buy|Tickets|More Info|Read More|Private Events)$/i.test(title)) return;
 
           const dedup = title.toLowerCase().replace(/\s+/g, ' ');
-          if (seen.has(dedup)) continue;
+          if (seen.has(dedup)) return;
           seen.add(dedup);
 
-          const startAt = this.parseFullDate(dateMatch);
-          if (!startAt) continue;
+          // Get event detail URL
+          const detailUrl = $nameLink.attr('href') || '';
 
-          // Look for time
-          const timeMatch = block.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
-          const timeStr = timeMatch
-            ? this.convertTo24h(parseInt(timeMatch[1]), parseInt(timeMatch[2]), timeMatch[3].toUpperCase())
-            : '20:00:00';
+          // Extract date from .em-event-date
+          const dateText = this.cleanText($el.find('.em-event-date').text() || $el.find('.em-item-meta-line.em-event-date').text());
+          const startAt = this.parseDateFromText(dateText || $el.text());
+          if (!startAt) return;
 
-          const finalStartAt = startAt.replace('T20:00:00', `T${timeStr}`);
+          // Extract time from .em-event-time
+          const timeText = this.cleanText($el.find('.em-event-time, .em-item-meta-line.em-event-time').text());
+          const timeMatch = timeText.match(/(\d{1,2}):(\d{2})\s*(am|pm)/i);
+          let finalStartAt = startAt;
+          if (timeMatch) {
+            const timeStr = this.convertTo24h(
+              parseInt(timeMatch[1]),
+              parseInt(timeMatch[2]),
+              timeMatch[3].toUpperCase()
+            );
+            finalStartAt = startAt.replace(/T\d{2}:\d{2}:\d{2}/, `T${timeStr}`);
+          }
 
-          const priceMatch = block.match(/\$(\d+(?:\.\d{2})?)/);
+          // Extract image
+          const image = $el.find('.em-item-image img').attr('src') || undefined;
+
+          // Extract price from Google Calendar link or text
+          const fullText = $el.text();
+          const priceMatch = fullText.match(/\$(\d+(?:\.\d{2})?)/);
           const price = priceMatch ? parseFloat(priceMatch[1]) : undefined;
-          const is21Plus = /21\+/i.test(block);
+
+          // Check age restriction
+          const isAllAges = /all ages/i.test(fullText);
+          const is21Plus = /21\+|21 and over/i.test(fullText);
+
+          // Extract Ticketmaster link
+          let ticketUrl: string | undefined;
+          $el.find('a[href*="ticketmaster.com"]').each((_, a) => {
+            if (!ticketUrl) ticketUrl = $(a).attr('href') || undefined;
+          });
+
+          // Also check for Ticketmaster link in nearby Google Calendar data
+          if (!ticketUrl) {
+            const gcalLink = $el.find('a[href*="google.com/calendar"]').attr('href') || '';
+            const tmMatch = gcalLink.match(/(https?:\/\/www\.ticketmaster\.com\/event\/[A-Z0-9]+)/);
+            if (tmMatch) ticketUrl = tmMatch[1];
+          }
 
           events.push({
             title,
@@ -611,16 +558,18 @@ export class RevolutionLiveScraper extends BaseScraper {
             lat: 26.1190,
             lng: -80.1460,
             city: 'Fort Lauderdale',
-            description: `${title} at Revolution Live.${price ? ` Tickets from $${price}.` : ''}`,
+            description: `${title} at Revolution Live. ${isAllAges ? 'All ages.' : is21Plus ? '21+ only.' : ''}${price ? ` Tickets from $${price}.` : ''}`,
             category: this.categorize(title, ''),
             tags: this.generateRevTags(title, is21Plus),
             priceAmount: price,
             isOutdoor: false,
             sourceName: this.name,
-            sourceUrl: this.url,
+            sourceUrl: detailUrl || this.url,
+            ticketUrl,
+            image,
           });
-        }
-      }
+        } catch { /* skip */ }
+      });
     } catch (e) {
       this.logError('Failed to scrape Revolution Live', e);
     }

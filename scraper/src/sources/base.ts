@@ -175,33 +175,181 @@ export abstract class BaseScraper {
   }
 
   /**
-   * Categorize event based on keywords
+   * Categorize event based on weighted keyword scoring and venue signals.
+   *
+   * Uses a scoring system instead of first-match-wins:
+   * - Each keyword match adds weight to its category
+   * - Title matches are weighted higher than description matches
+   * - Known venue types provide a strong category signal
+   * - Returns the category with the highest total score
    */
   protected categorize(title: string, description: string = '', venue: string = ''): string {
-    const text = `${title} ${description} ${venue}`.toLowerCase();
+    const titleLower = title.toLowerCase();
+    const descLower = description.toLowerCase();
+    const venueLower = venue.toLowerCase();
+    const allText = `${titleLower} ${descLower} ${venueLower}`;
 
-    const categoryKeywords: Record<string, string[]> = {
-      Music: ['concert', 'music', 'dj', 'band', 'live music', 'performance', 'show', 'jazz', 'vinyl'],
-      Art: ['art', 'gallery', 'exhibition', 'museum', 'opening'],
-      Culture: ['culture', 'theater', 'theatre', 'dance', 'ballet', 'film', 'cinema'],
-      'Food & Drink': ['food', 'drink', 'wine', 'beer', 'cocktail', 'dining', 'restaurant', 'brunch', 'tasting', 'chef', 'market'],
-      Fitness: ['fitness', 'yoga', 'pilates', 'running', 'cycling', 'workout', 'training', 'gym', 'run club', 'bootcamp'],
-      Wellness: ['wellness', 'meditation', 'mindfulness', 'spa', 'healing', 'breathwork'],
-      Sports: ['sport', 'game', 'match', 'tournament', 'championship', 'nba', 'nfl', 'mlb', 'mls', 'nhl', 'f1', 'basketball', 'hockey', 'football', 'baseball', 'soccer', 'hurricanes', 'panthers', 'heat', 'dolphins', 'marlins', 'inter miami', ' vs ', ' vs.'],
-      Comedy: ['comedy', 'stand-up', 'improv', 'laugh'],
-      Family: ['family', 'kids', 'children', 'family-friendly', 'circus', 'ringling'],
-      Community: ['community', 'social', 'networking', 'meetup', 'farmers market'],
-      Nightlife: ['nightlife', 'club', 'party', 'night'],
-      Outdoors: ['outdoor', 'park', 'beach', 'garden', 'nature', 'hike'],
+    // Weighted keywords: [keyword, weight]
+    // Higher weight = stronger signal for that category
+    const categoryKeywords: Record<string, [string, number][]> = {
+      Music: [
+        ['concert', 3], ['live music', 3], ['jazz', 3], ['orchestra', 3],
+        ['symphony', 3], ['album release', 3], ['tour', 2],
+        ['music', 2], ['dj', 2], ['band', 2], ['singer', 2], ['rapper', 2],
+        ['performance', 1], ['show', 1], ['vinyl', 1], ['hip hop', 2],
+        ['r&b', 2], ['reggaeton', 2], ['salsa music', 2], ['rock', 1],
+        ['acoustic', 2], ['songwriter', 2],
+      ],
+      Art: [
+        ['art exhibition', 3], ['gallery opening', 3], ['art gallery', 3],
+        ['museum exhibit', 3], ['sculpture', 2], ['installation', 2],
+        ['art', 1], ['gallery', 2], ['exhibition', 2], ['museum', 2],
+        ['opening reception', 2], ['mural', 2], ['photography exhibit', 3],
+      ],
+      Culture: [
+        ['theater', 2], ['theatre', 2], ['ballet', 3], ['opera', 3],
+        ['film screening', 3], ['cinema', 2], ['dance performance', 3],
+        ['culture', 1], ['dance', 1], ['film', 1], ['play', 1],
+        ['musical', 2], ['spoken word', 2], ['poetry', 2],
+      ],
+      'Food & Drink': [
+        ['tasting', 2], ['chef', 2], ['wine tasting', 3], ['beer festival', 3],
+        ['food festival', 3], ['brunch', 2], ['cocktail', 1], ['dining', 2],
+        ['food', 1], ['drink', 1], ['wine', 1], ['beer', 1],
+        ['restaurant', 1], ['market', 1], ['distillery', 2], ['brewery', 2],
+      ],
+      Fitness: [
+        ['fitness', 2], ['yoga', 3], ['pilates', 3], ['run club', 3],
+        ['running', 2], ['cycling', 2], ['workout', 2], ['bootcamp', 3],
+        ['training', 1], ['gym', 1], ['crossfit', 3], ['5k', 3],
+        ['marathon', 3],
+      ],
+      Wellness: [
+        ['wellness retreat', 3], ['meditation', 3], ['mindfulness', 3],
+        ['breathwork', 3], ['sound bath', 3],
+        ['wellness', 2], ['spa', 2], ['healing', 1],
+      ],
+      Sports: [
+        ['nba', 4], ['nfl', 4], ['mlb', 4], ['mls', 4], ['nhl', 4], ['f1', 4],
+        ['basketball', 3], ['hockey', 3], ['football', 3], ['baseball', 3],
+        ['soccer', 3], ['tennis', 3],
+        ['hurricanes', 3], ['panthers', 3], ['heat', 2], ['dolphins', 3],
+        ['marlins', 3], ['inter miami', 4],
+        [' vs ', 3], [' vs.', 3],
+        ['championship', 2], ['tournament', 2], ['match', 1],
+        ['sport', 1], ['game day', 2], ['playoffs', 3],
+      ],
+      Comedy: [
+        ['comedy show', 3], ['stand-up', 3], ['standup', 3], ['improv', 3],
+        ['comedy', 2], ['comedian', 3], ['laugh', 1], ['comic', 1],
+      ],
+      Family: [
+        ['family-friendly', 3], ['kids', 2], ['children', 2],
+        ['family', 1], ['circus', 2], ['ringling', 3],
+      ],
+      Community: [
+        ['community', 1], ['social', 1], ['networking', 1],
+        ['meetup', 2], ['farmers market', 2], ['volunteer', 2],
+      ],
+      Nightlife: [
+        ['nightclub', 3], ['afterhours', 3], ['after hours', 3],
+        ['nightlife', 2], ['club night', 3], ['party', 1], ['night', 0.5],
+      ],
+      Outdoors: [
+        ['outdoor', 1], ['park', 1], ['beach', 1], ['garden', 1],
+        ['nature', 2], ['hike', 3], ['kayak', 3], ['paddleboard', 3],
+      ],
     };
 
+    // Known venue types — provides a strong category signal
+    const venueCategories: [string, string, number][] = [
+      // Concert halls / music venues → Music
+      ['fillmore', 'Music', 3], ['adrienne arsht', 'Music', 3],
+      ['the ground', 'Music', 2], ['lagniappe', 'Music', 2],
+      ['gramps', 'Music', 2], ['churchill', 'Music', 2],
+      ['do not sit', 'Music', 2], ['floyd', 'Music', 2],
+      ['broward center', 'Music', 2], ['kravis center', 'Music', 2],
+
+      // Arenas / stadiums → Sports (but also Music for concerts)
+      ['kaseya center', 'Sports', 2], ['hard rock stadium', 'Sports', 2],
+      ['loandepot park', 'Sports', 2], ['chase stadium', 'Sports', 2],
+      ['inter miami', 'Sports', 2], ['fla live arena', 'Sports', 2],
+      ['amerant bank arena', 'Sports', 2],
+
+      // Clubs → Nightlife
+      ['club space', 'Nightlife', 2], ['e11even', 'Nightlife', 3],
+      ['liv', 'Nightlife', 2], ['basement', 'Nightlife', 2],
+      ['treehouse', 'Nightlife', 2], ['do not sit', 'Nightlife', 1],
+
+      // Museums / galleries → Art
+      ['pamm', 'Art', 3], ['perez art museum', 'Art', 3],
+      ['ica miami', 'Art', 3], ['de la cruz', 'Art', 3],
+      ['nsu art museum', 'Art', 3], ['norton museum', 'Art', 3],
+      ['bass museum', 'Art', 3], ['wynwood walls', 'Art', 2],
+      ['rubell', 'Art', 3], ['lowe art museum', 'Art', 3],
+
+      // Theaters → Culture
+      ['o cinema', 'Culture', 3], ['coral gables art cinema', 'Culture', 3],
+      ['actors playhouse', 'Culture', 3], ['arsht center', 'Culture', 2],
+
+      // Comedy venues → Comedy
+      ["don't tell comedy", 'Comedy', 3], ['the improv', 'Comedy', 3],
+      ['comedy', 'Comedy', 1],
+    ];
+
+    const scores: Record<string, number> = {};
+
+    // Initialize scores
+    for (const category of Object.keys(categoryKeywords)) {
+      scores[category] = 0;
+    }
+
+    // Score keyword matches with title weighting
     for (const [category, keywords] of Object.entries(categoryKeywords)) {
-      if (keywords.some((keyword) => text.includes(keyword))) {
-        return category;
+      for (const [keyword, weight] of keywords) {
+        // Title matches are worth 2x
+        if (titleLower.includes(keyword)) {
+          scores[category] += weight * 2;
+        }
+        // Description matches at base weight
+        if (descLower.includes(keyword)) {
+          scores[category] += weight;
+        }
       }
     }
 
-    return 'Community';
+    // Apply venue-based category signals
+    if (venueLower) {
+      for (const [venueName, category, weight] of venueCategories) {
+        if (venueLower.includes(venueName)) {
+          scores[category] += weight;
+        }
+      }
+    }
+
+    // Special case: arena/stadium venues with concert keywords → boost Music
+    // (e.g., "Rosalia concert at Kaseya Center" should be Music, not Sports)
+    const arenaVenues = ['kaseya center', 'hard rock stadium', 'fla live arena', 'amerant bank arena'];
+    const isAtArena = arenaVenues.some((v) => venueLower.includes(v));
+    if (isAtArena) {
+      const musicSignals = ['concert', 'tour', 'live', 'singer', 'band', 'music', 'album', 'dj'];
+      const hasMusicSignal = musicSignals.some((s) => titleLower.includes(s) || descLower.includes(s));
+      if (hasMusicSignal) {
+        scores['Music'] += 5; // Strong boost for concerts at arenas
+      }
+    }
+
+    // Find the category with the highest score
+    let bestCategory = 'Community';
+    let bestScore = 0;
+    for (const [category, score] of Object.entries(scores)) {
+      if (score > bestScore) {
+        bestScore = score;
+        bestCategory = category;
+      }
+    }
+
+    return bestCategory;
   }
 
   /**
