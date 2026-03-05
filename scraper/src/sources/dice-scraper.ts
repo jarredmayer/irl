@@ -1,292 +1,176 @@
 /**
- * Dice.fm Real Scraper
+ * Dice.fm Scraper via Apify
  *
- * Switched from Puppeteer to fetch-based scraper (2026-03-05).
- * The Puppeteer version failed because Chrome binary wasn't available in CI.
+ * Uses the Apify actor "lexis-solutions/dice-fm" to scrape Dice.fm Miami events.
+ * The direct Dice.fm site is a React SPA with no server-side data, so we use
+ * Apify's pre-built actor to handle the browser rendering.
  *
- * Approach: Fetch the Dice.fm Miami browse page and extract event data from
- * the __NEXT_DATA__ JSON embedded in the HTML (Next.js SSR).
- * Fallback: Parse JSON-LD structured data from the page.
+ * Requires APIFY_TOKEN environment variable.
  */
 
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 import { findVenue } from '../venues.js';
 
-interface DiceEventData {
+interface ApifyDiceEvent {
   name?: string;
   title?: string;
   date?: string;
-  start_date?: string;
   startDate?: string;
-  end_date?: string;
+  start_date?: string;
   endDate?: string;
-  venue?: string | { name?: string; address?: string; city?: string };
-  location?: string | { name?: string; address?: string };
+  end_date?: string;
+  venue?: string;
+  venueName?: string;
+  venue_name?: string;
+  location?: string | { name?: string; address?: string; city?: string };
+  address?: string;
   url?: string;
-  event_url?: string;
-  slug?: string;
+  link?: string;
+  image?: string;
+  imageUrl?: string;
   image_url?: string;
-  image?: string | { url?: string };
   price?: string | number;
-  raw_price?: number;
-  currency?: string;
-  lineup?: Array<{ name?: string }>;
-  artists?: Array<{ name?: string }>;
+  lineup?: string[];
+  artists?: string[] | Array<{ name?: string }>;
   genre?: string;
   genres?: string[];
-  type?: string;
+  description?: string;
 }
 
 export class DiceRealScraper extends BaseScraper {
+  private actorId = 'lexis-solutions~dice-fm';
   private browseUrl = 'https://dice.fm/browse/miami-5e3bf1b0fe75488ec46cdf9f';
-  private apiUrl = 'https://api.dice.fm/api/v1/events?types=Event&filter%5Bevents.status%5D=active&filter%5Bvenues.location%5D%5Bnear%5D=25.7617%2C-80.1918&filter%5Bvenues.location%5D%5Bwithin%5D=50mi&page%5Bsize%5D=100';
 
   constructor() {
     super('Dice.fm Real', { weight: 1.5, rateLimit: 2000 });
   }
 
   async scrape(): Promise<RawEvent[]> {
-    this.log('Fetching Dice.fm Miami events...');
-
-    // Strategy 1: Dice JSON API (no browser needed)
-    try {
-      const apiEvents = await this.tryDiceApi();
-      if (apiEvents.length > 0) {
-        this.log(`Found ${apiEvents.length} events from Dice API`);
-        return apiEvents;
-      }
-    } catch (e) {
-      this.log(`  Dice API failed: ${e instanceof Error ? e.message : String(e)}`);
-    }
-
-    // Strategy 2: HTML page scraping (fallback)
-    const events: RawEvent[] = [];
-    try {
-      const response = await this.fetch(this.browseUrl, {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-          Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-          'Accept-Language': 'en-US,en;q=0.5',
-        },
-      });
-      const html = await response.text();
-
-      // Try __NEXT_DATA__
-      const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>(.*?)<\/script>/s);
-      if (nextDataMatch) {
-        try {
-          const nextData = JSON.parse(nextDataMatch[1]);
-          const extracted = this.extractFromNextData(nextData);
-          events.push(...extracted);
-          this.log(`  __NEXT_DATA__: found ${extracted.length} events`);
-        } catch (e) {
-          this.log(`  __NEXT_DATA__ parse failed: ${e instanceof Error ? e.message : String(e)}`);
-        }
-      }
-
-      // Try JSON-LD
-      if (events.length === 0) {
-        const jsonLdMatches = html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs);
-        for (const match of jsonLdMatches) {
-          try {
-            const data = JSON.parse(match[1]);
-            const extracted = this.extractFromJsonLd(data);
-            events.push(...extracted);
-          } catch { /* skip invalid JSON-LD */ }
-        }
-        if (events.length > 0) {
-          this.log(`  JSON-LD: found ${events.length} events`);
-        }
-      }
-
-      // Try HTML links
-      if (events.length === 0) {
-        const linkPattern = /href="(\/event\/[^"]+)"[^>]*>([^<]*)</g;
-        let linkMatch;
-        const seen = new Set<string>();
-        while ((linkMatch = linkPattern.exec(html)) !== null) {
-          const [, path, text] = linkMatch;
-          if (seen.has(path)) continue;
-          seen.add(path);
-          const title = text.trim();
-          if (!title || title.length < 3) continue;
-          events.push({
-            title,
-            startAt: this.getDefaultDate(),
-            venueName: 'Miami Venue',
-            neighborhood: 'Miami',
-            city: 'Miami',
-            tags: ['live-music', 'nightlife'],
-            category: 'Music',
-            isOutdoor: false,
-            description: `${title} — Get tickets on Dice.fm.`,
-            sourceUrl: `https://dice.fm${path}`,
-            sourceName: this.name,
-            ticketUrl: `https://dice.fm${path}`,
-          });
-        }
-        if (events.length > 0) {
-          this.log(`  HTML links: found ${events.length} events`);
-        }
-      }
-    } catch (error) {
-      this.logError('Failed to fetch Dice.fm HTML', error);
-    }
-
-    this.log(`Found ${events.length} Dice.fm events`);
-    return events;
-  }
-
-  private async tryDiceApi(): Promise<RawEvent[]> {
-    this.log('  Trying Dice.fm JSON API...');
-    const events: RawEvent[] = [];
-    const now = new Date();
-
-    // Try multiple API endpoints
-    const apiUrls = [
-      this.apiUrl,
-      'https://api.dice.fm/api/v1/cities/miami-5e3bf1b0fe75488ec46cdf9f/events?page%5Bsize%5D=100',
-    ];
-
-    for (const apiUrl of apiUrls) {
-      try {
-        const response = await this.fetch(apiUrl, {
-          headers: {
-            Accept: 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-          },
-        });
-        const data = await response.json() as any;
-
-        const items = Array.isArray(data) ? data : data?.data || data?.events || [];
-        if (!Array.isArray(items) || items.length === 0) continue;
-
-        for (const item of items) {
-          const event = this.mapDiceEvent(item, now);
-          if (event) events.push(event);
-        }
-
-        if (events.length > 0) {
-          this.log(`  Dice API (${events.length} events) from: ${apiUrl.slice(0, 60)}...`);
-          return events;
-        }
-      } catch {
-        continue;
-      }
-    }
-
-    return events;
-  }
-
-  private extractFromNextData(data: any): RawEvent[] {
-    const events: RawEvent[] = [];
-    const now = new Date();
-
-    // Navigate the Next.js data structure to find events
-    // Common paths: props.pageProps.events, props.pageProps.initialData.events
-    const possiblePaths = [
-      data?.props?.pageProps?.events,
-      data?.props?.pageProps?.initialData?.events,
-      data?.props?.pageProps?.data?.events,
-      data?.props?.pageProps?.eventListings,
-      data?.props?.pageProps?.initialData?.data,
-    ];
-
-    let eventList: DiceEventData[] = [];
-    for (const path of possiblePaths) {
-      if (Array.isArray(path) && path.length > 0) {
-        eventList = path;
-        break;
-      }
-    }
-
-    // Also try to find events in deeply nested structures
-    if (eventList.length === 0) {
-      eventList = this.findEventsDeep(data);
-    }
-
-    for (const item of eventList) {
-      const event = this.mapDiceEvent(item, now);
-      if (event) events.push(event);
-    }
-
-    return events;
-  }
-
-  private findEventsDeep(obj: any, depth = 0): DiceEventData[] {
-    if (depth > 6 || !obj || typeof obj !== 'object') return [];
-
-    // If this looks like an event array, return it
-    if (Array.isArray(obj)) {
-      if (obj.length > 0 && obj[0] && (obj[0].name || obj[0].title) && (obj[0].date || obj[0].start_date || obj[0].startDate)) {
-        return obj;
-      }
-      // Search each element
-      for (const item of obj.slice(0, 5)) {
-        const found = this.findEventsDeep(item, depth + 1);
-        if (found.length > 0) return found;
-      }
+    const token = process.env.APIFY_TOKEN;
+    if (!token) {
+      this.log('APIFY_TOKEN not set — skipping Dice.fm scraper');
       return [];
     }
 
-    // Search object properties
-    for (const key of Object.keys(obj)) {
-      if (/events?|listings?|data|results/i.test(key)) {
-        const found = this.findEventsDeep(obj[key], depth + 1);
-        if (found.length > 0) return found;
+    this.log('Starting Apify Dice.fm actor run...');
+
+    try {
+      // 1. Start the actor run
+      const runId = await this.startActorRun(token);
+      if (!runId) {
+        this.log('Failed to start Apify actor run');
+        return [];
       }
-    }
+      this.log(`  Actor run started: ${runId}`);
 
-    return [];
-  }
-
-  private extractFromJsonLd(data: any): RawEvent[] {
-    const events: RawEvent[] = [];
-    const now = new Date();
-
-    const items = Array.isArray(data) ? data : [data];
-    for (const item of items) {
-      if (item['@type'] === 'Event' || item['@type'] === 'MusicEvent') {
-        const event = this.mapDiceEvent({
-          name: item.name,
-          date: item.startDate,
-          end_date: item.endDate,
-          venue: typeof item.location === 'object' ? item.location?.name : item.location,
-          url: item.url,
-          image: typeof item.image === 'string' ? item.image : item.image?.url,
-          price: item.offers?.price,
-        }, now);
-        if (event) events.push(event);
+      // 2. Poll until complete (max ~3 minutes)
+      const datasetId = await this.waitForCompletion(token, runId);
+      if (!datasetId) {
+        this.log('Actor run did not complete successfully');
+        return [];
       }
-      // ItemList of events
-      if (item['@type'] === 'ItemList' && Array.isArray(item.itemListElement)) {
-        for (const listItem of item.itemListElement) {
-          const innerItem = listItem.item || listItem;
-          if (innerItem.name && (innerItem.startDate || innerItem.url)) {
-            const event = this.mapDiceEvent({
-              name: innerItem.name,
-              date: innerItem.startDate,
-              venue: typeof innerItem.location === 'object' ? innerItem.location?.name : innerItem.location,
-              url: innerItem.url,
-              image: typeof innerItem.image === 'string' ? innerItem.image : innerItem.image?.url,
-              price: innerItem.offers?.price,
-            }, now);
-            if (event) events.push(event);
+
+      // 3. Fetch results from dataset
+      const items = await this.fetchDataset(token, datasetId);
+      this.log(`  Fetched ${items.length} items from dataset`);
+
+      // 4. Map to RawEvent
+      const now = new Date();
+      const events: RawEvent[] = [];
+      let skipped = 0;
+      let failed = 0;
+
+      for (const item of items) {
+        try {
+          const event = this.mapApifyEvent(item, now);
+          if (event) {
+            events.push(event);
+          } else {
+            skipped++;
           }
+        } catch {
+          failed++;
         }
       }
-    }
 
-    return events;
+      this.log(`Found ${events.length} events (${skipped} skipped, ${failed} failed to parse)`);
+      return events;
+    } catch (error) {
+      this.logError('Apify Dice.fm scraper failed', error);
+      return [];
+    }
   }
 
-  private mapDiceEvent(item: DiceEventData, now: Date): RawEvent | null {
+  private async startActorRun(token: string): Promise<string | null> {
+    const now = new Date();
+    const dateFrom = now.toISOString().slice(0, 10);
+    const dateTo = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+
+    const input = {
+      startUrls: [{ url: this.browseUrl }],
+      maxItems: 100,
+      dateFrom,
+      dateUntil: dateTo,
+    };
+
+    const url = `https://api.apify.com/v2/acts/${this.actorId}/runs?token=${token}`;
+    const body = JSON.stringify(input);
+
+    const data = await this.fetchJSONNative<{ data?: { id?: string } }>(
+      url,
+      body,
+      {
+        'Content-Type': 'application/json',
+      },
+      30_000,
+    );
+
+    return data?.data?.id || null;
+  }
+
+  private async waitForCompletion(token: string, runId: string): Promise<string | null> {
+    const maxAttempts = 36; // 36 * 5s = 3 minutes
+    const pollInterval = 5_000;
+
+    for (let i = 0; i < maxAttempts; i++) {
+      await this.sleep(pollInterval);
+
+      const url = `https://api.apify.com/v2/actor-runs/${runId}?token=${token}`;
+      const data = await this.fetchJSONNativeGet<{
+        data?: { status?: string; defaultDatasetId?: string };
+      }>(url, 10_000);
+
+      const status = data?.data?.status;
+      if (status === 'SUCCEEDED') {
+        return data?.data?.defaultDatasetId || null;
+      }
+      if (status === 'FAILED' || status === 'ABORTED' || status === 'TIMED-OUT') {
+        this.log(`  Actor run ${status}`);
+        return null;
+      }
+
+      // Still RUNNING or READY — continue polling
+      if (i % 6 === 0) {
+        this.log(`  Still waiting for actor run (status: ${status})...`);
+      }
+    }
+
+    this.log('  Actor run timed out after 3 minutes');
+    return null;
+  }
+
+  private async fetchDataset(token: string, datasetId: string): Promise<ApifyDiceEvent[]> {
+    const url = `https://api.apify.com/v2/datasets/${datasetId}/items?token=${token}&format=json&limit=100`;
+    return this.fetchJSONNativeGet<ApifyDiceEvent[]>(url, 15_000);
+  }
+
+  private mapApifyEvent(item: ApifyDiceEvent, now: Date): RawEvent | null {
     const title = item.name || item.title;
     if (!title || title.length < 3) return null;
 
     // Parse date
-    const dateStr = item.date || item.start_date || item.startDate;
+    const dateStr = item.date || item.startDate || item.start_date;
     const startAt = dateStr ? this.parseDate(dateStr) : null;
     if (!startAt) return null;
     if (new Date(startAt) < now) return null;
@@ -294,11 +178,9 @@ export class DiceRealScraper extends BaseScraper {
     // Parse venue
     let venueName = 'Miami Venue';
     let address: string | undefined;
-    if (typeof item.venue === 'object' && item.venue) {
-      venueName = item.venue.name || venueName;
-      address = item.venue.address;
-    } else if (typeof item.venue === 'string') {
-      venueName = item.venue;
+
+    if (item.venueName || item.venue_name || (typeof item.venue === 'string' && item.venue)) {
+      venueName = (item.venueName || item.venue_name || item.venue) as string;
     } else if (typeof item.location === 'object' && item.location) {
       venueName = item.location.name || venueName;
       address = item.location.address;
@@ -306,34 +188,36 @@ export class DiceRealScraper extends BaseScraper {
       venueName = item.location;
     }
 
-    // Find venue in database
+    if (!address && item.address) {
+      address = item.address;
+    }
+
     const knownVenue = findVenue(venueName);
 
     // Parse price
     const price = this.parsePriceAmount(item.price);
 
     // Build URL
-    let sourceUrl = item.url || item.event_url || '';
-    if (item.slug && !sourceUrl) {
-      sourceUrl = `https://dice.fm/event/${item.slug}`;
-    }
-    if (sourceUrl && !sourceUrl.startsWith('http')) {
-      sourceUrl = `https://dice.fm${sourceUrl}`;
-    }
+    const sourceUrl = item.url || item.link || this.browseUrl;
 
     // Parse image
-    let image: string | undefined;
-    if (typeof item.image === 'string') image = item.image;
-    else if (typeof item.image === 'object' && item.image?.url) image = item.image.url;
-    if (!image) image = item.image_url;
+    const image = item.image || item.imageUrl || item.image_url;
 
     // Lineup
-    const lineup = (item.lineup || item.artists || [])
-      .map((a) => a.name)
+    const artists = item.lineup || item.artists || [];
+    const lineup = artists
+      .map((a: string | { name?: string }) => (typeof a === 'string' ? a : a.name))
       .filter(Boolean)
       .join(', ');
 
-    const endAt = item.end_date || item.endDate;
+    const endAt = item.endDate || item.end_date;
+
+    const category = this.categorize(title, item.description || '', venueName);
+    const tags = this.generateTags(title, item.description || '', category);
+    if (!tags.includes('live-music') && !tags.includes('dj')) {
+      tags.unshift('live-music');
+      if (tags.length > 5) tags.pop();
+    }
 
     return {
       title,
@@ -345,26 +229,25 @@ export class DiceRealScraper extends BaseScraper {
       lat: knownVenue?.lat,
       lng: knownVenue?.lng,
       city: 'Miami',
-      tags: ['live-music', 'nightlife', ...(knownVenue?.vibeTags?.slice(0, 2) || [])],
-      category: 'Music',
+      tags: tags.slice(0, 5),
+      category,
       priceLabel: price === 0 ? 'Free' : price > 50 ? '$$' : '$',
       priceAmount: price,
-      isOutdoor: false,
+      isOutdoor: this.isOutdoor(title, item.description || '', venueName),
       description: lineup
         ? `${title} ft. ${lineup} at ${venueName}. Get tickets on Dice.fm.`
         : `${title} at ${venueName}. Get tickets on Dice.fm.`,
-      sourceUrl: sourceUrl || this.browseUrl,
+      sourceUrl,
       sourceName: this.name,
       image,
-      ticketUrl: sourceUrl || undefined,
+      ticketUrl: sourceUrl !== this.browseUrl ? sourceUrl : undefined,
       recurring: false,
     };
   }
 
   private parseDate(dateStr: string): string | null {
     if (!dateStr) return null;
-    const now = new Date();
-    const currentYear = now.getFullYear();
+    const currentYear = new Date().getFullYear();
 
     // ISO format: "2026-03-15T21:00:00" or "2026-03-15T21:00:00Z"
     if (/^\d{4}-\d{2}-\d{2}T/.test(dateStr)) {
@@ -372,21 +255,9 @@ export class DiceRealScraper extends BaseScraper {
     }
 
     // ISO date only: "2026-03-15"
-    const isoMatch = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    const isoMatch = dateStr.match(/^(\d{4}-\d{2}-\d{2})$/);
     if (isoMatch) {
-      return `${isoMatch[0]}T21:00:00`;
-    }
-
-    const lower = dateStr.toLowerCase();
-
-    if (lower.includes('tonight') || lower.includes('today')) {
-      return `${now.toISOString().slice(0, 10)}T21:00:00`;
-    }
-
-    if (lower.includes('tomorrow')) {
-      const tomorrow = new Date(now);
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      return `${tomorrow.toISOString().slice(0, 10)}T21:00:00`;
+      return `${isoMatch[1]}T21:00:00`;
     }
 
     // "Sat 25 Jan" or "25 Jan" format
@@ -399,8 +270,8 @@ export class DiceRealScraper extends BaseScraper {
         jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11,
       };
       const month = months[monthStr];
-
       if (month !== undefined) {
+        const now = new Date();
         let year = currentYear;
         if (month < now.getMonth()) year = currentYear + 1;
         const date = new Date(year, month, day);
@@ -448,11 +319,5 @@ export class DiceRealScraper extends BaseScraper {
     if (v.includes('brickell')) return 'Brickell';
     if (v.includes('little havana') || v.includes('ball & chain')) return 'Little Havana';
     return 'Miami';
-  }
-
-  private getDefaultDate(): string {
-    const d = new Date();
-    d.setDate(d.getDate() + 7);
-    return `${d.toISOString().slice(0, 10)}T21:00:00`;
   }
 }

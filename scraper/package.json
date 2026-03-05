@@ -14,7 +14,8 @@
     "scrape:agent-verify": "npx tsx src/index.ts --agent-verify",
     "scrape:ig": "npx tsx scrape-instagram-posts.mjs",
     "merge:fll": "npx tsx merge-fll.mjs",
-    "merge:miami": "npx tsx merge-miami-venues.mjs"
+    "merge:miami": "npx tsx merge-miami-venues.mjs",
+    "scrape:dice": "npx tsx src/scrape-dice.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
