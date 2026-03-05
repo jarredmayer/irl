@@ -191,15 +191,14 @@ export class MiamiImprovRealScraper extends BaseScraper {
 
     for (const url of this.urls) {
       try {
-        // Use Node.js https module instead of undici-based fetch to avoid
-        // TLS/SSL issues with SeatEngine sites in GitHub Actions
-        const $ = await fetchHTMLWithRetry(url, 3, (msg) => this.log(msg));
+        // Use BaseScraper's native fetch with DNS fallback
+        const $ = await this.fetchHTMLNativeRetry(url, 3, 15_000);
 
         // JSON-LD has Place with Events array
         $('script[type="application/ld+json"]').each((_, el) => {
           try {
             const data = JSON.parse($(el).html() || '');
-            // Handle Place with Events array
+            // Handle Place with Events array (SeatEngine uses capital "Events")
             if (data.Events && Array.isArray(data.Events)) {
               for (const evt of data.Events) {
                 if (evt.name && evt.startDate && !evt.name.toLowerCase().includes('closed')) {
@@ -207,9 +206,17 @@ export class MiamiImprovRealScraper extends BaseScraper {
                 }
               }
             }
-            // Handle direct Event
+            // Handle standard JSON-LD Event
             if (data['@type'] === 'Event' && data.name) {
               events.push(this.parseJsonLd(data));
+            }
+            // Handle lowercase "events" array (newer SeatEngine)
+            if (data.events && Array.isArray(data.events)) {
+              for (const evt of data.events) {
+                if (evt.name && evt.startDate && !evt.name.toLowerCase().includes('closed')) {
+                  events.push(this.parseJsonLd(evt));
+                }
+              }
             }
           } catch { /* skip */ }
         });
@@ -265,16 +272,17 @@ export class FortLauderdaleImprovScraper extends BaseScraper {
 
     for (const url of this.urls) {
       try {
-        // Use Node.js https module instead of undici-based fetch to avoid
-        // TLS/SSL issues with SeatEngine sites in GitHub Actions
-        const $ = await fetchHTMLWithRetry(url, 3, (msg) => this.log(msg));
+        // Use BaseScraper's native fetch with DNS fallback
+        const $ = await this.fetchHTMLNativeRetry(url, 3, 15_000);
 
         // JSON-LD has Place with Events array
         $('script[type="application/ld+json"]').each((_, el) => {
           try {
             const data = JSON.parse($(el).html() || '');
-            if (data.Events && Array.isArray(data.Events)) {
-              for (const evt of data.Events) {
+            // Handle both capital and lowercase "Events"/"events"
+            const evtArray = data.Events || data.events;
+            if (Array.isArray(evtArray)) {
+              for (const evt of evtArray) {
                 if (evt.name && evt.startDate && !evt.name.toLowerCase().includes('closed')) {
                   events.push({
                     title: this.cleanText(evt.name),
@@ -327,7 +335,13 @@ export class BrowardCenterScraper extends BaseScraper {
     for (let page = 1; page <= 6; page++) {
       try {
         const url = page === 1 ? this.baseUrl : `${this.baseUrl}?page=${page}`;
-        const $ = await this.fetchHTML(url);
+        // Use native fetch for DNS fallback in CI
+        let $: ReturnType<typeof import('cheerio').load>;
+        try {
+          $ = await this.fetchHTMLNativeRetry(url, 2, 12_000);
+        } catch {
+          $ = await this.fetchHTML(url);
+        }
         let pageCount = 0;
 
         // The site uses h3 > a for event titles inside event card containers
@@ -485,7 +499,13 @@ export class RevolutionLiveScraper extends BaseScraper {
     const seen = new Set<string>();
 
     try {
-      const $ = await this.fetchHTML(this.url);
+      // Use native fetch for DNS fallback in CI
+      let $: ReturnType<typeof import('cheerio').load>;
+      try {
+        $ = await this.fetchHTMLNativeRetry(this.url, 2, 12_000);
+      } catch {
+        $ = await this.fetchHTML(this.url);
+      }
 
       // Revolution Live uses WordPress with event listing elements
       // Each concert has: title, date, time, price, age restriction, ticket link
@@ -692,7 +712,7 @@ export class CoralGablesScraper extends BaseScraper {
     for (let page = 0; page < this.maxPages; page++) {
       const url = page === 0 ? this.baseUrl : `${this.baseUrl}?page=${page}`;
       try {
-        const $ = await fetchHTMLWithRetry(url, 3, (msg) => this.log(msg));
+        const $ = await this.fetchHTMLNativeRetry(url, 3, 15_000);
         const pageEvents = this.parseEventsFromPage($, seenTitles);
         events.push(...pageEvents);
         this.log(`  Page ${page}: found ${pageEvents.length} events`);
@@ -714,7 +734,7 @@ export class CoralGablesScraper extends BaseScraper {
           ];
           for (const fallbackUrl of fallbackUrls) {
             try {
-              const $ = await fetchHTMLWithRetry(fallbackUrl, 2, (msg) => this.log(msg));
+              const $ = await this.fetchHTMLNativeRetry(fallbackUrl, 2, 15_000);
               const pageEvents = this.parseEventsFromPage($, seenTitles);
               events.push(...pageEvents);
               this.log(`  Fallback ${fallbackUrl}: found ${pageEvents.length} events`);

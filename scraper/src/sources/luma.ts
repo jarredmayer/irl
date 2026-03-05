@@ -82,6 +82,25 @@ export class LumaScraper extends BaseScraper {
     const allEvents: RawEvent[] = [];
     const seen = new Set<string>();
 
+    // Strategy 1: Try Luma's discover API (most reliable)
+    try {
+      const apiEvents = await this.scrapeFromApi();
+      for (const event of apiEvents) {
+        const key = `${event.title}|${event.startAt}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          allEvents.push(event);
+        }
+      }
+      if (allEvents.length > 0) {
+        this.log(`Found ${allEvents.length} Luma events from API (after curation filter)`);
+        return allEvents;
+      }
+    } catch (e) {
+      this.log(`  Luma API failed: ${e instanceof Error ? e.message : String(e)}`);
+    }
+
+    // Strategy 2: Scrape HTML pages (fallback)
     for (const page of this.pages) {
       try {
         const events = await this.scrapeLumaPage(page.url, page.label);
@@ -101,18 +120,77 @@ export class LumaScraper extends BaseScraper {
     return allEvents;
   }
 
+  /**
+   * Fetch events from Luma's public API.
+   * Luma exposes discover/calendar endpoints that return JSON event data.
+   */
+  private async scrapeFromApi(): Promise<RawEvent[]> {
+    const apiUrls = [
+      'https://api.lu.ma/public/v2/event/get-events-for-calendar?calendar_api_id=cal-miami&period=future&pagination_limit=100',
+      'https://api.lu.ma/public/v1/calendar/get-items?calendar_api_id=cal-miami&period=future&pagination_limit=100',
+    ];
+
+    for (const apiUrl of apiUrls) {
+      try {
+        this.log(`  Trying Luma API: ${apiUrl.slice(0, 70)}...`);
+        const data = await this.fetchJSON<any>(apiUrl);
+
+        // Extract entries from API response
+        const entries = data?.entries || data?.events || data?.data || [];
+        if (!Array.isArray(entries) || entries.length === 0) continue;
+
+        const events: RawEvent[] = [];
+        const now = new Date();
+        let filtered = 0;
+
+        for (const entry of entries) {
+          const raw: LumaEventRaw = entry.event || entry;
+          if (!this.passesPreFilter(raw)) {
+            filtered++;
+            continue;
+          }
+          const event = this.mapEvent(raw, now);
+          if (event) events.push(event);
+        }
+
+        if (filtered > 0) {
+          this.log(`  API: filtered out ${filtered} tech/startup events`);
+        }
+
+        if (events.length > 0) return events;
+      } catch {
+        continue;
+      }
+    }
+
+    return [];
+  }
+
   private async scrapeLumaPage(url: string, label: string): Promise<RawEvent[]> {
-    const response = await this.fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      },
-    });
-    const html = await response.text();
+    // Use native fetch for DNS fallback in CI
+    let html: string;
+    try {
+      html = await this.fetchHTMLNative(url, 15_000);
+    } catch {
+      // Fallback to undici fetch
+      const response = await this.fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        },
+      });
+      html = await response.text();
+    }
 
     // Extract __NEXT_DATA__ JSON
     const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>(.*?)<\/script>/s);
     if (!nextDataMatch) {
+      // Also try RSC payload or inline JSON
+      const rscMatch = html.match(/self\.__next_f\.push\(\[1,"(.+?)"\]\)/s);
+      if (rscMatch) {
+        this.log(`  ${label}: found RSC payload, attempting parse...`);
+        // RSC payloads are harder to parse — skip for now
+      }
       this.log(`  ${label}: no __NEXT_DATA__ found`);
       return [];
     }
