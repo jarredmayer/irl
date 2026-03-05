@@ -165,6 +165,9 @@ export {
 // WeekendBroward PoW solver (SiteGround proof-of-work bypass)
 export { WeekendBrowardPowScraper } from './weekend-broward-pow.js';
 
+// Sofar Sounds — intimate live music events via public GraphQL API
+export { SofarSoundsScraper } from './sofar-sounds.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -256,6 +259,7 @@ import {
   SavorCinemaScraper,
 } from './broward-venues.js';
 import { WeekendBrowardPowScraper } from './weekend-broward-pow.js';
+import { SofarSoundsScraper } from './sofar-sounds.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -339,6 +343,9 @@ export function getAllScrapers(): BaseScraper[] {
     // new WineTastingsScraper(),        // SYNTHETIC
     // new HotelsHospitalityScraper(),   // SYNTHETIC
     new InstagramSourcesScraper(),         // Verified recurring events from monitored IG accounts
+
+    // === SOFAR SOUNDS (intimate live music via public GraphQL API) ===
+    new SofarSoundsScraper(),              // Miami — secret venues, real ticketed events
 
     // === BROWARD VENUE SCRAPERS (real calendar data from venue websites) ===
     new CultureRoomScraper(),            // Culture Room — FLL live music, Ticketmaster links
