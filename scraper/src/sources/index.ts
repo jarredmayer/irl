@@ -171,6 +171,15 @@ export { SofarSoundsScraper } from './sofar-sounds.js';
 // Luma — Miami/FLL events from lu.ma (pre-filtered to exclude tech/startup)
 export { LumaScraper } from './luma.js';
 
+// WordPress Tribe Events API venues (HistoryMiami, etc.)
+export { HistoryMiamiScraper } from './wp-tribe-venues.js';
+
+// Resy — special dining events (chef collabs, pop-ups, tasting menus)
+export { ResyEventsScraper } from './resy-events.js';
+
+// Venue Watchlist — curated venues checked via WP Tribe API / future APIs
+export { VenueWatchlistScraper } from './venue-watchlist.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -264,6 +273,9 @@ import {
 import { WeekendBrowardPowScraper } from './weekend-broward-pow.js';
 import { SofarSoundsScraper } from './sofar-sounds.js';
 import { LumaScraper } from './luma.js';
+import { HistoryMiamiScraper } from './wp-tribe-venues.js';
+import { ResyEventsScraper } from './resy-events.js';
+import { VenueWatchlistScraper } from './venue-watchlist.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -296,9 +308,11 @@ export function getAllScrapers(): BaseScraper[] {
     new MiamiFestivalsScraper(),
 
     // Real ticketing platforms
-    new DiceRealScraper(), // Fetch-based scraper (switched from Puppeteer 2026-03-05)
+    // DISABLED: DiceRealScraper — client-side only, no public API, no server-side data
+    // new DiceRealScraper(),
     new ResidentAdvisorScraper(), // Real RA GraphQL API — Miami area ID 38
-    new MiamiBeachesEventsScraper(), // Greater Miami & The Beaches official CVB calendar
+    // DISABLED: MiamiBeachesEventsScraper — DNS failure on Algolia CDN, blocked in all CI environments
+    // new MiamiBeachesEventsScraper(),
     new CandlelightRealScraper(), // Real Candlelight concert dates from Fever (candlelight page only)
     new HotelEventsScraper(), // Real events from hotel websites (Biltmore, Faena, EDITION, etc.)
     // new DiceFmScraper(),           // SYNTHETIC - fake events like "Keinemusik Miami"
@@ -317,7 +331,8 @@ export function getAllScrapers(): BaseScraper[] {
     // Real HTTP scrapers (verified calendar data)
     new MiamiImprovRealScraper(),
     new FortLauderdaleImprovScraper(),
-    new CoralGablesScraper(),
+    // DISABLED: CoralGablesScraper — Drupal JSON:API not exposing event content type (403)
+    // new CoralGablesScraper(),
     new BrowardCenterScraper(),       // Re-enabled — HTML is server-rendered, no Puppeteer needed
     new RevolutionLiveScraper(),      // FLL's premier live music venue — real concerts with prices
     // new DiceMiamiScraper(),        // NEEDS PUPPETEER - JS rendered
@@ -355,11 +370,21 @@ export function getAllScrapers(): BaseScraper[] {
     // === SOFAR SOUNDS (intimate live music via public GraphQL API) ===
     new SofarSoundsScraper(),              // Miami — secret venues, real ticketed events
 
+    // === WORDPRESS TRIBE API VENUES ===
+    new HistoryMiamiScraper(),           // HistoryMiami Museum — 13+ events via WP Tribe API
+
+    // === RESY EVENTS (special dining events, chef collabs, pop-ups) ===
+    new ResyEventsScraper(),
+
+    // === VENUE WATCHLIST (curated venues checked via WP Tribe API) ===
+    new VenueWatchlistScraper(),
+
     // === BROWARD VENUE SCRAPERS (real calendar data from venue websites) ===
     new CultureRoomScraper(),            // Culture Room — FLL live music, Ticketmaster links
-    new BonnetHouseScraper(),            // Bonnet House — museum/garden events via Tribe Events API
+    new BonnetHouseScraper(),            // Bonnet House — museum/garden events via WP Tribe Events API
     new FunkyBuddhaScraper(),            // Funky Buddha Brewery — tap room events, run club
-    new SavorCinemaScraper(),            // Savor Cinema / FLIFF — independent film screenings
+    // DISABLED: SavorCinemaScraper — domain unreachable (connection refused)
+    // new SavorCinemaScraper(),
 
     // WeekendBroward — Broward + Palm Beach events
     // new WeekendBrowardPowScraper(),   // DISABLED: PoW solver fragile in CI, WeekendBrowardVerified covers this data

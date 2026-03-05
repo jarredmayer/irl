@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Dante's HiFi",
+    "address": "1638 N Miami Ave, Miami, FL 33136",
+    "lat": 25.7927, "lng": -80.1966,
+    "city": "Miami", "neighborhood": "Wynwood",
+    "category": "Music Venue",
+    "tock_slug": "danteshifi",
+    "ig_handle": "danteshifi",
+    "wp_domain": "danteshifi.com"
+  },
+  {
+    "name": "Tam Tam",
+    "address": "736 1st St, Miami Beach, FL 33139",
+    "lat": 25.7784, "lng": -80.1325,
+    "city": "Miami Beach", "neighborhood": "South Beach",
+    "category": "Restaurant Bar",
+    "ig_handle": "tamtammiamibeach"
+  },
+  {
+    "name": "Mangrove",
+    "address": "Miami, FL",
+    "lat": 25.7617, "lng": -80.1918,
+    "city": "Miami", "neighborhood": "Miami",
+    "category": "Restaurant",
+    "ig_handle": "mangrove.miami"
+  },
+  {
+    "name": "Fratesi's Pizza",
+    "address": "Miami, FL",
+    "lat": 25.7617, "lng": -80.1918,
+    "city": "Miami", "neighborhood": "Miami",
+    "category": "Restaurant",
+    "ig_handle": "fratesis"
+  },
+  {
+    "name": "Sunny's Steakhouse",
+    "address": "Miami, FL",
+    "lat": 25.7617, "lng": -80.1918,
+    "city": "Miami", "neighborhood": "Miami",
+    "category": "Restaurant",
+    "ig_handle": "sunnyssteakhouse"
+  }
+]

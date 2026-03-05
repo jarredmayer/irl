@@ -52,15 +52,23 @@ export class MiamiNewTimesScraper extends BaseScraper {
   }
 
   async scrape(): Promise<RawEvent[]> {
-    // Strategy 1: WordPress / Tribe Events REST API
+    // Strategy 1: WordPress / Tribe Events REST API (fastest, most reliable)
     const apiEvents = await this.tryTribeApi();
     if (apiEvents.length > 0) {
       this.log(`Total: ${apiEvents.length} events from Tribe API`);
       return apiEvents;
     }
 
-    // Strategy 2: HTML scraping — limited to 3 days to avoid 120s timeout
-    this.log('Tribe API unavailable, falling back to HTML scraping (3 days only)...');
+    // Strategy 2: RSS feed (lightweight, no timeout risk)
+    this.log('Tribe API unavailable, trying RSS feed...');
+    const rssEvents = await this.tryRss();
+    if (rssEvents.length > 0) {
+      this.log(`Total: ${rssEvents.length} events from RSS`);
+      return rssEvents;
+    }
+
+    // Strategy 3: HTML scraping — limited to 3 days to avoid 120s timeout
+    this.log('RSS unavailable, falling back to HTML scraping (3 days only)...');
     const htmlEvents = await this.scrapeHtml();
     this.log(`Total: ${htmlEvents.length} events from HTML scraping`);
     return htmlEvents;
@@ -136,6 +144,81 @@ export class MiamiNewTimesScraper extends BaseScraper {
     }
 
     return [];
+  }
+
+  private async tryRss(): Promise<RawEvent[]> {
+    const rssUrls = [
+      `${this.baseUrl}/miami/events/rss.xml`,
+      `${this.baseUrl}/rss.xml`,
+    ];
+
+    let xmlText = '';
+    for (const url of rssUrls) {
+      try {
+        const html = await this.fetchHTMLNative(url, 15_000);
+        if (html.includes('<item>') || html.includes('<entry>')) {
+          xmlText = html;
+          break;
+        }
+      } catch (e) {
+        this.log(`  RSS ${url} failed: ${e instanceof Error ? e.message : String(e)}`);
+      }
+    }
+
+    if (!xmlText) return [];
+
+    const events: RawEvent[] = [];
+    const now = new Date();
+    const itemMatches = xmlText.match(/<item>([\s\S]*?)<\/item>/g) || [];
+
+    for (const item of itemMatches) {
+      const title = this.extractXml(item, 'title');
+      const link = this.extractXml(item, 'link');
+      const pubDate = this.extractXml(item, 'pubDate');
+      const description = this.extractXml(item, 'description');
+
+      if (!title || !pubDate) continue;
+
+      const startAt = new Date(pubDate);
+      if (isNaN(startAt.getTime()) || startAt < now) continue;
+
+      // Filter to event-like content
+      const lowerTitle = title.toLowerCase();
+      const lowerDesc = (description || '').toLowerCase();
+      const isEvent = ['event', 'show', 'concert', 'festival', 'party', 'opening', 'exhibit',
+                       'performance', 'live', 'tour'].some(kw => lowerTitle.includes(kw) || lowerDesc.includes(kw));
+      if (!isEvent) continue;
+
+      const cleanTitle = title.replace(/<[^>]+>/g, '').trim();
+      const neighborhood = this.inferNeighborhood('', cleanTitle);
+      const city = this.inferCity(neighborhood, '');
+      const category = this.categorize(cleanTitle, description || '');
+      const tags = this.generateTags(cleanTitle, description || '', category);
+
+      events.push({
+        title: cleanTitle,
+        startAt: startAt.toISOString().split('.')[0],
+        venueName: undefined,
+        address: undefined,
+        neighborhood,
+        lat: null,
+        lng: null,
+        city,
+        tags,
+        category,
+        isOutdoor: false,
+        description: description?.replace(/<[^>]+>/g, '').slice(0, 300) || '',
+        sourceUrl: link || `${this.baseUrl}/events`,
+        sourceName: this.name,
+      });
+    }
+
+    return events;
+  }
+
+  private extractXml(xml: string, tag: string): string {
+    const m = xml.match(new RegExp(`<${tag}[^>]*><!\\[CDATA\\[([\\s\\S]*?)\\]\\]></${tag}>|<${tag}[^>]*>([\\s\\S]*?)</${tag}>`));
+    return (m?.[1] || m?.[2] || '').trim();
   }
 
   private async scrapeHtml(): Promise<RawEvent[]> {

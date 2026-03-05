@@ -205,17 +205,17 @@ interface TribeResponse {
 
 export class BonnetHouseScraper extends BaseScraper {
   constructor() {
-    super('BonnetHouse', { weight: 1.0, rateLimit: 2000 });
+    super('BonnetHouse', { weight: 1.3, rateLimit: 2000 });
   }
 
   async scrape(): Promise<RawEvent[]> {
-    this.log('Fetching Bonnet House events via Tribe API...');
+    this.log('Fetching Bonnet House events via WordPress REST API...');
 
     const today = new Date().toISOString().split('T')[0];
     // Try multiple URL variants to work around DNS resolution issues in CI
     const urls = [
-      `https://www.bonnethouse.org/wp-json/tribe/events/v1/events?per_page=50&start_date=${today}`,
-      `https://bonnethouse.org/wp-json/tribe/events/v1/events?per_page=50&start_date=${today}`,
+      `https://www.bonnethouse.org/wp-json/tribe/events/v1/events?per_page=50&status=publish&start_date=${today}`,
+      `https://bonnethouse.org/wp-json/tribe/events/v1/events?per_page=50&status=publish&start_date=${today}`,
     ];
 
     let data: TribeResponse | undefined;
