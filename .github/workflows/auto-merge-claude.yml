@@ -76,25 +76,37 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/puppeteer
-          key: ${{ runner.os }}-puppeteer-v2-${{ hashFiles('scraper/package-lock.json') }}
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('scraper/package.json') }}-v24
+          restore-keys: |
+            ${{ runner.os }}-puppeteer-
 
       - name: Install scraper dependencies
         working-directory: scraper
         env:
           PUPPETEER_SKIP_DOWNLOAD: 'true'
-        run: npm ci || (echo "npm ci failed, retrying..." && npm cache clean --force && npm ci) || echo "⚠ npm ci failed — scrapers will be skipped"
+        run: npm ci || (echo "npm ci failed, retrying..." && npm cache clean --force && npm ci) || echo "npm ci failed — scrapers will be skipped"
 
       - name: Install Puppeteer Chrome
-        continue-on-error: true
         working-directory: scraper
-        run: npx puppeteer browsers install chrome || echo "⚠ Chrome install failed — Puppeteer scrapers will return empty"
+        run: |
+          npx puppeteer browsers install chrome
+          CHROME=$(find ~/.cache/puppeteer -name "chrome" -type f -perm -u+x 2>/dev/null | head -1)
+          if [ -z "$CHROME" ]; then
+            echo "::warning::Chrome install failed — Puppeteer scrapers will be skipped"
+            echo "CHROME_AVAILABLE=false" >> $GITHUB_ENV
+          else
+            echo "Chrome installed: $CHROME"
+            echo "CHROME_AVAILABLE=true" >> $GITHUB_ENV
+          fi
 
       - name: Run scraper
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 20
         working-directory: scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: npm run scrape
 
       - name: Commit and push event data

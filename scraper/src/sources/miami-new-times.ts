@@ -71,6 +71,7 @@ export class MiamiNewTimesScraper extends BaseScraper {
     const apiUrls = [
       `${this.baseUrl}/wp-json/tribe/events/v1/events?per_page=50&start_date=${today}`,
       `${this.baseUrl}/wp-json/tribe/events/v1/events?per_page=50`,
+      `${this.baseUrl}/wp-json/wp/v2/tribe_events?per_page=50`,
     ];
 
     for (const apiUrl of apiUrls) {

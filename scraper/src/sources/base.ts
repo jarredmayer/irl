@@ -6,6 +6,7 @@
 import * as cheerio from 'cheerio';
 import * as https from 'https';
 import * as http from 'http';
+import { promises as dnsPromises, Resolver } from 'dns';
 import type { RawEvent, SourceConfig } from '../types.js';
 
 export abstract class BaseScraper {
@@ -309,27 +310,65 @@ export abstract class BaseScraper {
   }
 
   /**
+   * Resolve a hostname with fallback to public DNS (Google 8.8.8.8, Cloudflare 1.1.1.1).
+   * Fixes EAI_AGAIN errors in GitHub Actions where the default resolver can fail.
+   */
+  protected async resolveWithFallback(hostname: string): Promise<string | null> {
+    try {
+      const addresses = await dnsPromises.resolve4(hostname);
+      return addresses[0] || null;
+    } catch {
+      try {
+        const resolver = new Resolver();
+        resolver.setServers(['8.8.8.8', '1.1.1.1']);
+        const addresses = await new Promise<string[]>((resolve, reject) => {
+          resolver.resolve4(hostname, (err, addrs) => err ? reject(err) : resolve(addrs));
+        });
+        return addresses[0] || null;
+      } catch {
+        return null;
+      }
+    }
+  }
+
+  /**
    * Fetch HTML using Node.js built-in https/http module instead of undici-based fetch.
    * Some sites reject connections from Node.js native fetch (undici) due to TLS
    * incompatibilities or IP-based blocking. The built-in https module uses OpenSSL
    * and behaves more like a traditional browser HTTP stack.
    */
-  protected fetchHTMLNative(url: string, timeoutMs = 10_000): Promise<string> {
+  protected async fetchHTMLNative(url: string, timeoutMs = 10_000): Promise<string> {
+    const parsed = new URL(url);
+
+    // Pre-resolve DNS with fallback to public resolvers (fixes EAI_AGAIN in CI)
+    let resolvedHost: string | null = null;
+    try {
+      resolvedHost = await this.resolveWithFallback(parsed.hostname);
+    } catch { /* proceed with default resolution */ }
+
     return new Promise((resolve, reject) => {
       const mod = url.startsWith('https') ? https : http;
-      const req = mod.get(
-        url,
-        {
-          headers: {
-            'User-Agent': this.userAgent,
-            Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.5',
-            'Accept-Encoding': 'identity',
-          },
-          ...(url.startsWith('https')
-            ? { rejectUnauthorized: true, minVersion: 'TLSv1.2' as any }
-            : {}),
+      const options: any = {
+        headers: {
+          'User-Agent': this.userAgent,
+          Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+          'Accept-Encoding': 'identity',
+          Host: parsed.hostname,
         },
+        ...(url.startsWith('https')
+          ? { rejectUnauthorized: true, minVersion: 'TLSv1.2' as any, servername: parsed.hostname }
+          : {}),
+      };
+
+      // If we resolved an IP, use it directly to bypass broken system DNS
+      const fetchUrl = resolvedHost
+        ? url.replace(parsed.hostname, resolvedHost)
+        : url;
+
+      const req = mod.get(
+        fetchUrl,
+        options,
         (res) => {
           if (
             res.statusCode &&
