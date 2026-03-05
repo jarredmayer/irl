@@ -20,6 +20,8 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import * as https from 'https';
+import * as http from 'http';
 import type { IRLEvent } from '../types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -27,7 +29,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // scraper/cache/ is gitignored — that's why we write here instead.
 const CACHE_PATH = join(__dirname, '../../../public/data/venue-images.json');
 const CACHE_TTL_DAYS = 14;     // Re-fetch stale entries after 14 days
-const MAX_FETCHES_PER_RUN = 60; // Cap to avoid long scrape times
+const MAX_FETCHES_PER_RUN = 120; // Cap to avoid long scrape times
 const FETCH_TIMEOUT_MS = 8000;
 
 interface CacheEntry {
@@ -187,63 +189,120 @@ export class VenueImageFetcher {
     return result;
   }
 
-  private async fetchOgImage(pageUrl: string): Promise<string | null> {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  /**
+   * Fetch og:image from a page using native https/http module.
+   * Uses native module instead of undici-based fetch for better TLS compatibility.
+   */
+  private fetchOgImage(pageUrl: string, redirectCount = 0): Promise<string | null> {
+    if (redirectCount > 3) return Promise.resolve(null);
 
-    try {
-      const response = await fetch(pageUrl, {
-        signal: controller.signal,
-        headers: {
-          'User-Agent':
-            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-          Accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.8',
-          'Accept-Language': 'en-US,en;q=0.5',
+    return new Promise((resolve, reject) => {
+      const mod = pageUrl.startsWith('https') ? https : http;
+      const req = mod.get(
+        pageUrl,
+        {
+          headers: {
+            'User-Agent':
+              'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            Accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'identity',
+          },
+          ...(pageUrl.startsWith('https')
+            ? { rejectUnauthorized: true, minVersion: 'TLSv1.2' as any }
+            : {}),
         },
-        redirect: 'follow',
+        (res) => {
+          // Follow redirects
+          if (
+            res.statusCode &&
+            res.statusCode >= 300 &&
+            res.statusCode < 400 &&
+            res.headers.location
+          ) {
+            req.destroy();
+            let location = res.headers.location;
+            if (location.startsWith('/')) {
+              try {
+                const base = new URL(pageUrl);
+                location = `${base.origin}${location}`;
+              } catch {
+                resolve(null);
+                return;
+              }
+            }
+            this.fetchOgImage(location, redirectCount + 1).then(resolve);
+            return;
+          }
+
+          if (res.statusCode && res.statusCode >= 400) {
+            req.destroy();
+            resolve(null);
+            return;
+          }
+
+          // Read only the <head> to avoid fetching large HTML bodies
+          let html = '';
+          const headEndRe = /<\/head>/i;
+          const maxBytes = 30_000;
+
+          res.on('data', (chunk: Buffer) => {
+            if (html.length >= maxBytes) {
+              req.destroy();
+              return;
+            }
+            html += chunk.toString('utf-8');
+            if (headEndRe.test(html)) {
+              req.destroy();
+            }
+          });
+
+          let resolved = false;
+          const extractImage = () => {
+            if (resolved) return;
+            resolved = true;
+            // Extract og:image (two attribute orderings)
+            const match =
+              html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ??
+              html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+
+            if (!match?.[1]) {
+              resolve(null);
+              return;
+            }
+
+            const imgUrl = match[1].trim();
+            if (!imgUrl) {
+              resolve(null);
+              return;
+            }
+
+            // Resolve relative URLs
+            if (imgUrl.startsWith('//')) {
+              resolve(`https:${imgUrl}`);
+            } else if (imgUrl.startsWith('/')) {
+              try {
+                const base = new URL(pageUrl);
+                resolve(`${base.origin}${imgUrl}`);
+              } catch {
+                resolve(null);
+              }
+            } else {
+              resolve(imgUrl);
+            }
+          };
+
+          res.on('end', extractImage);
+          res.on('close', extractImage);
+          res.on('error', () => resolve(null));
+        },
+      );
+
+      req.setTimeout(FETCH_TIMEOUT_MS, () => {
+        req.destroy();
+        reject(new Error('timeout'));
       });
-
-      if (!response.ok) return null;
-
-      // Read only the <head> to avoid fetching large HTML bodies
-      const reader = response.body?.getReader();
-      if (!reader) return null;
-
-      let html = '';
-      const headEndRe = /<\/head>/i;
-      const maxBytes = 30_000; // Read up to 30 KB looking for og:image
-
-      while (html.length < maxBytes) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        html += new TextDecoder().decode(value);
-        if (headEndRe.test(html)) break;
-      }
-      reader.cancel().catch(() => {});
-
-      // Extract og:image (two attribute orderings)
-      const match =
-        html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ??
-        html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
-
-      if (!match?.[1]) return null;
-
-      const imgUrl = match[1].trim();
-      if (!imgUrl) return null;
-
-      // Resolve relative URLs
-      if (imgUrl.startsWith('//')) return `https:${imgUrl}`;
-      if (imgUrl.startsWith('/')) {
-        try {
-          const base = new URL(pageUrl);
-          return `${base.origin}${imgUrl}`;
-        } catch {
-          return null;
-        }
-      }
-      return imgUrl;
-    } finally {
-      clearTimeout(timer);
-    }
+      req.on('error', reject);
+    });
   }
 }
