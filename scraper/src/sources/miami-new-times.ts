@@ -1,6 +1,13 @@
 /**
  * Miami New Times Event Scraper
- * Scrapes events from miaminewtimes.com/eventsearch
+ *
+ * Strategy (updated 2026-03-05):
+ *   1. Try WordPress REST API (The Events Calendar plugin):
+ *      https://www.miaminewtimes.com/wp-json/tribe/events/v1/events
+ *   2. Fall back to HTML scraping of the events search page with updated selectors
+ *
+ * The site has redesigned its events section multiple times — the WordPress
+ * API is more stable than CSS selectors.
  */
 
 import { addDays, format, parse } from 'date-fns';
@@ -9,19 +16,132 @@ import type { Element } from 'domhandler';
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 
+interface TribeEvent {
+  id: number;
+  title: string;
+  description: string;
+  url: string;
+  start_date: string;
+  end_date: string;
+  all_day: boolean;
+  categories?: Array<{ name: string; slug: string }>;
+  tags?: Array<{ name: string; slug: string }>;
+  venue?: {
+    venue: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+  };
+  cost?: string;
+  cost_details?: { values: string[] };
+  image?: { url: string };
+}
+
+interface TribeResponse {
+  events: TribeEvent[];
+  total: number;
+  total_pages: number;
+}
+
 export class MiamiNewTimesScraper extends BaseScraper {
   private baseUrl = 'https://www.miaminewtimes.com';
-  private calendarUrl = `${this.baseUrl}/eventsearch`;
 
   constructor() {
     super('Miami New Times', { weight: 1.5, rateLimit: 1500 });
   }
 
   async scrape(): Promise<RawEvent[]> {
-    const events: RawEvent[] = [];
-    const daysAhead = 14; // Scrape next 2 weeks
+    // Strategy 1: WordPress / Tribe Events REST API
+    const apiEvents = await this.tryTribeApi();
+    if (apiEvents.length > 0) {
+      this.log(`Total: ${apiEvents.length} events from Tribe API`);
+      return apiEvents;
+    }
 
-    this.log(`Scraping events for next ${daysAhead} days...`);
+    // Strategy 2: HTML scraping with updated selectors
+    this.log('Tribe API unavailable, falling back to HTML scraping...');
+    const htmlEvents = await this.scrapeHtml();
+    this.log(`Total: ${htmlEvents.length} events from HTML scraping`);
+    return htmlEvents;
+  }
+
+  private async tryTribeApi(): Promise<RawEvent[]> {
+    const today = format(new Date(), 'yyyy-MM-dd');
+    const apiUrls = [
+      `${this.baseUrl}/wp-json/tribe/events/v1/events?per_page=50&start_date=${today}`,
+      `${this.baseUrl}/wp-json/tribe/events/v1/events?per_page=50`,
+    ];
+
+    for (const apiUrl of apiUrls) {
+      try {
+        this.log(`Trying Tribe Events API: ${apiUrl}`);
+        const data = await this.fetchJSONNativeGet<TribeResponse>(apiUrl, 15_000);
+
+        if (!data?.events?.length) continue;
+
+        const events: RawEvent[] = [];
+        const now = new Date();
+
+        for (const item of data.events) {
+          const startAt = item.start_date?.replace(' ', 'T');
+          if (!startAt || new Date(startAt) < now) continue;
+
+          const title = this.cleanText(item.title);
+          if (!title || title.length < 5) continue;
+
+          const description = this.cleanText(
+            item.description?.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')
+          );
+
+          const venueName = item.venue?.venue;
+          const address = item.venue
+            ? `${item.venue.address || ''}, ${item.venue.city || 'Miami'}, ${item.venue.state || 'FL'} ${item.venue.zip || ''}`.trim()
+            : undefined;
+
+          const neighborhood = this.inferNeighborhood(venueName || '', address || '');
+          const city = this.inferCity(neighborhood, address || '');
+          const priceInfo = this.parsePrice(item.cost || 'Free');
+          const category = this.categorize(title, description, venueName || '');
+          const tags = this.generateTags(title, description, category);
+          const image = item.image?.url;
+
+          events.push({
+            title,
+            startAt,
+            endAt: item.end_date?.replace(' ', 'T'),
+            venueName,
+            address,
+            neighborhood,
+            lat: null,
+            lng: null,
+            city,
+            tags,
+            category,
+            priceLabel: priceInfo.label,
+            priceAmount: priceInfo.amount,
+            isOutdoor: this.isOutdoor(title, description, venueName || ''),
+            description: description || `${title} at ${venueName || neighborhood}`,
+            sourceUrl: item.url || `${this.baseUrl}/events`,
+            image,
+            sourceName: this.name,
+          });
+        }
+
+        return events;
+      } catch (e) {
+        this.log(`  API attempt failed: ${e instanceof Error ? e.message : String(e)}`);
+      }
+    }
+
+    return [];
+  }
+
+  private async scrapeHtml(): Promise<RawEvent[]> {
+    const events: RawEvent[] = [];
+    const daysAhead = 14;
+
+    this.log(`Scraping HTML events for next ${daysAhead} days...`);
 
     for (let i = 0; i < daysAhead; i++) {
       const targetDate = addDays(new Date(), i);
@@ -30,34 +150,51 @@ export class MiamiNewTimesScraper extends BaseScraper {
       try {
         const dayEvents = await this.scrapeDay(dateStr);
         events.push(...dayEvents);
-        this.log(`Found ${dayEvents.length} events for ${dateStr}`);
+        if (dayEvents.length > 0) {
+          this.log(`  Found ${dayEvents.length} events for ${dateStr}`);
+        }
       } catch (error) {
         this.logError(`Failed to scrape ${dateStr}`, error);
       }
     }
 
-    this.log(`Total: ${events.length} events scraped`);
     return events;
   }
 
   private async scrapeDay(dateStr: string): Promise<RawEvent[]> {
-    const url = `${this.calendarUrl}/?narrowByDate=${dateStr}&page=1`;
-    const $ = await this.fetchHTML(url);
+    const url = `${this.baseUrl}/eventsearch/?narrowByDate=${dateStr}&page=1`;
+    let $: cheerio.CheerioAPI;
+    try {
+      $ = await this.fetchHTMLNativeRetry(url, 2, 15_000);
+    } catch {
+      // Fall back to undici fetch
+      $ = await this.fetchHTML(url);
+    }
     const events: RawEvent[] = [];
 
-    // Target event list items
-    const listings = $('.events-calendar__list-item');
+    // Try multiple selector strategies
+    const selectors = [
+      '.events-calendar__list-item',           // Original
+      '.event-card', '.eventCard',             // Common redesign patterns
+      '[class*="event-listing"]',              // Wildcard
+      'article[class*="event"]',               // Article-based
+      '.searchResult', '.search-result',       // Search results page
+      '.contentBody a[href*="/events/"]',      // Link-based fallback
+    ];
 
-    listings.each((_, element) => {
-      try {
-        const event = this.parseEventListing($, $(element), dateStr);
-        if (event) {
-          events.push(event);
-        }
-      } catch (error) {
-        this.logError('Failed to parse event listing', error);
-      }
-    });
+    for (const selector of selectors) {
+      const listings = $(selector);
+      if (listings.length === 0) continue;
+
+      listings.each((_, element) => {
+        try {
+          const event = this.parseEventListing($, $(element), dateStr);
+          if (event) events.push(event);
+        } catch { /* skip */ }
+      });
+
+      if (events.length > 0) break;
+    }
 
     return events;
   }
@@ -77,9 +214,12 @@ export class MiamiNewTimesScraper extends BaseScraper {
       title = this.cleanText(img.attr('alt'));
     }
 
+    // Also try heading tags
     if (!title || title.length < 5) {
-      return null;
+      title = this.cleanText(item.find('h2, h3, h4').first().text());
     }
+
+    if (!title || title.length < 5) return null;
 
     // Get event URL
     let sourceUrl = eventLink.attr('href') || '';
@@ -90,7 +230,7 @@ export class MiamiNewTimesScraper extends BaseScraper {
     // Parse full text for venue, time, neighborhood
     const fullText = item.text();
 
-    // Parse time - look for patterns like "Thu., Oct 23, 7:00 am"
+    // Parse time
     const timeMatch = fullText.match(/(\d{1,2}:\d{2}\s*(am|pm|AM|PM))/);
     let startAt = `${dateStr}T12:00:00`;
     if (timeMatch) {
@@ -100,9 +240,7 @@ export class MiamiNewTimesScraper extends BaseScraper {
         const hours = format(parsed, 'HH');
         const minutes = format(parsed, 'mm');
         startAt = `${dateStr}T${hours}:${minutes}:00`;
-      } catch {
-        // Use default noon time
-      }
+      } catch { /* use default */ }
     }
 
     // Parse venue and address
@@ -121,31 +259,24 @@ export class MiamiNewTimesScraper extends BaseScraper {
       }
     }
 
-    // Parse neighborhood - stop at common delimiters like Price, Category, TBA, or other labels
+    // Parse neighborhood
     const neighborhoodMatch = fullText.match(/Neighborhood:\s*([A-Za-z\s/]+?)(?:\s*(?:Price|Category|TBA|Venue|When|Where|$|\n|[0-9]))/i);
-    let neighborhood = neighborhoodMatch
+    const neighborhood = neighborhoodMatch
       ? this.cleanText(neighborhoodMatch[1])
       : 'Miami';
 
-    // Determine city from neighborhood
-    const isFortLauderdale = /fort lauderdale|hollywood|dania|pompano|davie|plantation|sunrise|weston|pembroke|hallandale|deerfield/i.test(neighborhood);
-    const city = isFortLauderdale ? 'Fort Lauderdale' : 'Miami';
+    const city = this.inferCity(neighborhood, '');
 
-    // Extract image URL
+    // Extract image
     const img = item.find('img').first();
     let image = img.attr('src') || img.attr('data-src') || undefined;
-    // Make sure image URL is absolute
     if (image && image.startsWith('/')) {
       image = this.baseUrl + image;
     }
 
-    // Parse price from listing text (look for $XX patterns or "Free")
     const priceInfo = this.parsePrice(fullText);
-
-    // Categorize and generate tags
     const category = this.categorize(title, '', venueName || '');
     const tags = this.generateTags(title, '', category);
-    const isOutdoor = this.isOutdoor(title, '', venueName || '');
 
     return {
       title,
@@ -160,11 +291,37 @@ export class MiamiNewTimesScraper extends BaseScraper {
       category,
       priceLabel: priceInfo.label,
       priceAmount: priceInfo.amount,
-      isOutdoor,
+      isOutdoor: this.isOutdoor(title, '', venueName || ''),
       description: `${title} at ${venueName || neighborhood}`,
       sourceUrl,
       image,
       sourceName: this.name,
     };
+  }
+
+  private inferNeighborhood(venue: string, address: string): string {
+    const text = `${venue} ${address}`.toLowerCase();
+    if (/wynwood/.test(text)) return 'Wynwood';
+    if (/brickell/.test(text)) return 'Brickell';
+    if (/south beach|ocean dr|collins ave|miami beach/.test(text)) return 'South Beach';
+    if (/design district/.test(text)) return 'Design District';
+    if (/little havana|calle ocho/.test(text)) return 'Little Havana';
+    if (/coconut grove/.test(text)) return 'Coconut Grove';
+    if (/coral gables/.test(text)) return 'Coral Gables';
+    if (/downtown|biscayne/.test(text)) return 'Downtown Miami';
+    if (/little haiti/.test(text)) return 'Little Haiti';
+    if (/overtown/.test(text)) return 'Overtown';
+    return 'Miami';
+  }
+
+  private inferCity(neighborhood: string, address: string): 'Miami' | 'Fort Lauderdale' | 'Palm Beach' {
+    const text = `${neighborhood} ${address}`.toLowerCase();
+    if (/fort lauderdale|hollywood|dania|pompano|davie|plantation|sunrise|weston|pembroke|hallandale|deerfield/i.test(text)) {
+      return 'Fort Lauderdale';
+    }
+    if (/palm beach|boca raton|delray|boynton|jupiter|wellington/i.test(text)) {
+      return 'Palm Beach';
+    }
+    return 'Miami';
   }
 }
