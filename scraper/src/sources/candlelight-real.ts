@@ -12,7 +12,6 @@
  * Verify the venue exists and show is still on sale before each publish run.
  */
 
-import * as cheerio from 'cheerio';
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 
@@ -85,15 +84,7 @@ export class CandlelightRealScraper extends BaseScraper {
    */
   private async fetchEventUrls(): Promise<string[]> {
     try {
-      // Use native fetch for DNS fallback in CI environments
-      let $: cheerio.CheerioAPI;
-      try {
-        $ = await this.fetchHTMLNativeRetry(this.LISTING_URL, 2, 15_000);
-      } catch {
-        const response = await this.fetch(this.LISTING_URL);
-        const html = await response.text();
-        $ = cheerio.load(html);
-      }
+      const $ = await this.fetchHTMLNativeRetry(this.LISTING_URL, 2, 15_000);
 
       const urls: string[] = [];
 
@@ -123,14 +114,7 @@ export class CandlelightRealScraper extends BaseScraper {
    * Fetch an individual event page and extract the Event JSON-LD.
    */
   private async fetchEventData(url: string): Promise<FeverEventData | null> {
-    let $: cheerio.CheerioAPI;
-    try {
-      $ = await this.fetchHTMLNativeRetry(url, 2, 12_000);
-    } catch {
-      const response = await this.fetch(url);
-      const html = await response.text();
-      $ = cheerio.load(html);
-    }
+    const $ = await this.fetchHTMLNativeRetry(url, 2, 12_000);
 
     let eventData: FeverEventData | null = null;
 

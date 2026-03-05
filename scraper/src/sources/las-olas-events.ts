@@ -64,34 +64,71 @@ export class LasOlasEventsScraper extends BaseScraper {
 
   private async scrapeFromWarmupData(): Promise<RawEvent[]> {
     try {
-      // Use native fetch for DNS fallback in CI
-      let html: string;
+      const html = await this.fetchHTMLNative(this.PAGE_URL, 20_000);
+
+      // Extract warmupData from Wix's dedicated script tag
+      const scriptMatch = html.match(/<script[^>]*id="wix-warmup-data"[^>]*>([\s\S]*?)<\/script>/);
+      if (!scriptMatch) {
+        // Fallback: try the old inline marker approach
+        const marker = '"events":{"events":[';
+        const idx = html.indexOf(marker);
+        if (idx === -1) {
+          this.log('Could not find wix-warmup-data script tag or events marker');
+          return [];
+        }
+        // Use old bracket-matching approach
+        const arrStart = idx + marker.length - 1;
+        let depth = 0;
+        let endIdx = -1;
+        for (let i = arrStart; i < html.length && i < arrStart + 2_000_000; i++) {
+          if (html[i] === '[') depth++;
+          else if (html[i] === ']') {
+            depth--;
+            if (depth === 0) { endIdx = i; break; }
+          }
+        }
+        if (endIdx === -1) {
+          this.log('Could not parse events JSON array');
+          return [];
+        }
+        const wixEvents: WixEvent[] = JSON.parse(html.slice(arrStart, endIdx + 1));
+        this.log(`Found ${wixEvents.length} events in warmupData (marker)`);
+        const events = this.normalizeWixEvents(wixEvents);
+        this.log(`Normalized ${events.length} upcoming Las Olas events`);
+        return events;
+      }
+
+      let warmup: any;
       try {
-        html = await this.fetchHTMLNative(this.PAGE_URL, 15_000);
+        warmup = JSON.parse(scriptMatch[1]);
       } catch {
-        const response = await this.fetch(this.PAGE_URL);
-        html = await response.text();
-      }
-
-      // Find the events JSON array in warmupData
-      // Pattern: "events":{"events":[...]}
-      const marker = '"events":{"events":[';
-      const idx = html.indexOf(marker);
-      if (idx === -1) {
-        this.log('Could not find events data in warmupData');
+        this.log('Could not parse wix-warmup-data JSON');
         return [];
       }
 
-      const arrStart = idx + marker.length - 1; // Include the '['
-      const eventsJson = this.extractJsonArray(html, arrStart);
-      if (!eventsJson) {
-        this.log('Could not parse events JSON array');
+      // The Wix Events App ID stays the same: 140603ad-af8d-84a5-2c80-a0f60cb47351
+      const APP_ID = '140603ad-af8d-84a5-2c80-a0f60cb47351';
+      const appData = warmup?.appsWarmupData?.[APP_ID];
+      if (!appData) {
+        this.log('Could not find Wix Events app data');
         return [];
       }
 
-      const wixEvents: WixEvent[] = JSON.parse(eventsJson);
+      // Find the widget with the most events (there may be multiple widgets)
+      let wixEvents: WixEvent[] = [];
+      for (const widgetKey of Object.keys(appData)) {
+        const widgetEvents = appData[widgetKey]?.events?.events;
+        if (Array.isArray(widgetEvents) && widgetEvents.length > wixEvents.length) {
+          wixEvents = widgetEvents;
+        }
+      }
+
+      if (wixEvents.length === 0) {
+        this.log('No events found in Wix warmup data');
+        return [];
+      }
+
       this.log(`Found ${wixEvents.length} events in warmupData`);
-
       const events = this.normalizeWixEvents(wixEvents);
       this.log(`Normalized ${events.length} upcoming Las Olas events`);
       return events;
@@ -99,20 +136,6 @@ export class LasOlasEventsScraper extends BaseScraper {
       this.logError('Failed to extract warmupData events', error);
       return [];
     }
-  }
-
-  private extractJsonArray(html: string, startIdx: number): string | null {
-    let depth = 0;
-    for (let i = startIdx; i < html.length && i < startIdx + 2_000_000; i++) {
-      if (html[i] === '[') depth++;
-      else if (html[i] === ']') {
-        depth--;
-        if (depth === 0) {
-          return html.slice(startIdx, i + 1);
-        }
-      }
-    }
-    return null;
   }
 
   private normalizeWixEvents(wixEvents: WixEvent[]): RawEvent[] {

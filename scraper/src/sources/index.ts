@@ -368,8 +368,10 @@ export function getAllScrapers(): BaseScraper[] {
     // Re-enable when running in GitHub Actions with Chrome installed.
     // new WeekendBrowardEnhancedScraper(),
     new WeekendBrowardVerifiedScraper(), // Verified specific events (real artist names, venues, dates — no API keys)
-    new WeekendBrowardScraper(),         // RSS (blocked by Cloudflare but kept for when it clears)
-    new WeekendBrowardGoogleScraper(),   // Google Custom Search API (requires GOOGLE_API_KEY + GOOGLE_CSE_ID)
+    // DISABLED: WeekendBroward base/Google scrapers are blocked (Cloudflare, no API key).
+    // WeekendBrowardVerifiedScraper above provides adequate coverage (105 events).
+    // new WeekendBrowardScraper(),      // RSS (blocked by Cloudflare)
+    // new WeekendBrowardGoogleScraper(),// Google Custom Search API (requires GOOGLE_API_KEY + GOOGLE_CSE_ID)
     // DISABLED — Individual Puppeteer scrapers replaced by WeekendBrowardEnhancedScraper above
     // new WeekendBrowardLiveMusicScraper(),
     // new WeekendBrowardComedyScraper(),

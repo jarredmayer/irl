@@ -2,6 +2,11 @@
  * Resident Advisor Scraper
  * Queries RA's GraphQL API for Miami-area events.
  * Area ID 38 = Miami (covers South Florida / FLL).
+ *
+ * NOTE (2026-03-05): RA's GraphQL API silently returns 0 results for
+ * GitHub Actions datacenter IP ranges. The API works fine locally.
+ * TODO: Run this scraper via a residential proxy or self-hosted runner.
+ * Current workaround: logs a warning when 0 results returned.
  */
 
 import { BaseScraper } from './base.js';
@@ -171,6 +176,11 @@ export class ResidentAdvisorScraper extends BaseScraper {
       if (!listing) break;
 
       totalResults = listing.totalResults;
+
+      if (totalResults === 0 && page === 1) {
+        this.log('⚠ RA returned 0 results — likely IP-blocked in CI (GitHub Actions datacenter IPs are blocked by RA). Events will be missing until scraper runs from a residential IP.');
+        break;
+      }
 
       for (const { event } of listing.data) {
         const mapped = this.mapEvent(event);
