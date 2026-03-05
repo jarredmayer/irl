@@ -6,8 +6,8 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 const STORAGE_KEY = 'irl_install_prompt_dismissed_at';
-// Don't show again for 7 days after dismissal
-const DISMISS_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+// Don't show again for 30 days after dismissal
+const DISMISS_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 
 export function useInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);

@@ -8,7 +8,7 @@ import {
 import { AppShell } from './components/layout/AppShell';
 import { FeedView } from './components/feed/FeedView';
 import { InstallPrompt } from './components/pwa/InstallPrompt';
-import { UpdatePrompt } from './components/pwa/UpdatePrompt';
+
 import { OfflineBanner } from './components/pwa/OfflineBanner';
 import { useEvents } from './hooks/useEvents';
 import { usePreferences } from './hooks/usePreferences';
@@ -204,10 +204,7 @@ function AppContent() {
     {/* PWA Install Prompt */}
     <InstallPrompt />
 
-    {/* PWA Update Notification */}
-    <UpdatePrompt />
-
-    {/* Offline Indicator */}
+{/* Offline Indicator */}
     <OfflineBanner />
     </>
   );

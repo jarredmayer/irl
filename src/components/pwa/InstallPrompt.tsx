@@ -31,7 +31,7 @@ export function InstallPrompt() {
     try {
       const ts = localStorage.getItem('irl_ios_install_dismissed_at');
       if (!ts) return false;
-      return Date.now() - parseInt(ts, 10) < 7 * 24 * 60 * 60 * 1000;
+      return Date.now() - parseInt(ts, 10) < 30 * 24 * 60 * 60 * 1000;
     } catch {
       return false;
     }
@@ -42,7 +42,7 @@ export function InstallPrompt() {
     if (!isInstallable && !isIOSSafari) return;
     if (iosAlreadyDismissed) return;
 
-    const timer = setTimeout(() => setVisible(true), 45_000);
+    const timer = setTimeout(() => setVisible(true), 120_000);
     return () => clearTimeout(timer);
   }, [isInstallable, isIOSSafari, iosAlreadyDismissed]);
 
