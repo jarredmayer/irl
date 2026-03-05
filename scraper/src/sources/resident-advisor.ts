@@ -181,8 +181,129 @@ export class ResidentAdvisorScraper extends BaseScraper {
       page++;
     }
 
+    // If GraphQL returned 0, try HTML scraping as fallback
+    if (allEvents.length === 0) {
+      this.log('GraphQL returned 0 events — trying HTML __NEXT_DATA__ fallback...');
+      const htmlEvents = await this.scrapeHtmlFallback();
+      if (htmlEvents.length > 0) {
+        this.log(`Found ${htmlEvents.length} events from HTML fallback`);
+        return htmlEvents;
+      }
+    }
+
     this.log(`Found ${allEvents.length} events`);
     return allEvents;
+  }
+
+  /**
+   * Fallback: scrape RA's Miami events page HTML for __NEXT_DATA__ JSON.
+   * RA uses Next.js — event data is embedded in a script tag.
+   */
+  private async scrapeHtmlFallback(): Promise<RawEvent[]> {
+    try {
+      const html = await this.fetchHTMLNative('https://ra.co/events/us/miami', 15_000);
+
+      // Try __NEXT_DATA__
+      const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>(.*?)<\/script>/s);
+      if (nextDataMatch) {
+        const nextData = JSON.parse(nextDataMatch[1]);
+        return this.extractEventsFromNextData(nextData);
+      }
+
+      // Try JSON-LD
+      const jsonLdMatches = html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs);
+      const events: RawEvent[] = [];
+      for (const match of jsonLdMatches) {
+        try {
+          const data = JSON.parse(match[1]);
+          const items = Array.isArray(data) ? data : [data];
+          for (const item of items) {
+            if (item['@type'] === 'Event' || item['@type'] === 'MusicEvent') {
+              const mapped = this.mapJsonLdEvent(item);
+              if (mapped) events.push(mapped);
+            }
+            if (item['@type'] === 'ItemList' && Array.isArray(item.itemListElement)) {
+              for (const li of item.itemListElement) {
+                const inner = li.item || li;
+                const mapped = this.mapJsonLdEvent(inner);
+                if (mapped) events.push(mapped);
+              }
+            }
+          }
+        } catch { /* skip invalid JSON-LD */ }
+      }
+      return events;
+    } catch (e) {
+      this.logError('HTML fallback failed', e);
+      return [];
+    }
+  }
+
+  private extractEventsFromNextData(data: any): RawEvent[] {
+    const events: RawEvent[] = [];
+
+    // Navigate Next.js data — try common paths
+    const paths = [
+      data?.props?.pageProps?.eventListings?.data,
+      data?.props?.pageProps?.listing?.data,
+      data?.props?.pageProps?.data,
+      data?.props?.pageProps?.initialData?.data,
+    ];
+
+    for (const path of paths) {
+      if (!Array.isArray(path) || path.length === 0) continue;
+
+      for (const item of path) {
+        const event = item?.event || item;
+        if (!event?.title && !event?.name) continue;
+
+        const mapped = this.mapEvent({
+          id: event.id || '',
+          title: event.title || event.name || '',
+          date: event.date || event.startDate || '',
+          startTime: event.startTime || event.date || '',
+          endTime: event.endTime || null,
+          contentUrl: event.contentUrl || event.url || '',
+          cost: event.cost || '',
+          isTicketed: event.isTicketed ?? true,
+          venue: event.venue || null,
+          pick: event.pick || null,
+          artists: event.artists || [],
+          genres: event.genres || [],
+          images: event.images || [],
+        });
+        if (mapped) events.push(mapped);
+      }
+
+      if (events.length > 0) break;
+    }
+
+    return events;
+  }
+
+  private mapJsonLdEvent(item: any): RawEvent | null {
+    if (!item.name || !item.startDate) return null;
+    const now = new Date();
+    if (new Date(item.startDate) < now) return null;
+
+    const venueName = typeof item.location === 'object' ? item.location?.name : item.location || 'Miami Venue';
+    const address = typeof item.location === 'object' ? item.location?.address?.streetAddress || '' : '';
+
+    return {
+      title: item.name,
+      startAt: item.startDate,
+      endAt: item.endDate || undefined,
+      venueName,
+      address,
+      neighborhood: this.neighborhoodFromAddress(address, venueName),
+      city: this.cityFromAddress(address),
+      tags: ['live-music'],
+      category: 'Music',
+      isOutdoor: false,
+      description: item.description || `${item.name} at ${venueName}`,
+      sourceUrl: item.url || 'https://ra.co/events/us/miami',
+      sourceName: this.name,
+    };
   }
 
   private mapEvent(event: RAEvent): RawEvent | null {

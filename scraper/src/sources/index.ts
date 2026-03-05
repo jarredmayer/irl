@@ -362,7 +362,7 @@ export function getAllScrapers(): BaseScraper[] {
     new SavorCinemaScraper(),            // Savor Cinema / FLIFF — independent film screenings
 
     // WeekendBroward — Broward + Palm Beach events
-    new WeekendBrowardPowScraper(),      // PoW solver: bypasses SiteGround challenge in Node.js (no browser needed)
+    // new WeekendBrowardPowScraper(),   // DISABLED: PoW solver fragile in CI, WeekendBrowardVerified covers this data
     // DISABLED (2026-03-05): Chrome binary not available in current CI environment.
     // WeekendBroward Verified (105 events) and PoW solver cover this data.
     // Re-enable when running in GitHub Actions with Chrome installed.

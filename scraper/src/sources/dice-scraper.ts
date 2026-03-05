@@ -40,15 +40,28 @@ interface DiceEventData {
 
 export class DiceRealScraper extends BaseScraper {
   private browseUrl = 'https://dice.fm/browse/miami-5e3bf1b0fe75488ec46cdf9f';
+  private apiUrl = 'https://api.dice.fm/api/v1/events?types=Event&filter%5Bevents.status%5D=active&filter%5Bvenues.location%5D%5Bnear%5D=25.7617%2C-80.1918&filter%5Bvenues.location%5D%5Bwithin%5D=50mi&page%5Bsize%5D=100';
 
   constructor() {
     super('Dice.fm Real', { weight: 1.5, rateLimit: 2000 });
   }
 
   async scrape(): Promise<RawEvent[]> {
-    this.log('Fetching Dice.fm Miami events (fetch-based)...');
-    const events: RawEvent[] = [];
+    this.log('Fetching Dice.fm Miami events...');
 
+    // Strategy 1: Dice JSON API (no browser needed)
+    try {
+      const apiEvents = await this.tryDiceApi();
+      if (apiEvents.length > 0) {
+        this.log(`Found ${apiEvents.length} events from Dice API`);
+        return apiEvents;
+      }
+    } catch (e) {
+      this.log(`  Dice API failed: ${e instanceof Error ? e.message : String(e)}`);
+    }
+
+    // Strategy 2: HTML page scraping (fallback)
+    const events: RawEvent[] = [];
     try {
       const response = await this.fetch(this.browseUrl, {
         headers: {
@@ -59,7 +72,7 @@ export class DiceRealScraper extends BaseScraper {
       });
       const html = await response.text();
 
-      // Strategy 1: Extract __NEXT_DATA__ JSON from the page
+      // Try __NEXT_DATA__
       const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>(.*?)<\/script>/s);
       if (nextDataMatch) {
         try {
@@ -72,7 +85,7 @@ export class DiceRealScraper extends BaseScraper {
         }
       }
 
-      // Strategy 2: Extract JSON-LD structured data
+      // Try JSON-LD
       if (events.length === 0) {
         const jsonLdMatches = html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs);
         for (const match of jsonLdMatches) {
@@ -87,7 +100,7 @@ export class DiceRealScraper extends BaseScraper {
         }
       }
 
-      // Strategy 3: Extract event links and basic info from HTML
+      // Try HTML links
       if (events.length === 0) {
         const linkPattern = /href="(\/event\/[^"]+)"[^>]*>([^<]*)</g;
         let linkMatch;
@@ -96,10 +109,8 @@ export class DiceRealScraper extends BaseScraper {
           const [, path, text] = linkMatch;
           if (seen.has(path)) continue;
           seen.add(path);
-
           const title = text.trim();
           if (!title || title.length < 3) continue;
-
           events.push({
             title,
             startAt: this.getDefaultDate(),
@@ -120,10 +131,51 @@ export class DiceRealScraper extends BaseScraper {
         }
       }
     } catch (error) {
-      this.logError('Failed to fetch Dice.fm', error);
+      this.logError('Failed to fetch Dice.fm HTML', error);
     }
 
     this.log(`Found ${events.length} Dice.fm events`);
+    return events;
+  }
+
+  private async tryDiceApi(): Promise<RawEvent[]> {
+    this.log('  Trying Dice.fm JSON API...');
+    const events: RawEvent[] = [];
+    const now = new Date();
+
+    // Try multiple API endpoints
+    const apiUrls = [
+      this.apiUrl,
+      'https://api.dice.fm/api/v1/cities/miami-5e3bf1b0fe75488ec46cdf9f/events?page%5Bsize%5D=100',
+    ];
+
+    for (const apiUrl of apiUrls) {
+      try {
+        const response = await this.fetch(apiUrl, {
+          headers: {
+            Accept: 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          },
+        });
+        const data = await response.json() as any;
+
+        const items = Array.isArray(data) ? data : data?.data || data?.events || [];
+        if (!Array.isArray(items) || items.length === 0) continue;
+
+        for (const item of items) {
+          const event = this.mapDiceEvent(item, now);
+          if (event) events.push(event);
+        }
+
+        if (events.length > 0) {
+          this.log(`  Dice API (${events.length} events) from: ${apiUrl.slice(0, 60)}...`);
+          return events;
+        }
+      } catch {
+        continue;
+      }
+    }
+
     return events;
   }
 
