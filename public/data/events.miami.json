@@ -2164,41 +2164,6 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "f7dc981679613eb7",
-    "title": "PAMM: Free First Thursday",
-    "startAt": "2026-03-05T12:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
-    "address": "1103 Biscayne Blvd, Miami, FL 33132",
-    "neighborhood": "Downtown",
-    "lat": 25.7859,
-    "lng": -80.1863,
-    "city": "Miami",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event",
-      "waterfront",
-      "local-favorite",
-      "contemporary-art"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "PAMM live at Pérez Art Museum Miami.",
-    "editorialWhy": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus. At Pérez Art Museum Miami in Downtown Miami. Free to attend.",
-    "description": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
-    "ticketUrl": "https://www.pamm.org/visit/",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://www.pamm.org/visit/"
-    },
-    "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80",
-    "editorPick": true,
-    "venueId": "pamm",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
     "id": "41f9d406b9e92ad8",
     "title": "PAMM: Free First Thursday",
     "startAt": "2026-04-02T12:00:00",
