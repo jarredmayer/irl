@@ -503,6 +503,42 @@ export class InstagramSourcesScraper extends BaseScraper {
     { handle: 'calle_ocho_festival', name: 'Calle Ocho Festival', city: 'Miami', category: 'Culture', knownEvents: [] },
     { handle: 'art_basel_miami', name: 'Art Basel Miami', city: 'Miami', category: 'Art', knownEvents: [] },
     { handle: 'midtown_miami', name: 'Midtown Miami', city: 'Miami', category: 'Community', knownEvents: [] },
+
+    // ── MIAMI MUSIC/NIGHTLIFE (added 2026-03-05) ───────────────────────────
+    { handle: 'floydmiami', name: 'Floyd Miami', city: 'Miami', category: 'Music', websiteUrl: 'https://floydmiami.com/', knownEvents: [] },
+    { handle: 'gramps', name: 'Gramps Wynwood', city: 'Miami', category: 'Music', websiteUrl: 'https://gramps.com/', knownEvents: [] },
+    { handle: 'bardotmiami', name: 'Bardot Miami', city: 'Miami', category: 'Music', websiteUrl: 'https://bardotmiami.com/', knownEvents: [] },
+    { handle: 'clubspace', name: 'Club Space Miami', city: 'Miami', category: 'Nightlife', websiteUrl: 'https://clubspace.com/', knownEvents: [] },
+    { handle: 'manawynd', name: 'Mana Wynwood', city: 'Miami', category: 'Music', knownEvents: [] },
+    { handle: 'cafelatrovita', name: 'Cafe La Trova', city: 'Miami', category: 'Music', websiteUrl: 'https://cafelatrovita.com/', knownEvents: [] },
+    { handle: 'ballandchain', name: 'Ball & Chain', city: 'Miami', category: 'Music', websiteUrl: 'https://ballandchainmiami.com/', knownEvents: [] },
+    { handle: 'theandersonmiami', name: 'The Anderson', city: 'Miami', category: 'Music', websiteUrl: 'https://theandersonmiami.com/', knownEvents: [] },
+
+    // ── MIAMI CULTURE/ART ──────────────────────────────────────────────────
+    { handle: 'icamiami', name: 'ICA Miami', city: 'Miami', category: 'Art', websiteUrl: 'https://icamiami.org/', knownEvents: [] },
+    { handle: 'pamm_miami', name: 'PAMM (full events)', city: 'Miami', category: 'Art', websiteUrl: 'https://pamm.org/', knownEvents: [] },
+    { handle: 'bassmuseum', name: 'The Bass Museum', city: 'Miami', category: 'Art', websiteUrl: 'https://thebass.org/', knownEvents: [] },
+    { handle: 'moca_miami', name: 'MOCA North Miami', city: 'Miami', category: 'Art', websiteUrl: 'https://mocanomi.org/', knownEvents: [] },
+    { handle: 'wolfsonianu', name: 'Wolfsonian Museum', city: 'Miami', category: 'Art', websiteUrl: 'https://wolfsonian.org/', knownEvents: [] },
+    { handle: 'theblackarchivesmiami', name: 'Black Archives / Lyric Theater', city: 'Miami', category: 'Culture', websiteUrl: 'https://theblackarchives.org/', knownEvents: [] },
+    { handle: 'cinematropolis', name: 'Cinematropolis', city: 'Miami', category: 'Culture', knownEvents: [] },
+
+    // ── MIAMI FOOD/MARKETS ─────────────────────────────────────────────────
+    { handle: 'wynwoodkitchen', name: 'Wynwood Kitchen & Bar', city: 'Miami', category: 'Food & Drink', knownEvents: [] },
+    { handle: 'timeoutmarketmiami', name: 'Time Out Market Miami', city: 'Miami', category: 'Food & Drink', knownEvents: [] },
+    { handle: 'littlerivermiami', name: 'Little River Miami', city: 'Miami', category: 'Community', knownEvents: [] },
+
+    // ── FORT LAUDERDALE ────────────────────────────────────────────────────
+    { handle: 'fortlauderdalebrewery', name: 'Fort Lauderdale Brewery', city: 'Fort Lauderdale', category: 'Food & Drink', knownEvents: [] },
+    { handle: 'funkybuddha', name: 'Funky Buddha Brewery (IG)', city: 'Fort Lauderdale', category: 'Food & Drink', websiteUrl: 'https://funkybuddha.com/', knownEvents: [] },
+    { handle: 'culture_room_ftl', name: 'Culture Room FLL', city: 'Fort Lauderdale', category: 'Music', websiteUrl: 'https://cultureroom.net/', knownEvents: [] },
+    { handle: 'flaglervillage', name: 'Flagler Village', city: 'Fort Lauderdale', category: 'Art', knownEvents: [] },
+    { handle: 'gallerynightftl', name: 'Gallery Night FTL', city: 'Fort Lauderdale', category: 'Art', knownEvents: [] },
+
+    // ── PALM BEACH ─────────────────────────────────────────────────────────
+    { handle: 'norton_museum', name: 'Norton Museum WPB', city: 'Palm Beach', category: 'Art', websiteUrl: 'https://www.norton.org/', knownEvents: [] },
+    { handle: 'palmbeachphoto', name: 'Palm Beach Photography Festival', city: 'Palm Beach', category: 'Art', knownEvents: [] },
+    { handle: 'wpbgreenmarket', name: 'WPB Green Market', city: 'Palm Beach', category: 'Community', knownEvents: [] },
   ];
 
   constructor() {

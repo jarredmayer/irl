@@ -168,6 +168,9 @@ export { WeekendBrowardPowScraper } from './weekend-broward-pow.js';
 // Sofar Sounds — intimate live music events via public GraphQL API
 export { SofarSoundsScraper } from './sofar-sounds.js';
 
+// Luma — Miami/FLL events from lu.ma (pre-filtered to exclude tech/startup)
+export { LumaScraper } from './luma.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -260,6 +263,7 @@ import {
 } from './broward-venues.js';
 import { WeekendBrowardPowScraper } from './weekend-broward-pow.js';
 import { SofarSoundsScraper } from './sofar-sounds.js';
+import { LumaScraper } from './luma.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -284,14 +288,15 @@ export function getAllScrapers(): BaseScraper[] {
     // new ProfessionalSportsScraper(),  // DISABLED - generates fake games, need real API
     new WorldCup2026Scraper(),
 
-    // Real festivals
+    // Seasonal festivals — return 0 events when out of season (correct behavior)
+    // III Points: Oct/Feb, SOBEWFF: Jan/Feb, Miami Spice: Aug/Sep
     new IIIPointsScraper(),
     new SOBEWFFScraper(),
     new MiamiSpiceScraper(),
     new MiamiFestivalsScraper(),
 
     // Real ticketing platforms
-    new DiceRealScraper(), // Puppeteer-based real scraper
+    new DiceRealScraper(), // Fetch-based scraper (switched from Puppeteer 2026-03-05)
     new ResidentAdvisorScraper(), // Real RA GraphQL API — Miami area ID 38
     new MiamiBeachesEventsScraper(), // Greater Miami & The Beaches official CVB calendar
     new CandlelightRealScraper(), // Real Candlelight concert dates from Fever (candlelight page only)
@@ -344,6 +349,9 @@ export function getAllScrapers(): BaseScraper[] {
     // new HotelsHospitalityScraper(),   // SYNTHETIC
     new InstagramSourcesScraper(),         // Verified recurring events from monitored IG accounts
 
+    // === LUMA (lu.ma — Miami/FLL events, pre-filtered to exclude tech/startup) ===
+    new LumaScraper(),
+
     // === SOFAR SOUNDS (intimate live music via public GraphQL API) ===
     new SofarSoundsScraper(),              // Miami — secret venues, real ticketed events
 
@@ -355,7 +363,10 @@ export function getAllScrapers(): BaseScraper[] {
 
     // WeekendBroward — Broward + Palm Beach events
     new WeekendBrowardPowScraper(),      // PoW solver: bypasses SiteGround challenge in Node.js (no browser needed)
-    new WeekendBrowardEnhancedScraper(), // Enhanced Puppeteer: stealth + SiteGround challenge handling (all 6 pages)
+    // DISABLED (2026-03-05): Chrome binary not available in current CI environment.
+    // WeekendBroward Verified (105 events) and PoW solver cover this data.
+    // Re-enable when running in GitHub Actions with Chrome installed.
+    // new WeekendBrowardEnhancedScraper(),
     new WeekendBrowardVerifiedScraper(), // Verified specific events (real artist names, venues, dates — no API keys)
     new WeekendBrowardScraper(),         // RSS (blocked by Cloudflare but kept for when it clears)
     new WeekendBrowardGoogleScraper(),   // Google Custom Search API (requires GOOGLE_API_KEY + GOOGLE_CSE_ID)

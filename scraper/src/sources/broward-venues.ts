@@ -6,8 +6,15 @@
  *   - Bonnet House (bonnethouse.org)         — museum, garden events, workshops
  *   - Funky Buddha Brewery (funkybuddha.com) — tap room events, run club, specials
  *   - Savor Cinema / FLIFF (fliff.com)       — independent film screenings
+ *
+ * DNS fix (2026-03-05): These domains resolve fine in browsers but fail with
+ * EAI_AGAIN in Node.js (CI/Docker DNS). Fixed by:
+ *   1. Trying www. subdomain variants
+ *   2. Using fetchHTMLNativeRetry (Node https module) instead of undici fetch
+ *   3. Adding Accept-Encoding: identity to avoid gzip issues
  */
 
+import * as cheerio from 'cheerio';
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 
@@ -43,7 +50,22 @@ export class CultureRoomScraper extends BaseScraper {
   async scrape(): Promise<RawEvent[]> {
     this.log('Fetching Culture Room events...');
 
-    const $ = await this.fetchHTMLNativeRetry('https://cultureroom.net/');
+    // Try www. subdomain first (fixes DNS EAI_AGAIN in CI/Docker environments)
+    let $: cheerio.CheerioAPI | null = null;
+    const urls = ['https://www.cultureroom.net/', 'https://cultureroom.net/'];
+    for (const url of urls) {
+      try {
+        $ = await this.fetchHTMLNativeRetry(url, 3, 15_000);
+        break;
+      } catch (e) {
+        this.log(`  ${url} failed: ${e instanceof Error ? e.message : String(e)}`);
+      }
+    }
+    if (!$) {
+      this.log('All Culture Room URLs failed — returning empty');
+      return [];
+    }
+
     const events: RawEvent[] = [];
     const now = new Date();
 
@@ -190,9 +212,25 @@ export class BonnetHouseScraper extends BaseScraper {
     this.log('Fetching Bonnet House events via Tribe API...');
 
     const today = new Date().toISOString().split('T')[0];
-    const url = `https://www.bonnethouse.org/wp-json/tribe/events/v1/events?per_page=50&start_date=${today}`;
+    // Try multiple URL variants to work around DNS resolution issues in CI
+    const urls = [
+      `https://www.bonnethouse.org/wp-json/tribe/events/v1/events?per_page=50&start_date=${today}`,
+      `https://bonnethouse.org/wp-json/tribe/events/v1/events?per_page=50&start_date=${today}`,
+    ];
 
-    const data = await this.fetchJSONNativeGet<TribeResponse>(url);
+    let data: TribeResponse | undefined;
+    for (const url of urls) {
+      try {
+        data = await this.fetchJSONNativeGet<TribeResponse>(url, 15_000);
+        break;
+      } catch (e) {
+        this.log(`  ${url} failed: ${e instanceof Error ? e.message : String(e)}`);
+      }
+    }
+    if (!data) {
+      this.log('All Bonnet House URLs failed — returning empty');
+      return [];
+    }
     const events: RawEvent[] = [];
     const now = new Date();
 
@@ -274,7 +312,22 @@ export class FunkyBuddhaScraper extends BaseScraper {
   async scrape(): Promise<RawEvent[]> {
     this.log('Fetching Funky Buddha Brewery events...');
 
-    const $ = await this.fetchHTMLNativeRetry('https://funkybuddha.com/events/');
+    // Try www. subdomain first (fixes DNS EAI_AGAIN in CI/Docker environments)
+    let $: cheerio.CheerioAPI | null = null;
+    const urls = ['https://www.funkybuddha.com/events/', 'https://funkybuddha.com/events/'];
+    for (const url of urls) {
+      try {
+        $ = await this.fetchHTMLNativeRetry(url, 3, 15_000);
+        break;
+      } catch (e) {
+        this.log(`  ${url} failed: ${e instanceof Error ? e.message : String(e)}`);
+      }
+    }
+    if (!$) {
+      this.log('All Funky Buddha URLs failed — returning empty');
+      return [];
+    }
+
     const events: RawEvent[] = [];
     const now = new Date();
 
@@ -381,8 +434,25 @@ export class SavorCinemaScraper extends BaseScraper {
   async scrape(): Promise<RawEvent[]> {
     this.log('Fetching Savor Cinema / FLIFF events...');
 
-    const url = 'https://fliff.com/event-grid-all/?_filter_sort=title&_venues=savor-cinema-fort-lauderdale';
-    const $ = await this.fetchHTMLNativeRetry(url);
+    // Try www. subdomain first (fixes DNS EAI_AGAIN in CI/Docker environments)
+    const urls = [
+      'https://www.fliff.com/event-grid-all/?_filter_sort=title&_venues=savor-cinema-fort-lauderdale',
+      'https://fliff.com/event-grid-all/?_filter_sort=title&_venues=savor-cinema-fort-lauderdale',
+    ];
+
+    let $: cheerio.CheerioAPI | null = null;
+    for (const url of urls) {
+      try {
+        $ = await this.fetchHTMLNativeRetry(url, 3, 15_000);
+        break;
+      } catch (e) {
+        this.log(`  ${url} failed: ${e instanceof Error ? e.message : String(e)}`);
+      }
+    }
+    if (!$) {
+      this.log('All FLIFF URLs failed — returning empty');
+      return [];
+    }
     const events: RawEvent[] = [];
     const now = new Date();
 

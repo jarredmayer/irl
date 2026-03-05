@@ -124,21 +124,42 @@ export class ResidentAdvisorScraper extends BaseScraper {
       };
 
       try {
+        // RA's GraphQL API can be sensitive to headers — mimic a real browser request
         const response = await this.fetch(RA_GRAPHQL, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             Accept: 'application/json',
+            'Accept-Language': 'en-US,en;q=0.9',
             Referer: 'https://ra.co/events/us/miami',
             Origin: 'https://ra.co',
+            'x-requested-with': 'XMLHttpRequest',
           },
           body,
         });
         data = await response.json() as typeof data;
       } catch (e) {
-        this.logError('GraphQL request failed', e);
-        break;
+        this.logError(`GraphQL request failed (page ${page})`, e);
+        // Retry once with native https module for better TLS compatibility
+        if (page === 1) {
+          try {
+            this.log('  Retrying with native https module...');
+            data = await this.fetchJSONNative<typeof data>(RA_GRAPHQL, body, {
+              'Content-Type': 'application/json',
+              'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+              Accept: 'application/json',
+              'Accept-Language': 'en-US,en;q=0.9',
+              Referer: 'https://ra.co/events/us/miami',
+              Origin: 'https://ra.co',
+            });
+          } catch (e2) {
+            this.logError('GraphQL native retry also failed', e2);
+            break;
+          }
+        } else {
+          break;
+        }
       }
 
       if (data.errors?.length) {
