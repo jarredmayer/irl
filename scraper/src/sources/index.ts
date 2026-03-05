@@ -308,8 +308,7 @@ export function getAllScrapers(): BaseScraper[] {
     new MiamiFestivalsScraper(),
 
     // Real ticketing platforms
-    // DISABLED: DiceRealScraper — client-side only, no public API, no server-side data
-    // new DiceRealScraper(),
+    new DiceRealScraper(),  // Dice.fm via Apify actor (requires APIFY_TOKEN, gracefully skips if missing)
     new ResidentAdvisorScraper(), // Real RA GraphQL API — Miami area ID 38
     // DISABLED: MiamiBeachesEventsScraper — DNS failure on Algolia CDN, blocked in all CI environments
     // new MiamiBeachesEventsScraper(),
