@@ -2,15 +2,17 @@ name: Scheduled Scrape
 
 on:
   schedule:
-    # Run twice daily: 6 AM EST (11 AM UTC) and 6 PM EST (11 PM UTC)
+    # Run 4x daily: 6 AM, 12 PM, 6 PM, 12 AM EST
     - cron: '0 11 * * *'
+    - cron: '0 17 * * *'
     - cron: '0 23 * * *'
+    - cron: '0 5 * * *'
   workflow_dispatch: # Allow manual trigger
   # GitHub registers checks for ALL workflow files on a pushed branch.
   # Without these triggers, the check is "expected" but never runs → red X.
   # Adding them lets the 'check-ok' job run and pass → green check.
   push:
-    branches: ['claude/**', main]
+    branches: ['claude/**', main, master]
   pull_request:
 
 permissions:
@@ -18,12 +20,11 @@ permissions:
   actions: write    # dispatch deploy.yml after successful scrape
 
 jobs:
-  # Instant pass for push/PR events so GitHub check shows green
+  # Always-pass job so GitHub check never shows "No jobs were run"
   check-ok:
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Scrape runs on schedule/dispatch only"
+      - run: echo "Scrape workflow registered — actual scrape runs on schedule/dispatch"
 
   scrape:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
