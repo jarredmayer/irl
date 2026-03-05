@@ -18,6 +18,12 @@ const WEATHER_PENALTY = -10;
 const WEATHER_BOOST = 5;
 const HIDDEN_GEM_BOOST = 8;
 const GENERIC_EVENT_PENALTY = -20;
+const RECENCY_BOOST = 5;
+const RECENCY_FULL_BOOST_HOURS = 48;
+const RECENCY_DECAY_DAYS = 7;
+const TIME_OF_DAY_MAX_BOOST = 5;
+const CATEGORY_DIVERSITY_THRESHOLD = 0.20;
+const CATEGORY_DIVERSITY_PENALTY = -3;
 
 // Patterns that indicate generic/filler events
 const GENERIC_TITLE_PATTERNS = [
@@ -66,6 +72,43 @@ const LOCAL_NEIGHBORHOODS = [
   'Palmetto Bay',
 ];
 
+/**
+ * Time-of-day relevance mappings.
+ * Each time slot defines category boosts/penalties so that events feel contextually
+ * appropriate — e.g., nightlife shouldn't dominate morning feeds.
+ * Values are capped at +/- 5 to remain a subtle influence rather than a dominant factor.
+ */
+const TIME_OF_DAY_BOOSTS: Record<string, Record<string, number>> = {
+  morning: {
+    fitness: 5, wellness: 5, community: 5,
+    nightlife: -5,
+  },
+  afternoon: {
+    'food & drink': 3, food: 3, art: 3, culture: 3,
+  },
+  evening: {
+    'food & drink': 3, food: 3, music: 3, comedy: 3,
+    nightlife: 3,
+  },
+  night: {
+    nightlife: 5, music: 5,
+    fitness: -5, wellness: -5,
+  },
+};
+
+/**
+ * Determine time-of-day slot from a Date.
+ * morning: 6am–12pm, afternoon: 12pm–5pm, evening: 5pm–9pm, night: 9pm–2am (wraps).
+ */
+function getTimeSlot(now: Date): string {
+  const hour = now.getHours();
+  if (hour >= 6 && hour < 12) return 'morning';
+  if (hour >= 12 && hour < 17) return 'afternoon';
+  if (hour >= 17 && hour < 21) return 'evening';
+  // 9pm–2am (21–23 and 0–1)
+  return 'night';
+}
+
 export function scoreEvent(event: Event, context: RankingContext): ScoredEvent {
   const timeScore = computeTimeScore(event.startAt, context.now);
   const { distanceScore, distanceMiles } = computeDistanceScore(
@@ -74,12 +117,16 @@ export function scoreEvent(event: Event, context: RankingContext): ScoredEvent {
   );
   const tasteScore = computeTasteScore(event.tags, context.preferences);
   const weatherScore = computeWeatherScore(event, context.weather);
-  const editorBoost = event.editorPick ? EDITOR_PICK_BOOST : 0;
+  const editorBoost = computeEditorPickBoost(event, context.allEvents);
   const hiddenGemScore = computeHiddenGemScore(event);
   const genericPenalty = computeGenericEventPenalty(event);
+  const recencyBoost = computeRecencyBoost(event, context.now);
+  const timeOfDayScore = computeTimeOfDayScore(event, context.now);
+  const diversityPenalty = computeCategoryDiversityPenalty(event, context.allEvents);
 
   const score =
-    timeScore + distanceScore + tasteScore + weatherScore + editorBoost + hiddenGemScore + genericPenalty;
+    timeScore + distanceScore + tasteScore + weatherScore + editorBoost +
+    hiddenGemScore + genericPenalty + recencyBoost + timeOfDayScore + diversityPenalty;
 
   return {
     ...event,
@@ -228,6 +275,30 @@ export function computeHiddenGemScore(event: Event): number {
 
 export function computeGenericEventPenalty(event: Event): number {
   const title = event.title.toLowerCase();
+  const description = event.description?.toLowerCase() || '';
+
+  /**
+   * Additional generic signals beyond the regex title patterns:
+   * - Title equals venue name: likely auto-generated from venue data
+   * - Description equals editorialWhy: copy-paste indicator, no real editorial effort
+   * - Very short descriptions (<50 chars): insufficient context to be compelling
+   */
+  const titleMatchesVenue =
+    event.venueName != null &&
+    event.title.trim().toLowerCase() === event.venueName.trim().toLowerCase();
+
+  const descriptionMatchesEditorial =
+    event.editorialWhy &&
+    event.description &&
+    event.description.trim() === event.editorialWhy.trim();
+
+  const hasVeryShortDescription =
+    event.description != null && event.description.trim().length > 0 && event.description.trim().length < 50;
+
+  // If any of the new signals fire, apply full generic penalty
+  if (titleMatchesVenue || descriptionMatchesEditorial || hasVeryShortDescription) {
+    return GENERIC_EVENT_PENALTY;
+  }
 
   // Check if title matches generic patterns
   const isGenericPattern = GENERIC_TITLE_PATTERNS.some((pattern) =>
@@ -248,7 +319,6 @@ export function computeGenericEventPenalty(event: Event): number {
   }
 
   // Check description for specificity
-  const description = event.description?.toLowerCase() || '';
   const hasSpecificDescription =
     description.length > 100 &&
     UNIQUENESS_KEYWORDS.some((keyword) =>
@@ -263,11 +333,107 @@ export function computeGenericEventPenalty(event: Event): number {
   return GENERIC_EVENT_PENALTY;
 }
 
+/**
+ * Recency boost: keeps the feed feeling fresh by promoting newly added events.
+ * Events added in the last 48 hours get the full +5 boost.
+ * The boost decays linearly to 0 over 7 days from addedAt.
+ * Events without an addedAt field receive no boost.
+ */
+export function computeRecencyBoost(event: Event, now: Date): number {
+  if (!event.addedAt) return 0;
+
+  const addedDate = parseISO(event.addedAt);
+  const hoursSinceAdded = differenceInHours(now, addedDate);
+
+  if (hoursSinceAdded < 0) return RECENCY_BOOST; // added in the future (clock skew) — full boost
+  if (hoursSinceAdded <= RECENCY_FULL_BOOST_HOURS) return RECENCY_BOOST;
+
+  const daysSinceAdded = hoursSinceAdded / 24;
+  if (daysSinceAdded >= RECENCY_DECAY_DAYS) return 0;
+
+  // Linear decay from full boost at 2 days to 0 at 7 days
+  const decayRange = RECENCY_DECAY_DAYS - RECENCY_FULL_BOOST_HOURS / 24; // 5 days
+  const daysIntoDecay = daysSinceAdded - RECENCY_FULL_BOOST_HOURS / 24;
+  return RECENCY_BOOST * (1 - daysIntoDecay / decayRange);
+}
+
+/**
+ * Time-of-day relevance: applies subtle category boosts/penalties based on the
+ * current time of day. For example, nightlife events are penalized in the morning
+ * and boosted at night. This prevents contextually inappropriate events from
+ * dominating the feed. Max influence is +/- 5 points.
+ */
+export function computeTimeOfDayScore(event: Event, now: Date): number {
+  const slot = getTimeSlot(now);
+  const boosts = TIME_OF_DAY_BOOSTS[slot] || {};
+  const category = event.category.toLowerCase();
+
+  // Check category directly
+  if (boosts[category] !== undefined) {
+    return boosts[category];
+  }
+
+  // Also check event tags for matching boost categories
+  for (const tag of event.tags) {
+    const tagLower = tag.toLowerCase();
+    if (boosts[tagLower] !== undefined) {
+      return boosts[tagLower];
+    }
+  }
+
+  return 0;
+}
+
+/**
+ * Category diversity weighting: applies diminishing returns when a single category
+ * is over-represented (>20% of total events). This prevents any one category from
+ * flooding the feed even before the post-ranking diversity pass.
+ * The penalty scales proportionally: at 25% share a category gets -3, at 30% it gets -6, etc.
+ */
+export function computeCategoryDiversityPenalty(event: Event, allEvents?: Event[]): number {
+  if (!allEvents || allEvents.length === 0) return 0;
+
+  const total = allEvents.length;
+  const categoryCount = allEvents.filter((e) => e.category === event.category).length;
+  const proportion = categoryCount / total;
+
+  if (proportion <= CATEGORY_DIVERSITY_THRESHOLD) return 0;
+
+  // Scale penalty proportionally to how far over the threshold
+  // Every 5% over threshold = CATEGORY_DIVERSITY_PENALTY (-3)
+  const excess = proportion - CATEGORY_DIVERSITY_THRESHOLD;
+  return (excess / 0.05) * CATEGORY_DIVERSITY_PENALTY;
+}
+
+/**
+ * Editor pick boost that scales down when editor picks are over-represented.
+ * When editorPick events are <20% of total, the full boost applies.
+ * When >20%, the boost is reduced proportionally so that editorial curation
+ * doesn't overwhelm organic ranking signals.
+ */
+export function computeEditorPickBoost(event: Event, allEvents?: Event[]): number {
+  if (!event.editorPick) return 0;
+
+  if (!allEvents || allEvents.length === 0) return EDITOR_PICK_BOOST;
+
+  const total = allEvents.length;
+  const pickCount = allEvents.filter((e) => e.editorPick).length;
+  const pickProportion = pickCount / total;
+
+  if (pickProportion <= 0.20) return EDITOR_PICK_BOOST;
+
+  // Reduce boost proportionally: at 40% picks, boost is halved; at 100% it's ~20% of original
+  const scale = 0.20 / pickProportion;
+  return EDITOR_PICK_BOOST * scale;
+}
+
 export function rankEvents(
   events: Event[],
   context: RankingContext
 ): ScoredEvent[] {
-  const scored = events.map((event) => scoreEvent(event, context));
+  // Inject full event list into context for proportion-based scoring
+  const enrichedContext = { ...context, allEvents: context.allEvents ?? events };
+  const scored = events.map((event) => scoreEvent(event, enrichedContext));
   const sorted = scored.sort((a, b) => b.score - a.score);
   return diversifyFeed(sorted);
 }

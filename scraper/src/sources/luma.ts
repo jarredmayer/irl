@@ -230,15 +230,44 @@ export class LumaScraper extends BaseScraper {
   }
 
   private findEvents(data: any): LumaEventRaw[] {
-    // Actual Luma Next.js data path (confirmed 2026-03-05)
-    const wrappers = data?.props?.pageProps?.initialData?.data?.events
-      ?? data?.props?.pageProps?.initialData?.data?.featured_events
-      ?? data?.props?.pageProps?.events
-      ?? data?.props?.pageProps?.initialData?.events;
+    // Luma Next.js data structure (confirmed 2026-03-05):
+    //   props.pageProps.initialData.data.events[]     — main event list
+    //   props.pageProps.initialData.data.featured_events[] — featured events
+    // Each wrapper: { api_id, event: { name, url, start_at, geo_address_info, coordinate, ... }, ... }
+    const idData = data?.props?.pageProps?.initialData?.data;
+
+    // Collect from both events and featured_events arrays
+    const eventsList = idData?.events || [];
+    const featuredList = idData?.featured_events || [];
+    const wrappers = [...eventsList, ...featuredList];
+
+    // Also check alternate paths used by older Luma versions
+    if (wrappers.length === 0) {
+      const altPaths = [
+        data?.props?.pageProps?.events,
+        data?.props?.pageProps?.initialData?.events,
+        idData?.page?.events,
+      ];
+      for (const alt of altPaths) {
+        if (Array.isArray(alt) && alt.length > 0) {
+          wrappers.push(...alt);
+          break;
+        }
+      }
+    }
 
     if (Array.isArray(wrappers) && wrappers.length > 0) {
-      // Wrappers have shape: { start_at, event: { name, url, coordinate, geo_address_info, ... } }
-      return wrappers.map((wrapper: any) => {
+      // Deduplicate by api_id
+      const seen = new Set<string>();
+      const unique: any[] = [];
+      for (const w of wrappers) {
+        const id = w.api_id || w.event?.api_id || '';
+        if (id && seen.has(id)) continue;
+        if (id) seen.add(id);
+        unique.push(w);
+      }
+
+      return unique.map((wrapper: any) => {
         const inner = wrapper.event || wrapper;
         return {
           ...inner,
@@ -248,11 +277,15 @@ export class LumaScraper extends BaseScraper {
           geo_address_json: inner.geo_address_info ? {
             full_address: inner.geo_address_info.full_address,
             city: inner.geo_address_info.city,
+            description: inner.geo_address_info.address || inner.geo_address_info.description,
             latitude: inner.coordinate?.latitude,
             longitude: inner.coordinate?.longitude,
           } : undefined,
           geo_latitude: inner.coordinate?.latitude,
           geo_longitude: inner.coordinate?.longitude,
+          // Map Luma's 'url' field (slug) and 'cover_url' to expected fields
+          slug: inner.url || inner.slug,
+          cover_url: inner.cover_url || inner.coverUrl,
         };
       });
     }
@@ -356,13 +389,19 @@ export class LumaScraper extends BaseScraper {
     // Image
     const image = raw.cover_url || raw.coverUrl;
 
-    // Build URL
-    let sourceUrl = raw.event_url || raw.url || '';
-    if (raw.slug && !sourceUrl) {
-      sourceUrl = `https://lu.ma/${raw.slug}`;
+    // Build URL — Luma's 'url' field is a short slug (e.g., "cwip9vvj")
+    let sourceUrl = raw.event_url || '';
+    if (!sourceUrl && (raw.slug || raw.url)) {
+      const slug = raw.slug || raw.url || '';
+      // Luma slugs are short alphanumeric strings, not full URLs
+      if (slug.startsWith('http')) {
+        sourceUrl = slug;
+      } else if (slug.length > 0) {
+        sourceUrl = `https://lu.ma/${slug}`;
+      }
     }
     if (sourceUrl && !sourceUrl.startsWith('http')) {
-      sourceUrl = `https://lu.ma${sourceUrl}`;
+      sourceUrl = `https://lu.ma/${sourceUrl}`;
     }
 
     return {

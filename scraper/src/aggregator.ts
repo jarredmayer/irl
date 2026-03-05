@@ -610,45 +610,61 @@ export class EventAggregator {
   }
 
   /**
-   * Determine if event should be editor's pick
+   * Determine if event should be editor's pick.
+   *
+   * Targets ~15% of events. Rules:
+   * - Recurring weekly events (yoga, run clubs, markets) are NEVER picks
+   * - Template-generated events are NEVER picks by default
+   * - Only genuinely special/unique/noteworthy events qualify
+   * - A short list of truly iconic venues can qualify non-recurring events
    */
   private isEditorPick(event: RawEvent): boolean {
-    // Mark as editor's pick based on various criteria
-    const isLocalFavorite = event.tags.includes('local-favorite');
-    const isPopularVenue = [
-      // Miami venues
-      'Lagniappe',
-      'Ball & Chain',
-      'Smorgasburg',
-      'Wynwood Walls',
+    // Recurring events are never editor picks (yoga, run clubs, farmers markets, etc.)
+    if (event.recurring) return false;
+
+    // Detect recurring-style events even if not explicitly marked
+    const titleLower = event.title.toLowerCase();
+    const recurringPatterns = [
+      'weekly', 'every monday', 'every tuesday', 'every wednesday',
+      'every thursday', 'every friday', 'every saturday', 'every sunday',
+      'run club', 'yoga', 'pilates', 'bootcamp', 'farmers market',
+      'happy hour', 'trivia night', 'open mic', 'karaoke night',
+      'brunch', 'sunset session',
+    ];
+    if (recurringPatterns.some((p) => titleLower.includes(p))) return false;
+
+    // Only a handful of truly iconic venues qualify as auto-picks
+    const iconicVenues = [
+      'Adrienne Arsht',
       'PAMM',
       'Vizcaya',
-      'Fairchild',
-      'The Standard',
       'Faena',
-      'Broken Shaker',
       'Club Space',
-      'Adrienne Arsht',
-      'Fillmore',
-      "Don't Tell Comedy",
-      'Critical Mass',
-      // Fort Lauderdale venues
-      'NSU Art Museum',
-      'Broward Center',
-      'Bonnet House',
-      'Las Olas',
-      'FAT Village',
-      'Riverwalk Fort Lauderdale',
-      // Palm Beach venues
-      'Norton Museum',
-      'Kravis Center',
-      'Clematis',
-      'Mizner Park',
-      'Morikami',
-      'SunFest',
-      'Flagler Museum',
-    ].some((v) => event.venueName?.includes(v) || event.title.includes(v));
+    ];
+    const isIconicVenue = iconicVenues.some(
+      (v) => event.venueName?.includes(v)
+    );
 
-    return isLocalFavorite || isPopularVenue;
+    // Must also have a specific/named event (not generic "Live Music at X")
+    const genericTitlePatterns = [
+      /^live music/i, /^dj night/i, /^happy hour/i, /^ladies night/i,
+      /^wine night/i, /^game night/i, /^open mic/i,
+    ];
+    const isGenericTitle = genericTitlePatterns.some((p) => p.test(event.title));
+
+    if (isIconicVenue && !isGenericTitle) return true;
+
+    // High-signal keywords that indicate a genuinely special event
+    const specialSignals = [
+      'premiere', 'opening night', 'album release', 'book launch',
+      'pop-up', 'popup', 'one night only', 'limited', 'sold out',
+      'festival', 'art basel', 'iii points', 'ultra',
+      'critical mass',
+    ];
+    const hasSpecialSignal = specialSignals.some((s) => titleLower.includes(s));
+
+    if (hasSpecialSignal && !isGenericTitle) return true;
+
+    return false;
   }
 }

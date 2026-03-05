@@ -4,12 +4,16 @@
  * Scrapes special dining events (chef collabs, pop-ups, tasting menus)
  * from Resy's Miami events page.
  *
- * Resy is a React SPA so the HTML page may return limited data via
- * server-side rendering. Falls back to JSON-LD if available.
+ * STATUS (2026-03-05): Resy is a fully client-rendered React SPA.
+ * The HTML page returns a minimal shell with no SSR data, no JSON-LD,
+ * and no __NEXT_DATA__. The Resy API (api.resy.com) requires
+ * authentication (returns 419 Unauthorized without a valid auth token).
  *
- * NOTE: The Resy public API key is embedded in their website JS and
- * is required for all API calls. This is not a secret — it's shipped
- * to every browser that visits resy.com.
+ * Current approach: Attempt to fetch the events page and parse any
+ * JSON-LD or card elements that may appear. Returns 0 events when
+ * the page has no server-rendered content (expected behavior).
+ *
+ * TODO: Implement Resy API auth flow or use a headless browser.
  */
 
 import { BaseScraper } from './base.js';

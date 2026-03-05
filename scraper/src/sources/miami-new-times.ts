@@ -288,38 +288,44 @@ export class MiamiNewTimesScraper extends BaseScraper {
     item: cheerio.Cheerio<Element>,
     dateStr: string
   ): RawEvent | null {
-    // Extract event name from link
-    const eventLink = item.find('a').first();
-    let title = this.cleanText(eventLink.text());
+    // Updated 2026-03: MNT uses structured divs inside each list item:
+    //   .event-title h2 > a   — title + link
+    //   .event-occurrences     — date/time text like "Thu., Mar 5, 7:00 am"
+    //   .event-location-name   — venue name
+    //   .event-location-address — street address
+    //   Neighborhood: <strong>...</strong>
+    //   .event-image img       — image
 
-    // If no text, try image alt
-    if (!title || title.length < 5) {
-      const img = eventLink.find('img');
-      title = this.cleanText(img.attr('alt'));
-    }
+    // Extract title from the structured heading
+    let title = this.cleanText(item.find('.event-title a, h2.event-title a, h2 a').first().text());
 
-    // Also try heading tags
+    // Fallback: try any heading or link text
     if (!title || title.length < 5) {
       title = this.cleanText(item.find('h2, h3, h4').first().text());
+    }
+    if (!title || title.length < 5) {
+      const img = item.find('img').first();
+      title = this.cleanText(img.attr('alt'));
     }
 
     if (!title || title.length < 5) return null;
 
     // Get event URL
-    let sourceUrl = eventLink.attr('href') || '';
+    let sourceUrl = item.find('.event-title a, h2 a, a[href*="/event/"]').first().attr('href') || '';
     if (sourceUrl.startsWith('/')) {
       sourceUrl = this.baseUrl + sourceUrl;
     }
 
-    // Parse full text for venue, time, neighborhood
+    // Parse time from .event-occurrences (e.g., "Thu., Mar 5, 7:00 am")
+    const occurrenceText = this.cleanText(item.find('.event-occurrences').text());
     const fullText = item.text();
+    const timeText = occurrenceText || fullText;
 
-    // Parse time
-    const timeMatch = fullText.match(/(\d{1,2}:\d{2}\s*(am|pm|AM|PM))/);
+    const timeMatch = timeText.match(/(\d{1,2}:\d{2})\s*(am|pm)/i);
     let startAt = `${dateStr}T12:00:00`;
     if (timeMatch) {
       try {
-        const timeStr = timeMatch[1].toLowerCase().replace(/\s/g, '');
+        const timeStr = `${timeMatch[1]}${timeMatch[2].toLowerCase()}`;
         const parsed = parse(timeStr, 'h:mma', new Date());
         const hours = format(parsed, 'HH');
         const minutes = format(parsed, 'mm');
@@ -327,29 +333,27 @@ export class MiamiNewTimesScraper extends BaseScraper {
       } catch { /* use default */ }
     }
 
-    // Parse venue and address
-    const venueMatch = fullText.match(/\d{1,2}:\d{2}\s*(am|pm|AM|PM)([^N]+)Neighborhood:/i);
-    let venueName: string | undefined;
-    let address: string | undefined;
-
-    if (venueMatch) {
-      const venueSection = venueMatch[2].trim();
-      if (venueSection.includes(',')) {
-        const parts = venueSection.split(',');
-        venueName = this.cleanText(parts[0]);
-        address = this.cleanText(parts.slice(1).join(','));
-      } else {
-        venueName = this.cleanText(venueSection);
-      }
+    // Parse venue from structured elements
+    let venueName = this.cleanText(item.find('.event-location-name, a.event-location-name').first().text()) || undefined;
+    let address = this.cleanText(item.find('.event-location-address').first().text()) || undefined;
+    // Clean leading comma/space from address
+    if (address) {
+      address = address.replace(/^[,\s]+/, '').trim();
     }
 
-    // Parse neighborhood
-    const neighborhoodMatch = fullText.match(/Neighborhood:\s*([A-Za-z\s/]+?)(?:\s*(?:Price|Category|TBA|Venue|When|Where|$|\n|[0-9]))/i);
-    const neighborhood = neighborhoodMatch
-      ? this.cleanText(neighborhoodMatch[1])
-      : 'Miami';
+    // Parse neighborhood from "Neighborhood: <strong>...</strong>"
+    const neighborhoodEl = item.find('.event-neighbourhood strong').text();
+    let neighborhood = this.cleanText(neighborhoodEl);
+    if (!neighborhood) {
+      // Fallback to text regex
+      const neighborhoodMatch = fullText.match(/Neighborhood:\s*([A-Za-z\s/]+?)(?:\s*$|\n)/i);
+      neighborhood = neighborhoodMatch ? this.cleanText(neighborhoodMatch[1]) : '';
+    }
+    if (!neighborhood) {
+      neighborhood = this.inferNeighborhood(venueName || '', address || '');
+    }
 
-    const city = this.inferCity(neighborhood, '');
+    const city = this.inferCity(neighborhood, address || '');
 
     // Extract image
     const img = item.find('img').first();
