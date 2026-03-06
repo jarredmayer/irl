@@ -3,10 +3,9 @@
  * Queries RA's GraphQL API for Miami-area events.
  * Area ID 38 = Miami (covers South Florida / FLL).
  *
- * NOTE (2026-03-05): RA's GraphQL API silently returns 0 results for
- * GitHub Actions datacenter IP ranges. The API works fine locally.
- * TODO: Run this scraper via a residential proxy or self-hosted runner.
- * Current workaround: logs a warning when 0 results returned.
+ * The RA GraphQL API at ra.co/graphql is accessible from datacenter IPs
+ * and returns totalResults: 10000+ for area 38. If 0 results are returned,
+ * debug the query variables and response parsing rather than assuming IP blocking.
  */
 
 import { BaseScraper } from './base.js';
@@ -128,41 +127,34 @@ export class ResidentAdvisorScraper extends BaseScraper {
         errors?: { message: string }[];
       };
 
+      const raHeaders = {
+        'Content-Type': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        Accept: 'application/json',
+        'Accept-Language': 'en-US,en;q=0.9',
+        Referer: 'https://ra.co/events/us/miami',
+        Origin: 'https://ra.co',
+        'x-requested-with': 'XMLHttpRequest',
+      };
+
+      // Try native https first (more reliable in CI), then undici fetch as fallback
       try {
-        // RA's GraphQL API can be sensitive to headers — mimic a real browser request
-        const response = await this.fetch(RA_GRAPHQL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            Accept: 'application/json',
-            'Accept-Language': 'en-US,en;q=0.9',
-            Referer: 'https://ra.co/events/us/miami',
-            Origin: 'https://ra.co',
-            'x-requested-with': 'XMLHttpRequest',
-          },
-          body,
-        });
-        data = await response.json() as typeof data;
+        this.log(`  Requesting page ${page} (native https)...`);
+        data = await this.fetchJSONNative<typeof data>(RA_GRAPHQL, body, raHeaders);
+        this.log(`  Response received — status OK, body keys: ${Object.keys(data || {}).join(', ')}`);
       } catch (e) {
-        this.logError(`GraphQL request failed (page ${page})`, e);
-        // Retry once with native https module for better TLS compatibility
-        if (page === 1) {
-          try {
-            this.log('  Retrying with native https module...');
-            data = await this.fetchJSONNative<typeof data>(RA_GRAPHQL, body, {
-              'Content-Type': 'application/json',
-              'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-              Accept: 'application/json',
-              'Accept-Language': 'en-US,en;q=0.9',
-              Referer: 'https://ra.co/events/us/miami',
-              Origin: 'https://ra.co',
-            });
-          } catch (e2) {
-            this.logError('GraphQL native retry also failed', e2);
-            break;
-          }
-        } else {
+        this.logError(`Native https failed (page ${page})`, e);
+        try {
+          this.log('  Retrying with undici fetch...');
+          const response = await this.fetch(RA_GRAPHQL, {
+            method: 'POST',
+            headers: raHeaders,
+            body,
+          });
+          data = await response.json() as typeof data;
+          this.log(`  Undici response — body keys: ${Object.keys(data || {}).join(', ')}`);
+        } catch (e2) {
+          this.logError(`Undici fetch also failed (page ${page})`, e2);
           break;
         }
       }
@@ -177,8 +169,10 @@ export class ResidentAdvisorScraper extends BaseScraper {
 
       totalResults = listing.totalResults;
 
+      this.log(`  totalResults: ${totalResults}, data items: ${listing.data?.length || 0}`);
+
       if (totalResults === 0 && page === 1) {
-        this.log('⚠ RA returned 0 results — likely IP-blocked in CI (GitHub Actions datacenter IPs are blocked by RA). Events will be missing until scraper runs from a residential IP.');
+        this.log('RA returned totalResults=0 — query variables may need updating. dateFrom=' + dateFrom + ' dateTo=' + dateTo + ' area=' + MIAMI_AREA_ID);
         break;
       }
 

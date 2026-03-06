@@ -128,12 +128,15 @@ export class LumaScraper extends BaseScraper {
     const apiUrls = [
       'https://api.lu.ma/public/v2/event/get-events-for-calendar?calendar_api_id=cal-miami&period=future&pagination_limit=100',
       'https://api.lu.ma/public/v1/calendar/get-items?calendar_api_id=cal-miami&period=future&pagination_limit=100',
+      // Discover API as additional source
+      'https://api.lu.ma/discover/get-events?geo_latitude=25.7617&geo_longitude=-80.1918&geo_radius=50000&pagination_limit=100',
     ];
 
     for (const apiUrl of apiUrls) {
       try {
         this.log(`  Trying Luma API: ${apiUrl.slice(0, 70)}...`);
-        const data = await this.fetchJSON<any>(apiUrl);
+        // Use native fetch with reduced timeout to avoid 120s overall timeout
+        const data = await this.fetchJSONNativeGet<any>(apiUrl, 10_000);
 
         // Extract entries from API response
         const entries = data?.entries || data?.events || data?.data || [];
@@ -167,10 +170,10 @@ export class LumaScraper extends BaseScraper {
   }
 
   private async scrapeLumaPage(url: string, label: string): Promise<RawEvent[]> {
-    // Use native fetch for DNS fallback in CI
+    // Use native fetch for DNS fallback in CI — reduced timeout for faster failover
     let html: string;
     try {
-      html = await this.fetchHTMLNative(url, 15_000);
+      html = await this.fetchHTMLNative(url, 10_000);
     } catch {
       // Fallback to undici fetch
       const response = await this.fetch(url, {

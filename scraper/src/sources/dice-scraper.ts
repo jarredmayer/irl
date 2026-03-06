@@ -9,6 +9,7 @@
  * Returns ~30 upcoming events with full venue, price, and image data.
  */
 
+import * as cheerio from 'cheerio';
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 import { findVenue } from '../venues.js';
@@ -56,19 +57,37 @@ export class DiceRealScraper extends BaseScraper {
     this.log('Fetching Dice.fm Miami via __NEXT_DATA__...');
 
     try {
-      // Fetch the browse page HTML
+      // Fetch the browse page HTML and parse with cheerio (more reliable than regex
+      // for compressed/encoded HTML responses in CI)
       const html = await this.fetchHTMLNative(this.browseUrl, 20_000);
+      this.log(`  HTML length: ${html.length} chars`);
+      const $ = cheerio.load(html);
 
-      // Extract __NEXT_DATA__ JSON
-      const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>(.*?)<\/script>/s);
-      if (!nextDataMatch) {
+      // Extract __NEXT_DATA__ JSON via DOM instead of regex
+      const nextDataScript = $('script#__NEXT_DATA__').html();
+      if (!nextDataScript) {
         this.log('No __NEXT_DATA__ found on Dice.fm browse page');
-        return [];
+        // Fallback: try regex in case cheerio can't find it
+        const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/);
+        if (!nextDataMatch) {
+          this.log('Regex fallback also found no __NEXT_DATA__');
+          return [];
+        }
+        try {
+          const nextData = JSON.parse(nextDataMatch[1]);
+          const diceEvents: DiceNextDataEvent[] = nextData?.props?.pageProps?.events || [];
+          this.log(`Found ${diceEvents.length} events via regex fallback`);
+          if (diceEvents.length === 0) return [];
+          return this.mapAllEvents(diceEvents);
+        } catch {
+          this.log('Regex fallback JSON parse failed');
+          return [];
+        }
       }
 
       let nextData: any;
       try {
-        nextData = JSON.parse(nextDataMatch[1]);
+        nextData = JSON.parse(nextDataScript);
       } catch {
         this.log('Failed to parse __NEXT_DATA__ JSON');
         return [];
@@ -77,31 +96,38 @@ export class DiceRealScraper extends BaseScraper {
       const diceEvents: DiceNextDataEvent[] = nextData?.props?.pageProps?.events || [];
       this.log(`Found ${diceEvents.length} events in __NEXT_DATA__`);
 
-      if (diceEvents.length === 0) return [];
-
-      const now = new Date();
-      const events: RawEvent[] = [];
-      let skipped = 0;
-
-      for (const item of diceEvents) {
-        try {
-          const event = this.mapDiceEvent(item, now);
-          if (event) {
-            events.push(event);
-          } else {
-            skipped++;
-          }
-        } catch {
-          skipped++;
-        }
+      if (diceEvents.length === 0) {
+        this.log('__NEXT_DATA__ parsed OK but events array is empty — page structure may have changed');
+        return [];
       }
 
-      this.log(`Returning ${events.length} Dice.fm events (${skipped} skipped)`);
-      return events;
+      return this.mapAllEvents(diceEvents);
     } catch (error) {
       this.logError('Dice.fm scraper failed', error);
       return [];
     }
+  }
+
+  private mapAllEvents(diceEvents: DiceNextDataEvent[]): RawEvent[] {
+    const now = new Date();
+    const events: RawEvent[] = [];
+    let skipped = 0;
+
+    for (const item of diceEvents) {
+      try {
+        const event = this.mapDiceEvent(item, now);
+        if (event) {
+          events.push(event);
+        } else {
+          skipped++;
+        }
+      } catch {
+        skipped++;
+      }
+    }
+
+    this.log(`Returning ${events.length} Dice.fm events (${skipped} skipped)`);
+    return events;
   }
 
   private mapDiceEvent(item: DiceNextDataEvent, now: Date): RawEvent | null {

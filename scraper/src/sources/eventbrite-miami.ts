@@ -15,6 +15,7 @@
  */
 
 import * as https from 'https';
+import * as cheerio from 'cheerio';
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 
@@ -94,8 +95,8 @@ export class EventbriteMiamiScraper extends BaseScraper {
       // Step 1: Get CSRF token
       const csrfToken = await this.getCsrfToken();
       if (!csrfToken) {
-        this.log('Failed to get CSRF token');
-        return [];
+        this.log('Failed to get CSRF token — trying HTML fallback');
+        return this.scrapeHtmlFallback();
       }
       this.log(`  Got CSRF token: ${csrfToken.slice(0, 8)}...`);
 
@@ -113,8 +114,8 @@ export class EventbriteMiamiScraper extends BaseScraper {
       }
 
       if (searchResults.length === 0) {
-        this.log('No events found from search API');
-        return [];
+        this.log('No events found from search API — trying HTML fallback');
+        return this.scrapeHtmlFallback();
       }
 
       // Deduplicate by event ID
@@ -297,6 +298,95 @@ export class EventbriteMiamiScraper extends BaseScraper {
       req.on('error', reject);
       req.end();
     });
+  }
+
+  /**
+   * Fallback: scrape Eventbrite's browse page for embedded event data.
+   * Eventbrite embeds data as __NEXT_DATA__ or window.__SERVER_DATA__.
+   */
+  private async scrapeHtmlFallback(): Promise<RawEvent[]> {
+    const events: RawEvent[] = [];
+    const now = new Date();
+    const browseUrl = 'https://www.eventbrite.com/d/fl--miami/events/';
+
+    try {
+      const html = await this.fetchHTMLNative(browseUrl, 15_000);
+      const $ = cheerio.load(html);
+
+      // Strategy 1: __NEXT_DATA__
+      const nextDataScript = $('script#__NEXT_DATA__').html();
+      if (nextDataScript) {
+        try {
+          const nextData = JSON.parse(nextDataScript);
+          const searchData = nextData?.props?.pageProps?.search_data?.events?.results ||
+            nextData?.props?.pageProps?.events ||
+            nextData?.props?.pageProps?.initialResults?.results || [];
+          this.log(`  __NEXT_DATA__ found, ${searchData.length} events`);
+          for (const evt of searchData) {
+            const mapped = this.mapEvent(evt as EBDetailEvent, now);
+            if (mapped) events.push(mapped);
+          }
+          if (events.length > 0) return events;
+        } catch (e) {
+          this.log(`  __NEXT_DATA__ parse failed: ${e instanceof Error ? e.message : String(e)}`);
+        }
+      }
+
+      // Strategy 2: window.__SERVER_DATA__
+      const serverDataMatch = html.match(/window\.__SERVER_DATA__\s*=\s*({[\s\S]*?});\s*<\/script>/);
+      if (serverDataMatch) {
+        try {
+          const serverData = JSON.parse(serverDataMatch[1]);
+          const results = serverData?.search_data?.events?.results || [];
+          this.log(`  __SERVER_DATA__ found, ${results.length} events`);
+          for (const evt of results) {
+            const mapped = this.mapEvent(evt as EBDetailEvent, now);
+            if (mapped) events.push(mapped);
+          }
+          if (events.length > 0) return events;
+        } catch (e) {
+          this.log(`  __SERVER_DATA__ parse failed: ${e instanceof Error ? e.message : String(e)}`);
+        }
+      }
+
+      // Strategy 3: JSON-LD
+      $('script[type="application/ld+json"]').each((_, el) => {
+        try {
+          const data = JSON.parse($(el).html() || '');
+          const items = Array.isArray(data) ? data : data['@type'] === 'ItemList' ? (data.itemListElement || []).map((li: any) => li.item || li) : [data];
+          for (const item of items) {
+            if (item['@type'] === 'Event' && item.name && item.startDate) {
+              if (new Date(item.startDate) < now) continue;
+              const venue = item.location || {};
+              events.push({
+                title: item.name,
+                startAt: item.startDate.replace('Z', '').replace(/\.\d+$/, ''),
+                endAt: item.endDate?.replace('Z', '').replace(/\.\d+$/, ''),
+                venueName: venue.name || undefined,
+                address: venue.address?.streetAddress || undefined,
+                lat: venue.geo?.latitude ? parseFloat(venue.geo.latitude) : null,
+                lng: venue.geo?.longitude ? parseFloat(venue.geo.longitude) : null,
+                city: 'Miami',
+                tags: ['event'],
+                category: this.categorize(item.name, item.description || ''),
+                isOutdoor: false,
+                description: item.description || `${item.name} — via Eventbrite`,
+                sourceUrl: item.url || browseUrl,
+                sourceName: this.name,
+                ticketUrl: item.url || undefined,
+                image: typeof item.image === 'string' ? item.image : item.image?.url || undefined,
+              });
+            }
+          }
+        } catch { /* skip */ }
+      });
+
+      this.log(`  HTML fallback: ${events.length} events total`);
+      return events;
+    } catch (e) {
+      this.logError('HTML fallback failed', e);
+      return [];
+    }
   }
 
   private mapEvent(event: EBDetailEvent, now: Date): RawEvent | null {

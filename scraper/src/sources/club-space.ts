@@ -19,6 +19,7 @@
  */
 
 import * as https from 'https';
+import * as cheerio from 'cheerio';
 import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 
@@ -96,16 +97,26 @@ export class ClubSpaceScraper extends BaseScraper {
       // Step 1: Get the API key from Club Space's events page
       const apiKey = await this.getApiKey();
       if (!apiKey) {
-        this.log('Failed to extract Dice API key from Club Space');
-        return [];
+        this.log('Failed to extract Dice API key — trying HTML fallback');
+        return this.scrapeHtmlFallback();
       }
       this.log(`  Got API key: ${apiKey.slice(0, 8)}...`);
 
       // Step 2: Fetch events from Dice partners API
-      const diceEvents = await this.fetchDiceEvents(apiKey);
-      this.log(`  Got ${diceEvents.length} events from Dice API`);
+      let diceEvents: DiceEvent[] = [];
+      try {
+        diceEvents = await this.fetchDiceEvents(apiKey);
+        this.log(`  Got ${diceEvents.length} events from Dice API`);
+      } catch (apiError) {
+        this.log(`  Dice API failed: ${apiError instanceof Error ? apiError.message : String(apiError)}`);
+        this.log('  Falling back to HTML scraping...');
+        return this.scrapeHtmlFallback();
+      }
 
-      if (diceEvents.length === 0) return [];
+      if (diceEvents.length === 0) {
+        this.log('  Dice API returned 0 events — trying HTML fallback');
+        return this.scrapeHtmlFallback();
+      }
 
       // Step 3: Map to RawEvent
       const rawEvents: RawEvent[] = [];
@@ -197,6 +208,127 @@ export class ClubSpaceScraper extends BaseScraper {
       req.on('error', reject);
       req.end();
     });
+  }
+
+  /**
+   * Fallback: scrape Club Space's events page directly for visible event listings.
+   * Used when the Dice partners API returns 401 or fails.
+   */
+  private async scrapeHtmlFallback(): Promise<RawEvent[]> {
+    const events: RawEvent[] = [];
+    const now = new Date();
+
+    try {
+      const html = await this.fetchHTMLNative('https://www.clubspace.com/events', 15_000);
+      const $ = cheerio.load(html);
+
+      // Try JSON-LD first
+      $('script[type="application/ld+json"]').each((_, el) => {
+        try {
+          const data = JSON.parse($(el).html() || '');
+          const items = Array.isArray(data) ? data : [data];
+          for (const item of items) {
+            if ((item['@type'] === 'Event' || item['@type'] === 'MusicEvent') && item.name && item.startDate) {
+              const startDate = new Date(item.startDate);
+              if (startDate < now) continue;
+              events.push({
+                title: item.name,
+                startAt: item.startDate.replace('Z', '').replace(/\.\d+$/, ''),
+                endAt: item.endDate?.replace('Z', '').replace(/\.\d+$/, '') || undefined,
+                venueName: item.location?.name || 'Club Space',
+                address: this.venueCoords.address,
+                neighborhood: this.venueCoords.neighborhood,
+                lat: this.venueCoords.lat,
+                lng: this.venueCoords.lng,
+                city: 'Miami',
+                tags: ['live-music', 'dj', 'nightlife'],
+                category: 'Nightlife',
+                isOutdoor: false,
+                description: item.description || `${item.name} at Club Space`,
+                sourceUrl: item.url || 'https://www.clubspace.com/events',
+                sourceName: this.name,
+                ticketUrl: item.url || undefined,
+                image: item.image || undefined,
+              });
+            }
+          }
+        } catch { /* skip */ }
+      });
+
+      if (events.length > 0) {
+        this.log(`  HTML fallback: ${events.length} events from JSON-LD`);
+        return events;
+      }
+
+      // Try __NEXT_DATA__ (Club Space may use Next.js)
+      const nextDataScript = $('script#__NEXT_DATA__').html();
+      if (nextDataScript) {
+        try {
+          const nextData = JSON.parse(nextDataScript);
+          const evts = nextData?.props?.pageProps?.events || nextData?.props?.pageProps?.data?.events || [];
+          for (const evt of evts) {
+            const title = evt.name || evt.title || '';
+            const dateStr = evt.date || evt.start_at || evt.startDate || '';
+            if (!title || !dateStr) continue;
+            const startDate = new Date(dateStr);
+            if (startDate < now) continue;
+            events.push({
+              title,
+              startAt: dateStr.replace('Z', '').replace(/\.\d+$/, ''),
+              venueName: evt.venue || 'Club Space',
+              address: this.venueCoords.address,
+              neighborhood: this.venueCoords.neighborhood,
+              lat: this.venueCoords.lat,
+              lng: this.venueCoords.lng,
+              city: 'Miami',
+              tags: ['live-music', 'dj', 'nightlife'],
+              category: 'Nightlife',
+              isOutdoor: false,
+              description: evt.description || `${title} at Club Space`,
+              sourceUrl: evt.url || 'https://www.clubspace.com/events',
+              sourceName: this.name,
+              image: evt.image || evt.event_images?.landscape || undefined,
+            });
+          }
+          if (events.length > 0) {
+            this.log(`  HTML fallback: ${events.length} events from __NEXT_DATA__`);
+            return events;
+          }
+        } catch { /* skip */ }
+      }
+
+      // Try Dice widget event links embedded in the page
+      $('a[href*="dice.fm/event/"]').each((_, el) => {
+        const $el = $(el);
+        const title = $el.text().trim() || $el.attr('title') || '';
+        const href = $el.attr('href') || '';
+        if (title.length > 3) {
+          events.push({
+            title,
+            startAt: new Date(Date.now() + 7 * 86400000).toISOString().split('T')[0] + 'T22:00:00', // Approximate future date
+            venueName: 'Club Space',
+            address: this.venueCoords.address,
+            neighborhood: this.venueCoords.neighborhood,
+            lat: this.venueCoords.lat,
+            lng: this.venueCoords.lng,
+            city: 'Miami',
+            tags: ['live-music', 'dj', 'nightlife'],
+            category: 'Nightlife',
+            isOutdoor: false,
+            description: `${title} at Club Space`,
+            sourceUrl: href || 'https://www.clubspace.com/events',
+            sourceName: this.name,
+            ticketUrl: href || undefined,
+          });
+        }
+      });
+
+      this.log(`  HTML fallback: ${events.length} events total`);
+      return events;
+    } catch (e) {
+      this.logError('HTML fallback failed', e);
+      return [];
+    }
   }
 
   private mapEvent(event: DiceEvent, now: Date): RawEvent | null {
