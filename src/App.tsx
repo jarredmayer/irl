@@ -39,8 +39,37 @@ import {
   mapVibesToPreferences,
 } from './components/onboarding';
 
+// Unified preferences store
+import {
+  getPreferences as getUnifiedPreferences,
+  setPreferences as setUnifiedPreferences,
+  vibesToInterests,
+} from './store/preferences';
+
 // Wordmark test page
 import { WordmarkTest } from './components/WordmarkTest';
+
+// Migration: Move old localStorage keys to unified store
+function migrateOldPreferences() {
+  const oldVibes = localStorage.getItem('irl_onboarding_vibes');
+  const oldComplete = localStorage.getItem('irl_onboarding_complete');
+
+  // If old keys exist but unified store doesn't have onboardingComplete
+  if (oldComplete && !getUnifiedPreferences().onboardingComplete) {
+    const vibes = oldVibes ? JSON.parse(oldVibes) : [];
+    setUnifiedPreferences({
+      onboardingComplete: true,
+      vibes,
+      interests: vibesToInterests(vibes),
+    });
+    // Clean up old keys
+    localStorage.removeItem('irl_onboarding_vibes');
+    localStorage.removeItem('irl_onboarding_complete');
+  }
+}
+
+// Run migration on app boot
+migrateOldPreferences();
 
 function RouteFallback() {
   return (
@@ -60,7 +89,7 @@ function AppContent() {
   const { savedIds, toggleSaved: toggleSavedEvent, isLoaded: savedLoaded } = useSavedEvents();
   const { following, toggleFollow, unfollow, venueIds, seriesIds, neighborhoodIds, isLoaded: followingLoaded } = useFollowing();
   const { profile, updateProfile, isLoaded: profileLoaded } = useProfile();
-  const { location, status: locationStatus, requestLocation } = useGeolocation();
+  const { location, status: locationStatus } = useGeolocation();
   const { weather } = useWeather(location);
 
   const {
@@ -225,8 +254,6 @@ function AppContent() {
                 onProfileChange={updateProfile}
                 preferences={preferences}
                 onPreferencesChange={updatePreferences}
-                locationStatus={locationStatus}
-                onRequestLocation={requestLocation}
                 onConfigureAI={() => setShowAISettings(true)}
                 notifications={notifications}
               />

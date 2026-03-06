@@ -1,16 +1,19 @@
 /**
  * Onboarding Flow
  *
- * First-run experience with 3 screens:
- * 1. Intro - Beautiful Miami image with IRL branding
+ * First-run experience with 4 screens:
+ * 0. Intro - Beautiful Miami image with IRL branding
+ * 1. Location - City selection or GPS
  * 2. Vibe Selection - Pick your preferences
  * 3. The Reveal - Show matching events
  */
 
 import { useState, useCallback } from 'react';
 import { IntroScreen } from './IntroScreen';
+import { LocationScreen } from './LocationScreen';
 import { VibeSelectionScreen } from './VibeSelectionScreen';
 import { RevealScreen } from './RevealScreen';
+import { setPreferences, vibesToInterests, getPreferences } from '../../store/preferences';
 import type { Event } from '../../types';
 
 const ONBOARDING_COMPLETE_KEY = 'irl_onboarding_complete';
@@ -91,11 +94,18 @@ interface OnboardingProps {
 export function Onboarding({ events, onComplete }: OnboardingProps) {
   const [currentScreen, setCurrentScreen] = useState(0);
   const [selectedVibes, setSelectedVibes] = useState<string[]>([]);
+  const [selectedCity, setSelectedCity] = useState<'miami' | 'ftl' | 'pb' | null>(null);
   const [isExiting, setIsExiting] = useState(false);
 
   // Handle intro timeout or tap
   const handleIntroComplete = useCallback(() => {
     setCurrentScreen(1);
+  }, []);
+
+  // Handle location selection complete
+  const handleLocationComplete = useCallback((city: 'miami' | 'ftl' | 'pb') => {
+    setSelectedCity(city);
+    setCurrentScreen(2);
   }, []);
 
   // Handle vibe selection toggle
@@ -109,15 +119,32 @@ export function Onboarding({ events, onComplete }: OnboardingProps) {
 
   // Handle vibe selection complete
   const handleVibeComplete = useCallback(() => {
-    setCurrentScreen(2);
-  }, []);
+    // Save vibes to unified store
+    setPreferences({ vibes: selectedVibes });
+    setCurrentScreen(3);
+  }, [selectedVibes]);
 
   // Handle final completion
   const handleFinalComplete = useCallback(() => {
     setIsExiting(true);
-    // Store completion and vibes
-    localStorage.setItem(ONBOARDING_COMPLETE_KEY, 'true');
-    localStorage.setItem(ONBOARDING_VIBES_KEY, JSON.stringify(selectedVibes));
+
+    // Convert vibes to interest tags
+    const vibeLabels = selectedVibes.map(id => {
+      const vibe = VIBE_OPTIONS.find(v => v.id === id);
+      return vibe?.label || id;
+    });
+    const interests = vibesToInterests(vibeLabels);
+
+    // Save to unified preferences store
+    setPreferences({
+      vibes: vibeLabels,
+      interests,
+      onboardingComplete: true,
+    });
+
+    // Remove old localStorage keys
+    localStorage.removeItem(ONBOARDING_COMPLETE_KEY);
+    localStorage.removeItem(ONBOARDING_VIBES_KEY);
 
     // Delay to allow exit animation
     setTimeout(() => {
@@ -257,6 +284,10 @@ export function Onboarding({ events, onComplete }: OnboardingProps) {
       )}
 
       {currentScreen === 1 && (
+        <LocationScreen onComplete={handleLocationComplete} />
+      )}
+
+      {currentScreen === 2 && (
         <VibeSelectionScreen
           selectedVibes={selectedVibes}
           onVibeToggle={handleVibeToggle}
@@ -264,9 +295,11 @@ export function Onboarding({ events, onComplete }: OnboardingProps) {
         />
       )}
 
-      {currentScreen === 2 && (
+      {currentScreen === 3 && (
         <RevealScreen
           events={getMatchingEvents()}
+          selectedVibes={selectedVibes}
+          city={selectedCity}
           onComplete={handleFinalComplete}
         />
       )}
@@ -278,6 +311,12 @@ export function Onboarding({ events, onComplete }: OnboardingProps) {
  * Check if onboarding has been completed
  */
 export function hasCompletedOnboarding(): boolean {
+  // Check new unified store first
+  const prefs = getPreferences();
+  if (prefs.onboardingComplete) {
+    return true;
+  }
+  // Fall back to old key for migration
   return localStorage.getItem(ONBOARDING_COMPLETE_KEY) === 'true';
 }
 
@@ -285,6 +324,12 @@ export function hasCompletedOnboarding(): boolean {
  * Get stored vibe selections
  */
 export function getStoredVibes(): string[] {
+  // Check new unified store first
+  const prefs = getPreferences();
+  if (prefs.vibes.length > 0) {
+    return prefs.vibes;
+  }
+  // Fall back to old key for migration
   try {
     const stored = localStorage.getItem(ONBOARDING_VIBES_KEY);
     return stored ? JSON.parse(stored) : [];
@@ -312,4 +357,12 @@ export function mapVibesToPreferences(vibeIds: string[]): {
 export function resetOnboarding(): void {
   localStorage.removeItem(ONBOARDING_COMPLETE_KEY);
   localStorage.removeItem(ONBOARDING_VIBES_KEY);
+  // Also clear from unified store
+  setPreferences({
+    onboardingComplete: false,
+    vibes: [],
+    interests: [],
+    city: null,
+    locationSet: false,
+  });
 }

@@ -2,22 +2,35 @@
  * Reveal Screen
  *
  * Shows 3 matching events with staggered animation.
- * The hook to get users excited about what they'll discover.
+ * Displays derived interest tags from selected vibes.
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { format } from 'date-fns';
 import { CATEGORY_COLORS } from '../../constants';
+import { vibesToInterests } from '../../store/preferences';
+import { VIBE_OPTIONS } from './Onboarding';
 import type { Event } from '../../types';
 
 interface RevealScreenProps {
   events: Event[];
+  selectedVibes: string[];
+  city: 'miami' | 'ftl' | 'pb' | null;
   onComplete: () => void;
 }
 
-export function RevealScreen({ events, onComplete }: RevealScreenProps) {
+export function RevealScreen({ events, selectedVibes, onComplete }: RevealScreenProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
+
+  // Derive interest tags from selected vibes
+  const derivedInterests = useMemo(() => {
+    const vibeLabels = selectedVibes.map(id => {
+      const vibe = VIBE_OPTIONS.find(v => v.id === id);
+      return vibe?.label || id;
+    });
+    return vibesToInterests(vibeLabels);
+  }, [selectedVibes]);
 
   useEffect(() => {
     // Fade in header
@@ -146,10 +159,40 @@ export function RevealScreen({ events, onComplete }: RevealScreenProps) {
           })}
         </div>
 
+        {/* Interest Tags Confirmation */}
+        {derivedInterests.length > 0 && (
+          <div
+            className="mb-6 transition-all duration-500"
+            style={{
+              opacity: visibleCards.length === 3 ? 1 : 0,
+              transform: `translateY(${visibleCards.length === 3 ? 0 : 20}px)`,
+              transition: 'all 0.3s ease-out 0.1s',
+            }}
+          >
+            <p
+              className="font-sans text-ink-3 uppercase mb-2"
+              style={{ fontSize: '11px', letterSpacing: '0.08em', fontWeight: 500 }}
+            >
+              You're into:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {derivedInterests.map((interest) => (
+                <span
+                  key={interest}
+                  className="bg-soft rounded-full px-3 py-1 font-sans text-ink"
+                  style={{ fontSize: '13px', fontWeight: 500 }}
+                >
+                  {interest}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* CTA Button */}
         <button
           onClick={onComplete}
-          className="w-full py-4 bg-ink text-white rounded-2xl font-sans text-base font-medium transition-all duration-200 active:scale-[0.98]"
+          className="w-full py-4 bg-[#0E0E0E] text-white rounded-2xl font-sans text-base font-medium transition-all duration-200 active:scale-[0.98]"
           style={{
             opacity: visibleCards.length === 3 ? 1 : 0,
             transform: `translateY(${visibleCards.length === 3 ? 0 : 20}px)`,

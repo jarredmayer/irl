@@ -7,7 +7,42 @@ import { MustardStrip } from '../yourcast/MustardStrip';
 import { EmptyState } from '../ui/EmptyState';
 import { getWeatherForTime } from '../../services/weather';
 import { DEFAULT_FILTERS } from '../../constants';
+import { getPreferences } from '../../store/preferences';
 import type { ScoredEvent, FilterState, FollowType, WeatherForecast } from '../../types';
+
+// City to neighborhood mapping for location boost
+const CITY_NEIGHBORHOODS: Record<string, string[]> = {
+  miami: ['Wynwood', 'Brickell', 'Downtown', 'Little Havana', 'Coconut Grove', 'Design District', 'South Beach', 'Midtown', 'Edgewater', 'Little Haiti'],
+  ftl: ['Las Olas', 'Downtown Fort Lauderdale', 'Riverwalk', 'Victoria Park', 'Wilton Manors'],
+  pb: ['West Palm Beach', 'Downtown West Palm Beach', 'Palm Beach', 'Delray Beach', 'Boca Raton'],
+};
+
+// Apply preference-based boost to event scoring
+function applyPreferenceBoost(
+  event: ScoredEvent,
+  interests: string[],
+  city: string | null
+): number {
+  let boost = 0;
+
+  // Category matches interest: +30 points
+  const categoryLower = event.category.toLowerCase();
+  if (interests.some(i => categoryLower.includes(i.toLowerCase()) || i.toLowerCase().includes(categoryLower))) {
+    boost += 30;
+  }
+
+  // Location/neighborhood matches city anchor: +20 points
+  if (city && CITY_NEIGHBORHOODS[city]) {
+    if (CITY_NEIGHBORHOODS[city].some(n =>
+      event.neighborhood.toLowerCase().includes(n.toLowerCase()) ||
+      n.toLowerCase().includes(event.neighborhood.toLowerCase())
+    )) {
+      boost += 20;
+    }
+  }
+
+  return boost;
+}
 
 interface FeedSection {
   title: string;
@@ -86,7 +121,11 @@ export function FeedView({
     setVisibleCount(prev => prev + LOAD_MORE_COUNT);
   }, []);
 
-  // Flatten all events from all sections, filter dismissed, and sort by rank
+  // Get user preferences for boosting
+  const { interests, city } = getPreferences();
+  const hasPreferences = interests.length > 0;
+
+  // Flatten all events from all sections, filter dismissed, apply preference boost, and sort by rank
   const allEvents = useMemo(() => {
     const events: ScoredEvent[] = [];
     for (const section of sections) {
@@ -96,9 +135,21 @@ export function FeedView({
         }
       }
     }
-    // Sort by score (higher first)
+
+    // Apply preference boost and sort by boosted score (higher first)
+    if (hasPreferences) {
+      return events
+        .map(event => ({
+          event,
+          boostedScore: (event.score ?? 0) + applyPreferenceBoost(event, interests, city),
+        }))
+        .sort((a, b) => b.boostedScore - a.boostedScore)
+        .map(({ event }) => event);
+    }
+
+    // Fallback to original score sorting
     return events.sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
-  }, [sections, dismissedIds]);
+  }, [sections, dismissedIds, hasPreferences, interests, city]);
 
   // Get the #1 ranked event for hero (must be editor's pick with an image)
   const heroEvent = useMemo(() => {

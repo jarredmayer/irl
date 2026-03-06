@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import type { UserProfile, UserPreferences, GeolocationState } from '../../types';
-import { TAGS } from '../../constants';
-import { Chip, ChipGroup } from '../ui/Chip';
+import type { UserProfile, UserPreferences } from '../../types';
 import { SubmitEventForm, type UserSubmittedEvent } from './SubmitEventForm';
 import { SubmitAccountForm } from './SubmitAccountForm';
 import {
@@ -16,14 +14,36 @@ import {
 import { hasApiKey } from '../../services/ai';
 import { format, parseISO } from 'date-fns';
 import type { useNotifications } from '../../hooks/useNotifications';
+import {
+  getPreferences,
+  setPreferences,
+  CITY_NAMES,
+  type UserPreferences as UnifiedPreferences,
+} from '../../store/preferences';
+
+// Interest categories that can be selected
+const INTEREST_CATEGORIES = [
+  'nightlife',
+  'music',
+  'arts',
+  'culture',
+  'food & drink',
+  'outdoor',
+  'community',
+  'wellness',
+  'fitness',
+  'sports',
+  'film',
+  'comedy',
+  'market',
+  'family',
+];
 
 interface ProfileViewProps {
   profile: UserProfile;
   onProfileChange: (profile: UserProfile) => void;
   preferences: UserPreferences;
   onPreferencesChange: (preferences: UserPreferences) => void;
-  locationStatus: GeolocationState['status'];
-  onRequestLocation: () => void;
   onConfigureAI?: () => void;
   notifications?: ReturnType<typeof useNotifications>;
 }
@@ -33,8 +53,6 @@ export function ProfileView({
   onProfileChange,
   preferences,
   onPreferencesChange,
-  locationStatus,
-  onRequestLocation,
   onConfigureAI,
   notifications,
 }: ProfileViewProps) {
@@ -44,6 +62,30 @@ export function ProfileView({
   const [showSubmitForm, setShowSubmitForm] = useState(false);
   const [showSubmitAccountForm, setShowSubmitAccountForm] = useState(false);
   const photoInputRef = useRef<HTMLInputElement>(null);
+
+  // Unified preferences from store
+  const [unifiedPrefs, setUnifiedPrefs] = useState<UnifiedPreferences>(getPreferences);
+
+  // Sync unified preferences on mount
+  useEffect(() => {
+    setUnifiedPrefs(getPreferences());
+  }, []);
+
+  // Handle city change
+  const handleCityChange = (city: 'miami' | 'ftl' | 'pb') => {
+    setPreferences({ city, locationSet: true });
+    setUnifiedPrefs(prev => ({ ...prev, city, locationSet: true }));
+  };
+
+  // Handle interest toggle (from unified store)
+  const toggleInterest = (interest: string) => {
+    const currentInterests = unifiedPrefs.interests;
+    const newInterests = currentInterests.includes(interest)
+      ? currentInterests.filter(i => i !== interest)
+      : [...currentInterests, interest];
+    setPreferences({ interests: newInterests });
+    setUnifiedPrefs(prev => ({ ...prev, interests: newInterests }));
+  };
 
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -99,13 +141,6 @@ export function ProfileView({
       displayName: editDisplayName.trim() || undefined,
     });
     setIsEditingProfile(false);
-  };
-
-  const toggleTag = (tag: string) => {
-    const newTags = preferences.tags.includes(tag)
-      ? preferences.tags.filter((t) => t !== tag)
-      : [...preferences.tags, tag];
-    onPreferencesChange({ ...preferences, tags: newTags });
   };
 
   return (
@@ -221,34 +256,35 @@ export function ProfileView({
 
         {/* Location Settings */}
         <section className="bg-soft rounded-2xl p-5">
-          <h3 className="font-serif  text-[17px] text-ink mb-3">Location</h3>
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-ink-2">
-                {locationStatus === 'granted'
-                  ? 'Location access enabled'
-                  : locationStatus === 'denied'
-                  ? 'Location access denied'
-                  : 'Enable location for nearby events'}
-              </p>
-            </div>
-            {locationStatus !== 'granted' && (
-              <button
-                onClick={onRequestLocation}
-                disabled={locationStatus === 'loading'}
-                className="px-4 py-2.5 bg-[#0E0E0E] hover:bg-[#1a1a1a] text-white text-sm font-medium rounded-xl transition-colors disabled:opacity-50"
-              >
-                {locationStatus === 'loading' ? 'Requesting...' : 'Enable'}
-              </button>
-            )}
-            {locationStatus === 'granted' && (
-              <span className="text-teal">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </span>
-            )}
+          <h3 className="font-serif text-[17px] text-ink mb-3">Location</h3>
+
+          {/* City Pills */}
+          <div className="flex flex-wrap gap-2 mb-3">
+            {(['miami', 'ftl', 'pb'] as const).map((city) => {
+              const isSelected = unifiedPrefs.city === city;
+              return (
+                <button
+                  key={city}
+                  onClick={() => handleCityChange(city)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    isSelected
+                      ? 'bg-[#0E0E0E] text-white'
+                      : 'bg-soft text-ink hover:bg-divider'
+                  }`}
+                >
+                  {CITY_NAMES[city]}
+                </button>
+              );
+            })}
           </div>
+
+          {/* GPS Status */}
+          {unifiedPrefs.useGPS && (
+            <div className="flex items-center gap-2 text-sm text-ink-2">
+              <span className="w-2 h-2 bg-teal rounded-full" />
+              <span>Using GPS location</span>
+            </div>
+          )}
         </section>
 
         {/* Distance Preference */}
@@ -354,22 +390,25 @@ export function ProfileView({
 
         {/* Interests */}
         <section className="bg-soft rounded-2xl p-5">
-          <h3 className="font-serif  text-[17px] text-ink mb-3">Your Interests</h3>
+          <h3 className="font-serif text-[17px] text-ink mb-3">Your Interests</h3>
           <p className="text-sm text-ink-2 mb-4">
-            Select tags to personalize your feed. Events matching your interests will rank higher.
+            Events matching your interests will rank higher in the feed.
           </p>
-          <ChipGroup>
-            {TAGS.map((tag) => (
-              <Chip
-                key={tag}
-                label={tag.replace(/-/g, ' ')}
-                selected={preferences.tags.includes(tag)}
-                onClick={() => toggleTag(tag)}
-                size="sm"
-                variant="outline"
-              />
+          <div className="flex flex-wrap gap-2">
+            {INTEREST_CATEGORIES.map((interest) => (
+              <button
+                key={interest}
+                onClick={() => toggleInterest(interest)}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  unifiedPrefs.interests.includes(interest)
+                    ? 'bg-[#0E0E0E] text-white'
+                    : 'bg-white text-ink-2 border border-divider hover:border-ink-3'
+                }`}
+              >
+                {interest}
+              </button>
             ))}
-          </ChipGroup>
+          </div>
         </section>
 
         {/* Submit Event + Submit Account — side by side */}

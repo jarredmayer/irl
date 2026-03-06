@@ -1,10 +1,11 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { LeadSection } from './LeadSection';
 import { ListSection } from './ListSection';
 import { NudgeSection } from './NudgeSection';
 import { WildCardSection } from './WildCardSection';
 import { ShareableCard } from './ShareableCard';
 import { getYourcastEditorial, type YourcastEditorial } from '../../agents';
+import { getPreferences } from '../../store/preferences';
 import type { ScoredEvent, FollowType } from '../../types';
 
 interface YourcastViewProps {
@@ -19,6 +20,49 @@ interface YourcastViewProps {
 
 // Mustard color from spec
 const MUSTARD = '#C4A040';
+
+// City to neighborhood mapping for location boost
+const CITY_NEIGHBORHOODS: Record<string, string[]> = {
+  miami: ['Wynwood', 'Brickell', 'Downtown', 'Little Havana', 'Coconut Grove', 'Design District', 'South Beach', 'Midtown', 'Edgewater', 'Little Haiti'],
+  ftl: ['Las Olas', 'Downtown Fort Lauderdale', 'Riverwalk', 'Victoria Park', 'Wilton Manors'],
+  pb: ['West Palm Beach', 'Downtown West Palm Beach', 'Palm Beach', 'Delray Beach', 'Boca Raton'],
+};
+
+// Apply preference-based boost to event scoring
+function applyPreferenceBoost(
+  event: ScoredEvent,
+  interests: string[],
+  vibes: string[],
+  city: string | null
+): number {
+  let boost = 0;
+
+  // Category matches interest: +30 points
+  const categoryLower = event.category.toLowerCase();
+  if (interests.some(i => categoryLower.includes(i.toLowerCase()) || i.toLowerCase().includes(categoryLower))) {
+    boost += 30;
+  }
+
+  // Location/neighborhood matches city anchor: +20 points
+  if (city && CITY_NEIGHBORHOODS[city]) {
+    if (CITY_NEIGHBORHOODS[city].some(n =>
+      event.neighborhood.toLowerCase().includes(n.toLowerCase()) ||
+      n.toLowerCase().includes(event.neighborhood.toLowerCase())
+    )) {
+      boost += 20;
+    }
+  }
+
+  // Category matches a vibe directly: +15 points
+  if (vibes.some(v =>
+    categoryLower.includes(v.toLowerCase()) ||
+    event.tags.some(t => v.toLowerCase().includes(t.toLowerCase()))
+  )) {
+    boost += 15;
+  }
+
+  return boost;
+}
 
 // Get list title based on theme
 function getListTitle(theme?: string): string {
@@ -77,28 +121,86 @@ export function YourcastView({
   const headline = editorial?.headline || "A good week to be outside.";
   const subtitle = editorial?.subheadline || "Three art-forward picks, one long lunch, and a waterfront walk — all within 15 minutes.";
 
-  // Select events for each section (using simple logic for now)
-  // THE LEAD: First event with an image and editor pick, or highest ranked
-  const leadEvent = events.find(e => e.image && e.editorPick) || events.find(e => e.image) || events[0];
+  // Get user preferences for boosting
+  const { interests, city, vibes } = getPreferences();
+  const hasPreferences = interests.length > 0 || vibes.length > 0;
 
-  // THE LIST: Next 3-5 events (excluding lead)
-  const listEvents = events.filter(e => e.id !== leadEvent?.id).slice(0, 4);
+  // Apply preference boosts and re-rank events
+  const boostedEvents = useMemo(() => {
+    if (!hasPreferences) return events;
 
-  // THE NUDGE: Find an event happening soon (within 24 hours)
+    return [...events]
+      .map(event => ({
+        event,
+        boostedScore: (event.score || 0) + applyPreferenceBoost(event, interests, vibes, city),
+      }))
+      .sort((a, b) => b.boostedScore - a.boostedScore)
+      .map(({ event }) => event);
+  }, [events, interests, vibes, city, hasPreferences]);
+
+  // THE LEAD: Highest boosted score event with an image
+  const leadEvent = boostedEvents.find(e => e.image && e.editorPick)
+    || boostedEvents.find(e => e.image)
+    || boostedEvents[0];
+
+  // THE LIST: Next 3 events by boosted score, filtered by interests if possible
+  const listEvents = useMemo(() => {
+    const filtered = boostedEvents.filter(e => e.id !== leadEvent?.id);
+    if (hasPreferences) {
+      // Prefer events matching interests
+      const matchingInterests = filtered.filter(e =>
+        interests.some(i =>
+          e.category.toLowerCase().includes(i.toLowerCase())
+        )
+      );
+      if (matchingInterests.length >= 3) {
+        return matchingInterests.slice(0, 3);
+      }
+    }
+    return filtered.slice(0, 3);
+  }, [boostedEvents, leadEvent, interests, hasPreferences]);
+
+  // THE NUDGE: Soonest upcoming event matching any interest
   const now = new Date();
-  const nudgeEvent = events.find(e => {
-    if (e.id === leadEvent?.id) return false;
-    const eventDate = new Date(e.startAt);
-    const hoursUntil = (eventDate.getTime() - now.getTime()) / (1000 * 60 * 60);
-    return hoursUntil > 0 && hoursUntil <= 24;
-  }) || events.find(e => e.id !== leadEvent?.id);
+  const nudgeEvent = useMemo(() => {
+    const usedIds = new Set([leadEvent?.id, ...listEvents.map(e => e.id)]);
+    const upcoming = boostedEvents.filter(e => {
+      if (usedIds.has(e.id)) return false;
+      const eventDate = new Date(e.startAt);
+      const hoursUntil = (eventDate.getTime() - now.getTime()) / (1000 * 60 * 60);
+      return hoursUntil > 0 && hoursUntil <= 48;
+    });
 
-  // THE WILD CARD: Pick something from a less common category or neighborhood
-  const wildcardEvent = events.find(e => {
-    if (e.id === leadEvent?.id || e.id === nudgeEvent?.id) return false;
-    // Look for underground/niche tags or less common categories
-    return e.tags.some(t => ['underground', 'pop-up', 'new-opening', 'niche'].includes(t));
-  }) || events.find(e => e.id !== leadEvent?.id && e.id !== nudgeEvent?.id);
+    // Prefer events matching interests
+    if (hasPreferences) {
+      const matching = upcoming.find(e =>
+        interests.some(i => e.category.toLowerCase().includes(i.toLowerCase()))
+      );
+      if (matching) return matching;
+    }
+
+    return upcoming[0] || boostedEvents.find(e => !usedIds.has(e.id));
+  }, [boostedEvents, leadEvent, listEvents, interests, hasPreferences, now]);
+
+  // THE WILD CARD: Lowest-profile event matching any interest, tagged "under the radar"
+  const wildcardEvent = useMemo(() => {
+    const usedIds = new Set([leadEvent?.id, nudgeEvent?.id, ...listEvents.map(e => e.id)]);
+    const available = boostedEvents.filter(e => !usedIds.has(e.id));
+
+    // Look for underground/niche events matching interests
+    const niche = available.filter(e =>
+      e.tags.some(t => ['underground', 'pop-up', 'new-opening', 'niche', 'local-favorite'].includes(t))
+    );
+
+    if (hasPreferences && niche.length > 0) {
+      const matching = niche.find(e =>
+        interests.some(i => e.category.toLowerCase().includes(i.toLowerCase()))
+      );
+      if (matching) return matching;
+    }
+
+    return niche[0] || available[available.length - 1] || available[0];
+  }, [boostedEvents, leadEvent, nudgeEvent, listEvents, interests, hasPreferences]);
 
   const handleShare = useCallback(() => {
     setShowShareCard(true);
