@@ -79,7 +79,10 @@ export async function generateEditorialCopy(
   events: ScoredEvent[]
 ): Promise<EditorialResult> {
   const key = import.meta.env.VITE_ANTHROPIC_API_KEY;
-  if (!key) return FALLBACKS;
+  if (!key) {
+    console.warn('[editorial-agent] No VITE_ANTHROPIC_API_KEY set');
+    return FALLBACKS;
+  }
 
   if (events.length === 0) return FALLBACKS;
 
@@ -132,7 +135,11 @@ Return ONLY valid JSON, no markdown, no preamble:
       }),
     });
 
-    if (!res.ok) return FALLBACKS;
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error('[editorial-agent] API error:', res.status, errorText);
+      return FALLBACKS;
+    }
 
     const data = await res.json();
     const text = data.content?.[0]?.text ?? '';
