@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-06T04:38:11.970Z",
+  "scrapedAt": "2026-03-06T14:01:56.969Z",
   "stats": {
-    "total": 1713,
-    "deduplicated": 1146,
+    "total": 1806,
+    "deduplicated": 1237,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -14,9 +14,9 @@
       "Miami Spice": 0,
       "Miami Festivals": 1,
       "Dice.fm Real": 0,
-      "Resident Advisor": 259,
-      "Candlelight Concerts (Fever)": 0,
-      "Hotel Events": 0,
+      "Resident Advisor": 253,
+      "Candlelight Concerts (Fever)": 14,
+      "Hotel Events": 10,
       "Real Venue Events": 29,
       "Cultural Attractions": 393,
       "Pop-Ups": 64,
@@ -28,28 +28,33 @@
       "Free Yoga Miami": 76,
       "Run Clubs": 19,
       "Cycling Group Rides": 38,
-      "Las Olas Boulevard": 0,
+      "Las Olas Boulevard": 44,
       "Fort Lauderdale": 23,
-      "Palm Beach": 55,
-      "Instagram Sources": 156,
+      "Palm Beach": 56,
+      "Instagram Sources": 155,
       "Luma": 21,
       "SofarSounds": 5,
-      "HistoryMiami": 0,
+      "HistoryMiami": 13,
       "Resy Miami Events": 0,
       "Venue Watchlist": 0,
-      "Eventbrite Miami": 0,
+      "Eventbrite Miami": 30,
       "Fever Miami": 0,
-      "Club Space": 39,
+      "Club Space": 40,
+      "PAMM": 0,
+      "ICA Miami": 1,
+      "Wolfsonian": 0,
+      "Little Haiti Cultural": 0,
+      "Wynwood BID": 0,
       "CultureRoom": 18,
-      "BonnetHouse": 14,
+      "BonnetHouse": 0,
       "WeekendBroward Verified": 103
     }
   },
   "delta": {
-    "added": 411,
-    "removed": 9,
-    "modified": 0,
-    "unchanged": 735
+    "added": 112,
+    "removed": 20,
+    "modified": 2,
+    "unchanged": 1123
   },
   "sources": [
     {
@@ -116,22 +121,20 @@
     },
     {
       "name": "Resident Advisor",
-      "count": 259,
+      "count": 253,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Candlelight Concerts (Fever)",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "count": 14,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "Hotel Events",
-      "count": 0,
-      "status": "empty",
+      "count": 10,
+      "status": "ok",
       "errors": []
     },
     {
@@ -202,11 +205,9 @@
     },
     {
       "name": "Las Olas Boulevard",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "count": 44,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "Fort Lauderdale",
@@ -216,13 +217,13 @@
     },
     {
       "name": "Palm Beach",
-      "count": 55,
+      "count": 56,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Instagram Sources",
-      "count": 156,
+      "count": 155,
       "status": "ok",
       "errors": []
     },
@@ -240,8 +241,8 @@
     },
     {
       "name": "HistoryMiami",
-      "count": 0,
-      "status": "empty",
+      "count": 13,
+      "status": "ok",
       "errors": []
     },
     {
@@ -258,8 +259,8 @@
     },
     {
       "name": "Eventbrite Miami",
-      "count": 0,
-      "status": "empty",
+      "count": 30,
+      "status": "ok",
       "errors": []
     },
     {
@@ -272,8 +273,38 @@
     },
     {
       "name": "Club Space",
-      "count": 39,
+      "count": 40,
       "status": "ok",
+      "errors": []
+    },
+    {
+      "name": "PAMM",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "ICA Miami",
+      "count": 1,
+      "status": "ok",
+      "errors": []
+    },
+    {
+      "name": "Wolfsonian",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Little Haiti Cultural",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Wynwood BID",
+      "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
@@ -284,8 +315,8 @@
     },
     {
       "name": "BonnetHouse",
-      "count": 14,
-      "status": "ok",
+      "count": 0,
+      "status": "empty",
       "errors": []
     },
     {
@@ -296,25 +327,25 @@
     }
   ],
   "sourceHealth": {
-    "ok": 25,
-    "empty": 10,
-    "errored": 4,
+    "ok": 30,
+    "empty": 12,
+    "errored": 2,
     "emptySources": [
       "III Points",
       "SOBEWFF",
       "Miami Spice",
       "Dice.fm Real",
-      "Hotel Events",
       "Broward Center",
-      "HistoryMiami",
       "Resy Miami Events",
       "Venue Watchlist",
-      "Eventbrite Miami"
+      "PAMM",
+      "Wolfsonian",
+      "Little Haiti Cultural",
+      "Wynwood BID",
+      "BonnetHouse"
     ],
     "erroredSources": [
       "Miami New Times",
-      "Candlelight Concerts (Fever)",
-      "Las Olas Boulevard",
       "Fever Miami"
     ]
   }

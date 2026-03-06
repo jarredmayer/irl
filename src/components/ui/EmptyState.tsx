@@ -15,19 +15,19 @@ export function EmptyState({
   action,
 }: EmptyStateProps) {
   return (
-    <div className="flex flex-col items-center justify-center py-12 px-4 text-center">
+    <div className="flex flex-col items-center justify-center py-16 px-6 text-center">
       {icon && (
-        <div className="text-slate-300 mb-4 text-5xl">{icon}</div>
+        <div className="text-ink-3 mb-4 text-5xl">{icon}</div>
       )}
-      <h3 className="text-lg font-medium text-slate-700 mb-1">{title}</h3>
+      <h3 className="font-serif text-xl text-ink mb-2">{title}</h3>
       {description && (
-        <p className="text-sm text-slate-500 max-w-xs mb-4">{description}</p>
+        <p className="text-sm text-ink-2 max-w-xs mb-6">{description}</p>
       )}
       {action && (
         <button
           type="button"
           onClick={action.onClick}
-          className="px-4 py-2 bg-sky-500 text-white rounded-lg text-sm font-medium hover:bg-sky-600 transition-colors"
+          className="px-5 py-2.5 bg-ink text-white rounded-full text-sm font-medium hover:bg-ink/90 transition-colors btn-press"
         >
           {action.label}
         </button>
@@ -38,9 +38,9 @@ export function EmptyState({
 
 export function LoadingState({ message = 'Loading...' }: { message?: string }) {
   return (
-    <div className="flex flex-col items-center justify-center py-12 px-4">
-      <div className="w-8 h-8 border-2 border-sky-500 border-t-transparent rounded-full animate-spin mb-4" />
-      <p className="text-sm text-slate-500">{message}</p>
+    <div className="flex flex-col items-center justify-center py-16 px-6">
+      <div className="w-8 h-8 border-2 border-ink border-t-transparent rounded-full animate-spin mb-4" />
+      <p className="text-sm text-ink-2">{message}</p>
     </div>
   );
 }

@@ -194,6 +194,15 @@ export { Do305Scraper } from './do305.js';
 // Club Space — real events via Dice.fm partners widget API
 export { ClubSpaceScraper } from './club-space.js';
 
+// Miami Museums — PAMM, ICA Miami, Wolfsonian, Little Haiti Cultural, Wynwood BID
+export {
+  PAMMScraper,
+  ICAMiamiScraper,
+  WolfsonianScraper,
+  LittleHaitiCulturalScraper,
+  WynwoodBIDScraper,
+} from './miami-museums.js';
+
 // Imports for getAllScrapers
 import { MiamiNewTimesScraper } from './miami-new-times.js';
 import { FarmersMarketsScraper } from './farmers-markets.js';
@@ -294,6 +303,13 @@ import { FeverMiamiScraper } from './fever-miami.js';
 import { ShotgunMiamiScraper } from './shotgun-miami.js';
 import { Do305Scraper } from './do305.js';
 import { ClubSpaceScraper } from './club-space.js';
+import {
+  PAMMScraper,
+  ICAMiamiScraper,
+  WolfsonianScraper,
+  LittleHaitiCulturalScraper,
+  WynwoodBIDScraper,
+} from './miami-museums.js';
 import type { BaseScraper } from './base.js';
 
 /**
@@ -409,6 +425,13 @@ export function getAllScrapers(): BaseScraper[] {
 
     // === CLUB SPACE (real events via Dice.fm partners widget API) ===
     new ClubSpaceScraper(),
+
+    // === MIAMI MUSEUMS & CULTURAL INSTITUTIONS ===
+    new PAMMScraper(),           // Pérez Art Museum Miami
+    new ICAMiamiScraper(),       // Institute of Contemporary Art
+    new WolfsonianScraper(),     // The Wolfsonian-FIU
+    new LittleHaitiCulturalScraper(), // Little Haiti Cultural Complex
+    new WynwoodBIDScraper(),     // Wynwood BID events
 
     // === BROWARD VENUE SCRAPERS (real calendar data from venue websites) ===
     new CultureRoomScraper(),            // Culture Room — FLL live music, Ticketmaster links

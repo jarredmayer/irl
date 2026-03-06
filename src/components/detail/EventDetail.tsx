@@ -83,14 +83,14 @@ export function EventDetail({
   return (
     <div className="bg-white min-h-screen">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-white border-b border-slate-100">
+      <div className="sticky top-0 z-10 bg-white border-b border-divider">
         <div className="flex items-center gap-3 px-4 py-3">
           <button
             onClick={() => navigate(-1)}
-            className="p-2 -ml-2 rounded-full hover:bg-slate-100 transition-colors"
+            className="p-2 -ml-2 rounded-full hover:bg-soft transition-colors btn-press"
           >
             <svg
-              className="w-5 h-5 text-slate-600"
+              className="w-5 h-5 text-ink-2"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -99,7 +99,7 @@ export function EventDetail({
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
           </button>
-          <h1 className="text-lg font-semibold text-slate-900 line-clamp-1">
+          <h1 className="text-lg font-serif text-ink line-clamp-1">
             {event.title}
           </h1>
         </div>
@@ -107,7 +107,7 @@ export function EventDetail({
 
       {/* Image */}
       {event.image && (
-        <div className="aspect-video bg-slate-100">
+        <div className="aspect-video bg-soft">
           <img
             src={event.image}
             alt={event.title}
@@ -117,7 +117,7 @@ export function EventDetail({
       )}
 
       {/* Content */}
-      <div className="px-4 py-4 space-y-4">
+      <div className="px-4 py-5 space-y-5">
         {/* Title and badges */}
         <div>
           <div className="flex items-start gap-2 mb-2 flex-wrap">
@@ -133,28 +133,29 @@ export function EventDetail({
             {event.editorPick && (
               <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
                 <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                Editor's Pick
+                Editor&apos;s Pick
               </span>
             )}
             {event.isOutdoor && (
-              <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded-full">
+              <span className="px-2 py-0.5 text-xs font-medium rounded-full"
+                    style={{ backgroundColor: 'var(--color-teal, #2E6560)' + '18', color: 'var(--color-teal, #2E6560)' }}>
                 Outdoor
               </span>
             )}
             {isNew && !happeningNow && (
-              <span className="px-2 py-0.5 bg-sky-100 text-sky-700 text-xs font-medium rounded-full">
+              <span className="px-2 py-0.5 bg-soft text-ink-2 text-xs font-medium rounded-full">
                 New
               </span>
             )}
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">{event.title}</h2>
+          <h2 className="text-2xl font-serif text-ink">{event.title}</h2>
         </div>
 
         {/* Date, time, location */}
         <div className="space-y-2">
-          <div className="flex items-center gap-2 text-slate-600">
+          <div className="flex items-center gap-2 text-ink-2">
             <svg
-              className="w-5 h-5 flex-shrink-0"
+              className="w-5 h-5 flex-shrink-0 text-ink-3"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -169,9 +170,9 @@ export function EventDetail({
             </span>
           </div>
 
-          <div className="flex items-center gap-2 text-slate-600">
+          <div className="flex items-center gap-2 text-ink-2">
             <svg
-              className="w-5 h-5 flex-shrink-0"
+              className="w-5 h-5 flex-shrink-0 text-ink-3"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -189,11 +190,11 @@ export function EventDetail({
 
           {event.address && (
             <div className="flex items-center gap-2 pl-7">
-              <p className="text-sm text-slate-500 flex-1">{event.address}</p>
+              <p className="text-sm text-ink-3 flex-1">{event.address}</p>
               <div className="flex items-center gap-1">
                 <button
                   onClick={handleCopyAddress}
-                  className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors text-slate-400 hover:text-slate-600 btn-press"
+                  className="p-1.5 rounded-lg hover:bg-soft transition-colors text-ink-3 hover:text-ink-2 btn-press"
                   title="Copy address"
                 >
                   {copiedAddress ? (
@@ -209,7 +210,7 @@ export function EventDetail({
                 </button>
                 <button
                   onClick={handleOpenMaps}
-                  className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors text-slate-400 hover:text-slate-600 btn-press"
+                  className="p-1.5 rounded-lg hover:bg-soft transition-colors text-ink-3 hover:text-ink-2 btn-press"
                   title="Open in Maps"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -223,14 +224,14 @@ export function EventDetail({
 
         {/* Weather forecast */}
         {eventWeather && (
-          <div className="flex items-center gap-3 p-3 bg-sky-50 rounded-xl">
+          <div className="flex items-center gap-3 p-3 bg-soft rounded-xl border border-divider">
             <span className="text-2xl">{getWeatherIcon(eventWeather.weatherCode)}</span>
             <div>
-              <p className="font-medium text-slate-900">
+              <p className="font-medium text-ink">
                 {Math.round(eventWeather.temperature)}°F at event time
               </p>
               {eventWeather.precipitationProbability > 20 && (
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-ink-2">
                   {eventWeather.precipitationProbability}% chance of rain
                 </p>
               )}
@@ -241,7 +242,7 @@ export function EventDetail({
         {/* Price */}
         {event.priceLabel && (
           <div className="flex items-center gap-2">
-            <span className="text-sm text-slate-500">Price:</span>
+            <span className="text-sm text-ink-3">Price:</span>
             <Chip label={event.priceLabel} size="sm" />
           </div>
         )}
@@ -252,45 +253,42 @@ export function EventDetail({
         {/* Follow options */}
         {onFollow && (
           <div className="space-y-2">
-            <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            <h3 className="text-xs font-medium text-ink-3 uppercase tracking-wide">
               Follow for updates
             </h3>
             <div className="flex flex-wrap gap-2">
               {event.venueId && event.venueName && (
                 <button
                   onClick={() => onFollow(event.venueId!, 'venue', event.venueName!)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors btn-press ${
                     isFollowingVenue
                       ? 'bg-rose-50 text-rose-600 border border-rose-200'
-                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                      : 'bg-soft text-ink-2 hover:bg-[var(--color-divider)]'
                   }`}
                 >
-                  <span>📍</span>
                   <span>{isFollowingVenue ? 'Following' : 'Follow'} {event.venueName}</span>
                 </button>
               )}
               {event.seriesId && event.seriesName && (
                 <button
                   onClick={() => onFollow(event.seriesId!, 'series', event.seriesName!)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors btn-press ${
                     isFollowingSeries
                       ? 'bg-rose-50 text-rose-600 border border-rose-200'
-                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                      : 'bg-soft text-ink-2 hover:bg-[var(--color-divider)]'
                   }`}
                 >
-                  <span>🔁</span>
                   <span>{isFollowingSeries ? 'Following' : 'Follow'} {event.seriesName}</span>
                 </button>
               )}
               <button
                 onClick={() => onFollow(event.neighborhood, 'neighborhood', event.neighborhood)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
+                className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors btn-press ${
                   isFollowingNeighborhood
                     ? 'bg-rose-50 text-rose-600 border border-rose-200'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    : 'bg-soft text-ink-2 hover:bg-[var(--color-divider)]'
                 }`}
               >
-                <span>🏘️</span>
                 <span>{isFollowingNeighborhood ? 'Following' : 'Follow'} {event.neighborhood}</span>
               </button>
             </div>
@@ -299,24 +297,24 @@ export function EventDetail({
 
         {/* Why this, why now — contextual reasoning */}
         <div className="pt-2">
-          <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">
+          <h3 className="text-xs font-medium text-ink-3 uppercase tracking-wide mb-2">
             Why we recommend it
           </h3>
           <WhyThisWhyNow event={event} isNew={isNew} />
-          <p className="text-slate-700 leading-relaxed mt-2">{event.editorialWhy}</p>
+          <p className="text-ink-2 leading-relaxed mt-2">{event.editorialWhy}</p>
         </div>
 
         {/* Description */}
         <div>
-          <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">
+          <h3 className="text-xs font-medium text-ink-3 uppercase tracking-wide mb-2">
             About
           </h3>
-          <p className="text-slate-600 leading-relaxed">{event.description}</p>
+          <p className="text-ink-2 leading-relaxed">{event.description}</p>
         </div>
 
         {/* Tags */}
         <div>
-          <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">
+          <h3 className="text-xs font-medium text-ink-3 uppercase tracking-wide mb-2">
             Tags
           </h3>
           <ChipGroup>
@@ -328,12 +326,12 @@ export function EventDetail({
 
         {/* Source */}
         {event.source && (
-          <div className="pt-2 border-t border-slate-100">
+          <div className="pt-4 border-t border-divider">
             <a
               href={event.source.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-sky-600 hover:text-sky-700"
+              className="text-sm text-ink-2 hover:text-ink"
             >
               More info at {event.source.name} →
             </a>
@@ -355,34 +353,38 @@ const LOCAL_NEIGHBORHOODS = [
  * Shown only on detail page to avoid feed clutter.
  */
 function WhyThisWhyNow({ event, isNew }: { event: Event | ScoredEvent; isNew: boolean }) {
-  const reasons: { label: string; className: string }[] = [];
+  const reasons: { label: string; color: string }[] = [];
 
   if (event.editorPick) {
-    reasons.push({ label: 'Curated pick — rare or culturally significant', className: 'bg-amber-50 text-amber-700' });
+    reasons.push({ label: 'Curated pick — rare or culturally significant', color: 'var(--color-ochre, #9C6B28)' });
   }
 
   if (LOCAL_NEIGHBORHOODS.some(n => event.neighborhood?.toLowerCase() === n.toLowerCase())) {
-    reasons.push({ label: `Hidden gem — ${event.neighborhood}`, className: 'bg-purple-50 text-purple-700' });
+    reasons.push({ label: `Hidden gem — ${event.neighborhood}`, color: 'var(--color-mauve, #7A5C72)' });
   }
 
   if (event.priceLabel === 'Free') {
-    reasons.push({ label: 'Free to attend', className: 'bg-emerald-50 text-emerald-700' });
+    reasons.push({ label: 'Free to attend', color: 'var(--color-teal, #2E6560)' });
   }
 
   if (event.isOutdoor) {
-    reasons.push({ label: 'Outdoor event — check weather', className: 'bg-sky-50 text-sky-700' });
+    reasons.push({ label: 'Outdoor event — check weather', color: 'var(--color-teal, #2E6560)' });
   }
 
   if (isNew) {
-    reasons.push({ label: 'Just added to the feed', className: 'bg-sky-50 text-sky-700' });
+    reasons.push({ label: 'Just added to the feed', color: 'var(--color-slate, #3D5068)' });
   }
 
   if (reasons.length === 0) return null;
 
   return (
     <div className="flex flex-wrap gap-1.5">
-      {reasons.map(({ label, className }) => (
-        <span key={label} className={`text-xs px-2 py-1 rounded-lg ${className}`}>
+      {reasons.map(({ label, color }) => (
+        <span
+          key={label}
+          className="text-xs px-2 py-1 rounded-lg"
+          style={{ backgroundColor: color + '18', color }}
+        >
           {label}
         </span>
       ))}

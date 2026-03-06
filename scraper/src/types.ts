@@ -2,6 +2,12 @@
  * IRL Scraper Type Definitions
  */
 
+// Curation and quality types
+export type IndoorOutdoor = 'indoor' | 'outdoor' | 'both' | 'unknown';
+export type ImageTier = 'hero' | 'card' | 'none';
+export type TrustTier = 'high' | 'medium' | 'low';
+export type ImageSource = 'venue' | 'event' | 'organizer' | 'stock' | 'generated' | 'none';
+
 // Raw event from scrapers (intermediate format)
 export interface RawEvent {
   title: string;
@@ -25,6 +31,10 @@ export interface RawEvent {
   image?: string;
   recurring?: boolean;
   recurrencePattern?: string;
+  // Phase 4 curation fields
+  indoorOutdoor?: IndoorOutdoor;
+  imageSource?: ImageSource;
+  vibeTags?: string[];
 }
 
 // Final event format matching IRL app schema
@@ -59,6 +69,16 @@ export interface IRLEvent {
   seriesName?: string;
   venueId?: string;
   addedAt?: string; // ISO 8601 — when this event first appeared in the feed
+  // Phase 4 curation fields
+  indoorOutdoor: IndoorOutdoor;
+  imageSource?: ImageSource;
+  imageTier: ImageTier;
+  completenessScore: number; // 0-100
+  freshnessScore: number; // 0-100
+  trustTier: TrustTier;
+  sourceUrl?: string;
+  lastVerified?: string; // ISO 8601
+  vibeTags: string[];
 }
 
 // Source configuration
@@ -173,3 +193,38 @@ export const VALID_TAGS = [
   'new-opening',
   'seasonal',
 ] as const;
+
+// Vibe tags for curation scoring
+export const VIBE_TAGS = [
+  'chill',
+  'energetic',
+  'intimate',
+  'crowded',
+  'upscale',
+  'casual',
+  'artsy',
+  'trendy',
+  'underground',
+  'mainstream',
+  'romantic',
+  'social',
+  'solo-friendly',
+  'date-night',
+  'girls-night',
+  'day-party',
+  'late-night',
+  'morning',
+  'afternoon',
+  'sunset-vibes',
+  'boozy',
+  'sober-friendly',
+  'loud',
+  'quiet',
+  'scenic',
+  'hidden-gem',
+  'instagrammable',
+  'locals-only',
+  'tourist-friendly',
+] as const;
+
+export type VibeTag = typeof VIBE_TAGS[number];

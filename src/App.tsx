@@ -1,9 +1,10 @@
-import { useState, useMemo, lazy, Suspense } from 'react';
+import { useState, useMemo, lazy, Suspense, useEffect } from 'react';
 import {
   BrowserRouter,
   Routes,
   Route,
   useParams,
+  useNavigate,
 } from 'react-router-dom';
 import { AppShell } from './components/layout/AppShell';
 import { FeedView } from './components/feed/FeedView';
@@ -24,11 +25,23 @@ import './index.css';
 
 // Lazy-loaded route components (split into separate chunks)
 const MapView = lazy(() => import('./components/map/MapView').then(m => ({ default: m.MapView })));
+const YourcastView = lazy(() => import('./components/yourcast/YourcastView').then(m => ({ default: m.YourcastView })));
 const FollowingView = lazy(() => import('./components/following/FollowingView').then(m => ({ default: m.FollowingView })));
 const ProfileView = lazy(() => import('./components/profile/ProfileView').then(m => ({ default: m.ProfileView })));
 const EventDetail = lazy(() => import('./components/detail/EventDetail').then(m => ({ default: m.EventDetail })));
 const ChatAssistant = lazy(() => import('./components/ai/ChatAssistant').then(m => ({ default: m.ChatAssistant })));
 const AISettingsModal = lazy(() => import('./components/ai/AISettingsModal').then(m => ({ default: m.AISettingsModal })));
+const SubmitPage = lazy(() => import('./components/submit/SubmitPage').then(m => ({ default: m.SubmitPage })));
+
+// Onboarding (not lazy-loaded for instant display)
+import {
+  Onboarding,
+  hasCompletedOnboarding,
+  mapVibesToPreferences,
+} from './components/onboarding';
+
+// Wordmark test page
+import { WordmarkTest } from './components/WordmarkTest';
 
 function RouteFallback() {
   return (
@@ -41,13 +54,15 @@ function RouteFallback() {
 function AppContent() {
   const [filters, setFilters] = useState<FilterState>({ ...DEFAULT_FILTERS });
   const [showAISettings, setShowAISettings] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [onboardingChecked, setOnboardingChecked] = useState(false);
 
   const { preferences, updatePreferences, isLoaded: prefsLoaded } = usePreferences();
-  const { savedIds, isLoaded: savedLoaded } = useSavedEvents();
+  const { savedIds, toggleSaved: toggleSavedEvent, isLoaded: savedLoaded } = useSavedEvents();
   const { following, toggleFollow, unfollow, venueIds, seriesIds, neighborhoodIds, isLoaded: followingLoaded } = useFollowing();
   const { profile, updateProfile, isLoaded: profileLoaded } = useProfile();
   const { location, status: locationStatus, requestLocation } = useGeolocation();
-  const { weather, weatherNote } = useWeather(location);
+  const { weather } = useWeather(location);
 
   const {
     filteredEvents,
@@ -90,13 +105,51 @@ function AppContent() {
 
   const isLoading = eventsLoading || !prefsLoaded || !savedLoaded || !followingLoaded || !profileLoaded;
 
+  // Check onboarding status after preferences are loaded
+  useEffect(() => {
+    if (prefsLoaded && !onboardingChecked) {
+      setOnboardingChecked(true);
+      if (!hasCompletedOnboarding()) {
+        setShowOnboarding(true);
+      }
+    }
+  }, [prefsLoaded, onboardingChecked]);
+
+  // Handle onboarding completion
+  const handleOnboardingComplete = (selectedVibes: string[]) => {
+    // Map vibes to preferences
+    const { tags, categories } = mapVibesToPreferences(selectedVibes);
+
+    // Update user preferences with selected tags
+    updatePreferences({ tags });
+
+    // Pre-filter the feed with selected categories
+    setFilters((prev) => ({
+      ...prev,
+      selectedCategories: categories,
+    }));
+
+    setShowOnboarding(false);
+  };
+
   const clearFilters = () => setFilters({ ...DEFAULT_FILTERS });
+  const navigate = useNavigate();
+
+  // Show onboarding if not completed
+  if (showOnboarding && allEvents.length > 0) {
+    return (
+      <Onboarding
+        events={allEvents}
+        onComplete={handleOnboardingComplete}
+      />
+    );
+  }
 
   return (
     <>
     <Routes>
       <Route
-        element={<AppShell weatherNote={weatherNote} weather={weather} />}
+        element={<AppShell weather={weather} />}
       >
         <Route
           index
@@ -127,6 +180,23 @@ function AppContent() {
                 filters={filters}
                 onFiltersChange={setFilters}
                 hasLocation={locationStatus === 'granted'}
+                onSwitchToList={() => navigate('/')}
+              />
+            </Suspense>
+          }
+        />
+        <Route
+          path="yourcast"
+          element={
+            <Suspense fallback={<RouteFallback />}>
+              <YourcastView
+                events={filteredEvents}
+                onFollow={toggleFollow}
+                followingVenueIds={venueIds}
+                followingSeriesIds={seriesIds}
+                followingNeighborhoods={neighborhoodIds}
+                savedEventIds={savedIds}
+                onSaveEvent={toggleSavedEvent}
               />
             </Suspense>
           }
@@ -166,6 +236,14 @@ function AppContent() {
         />
       </Route>
       <Route
+        path="submit"
+        element={
+          <Suspense fallback={<RouteFallback />}>
+            <SubmitPage />
+          </Suspense>
+        }
+      />
+      <Route
         path="event/:id"
         element={
           <Suspense fallback={<RouteFallback />}>
@@ -180,6 +258,7 @@ function AppContent() {
           </Suspense>
         }
       />
+      <Route path="wordmark-test" element={<WordmarkTest />} />
     </Routes>
 
     {/* AI Chat Assistant */}

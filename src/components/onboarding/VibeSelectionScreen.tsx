@@ -19,7 +19,7 @@ interface VibeSelectionScreenProps {
 function getVibeColor(vibe: VibeOption): string {
   const primaryCategory = vibe.categories[0];
   const colorInfo = CATEGORY_COLORS[primaryCategory];
-  return colorInfo?.primary || '#2E6560';
+  return colorInfo?.accent || '#2E6560';
 }
 
 export function VibeSelectionScreen({
@@ -52,7 +52,7 @@ export function VibeSelectionScreen({
           </p>
           <h2
             className="font-serif text-ink"
-            style={{ fontSize: '32px', fontWeight: 500, lineHeight: 1.2 }}
+            style={{ fontSize: '28px', lineHeight: 1.2 }}
           >
             Pick everything that fits.
           </h2>

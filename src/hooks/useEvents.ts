@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import { rankEvents, filterByDistance } from '../services/ranking';
 import { filterEventsByTime, getTimeSection, isEventPast } from '../utils/time';
+import { getWeatherForTime } from '../services/weather';
+import { WEATHER_CODES } from '../constants';
 import type {
   Event,
   ScoredEvent,
@@ -154,26 +156,51 @@ export function useEvents(options: UseEventsOptions) {
       );
     }
 
-    // Filter by sunny (daytime outdoor events, excluding Nightlife)
-    if (filters.sunnyOnly) {
-      events = events.filter((event) => {
-        // Must be outdoor
-        if (!event.isOutdoor) return false;
+    // Filter by outdoor only
+    if (filters.outdoorOnly) {
+      events = events.filter((event) => event.isOutdoor);
+    }
 
-        // Exclude Nightlife category
+    // Filter by sunny only (outdoor events during daylight with clear weather)
+    if (filters.sunnyOnly && weather) {
+      events = events.filter((event) => {
+        // Never include nightlife category in sunny filter
         if (event.category === 'Nightlife') return false;
 
-        // Check if event starts during daytime hours (7am - 7pm)
-        const eventDate = new Date(event.startAt);
-        const hour = eventDate.getHours();
-        const isDaytime = hour >= 7 && hour < 19;
+        // Must be outdoor or both (not indoor-only)
+        const isOutdoorEvent = event.indoorOutdoor === 'outdoor' ||
+                               event.indoorOutdoor === 'both' ||
+                               event.isOutdoor;
+        if (!isOutdoorEvent) return false;
 
-        return isDaytime;
+        // Check if event is during daylight hours (07:00 - 19:00) or golden hour (17:00 - 20:00)
+        const eventDate = new Date(event.startAt);
+        const eventHour = eventDate.getHours();
+        const isDaytimeEvent = eventHour >= 7 && eventHour < 19;
+        const isGoldenHourEvent = eventHour >= 17 && eventHour <= 20;
+
+        // For events without clear time, be conservative - only include daytime categories
+        if (!isDaytimeEvent && !isGoldenHourEvent) {
+          // Allow events that are clearly daytime by category
+          const daytimeCategories = ['Market', 'Wellness', 'Outdoors', 'Community', 'Family', 'Fitness'];
+          if (!daytimeCategories.includes(event.category)) {
+            return false;
+          }
+        }
+
+        // Check weather at event time - must be clear or partly cloudy
+        const eventWeather = getWeatherForTime(weather, event.startAt);
+        if (!eventWeather) return true; // Include if no weather data available
+        const code = eventWeather.weatherCode;
+        const isClearWeather = (WEATHER_CODES.CLEAR as readonly number[]).includes(code) ||
+                               (WEATHER_CODES.PARTLY_CLOUDY as readonly number[]).includes(code);
+
+        return isClearWeather;
       });
     }
 
     return events;
-  }, [rankedEvents, filters, location, preferences.radiusMiles]);
+  }, [rankedEvents, filters, location, preferences.radiusMiles, weather]);
 
   const groupedEvents = useMemo((): GroupedEvents => {
     const groups: GroupedEvents = {

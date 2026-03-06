@@ -72,23 +72,24 @@ export function WildCardSection({
 
         {/* Content */}
         <div className="p-4">
-          {/* Wild card label - italic Lora */}
+          {/* Wild card label - italic Bodoni */}
           <p className="font-serif text-sm italic text-ink-2 mb-2">
             {contextLine}
           </p>
 
           {/* Category swatch + label */}
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-1.5 mb-2">
             <div
-              className="w-[52px] h-[24px] rounded-full flex items-center justify-center"
-              style={{ backgroundColor: cat.primary }}
-            >
-              <span className="text-white text-xs font-medium">{event.category.split(' ')[0]}</span>
-            </div>
+              className="w-3 h-3 rounded-full"
+              style={{ backgroundColor: cat.accent }}
+            />
+            <span className="text-xs font-medium text-ink-2 uppercase tracking-wide">
+              {event.category}
+            </span>
           </div>
 
           {/* Title */}
-          <h3 className="font-serif text-xl font-semibold text-ink leading-tight mb-2">
+          <h3 className="font-serif text-[19px] text-ink leading-tight mb-2">
             {event.title}
           </h3>
 

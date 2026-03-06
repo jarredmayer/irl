@@ -5,58 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/irl/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/irl/icons/icon-192.png" />
-    <link rel="apple-touch-icon" href="/irl/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- PWA manifest (injected by vite-plugin-pwa, this is the fallback link) -->
-    <link rel="manifest" href="/irl/manifest.webmanifest" />
+    <!-- PWA manifest (injected by vite-plugin-pwa) -->
+    <link rel="manifest" href="/manifest.webmanifest" />
 
     <!-- Theme -->
-    <meta name="theme-color" content="#0ea5e9" />
-    <meta name="msapplication-TileColor" content="#0ea5e9" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="msapplication-TileColor" content="#1a1a2e" />
+
+    <!-- Canonical URL - update with your Vercel domain -->
+    <link rel="canonical" href="https://irl-miami.vercel.app/" />
 
     <!-- App description -->
-    <meta name="description" content="Curated local events in Miami and Fort Lauderdale. Discover the best things to do IRL." />
+    <meta name="description" content="The Miami events feed worth trusting. Curated local events in Miami and Fort Lauderdale." />
     <meta name="keywords" content="miami events, fort lauderdale events, things to do miami, local events, weekend events miami" />
 
     <!-- iOS PWA -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="IRL" />
+    <meta name="apple-mobile-web-app-title" content="IRL Miami" />
 
-    <!-- iOS splash screens — generated at runtime by the PWA plugin -->
-    <!-- Replace icon-512.png with properly sized splash images for production -->
-    <link rel="apple-touch-startup-image" href="/irl/icons/icon-512.png" />
+    <!-- iOS splash screens -->
+    <link rel="apple-touch-startup-image" href="/icons/icon-512.png" />
 
     <!-- Open Graph / social sharing -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="IRL" />
-    <meta property="og:title" content="IRL — Local Events in Miami & Fort Lauderdale" />
-    <meta property="og:description" content="Curated local events. Discover the best things happening near you in Miami and Fort Lauderdale." />
-    <meta property="og:url" content="https://jarredmayer.github.io/irl/" />
-    <!-- NOTE: Replace with a real 1200×630 social preview image before launch -->
-    <meta property="og:image" content="https://jarredmayer.github.io/irl/icons/icon-512.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
+    <meta property="og:site_name" content="IRL Miami" />
+    <meta property="og:title" content="IRL Miami — Curated Local Events" />
+    <meta property="og:description" content="The Miami events feed worth trusting." />
+    <meta property="og:url" content="https://irl-miami.vercel.app/" />
+    <!-- TODO: Replace with a real 1200×630 social preview image -->
+    <meta property="og:image" content="https://irl-miami.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter / X card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="IRL — Local Events in Miami & Fort Lauderdale" />
-    <meta name="twitter:description" content="Curated local events. Discover the best things happening near you." />
-    <meta name="twitter:image" content="https://jarredmayer.github.io/irl/icons/icon-512.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IRL Miami — Curated Local Events" />
+    <meta name="twitter:description" content="The Miami events feed worth trusting." />
+    <meta name="twitter:image" content="https://irl-miami.vercel.app/og-image.png" />
 
     <!-- Preconnect to services used at startup -->
     <link rel="preconnect" href="https://api.open-meteo.com" />
     <link rel="preconnect" href="https://tile.openstreetmap.org" />
 
-    <!-- Google Fonts for IRL wordmark exploration -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Serif+Display&family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Bodoni+Moda:opsz,wght@6..96,700;6..96,900&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>IRL — Local Events</title>
+    <title>IRL Miami — Curated Local Events</title>
   </head>
   <body>
     <div id="root"></div>

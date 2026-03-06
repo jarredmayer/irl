@@ -1,35 +1,54 @@
+import { useProfile } from '../../hooks/useProfile';
 import { getWeatherIcon } from '../../services/weather';
 import type { WeatherForecast } from '../../types';
 
 interface HeaderProps {
-  weatherNote?: string | null;
   weather?: WeatherForecast | null;
 }
 
-export function Header({ weatherNote, weather }: HeaderProps) {
+export function Header({ weather }: HeaderProps) {
+  const { profile } = useProfile();
+
+  // Get user initial for avatar
+  const userInitial = profile.displayName?.[0]?.toUpperCase() || profile.handle?.[0]?.toUpperCase() || 'J';
+
+  // Get current weather (first hourly entry)
+  const currentWeather = weather?.hourly?.[0];
+
   return (
-    <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+    <header className="sticky top-0 z-40 bg-white border-b border-[var(--color-divider)]">
       <div className="px-4 py-3">
         <div className="flex items-center justify-between">
-          <h1 className="font-wordmark text-2xl font-black bg-gradient-to-r from-sky-500 to-violet-500 bg-clip-text text-transparent tracking-tight">
-            IRL
-          </h1>
+          {/* Left: Wordmark */}
+          <div>
+            <h1 className="font-wordmark bodoni-wordmark-sm text-[28px] font-bold text-ink leading-none tracking-tight">
+              IRL
+            </h1>
+            <p
+              className="text-[10px] font-medium text-ink-3 uppercase mt-0.5"
+              style={{ letterSpacing: '0.14em' }}
+            >
+              Miami · Ft. Lauderdale · Palm Beach
+            </p>
+          </div>
+
+          {/* Right: Weather + Avatar */}
           <div className="flex items-center gap-3">
-            {weather && (
-              <div className="flex items-center gap-1.5 text-sm text-slate-600">
-                <span>{getWeatherIcon(weather.current.weatherCode)}</span>
-                <span className="font-medium">{Math.round(weather.current.temperature)}°</span>
-              </div>
+            {/* Weather temp + icon */}
+            {currentWeather && (
+              <span className="flex items-center gap-1 text-sm text-ink-2">
+                {getWeatherIcon(currentWeather.weatherCode)}
+                <span className="font-medium">{Math.round(currentWeather.temperature)}°</span>
+              </span>
             )}
-            <span className="text-sm text-slate-500">Miami / FLL</span>
+
+            {/* Avatar */}
+            <button className="w-8 h-8 rounded-full border border-ink flex items-center justify-center text-ink font-medium text-xs hover:bg-soft transition-colors btn-press">
+              {userInitial}
+            </button>
           </div>
         </div>
       </div>
-      {weatherNote && (
-        <div className="px-4 py-2 bg-gradient-to-r from-sky-50 to-violet-50 border-t border-sky-100">
-          <p className="text-sm text-sky-700">{weatherNote}</p>
-        </div>
-      )}
     </header>
   );
 }

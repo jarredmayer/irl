@@ -31,8 +31,8 @@ export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
       className="fixed bottom-16 left-0 right-0 px-3 pb-3 pointer-events-none"
       style={{ zIndex: 9999 }}
     >
-      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden pointer-events-auto animate-slide-up"
-           style={{ boxShadow: '0 -2px 40px rgba(0,0,0,0.18), 0 8px 32px rgba(0,0,0,0.14)' }}>
+      <div className="bg-white rounded-[22px] overflow-hidden pointer-events-auto animate-slide-up card-shadow"
+           style={{ boxShadow: '0 -2px 24px rgba(10,14,26,0.12), 0 8px 24px rgba(10,14,26,0.1)' }}>
 
         {hasImage ? (
           /* ── Image hero layout ── */
@@ -109,22 +109,25 @@ export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
             <div className="flex items-start justify-between gap-3 px-4 pt-3.5 pb-0">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 mb-1">
-                  <span className="text-base leading-none">{catEmoji}</span>
-                  <span className="text-xs font-medium text-slate-500">{event.category}</span>
+                  <div
+                    className="w-2 h-2 rounded-full"
+                    style={{ backgroundColor: catColor }}
+                  />
+                  <span className="text-xs font-medium text-ink-2">{event.category}</span>
                   {event.editorPick && (
                     <span className="px-1.5 py-0.5 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">Pick</span>
                   )}
                 </div>
-                <h3 className="font-bold text-slate-900 text-[15px] leading-tight line-clamp-1">
+                <h3 className="font-serif text-ink text-[15px] leading-tight line-clamp-1">
                   {event.title}
                 </h3>
-                <p className="text-xs text-slate-500 mt-0.5 line-clamp-1">
+                <p className="text-xs text-ink-3 mt-0.5 line-clamp-1">
                   {event.venueName || event.neighborhood}
                 </p>
               </div>
               <button
                 onClick={onClose}
-                className="flex-shrink-0 p-1.5 rounded-full text-slate-400 hover:bg-slate-100 transition-colors -mt-0.5"
+                className="flex-shrink-0 p-1.5 rounded-full text-ink-3 hover:bg-soft transition-colors -mt-0.5"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
                   <path d="M6 18L18 6M6 6l12 12" />
@@ -138,7 +141,7 @@ export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
         <div className="px-4 pt-3 pb-4">
           {/* Time/distance row (only shown here when no image) */}
           {!hasImage && (
-            <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-2">
+            <div className="flex items-center gap-1.5 text-xs text-ink-3 mb-2">
               <span className="font-semibold" style={{ color: catColor }}>
                 {formatEventDate(event.startAt, event.timezone)}
               </span>
@@ -154,20 +157,21 @@ export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
           )}
 
           {/* Short why */}
-          <p className="text-sm text-slate-600 leading-relaxed line-clamp-2 mb-3">
+          <p className="text-sm text-ink-2 leading-relaxed line-clamp-2 mb-3">
             {event.shortWhy}
           </p>
 
           {/* Tags row */}
           <div className="flex flex-wrap gap-1.5 mb-3">
             {event.priceLabel && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 text-xs font-medium">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-soft text-ink-2 text-xs font-medium">
                 {event.priceLabel}
               </span>
             )}
             {event.isOutdoor && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium border border-emerald-100">
-                🌿 Outdoor
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium"
+                    style={{ backgroundColor: 'var(--color-teal, #2E6560)' + '18', color: 'var(--color-teal, #2E6560)' }}>
+                Outdoor
               </span>
             )}
             {event.tags.slice(0, 2).map((tag) => (
@@ -193,7 +197,7 @@ export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
               className={`flex-shrink-0 p-2.5 rounded-xl transition-all btn-press ${
                 saved
                   ? 'bg-rose-50 text-rose-500'
-                  : 'bg-slate-100 text-slate-400 hover:bg-rose-50 hover:text-rose-400'
+                  : 'bg-soft text-ink-3 hover:bg-rose-50 hover:text-rose-400'
               }`}
               aria-label={saved ? 'Unsave event' : 'Save event'}
             >
@@ -209,7 +213,7 @@ export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex-shrink-0 px-3 py-2.5 rounded-xl text-sm font-semibold bg-sky-500 text-white hover:bg-sky-600 active:opacity-80 transition-colors"
+                className="flex-shrink-0 px-3 py-2.5 rounded-xl text-sm font-semibold bg-ink text-white hover:opacity-90 active:opacity-80 transition-opacity"
               >
                 Tickets
               </a>
@@ -218,10 +222,10 @@ export function EventPreviewSheet({ event, onClose }: EventPreviewSheetProps) {
             {/* View details */}
             <button
               onClick={handleViewDetails}
-              className="flex-1 py-2.5 rounded-xl text-sm font-bold text-white transition-opacity active:opacity-80"
-              style={{ background: `linear-gradient(135deg, ${catColor}, ${cat.secondary})` }}
+              className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity active:opacity-80 btn-press"
+              style={{ backgroundColor: catColor }}
             >
-              View details →
+              View details
             </button>
           </div>
         </div>

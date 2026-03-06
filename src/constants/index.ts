@@ -13,22 +13,88 @@ export const CATEGORIES = [
   'Family',
 ] as const;
 
-// Category colors (triadic scheme from miami_events_scraper)
-export const CATEGORY_COLORS: Record<string, { primary: string; secondary: string; emoji: string }> = {
-  'Music': { primary: '#A68EFF', secondary: '#B8A3FF', emoji: '🎵' },
-  'Arts & Culture': { primary: '#FF7864', secondary: '#FF9B8A', emoji: '🎨' },
-  'Art': { primary: '#FF7864', secondary: '#FF9B8A', emoji: '🎨' },
-  'Culture': { primary: '#FF7864', secondary: '#FF9B8A', emoji: '🏛️' },
-  'Food & Drink': { primary: '#9BC178', secondary: '#B5D49A', emoji: '🍽️' },
-  'Sports': { primary: '#4FD1C5', secondary: '#7FDBCD', emoji: '⚽' },
-  'Comedy': { primary: '#E37C73', secondary: '#F19A92', emoji: '😂' },
-  'Wellness': { primary: '#F3B567', secondary: '#F7C885', emoji: '🧘' },
-  'Fitness': { primary: '#4FD1C5', secondary: '#7FDBCD', emoji: '💪' },
-  'Outdoors': { primary: '#68D391', secondary: '#9AE6B4', emoji: '🌴' },
-  'Nightlife': { primary: '#9F7AEA', secondary: '#B794F4', emoji: '🌙' },
-  'Community': { primary: '#FC8181', secondary: '#FEB2B2', emoji: '🤝' },
-  'Family': { primary: '#F6AD55', secondary: '#FBD38D', emoji: '👨‍👩‍👧' },
-  'Other': { primary: '#A0AEC0', secondary: '#CBD5E0', emoji: '📅' },
+// Category colors — muted editorial palette
+// Maps to CSS variables: --color-burgundy, --color-teal, --color-mauve, --color-ochre, --color-slate-c, --color-fig
+export const CATEGORY_COLORS: Record<string, { primary: string; secondary: string; emoji: string; accent: string }> = {
+  'Music':       { primary: '#7A2D3A', secondary: '#9B3D4E', emoji: '🎵', accent: 'burgundy' },
+  'Nightlife':   { primary: '#7A2D3A', secondary: '#9B3D4E', emoji: '🌙', accent: 'burgundy' },
+  'Outdoors':    { primary: '#2E6560', secondary: '#3D8078', emoji: '🌴', accent: 'teal' },
+  'Fitness':     { primary: '#2E6560', secondary: '#3D8078', emoji: '💪', accent: 'teal' },
+  'Art':         { primary: '#7A5C72', secondary: '#9B7A92', emoji: '🎨', accent: 'mauve' },
+  'Arts & Culture': { primary: '#7A5C72', secondary: '#9B7A92', emoji: '🖼️', accent: 'mauve' },
+  'Culture':     { primary: '#7A5C72', secondary: '#9B7A92', emoji: '🏛️', accent: 'mauve' },
+  'Food & Drink':{ primary: '#9C6B28', secondary: '#B8813A', emoji: '🍽️', accent: 'ochre' },
+  'Community':   { primary: '#3D5068', secondary: '#4E6480', emoji: '🤝', accent: 'slate-c' },
+  'Sports':      { primary: '#3D5068', secondary: '#4E6480', emoji: '⚽', accent: 'slate-c' },
+  'Family':      { primary: '#3D5068', secondary: '#4E6480', emoji: '👨‍👩‍👧', accent: 'slate-c' },
+  'Comedy':      { primary: '#5C4A7A', secondary: '#7A6498', emoji: '😂', accent: 'fig' },
+  'Wellness':    { primary: '#2E6560', secondary: '#3D8078', emoji: '🧘', accent: 'teal' },
+  'Other':       { primary: '#787470', secondary: '#9A9694', emoji: '📅', accent: 'ink-2' },
+};
+
+// Category → color mapping for tag-based matching
+export const TAG_COLOR_MAP: Record<string, string> = {
+  // Music / Nightlife / DJ → burgundy
+  'music': 'burgundy',
+  'nightlife': 'burgundy',
+  'dj': 'burgundy',
+  'live-music': 'burgundy',
+  'electronic': 'burgundy',
+  'jazz': 'burgundy',
+  'latin': 'burgundy',
+  'hip-hop': 'burgundy',
+  'indie': 'burgundy',
+  'dancing': 'burgundy',
+  // Outdoor / Nature / Beach → teal
+  'outdoor': 'teal',
+  'outdoors': 'teal',
+  'nature': 'teal',
+  'beach': 'teal',
+  'park': 'teal',
+  'waterfront': 'teal',
+  'rooftop': 'teal',
+  'sunset': 'teal',
+  'sunrise': 'teal',
+  'running': 'teal',
+  'cycling': 'teal',
+  'fitness-class': 'teal',
+  'yoga': 'teal',
+  'meditation': 'teal',
+  // Arts / Gallery / Culture → mauve
+  'art': 'mauve',
+  'arts': 'mauve',
+  'gallery': 'mauve',
+  'art-gallery': 'mauve',
+  'culture': 'mauve',
+  'museum': 'mauve',
+  'theater': 'mauve',
+  'creative': 'mauve',
+  // Food / Market / Dining → ochre
+  'food': 'ochre',
+  'food-market': 'ochre',
+  'dining': 'ochre',
+  'brunch': 'ochre',
+  'happy-hour': 'ochre',
+  'wine-tasting': 'ochre',
+  'craft-beer': 'ochre',
+  'cocktails': 'ochre',
+  'outdoor-dining': 'ochre',
+  'culinary': 'ochre',
+  // Local / Community → slate
+  'local': 'slate',
+  'community': 'slate',
+  'local-favorite': 'slate',
+  'networking': 'slate',
+  'workshop': 'slate',
+  'family-friendly': 'slate',
+  'dog-friendly': 'slate',
+  // Underground / Niche → fig
+  'underground': 'fig',
+  'niche': 'fig',
+  'pop-up': 'fig',
+  'new-opening': 'fig',
+  'seasonal': 'fig',
+  'intimate': 'fig',
 };
 
 // Editorial vibe tags (from miami_events_scraper)
@@ -188,6 +254,7 @@ export const DEFAULT_FILTERS = {
   priceRange: [0, 200] as [number, number],
   freeOnly: false,
   dateRange: ['', ''] as [string, string],
+  outdoorOnly: false,
   sunnyOnly: false,
 };
 

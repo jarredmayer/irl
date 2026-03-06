@@ -59,7 +59,7 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
       >
         {/* IRL Logo */}
         <h1
-          className="font-wordmark text-white text-center mb-4"
+          className="font-wordmark bodoni-wordmark-lg text-white text-center mb-4"
           style={{
             fontSize: '96px',
             fontWeight: 900,
@@ -89,7 +89,7 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
             fontWeight: 500,
           }}
         >
-          Miami · Fort Lauderdale
+          Miami · Ft. Lauderdale · Palm Beach
         </p>
 
         {/* CTA Button */}

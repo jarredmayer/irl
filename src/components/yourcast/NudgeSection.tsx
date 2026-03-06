@@ -33,40 +33,37 @@ export function NudgeSection({ event, isSaved = false, onSave }: NudgeSectionPro
         THE NUDGE
       </p>
 
-      {/* Compact card with amber left border */}
+      {/* Compact card with mustard background */}
       <div
         onClick={handleClick}
-        className="bg-white rounded-[16px] overflow-hidden card-shadow cursor-pointer transition-transform active:scale-[0.98] flex"
-        style={{ borderLeft: `4px solid ${AMBER}` }}
+        className="rounded-[16px] overflow-hidden cursor-pointer transition-transform active:scale-[0.98] flex"
+        style={{ backgroundColor: AMBER }}
       >
         <div className="flex-1 p-4">
           {/* Happening Soon label */}
           <div className="flex items-center gap-1.5 mb-2">
-            <span style={{ color: AMBER }}>◆</span>
-            <span
-              className="text-xs font-bold uppercase tracking-wider"
-              style={{ color: AMBER }}
-            >
+            <span className="text-white/90">◆</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-white/90">
               Happening Soon
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="font-serif text-lg font-semibold text-ink leading-tight mb-1">
+          <h3 className="font-serif text-[17px] text-white leading-tight mb-1">
             {event.title}
           </h3>
 
           {/* Venue + time */}
-          <div className="flex items-center gap-2 text-sm text-ink-2">
+          <div className="flex items-center gap-2 text-sm text-white/80">
             {event.venueName && (
               <>
                 <span>{event.venueName}</span>
-                <span className="text-ink-3">·</span>
+                <span className="text-white/60">·</span>
               </>
             )}
             <span>{formatEventTime(event.startAt, event.timezone)}</span>
-            <span className="text-ink-3">·</span>
-            <span className="font-medium" style={{ color: AMBER }}>{timeLabel}</span>
+            <span className="text-white/60">·</span>
+            <span className="font-medium text-white">{timeLabel}</span>
           </div>
         </div>
 
@@ -76,8 +73,8 @@ export function NudgeSection({ event, isSaved = false, onSave }: NudgeSectionPro
             onClick={handleSave}
             className={`p-2 rounded-full transition-colors ${
               isSaved
-                ? 'bg-rose-50 text-rose-500'
-                : 'bg-soft text-ink-3 hover:text-ink-2'
+                ? 'bg-white text-rose-500'
+                : 'bg-white/20 text-white hover:bg-white/30'
             }`}
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill={isSaved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2}>

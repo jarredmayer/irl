@@ -52,20 +52,15 @@ export function LeadSection({ event, isSaved = false, onSave, weather }: LeadSec
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-            {/* Category badge on image */}
-            <div className="absolute top-3 left-3">
+            {/* Category dot on image */}
+            <div className="absolute top-3 left-3 flex items-center gap-1.5">
               <div
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded-full"
-                style={{ backgroundColor: cat.primary }}
-              >
-                <span
-                  className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: 'white' }}
-                />
-                <span className="text-xs font-medium text-white">
-                  {event.category}
-                </span>
-              </div>
+                className="w-3 h-3 rounded-full"
+                style={{ backgroundColor: cat.accent }}
+              />
+              <span className="text-xs font-medium text-white uppercase tracking-wide">
+                {event.category}
+              </span>
             </div>
 
             {/* Save button on image */}
@@ -87,7 +82,7 @@ export function LeadSection({ event, isSaved = false, onSave, weather }: LeadSec
         {/* Content */}
         <div className="p-4">
           {/* Title */}
-          <h2 className="font-serif text-2xl font-semibold text-ink leading-tight mb-2">
+          <h2 className="font-serif text-[22px] text-ink leading-tight mb-2">
             {event.title}
           </h2>
 

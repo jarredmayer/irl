@@ -35,87 +35,61 @@ interface MarkerClusterProps {
 function buildMarkerHtml(event: ScoredEvent, isSelected: boolean): string {
   const cat = CATEGORY_COLORS[event.category] ?? CATEGORY_COLORS['Other'];
   const color = cat.primary;
-  const emoji = cat.emoji;
 
+  // Editor picks get a gold ring
   if (event.editorPick) {
-    const size = isSelected ? 46 : 36;
-    const inner = Math.round(size * 0.72);
-    const offset = Math.round((size - inner) / 2);
-    const height = Math.round(size * 1.2);
-    const glow = isSelected
-      ? `<div style="
-          position:absolute;
-          width:${size + 14}px;height:${size + 14}px;
-          top:-7px;left:-7px;
-          border-radius:50% 50% 50% 0;
-          transform:rotate(-45deg);
-          background:rgba(251,191,36,0.22);
-          border:1.5px solid rgba(251,191,36,0.4);
-        "></div>`
-      : '';
+    const size = isSelected ? 20 : 14;
+    const ringSize = size + 6;
     return `
-      <div style="position:relative;width:${size}px;height:${height}px;cursor:pointer;">
-        ${glow}
+      <div style="position:relative;width:${ringSize}px;height:${ringSize}px;cursor:pointer;">
         <div style="
-          width:${size}px;
-          height:${size}px;
-          background:linear-gradient(145deg,#fcd34d,#d97706);
-          border:2.5px solid rgba(255,255,255,0.92);
-          border-radius:50% 50% 50% 0;
-          transform:rotate(-45deg);
-          box-shadow:0 5px 18px rgba(251,191,36,0.65),0 2px 6px rgba(0,0,0,0.4);
-          position:absolute;top:0;left:0;
+          position:absolute;
+          inset:0;
+          border-radius:50%;
+          background:rgba(251,191,36,0.25);
+          border:2px solid #d97706;
         "></div>
         <div style="
           position:absolute;
-          top:${offset}px;left:${offset}px;
-          width:${inner}px;height:${inner}px;
-          display:flex;align-items:center;justify-content:center;
-          font-size:${Math.round(inner * 0.58)}px;
-          line-height:1;
-        ">⭐</div>
+          top:3px;left:3px;
+          width:${size}px;
+          height:${size}px;
+          background:linear-gradient(145deg,#fcd34d,#d97706);
+          border-radius:50%;
+          box-shadow:0 2px 8px rgba(251,191,36,0.5);
+        "></div>
       </div>
     `;
   }
 
-  const size = isSelected ? 38 : 30;
-  const inner = Math.round(size * 0.7);
-  const offset = Math.round((size - inner) / 2);
-  const height = Math.round(size * 1.28);
-  const shadowColor = color + '88';
-  const glow = isSelected
+  // Simple filled circle for regular events
+  const size = isSelected ? 16 : 12;
+  const shadowColor = color + '66';
+  const ringSize = isSelected ? size + 8 : size;
+
+  const ring = isSelected
     ? `<div style="
         position:absolute;
-        width:${size + 12}px;height:${size + 12}px;
-        top:-6px;left:-6px;
-        border-radius:50% 50% 50% 0;
-        transform:rotate(-45deg);
-        background:${color}28;
-        border:1.5px solid ${color}55;
+        inset:0;
+        border-radius:50%;
+        background:${color}20;
+        border:2px solid ${color}55;
       "></div>`
     : '';
 
   return `
-    <div style="position:relative;width:${size}px;height:${height}px;cursor:pointer;">
-      ${glow}
+    <div style="position:relative;width:${ringSize}px;height:${ringSize}px;cursor:pointer;">
+      ${ring}
       <div style="
+        position:absolute;
+        ${isSelected ? 'top:4px;left:4px;' : 'inset:0;'}
         width:${size}px;
         height:${size}px;
         background:${color};
-        border:2px solid rgba(255,255,255,0.88);
-        border-radius:50% 50% 50% 0;
-        transform:rotate(-45deg);
-        box-shadow:0 4px 14px ${shadowColor},0 2px 5px rgba(0,0,0,0.35);
-        position:absolute;top:0;left:0;
+        border:2px solid white;
+        border-radius:50%;
+        box-shadow:0 2px 6px ${shadowColor};
       "></div>
-      <div style="
-        position:absolute;
-        top:${offset}px;left:${offset}px;
-        width:${inner}px;height:${inner}px;
-        display:flex;align-items:center;justify-content:center;
-        font-size:${Math.round(inner * 0.56)}px;
-        line-height:1;
-      ">${emoji}</div>
     </div>
   `;
 }
@@ -131,25 +105,23 @@ export function MarkerCluster({ events, onEventClick, selectedEventId }: MarkerC
       maxClusterRadius: 50,
       iconCreateFunction: (cluster: L.MarkerCluster) => {
         const count = cluster.getChildCount();
-        const size = count > 50 ? 50 : count > 10 ? 44 : 38;
+        const size = count > 50 ? 44 : count > 10 ? 38 : 32;
         return L.divIcon({
           html: `
             <div style="
               width:${size}px;
               height:${size}px;
-              background:rgba(10,14,26,0.82);
-              border:2px solid rgba(255,255,255,0.75);
+              background:var(--color-ink, #0A0E1A);
+              border:2px solid white;
               border-radius:50%;
               display:flex;
               align-items:center;
               justify-content:center;
               color:white;
-              font-weight:700;
-              font-size:${count > 99 ? '11px' : '13px'};
-              box-shadow:0 4px 18px rgba(0,0,0,0.55),0 1px 5px rgba(0,0,0,0.3);
-              letter-spacing:-0.5px;
-              backdrop-filter:blur(6px);
-              -webkit-backdrop-filter:blur(6px);
+              font-weight:600;
+              font-family:var(--font-sans, 'Jost', sans-serif);
+              font-size:${count > 99 ? '11px' : '12px'};
+              box-shadow:0 2px 8px rgba(10,14,26,0.4);
             ">${count}</div>
           `,
           className: 'marker-cluster',
@@ -163,15 +135,20 @@ export function MarkerCluster({ events, onEventClick, selectedEventId }: MarkerC
 
       const isSelected = event.id === selectedEventId;
       const html = buildMarkerHtml(event, isSelected);
-      const baseSize = event.editorPick ? 36 : 30;
-      const size = isSelected ? (event.editorPick ? 46 : 38) : baseSize;
-      const height = Math.round(size * (event.editorPick ? 1.2 : 1.28));
+
+      // Calculate icon size based on selection state and editor pick
+      let size: number;
+      if (event.editorPick) {
+        size = isSelected ? 26 : 20; // Gold ring pins are slightly larger
+      } else {
+        size = isSelected ? 24 : 12; // Simple circles
+      }
 
       const icon = L.divIcon({
         className: event.editorPick ? 'custom-marker-editor' : 'custom-marker',
         html,
-        iconSize: [size, height],
-        iconAnchor: [Math.round(size / 2), height],
+        iconSize: [size, size],
+        iconAnchor: [Math.round(size / 2), Math.round(size / 2)],
       });
 
       const marker = L.marker([event.lat, event.lng], { icon });

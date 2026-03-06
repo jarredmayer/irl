@@ -2,7 +2,7 @@ interface ChipProps {
   label: string;
   selected?: boolean;
   onClick?: () => void;
-  size?: 'sm' | 'md';
+  size?: 'sm' | 'md' | 'lg';
   variant?: 'default' | 'outline' | 'success' | 'warning' | 'info';
 }
 
@@ -14,23 +14,24 @@ export function Chip({
   variant = 'default',
 }: ChipProps) {
   const baseClasses =
-    'inline-flex items-center justify-center rounded-full font-medium transition-colors';
+    'inline-flex items-center justify-center font-medium transition-all btn-press whitespace-nowrap';
 
   const sizeClasses = {
-    sm: 'px-2.5 py-1 text-xs',
-    md: 'px-3 py-1.5 text-sm',
+    sm: 'px-3 py-1.5 text-xs rounded-full',
+    md: 'px-4 py-2 text-[13px] rounded-full',
+    lg: 'px-5 py-2.5 text-base rounded-full',
   };
 
   const variantClasses = {
     default: selected
-      ? 'bg-sky-500 text-white'
-      : 'bg-slate-100 text-slate-700 hover:bg-slate-200',
+      ? 'bg-ink text-white'
+      : 'bg-white text-ink-3 border-[1.5px] border-divider hover:border-ink-3',
     outline: selected
-      ? 'border-2 border-sky-500 text-sky-600 bg-sky-50'
-      : 'border border-slate-300 text-slate-600 hover:border-slate-400',
-    success: 'bg-emerald-100 text-emerald-700 border border-emerald-200',
-    warning: 'bg-amber-100 text-amber-700 border border-amber-200',
-    info: 'bg-sky-100 text-sky-700 border border-sky-200',
+      ? 'bg-ink text-white border border-ink'
+      : 'bg-white text-ink-3 border-[1.5px] border-divider hover:border-ink-3',
+    success: 'bg-[var(--color-teal)] text-white',
+    warning: 'bg-[var(--color-ochre)] text-white',
+    info: 'bg-[var(--color-slate)] text-white',
   };
 
   const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]}`;
@@ -53,6 +54,6 @@ interface ChipGroupProps {
 
 export function ChipGroup({ children, className = '' }: ChipGroupProps) {
   return (
-    <div className={`flex flex-wrap gap-2 ${className}`}>{children}</div>
+    <div className={`flex flex-nowrap gap-2 ${className}`}>{children}</div>
   );
 }

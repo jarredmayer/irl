@@ -140,22 +140,19 @@ export function YourcastView({
 
         {/* YOURCAST label */}
         <p
-          className="text-xs font-bold tracking-[0.2em] uppercase mb-3"
-          style={{ color: MUSTARD }}
+          className="text-[11px] font-bold uppercase mb-2"
+          style={{ color: MUSTARD, letterSpacing: '0.14em' }}
         >
           YOURCAST
         </p>
 
         {/* Editorial headline */}
-        <h1
-          className="font-serif text-ink leading-tight mb-3"
-          style={{ fontSize: '48px', fontWeight: 600 }}
-        >
+        <h1 className="font-serif text-[28px] text-ink leading-snug mb-3 italic">
           {headline}
         </h1>
 
         {/* Subtitle */}
-        <p className="text-ink-2 text-base font-light leading-relaxed">
+        <p className="text-ink-2 text-[14px] font-light leading-relaxed">
           {subtitle}
         </p>
 

@@ -139,6 +139,11 @@ export function filterEventsByTime(
     const eventDate = parseISO(event.startAt);
 
     switch (filter) {
+      case 'tonight': {
+        // Events starting within the next 12 hours
+        const hoursUntil = differenceInHours(eventDate, now);
+        return hoursUntil >= 0 && hoursUntil <= 12;
+      }
       case 'today':
         return isToday(eventDate);
       case 'tomorrow':

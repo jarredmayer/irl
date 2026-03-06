@@ -131,7 +131,7 @@ export function ShareableCard({ headline, events, weekLabel, onClose }: Shareabl
           {/* Header: IRL wordmark + week */}
           <div className="flex items-start justify-between mb-auto">
             <span
-              className="font-serif text-2xl font-semibold"
+              className="font-wordmark bodoni-wordmark-sm text-2xl font-semibold"
               style={{ color: theme.text }}
             >
               IRL

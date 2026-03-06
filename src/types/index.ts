@@ -2,6 +2,14 @@ export type City = 'Miami' | 'Fort Lauderdale' | 'Palm Beach';
 
 export type PriceLabel = 'Free' | '$' | '$$' | '$$$';
 
+export type IndoorOutdoor = 'indoor' | 'outdoor' | 'both' | 'unknown';
+
+export type ImageTier = 'hero' | 'card' | 'none';
+
+export type TrustTier = 'high' | 'medium' | 'low';
+
+export type ImageSource = 'venue' | 'event' | 'organizer' | 'stock' | 'generated' | 'none';
+
 export type TransportMode = 'walk' | 'drive';
 
 export type FollowType = 'venue' | 'series' | 'neighborhood' | 'organizer';
@@ -43,6 +51,16 @@ export interface Event {
   organizerId?: string;
   organizerName?: string;
   addedAt?: string; // ISO 8601 — when this event first appeared in the feed
+  // Phase 4 curation fields
+  indoorOutdoor: IndoorOutdoor;
+  imageSource?: ImageSource;
+  imageTier: ImageTier;
+  completenessScore: number; // 0-100
+  freshnessScore: number; // 0-100
+  trustTier: TrustTier;
+  sourceUrl?: string;
+  lastVerified?: string; // ISO 8601
+  vibeTags: string[]; // Curated vibe descriptors
 }
 
 export interface FollowItem {
@@ -113,7 +131,7 @@ export interface ScoredEvent extends Event {
   weatherAtEvent?: HourlyWeather;
 }
 
-export type TimeFilter = 'today' | 'tomorrow' | 'this-week' | 'this-month' | 'weekend' | 'all';
+export type TimeFilter = 'tonight' | 'today' | 'tomorrow' | 'this-week' | 'this-month' | 'weekend' | 'all';
 
 export interface FilterState {
   timeFilter: TimeFilter;
@@ -126,7 +144,8 @@ export interface FilterState {
   priceRange: [number, number]; // [min, max]
   freeOnly: boolean;
   dateRange: [string, string]; // [startDate, endDate] in YYYY-MM-DD format
-  sunnyOnly: boolean; // Filter for daytime outdoor events (excludes Nightlife)
+  outdoorOnly: boolean; // Show only outdoor events
+  sunnyOnly: boolean; // Show only outdoor events with clear weather
 }
 
 export type ViewMode = 'feed' | 'map';

@@ -37,7 +37,7 @@ export function RevealScreen({ events, onComplete }: RevealScreenProps) {
 
   const getCategoryColor = (category: string) => {
     const colorInfo = CATEGORY_COLORS[category];
-    return colorInfo?.primary || '#3D5068';
+    return colorInfo?.accent || '#3D5068';
   };
 
   const formatEventDate = (startAt: string) => {
@@ -60,8 +60,8 @@ export function RevealScreen({ events, onComplete }: RevealScreenProps) {
             did you know about these?
           </p>
           <h2
-            className="font-serif text-ink"
-            style={{ fontSize: '28px', fontWeight: 500, lineHeight: 1.3 }}
+            className="font-serif text-ink italic"
+            style={{ fontSize: '28px', lineHeight: 1.3 }}
           >
             3 things happening this weekend you probably haven't heard about.
           </h2>
@@ -118,18 +118,18 @@ export function RevealScreen({ events, onComplete }: RevealScreenProps) {
                     )}
 
                     {/* Title */}
-                    <h3 className="font-sans font-medium text-ink text-sm leading-tight mb-1 line-clamp-2">
+                    <h3 className="font-serif text-ink text-[15px] leading-tight mb-1 line-clamp-2">
                       {event.title}
                     </h3>
 
                     {/* Category swatch + date */}
                     <div className="flex items-center gap-2 text-xs text-ink-3">
                       <span
-                        className="w-2 h-2 rounded-full"
+                        className="w-3 h-3 rounded-full"
                         style={{ backgroundColor: categoryColor }}
                       />
                       <span>{event.category}</span>
-                      <span className="text-ink-4">·</span>
+                      <span>·</span>
                       <span>{formatEventDate(event.startAt)}</span>
                     </div>
 

@@ -16,6 +16,7 @@ interface MapViewProps {
   filters?: FilterState;
   onFiltersChange?: (filters: FilterState) => void;
   hasLocation?: boolean;
+  onSwitchToList?: () => void;
 }
 
 // Expose the Leaflet map instance via a ref
@@ -35,24 +36,24 @@ const userLocationIcon = L.divIcon({
       <div class="user-loc-ring" style="
         position:absolute;inset:0;
         border-radius:50%;
-        background:rgba(59,130,246,0.18);
-        border:1.5px solid rgba(59,130,246,0.45);
+        background:rgba(10,14,26,0.12);
+        border:1.5px solid rgba(10,14,26,0.25);
       "></div>
       <div class="user-loc-ring" style="
         position:absolute;inset:0;
         border-radius:50%;
-        background:rgba(59,130,246,0.12);
-        border:1.5px solid rgba(59,130,246,0.3);
+        background:rgba(10,14,26,0.08);
+        border:1.5px solid rgba(10,14,26,0.18);
         animation-delay:0.8s;
       "></div>
       <div style="
         position:absolute;
         width:10px;height:10px;
-        background:#3b82f6;
+        background:#0A0E1A;
         border:2.5px solid white;
         border-radius:50%;
         top:7px;left:7px;
-        box-shadow:0 0 10px rgba(59,130,246,0.65);
+        box-shadow:0 0 8px rgba(10,14,26,0.45);
       "></div>
     </div>
   `,
@@ -66,6 +67,7 @@ export function MapView({
   filters,
   onFiltersChange,
   hasLocation = false,
+  onSwitchToList,
 }: MapViewProps) {
   const [selectedEvent, setSelectedEvent] = useState<ScoredEvent | null>(null);
   const [showFilters, setShowFilters] = useState(false);
@@ -100,38 +102,50 @@ export function MapView({
 
       {/* ── Floating HUD: event count (top-left) ── */}
       <div className="absolute top-3 left-3 z-[1000]">
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/90 text-slate-700 shadow-md border border-slate-200/80 backdrop-blur">
-          <svg className="w-3.5 h-3.5 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none" />
-            <path strokeLinecap="round" d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-          </svg>
+        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 text-ink shadow-md border border-divider backdrop-blur">
+          <div className="w-2 h-2 rounded-full bg-ink" />
           {events.length} events
         </div>
       </div>
+
+      {/* ── List view toggle (top-center) ── */}
+      {onSwitchToList && (
+        <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[1000]">
+          <button
+            onClick={onSwitchToList}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-ink text-white shadow-md transition-transform active:scale-95 btn-press"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+            </svg>
+            List view
+          </button>
+        </div>
+      )}
 
       {/* ── Floating HUD: filter toggle (top-right) ── */}
       {filters && onFiltersChange && (
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className={`absolute top-3 right-3 z-[1000] flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold shadow-md border backdrop-blur transition-colors ${
+          className={`absolute top-3 right-3 z-[1000] flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold shadow-md border backdrop-blur transition-colors btn-press ${
             showFilters
-              ? 'bg-sky-500 text-white border-sky-400'
-              : 'bg-white/90 text-slate-700 border-slate-200/80'
+              ? 'bg-ink text-white border-ink'
+              : 'bg-white/95 text-ink border-divider'
           }`}
         >
-          <svg className={`w-3.5 h-3.5 ${showFilters ? 'text-white' : 'text-slate-500'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
           </svg>
           Filters
           {hasActiveFilters && (
-            <span className={`w-1.5 h-1.5 rounded-full ${showFilters ? 'bg-white' : 'bg-sky-500'}`} />
+            <span className={`w-1.5 h-1.5 rounded-full ${showFilters ? 'bg-white' : 'bg-ink'}`} />
           )}
         </button>
       )}
 
       {/* ── Collapsible filter panel ── */}
       {showFilters && filters && onFiltersChange && (
-        <div className="absolute top-14 left-3 right-3 z-[1000] bg-white rounded-xl shadow-2xl border border-slate-200 max-h-[60vh] overflow-y-auto">
+        <div className="absolute top-14 left-3 right-3 z-[1000] bg-white rounded-[22px] shadow-xl border border-divider max-h-[60vh] overflow-y-auto">
           <FilterBar
             filters={filters}
             onFiltersChange={onFiltersChange}
@@ -178,7 +192,7 @@ export function MapView({
         {userLocation && (
           <button
             onClick={handleRecenter}
-            className="absolute bottom-4 right-4 z-[1000] w-10 h-10 rounded-full flex items-center justify-center bg-white text-sky-500 shadow-lg border border-slate-200/80 transition-transform active:scale-95"
+            className="absolute bottom-4 right-4 z-[1000] w-10 h-10 rounded-full flex items-center justify-center bg-white text-ink shadow-lg border border-divider transition-transform active:scale-95 btn-press"
             aria-label="Recenter map on my location"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>

@@ -10,7 +10,7 @@ interface WeatherSuggestion {
   icon: string;
   message: string;
   subtext: string;
-  gradient: string;
+  bgColor: string;
   textColor: string;
 }
 
@@ -40,8 +40,8 @@ function getWeatherSuggestion(weather: WeatherForecast): WeatherSuggestion | nul
       icon: '🌧️',
       message: `Rain expected around ${timeStr}`,
       subtext: 'Indoor events recommended',
-      gradient: 'from-slate-600 to-slate-700',
-      textColor: 'text-white',
+      bgColor: 'var(--color-slate)',
+      textColor: 'white',
     };
   }
 
@@ -51,8 +51,8 @@ function getWeatherSuggestion(weather: WeatherForecast): WeatherSuggestion | nul
       icon: '🌅',
       message: 'Perfect evening ahead',
       subtext: `Clear skies, ${Math.round(eveningWeather.temperature)}° at sunset`,
-      gradient: 'from-orange-400 to-rose-500',
-      textColor: 'text-white',
+      bgColor: 'var(--color-ochre)',
+      textColor: 'white',
     };
   }
 
@@ -62,8 +62,8 @@ function getWeatherSuggestion(weather: WeatherForecast): WeatherSuggestion | nul
       icon: '🥵',
       message: `High of ${Math.round(current.temperature)}° today`,
       subtext: 'Stay cool with indoor events',
-      gradient: 'from-red-400 to-orange-500',
-      textColor: 'text-white',
+      bgColor: 'var(--color-burgundy)',
+      textColor: 'white',
     };
   }
 
@@ -73,8 +73,8 @@ function getWeatherSuggestion(weather: WeatherForecast): WeatherSuggestion | nul
       icon: '☀️',
       message: 'Beautiful day outside',
       subtext: `${Math.round(current.temperature)}° and clear`,
-      gradient: 'from-sky-400 to-blue-500',
-      textColor: 'text-white',
+      bgColor: 'var(--color-teal)',
+      textColor: 'white',
     };
   }
 
@@ -84,8 +84,8 @@ function getWeatherSuggestion(weather: WeatherForecast): WeatherSuggestion | nul
       icon: '🌤️',
       message: 'Great morning for outdoor events',
       subtext: `${Math.round(current.temperature)}° right now`,
-      gradient: 'from-emerald-400 to-teal-500',
-      textColor: 'text-white',
+      bgColor: 'var(--color-teal)',
+      textColor: 'white',
     };
   }
 
@@ -101,15 +101,18 @@ export function WeatherBanner({ weather, onDismiss }: WeatherBannerProps) {
   if (!suggestion) return null;
 
   return (
-    <div className={`mx-4 mb-3 rounded-xl overflow-hidden bg-gradient-to-r ${suggestion.gradient} shadow-md animate-fade-in`}>
+    <div
+      className="mx-4 mb-3 rounded-[16px] overflow-hidden card-shadow animate-fade-in"
+      style={{ backgroundColor: suggestion.bgColor }}
+    >
       <div className="px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-2xl">{suggestion.icon}</span>
           <div>
-            <p className={`font-semibold ${suggestion.textColor}`}>
+            <p className="font-medium" style={{ color: suggestion.textColor }}>
               {suggestion.message}
             </p>
-            <p className={`text-sm ${suggestion.textColor} opacity-90`}>
+            <p className="text-sm opacity-90" style={{ color: suggestion.textColor }}>
               {suggestion.subtext}
             </p>
           </div>
@@ -117,9 +120,10 @@ export function WeatherBanner({ weather, onDismiss }: WeatherBannerProps) {
         {onDismiss && (
           <button
             onClick={onDismiss}
-            className={`p-1.5 rounded-full hover:bg-white/20 transition-colors ${suggestion.textColor}`}
+            className="p-1.5 rounded-full hover:bg-white/20 transition-colors"
+            style={{ color: suggestion.textColor }}
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
