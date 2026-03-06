@@ -78,12 +78,6 @@ function setCache(key: string, result: EditorialResult): void {
 export async function generateEditorialCopy(
   events: ScoredEvent[]
 ): Promise<EditorialResult> {
-  const key = import.meta.env.VITE_ANTHROPIC_API_KEY;
-  if (!key) {
-    console.warn('[editorial-agent] No VITE_ANTHROPIC_API_KEY set');
-    return FALLBACKS;
-  }
-
   if (events.length === 0) return FALLBACKS;
 
   const cacheKey = getCacheKey(events);
@@ -120,13 +114,10 @@ Return ONLY valid JSON, no markdown, no preamble:
 }`;
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('/api/editorial', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': key,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true',
       },
       body: JSON.stringify({
         model: 'claude-3-5-haiku-20241022',
