@@ -62,8 +62,25 @@ export class HistoryMiamiScraper extends BaseScraper {
     let data: TribeApiResponse | undefined;
     for (const url of urls) {
       try {
-        data = await this.fetchJSONNativeGet<TribeApiResponse>(url, 15_000);
-        break;
+        const raw = await this.fetchJSONNativeGet<any>(url, 15_000);
+        this.log(`  Response keys: ${Object.keys(raw || {}).join(', ')}`);
+
+        // Handle both standard Tribe API response and alternate structures
+        if (raw?.events && Array.isArray(raw.events)) {
+          data = raw as TribeApiResponse;
+        } else if (Array.isArray(raw)) {
+          // Some Tribe installs return a bare array
+          data = { events: raw, total: raw.length, total_pages: 1 };
+        } else if (raw?.data && Array.isArray(raw.data)) {
+          data = { events: raw.data, total: raw.data.length, total_pages: 1 };
+        }
+
+        if (data) {
+          this.log(`  Got ${data.events.length} events from API (total: ${data.total})`);
+          break;
+        } else {
+          this.log(`  Unexpected response format from ${url}`);
+        }
       } catch (e) {
         this.log(`  ${url} failed: ${e instanceof Error ? e.message : String(e)}`);
       }

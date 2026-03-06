@@ -404,11 +404,11 @@ export function getAllScrapers(): BaseScraper[] {
     // === FEVER MIAMI (curated experiences — Candlelight, immersive art, Cirque du Soleil) ===
     new FeverMiamiScraper(),
 
-    // === SHOTGUN MIAMI (electronic music / nightlife — Vercel-protected, graceful fallback) ===
-    new ShotgunMiamiScraper(),
+    // DISABLED (2026-03-06): Shotgun — Vercel-protected, returns challenge page to bots. Unsolvable without proxy.
+    // new ShotgunMiamiScraper(),
 
-    // === DO305 (Miami-specific events platform — DNS issues, graceful fallback) ===
-    new Do305Scraper(),
+    // DISABLED (2026-03-06): Do305 — persistent DNS resolution failures in CI.
+    // new Do305Scraper(),
 
     // === CLUB SPACE (real events via Dice.fm partners widget API) ===
     new ClubSpaceScraper(),
@@ -416,7 +416,8 @@ export function getAllScrapers(): BaseScraper[] {
     // === BROWARD VENUE SCRAPERS (real calendar data from venue websites) ===
     new CultureRoomScraper(),            // Culture Room — FLL live music, Ticketmaster links
     new BonnetHouseScraper(),            // Bonnet House — museum/garden events via WP Tribe Events API
-    new FunkyBuddhaScraper(),            // Funky Buddha Brewery — tap room events, run club
+    // DISABLED (2026-03-06): FunkyBuddha — returns 503 Service Unavailable. Site may be down.
+    // new FunkyBuddhaScraper(),
     // DISABLED: SavorCinemaScraper — domain unreachable (connection refused)
     // new SavorCinemaScraper(),
 

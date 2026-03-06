@@ -173,11 +173,11 @@ export class DiceMiamiScraper extends BaseScraper {
 
 // === MIAMI IMPROV ===
 export class MiamiImprovRealScraper extends BaseScraper {
-  // Primary domain first, then SeatEngine mirror as fallback (different IP/TLS config,
-  // avoids GitHub Actions IP-blocking and undici TLS incompatibilities)
+  // SeatEngine mirror first (different CDN/IP, more reliable from CI),
+  // then primary domain as fallback
   private urls = [
-    'https://www.miamiimprov.com/events',
     'https://www-miamiimprov-com.seatengine.com/events',
+    'https://www.miamiimprov.com/events',
     'https://www.miamiimprov.com/calendar',
   ];
 
@@ -191,8 +191,8 @@ export class MiamiImprovRealScraper extends BaseScraper {
 
     for (const url of this.urls) {
       try {
-        // Use BaseScraper's native fetch with DNS fallback
-        const $ = await this.fetchHTMLNativeRetry(url, 3, 15_000);
+        // Use BaseScraper's native fetch with DNS fallback — reduced timeout for faster failover
+        const $ = await this.fetchHTMLNativeRetry(url, 2, 8_000);
 
         // JSON-LD has Place with Events array
         $('script[type="application/ld+json"]').each((_, el) => {
@@ -223,7 +223,7 @@ export class MiamiImprovRealScraper extends BaseScraper {
 
         if (events.length > 0) break; // Got events, stop trying URLs
       } catch (e) {
-        this.log(`  URL ${url} failed, trying next...`);
+        this.log(`  URL ${url} failed: ${e instanceof Error ? e.message : String(e)}, trying next...`);
       }
     }
 
@@ -254,11 +254,11 @@ export class MiamiImprovRealScraper extends BaseScraper {
 
 // === FORT LAUDERDALE IMPROV ===
 export class FortLauderdaleImprovScraper extends BaseScraper {
-  // Primary domain first, then SeatEngine mirror as fallback (different IP/TLS config,
-  // avoids GitHub Actions IP-blocking and undici TLS incompatibilities)
+  // SeatEngine mirror first (different CDN/IP, more reliable from CI),
+  // then primary domain as fallback
   private urls = [
-    'https://www.improvftl.com/events',
     'https://www-improvftl-com.seatengine.com/events',
+    'https://www.improvftl.com/events',
     'https://www.improvftl.com/calendar',
   ];
 
@@ -272,8 +272,8 @@ export class FortLauderdaleImprovScraper extends BaseScraper {
 
     for (const url of this.urls) {
       try {
-        // Use BaseScraper's native fetch with DNS fallback
-        const $ = await this.fetchHTMLNativeRetry(url, 3, 15_000);
+        // Use BaseScraper's native fetch with DNS fallback — reduced timeout for faster failover
+        const $ = await this.fetchHTMLNativeRetry(url, 2, 8_000);
 
         // JSON-LD has Place with Events array
         $('script[type="application/ld+json"]').each((_, el) => {
@@ -309,7 +309,7 @@ export class FortLauderdaleImprovScraper extends BaseScraper {
 
         if (events.length > 0) break;
       } catch (e) {
-        this.log(`  URL ${url} failed, trying next...`);
+        this.log(`  URL ${url} failed: ${e instanceof Error ? e.message : String(e)}, trying next...`);
       }
     }
 
@@ -348,7 +348,69 @@ export class BrowardCenterScraper extends BaseScraper {
         //   .info > .m-event-venue (venue name like "The Parker")
         //   .info > h3 > a (title text + link)
         //   .info > a.tickets[href*="ticketmaster"] (buy link)
-        $('.entry').each((_, el) => {
+
+        // First try JSON-LD as a more reliable data source
+        $('script[type="application/ld+json"]').each((_, el) => {
+          try {
+            const data = JSON.parse($(el).html() || '');
+            const items = Array.isArray(data) ? data : data['@type'] === 'ItemList' ? (data.itemListElement || []) : [data];
+            for (const item of items) {
+              const evt = item.item || item;
+              if ((evt['@type'] === 'Event' || evt['@type'] === 'MusicEvent') && evt.name && evt.startDate) {
+                const dedup = evt.name.toLowerCase().replace(/\s+/g, ' ');
+                if (seen.has(dedup)) continue;
+                seen.add(dedup);
+                const venueObj = evt.location || {};
+                const venueName = venueObj.name || 'Broward Center';
+                const venueInfo = this.getVenueInfo(this.extractVenue(venueName));
+                const category = this.categorize(evt.name, evt.description || '', venueName);
+                events.push({
+                  title: this.cleanText(evt.name),
+                  startAt: evt.startDate?.replace('Z', '').replace(/\.\d+$/, ''),
+                  venueName: venueInfo.name,
+                  address: venueInfo.address,
+                  neighborhood: venueInfo.neighborhood,
+                  lat: venueInfo.lat,
+                  lng: venueInfo.lng,
+                  city: 'Fort Lauderdale',
+                  description: evt.description || `${evt.name} at ${venueInfo.name}. Part of the Broward Center family of venues.`,
+                  category,
+                  tags: this.generateTags(evt.name, evt.description || '', category),
+                  isOutdoor: false,
+                  sourceName: this.name,
+                  sourceUrl: evt.url || `https://www.browardcenter.org/events`,
+                  ticketUrl: evt.url || undefined,
+                  image: evt.image || undefined,
+                });
+              }
+            }
+          } catch { /* skip */ }
+        });
+
+        if (events.length > 0) {
+          this.log(`  Page ${i + 1}: ${events.length} events from JSON-LD`);
+          // JSON-LD got us events — no need to parse DOM
+          break;
+        }
+
+        // Fallback: try multiple CSS selectors for event containers
+        // Broward Center may have redesigned — try broader selectors
+        const entrySelectors = ['.entry', '.event-item', '.event-card', '[class*="event"]', '.views-row', 'article'];
+        let $entries = $('.entry');
+        if ($entries.length === 0) {
+          for (const sel of entrySelectors.slice(1)) {
+            $entries = $(sel);
+            if ($entries.length > 0) {
+              this.log(`  Matched events with selector: ${sel} (${$entries.length} items)`);
+              break;
+            }
+          }
+        }
+        if ($entries.length === 0 && i === 0) {
+          this.log(`  No event containers found — HTML length: ${$.html()?.length || 0}`);
+        }
+
+        $entries.each((_, el) => {
           try {
             const $el = $(el);
 
@@ -478,16 +540,94 @@ export class RevolutionLiveScraper extends BaseScraper {
       const $ = await this.fetchHTMLNativeRetry(this.url, 2, 15_000);
 
       // Revolution Live uses WordPress Events Manager plugin.
-      // Each event is a .em-item.em-event div with:
-      //   .em-item-image img (poster image)
-      //   .em-item-name a (title + link to event detail page)
-      //   .em-event-date span (date like "Mar 5, 2026")
-      //   .em-event-time (time like "6:00pm to 11:00pm")
-      //   .em-event-location span (location text)
-      //   Google Calendar link with event details (title, dates, description)
-      //   Ticketmaster links for purchasing
+      // Try JSON-LD first (more reliable than CSS selectors across redesigns)
+      $('script[type="application/ld+json"]').each((_, el) => {
+        try {
+          const data = JSON.parse($(el).html() || '');
+          const items = Array.isArray(data) ? data : [data];
+          for (const item of items) {
+            if ((item['@type'] === 'Event' || item['@type'] === 'MusicEvent') && item.name && item.startDate) {
+              const dedup = item.name.toLowerCase().replace(/\s+/g, ' ');
+              if (seen.has(dedup)) continue;
+              seen.add(dedup);
+              const startAt = item.startDate?.replace('Z', '').replace(/\.\d+$/, '');
+              const is21Plus = /21\+|21 and over/i.test(item.description || '');
+              events.push({
+                title: this.cleanText(item.name),
+                startAt,
+                venueName: 'Revolution Live',
+                address: '100 SW 3rd Ave, Fort Lauderdale, FL 33312',
+                neighborhood: 'Downtown FLL',
+                lat: 26.1190,
+                lng: -80.1460,
+                city: 'Fort Lauderdale',
+                description: item.description || `${item.name} at Revolution Live.`,
+                category: this.categorize(item.name, item.description || ''),
+                tags: this.generateRevTags(item.name, is21Plus),
+                priceAmount: item.offers?.price ? parseFloat(item.offers.price) : undefined,
+                isOutdoor: false,
+                sourceName: this.name,
+                sourceUrl: item.url || this.url,
+                ticketUrl: item.url || undefined,
+                image: item.image || undefined,
+              });
+            }
+            // Handle ItemList of events
+            if (item['@type'] === 'ItemList' && Array.isArray(item.itemListElement)) {
+              for (const li of item.itemListElement) {
+                const evt = li.item || li;
+                if (evt.name && evt.startDate) {
+                  const dedup = evt.name.toLowerCase().replace(/\s+/g, ' ');
+                  if (seen.has(dedup)) continue;
+                  seen.add(dedup);
+                  events.push({
+                    title: this.cleanText(evt.name),
+                    startAt: evt.startDate?.replace('Z', '').replace(/\.\d+$/, ''),
+                    venueName: 'Revolution Live',
+                    address: '100 SW 3rd Ave, Fort Lauderdale, FL 33312',
+                    neighborhood: 'Downtown FLL',
+                    lat: 26.1190,
+                    lng: -80.1460,
+                    city: 'Fort Lauderdale',
+                    description: evt.description || `${evt.name} at Revolution Live.`,
+                    category: this.categorize(evt.name, ''),
+                    tags: this.generateRevTags(evt.name, false),
+                    isOutdoor: false,
+                    sourceName: this.name,
+                    sourceUrl: evt.url || this.url,
+                    ticketUrl: evt.url || undefined,
+                    image: evt.image || undefined,
+                  });
+                }
+              }
+            }
+          }
+        } catch { /* skip */ }
+      });
 
-      $('.em-item.em-event, .em-item').each((_, el) => {
+      if (events.length > 0) {
+        this.log(`Found ${events.length} events from JSON-LD`);
+        return events;
+      }
+
+      // Fallback: parse DOM with CSS selectors
+      // Try multiple selectors in case site redesigned
+      let $items = $('.em-item.em-event, .em-item');
+      if ($items.length === 0) {
+        const altSelectors = ['.event-item', '.event-card', '[class*="event"]', 'article', '.show-card'];
+        for (const sel of altSelectors) {
+          $items = $(sel);
+          if ($items.length > 0) {
+            this.log(`  Matched events with selector: ${sel} (${$items.length} items)`);
+            break;
+          }
+        }
+      }
+      if ($items.length === 0) {
+        this.log(`  No event containers found — HTML length: ${$.html()?.length || 0}`);
+      }
+
+      $items.each((_, el) => {
         try {
           const $el = $(el);
 
