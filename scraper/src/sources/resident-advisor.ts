@@ -137,24 +137,18 @@ export class ResidentAdvisorScraper extends BaseScraper {
         'x-requested-with': 'XMLHttpRequest',
       };
 
-      // Try native https first (more reliable in CI), then undici fetch as fallback
+      // Try undici fetch first (handles DNS/TLS better in CI), then native https as fallback
       try {
-        this.log(`  Requesting page ${page} (native https)...`);
-        data = await this.fetchJSONNative<typeof data>(RA_GRAPHQL, body, raHeaders);
-        this.log(`  Response received — status OK, body keys: ${Object.keys(data || {}).join(', ')}`);
+        this.log(`  Requesting page ${page} (fetch)...`);
+        data = await this.fetchJSONFetch<typeof data>(RA_GRAPHQL, body, raHeaders, 15_000);
+        this.log(`  Got response, totalResults: ${data.data?.eventListings?.totalResults}`);
       } catch (e) {
-        this.logError(`Native https failed (page ${page})`, e);
+        this.logError(`fetch() failed (page ${page})`, e);
         try {
-          this.log('  Retrying with undici fetch...');
-          const response = await this.fetch(RA_GRAPHQL, {
-            method: 'POST',
-            headers: raHeaders,
-            body,
-          });
-          data = await response.json() as typeof data;
-          this.log(`  Undici response — body keys: ${Object.keys(data || {}).join(', ')}`);
+          this.log('  Retrying with native https...');
+          data = await this.fetchJSONNative<typeof data>(RA_GRAPHQL, body, raHeaders);
         } catch (e2) {
-          this.logError(`Undici fetch also failed (page ${page})`, e2);
+          this.logError(`Native https also failed`, e2);
           break;
         }
       }
@@ -205,7 +199,17 @@ export class ResidentAdvisorScraper extends BaseScraper {
    */
   private async scrapeHtmlFallback(): Promise<RawEvent[]> {
     try {
-      const html = await this.fetchHTMLNative('https://ra.co/events/us/miami', 15_000);
+      // Try undici fetch first, fall back to native https
+      let html: string;
+      try {
+        const res = await fetch('https://ra.co/events/us/miami', {
+          signal: AbortSignal.timeout(15_000),
+          headers: { 'User-Agent': this.userAgent },
+        });
+        html = await res.text();
+      } catch {
+        html = await this.fetchHTMLNative('https://ra.co/events/us/miami', 15_000);
+      }
 
       // Try __NEXT_DATA__
       const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>(.*?)<\/script>/s);

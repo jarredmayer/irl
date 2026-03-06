@@ -170,7 +170,17 @@ export class EventbriteMiamiScraper extends BaseScraper {
    */
   private async getCsrfToken(): Promise<string | null> {
     try {
-      const html = await this.fetchHTMLNative('https://www.eventbrite.com', 10_000);
+      // Try undici fetch first (handles DNS/TLS better in CI), fall back to native https
+      let html: string;
+      try {
+        const res = await fetch('https://www.eventbrite.com', {
+          signal: AbortSignal.timeout(10_000),
+          headers: { 'User-Agent': this.userAgent },
+        });
+        html = await res.text();
+      } catch {
+        html = await this.fetchHTMLNative('https://www.eventbrite.com', 10_000);
+      }
       // Extract CSRF token from meta tag
       const match = html.match(/name="csrf_token"\s+content="([^"]+)"/);
       if (match) return match[1];
@@ -310,8 +320,23 @@ export class EventbriteMiamiScraper extends BaseScraper {
     const browseUrl = 'https://www.eventbrite.com/d/fl--miami/events/';
 
     try {
-      const html = await this.fetchHTMLNative(browseUrl, 15_000);
-      const $ = cheerio.load(html);
+      // Try undici fetch first (handles DNS/TLS better in CI), fall back to native https
+      let $: cheerio.CheerioAPI;
+      let html: string;
+      try {
+        const res = await fetch(browseUrl, {
+          signal: AbortSignal.timeout(15_000),
+          headers: {
+            'User-Agent': this.userAgent,
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          },
+        });
+        html = await res.text();
+        $ = cheerio.load(html);
+      } catch {
+        html = await this.fetchHTMLNative(browseUrl, 15_000);
+        $ = cheerio.load(html);
+      }
 
       // Strategy 1: __NEXT_DATA__
       const nextDataScript = $('script#__NEXT_DATA__').html();

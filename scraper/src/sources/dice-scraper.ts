@@ -57,13 +57,23 @@ export class DiceRealScraper extends BaseScraper {
     this.log('Fetching Dice.fm Miami via __NEXT_DATA__...');
 
     try {
-      // Fetch the browse page HTML and parse with cheerio (more reliable than regex
-      // for compressed/encoded HTML responses in CI)
-      const html = await this.fetchHTMLNative(this.browseUrl, 20_000);
+      // Try undici fetch first (handles DNS/TLS/compression better in CI),
+      // fall back to native https if it fails
+      let html: string;
+      try {
+        const res = await fetch(this.browseUrl, {
+          signal: AbortSignal.timeout(15_000),
+          headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+        });
+        html = await res.text();
+      } catch (e) {
+        this.log(`fetch() failed: ${e instanceof Error ? e.message : e}, trying native https...`);
+        html = await this.fetchHTMLNative(this.browseUrl, 20_000);
+      }
       this.log(`  HTML length: ${html.length} chars`);
-      const $ = cheerio.load(html);
 
-      // Extract __NEXT_DATA__ JSON via DOM instead of regex
+      // Extract __NEXT_DATA__ JSON via cheerio DOM
+      const $ = cheerio.load(html);
       const nextDataScript = $('script#__NEXT_DATA__').html();
       if (!nextDataScript) {
         this.log('No __NEXT_DATA__ found on Dice.fm browse page');
