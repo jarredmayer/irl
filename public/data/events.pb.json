@@ -1122,39 +1122,6 @@
     "addedAt": "2026-03-05T01:57:57.127Z"
   },
   {
-    "id": "150e4b11d6071e14",
-    "title": "Flagler Museum: Gilded Age Tour",
-    "startAt": "2026-04-16T10:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Flagler Museum",
-    "address": "1 Whitehall Way, Palm Beach, FL 33480",
-    "neighborhood": "West Palm Beach",
-    "lat": 26.719,
-    "lng": -80.0383,
-    "city": "Palm Beach",
-    "tags": [
-      "museum",
-      "local-favorite"
-    ],
-    "category": "Culture",
-    "priceLabel": "$$",
-    "isOutdoor": false,
-    "shortWhy": "Flagler Museum live at Flagler Museum.",
-    "editorialWhy": "Tour the stunning Whitehall mansion, Henry Flagler's 75-room Gilded Age estate. See the private railcar, art collection, and learn the history that built Florida. At Flagler Museum in West Palm Beach. Tickets from $26.",
-    "description": "Tour the stunning Whitehall mansion, Henry Flagler's 75-room Gilded Age estate. See the private railcar, art collection, and learn the history that built Florida.",
-    "ticketUrl": "https://www.flaglermuseum.us/",
-    "source": {
-      "name": "Palm Beach",
-      "url": "https://www.flaglermuseum.us/"
-    },
-    "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80",
-    "editorPick": false,
-    "seriesId": "a76c4454e51e",
-    "seriesName": "Flagler Museum: Gilded Age Tour",
-    "venueId": "9c0474a82a79",
-    "addedAt": "2026-03-06T00:16:34.149Z"
-  },
-  {
     "id": "7aa42771a95afbd4",
     "title": "West Palm Beach GreenMarket",
     "startAt": "2026-03-07T09:00:00",
@@ -1387,7 +1354,7 @@
       "festival",
       "local-favorite"
     ],
-    "category": "Art",
+    "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Festival of the Arts Boca live at Mizner Park Amphitheater.",
@@ -1399,7 +1366,7 @@
       "url": "https://festivalboca.org/"
     },
     "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "d8fc99c01c7b",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1420,7 +1387,7 @@
       "festival",
       "local-favorite"
     ],
-    "category": "Art",
+    "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Festival of the Arts Boca live at Mizner Park Amphitheater.",
@@ -1432,7 +1399,7 @@
       "url": "https://festivalboca.org/"
     },
     "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "d8fc99c01c7b",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2066,42 +2033,6 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "321c8e8331e39b3c",
-    "title": "Sushi & Stroll at Morikami",
-    "startAt": "2026-04-16T17:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Morikami Museum & Japanese Gardens",
-    "address": "4000 Morikami Park Rd, Delray Beach, FL 33446",
-    "neighborhood": "Delray Beach",
-    "lat": 26.4374,
-    "lng": -80.1731,
-    "city": "Palm Beach",
-    "tags": [
-      "food",
-      "live-music",
-      "museum",
-      "outdoor",
-      "local-favorite"
-    ],
-    "category": "Food & Drink",
-    "priceLabel": "$",
-    "isOutdoor": true,
-    "shortWhy": "Sushi & Stroll live at Morikami Museum & Japanese Gardens.",
-    "editorialWhy": "Monthly evening event with sushi, taiko drumming, Japanese performances, garden tours, and sake tastings at the Morikami Museum. Outdoors at Morikami Museum & Japanese Gardens in Delray Beach. Tickets from $15.",
-    "description": "Monthly evening event with sushi, taiko drumming, Japanese performances, garden tours, and sake tastings at the Morikami Museum.",
-    "ticketUrl": "https://morikami.org/",
-    "source": {
-      "name": "Palm Beach",
-      "url": "https://morikami.org/"
-    },
-    "image": "https://images.unsplash.com/photo-1566054757965-8c4085344c96?w=800&q=80",
-    "editorPick": false,
-    "seriesId": "be25f113ea60",
-    "seriesName": "Sushi & Stroll at Morikami",
-    "venueId": "cb12812e03bc",
-    "addedAt": "2026-03-06T00:16:34.149Z"
-  },
-  {
     "id": "27615b35f00d301e",
     "title": "Clematis by Night",
     "startAt": "2026-03-12T18:00:00",
@@ -2275,40 +2206,5 @@
     "seriesName": "Clematis by Night",
     "venueId": "11a1c25a431c",
     "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
-    "id": "5df39fb529ed466a",
-    "title": "Clematis by Night",
-    "startAt": "2026-04-16T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Clematis Street Waterfront",
-    "address": "101 N Clematis St, West Palm Beach, FL 33401",
-    "neighborhood": "West Palm Beach",
-    "lat": 26.7153,
-    "lng": -80.0534,
-    "city": "Palm Beach",
-    "tags": [
-      "live-music",
-      "free-event",
-      "outdoor",
-      "waterfront",
-      "local-favorite"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Live music at Clematis Street Waterfront, West Palm Beach.",
-    "editorialWhy": "Free weekly outdoor concert series on the WPB Waterfront. Live bands, food trucks, and waterfront vibes every Thursday evening. Outdoors at Clematis Street Waterfront in West Palm Beach. Free to attend.",
-    "description": "Free weekly outdoor concert series on the WPB Waterfront. Live bands, food trucks, and waterfront vibes every Thursday evening.",
-    "source": {
-      "name": "Palm Beach",
-      "url": "https://www.wpb.org/clematis-by-night"
-    },
-    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-    "editorPick": false,
-    "seriesId": "05967c7b6eab",
-    "seriesName": "Clematis by Night",
-    "venueId": "11a1c25a431c",
-    "addedAt": "2026-03-06T00:16:34.149Z"
   }
 ]

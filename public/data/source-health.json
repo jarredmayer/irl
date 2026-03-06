@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-03-06T04:38:11.876Z",
+  "scrapedAt": "2026-03-06T00:54:05.251Z",
+  "healthPct": 40,
+  "totalSources": 43,
+  "ok": 17,
+  "empty": 17,
+  "errored": 9,
+  "emptySources": [
+    "III Points",
+    "SOBEWFF",
+    "Miami Spice",
+    "Dice.fm Real",
+    "Resident Advisor",
+    "Candlelight Concerts (Fever)",
+    "Hotel Events",
+    "Broward Center",
+    "Revolution Live",
+    "Las Olas Boulevard",
+    "HistoryMiami",
+    "Resy Miami Events",
+    "Venue Watchlist",
+    "Eventbrite Miami",
+    "Fever Miami",
+    "Club Space",
+    "BonnetHouse"
+  ],
+  "erroredSources": [
+    "Miami New Times",
+    "Miami Improv",
+    "Fort Lauderdale Improv",
+    "Luma",
+    "SofarSounds",
+    "Shotgun Miami",
+    "Do305",
+    "CultureRoom",
+    "FunkyBuddha"
+  ],
+  "suddenFailures": [],
+  "graduallyDeclining": [],
+  "suggestedNewSources": [
+    "@southbeachmiami — South Beach events and activations",
+    "@miami_open — Miami Open tennis tournament",
+    "@ultramiami — Ultra Music Festival Miami",
+    "@sobe_arts — South Beach arts & culture",
+    "@miamibookfair — Miami Book Fair International"
+  ],
+  "historyRuns": 1
+}

@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-06T00:54:05.251Z",
+  "scrapedAt": "2026-03-06T04:38:11.970Z",
   "stats": {
-    "total": 1084,
-    "deduplicated": 744,
+    "total": 1713,
+    "deduplicated": 1146,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -14,16 +14,15 @@
       "Miami Spice": 0,
       "Miami Festivals": 1,
       "Dice.fm Real": 0,
-      "Resident Advisor": 0,
+      "Resident Advisor": 259,
       "Candlelight Concerts (Fever)": 0,
       "Hotel Events": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 393,
       "Pop-Ups": 64,
-      "Miami Improv": 0,
-      "Fort Lauderdale Improv": 0,
+      "Miami Improv": 153,
+      "Fort Lauderdale Improv": 120,
       "Broward Center": 0,
-      "Revolution Live": 0,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
       "Free Yoga Miami": 76,
@@ -31,29 +30,26 @@
       "Cycling Group Rides": 38,
       "Las Olas Boulevard": 0,
       "Fort Lauderdale": 23,
-      "Palm Beach": 56,
-      "Instagram Sources": 155,
-      "Luma": 0,
-      "SofarSounds": 0,
+      "Palm Beach": 55,
+      "Instagram Sources": 156,
+      "Luma": 21,
+      "SofarSounds": 5,
       "HistoryMiami": 0,
       "Resy Miami Events": 0,
       "Venue Watchlist": 0,
       "Eventbrite Miami": 0,
       "Fever Miami": 0,
-      "Shotgun Miami": 0,
-      "Do305": 0,
-      "Club Space": 0,
-      "CultureRoom": 0,
-      "BonnetHouse": 0,
-      "FunkyBuddha": 0,
+      "Club Space": 39,
+      "CultureRoom": 18,
+      "BonnetHouse": 14,
       "WeekendBroward Verified": 103
     }
   },
   "delta": {
-    "added": 0,
-    "removed": 0,
+    "added": 411,
+    "removed": 9,
     "modified": 0,
-    "unchanged": 744
+    "unchanged": 735
   },
   "sources": [
     {
@@ -120,15 +116,17 @@
     },
     {
       "name": "Resident Advisor",
-      "count": 0,
-      "status": "empty",
+      "count": 259,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Candlelight Concerts (Fever)",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
     },
     {
       "name": "Hotel Events",
@@ -156,28 +154,18 @@
     },
     {
       "name": "Miami Improv",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "Fort Lauderdale Improv",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "Broward Center",
-      "count": 0,
-      "status": "empty",
+      "count": 153,
+      "status": "ok",
       "errors": []
     },
     {
-      "name": "Revolution Live",
+      "name": "Fort Lauderdale Improv",
+      "count": 120,
+      "status": "ok",
+      "errors": []
+    },
+    {
+      "name": "Broward Center",
       "count": 0,
       "status": "empty",
       "errors": []
@@ -215,8 +203,10 @@
     {
       "name": "Las Olas Boulevard",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
     },
     {
       "name": "Fort Lauderdale",
@@ -226,31 +216,27 @@
     },
     {
       "name": "Palm Beach",
-      "count": 56,
+      "count": 55,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Instagram Sources",
-      "count": 155,
+      "count": 156,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Luma",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "count": 21,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "SofarSounds",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "getaddrinfo EAI_AGAIN www.sofarsounds.com"
-      ]
+      "count": 5,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "HistoryMiami",
@@ -279,20 +265,6 @@
     {
       "name": "Fever Miami",
       "count": 0,
-      "status": "empty",
-      "errors": []
-    },
-    {
-      "name": "Shotgun Miami",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "Do305",
-      "count": 0,
       "status": "error",
       "errors": [
         "Timed out after 120s"
@@ -300,31 +272,21 @@
     },
     {
       "name": "Club Space",
-      "count": 0,
-      "status": "empty",
+      "count": 39,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "CultureRoom",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "BonnetHouse",
-      "count": 0,
-      "status": "empty",
+      "count": 18,
+      "status": "ok",
       "errors": []
     },
     {
-      "name": "FunkyBuddha",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "name": "BonnetHouse",
+      "count": 14,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "WeekendBroward Verified",
@@ -334,38 +296,26 @@
     }
   ],
   "sourceHealth": {
-    "ok": 17,
-    "empty": 17,
-    "errored": 9,
+    "ok": 25,
+    "empty": 10,
+    "errored": 4,
     "emptySources": [
       "III Points",
       "SOBEWFF",
       "Miami Spice",
       "Dice.fm Real",
-      "Resident Advisor",
-      "Candlelight Concerts (Fever)",
       "Hotel Events",
       "Broward Center",
-      "Revolution Live",
-      "Las Olas Boulevard",
       "HistoryMiami",
       "Resy Miami Events",
       "Venue Watchlist",
-      "Eventbrite Miami",
-      "Fever Miami",
-      "Club Space",
-      "BonnetHouse"
+      "Eventbrite Miami"
     ],
     "erroredSources": [
       "Miami New Times",
-      "Miami Improv",
-      "Fort Lauderdale Improv",
-      "Luma",
-      "SofarSounds",
-      "Shotgun Miami",
-      "Do305",
-      "CultureRoom",
-      "FunkyBuddha"
+      "Candlelight Concerts (Fever)",
+      "Las Olas Boulevard",
+      "Fever Miami"
     ]
   }
 }
