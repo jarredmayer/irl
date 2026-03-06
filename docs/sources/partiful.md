@@ -4,56 +4,61 @@
 
 ## Access Method
 
-**No public API.** Partiful is an invitation-based event platform — events are created by hosts and shared via direct links. There is no public event discovery feed or search functionality.
+**No official public API.** Partiful is an invitation-based event platform built on **Next.js + React + Firebase**.
 
-**Web scraping approach:**
-- Individual event pages are accessible via direct URL (e.g., `partiful.com/e/{event-id}`)
-- Event pages are React/Next.js rendered — may require JavaScript execution
-- **No browsable event listing or search** — you must know the event URL
-- No anti-bot measures observed on individual pages (they're designed to be shared)
-- However, there's no programmatic way to discover events
+**Public surfaces:**
+- **Discover pages** exist at `partiful.com/discover/{city}` — currently available for NYC, SF, LA, Boston, and DC only. **Miami is not yet included.** These list public events with structured data, accessible without login.
+- **Individual event pages** (`partiful.com/e/{id}`) for events marked as "Public" by hosts are accessible without login.
+- Both contain `__NEXT_DATA__` JSON with full event metadata and schema.org JSON-LD — clean structured extraction is straightforward.
 
-**The fundamental challenge:** Partiful events are semi-private by design. Hosts share links with their network. There is no "Partiful Miami events" page to scrape.
+**Unofficial tools:**
+- [`cerebralvalley/partiful-api`](https://github.com/cerebralvalley/partiful-api) npm package — exposes 5 read-only endpoints: `getEvent`, `getMutuals`, `getUsers`, `getInvitableContacts`, `getGuestsCsv`. Requires Bearer token manually extracted from browser dev tools; tokens expire frequently. **Not suitable for production.**
+
+**The fundamental challenge:** The vast majority of Partiful events are **private by default**. Only events where hosts explicitly toggle "Public" and submit to Discover are visible. This is a small fraction of total events. There is no "Partiful Miami events" page.
+
+**Anti-bot measures:** Google Tag Manager, FullStory, Branch.io deep linking observed. No aggressive bot detection (Cloudflare, reCAPTCHA) on public pages currently, but this could change.
 
 ## Data Quality
 
 **Variable — depends on the host.** Partiful events range from casual house parties to professionally organized cultural events.
 
-**Available fields on event pages:**
-- Event title
-- Date, start time (end time sometimes)
-- Location (address, sometimes just neighborhood or "TBA")
-- Description (often informal, personality-driven)
-- Host name and photo
-- Cover image
+**Available fields on public event pages (via `__NEXT_DATA__` / JSON-LD):**
+- Event title, description (rich text)
+- Date/time with timezone
+- Location (street address or "Virtual")
+- Host name(s) and profile photos
+- Attendee metrics: Going, Interested, Maybe counts
+- Event status (PUBLISHED, etc.)
+- Event images (hosted on Firebase Storage)
+- Custom questionnaire fields (if any)
+- Custom links attached by hosts
 - RSVP options (Going / Maybe / Can't Go)
-- Dress code (sometimes)
-- Guest list visibility settings
 
 **Strengths:**
 - Captures events that appear nowhere else (house parties, private dinners, rooftop gatherings)
-- "Tastemaker" signal — Partiful is popular with creative/cultural communities in Miami
+- "Tastemaker" signal — Partiful is popular with creative/cultural communities
+- Named in Time's 100 Most Influential Companies 2025, 2M+ new users in H1 2025
 - Host-curated descriptions are authentic and personality-driven
 
 **Weaknesses:**
-- No structured data beyond basic fields
 - Location is often vague ("Wynwood" instead of a full address)
-- No price/ticket information (most Partiful events are free/invite-only)
+- No price/ticket information (most events are free/invite-only)
 - No genre/category taxonomy
-- Events may be intentionally private — hosts may not want them aggregated
+- Most events are private — public surface is small
+- Profile browsing and event history are gated behind authentication and mutual connections — **weak as a tastemaker discovery layer** compared to Luma where organizer pages are fully public
 
 ## Rate Limits
 
-N/A — no API and no discoverable event listing to scrape.
+No documented rate limits. Public pages are standard Next.js SSR — standard HTTP rate limiting likely applies.
 
 ## ToS Risks
 
-**Risk level: HIGH (for automated collection) / LOW (for user submissions)**
+**Risk level: HIGH**
 
-- Partiful events are often semi-private — aggregating them without host consent raises privacy concerns
-- No ToS language specifically about scraping (small company), but the platform's ethos is about controlled sharing
-- Hosts who share events on Partiful expect to control their audience
-- **Ethical consideration:** Even if technically feasible, aggregating Partiful events without host consent would violate the platform's social contract
+- [Terms of Service](https://partiful.com/terms) explicitly prohibit: scraping, copying, framing, or creating derivative works from Service Content
+- [Community Guidelines](https://partiful.com/community-guidelines) prohibit spambots, self-bots, and "artificial means to inflate activity"
+- Partiful is sensitive to data privacy issues — a 2025 TechCrunch report on GPS metadata handling showed they take data security seriously and would likely act on unauthorized data collection
+- **Ethical consideration:** Even if technically feasible, aggregating private Partiful events without host consent would violate the platform's social contract
 
 ## Recommended Approach
 
@@ -61,7 +66,7 @@ N/A — no API and no discoverable event listing to scrape.
 
 1. **Partiful URL import in submission form:**
    - Allow event submitters to paste a Partiful link
-   - Parse the event page for title, date, location, description, image
+   - Parse the `__NEXT_DATA__` JSON or JSON-LD for title, date, location, description, image
    - Pre-fill the submission form with parsed data
    - Submitter (ideally the host) opts in to having their event appear on IRL
 
@@ -70,10 +75,14 @@ N/A — no API and no discoverable event listing to scrape.
    - Partner with them: they share their Partiful links with IRL, IRL gives them a "Tastemaker" badge
    - This creates a curated, consent-based pipeline of high-quality semi-private events
 
-3. **Trust tier:** Events sourced via Partiful should be `submitted_verified` (host opted in) or `submitted_unverified` (third-party submitted the link).
+3. **Partnership outreach:** Contact Partiful about a data-sharing agreement. They're a growth-stage startup and may be open to partnerships that drive event attendance. Request Miami be added to the Discover feed.
 
-4. **Privacy controls:** Always allow hosts to request removal. Include a "This is my event and I want it removed" flow.
+4. **Trust tier:** Events sourced via Partiful should be `submitted_verified` (host opted in) or `submitted_unverified` (third-party submitted the link).
+
+5. **Privacy controls:** Always allow hosts to request removal. Include a "This is my event and I want it removed" flow.
+
+6. **Avoid:** Using the `cerebralvalley/partiful-api` for production — requires stolen auth tokens, fragile, ToS-violating.
 
 ## Priority: Low
 
-Partiful is valuable as a concept (tastemaker layer, events that appear nowhere else) but impractical as an automated data source. The right approach is partnership-based and consent-driven, which makes it a Phase 2 initiative after the core ingestion pipeline is built.
+The combination of explicit ToS prohibition, most events being private, no public API, and Miami not being on the Discover feed makes Partiful a low-yield, high-risk automated source. The right approach is partnership-based and consent-driven — a Phase 2 initiative after the core ingestion pipeline is built. Revisit if Partiful launches an official API or adds Miami to Discover.
