@@ -137,10 +137,9 @@ export class EventAggregator {
 
     // Run the Orchestrator — always runs rule-based validation (free);
     // location agent only runs when AI is enabled (cached, so very low cost).
-    // In fullPipeline mode: reset heuristic editorPick so CurationAgent is sole source of truth.
-    const eventsForOrchestrator = options?.fullPipeline
-      ? irlEvents.map((e) => ({ ...e, editorPick: false }))
-      : irlEvents;
+    // Always reset heuristic editorPick — CurationAgent is the sole source of truth.
+    // The heuristic isEditorPick() is only a fallback when CurationAgent doesn't run.
+    const eventsForOrchestrator = irlEvents.map((e) => ({ ...e, editorPick: false }));
 
     let verifiedEvents: IRLEvent[];
     try {

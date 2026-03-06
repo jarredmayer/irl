@@ -1,7 +1,7 @@
 [
   {
     "id": "94ec6548105453a0",
-    "title": "Rosalía: LUX Tour 2026",
+    "title": "Rosal\u00eda: LUX Tour 2026",
     "startAt": "2026-06-04T20:30:00",
     "timezone": "America/New_York",
     "venueName": "Kaseya Center",
@@ -22,8 +22,8 @@
     "priceLabel": "$$$",
     "isOutdoor": false,
     "shortWhy": "The kind of night Miami does best.",
-    "editorialWhy": "US premiere of Rosalía's most ambitious production yet. The Spanish superstar launches the American leg of her 42-show global tour in Miami, where she spent a year creating her album LUX. Located in Downtown, Kaseya Center is a local favorite.",
-    "description": "US premiere of Rosalía's most ambitious production yet. The Spanish superstar launches the American leg of her 42-show global tour in Miami, where she spent a year creating her album LUX.",
+    "editorialWhy": "US premiere of Rosal\u00eda's most ambitious production yet. The Spanish superstar launches the American leg of her 42-show global tour in Miami, where she spent a year creating her album LUX. Located in Downtown, Kaseya Center is a local favorite.",
+    "description": "US premiere of Rosal\u00eda's most ambitious production yet. The Spanish superstar launches the American leg of her 42-show global tour in Miami, where she spent a year creating her album LUX.",
     "ticketUrl": "https://www.kaseyacenter.com/events/detail/rosalia",
     "source": {
       "name": "Cultural Attractions",
@@ -736,42 +736,6 @@
     "venueId": "ponce-middle-school"
   },
   {
-    "id": "6e1ae7d12fc3cf57",
-    "title": "Faena Theater: Noche Faena",
-    "startAt": "2026-03-05T21:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Faena Theater",
-    "address": "3201 Collins Ave, Miami Beach, FL 33140",
-    "neighborhood": "Mid-Beach",
-    "lat": 25.8131,
-    "lng": -80.1262,
-    "city": "Miami",
-    "tags": [
-      "theater",
-      "live-music",
-      "local-favorite",
-      "dancing",
-      "upscale",
-      "intimate"
-    ],
-    "category": "Culture",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
-    "ticketUrl": "https://instagram.com/@faenami",
-    "source": {
-      "name": "@faenami",
-      "url": "https://instagram.com/@faenami"
-    },
-    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
-    "editorPick": true,
-    "seriesId": "64e6e7ad77de",
-    "seriesName": "Faena Theater: Noche Faena",
-    "venueId": "faena-theater"
-  },
-  {
     "id": "c1ba08b99a3dca63",
     "title": "Faena Theater: Noche Faena",
     "startAt": "2026-03-06T21:00:00",
@@ -794,8 +758,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -830,8 +794,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Dive into Miami's cultural richness.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -866,8 +830,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -902,8 +866,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -938,8 +902,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -974,8 +938,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Dive into Miami's cultural richness.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1010,8 +974,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1046,8 +1010,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1082,8 +1046,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Dive into Miami's cultural richness.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1118,8 +1082,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1154,8 +1118,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1190,8 +1154,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Dive into Miami's cultural richness.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1226,8 +1190,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Dive into Miami's cultural richness.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1262,8 +1226,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1298,8 +1262,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1334,8 +1298,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1370,8 +1334,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1406,8 +1370,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1442,8 +1406,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Dive into Miami's cultural richness.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1478,8 +1442,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Dive into Miami's cultural richness.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1514,8 +1478,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1550,8 +1514,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Experience local heritage.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -1586,8 +1550,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
-    "description": "Nightly cabaret and spectacle at Faena Theater — Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
+    "editorialWhy": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel. Located in Mid-Beach, Faena Theater is a local favorite.",
+    "description": "Nightly cabaret and spectacle at Faena Theater \u2014 Miami Beach's most theatrical venue. Acrobatics, live music, and costume drama inside the Faena Hotel.",
     "ticketUrl": "https://instagram.com/@faenami",
     "source": {
       "name": "@faenami",
@@ -2104,45 +2068,11 @@
     "venueId": "hard-rock-stadium"
   },
   {
-    "id": "f7dc981679613eb7",
-    "title": "PAMM: Free First Thursday",
-    "startAt": "2026-03-05T12:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
-    "address": "1103 Biscayne Blvd, Miami, FL 33132",
-    "neighborhood": "Downtown",
-    "lat": 25.7859,
-    "lng": -80.1863,
-    "city": "Miami",
-    "tags": [
-      "museum",
-      "art-gallery",
-      "free-event",
-      "waterfront",
-      "local-favorite",
-      "contemporary-art"
-    ],
-    "category": "Art",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Culture in full color.",
-    "editorialWhy": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, Pérez Art Museum Miami is a local favorite. Best of all, it's free.",
-    "description": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
-    "ticketUrl": "https://www.pamm.org/visit/",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://www.pamm.org/visit/"
-    },
-    "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80",
-    "editorPick": true,
-    "venueId": "pamm"
-  },
-  {
     "id": "41f9d406b9e92ad8",
     "title": "PAMM: Free First Thursday",
     "startAt": "2026-04-02T12:00:00",
     "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
+    "venueName": "P\u00e9rez Art Museum Miami",
     "address": "1103 Biscayne Blvd, Miami, FL 33132",
     "neighborhood": "Downtown",
     "lat": 25.7859,
@@ -2160,7 +2090,7 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "See what Miami's art scene is about.",
-    "editorialWhy": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, Pérez Art Museum Miami is a local favorite. Best of all, it's free.",
+    "editorialWhy": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, P\u00e9rez Art Museum Miami is a local favorite. Best of all, it's free.",
     "description": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
     "ticketUrl": "https://www.pamm.org/visit/",
     "source": {
@@ -2176,7 +2106,7 @@
     "title": "PAMM: Free First Thursday",
     "startAt": "2026-05-07T12:00:00",
     "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
+    "venueName": "P\u00e9rez Art Museum Miami",
     "address": "1103 Biscayne Blvd, Miami, FL 33132",
     "neighborhood": "Downtown",
     "lat": 25.7859,
@@ -2194,7 +2124,7 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Culture in full color.",
-    "editorialWhy": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, Pérez Art Museum Miami is a local favorite. Best of all, it's free.",
+    "editorialWhy": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, P\u00e9rez Art Museum Miami is a local favorite. Best of all, it's free.",
     "description": "Free admission every first Thursday 12-9pm, plus extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
     "ticketUrl": "https://www.pamm.org/visit/",
     "source": {
@@ -2228,8 +2158,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Live sounds in one of Miami's best spots.",
-    "editorialWhy": "Free outdoor Wallcast. Stéphane Denève and Jean-Yves Thibaudet perform Bernstein's Candide, Age of Anxiety, and Gershwin's An American in Paris. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
-    "description": "Free outdoor Wallcast. Stéphane Denève and Jean-Yves Thibaudet perform Bernstein's Candide, Age of Anxiety, and Gershwin's An American in Paris.",
+    "editorialWhy": "Free outdoor Wallcast. St\u00e9phane Den\u00e8ve and Jean-Yves Thibaudet perform Bernstein's Candide, Age of Anxiety, and Gershwin's An American in Paris. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
+    "description": "Free outdoor Wallcast. St\u00e9phane Den\u00e8ve and Jean-Yves Thibaudet perform Bernstein's Candide, Age of Anxiety, and Gershwin's An American in Paris.",
     "ticketUrl": "https://www.nws.edu/events-tickets/wallcast-concerts-and-park-events/",
     "source": {
       "name": "Cultural Attractions",
@@ -2533,39 +2463,6 @@
     "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "f329999feba8"
-  },
-  {
-    "id": "6d8bbb41817ad71c",
-    "title": "Nike Run Club on Lincoln Road",
-    "startAt": "2026-03-05T19:01:00",
-    "timezone": "America/New_York",
-    "venueName": "Nike Store Lincoln Road",
-    "address": "1035 Lincoln Rd, Miami Beach, FL 33139",
-    "neighborhood": "South Beach",
-    "lat": 25.7906,
-    "lng": -80.14,
-    "city": "Miami",
-    "tags": [
-      "fitness",
-      "free-event",
-      "community",
-      "local-favorite",
-      "running",
-      "free"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Baptist Health South Beach Run Club powered by Nike. 150+ runners every week on scenic routes. Free and meets rain or shine. All paces welcome. Located in South Beach, Nike Store Lincoln Road is a local favorite.",
-    "description": "Baptist Health South Beach Run Club powered by Nike. 150+ runners every week on scenic routes. Free and meets rain or shine. All paces welcome.",
-    "source": {
-      "name": "Run Clubs",
-      "url": "https://www.nike.com/miami"
-    },
-    "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
-    "editorPick": true,
-    "venueId": "nike-lincoln-road"
   },
   {
     "id": "63c0763be037457f",
@@ -3067,7 +2964,7 @@
     "title": "PAMM: Free First Thursday",
     "startAt": "2026-03-07T12:00:00",
     "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
+    "venueName": "P\u00e9rez Art Museum Miami",
     "address": "1103 Biscayne Blvd, Miami, FL 33132",
     "neighborhood": "Downtown",
     "lat": 25.7859,
@@ -3085,8 +2982,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Culture in full color.",
-    "editorialWhy": "Free admission every first Thursday 12–9pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, Pérez Art Museum Miami is a local favorite. Best of all, it's free.",
-    "description": "Free admission every first Thursday 12–9pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
+    "editorialWhy": "Free admission every first Thursday 12\u20139pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, P\u00e9rez Art Museum Miami is a local favorite. Best of all, it's free.",
+    "description": "Free admission every first Thursday 12\u20139pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
     "source": {
       "name": "@pamm_museum",
       "url": "https://instagram.com/@pamm_museum"
@@ -3102,7 +2999,7 @@
     "title": "PAMM: Free First Thursday",
     "startAt": "2026-04-04T12:00:00",
     "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
+    "venueName": "P\u00e9rez Art Museum Miami",
     "address": "1103 Biscayne Blvd, Miami, FL 33132",
     "neighborhood": "Downtown",
     "lat": 25.7859,
@@ -3120,8 +3017,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Art worth the trip.",
-    "editorialWhy": "Free admission every first Thursday 12–9pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, Pérez Art Museum Miami is a local favorite. Best of all, it's free.",
-    "description": "Free admission every first Thursday 12–9pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
+    "editorialWhy": "Free admission every first Thursday 12\u20139pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, P\u00e9rez Art Museum Miami is a local favorite. Best of all, it's free.",
+    "description": "Free admission every first Thursday 12\u20139pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
     "source": {
       "name": "@pamm_museum",
       "url": "https://instagram.com/@pamm_museum"
@@ -3137,7 +3034,7 @@
     "title": "PAMM: Free First Thursday",
     "startAt": "2026-05-02T12:00:00",
     "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
+    "venueName": "P\u00e9rez Art Museum Miami",
     "address": "1103 Biscayne Blvd, Miami, FL 33132",
     "neighborhood": "Downtown",
     "lat": 25.7859,
@@ -3155,8 +3052,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Art worth the trip.",
-    "editorialWhy": "Free admission every first Thursday 12–9pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, Pérez Art Museum Miami is a local favorite. Best of all, it's free.",
-    "description": "Free admission every first Thursday 12–9pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
+    "editorialWhy": "Free admission every first Thursday 12\u20139pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus. Located in Downtown Miami, P\u00e9rez Art Museum Miami is a local favorite. Best of all, it's free.",
+    "description": "Free admission every first Thursday 12\u20139pm. Extended programming, docent-led tours, and community events on Museum Park's waterfront campus.",
     "source": {
       "name": "@pamm_museum",
       "url": "https://instagram.com/@pamm_museum"
@@ -3172,7 +3069,7 @@
     "title": "PAMM: Friday Night at the Museum",
     "startAt": "2026-03-06T18:00:00",
     "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
+    "venueName": "P\u00e9rez Art Museum Miami",
     "address": "1103 Biscayne Blvd, Miami, FL 33132",
     "neighborhood": "Downtown",
     "lat": 25.7859,
@@ -3190,7 +3087,7 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Culture in full color.",
-    "editorialWhy": "After-hours at PAMM with DJ sets, cocktails, and views of Biscayne Bay. Contemporary art in Miami's most architecturally stunning museum. Located in Downtown Miami, Pérez Art Museum Miami is a local favorite.",
+    "editorialWhy": "After-hours at PAMM with DJ sets, cocktails, and views of Biscayne Bay. Contemporary art in Miami's most architecturally stunning museum. Located in Downtown Miami, P\u00e9rez Art Museum Miami is a local favorite.",
     "description": "After-hours at PAMM with DJ sets, cocktails, and views of Biscayne Bay. Contemporary art in Miami's most architecturally stunning museum.",
     "ticketUrl": "https://www.pamm.org",
     "source": {
@@ -3206,7 +3103,7 @@
     "title": "PAMM: Friday Night at the Museum",
     "startAt": "2026-03-20T18:00:00",
     "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
+    "venueName": "P\u00e9rez Art Museum Miami",
     "address": "1103 Biscayne Blvd, Miami, FL 33132",
     "neighborhood": "Downtown",
     "lat": 25.7859,
@@ -3224,7 +3121,7 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "See what Miami's art scene is about.",
-    "editorialWhy": "After-hours at PAMM with DJ sets, cocktails, and views of Biscayne Bay. Contemporary art in Miami's most architecturally stunning museum. Located in Downtown Miami, Pérez Art Museum Miami is a local favorite.",
+    "editorialWhy": "After-hours at PAMM with DJ sets, cocktails, and views of Biscayne Bay. Contemporary art in Miami's most architecturally stunning museum. Located in Downtown Miami, P\u00e9rez Art Museum Miami is a local favorite.",
     "description": "After-hours at PAMM with DJ sets, cocktails, and views of Biscayne Bay. Contemporary art in Miami's most architecturally stunning museum.",
     "ticketUrl": "https://www.pamm.org",
     "source": {
@@ -3366,39 +3263,6 @@
     "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
     "editorPick": false,
     "venueId": "soundscape-park"
-  },
-  {
-    "id": "7c6542ec1a98dc81",
-    "title": "Yoga at Peacock Park",
-    "startAt": "2026-03-04T18:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Peacock Park",
-    "address": "2820 McFarlane Rd, Miami, FL 33133",
-    "neighborhood": "Coconut Grove",
-    "lat": 25.7267,
-    "lng": -80.242,
-    "city": "Miami",
-    "tags": [
-      "wellness",
-      "free-event",
-      "outdoor",
-      "park",
-      "local-favorite",
-      "waterfront"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
-    "editorialWhy": "Free outdoor yoga in Coconut Grove's Peacock Park. Open Door Yoga with instructor Natalie Morales. All ages and fitness levels welcome. Located in Coconut Grove, Peacock Park is a local favorite.",
-    "description": "Free outdoor yoga in Coconut Grove's Peacock Park. Open Door Yoga with instructor Natalie Morales. All ages and fitness levels welcome.",
-    "source": {
-      "name": "Free Yoga Miami",
-      "url": "https://www.miamiandbeaches.com/things-to-do/spa-wellness/free-yoga-in-miami"
-    },
-    "image": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80",
-    "editorPick": true,
-    "venueId": "peacock-park"
   },
   {
     "id": "a27c0d92d14a6c8b",
@@ -3632,40 +3496,6 @@
     "venueId": "peacock-park"
   },
   {
-    "id": "048c38651ed04408",
-    "title": "Lagniappe: Jazz & Wine Thursday",
-    "startAt": "2026-03-05T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Lagniappe House",
-    "address": "3425 NE 2nd Ave, Miami, FL 33137",
-    "neighborhood": "Midtown",
-    "lat": 25.8086,
-    "lng": -80.1916,
-    "city": "Miami",
-    "tags": [
-      "jazz",
-      "live-music",
-      "wine-tasting",
-      "local-favorite",
-      "intimate",
-      "wine-bar"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Live jazz in an intimate wine-bar setting. Rotating wine list, cheese boards, and nightly jazz acts in this beloved Miami institution. Located in Design District, Lagniappe House is a local favorite. Best of all, it's free.",
-    "description": "Live jazz in an intimate wine-bar setting. Rotating wine list, cheese boards, and nightly jazz acts in this beloved Miami institution.",
-    "ticketUrl": "https://www.lagniappehouse.com",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://www.lagniappehouse.com"
-    },
-    "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80",
-    "editorPick": true,
-    "venueId": "lagniappe-house"
-  },
-  {
     "id": "d440145161c45318",
     "title": "Lagniappe: Jazz & Wine Thursday",
     "startAt": "2026-03-12T20:00:00",
@@ -3790,8 +3620,8 @@
     "priceLabel": "$$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "21+ night at the Frost Science Museum. Cocktails, live music, and full access to exhibits including the Ocean, Planetarium, and MeLaβ. Located in Downtown Miami, Frost Science Museum is a local favorite.",
-    "description": "21+ night at the Frost Science Museum. Cocktails, live music, and full access to exhibits including the Ocean, Planetarium, and MeLaβ.",
+    "editorialWhy": "21+ night at the Frost Science Museum. Cocktails, live music, and full access to exhibits including the Ocean, Planetarium, and MeLa\u03b2. Located in Downtown Miami, Frost Science Museum is a local favorite.",
+    "description": "21+ night at the Frost Science Museum. Cocktails, live music, and full access to exhibits including the Ocean, Planetarium, and MeLa\u03b2.",
     "ticketUrl": "https://www.frostscience.org",
     "source": {
       "name": "Cultural Attractions",
@@ -3824,8 +3654,8 @@
     "priceLabel": "$$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "21+ night at the Frost Science Museum. Cocktails, live music, and full access to exhibits including the Ocean, Planetarium, and MeLaβ. Located in Downtown Miami, Frost Science Museum is a local favorite.",
-    "description": "21+ night at the Frost Science Museum. Cocktails, live music, and full access to exhibits including the Ocean, Planetarium, and MeLaβ.",
+    "editorialWhy": "21+ night at the Frost Science Museum. Cocktails, live music, and full access to exhibits including the Ocean, Planetarium, and MeLa\u03b2. Located in Downtown Miami, Frost Science Museum is a local favorite.",
+    "description": "21+ night at the Frost Science Museum. Cocktails, live music, and full access to exhibits including the Ocean, Planetarium, and MeLa\u03b2.",
     "ticketUrl": "https://www.frostscience.org",
     "source": {
       "name": "Cultural Attractions",
@@ -4884,7 +4714,7 @@
   },
   {
     "id": "ae77a1a40e16eb7a",
-    "title": "Rosalía: LUX Tour 2026",
+    "title": "Rosal\u00eda: LUX Tour 2026",
     "startAt": "2026-06-06T20:30:00",
     "timezone": "America/New_York",
     "venueName": "Kaseya Center",
@@ -4905,8 +4735,8 @@
     "priceLabel": "$$$",
     "isOutdoor": false,
     "shortWhy": "The kind of night Miami does best.",
-    "editorialWhy": "Second Miami show added due to overwhelming demand. Rosalía performs from her album LUX, recorded with the London Symphony Orchestra. Located in Downtown, Kaseya Center is a local favorite.",
-    "description": "Second Miami show added due to overwhelming demand. Rosalía performs from her album LUX, recorded with the London Symphony Orchestra.",
+    "editorialWhy": "Second Miami show added due to overwhelming demand. Rosal\u00eda performs from her album LUX, recorded with the London Symphony Orchestra. Located in Downtown, Kaseya Center is a local favorite.",
+    "description": "Second Miami show added due to overwhelming demand. Rosal\u00eda performs from her album LUX, recorded with the London Symphony Orchestra.",
     "ticketUrl": "https://www.kaseyacenter.com/events/detail/rosalia",
     "source": {
       "name": "Cultural Attractions",
@@ -7747,7 +7577,7 @@
     "title": "PAMM: Art + Soul Community Day",
     "startAt": "2026-03-14T11:00:00",
     "timezone": "America/New_York",
-    "venueName": "Pérez Art Museum Miami",
+    "venueName": "P\u00e9rez Art Museum Miami",
     "address": "1103 Biscayne Blvd, Miami, FL 33132",
     "neighborhood": "Downtown",
     "lat": 25.7859,
@@ -7765,7 +7595,7 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Culture in full color.",
-    "editorialWhy": "Free community day at PAMM. Family activities, live performances, and gallery tours celebrating Miami's diverse communities. Located in Downtown Miami, Pérez Art Museum Miami is a local favorite. Best of all, it's free.",
+    "editorialWhy": "Free community day at PAMM. Family activities, live performances, and gallery tours celebrating Miami's diverse communities. Located in Downtown Miami, P\u00e9rez Art Museum Miami is a local favorite. Best of all, it's free.",
     "description": "Free community day at PAMM. Family activities, live performances, and gallery tours celebrating Miami's diverse communities.",
     "ticketUrl": "https://www.pamm.org",
     "source": {
@@ -8742,8 +8572,8 @@
     "priceLabel": "$$",
     "isOutdoor": false,
     "shortWhy": "Cheer on Miami's finest.",
-    "editorialWhy": "Miami Open Presented by Itaú. ATP and WTA stars battle on 29 tournament courts. Grounds pass access to outer courts. Located in Miami Gardens, Hard Rock Stadium is a local favorite.",
-    "description": "Miami Open Presented by Itaú. ATP and WTA stars battle on 29 tournament courts. Grounds pass access to outer courts.",
+    "editorialWhy": "Miami Open Presented by Ita\u00fa. ATP and WTA stars battle on 29 tournament courts. Grounds pass access to outer courts. Located in Miami Gardens, Hard Rock Stadium is a local favorite.",
+    "description": "Miami Open Presented by Ita\u00fa. ATP and WTA stars battle on 29 tournament courts. Grounds pass access to outer courts.",
     "ticketUrl": "https://www.miamiopen.com/",
     "source": {
       "name": "Cultural Attractions",
@@ -8980,8 +8810,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Nobody puts Baby in a corner — on a Miami Beach rooftop. Classic rom-com under the stars with wireless headphones. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
-    "description": "Nobody puts Baby in a corner — on a Miami Beach rooftop. Classic rom-com under the stars with wireless headphones.",
+    "editorialWhy": "Nobody puts Baby in a corner \u2014 on a Miami Beach rooftop. Classic rom-com under the stars with wireless headphones. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
+    "description": "Nobody puts Baby in a corner \u2014 on a Miami Beach rooftop. Classic rom-com under the stars with wireless headphones.",
     "ticketUrl": "https://rooftopcinemaclub.com/miami/",
     "source": {
       "name": "Cultural Attractions",
@@ -9745,38 +9575,6 @@
     "venueId": "collins-park-beach"
   },
   {
-    "id": "7bf6c05330b6b213",
-    "title": "On Running Club Miami",
-    "startAt": "2026-03-04T18:30:00",
-    "timezone": "America/New_York",
-    "venueName": "On Store Miami Design District",
-    "address": "125 NE 40th St, Miami, FL 33137",
-    "neighborhood": "Design District",
-    "lat": 25.8135,
-    "lng": -80.1918,
-    "city": "Miami",
-    "tags": [
-      "fitness",
-      "free-event",
-      "community",
-      "running",
-      "free"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Free workout with good people.",
-    "editorialWhy": "Weekly run club at On Running's Design District store. All levels welcome, from beginners to competitive runners. Located in Design District, On Store Miami Design District is a local favorite.",
-    "description": "Weekly run club at On Running's Design District store. All levels welcome, from beginners to competitive runners.",
-    "source": {
-      "name": "Run Clubs",
-      "url": "https://miami.weekly.run.events.on-running.com/"
-    },
-    "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
-    "editorPick": false,
-    "venueId": "on-store-design-district"
-  },
-  {
     "id": "df2de4d036435d61",
     "title": "On Running Club Miami",
     "startAt": "2026-03-11T18:30:00",
@@ -10031,39 +9829,6 @@
     "image": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80",
     "editorPick": true,
     "venueId": "52304abaa61f"
-  },
-  {
-    "id": "cbdfd8dc53b93d14",
-    "title": "O Cinema Wynwood: Documentary Thursday",
-    "startAt": "2026-03-05T19:30:00",
-    "timezone": "America/New_York",
-    "venueName": "O Cinema South Beach",
-    "address": "1130 Washington Ave, Miami Beach, FL 33139",
-    "neighborhood": "South Beach",
-    "lat": 25.7821,
-    "lng": -80.1344,
-    "city": "Miami",
-    "tags": [
-      "film",
-      "local-favorite",
-      "indie",
-      "arthouse",
-      "film-festival"
-    ],
-    "category": "Art",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Weekly documentary screening in the heart of Wynwood. New release docs every Thursday with audience discussion. Located in Wynwood, O Cinema Wynwood is a local favorite.",
-    "description": "Weekly documentary screening in the heart of Wynwood. New release docs every Thursday with audience discussion.",
-    "ticketUrl": "https://www.o-cinema.org/wynwood",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://www.o-cinema.org/wynwood"
-    },
-    "image": "https://images.unsplash.com/photo-1503095396549-807759245b35?w=800&q=80",
-    "editorPick": true,
-    "venueId": "o-cinema"
   },
   {
     "id": "ed134c6f6777c988",
@@ -11150,8 +10915,8 @@
     "priceLabel": "$",
     "isOutdoor": false,
     "shortWhy": "Dive into Miami's cultural richness.",
-    "editorialWhy": "Sandy and Danny under the Miami stars. Sing along encouraged — sing-along version with on-screen lyrics. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
-    "description": "Sandy and Danny under the Miami stars. Sing along encouraged — sing-along version with on-screen lyrics.",
+    "editorialWhy": "Sandy and Danny under the Miami stars. Sing along encouraged \u2014 sing-along version with on-screen lyrics. Located in South Beach, Rooftop Cinema Club South Beach is a local favorite.",
+    "description": "Sandy and Danny under the Miami stars. Sing along encouraged \u2014 sing-along version with on-screen lyrics.",
     "ticketUrl": "https://rooftopcinemaclub.com/miami/",
     "source": {
       "name": "Cultural Attractions",
@@ -11184,8 +10949,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "Free outdoor Wallcast. Stéphane Denève conducts with Miami City Ballet in an American dance celebration. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
-    "description": "Free outdoor Wallcast. Stéphane Denève conducts with Miami City Ballet in an American dance celebration.",
+    "editorialWhy": "Free outdoor Wallcast. St\u00e9phane Den\u00e8ve conducts with Miami City Ballet in an American dance celebration. Located in South Beach, Soundscape Park is a local favorite. Best of all, it's free.",
+    "description": "Free outdoor Wallcast. St\u00e9phane Den\u00e8ve conducts with Miami City Ballet in an American dance celebration.",
     "ticketUrl": "https://www.nws.edu/events-tickets/wallcast-concerts-and-park-events/",
     "source": {
       "name": "Cultural Attractions",
@@ -11498,39 +11263,6 @@
     "venueId": "miami-freedom-park"
   },
   {
-    "id": "ea137a4a01e61161",
-    "title": "Yoga at North Beach Bandshell",
-    "startAt": "2026-03-03T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "North Beach Bandshell",
-    "address": "7275 Collins Ave, Miami Beach, FL 33141",
-    "neighborhood": "North Beach",
-    "lat": 25.8672,
-    "lng": -80.121,
-    "city": "Miami",
-    "tags": [
-      "wellness",
-      "free-event",
-      "outdoor",
-      "beachside",
-      "community",
-      "local-favorite"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Magic City.",
-    "editorialWhy": "Free outdoor yoga at the North Beach Bandshell. Presented by City of Miami Beach Parks and Recreation. Located in North Beach, North Beach Bandshell is a local favorite.",
-    "description": "Free outdoor yoga at the North Beach Bandshell. Presented by City of Miami Beach Parks and Recreation.",
-    "source": {
-      "name": "Free Yoga Miami",
-      "url": "https://www.miamiandbeaches.com/things-to-do/spa-wellness/free-yoga-in-miami"
-    },
-    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
-    "editorPick": false,
-    "venueId": "north-beach-bandshell"
-  },
-  {
     "id": "516415fe0e118666",
     "title": "Yoga at North Beach Bandshell",
     "startAt": "2026-03-10T18:00:00",
@@ -11751,39 +11483,6 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Wellness done right.",
-    "editorialWhy": "Free outdoor yoga at the North Beach Bandshell. Presented by City of Miami Beach Parks and Recreation. Located in North Beach, North Beach Bandshell is a local favorite.",
-    "description": "Free outdoor yoga at the North Beach Bandshell. Presented by City of Miami Beach Parks and Recreation.",
-    "source": {
-      "name": "Free Yoga Miami",
-      "url": "https://www.miamiandbeaches.com/things-to-do/spa-wellness/free-yoga-in-miami"
-    },
-    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
-    "editorPick": false,
-    "venueId": "north-beach-bandshell"
-  },
-  {
-    "id": "6bb32c21edcb797c",
-    "title": "Yoga at North Beach Bandshell",
-    "startAt": "2026-03-05T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "North Beach Bandshell",
-    "address": "7275 Collins Ave, Miami Beach, FL 33141",
-    "neighborhood": "North Beach",
-    "lat": 25.8672,
-    "lng": -80.121,
-    "city": "Miami",
-    "tags": [
-      "wellness",
-      "free-event",
-      "outdoor",
-      "beachside",
-      "community",
-      "local-favorite"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Find your calm in the Magic City.",
     "editorialWhy": "Free outdoor yoga at the North Beach Bandshell. Presented by City of Miami Beach Parks and Recreation. Located in North Beach, North Beach Bandshell is a local favorite.",
     "description": "Free outdoor yoga at the North Beach Bandshell. Presented by City of Miami Beach Parks and Recreation.",
     "source": {
@@ -12116,40 +11815,6 @@
     "venueId": "ef1c94830d95"
   },
   {
-    "id": "d0e50452cbad9ecd",
-    "title": "Churchill's Pub: Open Mic Night",
-    "startAt": "2026-03-04T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Churchill's Pub",
-    "address": "5501 NE 2nd Ave, Miami, FL 33137",
-    "neighborhood": "Little Haiti",
-    "lat": 25.831,
-    "lng": -80.1929,
-    "city": "Miami",
-    "tags": [
-      "live-music",
-      "community",
-      "local-favorite",
-      "divey",
-      "punk",
-      "legendary"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Wednesday open mic at Churchill's. Sign up to perform or just enjoy Miami's underground music scene. Located in Little Haiti, Churchill's Pub is a local favorite. Best of all, it's free.",
-    "description": "Wednesday open mic at Churchill's. Sign up to perform or just enjoy Miami's underground music scene.",
-    "ticketUrl": "https://churchillspub.com",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://churchillspub.com"
-    },
-    "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&q=80",
-    "editorPick": true,
-    "venueId": "churchills"
-  },
-  {
     "id": "e9d01f9ba39b9b70",
     "title": "Churchill's Pub: Open Mic Night",
     "startAt": "2026-03-11T20:00:00",
@@ -12318,40 +11983,6 @@
     "image": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=800&q=80",
     "editorPick": true,
     "venueId": "rooftop-cinema"
-  },
-  {
-    "id": "aebf90ba481df0ad",
-    "title": "Gramps: Trivia Tuesday",
-    "startAt": "2026-03-03T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Gramps",
-    "address": "176 NW 24th St, Miami, FL 33127",
-    "neighborhood": "Wynwood",
-    "lat": 25.8002,
-    "lng": -80.1946,
-    "city": "Miami",
-    "tags": [
-      "bar",
-      "community",
-      "local-favorite",
-      "divey",
-      "drag",
-      "queer"
-    ],
-    "category": "Nightlife",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Weekly bar trivia at Gramps. Teams of up to 6 compete for bar tabs. Miami's most fun Tuesday night. Located in Wynwood, Gramps is a local favorite. Best of all, it's free.",
-    "description": "Weekly bar trivia at Gramps. Teams of up to 6 compete for bar tabs. Miami's most fun Tuesday night.",
-    "ticketUrl": "https://gramps.com",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://gramps.com"
-    },
-    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
-    "editorPick": true,
-    "venueId": "gramps"
   },
   {
     "id": "7532bed3672da430",
@@ -13428,38 +13059,6 @@
     "venueId": "lincoln-road-farmers-market"
   },
   {
-    "id": "2311c029cdd55f5f",
-    "title": "Don't Tell Comedy - Secret Show",
-    "startAt": "2026-03-05T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Secret Location (Wynwood)",
-    "address": "Wynwood, Miami, FL 33127",
-    "neighborhood": "Wynwood",
-    "lat": 25.8011,
-    "lng": -80.1996,
-    "city": "Miami",
-    "tags": [
-      "comedy",
-      "local-favorite"
-    ],
-    "category": "Comedy",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Laugh out loud with Miami's comedy scene.",
-    "editorialWhy": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged. Located in Wynwood, Secret Location (Wynwood) is a local favorite.",
-    "description": "Underground comedy show at a secret location. Location revealed day-of via text. BYOB encouraged.",
-    "ticketUrl": "https://www.donttellcomedy.com/miami",
-    "source": {
-      "name": "Don't Tell Comedy",
-      "url": "https://www.donttellcomedy.com/miami"
-    },
-    "image": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80",
-    "editorPick": true,
-    "seriesId": "cadae11ec26c",
-    "seriesName": "Don't Tell Comedy - Secret Show",
-    "venueId": "6a7796b66e76"
-  },
-  {
     "id": "a7bd0814ef31fe86",
     "title": "Don't Tell Comedy - Secret Show",
     "startAt": "2026-03-12T20:00:00",
@@ -13996,40 +13595,6 @@
     "seriesId": "6188ca1a6c53",
     "seriesName": "Las Rosas: DJ Night",
     "venueId": "las-rosas"
-  },
-  {
-    "id": "881fb5f79d76decc",
-    "title": "Gramps: Reggae Wednesday",
-    "startAt": "2026-03-04T22:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Gramps",
-    "address": "176 NW 24th St, Miami, FL 33127",
-    "neighborhood": "Wynwood",
-    "lat": 25.8002,
-    "lng": -80.1946,
-    "city": "Miami",
-    "tags": [
-      "dj",
-      "nightlife",
-      "local-favorite",
-      "dancing",
-      "divey",
-      "drag"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
-    "editorialWhy": "Weekly reggae night at Gramps. Live DJs, drinks specials, and the best outdoor patio in Wynwood. Located in Wynwood, Gramps is a local favorite. Best of all, it's free.",
-    "description": "Weekly reggae night at Gramps. Live DJs, drinks specials, and the best outdoor patio in Wynwood.",
-    "ticketUrl": "https://gramps.com",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://gramps.com"
-    },
-    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
-    "editorPick": true,
-    "venueId": "gramps"
   },
   {
     "id": "55f1bb6f96bbfc69",
@@ -15318,72 +14883,6 @@
     "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": true,
     "venueId": "fpl-solar"
-  },
-  {
-    "id": "cd8b1a4df3ee58c0",
-    "title": "260 Sample Sale Weekly Drop",
-    "startAt": "2026-03-04T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "260 Sample Sale",
-    "address": "2450 NW 2nd Ave, Miami, FL 33127",
-    "neighborhood": "Wynwood",
-    "lat": 25.7986,
-    "lng": -80.1996,
-    "city": "Miami",
-    "tags": [
-      "pop-up",
-      "shopping",
-      "fashion",
-      "deals"
-    ],
-    "category": "Shopping",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Weekly rotating designer sample sales with up to 80% off luxury brands. New drops every week. Located in Wynwood, 260 Sample Sale is a local favorite. Best of all, it's free.",
-    "description": "Weekly rotating designer sample sales with up to 80% off luxury brands. New drops every week.",
-    "source": {
-      "name": "Pop-Ups",
-      "url": "https://260samplesale.com/"
-    },
-    "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
-    "editorPick": false,
-    "seriesId": "b9086c6ae372",
-    "seriesName": "260 Sample Sale Weekly Drop",
-    "venueId": "260-sample-sale"
-  },
-  {
-    "id": "152c66a09546785f",
-    "title": "260 Sample Sale Weekly Drop",
-    "startAt": "2026-03-05T11:00:00",
-    "timezone": "America/New_York",
-    "venueName": "260 Sample Sale",
-    "address": "2450 NW 2nd Ave, Miami, FL 33127",
-    "neighborhood": "Wynwood",
-    "lat": 25.7986,
-    "lng": -80.1996,
-    "city": "Miami",
-    "tags": [
-      "pop-up",
-      "shopping",
-      "fashion",
-      "deals"
-    ],
-    "category": "Shopping",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Weekly rotating designer sample sales with up to 80% off luxury brands. New drops every week. Located in Wynwood, 260 Sample Sale is a local favorite. Best of all, it's free.",
-    "description": "Weekly rotating designer sample sales with up to 80% off luxury brands. New drops every week.",
-    "source": {
-      "name": "Pop-Ups",
-      "url": "https://260samplesale.com/"
-    },
-    "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
-    "editorPick": false,
-    "seriesId": "b9086c6ae372",
-    "seriesName": "260 Sample Sale Weekly Drop",
-    "venueId": "260-sample-sale"
   },
   {
     "id": "ed87042fcd683db3",
@@ -17689,39 +17188,6 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Find your calm in the Magic City.",
-    "editorialWhy": "Free outdoor yoga in Collins Park presented by City of Miami Beach Parks and Recreation. Located in South Beach, Collins Park at The Bass is a local favorite.",
-    "description": "Free outdoor yoga in Collins Park presented by City of Miami Beach Parks and Recreation.",
-    "source": {
-      "name": "Free Yoga Miami",
-      "url": "https://www.miamiandbeaches.com/things-to-do/spa-wellness/free-yoga-in-miami"
-    },
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
-    "editorPick": false,
-    "venueId": "the-bass"
-  },
-  {
-    "id": "17b0900b0b222cf2",
-    "title": "Yoga at Collins Park",
-    "startAt": "2026-03-04T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "The Bass",
-    "address": "2100 Collins Ave, Miami Beach, FL 33139",
-    "neighborhood": "South Beach",
-    "lat": 25.795,
-    "lng": -80.1302,
-    "city": "Miami",
-    "tags": [
-      "wellness",
-      "free-event",
-      "outdoor",
-      "park",
-      "museum",
-      "contemporary-art"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": true,
-    "shortWhy": "Reset and recharge.",
     "editorialWhy": "Free outdoor yoga in Collins Park presented by City of Miami Beach Parks and Recreation. Located in South Beach, Collins Park at The Bass is a local favorite.",
     "description": "Free outdoor yoga in Collins Park presented by City of Miami Beach Parks and Recreation.",
     "source": {
@@ -20684,39 +20150,6 @@
     "venueId": "the-ground"
   },
   {
-    "id": "64ddbbbee2407486",
-    "title": "Miami Heat vs Brooklyn Nets",
-    "startAt": "2026-03-05T19:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Kaseya Center",
-    "address": "601 Biscayne Blvd, Miami, FL 33132",
-    "neighborhood": "Downtown",
-    "lat": 25.7814,
-    "lng": -80.187,
-    "city": "Miami",
-    "tags": [
-      "sports",
-      "local-favorite",
-      "massive",
-      "arena",
-      "concerts"
-    ],
-    "category": "Sports",
-    "priceLabel": "$$",
-    "isOutdoor": false,
-    "shortWhy": "Cheer on Miami's finest.",
-    "editorialWhy": "NBA basketball: Miami Heat take on the Brooklyn Nets at Kaseya Center. Located in Downtown, Kaseya Center is a local favorite.",
-    "description": "NBA basketball: Miami Heat take on the Brooklyn Nets at Kaseya Center.",
-    "ticketUrl": "https://www.nba.com/heat/schedule",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://www.nba.com/heat/schedule"
-    },
-    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
-    "editorPick": true,
-    "venueId": "kaseya-center"
-  },
-  {
     "id": "50b5b75bfd74c79d",
     "title": "Gramps: Trivia Tuesday",
     "startAt": "2026-03-31T20:00:00",
@@ -20923,39 +20356,5 @@
     "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
     "editorPick": true,
     "venueId": "hard-rock-stadium"
-  },
-  {
-    "id": "1c51b3cc42614aae",
-    "title": "Brainville Presents: Bilal",
-    "startAt": "2026-03-05T22:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Floyd Miami",
-    "address": "34 NE 11th St, Miami, FL 33132",
-    "neighborhood": "Downtown",
-    "lat": 25.7858,
-    "lng": -80.1927,
-    "city": "Miami",
-    "tags": [
-      "live-music",
-      "local-favorite",
-      "intimate",
-      "underground",
-      "house",
-      "techno"
-    ],
-    "category": "Music",
-    "priceLabel": "$",
-    "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Miami's best spots.",
-    "editorialWhy": "Neo-soul artist Bilal performs live. Located in Downtown, Floyd Miami is a local favorite.",
-    "description": "Neo-soul artist Bilal performs live.",
-    "ticketUrl": "https://dice.fm/venue/floyd-miami-q8mo",
-    "source": {
-      "name": "Cultural Attractions",
-      "url": "https://dice.fm/venue/floyd-miami-q8mo"
-    },
-    "image": "https://images.unsplash.com/photo-1545128485-c400e7702796?w=800&q=80",
-    "editorPick": true,
-    "venueId": "floyd-miami"
   }
 ]

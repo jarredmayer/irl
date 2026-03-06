@@ -387,8 +387,8 @@ export class BrandingAgent {
     // Seed for hash-based image rotation — unique per event
     const seed = event.id || `${event.title}|${event.startAt}`;
 
-    // 1. Native event image — always wins
-    if (event.image) return event.image;
+    // 1. Native event image — always wins (but not Unsplash fallbacks from prior runs)
+    if (event.image && !event.image.includes('images.unsplash.com')) return event.image;
 
     // 1.5. Real venue photo from VenueImageFetcher
     if (event.source?.url) {
