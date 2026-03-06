@@ -4,85 +4,89 @@
 
 ## Access Method
 
-**No public API.** Miami New Times is part of the Voice Media Group alt-weekly network. Their events calendar lives at `miaminewtimes.com/events` (or similar paths, they've reorganized several times).
+**No public API or RSS feed.** Miami New Times runs on **WordPress** (Voice Media Group / "vmg" theme) with events served at `/eventsearch/`. No Cloudflare protection — site is directly accessible.
 
-**Current scraper status:** The existing IRL scraper has a "Miami New Times" source that **errors with "Timed out after 120s"**, suggesting the scraper exists but is broken — likely due to site redesign or anti-bot measures.
+**URL patterns:**
+- Listing page: `miaminewtimes.com/eventsearch/?narrowByDate=YYYY-MM-DD&page=1`
+- Detail pages: `miaminewtimes.com/event/{slug}-{numeric-id}/`
+- Event type archives: `miaminewtimes.com/eventtype/{type}/`
 
-**Web scraping approach:**
-- The events calendar is server-rendered HTML
-- Voice Media Group sites have been known to use various CMS platforms (historically WordPress, custom)
-- May have Cloudflare or similar CDN protection
-- Events pages may require JavaScript rendering (headless browser needed)
-- Site has been redesigned multiple times — scraper selectors may be stale
+**Internal AJAX endpoint:** `/wp-admin/admin-ajax.php` — nonce-protected, not a viable public API.
 
-**Potential structured data:**
-- Events may have JSON-LD or schema.org markup (common for media sites)
-- RSS feeds may exist for editorial content but unlikely for events calendar
-- Check for `sitemap.xml` entries for events
+**Current scraper status:** `scraper/src/sources/miami-new-times.ts` exists and uses Cheerio HTML scraping. **Errors with "Timed out after 120s"**. Root cause identified: the N+1 scraping pattern (1 listing page + N detail pages per day, across 14 days) with 500ms/1000ms delays easily exceeds the 120s timeout. Uses 1000ms between listing requests and 500ms between detail fetches.
+
+**No JSON-LD Event schema** on detail pages (only generic WebPage schema). Listing pages render server-side HTML.
+
+**Bot detection:** reCAPTCHA v3 is loaded on the site (site key: `6LeLxtErAAAAAC8i_LTqxCNvETXTw3wZZePixRFp`), which may trigger on rapid automated requests and cause hangs — likely contributing to the timeout issue.
 
 ## Data Quality
 
-**High editorial value for local events.** Miami New Times is the premier alt-weekly for the Miami area and covers:
-- Music shows across all genres (electronic, hip-hop, Latin, jazz, indie)
+**Good editorial value for local events.** Miami New Times is the premier alt-weekly for the Miami area and covers:
+- Music shows across all genres (electronic, hip-hop, Latin, jazz, indie, punk, hardcore)
 - Art openings and gallery events
 - Food/drink events (pop-ups, tastings, restaurant openings)
 - Comedy shows
 - Community events and festivals
 - Cultural events (Little Havana, Little Haiti, Overtown, etc.)
+- Strong at alt-scene venues (Churchill's Pub, etc.)
 
-**Available fields (typical for alt-weekly calendars):**
-- Event title
-- Date, start time (end time sometimes missing)
-- Venue name and address
-- Category (music, art, food, comedy, etc.)
-- Short description / editorial blurb
-- Image (often editorial photography)
-- Price info (sometimes)
-- Ticket link (sometimes)
+**Available fields (verified from live pages):**
+- Event title — always present
+- Date/Time — present (e.g., "Friday, March 6, 8:00 pm")
+- Venue name — present (e.g., "Churchill's Pub")
+- Address — sometimes missing from detail page, requires regex extraction
+- Neighborhood — sometimes present as a field on listings
+- Category — present (e.g., "Hardcore, Music")
+- Image — high-res featured image available
+- Price — present when available (e.g., "$29.71"), sometimes "TBA"
+- Ticket link — present (Ticketmaster/TicketWeb affiliates)
+- Description — **frequently thin or absent** on detail pages
+
+**Sample volume:** ~8 events per day on listing pages.
 
 **Strengths:**
-- Editorially curated — events are selected for quality, not just listed
 - Covers the full spectrum of Miami events (not just one genre)
 - Strong local focus — no tourist-trap filler
-- Editorial descriptions add context beyond raw event data
 - Covers neighborhoods deeply (Little Havana, Wynwood, Design District, etc.)
+- Particularly strong for alternative/indie scene events
 
 **Weaknesses:**
-- No structured API — scraping required
-- Data completeness varies (end times, prices often missing)
-- Calendar may not be comprehensive — they curate selectively
-- Site redesigns break scrapers periodically
+- Descriptions are frequently thin or absent — lower metadata quality than Eventbrite or Dice
+- No structured JSON-LD for events
+- End times and prices often missing
+- Address extraction can be unreliable
 
 ## Rate Limits
 
-No documented rate limits. Standard web scraping considerations:
-- Respect `robots.txt`
-- 2-3 second delays between requests
-- Avoid scraping during peak hours
+- **robots.txt:** No crawl-delay directive. `/events` and `/eventsearch` paths are **not disallowed** — scraping is permitted by robots.txt.
+- reCAPTCHA v3 may throttle or block rapid automated requests
+- Existing scraper uses 1000ms (listings) / 500ms (details) delays
 
 ## ToS Risks
 
-**Risk level: MEDIUM**
+**Risk level: MEDIUM-HIGH**
 
-- Standard media site ToS prohibiting automated access
-- Voice Media Group is a mid-size media company — unlikely to pursue legal action against small-scale scraping
+- ToS explicitly prohibits using "any automated device, spider, robot, crawler, data mining tool" without express permission
+- Standard boilerplate for media sites — scraping event metadata (titles, dates, venues) carries lower practical risk than scraping editorial content
+- Voice Media Group is a mid-size media company — unlikely to pursue legal action for small-scale metadata scraping
 - **Mitigation:** Attribute source, link to New Times event pages, keep volume low
-- Consider reaching out editorially — alt-weeklies sometimes partner with local apps
+- Consider editorial partnership — alt-weeklies sometimes partner with local apps
 
 ## Recommended Approach
 
-1. **Debug the existing scraper:** The timeout error suggests the scraper needs updating. Check if the events calendar URL changed or if the page requires JavaScript rendering.
+1. **Fix the timeout — architecture change required:**
+   - **Option A (recommended):** Extract data from listing pages only (title, date, venue, neighborhood, price, image, link). Skip detail page fetches entirely. This cuts request count from ~120+ to ~14.
+   - **Option B:** Fetch detail pages only for events missing critical fields, with a hard cap (e.g., max 20 detail fetches per run).
+   - **Option C:** Reduce date range from 14 days to 7 days.
 
-2. **Use headless browser (Puppeteer):** The existing scraper infrastructure already uses Puppeteer — ensure the New Times scraper is using it with proper wait conditions.
+2. **Add proper browser User-Agent** to avoid reCAPTCHA v3 triggering.
 
-3. **Parse JSON-LD first:** Check event pages for `<script type="application/ld+json">` with schema.org/Event data. This is more stable than CSS selectors.
+3. **Increase per-request timeout** while reducing total request count — the issue is per-request blocking, not aggregate time.
 
-4. **Fallback to HTML parsing:** If no structured data, parse the calendar HTML with Cheerio.
+4. **Set `trustTier: 'scraped_known_venue'`** — curated content from a known local publication.
 
-5. **Set `trustTier: 'scraped_known_venue'`** — editorially curated content from a known local publication.
+5. **Editorial partnership:** Consider reaching out to Miami New Times for a content partnership. They may provide a data feed in exchange for attribution and traffic.
 
-6. **Editorial partnership:** Consider reaching out to Miami New Times for a content partnership. They may provide a data feed in exchange for attribution and traffic.
+## Priority: Medium
 
-## Priority: High
-
-Miami New Times is the single best source for editorially curated, cross-genre local events. The existing scraper just needs fixing (timeout issue). High value for IRL's mission of surfacing quality local events across all categories.
+Miami New Times covers the full spectrum of Miami local events with editorial curation, but data quality is only moderate (thin descriptions, missing addresses). The fix is straightforward — primarily a timeout/architecture issue, not a fundamental access problem. The site is not behind hard anti-bot walls and robots.txt is permissive. Worth fixing but data enrichment from other sources may be needed.
