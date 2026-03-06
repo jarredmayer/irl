@@ -9,15 +9,16 @@ interface LeadSectionProps {
   isSaved?: boolean;
   onSave?: (eventId: string) => void;
   weather?: WeatherForecast | null;
+  leadIntro?: string;
 }
 
-export function LeadSection({ event, isSaved = false, onSave, weather }: LeadSectionProps) {
+export function LeadSection({ event, isSaved = false, onSave, weather, leadIntro }: LeadSectionProps) {
   const navigate = useNavigate();
   const cat = CATEGORY_COLORS[event.category] ?? CATEGORY_COLORS['Other'];
   const eventWeather = weather ? getWeatherForTime(weather, event.startAt) : null;
 
-  // Static editorial context (will be AI-generated in Phase 5)
-  const editorialContext = "This is the one worth moving your plans for.";
+  // Use provided intro or fallback
+  const editorialContext = leadIntro || "Top pick for tonight.";
 
   const handleClick = () => {
     navigate(`/event/${event.id}`);

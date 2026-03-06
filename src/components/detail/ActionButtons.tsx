@@ -44,7 +44,7 @@ export function ActionButtons({ event }: ActionButtonsProps) {
       await navigator.clipboard.writeText(
         `${event.title}\n${event.shortWhy}\n${window.location.href}`
       );
-      alert('Link copied to clipboard!');
+      alert('Link copied to clipboard');
     }
   };
 

@@ -110,7 +110,7 @@ export function ProfileView({
     saveUserSubmittedEvent(event);
     setSubmittedEvents(getUserSubmittedEvents());
     setShowSubmitForm(false);
-    setSubmitSuccessMessage('Event submitted! We\'ll review it shortly.');
+    setSubmitSuccessMessage('Event submitted. We\'ll review it shortly.');
     setShowSubmitSuccess(true);
     setTimeout(() => setShowSubmitSuccess(false), 3000);
   };
@@ -119,7 +119,7 @@ export function ProfileView({
     saveSubmittedAccount(account);
     setSubmittedAccounts(getSubmittedAccounts());
     setShowSubmitAccountForm(false);
-    setSubmitSuccessMessage(`@${account.handle} submitted — thanks for the tip!`);
+    setSubmitSuccessMessage(`@${account.handle} submitted — thanks for the tip.`);
     setShowSubmitSuccess(true);
     setTimeout(() => setShowSubmitSuccess(false), 3000);
   };
@@ -512,7 +512,7 @@ export function ProfileView({
         {/* App Info */}
         <section className="text-center text-sm text-ink-3 py-4">
           <p className="font-wordmark text-[22px] text-ink">IRL</p>
-          <p>Curated local discovery</p>
+          <p>Local events worth your time</p>
           <p className="mt-1">Miami · Ft. Lauderdale · Palm Beach</p>
         </section>
       </div>

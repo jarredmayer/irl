@@ -78,7 +78,7 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
             fontWeight: 400,
           }}
         >
-          your city, curated
+          worth leaving the house for
         </p>
 
         {/* Cities */}
@@ -100,7 +100,7 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
             onComplete();
           }}
         >
-          Find your weekend →
+          What's on →
         </button>
 
         {/* Tap hint */}

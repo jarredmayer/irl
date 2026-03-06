@@ -126,7 +126,7 @@ export function AISettingsModal({ isOpen, onClose }: AISettingsModalProps) {
                 <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                Personalized event insights
+                Smart event matching
               </li>
             </ul>
           </div>
@@ -154,7 +154,7 @@ export function AISettingsModal({ isOpen, onClose }: AISettingsModalProps) {
             disabled={!key.trim()}
             className="px-4 py-2 text-sm bg-sky-500 hover:bg-sky-600 disabled:opacity-50 text-white rounded-lg transition-colors"
           >
-            {saved ? 'Saved!' : 'Save'}
+            {saved ? 'Saved' : 'Save'}
           </button>
         </div>
       </div>

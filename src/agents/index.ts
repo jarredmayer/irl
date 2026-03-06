@@ -8,13 +8,14 @@
  */
 
 export {
+  generateEditorialCopy,
   generateEditorial,
   getYourcastEditorial,
   getCachedEditorial,
   clearEditorialCache,
 } from './editorial-agent';
 
-export type { YourcastEditorial, EditorialInput } from './prompts/editorial';
+export type { EditorialResult } from './editorial-agent';
 
 export {
   generateEventImage,

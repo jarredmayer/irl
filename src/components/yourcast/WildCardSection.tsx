@@ -11,18 +11,20 @@ interface WildCardSectionProps {
   isFollowingVenue?: boolean;
   isFollowingSeries?: boolean;
   isFollowingNeighborhood?: boolean;
+  wildCardLabel?: string;
 }
 
 export function WildCardSection({
   event,
   isSaved = false,
   onSave,
+  wildCardLabel,
 }: WildCardSectionProps) {
   const navigate = useNavigate();
   const cat = CATEGORY_COLORS[event.category] ?? CATEGORY_COLORS['Other'];
 
-  // Static context line (will be AI-generated in Phase 5)
-  const contextLine = "You might not know about this one";
+  // Use provided label or fallback
+  const contextLine = wildCardLabel || "Under the radar.";
 
   const handleClick = () => {
     navigate(`/event/${event.id}`);

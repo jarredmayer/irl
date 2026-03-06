@@ -4,7 +4,7 @@ import { ListSection } from './ListSection';
 import { NudgeSection } from './NudgeSection';
 import { WildCardSection } from './WildCardSection';
 import { ShareableCard } from './ShareableCard';
-import { getYourcastEditorial, type YourcastEditorial } from '../../agents';
+import { generateEditorialCopy, type EditorialResult } from '../../agents';
 import { getPreferences } from '../../store/preferences';
 import type { ScoredEvent, FollowType } from '../../types';
 
@@ -64,25 +64,6 @@ function applyPreferenceBoost(
   return boost;
 }
 
-// Get list title based on theme
-function getListTitle(theme?: string): string {
-  switch (theme) {
-    case 'sunny_weekend':
-      return 'SUNNY THIS WEEKEND';
-    case 'rainy_indoor':
-      return 'STAY DRY THIS WEEKEND';
-    case 'arts_week':
-      return 'ART FORWARD';
-    case 'nightlife_forward':
-      return 'AFTER DARK';
-    case 'outdoor_explorer':
-      return 'GET OUTSIDE';
-    case 'mixed':
-    default:
-      return 'THIS WEEKEND';
-  }
-}
-
 export function YourcastView({
   events,
   onFollow,
@@ -93,33 +74,27 @@ export function YourcastView({
   onSaveEvent,
 }: YourcastViewProps) {
   const [showShareCard, setShowShareCard] = useState(false);
-  const [editorial, setEditorial] = useState<YourcastEditorial | null>(null);
-  const [, setIsLoadingEditorial] = useState(true);
+  const [copy, setCopy] = useState<EditorialResult>({
+    headline: 'Tonight in Miami',
+    subhead: "What's worth going to.",
+    leadIntro: 'Top pick for tonight.',
+    wildCardLabel: 'Under the radar.',
+  });
+  const [copyLoading, setCopyLoading] = useState(true);
 
   // Fetch editorial content on mount
   useEffect(() => {
-    async function loadEditorial() {
-      if (events.length === 0) {
-        setIsLoadingEditorial(false);
-        return;
-      }
+    if (events.length === 0) return;
 
-      try {
-        const content = await getYourcastEditorial(events);
-        setEditorial(content);
-      } catch (error) {
-        console.error('Failed to load editorial:', error);
-      } finally {
-        setIsLoadingEditorial(false);
-      }
-    }
-
-    loadEditorial();
+    generateEditorialCopy(events)
+      .then(result => {
+        setCopy(result);
+        setCopyLoading(false);
+      })
+      .catch(() => {
+        setCopyLoading(false);
+      });
   }, [events]);
-
-  // Use editorial content or fallback
-  const headline = editorial?.headline || "A good week to be outside.";
-  const subtitle = editorial?.subheadline || "Three art-forward picks, one long lunch, and a waterfront walk — all within 15 minutes.";
 
   // Get user preferences for boosting
   const { interests, city, vibes } = getPreferences();
@@ -249,14 +224,22 @@ export function YourcastView({
         </p>
 
         {/* Editorial headline */}
-        <h1 className="font-serif text-[28px] text-ink leading-snug mb-3 italic">
-          {headline}
-        </h1>
+        {copyLoading ? (
+          <div className="h-9 w-3/4 bg-soft rounded animate-pulse mb-3" />
+        ) : (
+          <h1 className="font-serif text-[28px] text-ink leading-snug mb-3 italic">
+            {copy.headline}
+          </h1>
+        )}
 
         {/* Subtitle */}
-        <p className="text-ink-2 text-[14px] font-light leading-relaxed">
-          {subtitle}
-        </p>
+        {copyLoading ? (
+          <div className="h-5 w-full bg-soft rounded animate-pulse" />
+        ) : (
+          <p className="text-ink-2 text-[14px] font-light leading-relaxed">
+            {copy.subhead}
+          </p>
+        )}
 
         {/* Week label */}
         <p className="text-xs text-ink-3 mt-4 uppercase tracking-wider">
@@ -270,6 +253,7 @@ export function YourcastView({
           event={leadEvent}
           isSaved={savedEventIds.includes(leadEvent.id)}
           onSave={onSaveEvent}
+          leadIntro={copy.leadIntro}
         />
       )}
 
@@ -277,7 +261,7 @@ export function YourcastView({
       {listEvents.length > 0 && (
         <ListSection
           events={listEvents}
-          title={getListTitle(editorial?.yourcast_theme)}
+          title="THIS WEEKEND"
           savedEventIds={savedEventIds}
           onSaveEvent={onSaveEvent}
           onFollow={onFollow}
@@ -306,13 +290,14 @@ export function YourcastView({
           isFollowingVenue={wildcardEvent.venueId ? followingVenueIds.includes(wildcardEvent.venueId) : false}
           isFollowingSeries={wildcardEvent.seriesId ? followingSeriesIds.includes(wildcardEvent.seriesId) : false}
           isFollowingNeighborhood={followingNeighborhoods.includes(wildcardEvent.neighborhood)}
+          wildCardLabel={copy.wildCardLabel}
         />
       )}
 
       {/* Shareable Card Modal */}
       {showShareCard && (
         <ShareableCard
-          headline={headline}
+          headline={copy.headline}
           events={[leadEvent, ...listEvents.slice(0, 2)].filter(Boolean) as ScoredEvent[]}
           weekLabel={getWeekLabel()}
           onClose={handleCloseShare}

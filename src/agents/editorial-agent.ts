@@ -1,250 +1,188 @@
 /**
- * Editorial Voice Agent (Yourcast)
+ * Editorial Voice Agent
  *
- * Generates weekly Yourcast editorial content using Claude.
- * Runs on schedule (Thursday morning) or on-demand.
- *
- * Features:
- * - Weather-aware editorial framing
- * - Caches output in localStorage with 6-hour TTL
- * - Graceful fallback when API unavailable
+ * Generates daily Yourcast copy using Claude Haiku.
+ * Terse, local, unsentimental — like a friend who actually goes out.
  */
 
-import Anthropic from '@anthropic-ai/sdk';
-import {
-  EDITORIAL_SYSTEM_PROMPT,
-  type YourcastEditorial,
-  type EditorialInput,
-} from './prompts/editorial';
-import type { Event } from '../types';
+import type { ScoredEvent } from '../types';
+import { getPreferences } from '../store/preferences';
 
-const CACHE_KEY = 'yourcast_editorial';
-const CACHE_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
+const CACHE_KEY_PREFIX = 'irl_editorial_';
 
-interface CachedEditorial {
-  data: YourcastEditorial;
-  cachedAt: number;
-  weekOf: string;
+export interface EditorialResult {
+  headline: string;
+  subhead: string;
+  leadIntro: string;
+  wildCardLabel: string;
 }
 
-/**
- * Get cached editorial if valid
- */
-export function getCachedEditorial(): YourcastEditorial | null {
+interface CacheEntry {
+  result: EditorialResult;
+  ts: number;
+  key: string;
+}
+
+const FALLBACKS: EditorialResult = {
+  headline: 'Tonight in Miami',
+  subhead: "What's worth going to.",
+  leadIntro: 'Top pick for tonight.',
+  wildCardLabel: 'Under the radar.',
+};
+
+// Cache key based on date + top 3 event IDs
+// so it regenerates daily or when events change
+function getCacheKey(events: ScoredEvent[]): string {
+  const date = new Date().toISOString().slice(0, 10);
+  const ids = events.slice(0, 3).map(e => e.id).join('-');
+  return `${date}-${ids}`;
+}
+
+function getCache(key: string): EditorialResult | null {
   try {
-    const cached = localStorage.getItem(CACHE_KEY);
-    if (!cached) return null;
-
-    const parsed: CachedEditorial = JSON.parse(cached);
-    const now = Date.now();
-
-    // Check TTL
-    if (now - parsed.cachedAt > CACHE_TTL_MS) {
-      localStorage.removeItem(CACHE_KEY);
+    const raw = localStorage.getItem(CACHE_KEY_PREFIX + key);
+    if (!raw) return null;
+    const entry: CacheEntry = JSON.parse(raw);
+    // Expire after 6 hours
+    if (Date.now() - entry.ts > 1000 * 60 * 60 * 6) {
+      localStorage.removeItem(CACHE_KEY_PREFIX + key);
       return null;
     }
-
-    // Check if it's for the current week
-    const currentWeek = getCurrentWeekOf();
-    if (parsed.weekOf !== currentWeek) {
-      localStorage.removeItem(CACHE_KEY);
-      return null;
-    }
-
-    return parsed.data;
+    return entry.result;
   } catch {
     return null;
   }
 }
 
-/**
- * Cache editorial content
- */
-function cacheEditorial(data: YourcastEditorial, weekOf: string): void {
+function setCache(key: string, result: EditorialResult): void {
   try {
-    const cached: CachedEditorial = {
-      data,
-      cachedAt: Date.now(),
-      weekOf,
-    };
-    localStorage.setItem(CACHE_KEY, JSON.stringify(cached));
+    localStorage.setItem(
+      CACHE_KEY_PREFIX + key,
+      JSON.stringify({ result, ts: Date.now(), key })
+    );
   } catch {
-    // localStorage might be full or unavailable
-    console.warn('Failed to cache editorial');
+    // localStorage might be full
   }
 }
 
-/**
- * Get the week identifier for caching
- */
-function getCurrentWeekOf(): string {
-  const now = new Date();
-  // Get the Friday of this week
-  const dayOfWeek = now.getDay();
-  const daysUntilFriday = (5 - dayOfWeek + 7) % 7;
-  const friday = new Date(now);
-  friday.setDate(now.getDate() + daysUntilFriday);
+// ─── IRL VOICE BRIEF ─────────────────────────────────────
+// Terse. Local. Unsentimental.
+// Sounds like a friend who actually goes out in Miami.
+// Specific beats generic. Facts not feelings.
+// Never: perfect, amazing, discover, explore, curated,
+//   personalized, vibrant, exciting, seamless.
+// Dry wit is fine. Enthusiasm is not.
+// Max 8 words for headline. Max 10 words for subhead.
+// ─────────────────────────────────────────────────────────
 
-  return friday.toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  });
-}
+export async function generateEditorialCopy(
+  events: ScoredEvent[]
+): Promise<EditorialResult> {
+  const key = import.meta.env.VITE_ANTHROPIC_API_KEY;
+  if (!key) return FALLBACKS;
 
-/**
- * Build the user prompt from input data
- */
-function buildUserPrompt(input: EditorialInput): string {
-  const eventSummaries = input.events
-    .map(
-      (e, i) =>
-        `${i + 1}. "${e.title}" at ${e.venueName || 'TBA'} (${e.neighborhood})
-   Category: ${e.category}
-   Date: ${new Date(e.startAt).toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
-   Outdoor: ${e.isOutdoor ? 'Yes' : 'No'}
-   Description: ${e.description.slice(0, 200)}...`
-    )
-    .join('\n\n');
+  if (events.length === 0) return FALLBACKS;
 
-  return `Generate the Yourcast editorial for ${input.city} for the week of ${input.week_of}.
+  const cacheKey = getCacheKey(events);
+  const cached = getCache(cacheKey);
+  if (cached) return cached;
 
-WEATHER FORECAST:
-- Friday: ${input.weather.friday.condition}, High ${input.weather.friday.high}°F, Low ${input.weather.friday.low}°F
-- Saturday: ${input.weather.saturday.condition}, High ${input.weather.saturday.high}°F, Low ${input.weather.saturday.low}°F
-- Sunday: ${input.weather.sunday.condition}, High ${input.weather.sunday.high}°F, Low ${input.weather.sunday.low}°F
+  const prefs = getPreferences();
+  const cityLabel = {
+    miami: 'Miami',
+    ftl: 'Fort Lauderdale',
+    pb: 'Palm Beach',
+  }[prefs.city ?? 'miami'] ?? 'South Florida';
 
-${input.cultural_moment ? `CULTURAL MOMENT: ${input.cultural_moment}\n` : ''}
-SELECTED EVENTS (${input.events.length} total):
+  const topEvents = events.slice(0, 5).map(e =>
+    `- ${e.title} (${e.category}, ${e.neighborhood ?? ''}, ${new Date(e.startAt).toLocaleString('en-US', { weekday: 'short', hour: 'numeric' })})`
+  ).join('\n');
 
-${eventSummaries}
+  const prompt = `You write copy for IRL, a curated local events app in ${cityLabel}.
 
-The first event listed is the LEAD event. One of the others should be framed as the "wild card" — an unexpected pick.
+IRL voice: terse, local, unsentimental. Like a friend who actually goes out.
+Specific beats generic. Facts not feelings. Never hype.
+Never use: perfect, amazing, discover, explore, curated, personalized, vibrant, exciting.
+Dry wit is fine. Enthusiasm is not.
 
-Return JSON only, no markdown.`;
-}
+Tonight's top events:
+${topEvents}
 
-/**
- * Generate editorial content using Claude
- */
-export async function generateEditorial(
-  input: EditorialInput
-): Promise<YourcastEditorial> {
-  const apiKey = import.meta.env.VITE_ANTHROPIC_API_KEY;
-
-  if (!apiKey) {
-    console.warn('VITE_ANTHROPIC_API_KEY not set, using fallback editorial');
-    return getFallbackEditorial(input);
-  }
+Return ONLY valid JSON, no markdown, no preamble:
+{
+  "headline": "max 8 words, tonight's vibe in one line",
+  "subhead": "max 10 words, what to expect tonight",
+  "leadIntro": "max 12 words, one line about the top event",
+  "wildCardLabel": "max 6 words, teaser for the under-the-radar pick"
+}`;
 
   try {
-    const client = new Anthropic({
-      apiKey,
-      dangerouslyAllowBrowser: true,
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': key,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true',
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 256,
+        messages: [{ role: 'user', content: prompt }],
+      }),
     });
 
-    const response = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1024,
-      system: EDITORIAL_SYSTEM_PROMPT,
-      messages: [
-        {
-          role: 'user',
-          content: buildUserPrompt(input),
-        },
-      ],
-    });
+    if (!res.ok) return FALLBACKS;
 
-    // Extract text content
-    const textContent = response.content.find((c) => c.type === 'text');
-    if (!textContent || textContent.type !== 'text') {
-      throw new Error('No text content in response');
+    const data = await res.json();
+    const text = data.content?.[0]?.text ?? '';
+    const clean = text.replace(/```json|```/g, '').trim();
+    const parsed: EditorialResult = JSON.parse(clean);
+
+    // Validate required fields
+    if (!parsed.headline || !parsed.subhead) return FALLBACKS;
+
+    setCache(cacheKey, parsed);
+    return parsed;
+  } catch {
+    return FALLBACKS;
+  }
+}
+
+// ─── LEGACY EXPORTS FOR COMPATIBILITY ─────────────────────
+
+export function getCachedEditorial(): EditorialResult | null {
+  // Find any valid cache entry
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key?.startsWith(CACHE_KEY_PREFIX)) {
+        const raw = localStorage.getItem(key);
+        if (raw) {
+          const entry: CacheEntry = JSON.parse(raw);
+          if (Date.now() - entry.ts < 1000 * 60 * 60 * 6) {
+            return entry.result;
+          }
+        }
+      }
     }
-
-    // Parse JSON response
-    const editorial: YourcastEditorial = JSON.parse(textContent.text);
-
-    // Cache the result
-    cacheEditorial(editorial, input.week_of);
-
-    return editorial;
-  } catch (error) {
-    console.error('Editorial agent error:', error);
-    return getFallbackEditorial(input);
+  } catch {
+    // Ignore
   }
+  return null;
 }
 
-/**
- * Fallback editorial when API is unavailable
- */
-function getFallbackEditorial(input: EditorialInput): YourcastEditorial {
-  const isGoodWeather =
-    input.weather.saturday.condition.toLowerCase().includes('sun') ||
-    input.weather.saturday.condition.toLowerCase().includes('clear');
-
-  const leadEvent = input.events[0];
-  const theme = isGoodWeather ? 'sunny_weekend' : 'mixed';
-
-  return {
-    headline: isGoodWeather
-      ? 'A good week to be outside.'
-      : 'Worth leaving the house for.',
-    subheadline: `This weekend in ${input.city} brings ${input.events.length} things we think are worth your time. Here are the ones we would actually go to.`,
-    lead_event_context: leadEvent
-      ? `${leadEvent.title} at ${leadEvent.venueName || 'a venue we like'} in ${leadEvent.neighborhood} is where we would start. The kind of thing that sets the tone for a weekend.`
-      : 'Check back soon for our picks.',
-    wild_card_line:
-      input.events.length > 2
-        ? `The ${input.events[2]?.title || 'third pick'} made the list because sometimes the best things are the ones you almost skip.`
-        : 'Sometimes the best finds are the unexpected ones.',
-    nudge_copy: `${input.city} this weekend: ${input.events.length} things worth your time`,
-    newsletter_subject: `Your Forecast · ${input.week_of} · ${input.city}`,
-    yourcast_theme: theme,
-  };
-}
-
-/**
- * Get or generate editorial for the current week
- */
-export async function getYourcastEditorial(
-  events: Event[],
-  weather?: EditorialInput['weather'],
-  culturalMoment?: string | null
-): Promise<YourcastEditorial> {
-  // Check cache first
-  const cached = getCachedEditorial();
-  if (cached) {
-    return cached;
-  }
-
-  // Build input
-  const weekOf = getCurrentWeekOf();
-  const input: EditorialInput = {
-    events: events.slice(0, 8).map((e) => ({
-      title: e.title,
-      venueName: e.venueName,
-      neighborhood: e.neighborhood,
-      category: e.category,
-      startAt: e.startAt,
-      description: e.description,
-      isOutdoor: e.isOutdoor,
-    })),
-    weather: weather || {
-      friday: { condition: 'Partly Cloudy', high: 82, low: 72 },
-      saturday: { condition: 'Sunny', high: 84, low: 73 },
-      sunday: { condition: 'Sunny', high: 83, low: 72 },
-    },
-    week_of: weekOf,
-    city: 'Miami',
-    cultural_moment: culturalMoment || null,
-  };
-
-  return generateEditorial(input);
-}
-
-/**
- * Clear cached editorial (useful for testing or forcing refresh)
- */
 export function clearEditorialCache(): void {
-  localStorage.removeItem(CACHE_KEY);
+  const keysToRemove: string[] = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key?.startsWith(CACHE_KEY_PREFIX)) {
+      keysToRemove.push(key);
+    }
+  }
+  keysToRemove.forEach(key => localStorage.removeItem(key));
 }
+
+// Legacy alias for compatibility
+export const generateEditorial = generateEditorialCopy;
+export const getYourcastEditorial = generateEditorialCopy;
