@@ -4,70 +4,96 @@
 
 ## Access Method
 
-**No official public API.** Shotgun (shotgun.live) is a ticketing and event discovery platform focused on electronic music, art, and cultural events. They do not offer a documented API for third-party consumers.
+**No official public API**, but multiple ingestion paths exist. Paris-based company (founded 2014, 20k+ clients, 6M+ users). Tech stack: Next.js on Vercel, React, Cloudflare CDN, AWS, Adyen payments.
 
-**Web scraping approach:**
-- Shotgun is a modern SPA (React/Next.js based)
-- Event pages render with structured data (JSON-LD and Open Graph tags)
-- City-specific event listing pages exist (e.g., `shotgun.live/cities/miami`)
-- Event data is hydrated via `__NEXT_DATA__` or similar SSR payloads
-- No heavy anti-bot measures observed — standard Cloudflare protection
+### 1. GraphQL API (undocumented — most promising)
 
-**Alternative approaches:**
-- Parse JSON-LD structured data from event pages (schema.org/Event markup)
-- Monitor RSS/social feeds from Shotgun's Miami-focused promoters
-- Use Shotgun's search/filter UI to identify Miami events, then scrape detail pages
+- **Endpoint:** `https://spotify-graphql.shotgun.live/api`
+- Introspection playground available — run an introspection query to discover event queries
+- May bypass the Vercel security checkpoint that blocks the main domain
+- **Status:** Unexplored by existing scrapers — highest-potential new avenue
+
+### 2. REST API v1 (existing — broken)
+
+- **Endpoint:** `https://api.shotgun.live/v1/events?citySlug=miami&page=1&perPage=40&startDate=...&endDate=...`
+- No auth required
+- Response shape: `{ data: [...], meta: { currentPage, lastPage, total } }`
+- Referenced in existing scraper at `scraper/src/sources/ticketing-platforms.ts`
+- **Currently errored** — returns HTTP 429 (rate limited)
+
+### 3. Multi-strategy HTML Scraper (existing — broken)
+
+- **Scraper:** `scraper/src/sources/shotgun-miami.ts`
+- Attempts three strategies: REST API v1/v2, `__NEXT_DATA__` extraction, and Next.js data routes
+- **All currently failing** due to Vercel Security Checkpoint + Cloudflare + rate limiting
+
+### Anti-bot Measures (active)
+
+- **Vercel Security Checkpoint** deployed as anti-bot measure (existing scraper already has handling code)
+- **Cloudflare CDN** adds another protection layer
+- **HTTP 429** confirmed during automated fetches
+- Existing scraper uses 1200ms delay — may be insufficient given active 429s
 
 ## Data Quality
 
-**Good for electronic and art events.** Overlaps somewhat with RA but covers a broader cultural spectrum.
+**Good for electronic and underground events.** Overlaps with RA but covers a broader cultural spectrum.
 
-**Available fields:**
-- Event title and description
-- Date, start time, end time
-- Venue name and address
-- Ticket price tiers (including free)
-- Event image/flyer
-- Artist/DJ lineup
-- Genre tags
-- Organizer/promoter info
-- Age restriction info
+**Available fields (confirmed from API response schema):**
+- Event: `id`, `name`, `slug`, `startDate`, `endDate`, `description`, `coverImage`/`image`
+- Venue: `name`, `address`, `city`, `latitude`, `longitude` (geo-coordinates included)
+- Pricing: `tickets` array with individual prices ($30-$234 observed)
+- Metadata: `tags` (genre), `lineup` (artists), `organizerName`
+- Missing: No explicit age restrictions, no capacity data
+
+**Miami/Fort Lauderdale coverage — confirmed active:**
+- **Fort Lauderdale:** Nowhere Lounge (recurring Boiler Room Friday series — house, techno, DNB, dubstep), No Boys In The Booth
+- **Miami:** Techno events, pool parties (Kimpton Surfcomber), LiveList SoFlo aggregating club nights, raves, festivals
+- Genre focus: house, techno, DNB, electronic, bass music
+- Covers the underground/indie electronic scene well
 
 **Strengths:**
-- Covers art events and cultural programming beyond pure electronic music
+- Geo-coordinates included (no geocoding needed)
+- Structured pricing with ticket tiers
 - Good lineup data
-- Price tier information (GA, VIP, early bird, etc.)
 - Promoter-maintained listings (reliable data)
+- Covers underground events that may not appear on RA
 
 **Weaknesses:**
-- Miami coverage is **moderate** — Shotgun is stronger in European markets (Paris, Berlin, London)
-- Fewer events compared to RA for the Miami area
-- May not cover smaller local venues as comprehensively
+- Stronger in European markets (Paris, Berlin, London) — Miami is secondary market
+- Active bot protection makes reliable ingestion challenging
 
 ## Rate Limits
 
-No documented rate limits. Standard web scraping considerations apply:
-- Respect `robots.txt`
-- 1-2 second delays between requests
-- Rotate User-Agents
+- **Active rate limiting confirmed** — HTTP 429 responses observed
+- Vercel Security Checkpoint + Cloudflare layered protection
+- Safe rate: unclear — existing 1200ms delay triggers 429s
+- GraphQL endpoint may have separate, more lenient limits
+- Recommended: 2-3s between requests with exponential backoff on 429s
 
 ## ToS Risks
 
-**Risk level: LOW-MEDIUM**
+**Risk level: MEDIUM**
 
-- Standard ToS prohibiting automated access
-- Shotgun is a smaller platform and unlikely to aggressively enforce
-- JSON-LD structured data is designed for machine consumption (search engines)
-- **Mitigation:** Attribute source, link to Shotgun event pages, keep scraping volume low
+- [General Terms and Conditions](https://support.shotgun.live/hc/en-us/articles/14330476029330--General-Terms-and-Conditions) exist but specific scraping prohibitions could not be confirmed (page itself 429'd automated access)
+- [Privacy Policy](https://shotgun.live/privacy.html) states data is for Shotgun and Organizer partners only; they do not sell data to third parties
+- Vercel/Cloudflare protections signal they actively discourage automated access
+- No explicit API ToS found
+- **Mitigation:** Attribute source, link to Shotgun event pages, keep volume low
 
 ## Recommended Approach
 
-1. **Start with JSON-LD parsing** from event detail pages — this is the most reliable and least intrusive approach
-2. **Build a city listing scraper** that monitors `shotgun.live/cities/miami` for new events
-3. **Set `trustTier: 'official_api'`** — promoter-maintained data is reliable
-4. **Evaluate coverage:** Run a test scrape to determine how many Miami events Shotgun actually has. If <20/month, may not justify dedicated integration effort.
-5. **Cross-reference with RA:** Many electronic events appear on both platforms. Use for dedup validation and data enrichment.
+1. **Investigate the GraphQL endpoint** at `spotify-graphql.shotgun.live/api` — run an introspection query to discover event queries. This may bypass Vercel checkpoint entirely and provide the cleanest data access.
 
-## Priority: Medium
+2. **Fix the REST API approach:** The `api.shotgun.live/v1` endpoint may work with proper headers and more conservative rate limiting (2-3s between requests). Add retry logic with exponential backoff for 429 responses.
 
-Good data quality and relevant genre coverage, but Miami-specific volume is uncertain. Worth a test scrape to evaluate actual coverage before investing in a full integration. If coverage is strong, elevate to High priority.
+3. **Keep the multi-strategy scraper** (`shotgun-miami.ts`) — it's well-structured. The `__NEXT_DATA__` and JSON-LD fallbacks are sound when the API is blocked.
+
+4. **Consider Pro integration:** Shotgun has a [Pro integrations portal](https://support-pro.shotgun.live/hc/en-us/categories/28743315936402--Integrations) with API integration support. They may offer partner access if contacted.
+
+5. **Set `trustTier: 'official_api'`** if using their API, `'scraped_known_venue'` if scraping.
+
+6. **Cross-reference with RA:** Many electronic events appear on both platforms. Use for dedup validation and data enrichment.
+
+## Priority: Medium-High
+
+Excellent data quality with geo-coordinates, structured pricing, and strong underground electronic coverage in Miami/FTL. The active bot protection is the main challenge, but the unexplored GraphQL endpoint is a promising path. Worth investing time to stabilize — no other single source covers the underground/indie electronic scene in South Florida as well as the combination of RA + Shotgun.
