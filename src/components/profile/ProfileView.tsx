@@ -236,7 +236,7 @@ export function ProfileView({
               <button
                 onClick={onRequestLocation}
                 disabled={locationStatus === 'loading'}
-                className="px-4 py-2 bg-ink text-white text-sm font-medium rounded-lg hover:bg-ink-2 transition-colors disabled:opacity-50"
+                className="px-4 py-2.5 bg-[#0E0E0E] hover:bg-[#1a1a1a] text-white text-sm font-medium rounded-xl transition-colors disabled:opacity-50"
               >
                 {locationStatus === 'loading' ? 'Requesting...' : 'Enable'}
               </button>
@@ -267,7 +267,8 @@ export function ProfileView({
               onChange={(e) =>
                 onPreferencesChange({ ...preferences, radiusMiles: Number(e.target.value) })
               }
-              className="w-full h-2 bg-divider rounded-lg appearance-none cursor-pointer accent-ink"
+              className="w-full h-2 bg-divider rounded-lg appearance-none cursor-pointer"
+              style={{ accentColor: '#0E0E0E' }}
             />
             <div className="flex justify-between text-xs text-ink-3">
               <span>1 mi</span>

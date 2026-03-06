@@ -29,7 +29,6 @@ const YourcastView = lazy(() => import('./components/yourcast/YourcastView').the
 const FollowingView = lazy(() => import('./components/following/FollowingView').then(m => ({ default: m.FollowingView })));
 const ProfileView = lazy(() => import('./components/profile/ProfileView').then(m => ({ default: m.ProfileView })));
 const EventDetail = lazy(() => import('./components/detail/EventDetail').then(m => ({ default: m.EventDetail })));
-const ChatAssistant = lazy(() => import('./components/ai/ChatAssistant').then(m => ({ default: m.ChatAssistant })));
 const AISettingsModal = lazy(() => import('./components/ai/AISettingsModal').then(m => ({ default: m.AISettingsModal })));
 const SubmitPage = lazy(() => import('./components/submit/SubmitPage').then(m => ({ default: m.SubmitPage })));
 
@@ -261,14 +260,6 @@ function AppContent() {
       <Route path="wordmark-test" element={<WordmarkTest />} />
     </Routes>
 
-    {/* AI Chat Assistant */}
-    <Suspense fallback={null}>
-      <ChatAssistant
-        events={filteredEvents}
-        preferences={preferences}
-        onConfigureAI={() => setShowAISettings(true)}
-      />
-    </Suspense>
 
     {/* AI Settings Modal */}
     {showAISettings && (

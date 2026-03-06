@@ -51,7 +51,7 @@ function getWeatherSuggestion(weather: WeatherForecast): WeatherSuggestion | nul
     return {
       icon: '🌅',
       message: `${temp}° and clear tonight`,
-      subtext: 'Good evening for outdoor plans',
+      subtext: 'Clear conditions expected',
       bgColor: 'var(--color-ochre)',
       textColor: 'white',
     };
@@ -72,7 +72,7 @@ function getWeatherSuggestion(weather: WeatherForecast): WeatherSuggestion | nul
   if (current.temperature >= 70 && current.temperature <= 85 && current.precipitationProbability < 20) {
     return {
       icon: '☀️',
-      message: 'Beautiful day outside',
+      message: 'Clear skies today',
       subtext: `${Math.round(current.temperature)}° and clear`,
       bgColor: 'var(--color-teal)',
       textColor: 'white',
@@ -83,7 +83,7 @@ function getWeatherSuggestion(weather: WeatherForecast): WeatherSuggestion | nul
   if (hour < 10 && current.temperature < 75) {
     return {
       icon: '🌤️',
-      message: 'Great morning for outdoor events',
+      message: 'Cool morning for outdoor events',
       subtext: `${Math.round(current.temperature)}° right now`,
       bgColor: 'var(--color-teal)',
       textColor: 'white',

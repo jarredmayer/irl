@@ -140,7 +140,7 @@ export function FeedView({
       case 'weekend':
         return { left: 'THIS WEEKEND', right: null };
       default:
-        return { left: 'PICKED FOR YOU', right: 'This Weekend →' };
+        return { left: 'UPCOMING', right: 'This Weekend →' };
     }
   };
 
