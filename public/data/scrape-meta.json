@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-05T15:49:24.560Z",
+  "scrapedAt": "2026-03-06T00:54:05.251Z",
   "stats": {
-    "total": 1087,
-    "deduplicated": 749,
+    "total": 1084,
+    "deduplicated": 744,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -15,15 +15,13 @@
       "Miami Festivals": 1,
       "Dice.fm Real": 0,
       "Resident Advisor": 0,
-      "Greater Miami & The Beaches": 0,
       "Candlelight Concerts (Fever)": 0,
       "Hotel Events": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 393,
-      "Pop-Ups": 65,
+      "Pop-Ups": 64,
       "Miami Improv": 0,
       "Fort Lauderdale Improv": 0,
-      "Coral Gables": 0,
       "Broward Center": 0,
       "Revolution Live": 0,
       "Verified Recurring": 2,
@@ -33,25 +31,29 @@
       "Cycling Group Rides": 38,
       "Las Olas Boulevard": 0,
       "Fort Lauderdale": 23,
-      "Palm Beach": 55,
-      "Instagram Sources": 156,
+      "Palm Beach": 56,
+      "Instagram Sources": 155,
       "Luma": 0,
       "SofarSounds": 0,
+      "HistoryMiami": 0,
+      "Resy Miami Events": 0,
+      "Venue Watchlist": 0,
+      "Eventbrite Miami": 0,
+      "Fever Miami": 0,
+      "Shotgun Miami": 0,
+      "Do305": 0,
+      "Club Space": 0,
       "CultureRoom": 0,
       "BonnetHouse": 0,
       "FunkyBuddha": 0,
-      "SavorCinema": 0,
-      "WeekendBroward PoW": 0,
-      "WeekendBroward Verified": 105,
-      "WeekendBroward": 0,
-      "WeekendBroward Google": 0
+      "WeekendBroward Verified": 103
     }
   },
   "delta": {
     "added": 0,
     "removed": 0,
     "modified": 0,
-    "unchanged": 749
+    "unchanged": 744
   },
   "sources": [
     {
@@ -123,14 +125,6 @@
       "errors": []
     },
     {
-      "name": "Greater Miami & The Beaches",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "getaddrinfo EAI_AGAIN y72zzu5ph1-dsn.algolia.net"
-      ]
-    },
-    {
       "name": "Candlelight Concerts (Fever)",
       "count": 0,
       "status": "empty",
@@ -156,27 +150,25 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 65,
+      "count": 64,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Miami Improv",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
     },
     {
       "name": "Fort Lauderdale Improv",
       "count": 0,
-      "status": "empty",
-      "errors": []
-    },
-    {
-      "name": "Coral Gables",
-      "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
     },
     {
       "name": "Broward Center",
@@ -234,35 +226,91 @@
     },
     {
       "name": "Palm Beach",
-      "count": 55,
+      "count": 56,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Instagram Sources",
-      "count": 156,
+      "count": 155,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Luma",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
     },
     {
       "name": "SofarSounds",
       "count": 0,
       "status": "error",
       "errors": [
-        "fetch failed"
+        "getaddrinfo EAI_AGAIN www.sofarsounds.com"
       ]
+    },
+    {
+      "name": "HistoryMiami",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Resy Miami Events",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Venue Watchlist",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Eventbrite Miami",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Fever Miami",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Shotgun Miami",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
+    },
+    {
+      "name": "Do305",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
+    },
+    {
+      "name": "Club Space",
+      "count": 0,
+      "status": "empty",
+      "errors": []
     },
     {
       "name": "CultureRoom",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
     },
     {
       "name": "BonnetHouse",
@@ -273,44 +321,22 @@
     {
       "name": "FunkyBuddha",
       "count": 0,
-      "status": "empty",
-      "errors": []
-    },
-    {
-      "name": "SavorCinema",
-      "count": 0,
-      "status": "empty",
-      "errors": []
-    },
-    {
-      "name": "WeekendBroward PoW",
-      "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
     },
     {
       "name": "WeekendBroward Verified",
-      "count": 105,
+      "count": 103,
       "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "WeekendBroward",
-      "count": 0,
-      "status": "empty",
-      "errors": []
-    },
-    {
-      "name": "WeekendBroward Google",
-      "count": 0,
-      "status": "empty",
       "errors": []
     }
   ],
   "sourceHealth": {
     "ok": 17,
-    "empty": 21,
-    "errored": 3,
+    "empty": 17,
+    "errored": 9,
     "emptySources": [
       "III Points",
       "SOBEWFF",
@@ -319,25 +345,27 @@
       "Resident Advisor",
       "Candlelight Concerts (Fever)",
       "Hotel Events",
-      "Miami Improv",
-      "Fort Lauderdale Improv",
-      "Coral Gables",
       "Broward Center",
       "Revolution Live",
       "Las Olas Boulevard",
-      "Luma",
-      "CultureRoom",
-      "BonnetHouse",
-      "FunkyBuddha",
-      "SavorCinema",
-      "WeekendBroward PoW",
-      "WeekendBroward",
-      "WeekendBroward Google"
+      "HistoryMiami",
+      "Resy Miami Events",
+      "Venue Watchlist",
+      "Eventbrite Miami",
+      "Fever Miami",
+      "Club Space",
+      "BonnetHouse"
     ],
     "erroredSources": [
       "Miami New Times",
-      "Greater Miami & The Beaches",
-      "SofarSounds"
+      "Miami Improv",
+      "Fort Lauderdale Improv",
+      "Luma",
+      "SofarSounds",
+      "Shotgun Miami",
+      "Do305",
+      "CultureRoom",
+      "FunkyBuddha"
     ]
   }
 }
