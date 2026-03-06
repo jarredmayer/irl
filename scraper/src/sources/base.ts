@@ -620,6 +620,57 @@ export abstract class BaseScraper {
   }
 
   /**
+   * Fetch HTML using Node.js built-in fetch (undici).
+   * More reliable than raw https module for DNS/TLS edge cases.
+   * Automatically handles compression, redirects, and timeouts.
+   */
+  protected async fetchHTMLFetch(url: string, timeoutMs = 15_000): Promise<cheerio.CheerioAPI> {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, {
+        signal: controller.signal,
+        headers: {
+          'User-Agent': this.userAgent,
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+        },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      const html = await res.text();
+      return cheerio.load(html);
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  /**
+   * POST JSON using Node.js built-in fetch (undici).
+   * More reliable than raw https.request for API calls.
+   */
+  protected async fetchJSONFetch<T>(url: string, body: string, headers: Record<string, string> = {}, timeoutMs = 15_000): Promise<T> {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        signal: controller.signal,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'User-Agent': this.userAgent,
+          ...headers,
+        },
+        body,
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      return await res.json() as T;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  /**
    * Fetch JSON using native https GET.
    * Use for REST APIs that fail with undici-based fetch.
    */

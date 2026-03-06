@@ -140,7 +140,17 @@ export class ClubSpaceScraper extends BaseScraper {
    */
   private async getApiKey(): Promise<string | null> {
     try {
-      const html = await this.fetchHTMLNative('https://www.clubspace.com/events', 15_000);
+      // Try undici fetch first (handles DNS/TLS better in CI), fall back to native https
+      let html: string;
+      try {
+        const res = await fetch('https://www.clubspace.com/events', {
+          signal: AbortSignal.timeout(15_000),
+          headers: { 'User-Agent': this.userAgent },
+        });
+        html = await res.text();
+      } catch {
+        html = await this.fetchHTMLNative('https://www.clubspace.com/events', 15_000);
+      }
       // Look for DiceEventListWidget.create({...apiKey:"..."...})
       const match = html.match(/apiKey[\\"]?\s*:\s*[\\"]([A-Za-z0-9]+)[\\"]/) ||
                     html.match(/apiKey&quot;:&quot;([A-Za-z0-9]+)&quot;/);
@@ -159,13 +169,30 @@ export class ClubSpaceScraper extends BaseScraper {
   /**
    * Fetch events from Dice.fm partners API.
    */
-  private fetchDiceEvents(apiKey: string): Promise<DiceEvent[]> {
+  private async fetchDiceEvents(apiKey: string): Promise<DiceEvent[]> {
     const params = new URLSearchParams({
       'page[size]': '40',
       'types': 'linkout,event',
       'filter[promoter_name]': this.promoterFilter,
     });
     const url = `${this.apiUrl}?${params.toString()}`;
+
+    // Try undici fetch first, fall back to native https
+    try {
+      const res = await fetch(url, {
+        signal: AbortSignal.timeout(15_000),
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': this.userAgent,
+          'x-api-key': apiKey,
+        },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json() as any;
+      return data?.data || [];
+    } catch (fetchErr) {
+      this.log(`  fetch() failed for Dice API: ${fetchErr instanceof Error ? fetchErr.message : fetchErr}, trying native https...`);
+    }
 
     return new Promise((resolve, reject) => {
       const parsed = new URL(url);
@@ -219,8 +246,14 @@ export class ClubSpaceScraper extends BaseScraper {
     const now = new Date();
 
     try {
-      const html = await this.fetchHTMLNative('https://www.clubspace.com/events', 15_000);
-      const $ = cheerio.load(html);
+      // Try undici fetch first, fall back to native https
+      let $: cheerio.CheerioAPI;
+      try {
+        $ = await this.fetchHTMLFetch('https://www.clubspace.com/events', 15_000);
+      } catch {
+        const html = await this.fetchHTMLNative('https://www.clubspace.com/events', 15_000);
+        $ = cheerio.load(html);
+      }
 
       // Try JSON-LD first
       $('script[type="application/ld+json"]').each((_, el) => {

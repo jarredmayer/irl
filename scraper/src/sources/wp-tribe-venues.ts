@@ -62,7 +62,18 @@ export class HistoryMiamiScraper extends BaseScraper {
     let data: TribeApiResponse | undefined;
     for (const url of urls) {
       try {
-        const raw = await this.fetchJSONNativeGet<any>(url, 15_000);
+        // Try undici fetch first (handles DNS/TLS better in CI), fall back to native https
+        let raw: any;
+        try {
+          const res = await fetch(url, {
+            signal: AbortSignal.timeout(10_000),
+            headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+          });
+          raw = await res.json();
+        } catch (fetchErr) {
+          this.log(`  fetch() failed for ${url}: ${fetchErr instanceof Error ? fetchErr.message : fetchErr}, trying native...`);
+          raw = await this.fetchJSONNativeGet<any>(url, 15_000);
+        }
         this.log(`  Response keys: ${Object.keys(raw || {}).join(', ')}`);
 
         // Handle both standard Tribe API response and alternate structures

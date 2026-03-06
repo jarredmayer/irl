@@ -191,8 +191,14 @@ export class MiamiImprovRealScraper extends BaseScraper {
 
     for (const url of this.urls) {
       try {
-        // Use BaseScraper's native fetch with DNS fallback — reduced timeout for faster failover
-        const $ = await this.fetchHTMLNativeRetry(url, 2, 8_000);
+        // Try undici fetch first (handles TLS better in CI), fall back to native https
+        let $: cheerio.CheerioAPI;
+        try {
+          $ = await this.fetchHTMLFetch(url, 8_000);
+        } catch (fetchErr) {
+          this.log(`  fetch() failed for ${url}: ${fetchErr instanceof Error ? fetchErr.message : fetchErr}, trying native...`);
+          $ = await this.fetchHTMLNativeRetry(url, 2, 8_000);
+        }
 
         // JSON-LD has Place with Events array
         $('script[type="application/ld+json"]').each((_, el) => {
@@ -272,8 +278,14 @@ export class FortLauderdaleImprovScraper extends BaseScraper {
 
     for (const url of this.urls) {
       try {
-        // Use BaseScraper's native fetch with DNS fallback — reduced timeout for faster failover
-        const $ = await this.fetchHTMLNativeRetry(url, 2, 8_000);
+        // Try undici fetch first (handles TLS better in CI), fall back to native https
+        let $: cheerio.CheerioAPI;
+        try {
+          $ = await this.fetchHTMLFetch(url, 8_000);
+        } catch (fetchErr) {
+          this.log(`  fetch() failed for ${url}: ${fetchErr instanceof Error ? fetchErr.message : fetchErr}, trying native...`);
+          $ = await this.fetchHTMLNativeRetry(url, 2, 8_000);
+        }
 
         // JSON-LD has Place with Events array
         $('script[type="application/ld+json"]').each((_, el) => {
@@ -338,7 +350,14 @@ export class BrowardCenterScraper extends BaseScraper {
     for (let i = 0; i < pageOffsets.length; i++) {
       try {
         const url = pageOffsets[i] === 0 ? this.baseUrl : `${this.baseUrl}/index/${pageOffsets[i]}`;
-        const $ = await this.fetchHTMLNativeRetry(url, 2, 12_000);
+        // Try undici fetch first (handles compression automatically), fall back to native https
+        let $: cheerio.CheerioAPI;
+        try {
+          $ = await this.fetchHTMLFetch(url, 12_000);
+        } catch (e) {
+          this.log(`  fetch() failed for page ${i + 1}: ${e instanceof Error ? e.message : e}, trying native...`);
+          $ = await this.fetchHTMLNativeRetry(url, 2, 12_000);
+        }
         let pageCount = 0;
 
         // Each event is a .entry div inside #list container with structure:
@@ -537,7 +556,14 @@ export class RevolutionLiveScraper extends BaseScraper {
     const seen = new Set<string>();
 
     try {
-      const $ = await this.fetchHTMLNativeRetry(this.url, 2, 15_000);
+      // Try undici fetch first (handles DNS/TLS better in CI), fall back to native https
+      let $: cheerio.CheerioAPI;
+      try {
+        $ = await this.fetchHTMLFetch(this.url, 15_000);
+      } catch (e) {
+        this.log(`  fetch() failed: ${e instanceof Error ? e.message : e}, trying native...`);
+        $ = await this.fetchHTMLNativeRetry(this.url, 2, 15_000);
+      }
 
       // Revolution Live uses WordPress Events Manager plugin.
       // Try JSON-LD first (more reliable than CSS selectors across redesigns)

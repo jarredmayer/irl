@@ -82,6 +82,13 @@ export class EventAggregator {
       console.log('');
     }
 
+    // Log zero-event sources for diagnostics
+    const zeroSources = results.filter(r => r.events.length === 0 && r.errors.length === 0);
+    if (zeroSources.length > 0) {
+      console.log(`\n⚠️  ${zeroSources.length} sources returned 0 events (no errors):`);
+      zeroSources.forEach(r => console.log(`   - ${r.source}`));
+    }
+
     // Filter out past events and sanity-check dates
     const now = new Date();
     const currentYear = now.getFullYear();
