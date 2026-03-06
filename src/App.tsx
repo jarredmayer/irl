@@ -321,7 +321,7 @@ function EventDetailPage({
 
 function App() {
   return (
-    <BrowserRouter basename="/irl">
+    <BrowserRouter basename="/">
       <AppContent />
     </BrowserRouter>
   );
