@@ -17,6 +17,7 @@
       "outdoor",
       "family-friendly"
     ],
+<<<<<<< Updated upstream
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": true,
@@ -24,6 +25,14 @@
     "editorialWhy": "Inaugural Scottish Celtic Music Festival \u2014 Seven Nations, Clovers Revenge, Gaelica, Blue Skye, Femme Celtique. Pipe bands, Scottish country dancing, clan tents, children's activities. Located in Davie, Bergeron Rodeo Grounds is a local favorite.",
     "description": "Inaugural Scottish Celtic Music Festival \u2014 Seven Nations, Clovers Revenge, Gaelica, Blue Skye, Femme Celtique. Pipe bands, Scottish country dancing, clan tents, children's activities.",
     "ticketUrl": "https://www.sassf.org/event-6325690",
+=======
+    "category": "Sports",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Game day energy at its peak.",
+    "editorialWhy": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
+    "description": "4 Nations Face-Off Watch & Skate. Finland vs Sweden on the big screens. Skating, shopping at Pantherland, cocktails at The Federal.",
+>>>>>>> Stashed changes
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://www.sassf.org/event-6325690"
@@ -2392,7 +2401,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided. Located in Fort Lauderdale Beach, Fort Lauderdale Beach is a local favorite. Best of all, it's free.",
     "description": "Monthly beach cleanup with Heal the Planet and City of Fort Lauderdale. No registration required. All supplies provided.",
     "source": {
@@ -2447,6 +2456,76 @@
     "lng": -80.1373,
     "city": "Fort Lauderdale",
     "tags": [
+<<<<<<< Updated upstream
+=======
+      "live-music",
+      "latin",
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\" Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "The legendary Gipsy Kings bring their flamenco-infused pop hits including \"Bamboléo\" and \"Hotel California.\"",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": true,
+    "venueId": "hard-rock-live"
+  },
+  {
+    "id": "68637da37ef5c0f3",
+    "title": "NEEDTOBREATHE",
+    "startAt": "2026-02-06T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "editorialWhy": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\" Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Grammy-nominated rock band NEEDTOBREATHE performs their anthemic hits including \"Brother\" and \"Multiplied.\"",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": true,
+    "venueId": "hard-rock-live"
+  },
+  {
+    "id": "2cf184bec2fe65ae",
+    "title": "Guided Nature Tour at Snyder Park",
+    "startAt": "2026-02-07T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Snyder Park",
+    "address": "3299 SW 4th Ave, Fort Lauderdale, FL 33315",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.0956,
+    "lng": -80.1567,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "outdoor",
+      "park",
+>>>>>>> Stashed changes
       "free-event",
       "outdoor",
       "community"
@@ -2454,9 +2533,15 @@
     "category": "Community",
     "priceLabel": "Free",
     "isOutdoor": true,
+<<<<<<< Updated upstream
     "shortWhy": "Where Fort Lauderdale comes together.",
     "editorialWhy": "Annual Broward County waterway and shoreline cleanup. No boat needed. Free volunteer event across multiple locations. Located in Downtown FLL, Various Locations is a local favorite. Best of all, it's free.",
     "description": "Annual Broward County waterway and shoreline cleanup. No boat needed. Free volunteer event across multiple locations.",
+=======
+    "shortWhy": "Connect with the Fort Lauderdale community.",
+    "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
+    "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
+>>>>>>> Stashed changes
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/events/"
@@ -2918,7 +3003,11 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
+<<<<<<< Updated upstream
     "shortWhy": "Local vibes, real connections.",
+=======
+    "shortWhy": "Connect with the Fort Lauderdale community.",
+>>>>>>> Stashed changes
     "editorialWhy": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Guided nature tour exploring the ecosystems of Snyder Park. Learn about native plants and wildlife.",
     "source": {
@@ -2963,6 +3052,41 @@
     "venueId": "snyder-park"
   },
   {
+<<<<<<< Updated upstream
+=======
+    "id": "4b4f011a58afe8c9",
+    "title": "Rascal Flatts with Lauren Alaina & Chris Lane",
+    "startAt": "2026-02-14T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Get your music fix with locals who know.",
+    "editorialWhy": "Valentine's Day country concert with Rascal Flatts and special guests Lauren Alaina and Chris Lane. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Valentine's Day country concert with Rascal Flatts and special guests Lauren Alaina and Chris Lane.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": true,
+    "venueId": "hard-rock-live"
+  },
+  {
+>>>>>>> Stashed changes
     "id": "71db309029f6d9d4",
     "title": "Miami City Ballet: Across the River of Light",
     "startAt": "2026-03-07T20:00:00",
@@ -3027,6 +3151,75 @@
     "venueId": "hard-rock-live"
   },
   {
+<<<<<<< Updated upstream
+=======
+    "id": "1c3e715131e0147a",
+    "title": "Young SEEDs in the Park",
+    "startAt": "2026-02-11T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Snyder Park",
+    "address": "3299 SW 4th Ave, Fort Lauderdale, FL 33315",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.0956,
+    "lng": -80.1567,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "outdoor",
+      "park",
+      "free-event",
+      "family-friendly",
+      "workshop",
+      "fitness"
+    ],
+    "category": "Outdoors",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Where Fort Lauderdale comes together.",
+    "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
+    "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
+    "source": {
+      "name": "Beach Cleanups",
+      "url": "https://healtheplanet.com/activities"
+    },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
+    "editorPick": false,
+    "venueId": "snyder-park"
+  },
+  {
+    "id": "4ea72ca58c6f277a",
+    "title": "Young SEEDs in the Park",
+    "startAt": "2026-02-28T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Snyder Park",
+    "address": "3299 SW 4th Ave, Fort Lauderdale, FL 33315",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.0956,
+    "lng": -80.1567,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "outdoor",
+      "park",
+      "free-event",
+      "family-friendly",
+      "workshop",
+      "fitness"
+    ],
+    "category": "Outdoors",
+    "priceLabel": "Free",
+    "isOutdoor": true,
+    "shortWhy": "Where Fort Lauderdale comes together.",
+    "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
+    "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
+    "source": {
+      "name": "Beach Cleanups",
+      "url": "https://healtheplanet.com/activities"
+    },
+    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
+    "editorPick": false,
+    "venueId": "snyder-park"
+  },
+  {
+>>>>>>> Stashed changes
     "id": "66a3e9d5bb4c840a",
     "title": "Young SEEDs in the Park",
     "startAt": "2026-03-11T10:00:00",
@@ -3048,7 +3241,7 @@
     "category": "Outdoors",
     "priceLabel": "Free",
     "isOutdoor": true,
-    "shortWhy": "Local vibes, real connections.",
+    "shortWhy": "Connect with the Fort Lauderdale community.",
     "editorialWhy": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park. Located in Fort Lauderdale, Snyder Park is a local favorite. Best of all, it's free.",
     "description": "Sustainable Energy Education for kids. Hands-on environmental learning activities in the park.",
     "source": {
@@ -3212,9 +3405,15 @@
     "category": "Fitness",
     "priceLabel": "Free",
     "isOutdoor": false,
+<<<<<<< Updated upstream
     "shortWhy": "Free workout with good people.",
     "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
     "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
+=======
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "editorialWhy": "El Caballero de la Salsa performs his legendary catalog of salsa romántica classics. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "El Caballero de la Salsa performs his legendary catalog of salsa romántica classics.",
+>>>>>>> Stashed changes
     "source": {
       "name": "@lauderdalerunclub",
       "url": "https://instagram.com/@lauderdalerunclub"
@@ -3444,7 +3643,7 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
-    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
     "editorialWhy": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
     "description": "Jam band Goose brings their improvisational rock to Fort Lauderdale. Night 2 of 2.",
     "ticketUrl": "https://www.ftlwarmemorial.com/events",
@@ -3457,6 +3656,106 @@
     "venueId": "ftl-war-memorial"
   },
   {
+<<<<<<< Updated upstream
+=======
+    "id": "f69abc7043f2bca9",
+    "title": "Florida Panthers vs Toronto Maple Leafs",
+    "startAt": "2026-02-26T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "sports",
+      "local-favorite",
+      "massive",
+      "arena",
+      "concerts"
+    ],
+    "category": "Sports",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+    "editorialWhy": "NHL hockey: Florida Panthers face the Toronto Maple Leafs at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL hockey: Florida Panthers face the Toronto Maple Leafs at Amerant Bank Arena.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.floridapanthers.com/schedule"
+    },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
+    "editorPick": true,
+    "venueId": "amerant-bank-arena"
+  },
+  {
+    "id": "bd3abdf893cece55",
+    "title": "Sabaton: Legends On Tour",
+    "startAt": "2026-02-09T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FTL War Memorial",
+    "address": "800 NE 8th St, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.1289,
+    "lng": -80.1367,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite",
+      "outdoor",
+      "fitness",
+      "community"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "editorialWhy": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
+    "description": "Swedish heavy metal band Sabaton with support from Pop Evil and Wings of Steel.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.ftlwarmemorial.com/events"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": true,
+    "venueId": "ftl-war-memorial"
+  },
+  {
+    "id": "a0a96d8349ff798f",
+    "title": "Shen Yun",
+    "startAt": "2026-02-17T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7669,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "dancing",
+      "live-music",
+      "local-favorite",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Culture",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
+    "editorialWhy": "Classical Chinese dance and music bringing 5,000 years of civilization to life. Located in Downtown, Broward Center is a local favorite.",
+    "description": "Classical Chinese dance and music bringing 5,000 years of civilization to life.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.browardcenter.org/events"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-27/e5e9fd1d-45ff-4c1f-b2b8-0ae91e4a227d_source.webp?w=1024",
+    "editorPick": true,
+    "venueId": "broward-center"
+  },
+  {
+>>>>>>> Stashed changes
     "id": "ac00091da8077b5d",
     "title": "Florida Panthers vs Detroit Red Wings",
     "startAt": "2026-03-10T19:00:00",
@@ -3477,7 +3776,11 @@
     "category": "Sports",
     "priceLabel": "$$",
     "isOutdoor": false,
+<<<<<<< Updated upstream
     "shortWhy": "Nothing beats live sports.",
+=======
+    "shortWhy": "Cheer on Fort Lauderdale's finest.",
+>>>>>>> Stashed changes
     "editorialWhy": "NHL hockey: Florida Panthers face the Detroit Red Wings at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
     "description": "NHL hockey: Florida Panthers face the Detroit Red Wings at Amerant Bank Arena.",
     "ticketUrl": "https://www.floridapanthers.com/schedule",
@@ -3490,6 +3793,199 @@
     "venueId": "amerant-bank-arena"
   },
   {
+<<<<<<< Updated upstream
+=======
+    "id": "eaf88165839edc2b",
+    "title": "Valentine's Date Skate",
+    "startAt": "2026-02-14T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "FTL War Memorial",
+    "address": "800 NE 8th St, Fort Lauderdale, FL 33304",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.1289,
+    "lng": -80.1367,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "local-favorite",
+      "community",
+      "outdoor",
+      "fitness"
+    ],
+    "category": "Community",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Where Fort Lauderdale comes together.",
+    "editorialWhy": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice. Located in Fort Lauderdale, FTL War Memorial is a local favorite.",
+    "description": "Valentine's Day ice skating at the War Memorial. Romantic evening on the ice.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.ftlwarmemorial.com/events"
+    },
+    "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
+    "editorPick": true,
+    "venueId": "ftl-war-memorial"
+  },
+  {
+    "id": "5afb85fc1defe414",
+    "title": "Rod Stewart",
+    "startAt": "2026-02-28T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Hard Rock Live",
+    "address": "1 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.051,
+    "lng": -80.2112,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite",
+      "casino",
+      "concerts",
+      "big-acts"
+    ],
+    "category": "Music",
+    "priceLabel": "$$$",
+    "isOutdoor": false,
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+    "editorialWhy": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades. Located in Hollywood, Hard Rock Live is a local favorite.",
+    "description": "Rock legend Sir Rod Stewart performs his classic hits spanning five decades.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://casino.hardrock.com/hollywood/events"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": true,
+    "venueId": "hard-rock-live"
+  },
+  {
+    "id": "a4bc4374011e474f",
+    "title": "Florida Panthers vs Buffalo Sabres",
+    "startAt": "2026-02-27T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "sports",
+      "local-favorite",
+      "massive",
+      "arena",
+      "concerts"
+    ],
+    "category": "Sports",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Nothing beats live sports.",
+    "editorialWhy": "NHL hockey: Florida Panthers face the Buffalo Sabres at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL hockey: Florida Panthers face the Buffalo Sabres at Amerant Bank Arena.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.floridapanthers.com/schedule"
+    },
+    "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
+    "editorPick": true,
+    "venueId": "amerant-bank-arena"
+  },
+  {
+    "id": "dc3420c79b97e018",
+    "title": "Florida Panthers vs Boston Bruins",
+    "startAt": "2026-02-04T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Amerant Bank Arena",
+    "address": "1 Panther Pkwy, Sunrise, FL 33323",
+    "neighborhood": "Sunrise",
+    "lat": 26.1584,
+    "lng": -80.3256,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "sports",
+      "local-favorite",
+      "massive",
+      "arena",
+      "concerts"
+    ],
+    "category": "Sports",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Game day energy at its peak.",
+    "editorialWhy": "NHL hockey: Florida Panthers face the Boston Bruins at Amerant Bank Arena. Located in Sunrise, Amerant Bank Arena is a local favorite.",
+    "description": "NHL hockey: Florida Panthers face the Boston Bruins at Amerant Bank Arena.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.floridapanthers.com/schedule"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-29/d0744d86-45bf-4bb5-b1c2-9b3d73d66abe_source-726316293.webp?w=1024",
+    "editorPick": true,
+    "venueId": "amerant-bank-arena"
+  },
+  {
+    "id": "77683264d960b636",
+    "title": "Bob Marley (Comedian)",
+    "startAt": "2026-02-07T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "local-favorite",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more. Located in Dania Beach, Dania Beach Improv is a local favorite.",
+    "description": "Comedian Bob Marley with appearances on Letterman, Leno, Conan, and more.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.daniaimprov.com/"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": true,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "ff51e26ce68f2b4c",
+    "title": "Built to Spill",
+    "startAt": "2026-02-09T20:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Culture Room",
+    "address": "3045 N Federal Hwy, Fort Lauderdale, FL 33306",
+    "neighborhood": "Fort Lauderdale",
+    "lat": 26.1535,
+    "lng": -80.1197,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite",
+      "intimate",
+      "rock",
+      "indie"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "Indie rock legends from Boise. Doug Martsch's guitar-driven masterclass. Located in Fort Lauderdale, Culture Room is a local favorite.",
+    "description": "Indie rock legends from Boise. Doug Martsch's guitar-driven masterclass.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://cultureroom.net/"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": true,
+    "venueId": "culture-room"
+  },
+  {
+>>>>>>> Stashed changes
     "id": "33dbd465b1c99962",
     "title": "Buzzcocks: 50 Years",
     "startAt": "2026-04-02T20:00:00",
@@ -3510,7 +4006,11 @@
     "category": "Music",
     "priceLabel": "$$",
     "isOutdoor": false,
+<<<<<<< Updated upstream
     "shortWhy": "The kind of night Fort Lauderdale does best.",
+=======
+    "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
+>>>>>>> Stashed changes
     "editorialWhy": "50 years of punk rock pioneers Buzzcocks with special guests Redd Kross. Located in Fort Lauderdale, Culture Room is a local favorite.",
     "description": "50 years of punk rock pioneers Buzzcocks with special guests Redd Kross.",
     "ticketUrl": "https://cultureroom.net/",
@@ -3523,6 +4023,105 @@
     "venueId": "culture-room"
   },
   {
+<<<<<<< Updated upstream
+=======
+    "id": "7e89dcbe7fbb2124",
+    "title": "Last Dinosaurs",
+    "startAt": "2026-02-20T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Revolution Live",
+    "address": "100 SW 3rd Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7657,
+    "lng": -80.1452,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite",
+      "rock",
+      "indie",
+      "standing-room"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Get your music fix with locals who know.",
+    "editorialWhy": "Australian indie pop band Last Dinosaurs brings their dreamy sound. Located in Downtown, Revolution Live is a local favorite.",
+    "description": "Australian indie pop band Last Dinosaurs brings their dreamy sound.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.jointherevolution.net/concerts/"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": true,
+    "venueId": "revolution-live"
+  },
+  {
+    "id": "521426a9e0add7d7",
+    "title": "Joey Valence & Brae",
+    "startAt": "2026-02-12T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Revolution Live",
+    "address": "100 SW 3rd Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7657,
+    "lng": -80.1452,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite",
+      "rock",
+      "indie",
+      "standing-room"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "Get your music fix with locals who know.",
+    "editorialWhy": "Viral hip-hop duo bringing their old-school influenced sound. Located in Downtown, Revolution Live is a local favorite.",
+    "description": "Viral hip-hop duo bringing their old-school influenced sound.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.jointherevolution.net/concerts/"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": true,
+    "venueId": "revolution-live"
+  },
+  {
+    "id": "ea4847a040541a3e",
+    "title": "Ruel",
+    "startAt": "2026-02-15T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Revolution Live",
+    "address": "100 SW 3rd Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7657,
+    "lng": -80.1452,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "live-music",
+      "local-favorite",
+      "rock",
+      "indie",
+      "standing-room"
+    ],
+    "category": "Music",
+    "priceLabel": "$$",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "Australian singer-songwriter Ruel on his North American tour. Located in Downtown, Revolution Live is a local favorite.",
+    "description": "Australian singer-songwriter Ruel on his North American tour.",
+    "source": {
+      "name": "Cultural Attractions",
+      "url": "https://www.jointherevolution.net/concerts/"
+    },
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    "editorPick": true,
+    "venueId": "revolution-live"
+  },
+  {
+>>>>>>> Stashed changes
     "id": "4a0e48bf900562b8",
     "title": "Thee Phantom and The Illharmonics",
     "startAt": "2026-03-07T20:00:00",
@@ -3553,5 +4152,3312 @@
     "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "editorPick": false,
     "venueId": "ftl-war-memorial"
+<<<<<<< Updated upstream
+=======
+  },
+  {
+    "id": "75467eff4a7a4983",
+    "title": "Michaël Rancourt présente Les Inoubliables (Show in French)",
+    "startAt": "2026-03-11T21:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Michaël Rancourt présente Les Inoubliables (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Michaël Rancourt présente Les Inoubliables (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346678"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "554b44f0b7bc4ed2",
+    "title": "BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL*",
+    "startAt": "2026-05-01T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345642"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "5fd323827f86bfc3",
+    "title": "BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL*",
+    "startAt": "2026-05-02T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345645"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "2c0e4b4465057792",
+    "title": "BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL*",
+    "startAt": "2026-05-03T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": " BRUCE BRUCE: COOL SINCE DAY ONE TOUR *BRAND NEW MATERIAL* at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345646"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "914b9c9326a67fdb",
+    "title": "Slow Burn Theatre Co: Beautiful: The Carole King Musical",
+    "startAt": "2026-02-14T13:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7669,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-music",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "Slow Burn Theatre Co: Beautiful: The Carole King Musical at Broward Center for the Performing Arts Located in Fort Lauderdale, Broward Center for the Performing Arts is a local favorite.",
+    "description": "Slow Burn Theatre Co: Beautiful: The Carole King Musical at Broward Center for the Performing Arts",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/slow-burn-theatre-co-beautiful-the-carole-king-musical-23056074/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-19/fda8c807-42eb-4b81-9f16-f3a8367e107d_106371_tablet_landscape_large_16_9-400125177.webp?w=1024",
+    "editorPick": true,
+    "venueId": "broward-center"
+  },
+  {
+    "id": "689e2cc22fc0e223",
+    "title": "Slow Burn Theatre Co: Beautiful: The Carole King Musical",
+    "startAt": "2026-02-15T14:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7669,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "theater",
+      "live-music",
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Music",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "The kind of night Fort Lauderdale does best.",
+    "editorialWhy": "Slow Burn Theatre Co: Beautiful: The Carole King Musical at Broward Center for the Performing Arts Located in Fort Lauderdale, Broward Center for the Performing Arts is a local favorite.",
+    "description": "Slow Burn Theatre Co: Beautiful: The Carole King Musical at Broward Center for the Performing Arts",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/slow-burn-theatre-co-beautiful-the-carole-king-musical-23056122/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-19/fda8c807-42eb-4b81-9f16-f3a8367e107d_106371_tablet_landscape_large_16_9-817666535.webp?w=1024",
+    "editorPick": true,
+    "venueId": "broward-center"
+  },
+  {
+    "id": "058cd6471e0c22f5",
+    "title": "Darci Lynn & Friends: Up Close And Personal",
+    "startAt": "2026-03-12T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Darci Lynn & Friends: Up Close And Personal at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Darci Lynn & Friends: Up Close And Personal at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/333429"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "a336fd5e071ecd30",
+    "title": "Andy Huggins From \"America's Got Talent\"",
+    "startAt": "2026-03-29T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Andy Huggins From \"America's Got Talent\" at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Andy Huggins From \"America's Got Talent\" at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/343895"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "14ad985e7aa5de5d",
+    "title": "Harland Williams: COMZILLA Comedy Tour",
+    "startAt": "2026-02-13T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Harland Williams: COMZILLA Comedy Tour at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Harland Williams: COMZILLA Comedy Tour at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/335309"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "14be96a295c20a28",
+    "title": "Harland Williams: COMZILLA Comedy Tour",
+    "startAt": "2026-02-14T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Harland Williams: COMZILLA Comedy Tour at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Harland Williams: COMZILLA Comedy Tour at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/335310"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "56519d81569af61e",
+    "title": "Harland Williams: COMZILLA Comedy Tour",
+    "startAt": "2026-02-15T00:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Harland Williams: COMZILLA Comedy Tour at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Harland Williams: COMZILLA Comedy Tour at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/335311"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "31617573d2db45df",
+    "title": "Florida's Funniest Comedian Contest",
+    "startAt": "2026-04-15T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Florida's Funniest Comedian Contest at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Florida's Funniest Comedian Contest at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/357017"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "bbe505f5a718bd97",
+    "title": "Guylaine Tanguay ( Show in French)",
+    "startAt": "2026-02-11T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Guylaine Tanguay ( Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Guylaine Tanguay ( Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346637"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "f71e9def515f7f3d",
+    "title": "Mélissa Bédard (Show in French)",
+    "startAt": "2026-02-25T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Mélissa Bédard (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Mélissa Bédard (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346621"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "d0240645e8972110",
+    "title": "Alfred Robles: Vatos With Gatos",
+    "startAt": "2026-06-18T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Alfred Robles: Vatos With Gatos at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Alfred Robles: Vatos With Gatos at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/349161"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "3e174d2794cd8b1d",
+    "title": "Marc Hervieux (Show in French)",
+    "startAt": "2026-02-04T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Marc Hervieux (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Marc Hervieux (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346635"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "664aa815e7843df9",
+    "title": "Mariana Mazza (Show in French)",
+    "startAt": "2026-02-18T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Mariana Mazza (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Mariana Mazza (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346647"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "afd81f290892d1af",
+    "title": "Pout Pout Fish: Smart Stage Matinee Series",
+    "startAt": "2026-02-04T10:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7669,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Culture in full color.",
+    "editorialWhy": "Pout Pout Fish: Smart Stage Matinee Series at Broward Center for the Performing Arts Located in Fort Lauderdale, Broward Center for the Performing Arts is a local favorite.",
+    "description": "Pout Pout Fish: Smart Stage Matinee Series at Broward Center for the Performing Arts",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/pout-pout-fish-smart-stage-matinee-series-23119367/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-20/a6e8e2a0-ff1c-4cb1-a8ae-6b45aa69fe73_source.webp?w=1024",
+    "editorPick": true,
+    "venueId": "broward-center"
+  },
+  {
+    "id": "23bb88549347c5c1",
+    "title": "Have-Nots Comedy LIVE In FTL",
+    "startAt": "2026-02-28T21:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Have-Nots Comedy LIVE In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Have-Nots Comedy LIVE In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/347235"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "797cb341c805427a",
+    "title": "Have-Nots Comedy LIVE In FTL",
+    "startAt": "2026-03-14T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Have-Nots Comedy LIVE In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Have-Nots Comedy LIVE In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/344133"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "b1f05e85cd387b4e",
+    "title": "Mike Goodwin: Open Mike Tour",
+    "startAt": "2026-03-22T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Mike Goodwin: Open Mike Tour at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Mike Goodwin: Open Mike Tour at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/337572"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "0fbde3395a230a25",
+    "title": "Have-Nots Comedy Live In FTL",
+    "startAt": "2026-04-23T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/357058"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "6a0443b3d0ef19ff",
+    "title": "Have-Nots Comedy Live In FTL",
+    "startAt": "2026-05-17T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/357059"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "ab80f2b519a159da",
+    "title": "Psychic Medium Bill Philipps",
+    "startAt": "2026-05-23T19:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Psychic Medium Bill Philipps at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Psychic Medium Bill Philipps at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/349044"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "5019da1370a00d65",
+    "title": "Have-Nots Comedy Live In FTL",
+    "startAt": "2026-06-21T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/357060"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "399e01fed31806a6",
+    "title": "Have-Nots Comedy Live In FTL",
+    "startAt": "2026-07-23T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Have-Nots Comedy Live In FTL at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/357061"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "eb72c8bd11d39b54",
+    "title": "Guy Nantel (Show in French)",
+    "startAt": "2026-03-04T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Guy Nantel (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Guy Nantel (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346668"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "0e3d552ae4dfb69e",
+    "title": "Drunk & Stoned Comedy Tour",
+    "startAt": "2026-02-21T21:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Drunk & Stoned Comedy Tour at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Drunk & Stoned Comedy Tour at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/344861"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "eb7e008686430461",
+    "title": "Stand Up Comedy Workshop",
+    "startAt": "2026-02-21T16:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Stand Up Comedy Workshop at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Stand Up Comedy Workshop at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/356358"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "9fe5919aee63eacb",
+    "title": "Tocadéo (Show in French)",
+    "startAt": "2026-03-25T21:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Tocadéo (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Tocadéo (Show in French) at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346730"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "1e51654d2ae062e2",
+    "title": "Randy Feltface: Gimmick",
+    "startAt": "2026-05-08T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Randy Feltface: Gimmick at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Randy Feltface: Gimmick at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341364"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "198bcd48010f4d7f",
+    "title": "Randy Feltface: Gimmick",
+    "startAt": "2026-05-09T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Randy Feltface: Gimmick at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Randy Feltface: Gimmick at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341365"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "2937a1675ec04bfd",
+    "title": "Randy Feltface: Gimmick",
+    "startAt": "2026-05-10T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Randy Feltface: Gimmick at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Randy Feltface: Gimmick at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341367"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "79042f694a7bd8ed",
+    "title": "DEADASS: a comedy show",
+    "startAt": "2026-02-11T01:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "DEADASS: a comedy show at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "DEADASS: a comedy show at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/354152"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "187423e5ae4dbba8",
+    "title": "Led Varela En Español",
+    "startAt": "2026-02-07T21:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Led Varela En Español at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Led Varela En Español at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/343626"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "8e92119cf37e5fe0",
+    "title": "Comedy Graduation",
+    "startAt": "2026-02-18T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Comedy Graduation at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Comedy Graduation at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/357041"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "a41bfe6d41e929ff",
+    "title": "Big Jay Oakerson",
+    "startAt": "2026-02-07T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Big Jay Oakerson at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Big Jay Oakerson at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/336826"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "7c1668179538f282",
+    "title": "Big Jay Oakerson",
+    "startAt": "2026-02-08T00:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Big Jay Oakerson at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Big Jay Oakerson at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/336827"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "f852d55bc7c6548c",
+    "title": "Rachel Feinstein",
+    "startAt": "2026-04-18T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Rachel Feinstein at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Rachel Feinstein at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345670"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "9a9b92baed3d3a06",
+    "title": "Rachel Feinstein",
+    "startAt": "2026-04-19T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Rachel Feinstein at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Rachel Feinstein at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345671"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "3a86811f1b4ba9b9",
+    "title": "Kerwin Claiborne",
+    "startAt": "2026-04-26T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Kerwin Claiborne at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Kerwin Claiborne at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/350176"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "cdf92cc304747a9a",
+    "title": "Hannibal Buress",
+    "startAt": "2026-02-21T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Hannibal Buress at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Hannibal Buress at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346731"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "8bf317b192eda1f1",
+    "title": "Hannibal Buress",
+    "startAt": "2026-02-22T00:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Hannibal Buress at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Hannibal Buress at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346733"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "d07b8202eb934b3f",
+    "title": "Open Mic Night",
+    "startAt": "2026-02-25T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Open Mic Night at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Open Mic Night at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/344131"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "8f7fd2166bce035d",
+    "title": "Geoffrey Asmus",
+    "startAt": "2026-04-24T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Geoffrey Asmus at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Geoffrey Asmus at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345638"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "8f774ea9b658cfc4",
+    "title": "Geoffrey Asmus",
+    "startAt": "2026-04-25T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Geoffrey Asmus at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Geoffrey Asmus at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345640"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "b960bc8ec07e070f",
+    "title": "Geoffrey Asmus",
+    "startAt": "2026-04-26T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Geoffrey Asmus at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Geoffrey Asmus at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345641"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "e1a4a2eb84624b77",
+    "title": "Russell Peters",
+    "startAt": "2026-06-04T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341875"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "034092543cf0e892",
+    "title": "Russell Peters",
+    "startAt": "2026-06-05T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341876"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "7cf376d4cb858870",
+    "title": "Russell Peters",
+    "startAt": "2026-06-06T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341878"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "7101593f7ced341c",
+    "title": "Russell Peters",
+    "startAt": "2026-06-07T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Russell Peters at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341879"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "cf8fec113d83726b",
+    "title": "Dedrick Flynn",
+    "startAt": "2026-05-22T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Dedrick Flynn at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Dedrick Flynn at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346575"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "7b3824f8c180c07d",
+    "title": "Dedrick Flynn",
+    "startAt": "2026-05-23T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Dedrick Flynn at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Dedrick Flynn at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346577"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "75abbfe88485edf9",
+    "title": "Dedrick Flynn",
+    "startAt": "2026-05-24T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Dedrick Flynn at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Dedrick Flynn at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346578"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "ead3c9ef1a26eae8",
+    "title": "Anthony Rodia",
+    "startAt": "2026-05-29T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345608"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "c115addd753c771f",
+    "title": "Anthony Rodia",
+    "startAt": "2026-05-30T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345610"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "7271427c41441131",
+    "title": "Anthony Rodia",
+    "startAt": "2026-05-31T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Anthony Rodia at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345609"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "c8645d24abc99f2e",
+    "title": "Jason Salmon",
+    "startAt": "2026-02-06T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Jason Salmon at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Jason Salmon at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341843"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "40e727fd7f375491",
+    "title": "Ilana Glazer",
+    "startAt": "2026-02-15T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Ilana Glazer at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Ilana Glazer at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341832"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "47e952b4d285e25b",
+    "title": "Sarper Güven",
+    "startAt": "2026-02-23T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Sarper Güven at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Sarper Güven at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/349822"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "e650eead6851aa3f",
+    "title": "Chad Daniels",
+    "startAt": "2026-03-13T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341891"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "45da4432a3d7fc77",
+    "title": "Chad Daniels",
+    "startAt": "2026-03-14T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341890"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "fac437a3a26ca39c",
+    "title": "Chad Daniels",
+    "startAt": "2026-03-15T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Chad Daniels at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341892"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "4765b8c5d5a748f6",
+    "title": "Gigi LeFlair",
+    "startAt": "2026-04-08T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Gigi LeFlair at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Gigi LeFlair at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/330756"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "02790a7f3f5c0e54",
+    "title": "Mark Normand",
+    "startAt": "2026-04-10T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Mark Normand at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Mark Normand at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/340996"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "a5b9c8901afa3042",
+    "title": "Mark Normand",
+    "startAt": "2026-04-11T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Mark Normand at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Mark Normand at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/340998"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "522a0594835d942b",
+    "title": "Mark Normand",
+    "startAt": "2026-04-12T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Mark Normand at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Mark Normand at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/340999"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "3df70fdf499f18ed",
+    "title": "Fiona Cauley",
+    "startAt": "2026-04-12T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Fiona Cauley at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Fiona Cauley at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/322766"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "1a82f48cb5d3a61f",
+    "title": "Zach Rushing",
+    "startAt": "2026-05-13T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Zach Rushing at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Zach Rushing at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/343056"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "4c7388047e386071",
+    "title": "Amber Autry",
+    "startAt": "2026-02-20T00:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Amber Autry at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Amber Autry at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/336756"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "5ffc75c86cdf1e72",
+    "title": "Greg Warren",
+    "startAt": "2026-03-08T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Greg Warren at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Greg Warren at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/335777"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "646f3592275ec84f",
+    "title": "Maz Jobrani",
+    "startAt": "2026-03-20T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Maz Jobrani at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Maz Jobrani at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/343015"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "c7b5511e038f0336",
+    "title": "Maz Jobrani",
+    "startAt": "2026-03-21T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Maz Jobrani at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Maz Jobrani at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/343017"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "4a90d583d33b7174",
+    "title": "Maz Jobrani",
+    "startAt": "2026-03-22T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Maz Jobrani at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Maz Jobrani at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/343018"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "78bb25941da9929c",
+    "title": "Benji Brown",
+    "startAt": "2026-04-02T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/342905"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "acdac239b2f706f8",
+    "title": "Benji Brown",
+    "startAt": "2026-04-03T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/342906"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "b0f31344c386b15c",
+    "title": "Benji Brown",
+    "startAt": "2026-04-04T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/342908"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "4c5e249a3ee9ec01",
+    "title": "Benji Brown",
+    "startAt": "2026-04-05T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Benji Brown at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/342909"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "1b97c05c409884e7",
+    "title": "Aaron Weber",
+    "startAt": "2026-05-15T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Aaron Weber at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Aaron Weber at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/339899"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "d7b548080bddd5c7",
+    "title": "Aaron Weber",
+    "startAt": "2026-05-16T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Aaron Weber at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Aaron Weber at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/339901"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "1914c9551c0b1677",
+    "title": "Aaron Weber",
+    "startAt": "2026-05-17T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Aaron Weber at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Aaron Weber at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/339902"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "107502d8fe5c8e50",
+    "title": "Connor Wood",
+    "startAt": "2026-06-10T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Connor Wood at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Connor Wood at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/348096"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "ea2d1eae76bd564f",
+    "title": "Connor Wood",
+    "startAt": "2026-06-11T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Connor Wood at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Connor Wood at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/348098"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "73f2e7cc3e02f682",
+    "title": "Connor Wood",
+    "startAt": "2026-06-12T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Connor Wood at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Connor Wood at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/348099"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "6751ae96bcf3b1b0",
+    "title": "DL Hughley",
+    "startAt": "2026-02-28T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "DL Hughley at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "DL Hughley at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/330185"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "847ad8f958892b78",
+    "title": "DL Hughley",
+    "startAt": "2026-03-01T00:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "DL Hughley at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "DL Hughley at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/330186"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "af5dc96cc95e1f47",
+    "title": "Aaron Chen",
+    "startAt": "2026-03-15T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Aaron Chen at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Aaron Chen at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/344582"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "8d82469c6293b36a",
+    "title": "P-A Méthot",
+    "startAt": "2026-03-18T21:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "P-A Méthot at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "P-A Méthot at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/346743"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "22731436315a9099",
+    "title": "Ben Bankas",
+    "startAt": "2026-04-16T23:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Ben Bankas at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Ben Bankas at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/355162"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "a806c9ff88c5dad9",
+    "title": "Joey Avery",
+    "startAt": "2026-05-14T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Joey Avery at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Joey Avery at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345438"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "7d4ee802dac0daa5",
+    "title": "Dave Smith",
+    "startAt": "2026-07-30T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Dave Smith at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Dave Smith at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/347968"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "e89bd5ddf2c3d2ab",
+    "title": "Dave Smith",
+    "startAt": "2026-08-01T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Dave Smith at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Dave Smith at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/347969"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "564bf6c4bb18c6f0",
+    "title": "Ryan Davis",
+    "startAt": "2026-09-11T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Ryan Davis at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Ryan Davis at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345624"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "f283ade064af41f0",
+    "title": "Ryan Davis",
+    "startAt": "2026-09-12T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Ryan Davis at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Ryan Davis at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345626"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "4e0a3eb8f62c6a4c",
+    "title": "Ryan Davis",
+    "startAt": "2026-09-13T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Ryan Davis at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Ryan Davis at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/345627"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "4eeec7a3ece255f6",
+    "title": "Mark Paul",
+    "startAt": "2026-02-22T22:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Mark Paul at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Mark Paul at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/341840"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "14b3fcae850efe6c",
+    "title": "Ari Matti",
+    "startAt": "2026-03-07T00:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Ari Matti at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Ari Matti at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/340751"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "101bfff777ee6f05",
+    "title": "Ari Matti",
+    "startAt": "2026-03-08T00:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Ari Matti at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Ari Matti at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/340753"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "38ac6da62f925fda",
+    "title": "Joe List",
+    "startAt": "2026-03-26T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/342913"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "14f8becab2c48f76",
+    "title": "Joe List",
+    "startAt": "2026-03-27T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/342917"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "82d1a463cdaae456",
+    "title": "Joe List",
+    "startAt": "2026-03-28T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/342915"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "f1f64963881c665c",
+    "title": "Joe List",
+    "startAt": "2026-03-29T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Comedians who know how to deliver.",
+    "editorialWhy": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Joe List at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/342916"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "22e536077d2f62b2",
+    "title": "Godfrey",
+    "startAt": "2026-06-12T23:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "The perfect night out.",
+    "editorialWhy": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/355451"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "4ea69f27c62d51c1",
+    "title": "Godfrey",
+    "startAt": "2026-06-13T02:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/355452"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "2a06dce75a57947e",
+    "title": "Godfrey",
+    "startAt": "2026-06-14T01:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Dania Beach Improv",
+    "address": "5700 Seminole Way, Hollywood, FL 33314",
+    "neighborhood": "Hollywood",
+    "lat": 26.0515,
+    "lng": -80.2105,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "comedy",
+      "live-entertainment",
+      "standup",
+      "casino"
+    ],
+    "category": "Comedy",
+    "isOutdoor": false,
+    "shortWhy": "Laugh out loud with Fort Lauderdale's comedy scene.",
+    "editorialWhy": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum. Located in Hollywood, Fort Lauderdale Improv is a local favorite.",
+    "description": "Godfrey at Fort Lauderdale Improv. 21+ with two-drink minimum.",
+    "source": {
+      "name": "Fort Lauderdale Improv",
+      "url": "https://www.improvftl.com/shows/355454"
+    },
+    "image": "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&q=80",
+    "editorPick": false,
+    "venueId": "dania-improv"
+  },
+  {
+    "id": "b0d058ca728c11de",
+    "title": "BATSU!",
+    "startAt": "2026-02-11T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7669,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "BATSU! at Broward Center for the Performing Arts Located in Fort Lauderdale, Broward Center for the Performing Arts is a local favorite.",
+    "description": "BATSU! at Broward Center for the Performing Arts",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/batsu-23795629/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-33/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_tablet_landscape_large_16_9-981535053.webp?w=1024",
+    "editorPick": true,
+    "venueId": "broward-center"
+  },
+  {
+    "id": "dc97aba508557b5e",
+    "title": "BATSU!",
+    "startAt": "2026-02-12T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7669,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "BATSU! at Broward Center for the Performing Arts Located in Fort Lauderdale, Broward Center for the Performing Arts is a local favorite.",
+    "description": "BATSU! at Broward Center for the Performing Arts",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/batsu-23795727/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-33/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_tablet_landscape_large_16_9-874083189.webp?w=1024",
+    "editorPick": true,
+    "venueId": "broward-center"
+  },
+  {
+    "id": "9a062ff5df90d752",
+    "title": "BATSU!",
+    "startAt": "2026-02-13T19:30:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7669,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "BATSU! at Broward Center for the Performing Arts Located in Fort Lauderdale, Broward Center for the Performing Arts is a local favorite.",
+    "description": "BATSU! at Broward Center for the Performing Arts",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/batsu-23795705/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-33/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_tablet_landscape_large_16_9-880312631.webp?w=1024",
+    "editorPick": true,
+    "venueId": "broward-center"
+  },
+  {
+    "id": "0a88060d2b324186",
+    "title": "BATSU!",
+    "startAt": "2026-02-14T17:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7669,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "See what Fort Lauderdale's art scene is about.",
+    "editorialWhy": "BATSU! at Broward Center for the Performing Arts Located in Fort Lauderdale, Broward Center for the Performing Arts is a local favorite.",
+    "description": "BATSU! at Broward Center for the Performing Arts",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/batsu-23795703/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-33/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_tablet_landscape_large_16_9-277126385.webp?w=1024",
+    "editorPick": true,
+    "venueId": "broward-center"
+  },
+  {
+    "id": "037494c2f0df9b9c",
+    "title": "BATSU!",
+    "startAt": "2026-02-15T17:00:00",
+    "timezone": "America/New_York",
+    "venueName": "Broward Center",
+    "address": "201 SW 5th Ave, Fort Lauderdale, FL 33312",
+    "neighborhood": "Downtown FLL",
+    "lat": 25.7669,
+    "lng": -80.1436,
+    "city": "Fort Lauderdale",
+    "tags": [
+      "performing-arts",
+      "broadway",
+      "concerts"
+    ],
+    "category": "Art",
+    "priceLabel": "$",
+    "isOutdoor": false,
+    "shortWhy": "Art worth the trip.",
+    "editorialWhy": "BATSU! at Broward Center for the Performing Arts Located in Fort Lauderdale, Broward Center for the Performing Arts is a local favorite.",
+    "description": "BATSU! at Broward Center for the Performing Arts",
+    "source": {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/event/batsu-23795625/"
+    },
+    "image": "https://www.miaminewtimes.com/wp-content/uploads/sites/4/ww-media/mediaserver/mia/2025-33/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_tablet_landscape_large_16_9-826739801.webp?w=1024",
+    "editorPick": true,
+    "venueId": "broward-center"
+>>>>>>> Stashed changes
   }
 ]

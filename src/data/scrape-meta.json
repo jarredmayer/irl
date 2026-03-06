@@ -1,10 +1,19 @@
 {
+<<<<<<< Updated upstream
   "scrapedAt": "2026-03-06T00:54:05.251Z",
   "stats": {
     "total": 1084,
     "deduplicated": 744,
     "bySource": {
       "Miami New Times": 0,
+=======
+  "scrapedAt": "2026-02-04T13:31:34.798Z",
+  "stats": {
+    "total": 1053,
+    "deduplicated": 742,
+    "bySource": {
+      "Miami New Times": 71,
+>>>>>>> Stashed changes
       "Farmers Markets": 80,
       "Beach Cleanups": 16,
       "Don't Tell Comedy": 16,
@@ -50,19 +59,31 @@
     }
   },
   "delta": {
+<<<<<<< Updated upstream
     "added": 0,
     "removed": 0,
     "modified": 0,
     "unchanged": 744
+=======
+    "added": 3,
+    "removed": 3,
+    "modified": 0,
+    "unchanged": 739
+>>>>>>> Stashed changes
   },
   "sources": [
     {
       "name": "Miami New Times",
+<<<<<<< Updated upstream
       "count": 0,
       "status": "error",
       "errors": [
         "Timed out after 120s"
       ]
+=======
+      "count": 71,
+      "errors": []
+>>>>>>> Stashed changes
     },
     {
       "name": "Farmers Markets",
