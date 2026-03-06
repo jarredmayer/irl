@@ -18,9 +18,8 @@ export type { YourcastEditorial, EditorialInput } from './prompts/editorial';
 
 export {
   generateEventImage,
-  generateEventImages,
+  getFallbackImage,
   getCachedImage,
-  getImageStats,
   clearImageCache,
 } from './image-agent';
 

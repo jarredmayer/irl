@@ -1,9 +1,9 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { isHappeningNow } from '../../utils/time';
 import { getCategorySwatchColor } from '../../utils/category';
 import { useSwipeGesture } from '../../hooks/useSwipeGesture';
-import { CATEGORY_COLORS } from '../../constants';
+import { generateEventImage, getFallbackImage } from '../../agents/image-agent';
 import type { ScoredEvent, HourlyWeather, FollowType } from '../../types';
 import { format } from 'date-fns';
 import { toZonedTime } from 'date-fns-tz';
@@ -50,8 +50,21 @@ export function EventCard({
   const [dismissed, setDismissed] = useState(false);
   const [showSaveAnimation, setShowSaveAnimation] = useState(false);
 
+  // Image state: start with existing image or fallback for instant render
+  const [imgUrl, setImgUrl] = useState<string>(
+    () => event.image || getFallbackImage(event.category, event.id)
+  );
+
+  // Fetch better image if none exists
+  useEffect(() => {
+    if (!event.image) {
+      generateEventImage(event).then(setImgUrl);
+    } else {
+      setImgUrl(event.image);
+    }
+  }, [event]);
+
   const swatchColor = getCategorySwatchColor(event.category);
-  const categoryEmoji = CATEGORY_COLORS[event.category]?.emoji || '📅';
 
   const happeningNow = useMemo(() => isHappeningNow(event.startAt, event.endAt), [event.startAt, event.endAt]);
 
@@ -211,19 +224,13 @@ export function EventCard({
         <div className="flex h-full">
           {/* LEFT — Image area (120px wide) */}
           <div className="w-[120px] flex-shrink-0 relative overflow-hidden" style={{ borderRadius: '22px 0 0 22px' }}>
-            {event.image ? (
-              <img
-                src={event.image}
-                alt={event.title}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <div className="w-full h-full bg-soft flex items-center justify-center">
-                <span className="text-[32px]">{categoryEmoji}</span>
-              </div>
-            )}
+            <img
+              src={imgUrl}
+              alt={event.title}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
 
             {/* HAPPENING NOW badge */}
             {happeningNow && (

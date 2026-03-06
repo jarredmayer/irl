@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getWeatherIcon } from '../../services/weather';
 import { getCategorySwatchColor } from '../../utils/category';
+import { generateEventImage, getFallbackImage } from '../../agents/image-agent';
 import type { ScoredEvent, HourlyWeather } from '../../types';
 import { format } from 'date-fns';
 import { toZonedTime } from 'date-fns-tz';
@@ -32,6 +33,20 @@ export function HeroCard({
   const navigate = useNavigate();
   const [showSaveAnimation, setShowSaveAnimation] = useState(false);
 
+  // Image state: start with existing image or fallback for instant render
+  const [imgUrl, setImgUrl] = useState<string>(
+    () => event.image || getFallbackImage(event.category, event.id)
+  );
+
+  // Fetch better image if none exists
+  useEffect(() => {
+    if (!event.image) {
+      generateEventImage(event).then(setImgUrl);
+    } else {
+      setImgUrl(event.image);
+    }
+  }, [event]);
+
   const swatchColor = getCategorySwatchColor(event.category);
 
   const handleClick = () => {
@@ -48,25 +63,18 @@ export function HeroCard({
     }
   };
 
-  // Use a fallback gradient if no image
-  const hasImage = !!event.image;
-
   return (
     <article
       onClick={handleClick}
       className="relative w-full cursor-pointer overflow-hidden"
       style={{ height: '280px' }}
     >
-      {/* Background image */}
-      {hasImage ? (
-        <img
-          src={event.image}
-          alt={event.title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-burgundy to-fig" />
-      )}
+      {/* Background image - always show since we have fallback */}
+      <img
+        src={imgUrl}
+        alt={event.title}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
       {/* Dark gradient overlay */}
       <div

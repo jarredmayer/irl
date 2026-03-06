@@ -1,406 +1,289 @@
-/**
- * Image Generation Agent (Tier 2 Images)
- *
- * Generates or selects images for events that have no real photo.
- * Uses the generation_prompt from Phase 4 image classifier.
- *
- * Priority:
- * 1. Replicate API (FLUX Schnell model) - if REPLICATE_API_KEY set
- * 2. Fal.ai API (FLUX Schnell) - if FAL_API_KEY set
- * 3. Curated Unsplash fallback - organized by category
- *
- * Never blocks rendering - images load progressively.
- */
+import type { ScoredEvent } from '../types';
 
-import { getCategoryImageByEventId } from '../data/category-images';
-import type { Event } from '../types';
+// ─── STYLE BRIEF ──────────────────────────────────────────
+// Editorial brand photography. Single hero subject.
+// Bold graphic composition. Rich saturated shadows.
+// No faces. No text. No logos. No UI.
+// Medium format film aesthetic. Warm analog color grade.
+// Miami / South Florida energy where relevant.
+// ──────────────────────────────────────────────────────────
 
-// Cache for generated images to avoid re-generation
-const IMAGE_CACHE_KEY = 'irl_generated_images';
+const CACHE_PREFIX = 'irl_img_';
+const CACHE_TTL_MS = 1000 * 60 * 60 * 24; // 24 hours
 
-interface ImageCache {
-  [eventId: string]: {
-    url: string;
-    generatedAt: number;
-    source: 'replicate' | 'fal' | 'unsplash';
-  };
-}
-
-interface GeneratedImage {
+interface CacheEntry {
   url: string;
-  source: 'replicate' | 'fal' | 'unsplash';
-  eventId: string;
+  ts: number;
 }
 
-/**
- * Load image cache from localStorage
- */
-function loadImageCache(): ImageCache {
+function getCache(eventId: string): string | null {
   try {
-    const cached = localStorage.getItem(IMAGE_CACHE_KEY);
-    return cached ? JSON.parse(cached) : {};
-  } catch {
-    return {};
-  }
-}
-
-/**
- * Save image cache to localStorage
- */
-function saveImageCache(cache: ImageCache): void {
-  try {
-    localStorage.setItem(IMAGE_CACHE_KEY, JSON.stringify(cache));
-  } catch {
-    console.warn('Failed to save image cache');
-  }
-}
-
-/**
- * Get cached image for an event
- */
-export function getCachedImage(eventId: string): string | null {
-  const cache = loadImageCache();
-  const entry = cache[eventId];
-
-  if (!entry) return null;
-
-  // Images are valid for 7 days
-  const TTL = 7 * 24 * 60 * 60 * 1000;
-  if (Date.now() - entry.generatedAt > TTL) {
-    delete cache[eventId];
-    saveImageCache(cache);
-    return null;
-  }
-
-  return entry.url;
-}
-
-/**
- * Cache a generated image
- */
-function cacheImage(
-  eventId: string,
-  url: string,
-  source: 'replicate' | 'fal' | 'unsplash'
-): void {
-  const cache = loadImageCache();
-  cache[eventId] = {
-    url,
-    generatedAt: Date.now(),
-    source,
-  };
-  saveImageCache(cache);
-}
-
-/**
- * Generate image using Replicate API (FLUX 1.1 Pro)
- * Using pro model for better editorial aesthetic quality
- */
-async function generateWithReplicate(prompt: string): Promise<string | null> {
-  const apiKey = import.meta.env.VITE_REPLICATE_API_KEY;
-  if (!apiKey) return null;
-
-  try {
-    const response = await fetch('https://api.replicate.com/v1/predictions', {
-      method: 'POST',
-      headers: {
-        Authorization: `Token ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        version: 'black-forest-labs/flux-1.1-pro',
-        input: {
-          prompt,
-          num_outputs: 1,
-          aspect_ratio: '16:9',
-          output_format: 'webp',
-          output_quality: 90,
-          num_inference_steps: 28,
-          guidance_scale: 3.5,
-        },
-      }),
-    });
-
-    if (!response.ok) {
-      console.warn('Replicate API error:', response.status);
+    const raw = localStorage.getItem(CACHE_PREFIX + eventId);
+    if (!raw) return null;
+    const entry: CacheEntry = JSON.parse(raw);
+    if (Date.now() - entry.ts > CACHE_TTL_MS) {
+      localStorage.removeItem(CACHE_PREFIX + eventId);
       return null;
     }
-
-    const prediction = await response.json();
-
-    // Poll for completion (FLUX Schnell is fast, usually <10s)
-    let result = prediction;
-    let attempts = 0;
-    const maxAttempts = 30;
-
-    while (
-      result.status !== 'succeeded' &&
-      result.status !== 'failed' &&
-      attempts < maxAttempts
-    ) {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      const pollResponse = await fetch(
-        `https://api.replicate.com/v1/predictions/${prediction.id}`,
-        {
-          headers: { Authorization: `Token ${apiKey}` },
-        }
-      );
-
-      result = await pollResponse.json();
-      attempts++;
-    }
-
-    if (result.status === 'succeeded' && result.output?.[0]) {
-      return result.output[0];
-    }
-
-    return null;
-  } catch (error) {
-    console.error('Replicate generation error:', error);
-    return null;
-  }
+    return entry.url;
+  } catch { return null; }
 }
 
-/**
- * Generate image using Fal.ai API (FLUX Pro)
- * Using pro model for better editorial aesthetic quality
- */
-async function generateWithFal(prompt: string): Promise<string | null> {
-  const apiKey = import.meta.env.VITE_FAL_API_KEY;
-  if (!apiKey) return null;
-
+function setCache(eventId: string, url: string): void {
   try {
-    const response = await fetch(
-      'https://fal.run/fal-ai/flux-pro/v1.1',
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Key ${apiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          prompt,
-          image_size: 'landscape_16_9',
-          num_inference_steps: 28,
-          guidance_scale: 3.5,
-          num_images: 1,
-          enable_safety_checker: true,
-        }),
-      }
-    );
+    const entry: CacheEntry = { url, ts: Date.now() };
+    localStorage.setItem(CACHE_PREFIX + eventId, JSON.stringify(entry));
+  } catch {}
+}
 
-    if (!response.ok) {
-      console.warn('Fal.ai API error:', response.status);
-      return null;
-    }
-
-    const result = await response.json();
-
-    if (result.images?.[0]?.url) {
-      return result.images[0].url;
-    }
-
-    return null;
-  } catch (error) {
-    console.error('Fal.ai generation error:', error);
-    return null;
+// ─── HASH FOR CONSISTENT FALLBACK SELECTION ───────────────
+function hashCode(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
   }
+  return Math.abs(hash);
 }
 
-/**
- * Get Unsplash fallback image for an event
- */
-function getUnsplashFallback(event: Event): string {
-  return getCategoryImageByEventId(event.category, event.id);
-}
+// ─── CURATED FALLBACKS BY CATEGORY ───────────────────────
+// Selected for editorial single-subject quality.
+// Unsplash photo IDs — no faces, clean, South Florida adjacent.
 
-/**
- * Generate or select an image for a single event
- */
-export async function generateEventImage(
-  event: Event,
-  prompt?: string
-): Promise<GeneratedImage> {
-  // Check cache first
-  const cached = getCachedImage(event.id);
-  if (cached) {
-    return {
-      url: cached,
-      source: 'unsplash', // We don't track source in cache, default to unsplash
-      eventId: event.id,
-    };
-  }
-
-  const generationPrompt =
-    prompt || buildDefaultPrompt(event);
-
-  // Try Replicate first
-  const replicateImage = await generateWithReplicate(generationPrompt);
-  if (replicateImage) {
-    cacheImage(event.id, replicateImage, 'replicate');
-    return {
-      url: replicateImage,
-      source: 'replicate',
-      eventId: event.id,
-    };
-  }
-
-  // Try Fal.ai second
-  const falImage = await generateWithFal(generationPrompt);
-  if (falImage) {
-    cacheImage(event.id, falImage, 'fal');
-    return {
-      url: falImage,
-      source: 'fal',
-      eventId: event.id,
-    };
-  }
-
-  // Fall back to Unsplash
-  const unsplashUrl = getUnsplashFallback(event);
-  cacheImage(event.id, unsplashUrl, 'unsplash');
-  return {
-    url: unsplashUrl,
-    source: 'unsplash',
-    eventId: event.id,
-  };
-}
-
-/**
- * Generate images for multiple events (non-blocking)
- * Returns immediately with fallback URLs, updates cache in background
- */
-export function generateEventImages(
-  events: Event[]
-): Map<string, string> {
-  const results = new Map<string, string>();
-
-  for (const event of events) {
-    // Return fallback immediately
-    const cached = getCachedImage(event.id);
-    if (cached) {
-      results.set(event.id, cached);
-    } else {
-      // Use Unsplash fallback immediately
-      results.set(event.id, getUnsplashFallback(event));
-
-      // Generate better image in background (don't await)
-      generateEventImage(event).catch(console.error);
-    }
-  }
-
-  return results;
-}
-
-/**
- * Build a default image generation prompt for an event
- * (Used when no prompt is stored on the event)
- * Uses Quartr-style editorial aesthetic
- */
-function buildDefaultPrompt(event: Event): string {
-  const timeOfDay = getTimeOfDay(event.startAt);
-  const categoryStyle = getCategoryStyle(event.category);
-
-  // Combine category style with time of day context and global suffix
-  return `${categoryStyle}, ${timeOfDay} atmosphere, ${event.neighborhood} Miami mood. ${GLOBAL_STYLE_SUFFIX}`;
-}
-
-/**
- * Get time of day description from event start time
- */
-function getTimeOfDay(startAt: string): string {
-  const date = new Date(startAt);
-  const hour = date.getHours();
-
-  if (hour >= 5 && hour < 10) return 'morning light';
-  if (hour >= 10 && hour < 14) return 'midday';
-  if (hour >= 14 && hour < 17) return 'afternoon';
-  if (hour >= 17 && hour < 20) return 'golden hour';
-  if (hour >= 20 && hour < 23) return 'evening';
-  return 'late night';
-}
-
-/**
- * Global style suffix for all image generation prompts
- * Quartr-inspired editorial aesthetic
- */
-const GLOBAL_STYLE_SUFFIX = `Shot on Hasselblad medium format film. Cinematic color grading. Rich shadows, not crushed. Editorial lifestyle magazine quality. No people. No text overlays. No logos. No UI elements. 16:9 landscape crop. High resolution.`;
-
-/**
- * Quartr-style category prompts
- * Abstract, stylized, artistic imagery that REPRESENTS the subject
- * rather than literally depicting it.
- */
-const CATEGORY_PROMPTS: Record<string, string> = {
-  Nightlife: `abstract still life, crystal glassware with colored liquid refractions, warm amber backlight, smoke wisps, deep shadows, editorial product photography, medium format, cinematic grain`,
-
-  Music: `abstract musical instruments as sculpture, brass textures close-up, shallow depth of field, warm tungsten light against deep blue-black, fine art photography, film grain`,
-
-  Outdoors: `abstract botanical still life, tropical leaves casting graphic shadows, Biscayne Bay water texture, golden hour light through palms, editorial nature photography, oversaturated detail`,
-
-  Art: `single sculptural ceramic object on marble surface, gallery negative space, raking light from left, editorial fine art photography, clean white to deep shadow gradient`,
-
-  'Food & Drink': `overhead still life, artisan plated dish with negative space, linen napkin, single stem flower, warm natural window light, editorial food photography, film simulation`,
-
-  Market: `painterly still life, cut tropical flowers in ceramic vessel, fresh produce arranged with intention, dappled morning light, editorial lifestyle photography, soft film grain`,
-
-  Wellness: `abstract botanical close-up, morning mist, single lotus or tropical flower, soft diffused light, meditation space texture, fine art photography, breath and stillness`,
-
-  Film: `abstract cinema: film grain texture enlarged, light leak through aged film strip, projection bokeh, editorial photograph, dark room aesthetic, silver gelatin print feel`,
-
-  Community: `warm street-level architectural detail, Miami pastel stucco texture, afternoon shadow geometry, Art Deco ornament close-up, editorial urban photography, warm analog film`,
-
-  Culture: `museum object detail, archaeological artifact texture, archival document fragment, warm amber museum light, editorial fine art photography, considered composition`,
-
-  Comedy: `spotlight cone in dark space, vintage microphone chrome detail, velvet curtain texture, intimate venue atmosphere, theatrical lighting, editorial portrait style`,
-
-  Sports: `athletic equipment as sculpture, stadium light flare, dynamic fabric motion blur, high contrast editorial sports photography, frozen energy`,
-
-  Fitness: `morning light through gym window, athletic form abstraction, sweat droplet macro, determination energy, editorial fitness photography, warm natural tones`,
-
-  Family: `playful primary colors, toy blocks arranged as sculpture, warm afternoon sunlight, joyful negative space, editorial lifestyle, soft nostalgic grain`,
+const CURATED: Record<string, string[]> = {
+  nightlife: [
+    'photo-1514525253161-7a46d19cd819',
+    'photo-1470225620780-dba8ba36b745',
+    'photo-1566417713940-fe7c737a9ef2',
+  ],
+  music: [
+    'photo-1493225457124-a3eb161ffa5f',
+    'photo-1511671782779-c97d3d27a1d4',
+    'photo-1510915361894-db8b60106cb1',
+  ],
+  outdoor: [
+    'photo-1507525428034-b723cf961d3e',
+    'photo-1441974231531-c6227db76b6e',
+    'photo-1476514525535-07fb3b4ae5f1',
+  ],
+  outdoors: [
+    'photo-1507525428034-b723cf961d3e',
+    'photo-1441974231531-c6227db76b6e',
+    'photo-1476514525535-07fb3b4ae5f1',
+  ],
+  arts: [
+    'photo-1536924940846-227afb31e2a5',
+    'photo-1561214115-f2f134cc4912',
+    'photo-1549490349-8643362247b5',
+  ],
+  'food & drink': [
+    'photo-1414235077428-338989a2e8c0',
+    'photo-1482049016688-2d3e1b311543',
+    'photo-1504674900247-0877df9cc836',
+  ],
+  food: [
+    'photo-1414235077428-338989a2e8c0',
+    'photo-1482049016688-2d3e1b311543',
+    'photo-1504674900247-0877df9cc836',
+  ],
+  community: [
+    'photo-1529156069898-49953e39b3ac',
+    'photo-1500462918059-b1a0cb512f1d',
+    'photo-1558618666-fcd25c85cd64',
+  ],
+  wellness: [
+    'photo-1544367567-0f2fcb009e0b',
+    'photo-1506126613408-eca07ce68773',
+    'photo-1518611012118-696072aa579a',
+  ],
+  fitness: [
+    'photo-1534438327276-14e5300c3a48',
+    'photo-1517836357463-d25dfeac3438',
+    'photo-1526506118085-60ce8714f8c5',
+  ],
+  culture: [
+    'photo-1554907984-15263bfd63bd',
+    'photo-1565060299934-4a8dbf8b9e1c',
+    'photo-1577083552431-6e5fd01988ec',
+  ],
+  market: [
+    'photo-1488459716781-31db52582fe9',
+    'photo-1542838132-92c53300491e',
+    'photo-1506617420156-8e4536971650',
+  ],
+  film: [
+    'photo-1489599849927-2ee91cede3ba',
+    'photo-1517604931442-7e0c8ed2963c',
+    'photo-1536440136628-849c177e76a1',
+  ],
+  comedy: [
+    'photo-1516280440614-37939bbacd81',
+    'photo-1493676304819-0d7a8d026dcf',
+    'photo-1503095396549-807759245b35',
+  ],
+  sports: [
+    'photo-1461896836934- voices',
+    'photo-1508098682722-e99c43a406b2',
+    'photo-1546519638-68e109498ffc',
+  ],
+  family: [
+    'photo-1536640712-4d4c36ff0e4e',
+    'photo-1503454537195-1dcabb73ffb9',
+    'photo-1516627145497-ae6968895b74',
+  ],
+  default: [
+    'photo-1533174072545-7a4b6ad7a6c3',
+    'photo-1519501025264-65ba15a82390',
+    'photo-1477959858617-67f85cf4f1df',
+  ],
 };
 
-/**
- * Get category-specific style description for prompts
- */
-function getCategoryStyle(category: string): string {
-  return (
-    CATEGORY_PROMPTS[category] ||
-    'Miami lifestyle abstract, warm tones, editorial photography, atmospheric still life'
-  );
+export function getFallbackImage(category: string, seed: string): string {
+  const cat = category?.toLowerCase() ?? 'default';
+  const photos = CURATED[cat] ?? CURATED.default;
+  const idx = hashCode(seed) % photos.length;
+  return `https://images.unsplash.com/${photos[idx]}` +
+    `?auto=format&fit=crop&w=800&q=80`;
 }
 
-/**
- * Get image statistics for a batch of events
- */
-export function getImageStats(events: Event[]): {
-  withImage: number;
-  needsGeneration: number;
-  cached: number;
-} {
-  let withImage = 0;
-  let needsGeneration = 0;
-  let cached = 0;
+// ─── PEXELS API ───────────────────────────────────────────
+// Free tier: 200 req/hour. No watermark. High quality.
+// Set VITE_PEXELS_API_KEY in .env
 
-  for (const event of events) {
-    if (event.image) {
-      withImage++;
-    } else {
-      needsGeneration++;
-      if (getCachedImage(event.id)) {
-        cached++;
-      }
-    }
+const PEXELS_QUERIES: Record<string, string> = {
+  nightlife:     'cocktail bar dark moody',
+  music:         'live music concert stage',
+  outdoor:       'miami beach tropical outdoor',
+  outdoors:      'miami beach tropical outdoor',
+  arts:          'art gallery sculpture minimal',
+  'food & drink': 'restaurant plated dish editorial',
+  food:          'restaurant plated dish editorial',
+  community:     'outdoor market south florida',
+  wellness:      'yoga meditation serene',
+  fitness:       'athletic training equipment',
+  culture:       'museum exhibition space',
+  market:        'farmers market produce fresh',
+  film:          'cinema theater dark',
+  comedy:        'stage spotlight microphone',
+  sports:        'athletic sports equipment',
+  family:        'playground colorful outdoor',
+  default:       'miami urban architecture',
+};
+
+async function fetchPexels(
+  category: string,
+  seed: string
+): Promise<string | null> {
+  const key = import.meta.env.VITE_PEXELS_API_KEY;
+  if (!key) return null;
+  try {
+    const query = PEXELS_QUERIES[category?.toLowerCase()]
+      ?? PEXELS_QUERIES.default;
+    const page = (hashCode(seed) % 3) + 1;
+    const res = await fetch(
+      `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=5&page=${page}&orientation=landscape`,
+      { headers: { Authorization: key } }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    const photos = data.photos ?? [];
+    if (!photos.length) return null;
+    const idx = hashCode(seed) % photos.length;
+    return photos[idx]?.src?.large ?? null;
+  } catch { return null; }
+}
+
+// ─── UNSPLASH API ─────────────────────────────────────────
+// Free tier: 50 req/hour. Requires attribution in UI.
+// Set VITE_UNSPLASH_ACCESS_KEY in .env
+
+const UNSPLASH_QUERIES: Record<string, string> = {
+  nightlife:     'cocktail bar moody',
+  music:         'live music performance',
+  outdoor:       'tropical beach florida',
+  outdoors:      'tropical beach florida',
+  arts:          'art gallery minimal',
+  'food & drink': 'food photography editorial',
+  food:          'food photography editorial',
+  community:     'outdoor market community',
+  wellness:      'yoga wellness serene',
+  fitness:       'fitness training sport',
+  culture:       'museum culture exhibition',
+  market:        'farmers market produce',
+  film:          'cinema movie theater',
+  comedy:        'stage microphone spotlight',
+  sports:        'sports athletic action',
+  family:        'playground family outdoor',
+  default:       'miami city lifestyle',
+};
+
+async function fetchUnsplash(
+  category: string,
+  seed: string
+): Promise<string | null> {
+  const key = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
+  if (!key) return null;
+  try {
+    const query = UNSPLASH_QUERIES[category?.toLowerCase()]
+      ?? UNSPLASH_QUERIES.default;
+    const page = (hashCode(seed) % 3) + 1;
+    const res = await fetch(
+      `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=5&page=${page}&orientation=landscape`,
+      { headers: { Authorization: `Client-ID ${key}` } }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    const results = data.results ?? [];
+    if (!results.length) return null;
+    const idx = hashCode(seed) % results.length;
+    return results[idx]?.urls?.regular ?? null;
+  } catch { return null; }
+}
+
+// ─── MAIN EXPORT ──────────────────────────────────────────
+
+export async function generateEventImage(
+  event: ScoredEvent
+): Promise<string> {
+  // 1. Check cache
+  const cached = getCache(event.id);
+  if (cached) return cached;
+
+  // 2. Immediate fallback — never blocks render
+  const fallback = getFallbackImage(event.category, event.id);
+
+  // 3. Try Pexels first
+  const pexels = await fetchPexels(event.category, event.id);
+  if (pexels) {
+    setCache(event.id, pexels);
+    return pexels;
   }
 
-  return { withImage, needsGeneration, cached };
+  // 4. Try Unsplash API
+  const unsplash = await fetchUnsplash(event.category, event.id);
+  if (unsplash) {
+    setCache(event.id, unsplash);
+    return unsplash;
+  }
+
+  // 5. Return curated fallback
+  setCache(event.id, fallback);
+  return fallback;
 }
 
-/**
- * Clear image cache (for testing)
- */
+// ─── LEGACY EXPORTS FOR COMPATIBILITY ─────────────────────
+
+export function getCachedImage(eventId: string): string | null {
+  return getCache(eventId);
+}
+
 export function clearImageCache(): void {
-  localStorage.removeItem(IMAGE_CACHE_KEY);
+  // Clear all irl_img_ prefixed keys
+  const keysToRemove: string[] = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key?.startsWith(CACHE_PREFIX)) {
+      keysToRemove.push(key);
+    }
+  }
+  keysToRemove.forEach(key => localStorage.removeItem(key));
 }
