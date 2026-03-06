@@ -167,25 +167,21 @@ export function useEvents(options: UseEventsOptions) {
         // Never include nightlife category in sunny filter
         if (event.category === 'Nightlife') return false;
 
-        // Must be outdoor or both (not indoor-only)
+        // Must be outdoor or fitness/wellness category
+        const outdoorCategories = ['Outdoors', 'Fitness', 'Wellness'];
         const isOutdoorEvent = event.indoorOutdoor === 'outdoor' ||
                                event.indoorOutdoor === 'both' ||
-                               event.isOutdoor;
+                               event.isOutdoor ||
+                               outdoorCategories.includes(event.category);
         if (!isOutdoorEvent) return false;
 
-        // Check if event is during daylight hours (07:00 - 19:00) or golden hour (17:00 - 20:00)
+        // Strict daytime enforcement: 7am-7pm only (hour >= 7 && hour < 19)
         const eventDate = new Date(event.startAt);
         const eventHour = eventDate.getHours();
         const isDaytimeEvent = eventHour >= 7 && eventHour < 19;
-        const isGoldenHourEvent = eventHour >= 17 && eventHour <= 20;
 
-        // For events without clear time, be conservative - only include daytime categories
-        if (!isDaytimeEvent && !isGoldenHourEvent) {
-          // Allow events that are clearly daytime by category
-          const daytimeCategories = ['Market', 'Wellness', 'Outdoors', 'Community', 'Family', 'Fitness'];
-          if (!daytimeCategories.includes(event.category)) {
-            return false;
-          }
+        if (!isDaytimeEvent) {
+          return false;
         }
 
         // Check weather at event time - must be clear or partly cloudy

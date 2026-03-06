@@ -47,10 +47,11 @@ function getWeatherSuggestion(weather: WeatherForecast): WeatherSuggestion | nul
 
   // Clear evening for outdoor activities
   if (eveningWeather && eveningWeather.precipitationProbability < 20 && hour < 17) {
+    const temp = Math.round(eveningWeather.temperature);
     return {
       icon: '🌅',
-      message: 'Perfect evening ahead',
-      subtext: `Clear skies, ${Math.round(eveningWeather.temperature)}° at sunset`,
+      message: `${temp}° and clear tonight`,
+      subtext: 'Good evening for outdoor plans',
       bgColor: 'var(--color-ochre)',
       textColor: 'white',
     };
@@ -102,7 +103,7 @@ export function WeatherBanner({ weather, onDismiss }: WeatherBannerProps) {
 
   return (
     <div
-      className="mx-4 mb-3 rounded-[16px] overflow-hidden card-shadow animate-fade-in"
+      className="mx-4 mt-2 mb-3 rounded-[16px] overflow-hidden card-shadow animate-fade-in"
       style={{ backgroundColor: suggestion.bgColor }}
     >
       <div className="px-4 py-3 flex items-center justify-between">

@@ -54,6 +54,6 @@ interface ChipGroupProps {
 
 export function ChipGroup({ children, className = '' }: ChipGroupProps) {
   return (
-    <div className={`flex flex-nowrap gap-2 ${className}`}>{children}</div>
+    <div className={`flex flex-wrap gap-2 ${className}`}>{children}</div>
   );
 }

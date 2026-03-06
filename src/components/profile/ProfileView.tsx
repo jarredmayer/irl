@@ -122,9 +122,15 @@ export function ProfileView({
                   alt="Profile"
                   className="w-20 h-20 rounded-full object-cover"
                 />
-              ) : (
+              ) : profile.displayName ? (
                 <div className="w-20 h-20 rounded-full bg-ink flex items-center justify-center text-white text-2xl font-serif">
-                  {profile.displayName?.[0]?.toUpperCase() || profile.handle?.[0]?.toUpperCase() || '?'}
+                  {profile.displayName[0].toUpperCase()}
+                </div>
+              ) : (
+                <div className="w-20 h-20 rounded-full bg-ink flex items-center justify-center text-white">
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                  </svg>
                 </div>
               )}
               <input
@@ -304,7 +310,7 @@ export function ProfileView({
                 </p>
                 <button
                   onClick={notifications.requestPermission}
-                  className="px-4 py-2 bg-ink hover:bg-ink-2 text-white text-sm font-medium rounded-lg transition-colors"
+                  className="px-4 py-2.5 bg-[#0E0E0E] hover:bg-[#1a1a1a] text-white text-sm font-medium rounded-xl transition-colors"
                 >
                   Enable notifications
                 </button>

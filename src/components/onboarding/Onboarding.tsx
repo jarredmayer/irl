@@ -125,6 +125,20 @@ export function Onboarding({ events, onComplete }: OnboardingProps) {
     }, 300);
   }, [selectedVibes, onComplete]);
 
+  // Simple seeded random for consistent but varied selection
+  const seededRandom = useCallback((seed: string) => {
+    let hash = 0;
+    for (let i = 0; i < seed.length; i++) {
+      const char = seed.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash;
+    }
+    return () => {
+      hash = (hash * 1103515245 + 12345) & 0x7fffffff;
+      return hash / 0x7fffffff;
+    };
+  }, []);
+
   // Get matching events based on selected vibes
   const getMatchingEvents = useCallback(() => {
     // Deduplicate events by ID first
@@ -141,6 +155,10 @@ export function Onboarding({ events, onComplete }: OnboardingProps) {
       // Return top 3 unique events if no vibes selected
       return uniqueEvents.slice(0, 3);
     }
+
+    // Create seed from sorted vibes for consistent but varied selection
+    const seed = [...selectedVibes].sort().join(',');
+    const random = seededRandom(seed);
 
     // Get categories and tags from selected vibes
     const selectedOptions = VIBE_OPTIONS.filter((v) =>
@@ -169,11 +187,21 @@ export function Onboarding({ events, onComplete }: OnboardingProps) {
         matchScore += 1;
       }
 
-      return { event, matchScore };
+      // Add seeded random tiebreaker for variation
+      const tiebreaker = random() * 0.9;
+
+      return { event, matchScore, tiebreaker };
     });
 
-    // Sort by match score (highest first)
-    scoredEvents.sort((a, b) => b.matchScore - a.matchScore);
+    // Sort by match score (highest first), then by tiebreaker for variation
+    scoredEvents.sort((a, b) => {
+      const scoreDiff = b.matchScore - a.matchScore;
+      if (Math.abs(scoreDiff) < 0.5) {
+        // Same score tier: use tiebreaker for variation
+        return b.tiebreaker - a.tiebreaker;
+      }
+      return scoreDiff;
+    });
 
     // Get top 3 matching events with deduplication
     const result: Event[] = [];
@@ -216,7 +244,7 @@ export function Onboarding({ events, onComplete }: OnboardingProps) {
     }
 
     return result;
-  }, [events, selectedVibes]);
+  }, [events, selectedVibes, seededRandom]);
 
   return (
     <div
