@@ -29,7 +29,7 @@
       "url": "https://www.sassf.org/event-6325690"
     },
     "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80",
-    "editorPick": false,
+    "editorPick": true,
     "venueId": "4815bb154102",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -160,7 +160,7 @@
       "url": "https://savorsoflo.com/"
     },
     "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
-    "editorPick": false,
+    "editorPick": true,
     "venueId": "f957fbe2d7a7",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -195,7 +195,7 @@
       "url": "https://savorsoflo.com/"
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    "editorPick": false,
+    "editorPick": true,
     "venueId": "f957fbe2d7a7",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -229,39 +229,8 @@
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
     },
     "image": "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&q=80",
-    "editorPick": true,
-    "venueId": "e7fa45df1d75",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
-    "id": "4abe11605bd43fe0",
-    "title": "Piano Man Jeffrey Allen: Classic Yacht Rock",
-    "startAt": "2026-03-05T19:00:00",
-    "endAt": "2026-03-05T22:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Cafe BVR (The Lounge)",
-    "address": "4404 Bougainvilla Dr, Lauderdale-By-The-Sea, FL 33308",
-    "neighborhood": "Lauderdale-By-The-Sea",
-    "lat": 26.1914,
-    "lng": -80.0983,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "live-music",
-      "waterfront"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Piano Man Jeffrey Allen live at Cafe BVR (The Lounge).",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. At Cafe BVR (The Lounge) in Lauderdale-By-The-Sea. Free to attend.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
-    "source": {
-      "name": "WeekendBroward Verified",
-      "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
-    },
-    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     "editorPick": false,
-    "venueId": "c978f32b94d9",
+    "venueId": "e7fa45df1d75",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
@@ -1091,7 +1060,7 @@
       "url": "https://www.fatvillage.com/"
     },
     "image": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "atv-records",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1126,7 +1095,7 @@
       "url": "https://www.fatvillage.com/"
     },
     "image": "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "atv-records",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1161,7 +1130,7 @@
       "url": "https://www.fatvillage.com/"
     },
     "image": "https://images.unsplash.com/photo-1545128485-c400e7702796?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "atv-records",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1197,7 +1166,7 @@
       "url": "https://weekendbroward.com/events/jazz-fest-pompano-beach/"
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "3af6a4f2a315",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1233,7 +1202,7 @@
       "url": "https://weekendbroward.com/events/jazz-fest-pompano-beach/"
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "3af6a4f2a315",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1267,7 +1236,7 @@
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
     },
     "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "e7fa45df1d75",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1440,7 +1409,7 @@
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
     },
     "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "e7fa45df1d75",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1474,7 +1443,7 @@
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "e7fa45df1d75",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1645,7 +1614,7 @@
       "url": "https://fortlauderdalegreenmarket.com/"
     },
     "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
     "venueId": "0e0bf5e295d0",
@@ -1680,7 +1649,7 @@
       "url": "https://fortlauderdalegreenmarket.com/"
     },
     "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
     "venueId": "0e0bf5e295d0",
@@ -1715,7 +1684,7 @@
       "url": "https://fortlauderdalegreenmarket.com/"
     },
     "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
     "venueId": "0e0bf5e295d0",
@@ -1750,7 +1719,7 @@
       "url": "https://fortlauderdalegreenmarket.com/"
     },
     "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
     "venueId": "0e0bf5e295d0",
@@ -1785,7 +1754,7 @@
       "url": "https://fortlauderdalegreenmarket.com/"
     },
     "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
     "venueId": "0e0bf5e295d0",
@@ -1820,7 +1789,7 @@
       "url": "https://fortlauderdalegreenmarket.com/"
     },
     "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "5d3a4ede494f",
     "seriesName": "Fort Lauderdale Green Market",
     "venueId": "0e0bf5e295d0",
@@ -1922,7 +1891,7 @@
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
     },
     "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "e7fa45df1d75",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -1988,7 +1957,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2022,7 +1991,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2056,7 +2025,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2090,7 +2059,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2124,7 +2093,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2158,7 +2127,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2192,7 +2161,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2226,7 +2195,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2260,7 +2229,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2294,7 +2263,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2328,7 +2297,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2362,7 +2331,7 @@
       "url": "https://stranahanhouse.org/"
     },
     "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "37112007993f",
     "seriesName": "Ghost Tour at Stranahan House",
     "venueId": "bc6df03c3a99",
@@ -2398,7 +2367,7 @@
       "url": "https://daniabeachwineandseafoodfest.com/"
     },
     "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80",
-    "editorPick": false,
+    "editorPick": true,
     "venueId": "4d3052c8282b",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2432,7 +2401,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2466,7 +2435,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2500,7 +2469,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2534,7 +2503,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2568,7 +2537,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2602,7 +2571,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2636,7 +2605,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2670,7 +2639,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2704,7 +2673,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2738,7 +2707,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2772,7 +2741,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2806,7 +2775,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2841,7 +2810,7 @@
       "url": "https://www.ftlwarmemorial.com/events/detail/cats-cup"
     },
     "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "amerant-bank-arena",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2907,7 +2876,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2940,7 +2909,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -2973,7 +2942,7 @@
       "url": "https://instagram.com/@lauderdalerunclub"
     },
     "image": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
     "venueId": "6f313a06da9a",
@@ -3008,7 +2977,7 @@
       "url": "https://instagram.com/@lauderdalerunclub"
     },
     "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
     "venueId": "6f313a06da9a",
@@ -3043,7 +3012,7 @@
       "url": "https://instagram.com/@lauderdalerunclub"
     },
     "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
     "venueId": "6f313a06da9a",
@@ -3078,7 +3047,7 @@
       "url": "https://instagram.com/@lauderdalerunclub"
     },
     "image": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
     "venueId": "6f313a06da9a",
@@ -3113,7 +3082,7 @@
       "url": "https://instagram.com/@lauderdalerunclub"
     },
     "image": "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
     "venueId": "6f313a06da9a",
@@ -3148,7 +3117,7 @@
       "url": "https://instagram.com/@lauderdalerunclub"
     },
     "image": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
     "venueId": "6f313a06da9a",
@@ -3183,7 +3152,7 @@
       "url": "https://instagram.com/@lauderdalerunclub"
     },
     "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
     "venueId": "6f313a06da9a",
@@ -3218,7 +3187,7 @@
       "url": "https://instagram.com/@lauderdalerunclub"
     },
     "image": "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "e2a5614e726e",
     "seriesName": "Lauderdale Run Club: Morning Run",
     "venueId": "6f313a06da9a",
@@ -3380,7 +3349,7 @@
       "url": "https://www.browardcenter.org/events"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "broward-center",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -3413,7 +3382,7 @@
       "url": "https://instagram.com/@sunnysideupmarket"
     },
     "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
     "venueId": "0e0bf5e295d0",
@@ -3448,7 +3417,7 @@
       "url": "https://instagram.com/@sunnysideupmarket"
     },
     "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
     "venueId": "0e0bf5e295d0",
@@ -3483,7 +3452,7 @@
       "url": "https://instagram.com/@sunnysideupmarket"
     },
     "image": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
     "venueId": "0e0bf5e295d0",
@@ -3518,7 +3487,7 @@
       "url": "https://instagram.com/@sunnysideupmarket"
     },
     "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
     "venueId": "0e0bf5e295d0",
@@ -3553,7 +3522,7 @@
       "url": "https://instagram.com/@sunnysideupmarket"
     },
     "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
     "venueId": "0e0bf5e295d0",
@@ -3588,7 +3557,7 @@
       "url": "https://instagram.com/@sunnysideupmarket"
     },
     "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
     "venueId": "0e0bf5e295d0",
@@ -3623,7 +3592,7 @@
       "url": "https://instagram.com/@sunnysideupmarket"
     },
     "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
     "venueId": "0e0bf5e295d0",
@@ -3658,7 +3627,7 @@
       "url": "https://instagram.com/@sunnysideupmarket"
     },
     "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "edc4bb96f9c5",
     "seriesName": "Sunny Side Up Market",
     "venueId": "0e0bf5e295d0",
@@ -3695,7 +3664,7 @@
       "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
     },
     "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "hard-rock-live",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -3828,39 +3797,6 @@
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
   {
-    "id": "3b0cfec7ac6ff3f2",
-    "title": "First Friday Art Walk",
-    "startAt": "2026-03-06T18:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Downtown Fort Lauderdale",
-    "address": "SW 2nd St & Andrews Ave, Fort Lauderdale, FL 33301",
-    "neighborhood": "Downtown FLL",
-    "lat": 26.1189,
-    "lng": -80.1456,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "art-gallery",
-      "free-event",
-      "local-favorite"
-    ],
-    "category": "Music",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Free community event in Downtown FLL.",
-    "editorialWhy": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors. At Downtown Fort Lauderdale in Downtown FLL. Free to attend.",
-    "description": "Monthly First Friday art walk in downtown Fort Lauderdale featuring galleries, live music, and food vendors.",
-    "source": {
-      "name": "@fortlauderdaledowntown",
-      "url": "https://instagram.com/@fortlauderdaledowntown"
-    },
-    "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
-    "editorPick": true,
-    "seriesId": "2de5f55194f5",
-    "seriesName": "First Friday Art Walk",
-    "venueId": "2f3e26b9985c",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
     "id": "56116d670697e6f7",
     "title": "First Friday Art Walk",
     "startAt": "2026-04-03T18:00:00",
@@ -3887,7 +3823,7 @@
       "url": "https://instagram.com/@fortlauderdaledowntown"
     },
     "image": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "2de5f55194f5",
     "seriesName": "First Friday Art Walk",
     "venueId": "2f3e26b9985c",
@@ -3920,7 +3856,7 @@
       "url": "https://instagram.com/@fortlauderdaledowntown"
     },
     "image": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "2de5f55194f5",
     "seriesName": "First Friday Art Walk",
     "venueId": "2f3e26b9985c",
@@ -4183,7 +4119,7 @@
       "url": "https://www.miamicityballet.org/tickets-and-events/"
     },
     "image": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "4822b9a182b8",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -4249,7 +4185,7 @@
       "url": "https://fatvillage.com/"
     },
     "image": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "seriesId": "599cce768c76",
     "seriesName": "FAT Village Art Walk",
     "venueId": "76fb681d761c",
@@ -4278,39 +4214,6 @@
     "shortWhy": "Live music at Hard Rock Live, Hollywood.",
     "editorialWhy": "Country superstar Miranda Lambert live at Hard Rock Live Hollywood. Free self-parking on site. At Hard Rock Live in Hollywood. Tickets from $60.",
     "description": "Country superstar Miranda Lambert live at Hard Rock Live Hollywood. Free self-parking on site.",
-    "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
-    "source": {
-      "name": "WeekendBroward Verified",
-      "url": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337"
-    },
-    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    "editorPick": false,
-    "venueId": "hard-rock-live",
-    "addedAt": "2026-03-04T15:38:09.092Z"
-  },
-  {
-    "id": "b852b0f509ffbb2f",
-    "title": "The Offspring: SUPERCHARGED Worldwide Tour",
-    "startAt": "2026-03-05T20:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Hard Rock Live",
-    "address": "1 Seminole Way, Hollywood, FL 33314",
-    "neighborhood": "Hollywood",
-    "lat": 26.051,
-    "lng": -80.2112,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "live-music",
-      "casino",
-      "concerts",
-      "big-acts"
-    ],
-    "category": "Music",
-    "priceLabel": "$$$",
-    "isOutdoor": false,
-    "shortWhy": "The Offspring live at Hard Rock Live.",
-    "editorialWhy": "The Offspring bring their SUPERCHARGED Worldwide tour to Hard Rock Live. Free self-parking. At Hard Rock Live in Hollywood. Tickets from $60.",
-    "description": "The Offspring bring their SUPERCHARGED Worldwide tour to Hard Rock Live. Free self-parking.",
     "ticketUrl": "https://www.ticketmaster.com/hard-rock-live-tickets-hollywood/venue/107337",
     "source": {
       "name": "WeekendBroward Verified",
@@ -4352,7 +4255,7 @@
       "url": "https://www.ftlwarmemorial.com/events/detail/cats-cup"
     },
     "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "amerant-bank-arena",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -4386,7 +4289,7 @@
       "url": "https://nsuartmuseum.org/event/teen-art-exhibition-2026/"
     },
     "image": "https://images.unsplash.com/photo-1575223970966-76ae61ee7838?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "nsu-art-museum",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -4827,7 +4730,7 @@
       "url": "https://www.ftlwarmemorial.com/events"
     },
     "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "ftl-war-memorial",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -4861,7 +4764,7 @@
       "url": "https://www.ftlwarmemorial.com/events"
     },
     "image": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "ftl-war-memorial",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -4895,7 +4798,7 @@
       "url": "https://www.floridapanthers.com/schedule"
     },
     "image": "https://images.unsplash.com/photo-1461896836934-47568d7a6ea9?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "amerant-bank-arena",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },
@@ -5031,7 +4934,7 @@
       "url": "https://cultureroom.net/"
     },
     "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800&q=80",
-    "editorPick": true,
+    "editorPick": false,
     "venueId": "culture-room",
     "addedAt": "2026-03-04T15:38:09.092Z"
   },

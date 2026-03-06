@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-03T00:31:00.202Z",
+  "scrapedAt": "2026-03-06T00:54:05.251Z",
   "stats": {
-    "total": 1159,
-    "deduplicated": 797,
+    "total": 1084,
+    "deduplicated": 744,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -15,15 +15,15 @@
       "Miami Festivals": 1,
       "Dice.fm Real": 0,
       "Resident Advisor": 0,
-      "Greater Miami & The Beaches": 0,
       "Candlelight Concerts (Fever)": 0,
       "Hotel Events": 0,
       "Real Venue Events": 29,
-      "Cultural Attractions": 430,
-      "Pop-Ups": 65,
+      "Cultural Attractions": 393,
+      "Pop-Ups": 64,
       "Miami Improv": 0,
       "Fort Lauderdale Improv": 0,
-      "Coral Gables": 0,
+      "Broward Center": 0,
+      "Revolution Live": 0,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
       "Free Yoga Miami": 76,
@@ -31,26 +31,38 @@
       "Cycling Group Rides": 38,
       "Las Olas Boulevard": 0,
       "Fort Lauderdale": 23,
-      "Palm Beach": 55,
-      "Instagram Sources": 236,
-      "WeekendBroward Enhanced": 0,
-      "WeekendBroward Verified": 60,
-      "WeekendBroward": 0,
-      "WeekendBroward Google": 0
+      "Palm Beach": 56,
+      "Instagram Sources": 155,
+      "Luma": 0,
+      "SofarSounds": 0,
+      "HistoryMiami": 0,
+      "Resy Miami Events": 0,
+      "Venue Watchlist": 0,
+      "Eventbrite Miami": 0,
+      "Fever Miami": 0,
+      "Shotgun Miami": 0,
+      "Do305": 0,
+      "Club Space": 0,
+      "CultureRoom": 0,
+      "BonnetHouse": 0,
+      "FunkyBuddha": 0,
+      "WeekendBroward Verified": 103
     }
   },
   "delta": {
-    "added": 52,
-    "removed": 36,
-    "modified": 10,
-    "unchanged": 735
+    "added": 0,
+    "removed": 0,
+    "modified": 0,
+    "unchanged": 744
   },
   "sources": [
     {
       "name": "Miami New Times",
       "count": 0,
-      "status": "empty",
-      "errors": []
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
     },
     {
       "name": "Farmers Markets",
@@ -103,10 +115,8 @@
     {
       "name": "Dice.fm Real",
       "count": 0,
-      "status": "error",
-      "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
-      ]
+      "status": "empty",
+      "errors": []
     },
     {
       "name": "Resident Advisor",
@@ -115,28 +125,16 @@
       "errors": []
     },
     {
-      "name": "Greater Miami & The Beaches",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
-      ]
-    },
-    {
       "name": "Candlelight Concerts (Fever)",
       "count": 0,
-      "status": "error",
-      "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
-      ]
+      "status": "empty",
+      "errors": []
     },
     {
       "name": "Hotel Events",
       "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "status": "empty",
+      "errors": []
     },
     {
       "name": "Real Venue Events",
@@ -146,13 +144,13 @@
     },
     {
       "name": "Cultural Attractions",
-      "count": 430,
+      "count": 393,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Pop-Ups",
-      "count": 65,
+      "count": 64,
       "status": "ok",
       "errors": []
     },
@@ -161,7 +159,7 @@
       "count": 0,
       "status": "error",
       "errors": [
-        "fetch failed"
+        "Timed out after 120s"
       ]
     },
     {
@@ -169,16 +167,20 @@
       "count": 0,
       "status": "error",
       "errors": [
-        "fetch failed"
+        "Timed out after 120s"
       ]
     },
     {
-      "name": "Coral Gables",
+      "name": "Broward Center",
       "count": 0,
-      "status": "error",
-      "errors": [
-        "fetch failed"
-      ]
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Revolution Live",
+      "count": 0,
+      "status": "empty",
+      "errors": []
     },
     {
       "name": "Verified Recurring",
@@ -224,66 +226,146 @@
     },
     {
       "name": "Palm Beach",
-      "count": 55,
+      "count": 56,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Instagram Sources",
-      "count": 236,
+      "count": 155,
       "status": "ok",
       "errors": []
     },
     {
-      "name": "WeekendBroward Enhanced",
+      "name": "Luma",
       "count": 0,
       "status": "error",
       "errors": [
-        "Could not find Chrome (ver. 144.0.7559.96). This can occur if either\n 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or\n 2. your cache path is incorrectly configured (which is: /root/.cache/puppeteer).\nFor (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration."
+        "Timed out after 120s"
+      ]
+    },
+    {
+      "name": "SofarSounds",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "getaddrinfo EAI_AGAIN www.sofarsounds.com"
+      ]
+    },
+    {
+      "name": "HistoryMiami",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Resy Miami Events",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Venue Watchlist",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Eventbrite Miami",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Fever Miami",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Shotgun Miami",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
+    },
+    {
+      "name": "Do305",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
+    },
+    {
+      "name": "Club Space",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "CultureRoom",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
+      ]
+    },
+    {
+      "name": "BonnetHouse",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "FunkyBuddha",
+      "count": 0,
+      "status": "error",
+      "errors": [
+        "Timed out after 120s"
       ]
     },
     {
       "name": "WeekendBroward Verified",
-      "count": 60,
+      "count": 103,
       "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "WeekendBroward",
-      "count": 0,
-      "status": "empty",
-      "errors": []
-    },
-    {
-      "name": "WeekendBroward Google",
-      "count": 0,
-      "status": "empty",
       "errors": []
     }
   ],
   "sourceHealth": {
     "ok": 17,
-    "empty": 8,
-    "errored": 8,
+    "empty": 17,
+    "errored": 9,
     "emptySources": [
-      "Miami New Times",
       "III Points",
       "SOBEWFF",
       "Miami Spice",
-      "Resident Advisor",
-      "Las Olas Boulevard",
-      "WeekendBroward",
-      "WeekendBroward Google"
-    ],
-    "erroredSources": [
       "Dice.fm Real",
-      "Greater Miami & The Beaches",
+      "Resident Advisor",
       "Candlelight Concerts (Fever)",
       "Hotel Events",
+      "Broward Center",
+      "Revolution Live",
+      "Las Olas Boulevard",
+      "HistoryMiami",
+      "Resy Miami Events",
+      "Venue Watchlist",
+      "Eventbrite Miami",
+      "Fever Miami",
+      "Club Space",
+      "BonnetHouse"
+    ],
+    "erroredSources": [
+      "Miami New Times",
       "Miami Improv",
       "Fort Lauderdale Improv",
-      "Coral Gables",
-      "WeekendBroward Enhanced"
+      "Luma",
+      "SofarSounds",
+      "Shotgun Miami",
+      "Do305",
+      "CultureRoom",
+      "FunkyBuddha"
     ]
   }
 }
