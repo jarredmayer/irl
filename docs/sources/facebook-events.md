@@ -6,70 +6,73 @@
 
 **Official API is severely restricted.** Facebook deprecated public event search via the Graph API in 2018-2019 as part of the Cambridge Analytica fallout. The current state:
 
-- **Graph API v19+:** No public event search endpoint. You can only access events for Pages you admin or events the authenticated user has RSVP'd to.
-- **Page Events endpoint:** `GET /{page-id}/events` still works for Pages you have admin access to, or public Pages' events with a valid access token.
-- **No location-based event search:** The old `search?type=event&q=miami` endpoint is gone.
+- **Graph API v22+** (v25 released Feb 2026): No public event search endpoint. `/{page-id}/events` requires a **Page Access Token** with `pages_manage_events` permission — only works for pages **you own or administer**.
+- **`user_events` permission:** Requires Facebook Login and App Review approval, granted very selectively by Meta.
+- **No location-based event search:** The old `search?type=event&q=miami` endpoint is permanently gone.
 
 **Web scraping approach:**
-- Facebook has **extremely aggressive anti-bot measures**: login walls, Cloudflare, JavaScript rendering, CAPTCHAs, account suspensions
-- Event pages are behind authentication for most content
-- Public events have limited data visible without login
-- Scraping Facebook carries the highest risk of any source on this list
+- Facebook event pages (`facebook.com/events/123456`) render some public event data **without login**
+- **[facebook-event-scraper](https://github.com/francescov1/facebook-event-scraper)** (Node.js/npm) — open-source package that can extract event data from public event pages and page event listings via `scrapeFbEventList(pageUrl)`
+- **[Apify Facebook Events Scraper](https://apify.com/apify/facebook-events-scraper)** — managed scraping service ($50-200+/month)
+- Anti-bot measures are **among the most aggressive on the web**: IP blocking, browser fingerprinting, behavioral analysis, CAPTCHA, dynamic CSS class names, JavaScript challenges
+- Datacenter proxies are immediately blocked; residential/mobile proxy rotation required for any scale
+- Facebook event *search* pages require login/cookies and are heavily protected — avoid
 
-**Alternative approaches:**
-1. **Page-specific monitoring:** Create a curated list of Miami venue/organizer Facebook Pages and poll their events via the Graph API (requires a Facebook App with Pages access)
-2. **Open Graph / meta tags:** Public event URLs expose title, date, description, and image via Open Graph meta tags — parseable without authentication
-3. **Community partnerships:** Ask venue operators to share their Facebook event links, then parse the public OG data
-4. **Third-party aggregators:** Services like All Events, 10times, or PredictHQ already aggregate Facebook events and may offer API access
+**Open Graph meta tags:**
+- Public event URLs expose `og:title`, `og:description`, `og:image` in HTML head — parseable without JS rendering
+- Only works if you already have the event URL — no discovery mechanism
 
 ## Data Quality
 
-**Unique and high-value for community events.** Facebook is the only source that comprehensively covers:
-- Latin cultural events (Calle Ocho, Little Havana festivals, salsa nights)
+**Uniquely valuable for Latin cultural and community events.** Facebook is the only source that comprehensively covers:
+- Latin cultural events (Calle Ocho, Little Havana festivals, salsa nights, Viernes Culturales)
 - Neighborhood-level community meetups
 - Church/community org events
 - Pop-up markets and yard sales
-- House parties and semi-private gatherings (public ones)
-- HOA and neighborhood association events
+- Small organizer events — many post **only** on Facebook
 
-**Available fields (when accessible):**
+**Available fields (when accessible via scraping):**
 - Event title and description
-- Date, start time, end time
+- Date, start time, end time (structured)
 - Venue/location name and address
 - Cover image
 - Host/organizer info
-- RSVP count ("interested" / "going")
+- RSVP count ("interested" / "going") — rough popularity signal
 - Ticket URL (if external ticketing)
 - Category
 - Online/in-person flag
 
 **Weaknesses:**
 - Data quality varies wildly — community events often have incomplete addresses, missing times, or vague descriptions
+- Many community events are posted as **regular posts, not formal Facebook Events** — invisible to event scrapers
 - No structured genre/category taxonomy
 - Images may be low resolution
 - Events may be cancelled without updates
+- Attendee counts unreliable for small events
 
 ## Rate Limits
 
-- **Graph API:** 200 calls per user per hour (standard tier), higher with approved app permissions
-- **Web scraping:** Effectively zero tolerance — accounts get suspended, IPs get blocked
+| Method | Limit |
+|--------|-------|
+| Graph API (page token) | ~200 calls/hour per app, with BUC rate limiting |
+| Scraping (Apify/Bright Data) | ~50-200 events/run before block risk |
+| Open source scrapers | Fragile; break frequently as Facebook changes DOM |
 
 ## ToS Risks
 
-**Risk level: VERY HIGH (scraping) / MEDIUM (API)**
+**Risk level: HIGH (scraping) / MEDIUM (API)**
 
-- **Scraping:** Explicitly prohibited. Facebook/Meta actively litigates against scrapers (multiple lawsuits). Account bans are automated.
-- **Graph API:** Permitted within API terms, but app review is strict. Event-related permissions require justification and review.
-- **Open Graph parsing:** Gray area — it's technically public metadata designed for link previews, but bulk parsing could be flagged.
+- **Scraping:** Facebook ToS Section 3.2 explicitly prohibits "automated means to collect data" and "circumventing technological measures to control access"
+- **Meta v. Bright Data** lawsuit (2022, settled) and *hiQ v. LinkedIn* precedent create legal ambiguity, but Meta has been aggressive about enforcement
+- Account bans are the primary risk — any Facebook accounts used for cookie-based scraping will be permanently banned
+- Commercial scraping services (Apify, Bright Data) absorb some risk but shift, not eliminate, legal exposure
+- **Graph API:** Permitted within API terms, but app review is strict for event-related permissions
 
 ## Recommended Approach
 
-1. **Do NOT scrape Facebook directly.** The legal and technical risks are too high.
+1. **Curate a list of 20-30 Miami Facebook Pages** that frequently create formal Facebook Events (Ball & Chain, Cafe La Trova, Little Havana community centers, Calle Ocho Festival, Viernes Culturales, etc.). This mirrors the existing Instagram source pattern in `instagram-sources.ts`.
 
-2. **Curated Page list approach:**
-   - Build a list of 50-100 key Miami venue/organizer Facebook Pages
-   - Use the Graph API to poll their events (requires Facebook App with `pages_read_engagement` permission)
-   - This is ToS-compliant and provides the highest-value events
+2. **Use the `facebook-event-scraper` npm package** to periodically pull events from these known pages via `scrapeFbEventList(pageUrl)`. Avoids login requirements for public events and keeps the scraping surface small and targeted.
 
 3. **Open Graph enrichment:**
    - When a Facebook event URL is discovered from another source (Instagram, community submissions), parse the OG meta tags for additional data
@@ -77,13 +80,13 @@
 
 4. **Community submission bridge:**
    - Allow users to submit events by pasting a Facebook event URL
-   - Parse OG data from the URL to pre-fill the submission form
+   - Parse OG data to pre-fill the submission form
    - This turns Facebook into a submission source without requiring direct scraping
 
-5. **Third-party aggregator:**
-   - Evaluate PredictHQ or All Events as intermediaries that legally aggregate Facebook event data
-   - May provide API access to pre-processed Facebook events
+5. **Do NOT attempt broad Facebook event search/discovery scraping.** The risk/reward ratio is poor — high ban risk, high maintenance cost, moderate data yield.
+
+6. **Fallback: Manual curation** for the most important Latin cultural events posted as regular Facebook posts (not formal Events). Add to a `facebook-sources.ts` following the `knownEvents` pattern.
 
 ## Priority: Medium
 
-Facebook is the single best source for community and Latin cultural events, but the access restrictions make it the hardest to integrate. The curated Page list approach is the most viable path. Start with a manual list of key Miami venue Pages and expand from there.
+Facebook is uniquely valuable for Latin cultural and neighborhood-level events in Miami that don't appear on Eventbrite/Dice/RA. However, access restrictions, legal risk, and maintenance burden make it a second-tier priority. Best ROI is a small curated list of high-value Pages scraped with the open-source Node.js package, rather than any broad discovery approach.
