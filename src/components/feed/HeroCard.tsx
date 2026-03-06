@@ -33,19 +33,22 @@ export function HeroCard({
   const navigate = useNavigate();
   const [showSaveAnimation, setShowSaveAnimation] = useState(false);
 
+  // Check if event has a real image (not an Unsplash fallback)
+  const isRealImage = event.image && !event.image.includes('images.unsplash.com');
+
   // Image state: start with existing image or fallback for instant render
   const [imgUrl, setImgUrl] = useState<string>(
-    () => event.image || getFallbackImage(event.category, event.id)
+    () => (isRealImage && event.image) ? event.image : getFallbackImage(event.category, event.id)
   );
 
-  // Fetch better image if none exists
+  // Fetch from Pexels if no real image exists
   useEffect(() => {
-    if (!event.image) {
+    if (!isRealImage) {
       generateEventImage(event).then(setImgUrl);
-    } else {
+    } else if (event.image) {
       setImgUrl(event.image);
     }
-  }, [event]);
+  }, [event, isRealImage]);
 
   const swatchColor = getCategorySwatchColor(event.category);
 
