@@ -295,14 +295,8 @@ export function EventDetail({
           </div>
         )}
 
-        {/* Why this, why now — contextual reasoning */}
-        <div className="pt-2">
-          <h3 className="text-xs font-medium text-ink-3 uppercase tracking-wide mb-2">
-            Why we recommend it
-          </h3>
-          <WhyThisWhyNow event={event} isNew={isNew} />
-          <p className="text-ink-2 leading-relaxed mt-2">{event.editorialWhy}</p>
-        </div>
+        {/* Why this, why now — contextual reasoning (only if distinct from description) */}
+        <WhyWeRecommend event={event} isNew={isNew} />
 
         {/* Description */}
         <div>
@@ -347,6 +341,56 @@ const LOCAL_NEIGHBORHOODS = [
   'Little Havana', 'Little Haiti', 'Allapattah', 'Little River',
   'Hialeah', 'Overtown', 'Liberty City', 'Flagler Village',
 ];
+
+/**
+ * Check if editorialWhy is meaningfully different from description.
+ * Returns false if they're identical, near-identical, or one contains the other.
+ */
+function hasDistinctEditorial(editorialWhy: string | undefined, description: string): boolean {
+  if (!editorialWhy || !editorialWhy.trim()) return false;
+
+  const editorial = editorialWhy.trim().toLowerCase();
+  const desc = description.trim().toLowerCase();
+
+  // Exact match
+  if (editorial === desc) return false;
+
+  // One contains the other
+  if (desc.includes(editorial) || editorial.includes(desc)) return false;
+
+  // Very similar (first 50 chars match) — catches minor edits
+  if (editorial.slice(0, 50) === desc.slice(0, 50)) return false;
+
+  return true;
+}
+
+/**
+ * "Why we recommend it" section.
+ * Only renders if there's a distinct editorialWhy or contextual reasons.
+ */
+function WhyWeRecommend({ event, isNew }: { event: Event | ScoredEvent; isNew: boolean }) {
+  const hasDistinct = hasDistinctEditorial(event.editorialWhy, event.description);
+  const hasChips = event.editorPick ||
+    LOCAL_NEIGHBORHOODS.some(n => event.neighborhood?.toLowerCase() === n.toLowerCase()) ||
+    event.priceLabel === 'Free' ||
+    event.isOutdoor ||
+    isNew;
+
+  // Don't render section at all if nothing unique to show
+  if (!hasDistinct && !hasChips) return null;
+
+  return (
+    <div className="pt-2">
+      <h3 className="text-xs font-medium text-ink-3 uppercase tracking-wide mb-2">
+        Why we recommend it
+      </h3>
+      <WhyThisWhyNow event={event} isNew={isNew} />
+      {hasDistinct && (
+        <p className="text-ink-2 leading-relaxed mt-2">{event.editorialWhy}</p>
+      )}
+    </div>
+  );
+}
 
 /**
  * Contextual reasoning chips — explains *why* this event is surfaced.
