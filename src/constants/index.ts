@@ -188,6 +188,7 @@ export const DEFAULT_FILTERS = {
   priceRange: [0, 200] as [number, number],
   freeOnly: false,
   dateRange: ['', ''] as [string, string],
+  sunnyOnly: false,
 };
 
 // Popular neighborhoods for quick filtering

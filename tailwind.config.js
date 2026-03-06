@@ -22,6 +22,11 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        // IRL wordmark font options for exploration
+        wordmark: ['Playfair Display', 'Georgia', 'serif'],
+        'wordmark-bodoni': ['Bodoni Moda', 'Georgia', 'serif'],
+        'wordmark-fraunces': ['Fraunces', 'Georgia', 'serif'],
+        'wordmark-dm': ['DM Serif Display', 'Georgia', 'serif'],
       },
     },
   },

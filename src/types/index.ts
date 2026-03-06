@@ -126,6 +126,7 @@ export interface FilterState {
   priceRange: [number, number]; // [min, max]
   freeOnly: boolean;
   dateRange: [string, string]; // [startDate, endDate] in YYYY-MM-DD format
+  sunnyOnly: boolean; // Filter for daytime outdoor events (excludes Nightlife)
 }
 
 export type ViewMode = 'feed' | 'map';

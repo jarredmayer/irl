@@ -1,0 +1,1 @@
+export { SubmitPage } from './SubmitPage';

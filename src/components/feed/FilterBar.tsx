@@ -332,6 +332,13 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
           size="sm"
           variant="outline"
         />
+        <Chip
+          label="☀ Sunny"
+          selected={filters.sunnyOnly}
+          onClick={() => updateFilter('sunnyOnly', !filters.sunnyOnly)}
+          size="sm"
+          variant="outline"
+        />
 
         {/* Price range */}
         {!filters.freeOnly && (

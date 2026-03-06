@@ -154,6 +154,24 @@ export function useEvents(options: UseEventsOptions) {
       );
     }
 
+    // Filter by sunny (daytime outdoor events, excluding Nightlife)
+    if (filters.sunnyOnly) {
+      events = events.filter((event) => {
+        // Must be outdoor
+        if (!event.isOutdoor) return false;
+
+        // Exclude Nightlife category
+        if (event.category === 'Nightlife') return false;
+
+        // Check if event starts during daytime hours (7am - 7pm)
+        const eventDate = new Date(event.startAt);
+        const hour = eventDate.getHours();
+        const isDaytime = hour >= 7 && hour < 19;
+
+        return isDaytime;
+      });
+    }
+
     return events;
   }, [rankedEvents, filters, location, preferences.radiusMiles]);
 
