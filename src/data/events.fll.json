@@ -21,8 +21,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Inaugural Scottish Celtic Music Festival — Seven Nations, Clovers Revenge, Gaelica, Blue Skye, Femme Celtique. Pipe bands, Scottish country dancing, clan tents, children's activities. Located in Davie, Bergeron Rodeo Grounds is a local favorite.",
-    "description": "Inaugural Scottish Celtic Music Festival — Seven Nations, Clovers Revenge, Gaelica, Blue Skye, Femme Celtique. Pipe bands, Scottish country dancing, clan tents, children's activities.",
+    "editorialWhy": "Inaugural Scottish Celtic Music Festival \u2014 Seven Nations, Clovers Revenge, Gaelica, Blue Skye, Femme Celtique. Pipe bands, Scottish country dancing, clan tents, children's activities. Located in Davie, Bergeron Rodeo Grounds is a local favorite.",
+    "description": "Inaugural Scottish Celtic Music Festival \u2014 Seven Nations, Clovers Revenge, Gaelica, Blue Skye, Femme Celtique. Pipe bands, Scottish country dancing, clan tents, children's activities.",
     "ticketUrl": "https://www.sassf.org/event-6325690",
     "source": {
       "name": "WeekendBroward Verified",
@@ -52,8 +52,8 @@
     "priceLabel": "$$$",
     "isOutdoor": false,
     "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. Located in Fort Lauderdale Beach, Broward County Convention Center is a local favorite.",
-    "description": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases.",
+    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel \u2014 life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. Located in Fort Lauderdale Beach, Broward County Convention Center is a local favorite.",
+    "description": "Inaugural Barbie Dream Fest by Mattel \u2014 life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases.",
     "ticketUrl": "https://www.barbiedreamfest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -83,8 +83,8 @@
     "priceLabel": "$$$",
     "isOutdoor": false,
     "shortWhy": "Connect with the Fort Lauderdale community.",
-    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. Located in Fort Lauderdale Beach, Broward County Convention Center is a local favorite.",
-    "description": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases.",
+    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel \u2014 life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. Located in Fort Lauderdale Beach, Broward County Convention Center is a local favorite.",
+    "description": "Inaugural Barbie Dream Fest by Mattel \u2014 life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases.",
     "ticketUrl": "https://www.barbiedreamfest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -114,8 +114,8 @@
     "priceLabel": "$$$",
     "isOutdoor": false,
     "shortWhy": "Local vibes, real connections.",
-    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. Located in Fort Lauderdale Beach, Broward County Convention Center is a local favorite.",
-    "description": "Inaugural Barbie Dream Fest by Mattel — life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases.",
+    "editorialWhy": "Inaugural Barbie Dream Fest by Mattel \u2014 life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases. Located in Fort Lauderdale Beach, Broward County Convention Center is a local favorite.",
+    "description": "Inaugural Barbie Dream Fest by Mattel \u2014 life-size DreamHouse, '80s disco skating rink, Ultimate Barbie Fashion Show, interactive exhibits, workshops, collector showcases.",
     "ticketUrl": "https://www.barbiedreamfest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -148,8 +148,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary Season — Private Stock performs live on the beach. Free beachfront concert with lawn games, artisan vendors, food trucks. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
-    "description": "Friday Night Sound Waves 10th Anniversary Season — Private Stock performs live on the beach. Free beachfront concert with lawn games, artisan vendors, food trucks.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary Season \u2014 Private Stock performs live on the beach. Free beachfront concert with lawn games, artisan vendors, food trucks. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "description": "Friday Night Sound Waves 10th Anniversary Season \u2014 Private Stock performs live on the beach. Free beachfront concert with lawn games, artisan vendors, food trucks.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
@@ -157,36 +157,6 @@
     "image": "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=800&q=80",
     "editorPick": true,
     "venueId": "e7fa45df1d75"
-  },
-  {
-    "id": "4abe11605bd43fe0",
-    "title": "Piano Man Jeffrey Allen: Classic Yacht Rock",
-    "startAt": "2026-03-05T19:00:00",
-    "endAt": "2026-03-05T22:00:00",
-    "timezone": "America/New_York",
-    "venueName": "Cafe BVR (The Lounge)",
-    "address": "4404 Bougainvilla Dr, Lauderdale-By-The-Sea, FL 33308",
-    "neighborhood": "Lauderdale-By-The-Sea",
-    "lat": 26.1914,
-    "lng": -80.0983,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "live-music",
-      "waterfront"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
-    "source": {
-      "name": "WeekendBroward Verified",
-      "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
-    },
-    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    "editorPick": false,
-    "venueId": "c978f32b94d9"
   },
   {
     "id": "8c90e1cf57a08d10",
@@ -208,8 +178,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -238,8 +208,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -268,8 +238,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -298,8 +268,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -328,8 +298,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -358,8 +328,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -388,8 +358,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -418,8 +388,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -448,8 +418,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -478,8 +448,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -508,8 +478,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -538,8 +508,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -568,8 +538,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -598,8 +568,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -628,8 +598,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
-    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock — Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
+    "editorialWhy": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR. Located in Lauderdale-By-The-Sea, Cafe BVR (The Lounge) is a local favorite. Best of all, it's free.",
+    "description": "Piano Man Jeffrey Allen performs classic Yacht Rock \u2014 Billy Joel, Stevie Wonder, Bruno Mars, Alicia Keys, Elton John, and more every Thursday & Friday at Cafe BVR.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/calendar/live-music-events-fort-lauderdale/"
@@ -660,8 +630,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Rock the Park free concert series — Good Bread and Bread Zeppelin (Led Zeppelin tribute) perform live. Food trucks open at 6 PM. Lawn chairs and blankets welcome. Located in Plantation, Pine Island Park is a local favorite. Best of all, it's free.",
-    "description": "Rock the Park free concert series — Good Bread and Bread Zeppelin (Led Zeppelin tribute) perform live. Food trucks open at 6 PM. Lawn chairs and blankets welcome.",
+    "editorialWhy": "Rock the Park free concert series \u2014 Good Bread and Bread Zeppelin (Led Zeppelin tribute) perform live. Food trucks open at 6 PM. Lawn chairs and blankets welcome. Located in Plantation, Pine Island Park is a local favorite. Best of all, it's free.",
+    "description": "Rock the Park free concert series \u2014 Good Bread and Bread Zeppelin (Led Zeppelin tribute) perform live. Food trucks open at 6 PM. Lawn chairs and blankets welcome.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/rock-the-park-free-concert-series-in-plantation-2019/"
@@ -691,8 +661,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
-    "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "description": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -723,8 +693,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
-    "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "description": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -755,8 +725,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
-    "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "description": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -787,8 +757,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Dive into Fort Lauderdale's cultural richness.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
-    "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "description": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -819,8 +789,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Experience local heritage.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
-    "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "description": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -851,8 +821,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "History and culture, local-style.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
-    "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "description": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -883,8 +853,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Experience local heritage.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
-    "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "description": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -915,8 +885,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Experience local heritage.",
-    "editorialWhy": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
-    "description": "34th Annual Florida Renaissance Festival — jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
+    "editorialWhy": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking. Located in Deerfield Beach, Quiet Waters Park is a local favorite.",
+    "description": "34th Annual Florida Renaissance Festival \u2014 jousting 3x daily, 100+ merchants, 12 stages, sword fighters, minstrels, magicians. Cashless box office. Free parking.",
     "ticketUrl": "https://www.ren-fest.com/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -951,8 +921,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public. Located in Pompano Beach, Pompano Beach Shoreline is a local favorite. Best of all, it's free.",
-    "description": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public.",
+    "editorialWhy": "5th Annual Jazz Fest Pompano Beach \u2014 two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public. Located in Pompano Beach, Pompano Beach Shoreline is a local favorite. Best of all, it's free.",
+    "description": "5th Annual Jazz Fest Pompano Beach \u2014 two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/events/jazz-fest-pompano-beach/"
@@ -986,8 +956,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public. Located in Pompano Beach, Pompano Beach Shoreline is a local favorite. Best of all, it's free.",
-    "description": "5th Annual Jazz Fest Pompano Beach — two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public.",
+    "editorialWhy": "5th Annual Jazz Fest Pompano Beach \u2014 two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public. Located in Pompano Beach, Pompano Beach Shoreline is a local favorite. Best of all, it's free.",
+    "description": "5th Annual Jazz Fest Pompano Beach \u2014 two days of world-class jazz by Grammy winners and local talent along the Pompano Beach shoreline. Free to the public.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/events/jazz-fest-pompano-beach/"
@@ -998,7 +968,7 @@
   },
   {
     "id": "1f156b1c77e61db6",
-    "title": "Friday Night Sound Waves: Joel DaSilva & Friends — All Star Blues Jam",
+    "title": "Friday Night Sound Waves: Joel DaSilva & Friends \u2014 All Star Blues Jam",
     "startAt": "2026-03-20T19:00:00",
     "endAt": "2026-03-20T21:30:00",
     "timezone": "America/New_York",
@@ -1019,8 +989,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary — Joel DaSilva & Friends host an All Star Blues Jam on the beach. Free admission, food trucks, artisan vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
-    "description": "Friday Night Sound Waves 10th Anniversary — Joel DaSilva & Friends host an All Star Blues Jam on the beach. Free admission, food trucks, artisan vendors.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary \u2014 Joel DaSilva & Friends host an All Star Blues Jam on the beach. Free admission, food trucks, artisan vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "description": "Friday Night Sound Waves 10th Anniversary \u2014 Joel DaSilva & Friends host an All Star Blues Jam on the beach. Free admission, food trucks, artisan vendors.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
@@ -1086,8 +1056,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Taste what makes Fort Lauderdale's food scene special.",
-    "editorialWhy": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Located in Pompano Beach, Downtown Pompano Beach is a local favorite. Best of all, it's free.",
-    "description": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano.",
+    "editorialWhy": "Old Town Untapped \u2014 monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Located in Pompano Beach, Downtown Pompano Beach is a local favorite. Best of all, it's free.",
+    "description": "Old Town Untapped \u2014 monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/events/old-town-untapped/"
@@ -1120,8 +1090,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Local flavors and community vibes.",
-    "editorialWhy": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Located in Pompano Beach, Downtown Pompano Beach is a local favorite. Best of all, it's free.",
-    "description": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano.",
+    "editorialWhy": "Old Town Untapped \u2014 monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Located in Pompano Beach, Downtown Pompano Beach is a local favorite. Best of all, it's free.",
+    "description": "Old Town Untapped \u2014 monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/events/old-town-untapped/"
@@ -1154,8 +1124,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Fresh, local, and full of character.",
-    "editorialWhy": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Located in Pompano Beach, Downtown Pompano Beach is a local favorite. Best of all, it's free.",
-    "description": "Old Town Untapped — monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano.",
+    "editorialWhy": "Old Town Untapped \u2014 monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano. Located in Pompano Beach, Downtown Pompano Beach is a local favorite. Best of all, it's free.",
+    "description": "Old Town Untapped \u2014 monthly first-Friday craft brew and arts festival. Local craft beer, art vendors, live music, and food trucks in Downtown Pompano.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/events/old-town-untapped/"
@@ -1187,8 +1157,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary SEASON FINALE — Mr. Nice Guy & Friends close out the season. Free beachfront concert with food and vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
-    "description": "Friday Night Sound Waves 10th Anniversary SEASON FINALE — Mr. Nice Guy & Friends close out the season. Free beachfront concert with food and vendors.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary SEASON FINALE \u2014 Mr. Nice Guy & Friends close out the season. Free beachfront concert with food and vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "description": "Friday Night Sound Waves 10th Anniversary SEASON FINALE \u2014 Mr. Nice Guy & Friends close out the season. Free beachfront concert with food and vendors.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
@@ -1220,8 +1190,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary — Shauna Sweeney & Friends take the stage. Free beachfront concert with food, drinks, and artisan vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
-    "description": "Friday Night Sound Waves 10th Anniversary — Shauna Sweeney & Friends take the stage. Free beachfront concert with food, drinks, and artisan vendors.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary \u2014 Shauna Sweeney & Friends take the stage. Free beachfront concert with food, drinks, and artisan vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "description": "Friday Night Sound Waves 10th Anniversary \u2014 Shauna Sweeney & Friends take the stage. Free beachfront concert with food, drinks, and artisan vendors.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
@@ -1252,8 +1222,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Get your music fix with locals who know.",
-    "editorialWhy": "Rock the Park free concert — Ultimate Garth (Garth Brooks tribute) and She's So Shania (Shania Twain tribute). Food trucks at 6 PM. Free admission. Located in Plantation, Pine Island Park is a local favorite. Best of all, it's free.",
-    "description": "Rock the Park free concert — Ultimate Garth (Garth Brooks tribute) and She's So Shania (Shania Twain tribute). Food trucks at 6 PM. Free admission.",
+    "editorialWhy": "Rock the Park free concert \u2014 Ultimate Garth (Garth Brooks tribute) and She's So Shania (Shania Twain tribute). Food trucks at 6 PM. Free admission. Located in Plantation, Pine Island Park is a local favorite. Best of all, it's free.",
+    "description": "Rock the Park free concert \u2014 Ultimate Garth (Garth Brooks tribute) and She's So Shania (Shania Twain tribute). Food trucks at 6 PM. Free admission.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/rock-the-park-free-concert-series-in-plantation-2019/"
@@ -1520,8 +1490,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Rock the Park free concert — All Fired Up performs Pat Benatar and Heart tributes. Food trucks at 6 PM. Free parking. Lawn chairs welcome. Located in Plantation, Pine Island Park is a local favorite. Best of all, it's free.",
-    "description": "Rock the Park free concert — All Fired Up performs Pat Benatar and Heart tributes. Food trucks at 6 PM. Free parking. Lawn chairs welcome.",
+    "editorialWhy": "Rock the Park free concert \u2014 All Fired Up performs Pat Benatar and Heart tributes. Food trucks at 6 PM. Free parking. Lawn chairs welcome. Located in Plantation, Pine Island Park is a local favorite. Best of all, it's free.",
+    "description": "Rock the Park free concert \u2014 All Fired Up performs Pat Benatar and Heart tributes. Food trucks at 6 PM. Free parking. Lawn chairs welcome.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://weekendbroward.com/rock-the-park-free-concert-series-in-plantation-2019/"
@@ -1658,8 +1628,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "The kind of night Fort Lauderdale does best.",
-    "editorialWhy": "Friday Night Sound Waves 10th Anniversary — Spred the Dub brings reggae vibes to the beach. Free admission, food trucks, artisan vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
-    "description": "Friday Night Sound Waves 10th Anniversary — Spred the Dub brings reggae vibes to the beach. Free admission, food trucks, artisan vendors.",
+    "editorialWhy": "Friday Night Sound Waves 10th Anniversary \u2014 Spred the Dub brings reggae vibes to the beach. Free admission, food trucks, artisan vendors. Located in Fort Lauderdale Beach, Las Olas Oceanside Park is a local favorite. Best of all, it's free.",
+    "description": "Friday Night Sound Waves 10th Anniversary \u2014 Spred the Dub brings reggae vibes to the beach. Free admission, food trucks, artisan vendors.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://theloopflb.com/events/categories/friday-night-sound-waves/"
@@ -2120,8 +2090,8 @@
     "priceLabel": "Free",
     "isOutdoor": true,
     "shortWhy": "Live sounds in one of Fort Lauderdale's best spots.",
-    "editorialWhy": "Sounds of the Town free concert featuring Big Rock Band. Food trucks, festival seating. Season finale — bands start at 6:30 PM. Located in Davie, Bamford Sports Complex is a local favorite. Best of all, it's free.",
-    "description": "Sounds of the Town free concert featuring Big Rock Band. Food trucks, festival seating. Season finale — bands start at 6:30 PM.",
+    "editorialWhy": "Sounds of the Town free concert featuring Big Rock Band. Food trucks, festival seating. Season finale \u2014 bands start at 6:30 PM. Located in Davie, Bamford Sports Complex is a local favorite. Best of all, it's free.",
+    "description": "Sounds of the Town free concert featuring Big Rock Band. Food trucks, festival seating. Season finale \u2014 bands start at 6:30 PM.",
     "source": {
       "name": "WeekendBroward Verified",
       "url": "https://www.davie-fl.gov/1645/Sounds-of-the-Town"
@@ -2152,8 +2122,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
-    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
       "url": "https://instagram.com/@lauderdalerunclub"
@@ -2186,8 +2156,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
-    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
       "url": "https://instagram.com/@lauderdalerunclub"
@@ -2220,8 +2190,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
-    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
       "url": "https://instagram.com/@lauderdalerunclub"
@@ -2254,8 +2224,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
-    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
       "url": "https://instagram.com/@lauderdalerunclub"
@@ -2288,8 +2258,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
-    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
       "url": "https://instagram.com/@lauderdalerunclub"
@@ -2322,8 +2292,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
-    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
       "url": "https://instagram.com/@lauderdalerunclub"
@@ -2356,8 +2326,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
-    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
       "url": "https://instagram.com/@lauderdalerunclub"
@@ -2390,8 +2360,8 @@
     "priceLabel": "Free",
     "isOutdoor": false,
     "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
-    "description": "Free weekly group run through Fort Lauderdale. All paces welcome — from joggers to speedsters. Meet at Las Olas Riverfront.",
+    "editorialWhy": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront. Located in Las Olas, Las Olas Riverfront is a local favorite. Best of all, it's free.",
+    "description": "Free weekly group run through Fort Lauderdale. All paces welcome \u2014 from joggers to speedsters. Meet at Las Olas Riverfront.",
     "source": {
       "name": "@lauderdalerunclub",
       "url": "https://instagram.com/@lauderdalerunclub"
@@ -2819,8 +2789,8 @@
     "priceLabel": "$$",
     "isOutdoor": true,
     "shortWhy": "Move your body with Fort Lauderdale's fitness community.",
-    "editorialWhy": "Annual Shamrock Run — 4-mile race followed by kids' leprechaun bash, then parade and concert starting at noon. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite.",
-    "description": "Annual Shamrock Run — 4-mile race followed by kids' leprechaun bash, then parade and concert starting at noon.",
+    "editorialWhy": "Annual Shamrock Run \u2014 4-mile race followed by kids' leprechaun bash, then parade and concert starting at noon. Located in Downtown FLL, Downtown Fort Lauderdale is a local favorite.",
+    "description": "Annual Shamrock Run \u2014 4-mile race followed by kids' leprechaun bash, then parade and concert starting at noon.",
     "ticketUrl": "https://weekendbroward.com/st-patricks-day-events-around-town-2/",
     "source": {
       "name": "WeekendBroward Verified",
@@ -3188,39 +3158,6 @@
     "image": "https://images.unsplash.com/photo-1575223970966-76ae61ee7838?w=800&q=80",
     "editorPick": true,
     "venueId": "nsu-art-museum"
-  },
-  {
-    "id": "eef56687b5e09add",
-    "title": "Lauderdale Run Club: Weekday Run",
-    "startAt": "2026-03-04T06:30:00",
-    "timezone": "America/New_York",
-    "venueName": "Holiday Park",
-    "address": "1601 NE 6th Ave, Fort Lauderdale, FL 33304",
-    "neighborhood": "Victoria Park",
-    "lat": 26.1418,
-    "lng": -80.1248,
-    "city": "Fort Lauderdale",
-    "tags": [
-      "running",
-      "free-event",
-      "community",
-      "outdoor"
-    ],
-    "category": "Fitness",
-    "priceLabel": "Free",
-    "isOutdoor": false,
-    "shortWhy": "Start your day right with locals.",
-    "editorialWhy": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome. Located in Victoria Park, Holiday Park is a local favorite. Best of all, it's free.",
-    "description": "Midweek morning group run through Fort Lauderdale neighborhoods. All levels welcome.",
-    "source": {
-      "name": "@lauderdalerunclub",
-      "url": "https://instagram.com/@lauderdalerunclub"
-    },
-    "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
-    "editorPick": false,
-    "seriesId": "7ab26efc8104",
-    "seriesName": "Lauderdale Run Club: Weekday Run",
-    "venueId": "ada49f625f52"
   },
   {
     "id": "4468423233e6b37e",

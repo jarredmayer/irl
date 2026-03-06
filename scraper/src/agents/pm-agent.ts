@@ -18,6 +18,7 @@ import { fileURLToPath } from 'url';
 const __dir = dirname(fileURLToPath(import.meta.url));
 
 const META_PATH = join(__dir, '../../../public/data/scrape-meta.json');
+const HEALTH_REPORT_PATH = join(__dir, '../../../public/data/source-health.json');
 const HISTORY_PATH = join(__dir, '../../cache/scrape-history.json');
 const IG_SOURCES_PATH = join(__dir, '../sources/instagram-sources.ts');
 
@@ -239,6 +240,28 @@ export class PMAgent {
 
     const healthReport = lines.join('\n');
     console.log('\n' + healthReport);
+
+    // Write structured health report for frontend/monitoring
+    try {
+      const reportData = {
+        generatedAt: new Date().toISOString(),
+        scrapedAt: meta.scrapedAt,
+        healthPct,
+        totalSources,
+        ok: sourceHealth.ok,
+        empty: sourceHealth.empty,
+        errored: sourceHealth.errored,
+        emptySources: sourceHealth.emptySources,
+        erroredSources: sourceHealth.erroredSources,
+        suddenFailures: trends.suddenlyFailed,
+        graduallyDeclining: trends.graduallyDeclining,
+        suggestedNewSources: suggested,
+        historyRuns: history.length,
+      };
+      writeFileSync(HEALTH_REPORT_PATH, JSON.stringify(reportData, null, 2));
+    } catch {
+      // Non-fatal — report was already logged to console
+    }
 
     return { staleSources, suggestedNewSources: suggested, healthReport };
   }

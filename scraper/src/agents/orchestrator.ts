@@ -28,7 +28,7 @@
  * Modes:
  *  validateOnly  → ValidationAgent + BrandingAgent only (fastest, no LLM enrichment)
  *  fullPipeline  → All agents (comprehensive, higher API cost)
- *  default       → Validation + VenueSearch (if AI available) + BrandingAgent
+ *  default       → All agents when AI available (Validation + VenueSearch + Verifier + Curation + UX + Branding)
  *
  * Design principles:
  * - Cheap checks first (rules), expensive checks last (LLM)
@@ -45,6 +45,7 @@ import { CurationAgent } from './curation-agent.js';
 import { UXAgent } from './ux-agent.js';
 import { BrandingAgent } from './branding-agent.js';
 import { VenueImageFetcher } from './venue-image-fetcher.js';
+import { PMAgent } from './pm-agent.js';
 import { InstagramSourcesScraper } from '../sources/instagram-sources.js';
 import { hasAIEnabled as hasAIForVenueSearch } from '../ai.js';
 
@@ -76,7 +77,7 @@ export class OrchestratorAgent {
    * Modes:
    *  validateOnly  → ValidationAgent + BrandingAgent (date/bounds/location/category + images)
    *  fullPipeline  → Validation + VenueSearch + EventVerifier + Curation + UX + Branding
-   *  default       → Validation + VenueSearch (if AI available) + BrandingAgent
+   *  default       → All agents when AI available; Validation + BrandingAgent when no AI
    */
   async run(
     events: IRLEvent[],
@@ -112,10 +113,10 @@ export class OrchestratorAgent {
       };
     }
 
-    // ── EVENT VERIFICATION (fullPipeline or --verify-events flag) ────────────
+    // ── EVENT VERIFICATION (runs by default when AI available) ────────────
     //    Impact: high — removes cancelled events, surfaces unverified ones
     //    Cost: medium (1 DuckDuckGo search per event, cached 7d / 3d for IG)
-    if (options.fullPipeline || options.verifyEvents) {
+    if (!options.validateOnly && (options.fullPipeline || options.verifyEvents || hasAIForVenueSearch())) {
       const verifyResult = await verifyEventBatch(current, {
         max: options.maxEventsPerAgent ?? 20,
       });
@@ -124,8 +125,8 @@ export class OrchestratorAgent {
       summary.eventVerifier = verifyResult.report;
     }
 
-    // ── CURATION + UX (fullPipeline only) ────────────────────────────────────
-    if (options.fullPipeline) {
+    // ── CURATION + UX (runs by default when AI available) ────────────────────
+    if (!options.validateOnly && (options.fullPipeline || hasAIForVenueSearch())) {
       // CurationAgent: score events, set editorPick on top 5–10%
       //    Impact: medium — improves app UX, gives users guidance
       //    Cost: low (batch scoring, Haiku, 7-day cache)
@@ -178,6 +179,15 @@ export class OrchestratorAgent {
     current = branding.run(current);
     agentsRun.push('BrandingAgent');
     summary.branding = { eventsWithImages: current.filter((e) => !!e.image).length };
+
+    // ── PM AGENT (source health — runs every scrape, zero API cost) ───────────
+    try {
+      const pm = new PMAgent();
+      await pm.analyzeSourceHealth();
+      agentsRun.push('PMAgent');
+    } catch (e) {
+      console.warn('  [Orchestrator] PMAgent failed (non-fatal):', e);
+    }
 
     console.log(`\n🎭 Orchestrator done. Ran: [${agentsRun.join(', ')}]`);
     console.log(`   ${events.length} in → ${current.length} out\n`);

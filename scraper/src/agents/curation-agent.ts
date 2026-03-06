@@ -111,9 +111,8 @@ Return JSON array only: [{"id": "...", "score": <1-10>}, ...]`;
       const cachedScore = curationCache.get(result[i].id);
       if (cachedScore !== null) {
         cacheHits++;
-        if (cachedScore >= EDITOR_PICK_THRESHOLD) {
-          result[i] = { ...result[i], editorPick: true };
-        }
+        // Explicitly set editorPick based on score — clear false positives from heuristics
+        result[i] = { ...result[i], editorPick: cachedScore >= EDITOR_PICK_THRESHOLD };
       } else {
         toScore.push(result[i]);
       }
@@ -131,12 +130,11 @@ Return JSON array only: [{"id": "...", "score": <1-10>}, ...]`;
 
       for (const { id, score } of scores) {
         curationCache.set(id, score);
-        if (score >= EDITOR_PICK_THRESHOLD) {
-          const idx = result.findIndex((e) => e.id === id);
-          if (idx >= 0 && !result[idx].editorPick) {
-            result[idx] = { ...result[idx], editorPick: true };
-            newPicks++;
-          }
+        const idx = result.findIndex((e) => e.id === id);
+        if (idx >= 0) {
+          const isPick = score >= EDITOR_PICK_THRESHOLD;
+          if (isPick && !result[idx].editorPick) newPicks++;
+          result[idx] = { ...result[idx], editorPick: isPick };
         }
       }
     }

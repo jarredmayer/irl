@@ -33,6 +33,16 @@ const GENERIC_PATTERNS = [
   /^come (?:enjoy|experience|discover)/i,
   /^located in/i,
   /^welcome to/i,
+  /^nothing beats/i,
+  /^local vibes/i,
+  /^dive into/i,
+  /^connect with/i,
+  /^where .+ comes? alive/i,
+  /^fresh, local/i,
+  /^culture in full/i,
+  /^history and culture/i,
+  /^start your .+ right/i,
+  /^get your .+ fix/i,
 ];
 
 function isGenericCopy(text: string | undefined): boolean {

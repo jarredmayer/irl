@@ -162,8 +162,21 @@ export class ValidationAgent {
  * Re-assign category if description/title strongly suggest a different one.
  * Only overrides when the current category clearly doesn't fit.
  */
+// Map tags to categories — tags like 'live-music' should strongly signal Music category
+const TAG_TO_CATEGORY: Record<string, string> = {
+  'live-music': 'Music', 'jazz': 'Music', 'dj': 'Music', 'electronic': 'Music', 'hip-hop': 'Music',
+  'comedy': 'Comedy',
+  'yoga': 'Fitness', 'running': 'Fitness', 'cycling': 'Fitness', 'fitness-class': 'Fitness',
+  'meditation': 'Wellness',
+  'art-gallery': 'Art', 'museum': 'Art',
+  'theater': 'Culture',
+  'brunch': 'Food & Drink', 'happy-hour': 'Food & Drink', 'cocktails': 'Food & Drink',
+  'wine-tasting': 'Food & Drink', 'craft-beer': 'Food & Drink', 'food-market': 'Food & Drink',
+  'outdoor-dining': 'Food & Drink',
+};
+
 function fixCategory(event: IRLEvent): IRLEvent {
-  const text = `${event.title} ${event.description ?? ''}`;
+  const text = `${event.title} ${event.description ?? ''} ${event.tags.join(' ')}`;
   const current = event.category;
 
   // Only re-classify if current category has ZERO matching keywords
@@ -172,7 +185,15 @@ function fixCategory(event: IRLEvent): IRLEvent {
     return event; // Current category fits — leave it
   }
 
-  // Find a better category
+  // Check tags for strong category signals (most reliable)
+  for (const tag of event.tags) {
+    const tagCategory = TAG_TO_CATEGORY[tag];
+    if (tagCategory && tagCategory !== current) {
+      return { ...event, category: tagCategory as IRLEvent['category'] };
+    }
+  }
+
+  // Find a better category from text
   for (const [cat, patterns] of Object.entries(CATEGORY_KEYWORD_MAP)) {
     if (cat !== current && patterns.some((re) => re.test(text))) {
       return { ...event, category: cat as IRLEvent['category'] };

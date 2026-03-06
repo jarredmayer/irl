@@ -101,7 +101,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add public/data/events*.json public/data/scrape-meta.json \
-                  public/data/instagram-posts-cache.json public/data/venue-images.json 2>/dev/null || true
+                  public/data/instagram-posts-cache.json public/data/venue-images.json \
+                  public/data/source-health.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No data changes — skipping commit"
             exit 0
