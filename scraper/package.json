@@ -15,7 +15,11 @@
     "scrape:ig": "npx tsx scrape-instagram-posts.mjs",
     "merge:fll": "npx tsx merge-fll.mjs",
     "merge:miami": "npx tsx merge-miami-venues.mjs",
-    "scrape:dice": "npx tsx src/scrape-dice.ts"
+    "scrape:dice": "npx tsx src/scrape-dice.ts",
+    "integrity": "npx tsx src/integrity-agent.ts",
+    "integrity:audit": "npx tsx src/integrity-agent.ts --audit-only",
+    "integrity:gate": "npx tsx src/integrity-agent.ts --gate-only",
+    "integrity:dry": "npx tsx src/integrity-agent.ts --dry-run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",

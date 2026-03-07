@@ -95,6 +95,12 @@ jobs:
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: npm run scrape
 
+      - name: Run integrity agent
+        continue-on-error: true
+        timeout-minutes: 2
+        working-directory: scraper
+        run: npm run integrity
+
       - name: Commit and push event data
         continue-on-error: true
         run: |
@@ -102,7 +108,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add public/data/events*.json public/data/scrape-meta.json \
                   public/data/instagram-posts-cache.json public/data/venue-images.json \
-                  public/data/source-health.json 2>/dev/null || true
+                  public/data/source-health.json public/data/integrity-report.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No data changes — skipping commit"
             exit 0

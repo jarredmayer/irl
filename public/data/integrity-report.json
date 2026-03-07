@@ -1,0 +1,820 @@
+{
+  "timestamp": "2026-03-07T14:14:14.066Z",
+  "phase1": {
+    "totalFiles": 51,
+    "templateFiles": 26,
+    "realFiles": 20,
+    "hybridFiles": 5,
+    "templateScrapers": [
+      "Beach Cleanups",
+      "Brickell Venues",
+      "Coconut Grove",
+      "Dania Beach Improv",
+      "Adrienne Arsht Center",
+      "Fillmore Miami Beach",
+      "Don't Tell Comedy",
+      "Coffee & Chill",
+      "Free Yoga Miami",
+      "Run Clubs",
+      "Cycling Group Rides",
+      "Diplo Run Club",
+      "SoFlo Popups",
+      "Coral Gables & Neighborhood Venues",
+      "Cultural Attractions",
+      "Design District",
+      "Deering Estate",
+      "Miami Festivals",
+      "Regatta Grove",
+      "South Pointe Park",
+      "Cultural Venues",
+      "Curated Recurring",
+      "Farmers Markets",
+      "Food Events",
+      "Miami Spice",
+      "SOBEWFF",
+      "Wine Tastings",
+      "Fort Lauderdale",
+      "Hotels & Hospitality",
+      "Instagram Sources",
+      "Music Venues",
+      "Nightlife & Clubs",
+      "Latin Parties",
+      "Candlelight Concerts",
+      "III Points",
+      "Palm Beach",
+      "Pop-Ups",
+      "Professional Sports",
+      "Real Venue Events",
+      "Shotgun",
+      "World Cup 2026",
+      "Verified Recurring",
+      "WeekendBroward Verified",
+      "Wellness & Fitness"
+    ],
+    "realScrapers": [
+      "CultureRoom",
+      "BonnetHouse",
+      "FunkyBuddha",
+      "SavorCinema",
+      "Candlelight Concerts (Fever)",
+      "Club Space",
+      "Dice.fm Real",
+      "Do305",
+      "Eventbrite Miami",
+      "Fever Miami",
+      "Hotel Events",
+      "Las Olas Boulevard",
+      "Greater Miami & The Beaches",
+      "PAMM",
+      "ICA Miami",
+      "Wolfsonian",
+      "Little Haiti Cultural",
+      "Wynwood BID",
+      "Resy Miami Events",
+      "Shotgun Miami",
+      "SofarSounds",
+      "WeekendBroward Enhanced",
+      "WeekendBroward Google",
+      "WeekendBroward PoW",
+      "WeekendBroward",
+      "WeekendBrowardLiveMusic",
+      "WeekendBrowardComedy",
+      "WeekendBrowardKaraoke",
+      "WeekendBrowardJazz",
+      "WeekendBrowardPBLiveMusic",
+      "WeekendBrowardLocalEvents",
+      "HistoryMiami"
+    ],
+    "details": [
+      {
+        "file": "beach-cleanups.ts",
+        "scraperNames": [
+          "Beach Cleanups"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "brickell-venues.ts",
+        "scraperNames": [
+          "Brickell Venues"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "broward-venues.ts",
+        "scraperNames": [
+          "CultureRoom",
+          "BonnetHouse",
+          "FunkyBuddha",
+          "SavorCinema"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:apiEndpoint"
+        ]
+      },
+      {
+        "file": "candlelight-real.ts",
+        "scraperNames": [
+          "Candlelight Concerts (Fever)"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "club-space.ts",
+        "scraperNames": [
+          "Club Space"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:cheerioUse",
+          "real:apiEndpoint"
+        ]
+      },
+      {
+        "file": "coconut-grove.ts",
+        "scraperNames": [
+          "Coconut Grove"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "comedy-entertainment.ts",
+        "scraperNames": [
+          "Miami Improv",
+          "Dania Beach Improv",
+          "Adrienne Arsht Center",
+          "Fillmore Miami Beach",
+          "Don't Tell Comedy"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "community-fitness.ts",
+        "scraperNames": [
+          "Coffee & Chill",
+          "Free Yoga Miami",
+          "Run Clubs",
+          "Cycling Group Rides"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:zeroRateLimit",
+          "template:recurringPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "community-lifestyle.ts",
+        "scraperNames": [
+          "Coffee & Chill",
+          "Diplo Run Club",
+          "SoFlo Popups"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "coral-gables-venues.ts",
+        "scraperNames": [
+          "Coral Gables & Neighborhood Venues"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "cultural-attractions.ts",
+        "scraperNames": [
+          "Cultural Attractions"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "cultural-districts.ts",
+        "scraperNames": [
+          "Design District",
+          "Deering Estate",
+          "Miami Festivals",
+          "Regatta Grove",
+          "South Pointe Park"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "cultural-venues.ts",
+        "scraperNames": [
+          "Cultural Venues"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "curated-recurring.ts",
+        "scraperNames": [
+          "Curated Recurring"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "template:recurringPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "dice-scraper.ts",
+        "scraperNames": [
+          "Dice.fm Real"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:cheerioUse"
+        ]
+      },
+      {
+        "file": "do305.ts",
+        "scraperNames": [
+          "Do305"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:apiEndpoint"
+        ]
+      },
+      {
+        "file": "eventbrite-miami.ts",
+        "scraperNames": [
+          "Eventbrite Miami"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:cheerioUse",
+          "real:apiEndpoint"
+        ]
+      },
+      {
+        "file": "farmers-markets.ts",
+        "scraperNames": [
+          "Farmers Markets"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit"
+        ]
+      },
+      {
+        "file": "fever-miami.ts",
+        "scraperNames": [
+          "Fever Miami"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "food-drink.ts",
+        "scraperNames": [
+          "Food Events",
+          "Miami Spice",
+          "SOBEWFF",
+          "Wine Tastings"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "fort-lauderdale.ts",
+        "scraperNames": [
+          "Fort Lauderdale"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "hotel-events.ts",
+        "scraperNames": [
+          "Hotel Events"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "hotels-hospitality.ts",
+        "scraperNames": [
+          "Hotels & Hospitality"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "instagram-post-scraper.ts",
+        "scraperNames": [],
+        "classification": "real",
+        "signals": [
+          "real:httpUrl",
+          "real:apiEndpoint"
+        ]
+      },
+      {
+        "file": "instagram-sources.ts",
+        "scraperNames": [
+          "Instagram Sources"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "las-olas-events.ts",
+        "scraperNames": [
+          "Las Olas Boulevard"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "luma.ts",
+        "scraperNames": [
+          "Luma"
+        ],
+        "classification": "hybrid",
+        "signals": [
+          "template:hardcodedArray",
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:apiEndpoint"
+        ]
+      },
+      {
+        "file": "miami-beaches-events.ts",
+        "scraperNames": [
+          "Greater Miami & The Beaches"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "miami-museums.ts",
+        "scraperNames": [
+          "PAMM",
+          "ICA Miami",
+          "Wolfsonian",
+          "Little Haiti Cultural",
+          "Wynwood BID"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "miami-new-times.ts",
+        "scraperNames": [
+          "Miami New Times"
+        ],
+        "classification": "hybrid",
+        "signals": [
+          "template:dateFnsImport",
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "music-venues.ts",
+        "scraperNames": [
+          "Music Venues"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "nightlife-clubs.ts",
+        "scraperNames": [
+          "Nightlife & Clubs",
+          "Resident Advisor",
+          "Latin Parties",
+          "Candlelight Concerts",
+          "III Points"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:graphqlQuery"
+        ]
+      },
+      {
+        "file": "palm-beach.ts",
+        "scraperNames": [
+          "Palm Beach"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "pop-ups.ts",
+        "scraperNames": [
+          "Pop-Ups"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "professional-sports.ts",
+        "scraperNames": [
+          "Professional Sports"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "real-scrapers.ts",
+        "scraperNames": [
+          "Dice.fm",
+          "Miami Improv",
+          "Fort Lauderdale Improv",
+          "Broward Center",
+          "Coral Gables"
+        ],
+        "classification": "hybrid",
+        "signals": [
+          "template:dateFnsImport",
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "real-venue-events.ts",
+        "scraperNames": [
+          "Real Venue Events"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "resident-advisor.ts",
+        "scraperNames": [
+          "Resident Advisor"
+        ],
+        "classification": "hybrid",
+        "signals": [
+          "template:dateFnsImport",
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:graphqlQuery"
+        ]
+      },
+      {
+        "file": "resy-events.ts",
+        "scraperNames": [
+          "Resy Miami Events"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "shotgun-miami.ts",
+        "scraperNames": [
+          "Shotgun Miami"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:apiEndpoint"
+        ]
+      },
+      {
+        "file": "sofar-sounds.ts",
+        "scraperNames": [
+          "SofarSounds"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:graphqlQuery",
+          "real:apiEndpoint"
+        ]
+      },
+      {
+        "file": "ticketing-platforms.ts",
+        "scraperNames": [
+          "Dice.fm",
+          "Shotgun",
+          "World Cup 2026"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "venue-watchlist.ts",
+        "scraperNames": [
+          "Venue Watchlist"
+        ],
+        "classification": "hybrid",
+        "signals": [
+          "template:hardcodedArray",
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:apiEndpoint"
+        ]
+      },
+      {
+        "file": "verified-recurring.ts",
+        "scraperNames": [
+          "Verified Recurring"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:zeroRateLimit",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "weekend-broward-enhanced.ts",
+        "scraperNames": [
+          "WeekendBroward Enhanced"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:cheerioUse"
+        ]
+      },
+      {
+        "file": "weekend-broward-google.ts",
+        "scraperNames": [
+          "WeekendBroward Google"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "weekend-broward-pow.ts",
+        "scraperNames": [
+          "WeekendBroward PoW"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "weekend-broward-verified.ts",
+        "scraperNames": [
+          "WeekendBroward Verified"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:zeroRateLimit",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "weekend-broward.ts",
+        "scraperNames": [
+          "WeekendBroward",
+          "WeekendBrowardLiveMusic",
+          "WeekendBrowardComedy",
+          "WeekendBrowardKaraoke",
+          "WeekendBrowardJazz",
+          "WeekendBrowardPBLiveMusic",
+          "WeekendBrowardLocalEvents"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit"
+        ]
+      },
+      {
+        "file": "wellness-fitness.ts",
+        "scraperNames": [
+          "Wellness & Fitness"
+        ],
+        "classification": "template",
+        "signals": [
+          "template:dateFnsImport",
+          "template:hardcodedArray",
+          "template:zeroRateLimit",
+          "template:dayOfWeekPattern",
+          "template:generatesComment",
+          "real:httpUrl"
+        ]
+      },
+      {
+        "file": "wp-tribe-venues.ts",
+        "scraperNames": [
+          "HistoryMiami"
+        ],
+        "classification": "real",
+        "signals": [
+          "real:fetchCall",
+          "real:httpUrl",
+          "real:rateLimit",
+          "real:apiEndpoint"
+        ]
+      }
+    ]
+  },
+  "phase2": {
+    "totalEventsBefore": 1237,
+    "totalEventsAfter": 648,
+    "killed": 589,
+    "killedBySource": {
+      "Cultural Attractions": 103,
+      "WeekendBroward Verified": 102,
+      "Palm Beach": 56,
+      "Cycling Group Rides": 38,
+      "Coffee & Chill": 6,
+      "Run Clubs": 19,
+      "Fort Lauderdale": 19,
+      "Free Yoga Miami": 76,
+      "Verified Recurring": 2,
+      "Beach Cleanups": 6,
+      "World Cup 2026": 7,
+      "Miami Festivals": 1,
+      "Pop-Ups": 63,
+      "Farmers Markets": 72,
+      "Don't Tell Comedy": 16,
+      "Real Venue Events": 3
+    },
+    "killedPercent": "47.6%"
+  }
+}
