@@ -20,7 +20,7 @@ import { BaseScraper } from './base.js';
 import type { RawEvent } from '../types.js';
 
 // Eventbrite place IDs for South Florida
-const MIAMI_PLACE_IDS = ['85933669', '85933671']; // Miami + Miami Beach
+const MIAMI_PLACE_IDS = ['85933669', '85933671', '102085771']; // Miami + Miami Beach + Miami-Dade county
 
 interface EBSearchEvent {
   id: string;
@@ -100,17 +100,22 @@ export class EventbriteMiamiScraper extends BaseScraper {
       }
       this.log(`  Got CSRF token: ${csrfToken.slice(0, 8)}...`);
 
-      // Step 2: Search for events in Miami + Miami Beach
+      // Step 2: Search for events in Miami + Miami Beach + Miami-Dade, with pagination
       const searchResults: EBSearchEvent[] = [];
       for (const placeId of MIAMI_PLACE_IDS) {
-        try {
-          const events = await this.searchEvents(csrfToken, placeId);
-          searchResults.push(...events);
-          this.log(`  Place ${placeId}: ${events.length} events`);
-        } catch (e) {
-          this.log(`  Place ${placeId} failed: ${e instanceof Error ? e.message : String(e)}`);
+        for (let page = 1; page <= 3; page++) {
+          try {
+            const events = await this.searchEvents(csrfToken, placeId, page);
+            searchResults.push(...events);
+            this.log(`  Place ${placeId} page ${page}: ${events.length} events`);
+            // Stop paginating if we got fewer than page_size results
+            if (events.length < 50) break;
+          } catch (e) {
+            this.log(`  Place ${placeId} page ${page} failed: ${e instanceof Error ? e.message : String(e)}`);
+            break; // Don't try next page if current one failed
+          }
+          await this.sleep(1000);
         }
-        await this.sleep(1000);
       }
 
       if (searchResults.length === 0) {
@@ -198,14 +203,14 @@ export class EventbriteMiamiScraper extends BaseScraper {
   /**
    * Search Eventbrite destination API for events in a given place.
    */
-  private searchEvents(csrfToken: string, placeId: string): Promise<EBSearchEvent[]> {
+  private searchEvents(csrfToken: string, placeId: string, page: number = 1): Promise<EBSearchEvent[]> {
     const body = JSON.stringify({
       event_search: {
         dates: 'current_future',
         dedup: true,
         places: [placeId],
         page_size: 50,
-        page: 1,
+        page,
         online_events_only: false,
       },
       browse_surface: 'search',
