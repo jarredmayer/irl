@@ -1,0 +1,102 @@
+{
+  "nightlife": [
+    "/images/category/nightlife/1.jpg",
+    "/images/category/nightlife/2.jpg",
+    "/images/category/nightlife/3.jpg",
+    "/images/category/nightlife/4.jpg",
+    "/images/category/nightlife/5.jpg",
+    "/images/category/nightlife/6.jpg",
+    "/images/category/nightlife/7.jpg",
+    "/images/category/nightlife/8.jpg"
+  ],
+  "music": [
+    "/images/category/music/1.jpg",
+    "/images/category/music/2.jpg",
+    "/images/category/music/3.jpg",
+    "/images/category/music/4.jpg",
+    "/images/category/music/5.jpg",
+    "/images/category/music/6.jpg",
+    "/images/category/music/7.jpg",
+    "/images/category/music/8.jpg"
+  ],
+  "outdoor": [
+    "/images/category/outdoor/1.jpg",
+    "/images/category/outdoor/2.jpg",
+    "/images/category/outdoor/3.jpg",
+    "/images/category/outdoor/4.jpg",
+    "/images/category/outdoor/5.jpg",
+    "/images/category/outdoor/6.jpg",
+    "/images/category/outdoor/7.jpg",
+    "/images/category/outdoor/8.jpg"
+  ],
+  "arts": [
+    "/images/category/arts/1.jpg",
+    "/images/category/arts/2.jpg",
+    "/images/category/arts/3.jpg",
+    "/images/category/arts/4.jpg",
+    "/images/category/arts/5.jpg",
+    "/images/category/arts/6.jpg",
+    "/images/category/arts/7.jpg",
+    "/images/category/arts/8.jpg"
+  ],
+  "food": [
+    "/images/category/food/1.jpg",
+    "/images/category/food/2.jpg",
+    "/images/category/food/3.jpg",
+    "/images/category/food/4.jpg",
+    "/images/category/food/5.jpg",
+    "/images/category/food/6.jpg",
+    "/images/category/food/7.jpg",
+    "/images/category/food/8.jpg"
+  ],
+  "community": [
+    "/images/category/community/1.jpg",
+    "/images/category/community/2.jpg",
+    "/images/category/community/3.jpg",
+    "/images/category/community/4.jpg",
+    "/images/category/community/5.jpg",
+    "/images/category/community/6.jpg",
+    "/images/category/community/7.jpg",
+    "/images/category/community/8.jpg"
+  ],
+  "wellness": [
+    "/images/category/wellness/1.jpg",
+    "/images/category/wellness/2.jpg",
+    "/images/category/wellness/3.jpg",
+    "/images/category/wellness/4.jpg",
+    "/images/category/wellness/5.jpg",
+    "/images/category/wellness/6.jpg",
+    "/images/category/wellness/7.jpg",
+    "/images/category/wellness/8.jpg"
+  ],
+  "fitness": [
+    "/images/category/fitness/1.jpg",
+    "/images/category/fitness/2.jpg",
+    "/images/category/fitness/3.jpg",
+    "/images/category/fitness/4.jpg",
+    "/images/category/fitness/5.jpg",
+    "/images/category/fitness/6.jpg",
+    "/images/category/fitness/7.jpg",
+    "/images/category/fitness/8.jpg"
+  ],
+  "culture": [
+    "/images/category/culture/1.jpg",
+    "/images/category/culture/2.jpg",
+    "/images/category/culture/3.jpg",
+    "/images/category/culture/4.jpg",
+    "/images/category/culture/5.jpg",
+    "/images/category/culture/6.jpg",
+    "/images/category/culture/7.jpg",
+    "/images/category/culture/8.jpg"
+  ],
+  "default": [
+    "/images/category/default/1.jpg",
+    "/images/category/default/2.jpg",
+    "/images/category/default/3.jpg",
+    "/images/category/default/4.jpg",
+    "/images/category/default/5.jpg",
+    "/images/category/default/6.jpg",
+    "/images/category/default/7.jpg",
+    "/images/category/default/8.jpg"
+  ]
+}
