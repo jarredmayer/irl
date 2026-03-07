@@ -12,6 +12,20 @@ import manifest from '../data/category-images-manifest.json';
 const CACHE_PREFIX = 'irl_img_';
 const CACHE_TTL_MS = 1000 * 60 * 60 * 24; // 24 hours
 
+// ─── CLEAR STALE CACHE ON LOAD ────────────────────────────
+// One-time cleanup to remove old Pexels/Unsplash URLs
+// so manifest images take precedence.
+function clearStaleImageCache(): void {
+  try {
+    Object.keys(localStorage)
+      .filter(k => k.startsWith(CACHE_PREFIX))
+      .forEach(k => localStorage.removeItem(k));
+  } catch {}
+}
+clearStaleImageCache();
+
+// ──────────────────────────────────────────────────────────
+
 interface CacheEntry {
   url: string;
   ts: number;
@@ -46,7 +60,7 @@ function hashCode(str: string): number {
   return Math.abs(hash);
 }
 
-// ─── LOCAL MANIFEST FALLBACKS ─────────────────────────────
+// ─── LOCAL MANIFEST IMAGES (PRIMARY SOURCE) ───────────────
 // Pre-generated editorial images served from /images/category/
 // Loads instantly — no async needed.
 
@@ -60,9 +74,9 @@ export function getFallbackImage(category: string, seed: string): string {
   return photos[idx];
 }
 
-// ─── PEXELS API ───────────────────────────────────────────
+// ─── PEXELS API (BACKGROUND UPGRADE) ──────────────────────
 // Free tier: 200 req/hour. No watermark. High quality.
-// Set VITE_PEXELS_API_KEY in .env
+// Only used as optional background enhancement.
 
 const PEXELS_QUERIES: Record<string, string> = {
   nightlife:     'cocktail bar dark moody',
@@ -112,27 +126,31 @@ async function fetchPexels(
 export async function generateEventImage(
   event: ScoredEvent
 ): Promise<string> {
-  // 1. Check cache
+  // 1. Check cache — return immediately if found
   const cached = getCache(event.id);
   if (cached) return cached;
 
-  // 2. If event has a real image URL (not Unsplash fallback), use it
-  if (event.image && !event.image.includes('images.unsplash.com')) {
+  // 2. If event has a real image URL (not Unsplash/Pexels), use it
+  if (event.image &&
+      !event.image.includes('images.unsplash.com') &&
+      !event.image.includes('images.pexels.com')) {
     setCache(event.id, event.image);
     return event.image;
   }
 
-  // 3. Try Pexels API
-  const pexels = await fetchPexels(event.category, event.id);
-  if (pexels) {
-    setCache(event.id, pexels);
-    return pexels;
-  }
+  // 3. Use local manifest image IMMEDIATELY (primary source)
+  const manifestImage = getFallbackImage(event.category, event.id);
+  setCache(event.id, manifestImage);
 
-  // 4. Return local manifest fallback (instant, no async needed)
-  const fallback = getFallbackImage(event.category, event.id);
-  setCache(event.id, fallback);
-  return fallback;
+  // 4. Try Pexels in background as optional upgrade (don't block)
+  fetchPexels(event.category, event.id).then(pexels => {
+    if (pexels) {
+      setCache(event.id, pexels);
+    }
+  });
+
+  // Return manifest image instantly
+  return manifestImage;
 }
 
 // ─── LEGACY EXPORTS FOR COMPATIBILITY ─────────────────────
@@ -142,7 +160,6 @@ export function getCachedImage(eventId: string): string | null {
 }
 
 export function clearImageCache(): void {
-  // Clear all irl_img_ prefixed keys
   const keysToRemove: string[] = [];
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
