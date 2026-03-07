@@ -1,7 +1,10 @@
 /**
  * Miami New Times Event Scraper
  * Scrapes events from miaminewtimes.com/eventsearch
- * Fetches individual event pages for accurate venue/location data
+ *
+ * Optimized: extracts event data directly from the list page HTML
+ * instead of fetching each individual event detail page (which caused timeouts).
+ * Only fetches detail pages for a few events to get images/descriptions.
  */
 
 import { addDays, format, parse } from 'date-fns';
@@ -15,21 +18,29 @@ export class MiamiNewTimesScraper extends BaseScraper {
   private calendarUrl = `${this.baseUrl}/eventsearch`;
 
   constructor() {
-    super('Miami New Times', { weight: 1.5, rateLimit: 1000 });
+    super('Miami New Times', { weight: 1.5, rateLimit: 200 });
   }
 
   async scrape(): Promise<RawEvent[]> {
     const events: RawEvent[] = [];
-    const daysAhead = 14;
+    const daysAhead = 7;
+    const totalTimeout = 60_000; // 60s total timeout
+    const startTime = Date.now();
 
     this.log(`Scraping events for next ${daysAhead} days...`);
 
     for (let i = 0; i < daysAhead; i++) {
+      // Check total timeout
+      if (Date.now() - startTime > totalTimeout) {
+        this.log(`Total timeout reached after ${i} days — returning ${events.length} events collected so far`);
+        break;
+      }
+
       const targetDate = addDays(new Date(), i);
       const dateStr = format(targetDate, 'yyyy-MM-dd');
 
       try {
-        const dayEvents = await this.scrapeDay(dateStr);
+        const dayEvents = await this.scrapeDay(dateStr, startTime, totalTimeout);
         events.push(...dayEvents);
         this.log(`Found ${dayEvents.length} events for ${dateStr}`);
       } catch (error) {
@@ -41,140 +52,143 @@ export class MiamiNewTimesScraper extends BaseScraper {
     return events;
   }
 
-  private async scrapeDay(dateStr: string): Promise<RawEvent[]> {
+  private async scrapeDay(dateStr: string, startTime: number, totalTimeout: number): Promise<RawEvent[]> {
     const url = `${this.calendarUrl}/?narrowByDate=${dateStr}&page=1`;
     const $ = await this.fetchHTML(url);
-    const eventUrls: { url: string; image?: string; dateStr: string }[] = [];
+    const events: RawEvent[] = [];
+    let detailFetchCount = 0;
+    const maxDetailFetches = 3; // Only fetch detail pages for first 3 events per day
 
-    // Collect event URLs from list page
+    // Extract event data directly from list page
     $('.events-calendar__list-item').each((_, element) => {
-      const $el = $(element);
-      const link = $el.find('a').first();
-      let eventUrl = link.attr('href') || '';
-      if (eventUrl.startsWith('/')) {
-        eventUrl = this.baseUrl + eventUrl;
-      }
-      if (eventUrl && eventUrl.includes('/event/')) {
+      try {
+        const $el = $(element);
+
+        // Get event link and title
+        const firstLink = $el.find('a').first();
+        let eventUrl = firstLink.attr('href') || '';
+        if (eventUrl.startsWith('/')) {
+          eventUrl = this.baseUrl + eventUrl;
+        }
+        if (!eventUrl.includes('/event/')) return;
+
+        const title = this.cleanText(firstLink.text());
+        if (!title || title.length < 5) return;
+
+        // Get venue from location link
+        const venueLink = $el.find('a[href*="/location/"]');
+        const venueName = this.cleanText(venueLink.text()) || undefined;
+
+        // Get image from list item
         const img = $el.find('img').first();
         let image = img.attr('src') || img.attr('data-src');
         if (image?.startsWith('/')) image = this.baseUrl + image;
-        eventUrls.push({ url: eventUrl, image, dateStr });
-      }
+
+        // Extract date/time info from the list item text
+        const itemText = this.cleanText($el.text());
+        let startAt = `${dateStr}T12:00:00`;
+
+        const timeMatch = itemText.match(/(\d{1,2}:\d{2}\s*(a\.?m\.?|p\.?m\.?))/i);
+        if (timeMatch) {
+          try {
+            const timeStr = timeMatch[1].toLowerCase().replace(/[\s.]/g, '');
+            const parsed = parse(timeStr, 'h:mma', new Date());
+            startAt = `${dateStr}T${format(parsed, 'HH:mm')}:00`;
+          } catch { /* use default */ }
+        }
+
+        // Neighborhood inference
+        let neighborhood: string | undefined;
+        if (venueName) {
+          neighborhood = this.inferNeighborhoodFromVenue(venueName);
+        }
+        neighborhood = neighborhood || 'Miami';
+
+        // Determine city
+        const isFortLauderdale = /fort lauderdale|hollywood|dania|pompano|davie|plantation|sunrise|weston|pembroke|hallandale|deerfield|broward/i.test(
+          `${neighborhood} ${venueName || ''}`
+        );
+        const city = isFortLauderdale ? 'Fort Lauderdale' : 'Miami';
+
+        const category = this.categorize(title, '', venueName || '');
+        const tags = this.generateTags(title, '', category);
+
+        events.push({
+          title,
+          startAt,
+          venueName,
+          neighborhood,
+          lat: null,
+          lng: null,
+          city,
+          tags,
+          category,
+          isOutdoor: this.isOutdoor(title, '', venueName || ''),
+          description: `${title}${venueName ? ` at ${venueName}` : ''} — via Miami New Times`,
+          sourceUrl: eventUrl,
+          image,
+          sourceName: this.name,
+        });
+      } catch { /* skip individual item errors */ }
     });
 
-    // Fetch each event detail page
-    const events: RawEvent[] = [];
-    for (const { url: eventUrl, image, dateStr: date } of eventUrls) {
+    // Fetch detail pages for first few events to enrich with better descriptions/images
+    for (let i = 0; i < Math.min(maxDetailFetches, events.length); i++) {
+      if (Date.now() - startTime > totalTimeout) break;
+
       try {
-        const event = await this.scrapeEventPage(eventUrl, image, date);
-        if (event) events.push(event);
-        await this.delay(500); // Rate limit
-      } catch (error) {
-        this.logError(`Failed to scrape ${eventUrl}`, error);
-      }
+        const enriched = await this.enrichFromDetailPage(events[i]);
+        if (enriched) {
+          events[i] = enriched;
+        }
+        await this.delay(200);
+      } catch { /* skip — list page data is sufficient */ }
+      detailFetchCount++;
     }
 
     return events;
   }
 
-  private async scrapeEventPage(url: string, listImage?: string, dateStr?: string): Promise<RawEvent | null> {
-    const $ = await this.fetchHTML(url);
+  /**
+   * Fetch a single event detail page to enrich an event with better data.
+   * Returns the enriched event or null if the fetch failed.
+   */
+  private async enrichFromDetailPage(event: RawEvent): Promise<RawEvent | null> {
+    if (!event.sourceUrl) return null;
 
-    // Get title from page
-    const title = this.cleanText($('h1').first().text());
-    if (!title || title.length < 5) return null;
+    const $ = await this.fetchHTML(event.sourceUrl);
 
-    // Extract venue from "Where:" section
-    const whereSection = $('li:contains("Where:")').first();
-    const venueLink = whereSection.find('a');
-    const venueName = this.cleanText(venueLink.text()) || undefined;
+    // Get better description
+    const descSection = $('.event-detail__description, .event-content, article p').first();
+    const description = this.cleanText(descSection.text());
+    if (description && description.length > 20) {
+      event.description = description;
+    }
 
-    // Try to get address from venue page link or meta
-    let address: string | undefined;
-    const venueHref = venueLink.attr('href');
+    // Get image if we don't have one
+    if (!event.image) {
+      const ogImage = $('meta[property="og:image"]').attr('content');
+      if (ogImage) event.image = ogImage;
+    }
 
-    // Extract address from page content
+    // Get address
     const addressMatch = $('body').text().match(/(\d+\s+[A-Za-z0-9\s]+(?:Street|St|Avenue|Ave|Boulevard|Blvd|Road|Rd|Drive|Dr|Way|Circle|Cir|Lane|Ln)[^,]*,\s*[A-Za-z\s]+,\s*FL\s*\d{5})/i);
     if (addressMatch) {
-      address = this.cleanText(addressMatch[1]);
-    }
-
-    // Get neighborhood from dedicated field or infer from venue/address
-    let neighborhood: string | undefined;
-    const neighborhoodEl = $('li:contains("Neighborhood:")').first();
-    if (neighborhoodEl.length) {
-      neighborhood = this.cleanText(neighborhoodEl.text().replace('Neighborhood:', ''));
-    }
-
-    // Infer neighborhood from address if not found
-    if (!neighborhood && address) {
-      neighborhood = this.inferNeighborhoodFromAddress(address);
-    }
-    if (!neighborhood && venueName) {
-      neighborhood = this.inferNeighborhoodFromVenue(venueName);
-    }
-    neighborhood = neighborhood || 'Miami';
-
-    // Determine city
-    const isFortLauderdale = /fort lauderdale|hollywood|dania|pompano|davie|plantation|sunrise|weston|pembroke|hallandale|deerfield|broward/i.test(
-      `${neighborhood} ${address || ''} ${venueName || ''}`
-    );
-    const city = isFortLauderdale ? 'Fort Lauderdale' : 'Miami';
-
-    // Get date/time
-    const whenSection = $('li:contains("When:")').first().text();
-    let startAt = dateStr ? `${dateStr}T12:00:00` : format(new Date(), "yyyy-MM-dd'T'12:00:00");
-
-    const timeMatch = whenSection.match(/(\d{1,2}:\d{2}\s*(a\.?m\.?|p\.?m\.?))/i);
-    if (timeMatch) {
-      try {
-        const timeStr = timeMatch[1].toLowerCase().replace(/[\s.]/g, '');
-        const parsed = parse(timeStr, 'h:mma', new Date());
-        startAt = `${dateStr || format(new Date(), 'yyyy-MM-dd')}T${format(parsed, 'HH:mm')}:00`;
-      } catch { /* use default */ }
-    }
-
-    // Get description
-    const descSection = $('.event-detail__description, .event-content, article p').first();
-    let description = this.cleanText(descSection.text());
-    if (!description || description.length < 20) {
-      description = `${title} at ${venueName || neighborhood}`;
-    }
-
-    // Get image
-    let image = listImage;
-    if (!image) {
-      const ogImage = $('meta[property="og:image"]').attr('content');
-      image = ogImage || undefined;
+      event.address = this.cleanText(addressMatch[1]);
+      if (!event.neighborhood || event.neighborhood === 'Miami') {
+        event.neighborhood = this.inferNeighborhoodFromAddress(event.address) || event.neighborhood;
+      }
     }
 
     // Get price
     const priceSection = $('li:contains("Price:")').first().text();
-    const priceInfo = this.parsePrice(priceSection);
+    if (priceSection) {
+      const priceInfo = this.parsePrice(priceSection);
+      event.priceLabel = priceInfo.label;
+      event.priceAmount = priceInfo.amount;
+    }
 
-    // Categorize
-    const category = this.categorize(title, description, venueName || '');
-    const tags = this.generateTags(title, description, category);
-
-    return {
-      title,
-      startAt,
-      venueName,
-      address,
-      neighborhood,
-      lat: null,
-      lng: null,
-      city,
-      tags,
-      category,
-      priceLabel: priceInfo.label,
-      priceAmount: priceInfo.amount,
-      isOutdoor: this.isOutdoor(title, description, venueName || ''),
-      description,
-      sourceUrl: url,
-      image,
-      sourceName: this.name,
-    };
+    return event;
   }
 
   private inferNeighborhoodFromAddress(address: string): string | undefined {

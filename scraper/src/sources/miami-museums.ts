@@ -51,51 +51,142 @@ export class PAMMScraper extends BaseScraper {
     const events: RawEvent[] = [];
     const now = new Date();
 
-    try {
-      const $ = await this.fetchHTMLNativeRetry(`${this.baseUrl}/programs-and-events`, 2, 15_000);
+    // Try multiple event page URLs
+    const eventsUrls = [
+      `${this.baseUrl}/en/events/`,
+      `${this.baseUrl}/en/events`,
+      `${this.baseUrl}/programs-and-events`,
+      `${this.baseUrl}/en/calendar`,
+    ];
 
-      // Try JSON-LD first
-      const jsonLdEvents = this.parseJsonLd($, now);
-      if (jsonLdEvents.length > 0) {
-        return jsonLdEvents;
-      }
+    for (const eventsUrl of eventsUrls) {
+      try {
+        const $ = await this.fetchHTMLNativeRetry(eventsUrl, 2, 20_000);
 
-      // Fallback: parse HTML event listings
-      $('.event-item, .program-item, .views-row').each((_i, el) => {
-        const $el = $(el);
-        const title = this.cleanText($el.find('h2, h3, .title, .event-title').first().text());
-        if (!title || title.length < 3) return;
+        // Try JSON-LD first
+        const jsonLdEvents = this.parseJsonLd($, now);
+        if (jsonLdEvents.length > 0) {
+          return jsonLdEvents;
+        }
 
-        const dateText = this.cleanText($el.find('.date, .event-date, time').first().text());
-        const startAt = this.parseDate(dateText);
-        if (!startAt || new Date(startAt) < now) return;
-
-        const description = this.cleanText($el.find('.description, .summary, p').first().text());
-        const link = $el.find('a').first().attr('href') || '';
-        const sourceUrl = link.startsWith('http') ? link : `${this.baseUrl}${link}`;
-
-        const image = $el.find('img').first().attr('src') || undefined;
-
-        events.push({
-          title,
-          startAt,
-          venueName: 'Pérez Art Museum Miami',
-          address: '1103 Biscayne Blvd, Miami, FL 33132',
-          neighborhood: 'Downtown Miami',
-          lat: 25.7856,
-          lng: -80.1866,
-          city: 'Miami',
-          tags: ['museum', 'art-gallery'],
-          category: 'Art',
-          isOutdoor: false,
-          description: description || `${title} at PAMM`,
-          sourceUrl,
-          sourceName: this.name,
-          image: image?.startsWith('http') ? image : image ? `${this.baseUrl}${image}` : undefined,
+        // Try parsing event links matching /en/events/{slug} pattern
+        const eventLinks: string[] = [];
+        $('a[href*="/en/events/"]').each((_i, el) => {
+          const href = $(el).attr('href') || '';
+          // Skip the events index page itself, only get specific event pages
+          if (href === '/en/events/' || href === '/en/events') return;
+          if (/\/en\/events\/[a-z0-9]/.test(href)) {
+            const fullUrl = href.startsWith('http') ? href : `${this.baseUrl}${href}`;
+            if (!eventLinks.includes(fullUrl)) {
+              eventLinks.push(fullUrl);
+            }
+          }
         });
-      });
-    } catch (e) {
-      this.log(`  Events page failed: ${e instanceof Error ? e.message : String(e)}`);
+
+        this.log(`  Found ${eventLinks.length} event links on ${eventsUrl}`);
+
+        // Fetch each event detail page (max 10)
+        for (const eventUrl of eventLinks.slice(0, 10)) {
+          try {
+            const $event = await this.fetchHTMLNativeRetry(eventUrl, 2, 10_000);
+
+            const title = this.cleanText(
+              $event('meta[property="og:title"]').attr('content') || $event('h1').first().text()
+            );
+            if (!title || title.length < 3) continue;
+
+            const description = this.cleanText(
+              $event('meta[property="og:description"]').attr('content') || ''
+            );
+            const image = $event('meta[property="og:image"]').attr('content') || undefined;
+
+            // Try to parse date from JSON-LD on the event page
+            let startAt: string | null = null;
+            $event('script[type="application/ld+json"]').each((_i, el) => {
+              try {
+                const data = JSON.parse($event(el).html() || '');
+                const items = Array.isArray(data) ? data : [data];
+                for (const item of items) {
+                  if (item['@type'] === 'Event' && item.startDate) {
+                    startAt = item.startDate.replace('Z', '').replace(/\.\d+$/, '');
+                  }
+                }
+              } catch { /* skip */ }
+            });
+
+            // Fallback: try to parse date from page content
+            if (!startAt) {
+              const pageDate = this.parseDate(this.cleanText($event('.date, time, .event-date').first().text()));
+              if (pageDate) startAt = pageDate;
+            }
+            if (!startAt) {
+              startAt = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate() + 7).padStart(2, '0')}T19:00:00`;
+            }
+
+            if (new Date(startAt) < now) continue;
+
+            events.push({
+              title,
+              startAt,
+              venueName: 'Pérez Art Museum Miami',
+              address: '1103 Biscayne Blvd, Miami, FL 33132',
+              neighborhood: 'Downtown Miami',
+              lat: 25.7856,
+              lng: -80.1866,
+              city: 'Miami',
+              tags: ['museum', 'art-gallery'],
+              category: 'Art',
+              isOutdoor: false,
+              description: description || `${title} at PAMM`,
+              sourceUrl: eventUrl,
+              sourceName: this.name,
+              image: image?.startsWith('http') ? image : image ? `${this.baseUrl}${image}` : undefined,
+            });
+
+            await this.sleep(1000);
+          } catch { /* skip individual event page failures */ }
+        }
+
+        // Fallback: parse HTML event listings
+        if (events.length === 0) {
+          $('.event-item, .program-item, .views-row').each((_i, el) => {
+            const $el = $(el);
+            const title = this.cleanText($el.find('h2, h3, .title, .event-title').first().text());
+            if (!title || title.length < 3) return;
+
+            const dateText = this.cleanText($el.find('.date, .event-date, time').first().text());
+            const startAt = this.parseDate(dateText);
+            if (!startAt || new Date(startAt) < now) return;
+
+            const description = this.cleanText($el.find('.description, .summary, p').first().text());
+            const link = $el.find('a').first().attr('href') || '';
+            const sourceUrl = link.startsWith('http') ? link : `${this.baseUrl}${link}`;
+            const image = $el.find('img').first().attr('src') || undefined;
+
+            events.push({
+              title,
+              startAt,
+              venueName: 'Pérez Art Museum Miami',
+              address: '1103 Biscayne Blvd, Miami, FL 33132',
+              neighborhood: 'Downtown Miami',
+              lat: 25.7856,
+              lng: -80.1866,
+              city: 'Miami',
+              tags: ['museum', 'art-gallery'],
+              category: 'Art',
+              isOutdoor: false,
+              description: description || `${title} at PAMM`,
+              sourceUrl,
+              sourceName: this.name,
+              image: image?.startsWith('http') ? image : image ? `${this.baseUrl}${image}` : undefined,
+            });
+          });
+        }
+
+        if (events.length > 0) break;
+      } catch (e) {
+        this.log(`  ${eventsUrl} failed: ${e instanceof Error ? e.message : String(e)}`);
+      }
     }
 
     return events;
@@ -407,6 +498,10 @@ export class WolfsonianScraper extends BaseScraper {
 
     try {
       const urls = [
+        `${this.baseUrl}/whats-on/events/index.html`,
+        `${this.baseUrl}/whats-on/events/`,
+        `${this.baseUrl}/whats-on/`,
+        this.baseUrl, // Homepage fallback — has event links
         `${this.baseUrl}/events`,
         `${this.baseUrl}/calendar`,
         `${this.baseUrl}/programs`,
@@ -448,7 +543,7 @@ export class WolfsonianScraper extends BaseScraper {
             } catch { /* skip */ }
           });
 
-          // Parse HTML
+          // Parse HTML event items
           $('.event-item, .program-item, .views-row').each((_i, el) => {
             const $el = $(el);
             const title = this.cleanText($el.find('h2, h3, .title').first().text());
@@ -480,6 +575,70 @@ export class WolfsonianScraper extends BaseScraper {
               image: image?.startsWith('http') ? image : undefined,
             });
           });
+
+          // Parse event links from page (whats-on/events/2026/* pattern)
+          if (events.length === 0) {
+            const eventLinks: string[] = [];
+            $('a[href*="whats-on/events/"]').each((_i, el) => {
+              const href = $(el).attr('href') || '';
+              // Match event detail pages (with year in path)
+              if (/whats-on\/events\/20\d{2}\//.test(href)) {
+                const fullUrl = href.startsWith('http') ? href : `${this.baseUrl}${href.startsWith('/') ? '' : '/'}${href}`;
+                if (!eventLinks.includes(fullUrl)) {
+                  eventLinks.push(fullUrl);
+                }
+              }
+            });
+
+            this.log(`  Found ${eventLinks.length} event links on ${url}`);
+
+            // Fetch each event detail page (max 10)
+            for (const eventUrl of eventLinks.slice(0, 10)) {
+              try {
+                const $event = await this.fetchHTMLNativeRetry(eventUrl, 2, 10_000);
+                const title = this.cleanText(
+                  $event('meta[property="og:title"]').attr('content') || $event('h1').first().text()
+                );
+                if (!title || title.length < 3) continue;
+
+                const description = this.cleanText(
+                  $event('meta[property="og:description"]').attr('content') || ''
+                );
+                const image = $event('meta[property="og:image"]').attr('content') || undefined;
+
+                // Try to parse date from URL path (e.g., /2026/04/)
+                const dateMatch = eventUrl.match(/\/(\d{4})\/(\d{2})\//);
+                let startAt = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}T19:00:00`;
+                if (dateMatch) {
+                  startAt = `${dateMatch[1]}-${dateMatch[2]}-15T19:00:00`;
+                }
+
+                // Try to get a more precise date from the page content
+                const pageDate = this.parseDate(this.cleanText($event('.date, time, .event-date').first().text()));
+                if (pageDate) startAt = pageDate;
+
+                events.push({
+                  title,
+                  startAt,
+                  venueName: 'The Wolfsonian-FIU',
+                  address: '1001 Washington Ave, Miami Beach, FL 33139',
+                  neighborhood: 'South Beach',
+                  lat: 25.7808,
+                  lng: -80.1340,
+                  city: 'Miami',
+                  tags: ['museum', 'art-gallery'],
+                  category: 'Art',
+                  isOutdoor: false,
+                  description: description || `${title} at The Wolfsonian`,
+                  sourceUrl: eventUrl,
+                  sourceName: this.name,
+                  image: image?.startsWith('http') ? image : undefined,
+                });
+
+                await this.sleep(1000);
+              } catch { /* skip individual event page failures */ }
+            }
+          }
 
           if (events.length > 0) break;
         } catch { continue; }

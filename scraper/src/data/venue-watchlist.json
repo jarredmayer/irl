@@ -10,6 +10,14 @@
     "wp_domain": "danteshifi.com"
   },
   {
+    "name": "Coral Gables Museum",
+    "address": "285 Aragon Ave, Coral Gables, FL 33134",
+    "lat": 25.7494, "lng": -80.2589,
+    "city": "Miami", "neighborhood": "Coral Gables",
+    "category": "Museum",
+    "wp_domain": "coralgablesmuseum.org"
+  },
+  {
     "name": "Tam Tam",
     "address": "736 1st St, Miami Beach, FL 33139",
     "lat": 25.7784, "lng": -80.1325,

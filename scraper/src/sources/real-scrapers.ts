@@ -200,13 +200,90 @@ export class BrowardCenterScraper extends BaseScraper {
   async scrape(): Promise<RawEvent[]> {
     this.log('Scraping Broward Center...');
     const events: RawEvent[] = [];
+    const seen = new Set<string>();
 
-    // Scrape first 3 pages
-    for (let page = 1; page <= 3; page++) {
-      try {
-        const url = page === 1 ? this.baseUrl : `${this.baseUrl}?page=${page}`;
-        const $ = await this.fetchHTML(url);
+    try {
+      const $ = await this.fetchHTML(this.baseUrl);
 
+      // Strategy 1: Parse m-event-* class pattern elements
+      $('[class*="m-event"]').each((_, el) => {
+        try {
+          const $el = $(el);
+          // Find parent container or sibling elements for full event data
+          const $container = $el.closest('[class*="event"]') || $el.parent();
+
+          const dateText = this.cleanText($container.find('[class*="m-event-date"], .m-event-date').first().text() || $el.text());
+          const venue = this.cleanText($container.find('[class*="m-event-venue"], .m-event-venue').first().text());
+          const link = $container.find('[class*="m-event-mobile-link"] a, a[href*="/show/"]').first().attr('href')
+            || $container.find('a').first().attr('href');
+          const title = this.cleanText(
+            $container.find('[class*="m-event-mobile-link"] a, a[href*="/show/"]').first().text()
+            || $container.find('h2, h3, h4, .title').first().text()
+          );
+
+          if (!title || title.length < 3 || seen.has(title.toLowerCase())) return;
+          seen.add(title.toLowerCase());
+
+          const startAt = this.parseEventDate(dateText);
+
+          events.push({
+            title,
+            startAt,
+            venueName: this.normalizeVenue(venue || 'Broward Center'),
+            address: this.getVenueAddress(venue || ''),
+            neighborhood: 'Downtown FLL',
+            lat: 26.1185,
+            lng: -80.1439,
+            city: 'Fort Lauderdale',
+            description: `${title} at ${venue || 'Broward Center'}.`,
+            category: this.categorize(title, ''),
+            tags: ['live-entertainment', 'performing-arts'],
+            isOutdoor: false,
+            sourceName: this.name,
+            sourceUrl: link ? (link.startsWith('http') ? link : `https://www.browardcenter.org${link}`) : this.baseUrl,
+          });
+        } catch { /* skip */ }
+      });
+
+      // Strategy 2: Parse show links if Strategy 1 found nothing
+      if (events.length === 0) {
+        $('a[href*="/show/"]').each((_, el) => {
+          try {
+            const $el = $(el);
+            const title = this.cleanText($el.text());
+            const link = $el.attr('href') || '';
+
+            if (!title || title.length < 3 || seen.has(title.toLowerCase())) return;
+            seen.add(title.toLowerCase());
+
+            // Look for nearby date text
+            const $parent = $el.closest('div, li, article, tr');
+            const dateText = this.cleanText($parent.find('[class*="date"], time').first().text() || '');
+            const venue = this.cleanText($parent.find('[class*="venue"]').first().text());
+            const startAt = this.parseEventDate(dateText);
+
+            events.push({
+              title,
+              startAt,
+              venueName: this.normalizeVenue(venue || 'Broward Center'),
+              address: this.getVenueAddress(venue || ''),
+              neighborhood: 'Downtown FLL',
+              lat: 26.1185,
+              lng: -80.1439,
+              city: 'Fort Lauderdale',
+              description: `${title} at Broward Center.`,
+              category: this.categorize(title, ''),
+              tags: ['live-entertainment', 'performing-arts'],
+              isOutdoor: false,
+              sourceName: this.name,
+              sourceUrl: link.startsWith('http') ? link : `https://www.browardcenter.org${link}`,
+            });
+          } catch { /* skip */ }
+        });
+      }
+
+      // Strategy 3: Generic fallback with original selectors
+      if (events.length === 0) {
         $('.event-card, .event-listing, [class*="event-item"]').each((_, el) => {
           try {
             const $el = $(el);
@@ -215,16 +292,19 @@ export class BrowardCenterScraper extends BaseScraper {
             const dateText = $el.find('.date, time, .event-date').first().text();
             const link = $el.find('a').attr('href');
 
-            if (!title || title.length < 3) return;
+            if (!title || title.length < 3 || seen.has(title.toLowerCase())) return;
+            seen.add(title.toLowerCase());
 
             const startAt = this.parseEventDate(dateText);
 
             events.push({
               title,
               startAt,
-                  venueName: this.normalizeVenue(venue),
+              venueName: this.normalizeVenue(venue),
               address: this.getVenueAddress(venue),
-              neighborhood: 'Fort Lauderdale',
+              neighborhood: 'Downtown FLL',
+              lat: 26.1185,
+              lng: -80.1439,
               city: 'Fort Lauderdale',
               description: `${title} at ${venue}.`,
               category: this.categorize(title, ''),
@@ -235,11 +315,9 @@ export class BrowardCenterScraper extends BaseScraper {
             });
           } catch { /* skip */ }
         });
-
-        this.log(`Page ${page}: found events`);
-      } catch (e) {
-        this.logError(`Failed page ${page}`, e);
       }
+    } catch (e) {
+      this.logError('Failed to scrape Broward Center', e);
     }
 
     this.log(`Total ${events.length} Broward Center events`);
