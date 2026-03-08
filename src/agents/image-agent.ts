@@ -12,18 +12,6 @@ import manifest from '../data/category-images-manifest.json';
 const CACHE_PREFIX = 'irl_img_';
 const CACHE_TTL_MS = 1000 * 60 * 60 * 24; // 24 hours
 
-// ─── CLEAR STALE CACHE ON LOAD ────────────────────────────
-// One-time cleanup to remove old Pexels/Unsplash URLs
-// so manifest images take precedence.
-function clearStaleImageCache(): void {
-  try {
-    Object.keys(localStorage)
-      .filter(k => k.startsWith(CACHE_PREFIX))
-      .forEach(k => localStorage.removeItem(k));
-  } catch {}
-}
-clearStaleImageCache();
-
 // ──────────────────────────────────────────────────────────
 
 interface CacheEntry {
@@ -60,65 +48,38 @@ function hashCode(str: string): number {
   return Math.abs(hash);
 }
 
+// ─── CATEGORY NORMALIZATION MAP ───────────────────────────
+// Maps event categories to manifest categories
+const CATEGORY_MAP: Record<string, string> = {
+  'music': 'music',
+  'art': 'arts',
+  'culture': 'culture',
+  'food & drink': 'food',
+  'food': 'food',
+  'fitness': 'fitness',
+  'wellness': 'wellness',
+  'sports': 'fitness',
+  'comedy': 'nightlife',
+  'family': 'community',
+  'community': 'community',
+  'nightlife': 'nightlife',
+  'outdoors': 'outdoor',
+  'outdoor': 'outdoor',
+  'shopping': 'community',
+};
+
 // ─── LOCAL MANIFEST IMAGES (PRIMARY SOURCE) ───────────────
 // Pre-generated editorial images served from /images/category/
 // Loads instantly — no async needed.
 
 export function getFallbackImage(category: string, seed: string): string {
-  const cat = category?.toLowerCase() ?? 'default';
-  const photos: string[] = (manifest as Record<string, string[]>)[cat]
+  const normalized = CATEGORY_MAP[category?.toLowerCase() ?? ''] ?? 'default';
+  const photos: string[] = (manifest as Record<string, string[]>)[normalized]
     ?? (manifest as Record<string, string[]>)['default']
     ?? [];
   if (!photos.length) return '';
   const idx = hashCode(seed) % photos.length;
   return photos[idx];
-}
-
-// ─── PEXELS API (BACKGROUND UPGRADE) ──────────────────────
-// Free tier: 200 req/hour. No watermark. High quality.
-// Only used as optional background enhancement.
-
-const PEXELS_QUERIES: Record<string, string> = {
-  nightlife:     'cocktail bar dark moody',
-  music:         'live music concert stage',
-  outdoor:       'miami beach tropical outdoor',
-  outdoors:      'miami beach tropical outdoor',
-  arts:          'art gallery sculpture minimal',
-  'food & drink': 'restaurant plated dish editorial',
-  food:          'restaurant plated dish editorial',
-  community:     'outdoor market south florida',
-  wellness:      'yoga meditation serene',
-  fitness:       'athletic training equipment',
-  culture:       'museum exhibition space',
-  market:        'farmers market produce fresh',
-  film:          'cinema theater dark',
-  comedy:        'stage spotlight microphone',
-  sports:        'athletic sports equipment',
-  family:        'playground colorful outdoor',
-  default:       'miami urban architecture',
-};
-
-async function fetchPexels(
-  category: string,
-  seed: string
-): Promise<string | null> {
-  const key = import.meta.env.VITE_PEXELS_API_KEY;
-  if (!key) return null;
-  try {
-    const query = PEXELS_QUERIES[category?.toLowerCase()]
-      ?? PEXELS_QUERIES.default;
-    const page = (hashCode(seed) % 3) + 1;
-    const res = await fetch(
-      `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=5&page=${page}&orientation=landscape`,
-      { headers: { Authorization: key } }
-    );
-    if (!res.ok) return null;
-    const data = await res.json();
-    const photos = data.photos ?? [];
-    if (!photos.length) return null;
-    const idx = hashCode(seed) % photos.length;
-    return photos[idx]?.src?.large ?? null;
-  } catch { return null; }
 }
 
 // ─── MAIN EXPORT ──────────────────────────────────────────
@@ -138,18 +99,12 @@ export async function generateEventImage(
     return event.image;
   }
 
-  // 3. Use local manifest image IMMEDIATELY (primary source)
+  // 3. Use local manifest image (primary fallback source)
   const manifestImage = getFallbackImage(event.category, event.id);
-  setCache(event.id, manifestImage);
+  if (manifestImage) {
+    setCache(event.id, manifestImage);
+  }
 
-  // 4. Try Pexels in background as optional upgrade (don't block)
-  fetchPexels(event.category, event.id).then(pexels => {
-    if (pexels) {
-      setCache(event.id, pexels);
-    }
-  });
-
-  // Return manifest image instantly
   return manifestImage;
 }
 

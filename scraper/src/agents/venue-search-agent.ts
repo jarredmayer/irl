@@ -24,7 +24,7 @@ import { PersistentCache, cacheKey } from './cache.js';
 import { findVenue } from '../venues.js';
 import type { IRLEvent } from '../types.js';
 
-const CACHE_DIR = join(dirname(fileURLToPath(import.meta.url)), '../../cache');
+const CACHE_DIR = join(dirname(fileURLToPath(import.meta.url)), '../../../public/data/agent-cache');
 const NOT_FOUND_LOG = join(CACHE_DIR, 'venue-not-found.json');
 
 function appendNotFound(venueName: string, city: string): void {

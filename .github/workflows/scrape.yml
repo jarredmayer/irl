@@ -93,7 +93,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
-        run: npm run scrape
+        run: npm run scrape -- --full-pipeline
 
       - name: Run integrity agent
         continue-on-error: true
@@ -108,7 +108,8 @@ jobs:
           git config --local user.name "GitHub Action"
           git add public/data/events*.json public/data/scrape-meta.json \
                   public/data/instagram-posts-cache.json public/data/venue-images.json \
-                  public/data/source-health.json public/data/integrity-report.json 2>/dev/null || true
+                  public/data/source-health.json public/data/integrity-report.json \
+                  public/data/agent-cache/*.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No data changes — skipping commit"
             exit 0
