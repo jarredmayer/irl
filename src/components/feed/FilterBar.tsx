@@ -12,10 +12,19 @@ interface FilterBarProps {
   weather?: WeatherForecast | null;
 }
 
-// Quick filter pills for the main row
+// Time filter options for the dedicated time row
+const timeFilters: { id: TimeFilter; label: string }[] = [
+  { id: 'today', label: 'Today' },
+  { id: 'tomorrow', label: 'Tomorrow' },
+  { id: 'weekend', label: 'This Weekend' },
+  { id: 'this-week', label: 'This Week' },
+  { id: 'next-week', label: 'Next Week' },
+  { id: 'this-month', label: 'This Month' },
+  { id: 'all', label: 'All' },
+];
+
+// Quick filter pills for the category/attribute row (no time filters here)
 const quickFilters = [
-  { id: 'tonight', label: 'Tonight', type: 'time' as const },
-  { id: 'weekend', label: 'This Weekend', type: 'time' as const },
   { id: 'sunny', label: '☀ Sunny', type: 'weather' as const },
   { id: 'free', label: 'Free', type: 'price' as const },
   { id: 'Music', label: 'Music', type: 'category' as const },
@@ -100,13 +109,18 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
     onFiltersChange({ ...filters, [key]: value });
   };
 
+  // Handle time filter selection — tapping the already-selected filter resets to default
+  const handleTimeFilterClick = (timeFilter: TimeFilter) => {
+    if (filters.timeFilter === timeFilter) {
+      updateFilter('timeFilter', 'this-week');
+    } else {
+      updateFilter('timeFilter', timeFilter);
+    }
+  };
+
   // Check if a quick filter is active
   const isQuickFilterActive = (filter: typeof quickFilters[0]): boolean => {
     switch (filter.type) {
-      case 'time':
-        if (filter.id === 'tonight') return filters.timeFilter === 'tonight';
-        if (filter.id === 'weekend') return filters.timeFilter === 'weekend';
-        return false;
       case 'weather':
         return filters.sunnyOnly;
       case 'price':
@@ -119,13 +133,6 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
   // Toggle a quick filter
   const toggleQuickFilter = (filter: typeof quickFilters[0]) => {
     switch (filter.type) {
-      case 'time':
-        if (filter.id === 'tonight') {
-          updateFilter('timeFilter', filters.timeFilter === 'tonight' ? 'this-week' : 'tonight');
-        } else if (filter.id === 'weekend') {
-          updateFilter('timeFilter', filters.timeFilter === 'weekend' ? 'this-week' : 'weekend');
-        }
-        break;
       case 'weather':
         // Sunny filter - show outdoor events with clear weather
         onFiltersChange({
@@ -137,12 +144,13 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
       case 'price':
         updateFilter('freeOnly', !filters.freeOnly);
         break;
-      case 'category':
+      case 'category': {
         const newCategories = filters.selectedCategories.includes(filter.id)
           ? filters.selectedCategories.filter(c => c !== filter.id)
           : [...filters.selectedCategories, filter.id];
         updateFilter('selectedCategories', newCategories);
         break;
+      }
     }
   };
 
@@ -245,7 +253,25 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
         </div>
       )}
 
-      {/* Quick filter pills */}
+      {/* Time filter row */}
+      <div className="px-4 pb-2">
+        <span className="text-xs font-medium text-ink-2 uppercase tracking-wide">When</span>
+        <div className="mt-1.5 overflow-x-auto hide-scrollbar">
+          <ChipGroup>
+            {timeFilters.map((tf) => (
+              <Chip
+                key={tf.id}
+                label={tf.label}
+                selected={filters.timeFilter === tf.id}
+                onClick={() => handleTimeFilterClick(tf.id)}
+                size="md"
+              />
+            ))}
+          </ChipGroup>
+        </div>
+      </div>
+
+      {/* Category / attribute filter pills */}
       <div className="px-4 pb-3 overflow-x-auto hide-scrollbar">
         <ChipGroup>
           {quickFilters.map((filter) => (

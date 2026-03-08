@@ -153,6 +153,14 @@ export function filterEventsByTime(
         const in7Days = endOfDay(addDays(now, 7));
         return eventDate >= startOfDay(now) && eventDate <= in7Days;
       }
+      case 'next-week': {
+        // Monday after this week through the following Sunday
+        const dayOfWeek = now.getDay(); // 0=Sun, 1=Mon, ...
+        const daysUntilNextMonday = dayOfWeek === 0 ? 1 : 8 - dayOfWeek;
+        const nextMonday = startOfDay(addDays(now, daysUntilNextMonday));
+        const nextSunday = endOfDay(addDays(nextMonday, 6));
+        return eventDate >= nextMonday && eventDate <= nextSunday;
+      }
       case 'this-month': {
         const monthEnd = endOfMonth(now);
         return eventDate >= startOfDay(now) && eventDate <= monthEnd;
