@@ -3,6 +3,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
   useParams,
   useNavigate,
 } from 'react-router-dom';
@@ -26,7 +27,7 @@ import './index.css';
 // Lazy-loaded route components (split into separate chunks)
 const MapView = lazy(() => import('./components/map/MapView').then(m => ({ default: m.MapView })));
 const YourcastView = lazy(() => import('./components/yourcast/YourcastView').then(m => ({ default: m.YourcastView })));
-const FollowingView = lazy(() => import('./components/following/FollowingView').then(m => ({ default: m.FollowingView })));
+const SavedView = lazy(() => import('./components/saved/SavedView').then(m => ({ default: m.SavedView })));
 const ProfileView = lazy(() => import('./components/profile/ProfileView').then(m => ({ default: m.ProfileView })));
 const EventDetail = lazy(() => import('./components/detail/EventDetail').then(m => ({ default: m.EventDetail })));
 const AISettingsModal = lazy(() => import('./components/ai/AISettingsModal').then(m => ({ default: m.AISettingsModal })));
@@ -131,6 +132,13 @@ function AppContent() {
     });
   }, [filteredEvents, venueIds, seriesIds, neighborhoodIds]);
 
+  // Events the user has saved (bookmarked), sorted by date
+  const savedEvents = useMemo(() => {
+    return allEvents
+      .filter((event) => savedIds.includes(event.id))
+      .sort((a, b) => new Date(a.startAt).getTime() - new Date(b.startAt).getTime()) as import('./types').ScoredEvent[];
+  }, [allEvents, savedIds]);
+
   const isLoading = eventsLoading || !prefsLoaded || !savedLoaded || !followingLoaded || !profileLoaded;
 
   // Check onboarding status after preferences are loaded
@@ -230,20 +238,27 @@ function AppContent() {
           }
         />
         <Route
-          path="following"
+          path="saved"
           element={
             <Suspense fallback={<RouteFallback />}>
-              <FollowingView
-                events={followingEvents}
+              <SavedView
+                savedEvents={savedEvents}
+                followingEvents={followingEvents}
                 following={following}
                 onUnfollow={unfollow}
                 onFollow={toggleFollow}
                 followingVenueIds={venueIds}
                 followingSeriesIds={seriesIds}
                 followingNeighborhoods={neighborhoodIds}
+                savedEventIds={savedIds}
+                onSaveEvent={toggleSavedEvent}
               />
             </Suspense>
           }
+        />
+        <Route
+          path="following"
+          element={<Navigate to="/saved" replace />}
         />
         <Route
           path="profile"

@@ -3,7 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const navItems = [
   { path: '/', label: 'Feed', icon: FeedIcon },
   { path: '/map', label: 'Map', icon: MapIcon },
-  { path: '/yourcast', label: 'Yourcast', icon: YourcastIcon },
+  { path: '/saved', label: 'Saved', icon: SavedIcon },
+  { path: '/yourcast', label: 'Cast', icon: YourcastIcon },
   { path: '/profile', label: 'Profile', icon: ProfileIcon },
 ];
 
@@ -84,6 +85,18 @@ function YourcastIcon({ className, filled }: { className?: string; filled?: bool
         <>
           <path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4l-6.4 4.8 2.4-7.2-6-4.8h7.6L12 2z" />
         </>
+      )}
+    </svg>
+  );
+}
+
+function SavedIcon({ className, filled }: { className?: string; filled?: boolean }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      {filled ? (
+        <path fill="currentColor" stroke="none" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+      ) : (
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       )}
     </svg>
   );
