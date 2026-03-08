@@ -131,7 +131,7 @@ export interface ScoredEvent extends Event {
   weatherAtEvent?: HourlyWeather;
 }
 
-export type TimeFilter = 'tonight' | 'today' | 'tomorrow' | 'this-week' | 'this-month' | 'weekend' | 'all';
+export type TimeFilter = 'tonight' | 'today' | 'tomorrow' | 'this-week' | 'next-week' | 'this-month' | 'weekend' | 'all';
 
 export interface FilterState {
   timeFilter: TimeFilter;

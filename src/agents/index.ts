@@ -9,6 +9,7 @@
 
 export {
   generateEditorialCopy,
+  generateDeterministicCopy,
   generateEditorial,
   getYourcastEditorial,
   getCachedEditorial,

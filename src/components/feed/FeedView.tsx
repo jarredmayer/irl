@@ -65,6 +65,7 @@ interface FeedViewProps {
   onSaveEvent?: (eventId: string) => void;
   onDismissEvent?: (eventId: string) => void;
   onConfigureAI?: () => void;
+  maxPrice?: number;
 }
 
 // Initial number of events to show, and how many to load on "Load more"
@@ -87,6 +88,7 @@ export function FeedView({
   onSaveEvent,
   onDismissEvent,
   onConfigureAI,
+  maxPrice,
 }: FeedViewProps) {
   const [dismissedIds, setDismissedIds] = useState<Set<string>>(new Set());
   const [weatherDismissed, setWeatherDismissed] = useState(false);
@@ -206,6 +208,7 @@ export function FeedView({
           hasLocation={hasLocation}
           onConfigureAI={onConfigureAI}
           weather={weather}
+          maxPrice={maxPrice}
         />
         <HeroCardSkeleton />
         <div className="py-4">
@@ -233,6 +236,7 @@ export function FeedView({
         hasLocation={hasLocation}
         onConfigureAI={onConfigureAI}
         weather={weather}
+        maxPrice={maxPrice}
       />
 
       {allEvents.length === 0 ? (

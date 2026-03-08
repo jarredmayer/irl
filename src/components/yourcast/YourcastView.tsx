@@ -1,10 +1,10 @@
-import { useState, useCallback, useEffect, useMemo } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { LeadSection } from './LeadSection';
 import { ListSection } from './ListSection';
 import { NudgeSection } from './NudgeSection';
 import { WildCardSection } from './WildCardSection';
 import { ShareableCard } from './ShareableCard';
-import { generateEditorialCopy, type EditorialResult } from '../../agents';
+import { generateDeterministicCopy, type EditorialResult } from '../../agents';
 import { getPreferences } from '../../store/preferences';
 import type { ScoredEvent, FollowType } from '../../types';
 
@@ -37,13 +37,11 @@ function applyPreferenceBoost(
 ): number {
   let boost = 0;
 
-  // Category matches interest: +30 points
   const categoryLower = event.category.toLowerCase();
   if (interests.some(i => categoryLower.includes(i.toLowerCase()) || i.toLowerCase().includes(categoryLower))) {
     boost += 30;
   }
 
-  // Location/neighborhood matches city anchor: +20 points
   if (city && CITY_NEIGHBORHOODS[city]) {
     if (CITY_NEIGHBORHOODS[city].some(n =>
       event.neighborhood.toLowerCase().includes(n.toLowerCase()) ||
@@ -53,7 +51,6 @@ function applyPreferenceBoost(
     }
   }
 
-  // Category matches a vibe directly: +15 points
   if (vibes.some(v =>
     categoryLower.includes(v.toLowerCase()) ||
     event.tags.some(t => v.toLowerCase().includes(t.toLowerCase()))
@@ -74,29 +71,8 @@ export function YourcastView({
   onSaveEvent,
 }: YourcastViewProps) {
   const [showShareCard, setShowShareCard] = useState(false);
-  const [copy, setCopy] = useState<EditorialResult>({
-    headline: 'Tonight in Miami',
-    subhead: "What's worth going to.",
-    leadIntro: 'Top pick for tonight.',
-    wildCardLabel: 'Under the radar.',
-  });
-  const [copyLoading, setCopyLoading] = useState(true);
 
-  // Fetch editorial content on mount
-  useEffect(() => {
-    if (events.length === 0) return;
-
-    generateEditorialCopy(events)
-      .then(result => {
-        setCopy(result);
-        setCopyLoading(false);
-      })
-      .catch(() => {
-        setCopyLoading(false);
-      });
-  }, [events]);
-
-  // Get user preferences for boosting
+  // Get user preferences — re-read on each render so changes are reflected
   const { interests, city, vibes } = getPreferences();
   const hasPreferences = interests.length > 0 || vibes.length > 0;
 
@@ -113,69 +89,187 @@ export function YourcastView({
       .map(({ event }) => event);
   }, [events, interests, vibes, city, hasPreferences]);
 
-  // THE LEAD: Highest boosted score event with an image
-  const leadEvent = boostedEvents.find(e => e.image && e.editorPick)
-    || boostedEvents.find(e => e.image)
-    || boostedEvents[0];
+  // ─── SLOT-BASED CURATION ─────────────────────────────────
+  const { leadEvent, listEvents, nudgeEvent, wildcardEvent } = useMemo(() => {
+    const now = new Date();
+    const usedIds = new Set<string>();
+    const usedCategories = new Set<string>();
 
-  // THE LIST: Next 3 events by boosted score, filtered by interests if possible
-  const listEvents = useMemo(() => {
-    const filtered = boostedEvents.filter(e => e.id !== leadEvent?.id);
+    // ── THE LEAD ──
+    // Highest quality signal, must have image, prefer editor picks
+    // Among candidates, prefer events matching user's top interest
+    let lead: ScoredEvent | undefined;
+
+    const withImage = boostedEvents.filter(e => e.image);
+    const editorPicks = withImage.filter(e => e.editorPick);
+
+    if (hasPreferences && editorPicks.length > 0) {
+      lead = editorPicks.find(e =>
+        interests.some(i => e.category.toLowerCase().includes(i.toLowerCase()))
+      ) ?? editorPicks[0];
+    } else if (editorPicks.length > 0) {
+      lead = editorPicks[0];
+    } else if (hasPreferences && withImage.length > 0) {
+      lead = withImage.find(e =>
+        interests.some(i => e.category.toLowerCase().includes(i.toLowerCase()))
+      ) ?? withImage[0];
+    } else {
+      lead = withImage[0] ?? boostedEvents[0];
+    }
+
+    if (lead) {
+      usedIds.add(lead.id);
+      usedCategories.add(lead.category);
+    }
+
+    // ── THE LIST ──
+    // 3 events, category-diverse — no two should share a category
+    // Round-robin through user's interest categories, exclude Lead's category
+    const list: ScoredEvent[] = [];
+    const listCategories = new Set<string>();
+    const available = boostedEvents.filter(e => !usedIds.has(e.id));
+
     if (hasPreferences) {
-      // Prefer events matching interests
-      const matchingInterests = filtered.filter(e =>
-        interests.some(i =>
-          e.category.toLowerCase().includes(i.toLowerCase())
-        )
+      const interestCategories = interests.filter(
+        i => !usedCategories.has(i) && i.toLowerCase() !== lead?.category.toLowerCase()
       );
-      if (matchingInterests.length >= 3) {
-        return matchingInterests.slice(0, 3);
+
+      for (const interest of interestCategories) {
+        if (list.length >= 3) break;
+        const match = available.find(e =>
+          !usedIds.has(e.id) &&
+          !listCategories.has(e.category) &&
+          e.category.toLowerCase().includes(interest.toLowerCase())
+        );
+        if (match) {
+          list.push(match);
+          usedIds.add(match.id);
+          listCategories.add(match.category);
+          usedCategories.add(match.category);
+        }
       }
     }
-    return filtered.slice(0, 3);
-  }, [boostedEvents, leadEvent, interests, hasPreferences]);
 
-  // THE NUDGE: Soonest upcoming event matching any interest
-  const now = new Date();
-  const nudgeEvent = useMemo(() => {
-    const usedIds = new Set([leadEvent?.id, ...listEvents.map(e => e.id)]);
-    const upcoming = boostedEvents.filter(e => {
+    // Fill remaining slots from underrepresented categories
+    if (list.length < 3) {
+      const catCounts = new Map<string, number>();
+      for (const e of boostedEvents) {
+        catCounts.set(e.category, (catCounts.get(e.category) || 0) + 1);
+      }
+
+      const remaining = available
+        .filter(e => !usedIds.has(e.id) && !listCategories.has(e.category))
+        .sort((a, b) => (catCounts.get(a.category) || 0) - (catCounts.get(b.category) || 0));
+
+      for (const event of remaining) {
+        if (list.length >= 3) break;
+        if (!listCategories.has(event.category)) {
+          list.push(event);
+          usedIds.add(event.id);
+          listCategories.add(event.category);
+          usedCategories.add(event.category);
+        }
+      }
+    }
+
+    // If still not enough, fill with any available
+    if (list.length < 3) {
+      const fallbacks = available.filter(e => !usedIds.has(e.id));
+      for (const event of fallbacks) {
+        if (list.length >= 3) break;
+        list.push(event);
+        usedIds.add(event.id);
+        usedCategories.add(event.category);
+      }
+    }
+
+    // ── THE NUDGE ──
+    // Soonest event within 24h, must not duplicate a used category
+    let nudge: ScoredEvent | undefined;
+
+    const nudgeCandidates24 = boostedEvents.filter(e => {
       if (usedIds.has(e.id)) return false;
       const eventDate = new Date(e.startAt);
       const hoursUntil = (eventDate.getTime() - now.getTime()) / (1000 * 60 * 60);
-      return hoursUntil > 0 && hoursUntil <= 48;
-    });
+      return hoursUntil > 0 && hoursUntil <= 24 && !usedCategories.has(e.category);
+    }).sort((a, b) => new Date(a.startAt).getTime() - new Date(b.startAt).getTime());
 
-    // Prefer events matching interests
-    if (hasPreferences) {
-      const matching = upcoming.find(e =>
-        interests.some(i => e.category.toLowerCase().includes(i.toLowerCase()))
-      );
-      if (matching) return matching;
+    nudge = nudgeCandidates24[0];
+
+    if (!nudge) {
+      const nudgeCandidates48 = boostedEvents.filter(e => {
+        if (usedIds.has(e.id)) return false;
+        const eventDate = new Date(e.startAt);
+        const hoursUntil = (eventDate.getTime() - now.getTime()) / (1000 * 60 * 60);
+        return hoursUntil > 0 && hoursUntil <= 48 && !usedCategories.has(e.category);
+      }).sort((a, b) => new Date(a.startAt).getTime() - new Date(b.startAt).getTime());
+
+      nudge = nudgeCandidates48[0];
     }
 
-    return upcoming[0] || boostedEvents.find(e => !usedIds.has(e.id));
-  }, [boostedEvents, leadEvent, listEvents, interests, hasPreferences, now]);
+    if (!nudge) {
+      nudge = boostedEvents
+        .filter(e => !usedIds.has(e.id) && new Date(e.startAt) > now)
+        .sort((a, b) => new Date(a.startAt).getTime() - new Date(b.startAt).getTime())[0];
+    }
 
-  // THE WILD CARD: Lowest-profile event matching any interest, tagged "under the radar"
-  const wildcardEvent = useMemo(() => {
-    const usedIds = new Set([leadEvent?.id, nudgeEvent?.id, ...listEvents.map(e => e.id)]);
-    const available = boostedEvents.filter(e => !usedIds.has(e.id));
+    if (nudge) {
+      usedIds.add(nudge.id);
+      usedCategories.add(nudge.category);
+    }
 
-    // Look for underground/niche events matching interests
-    const niche = available.filter(e =>
-      e.tags.some(t => ['underground', 'pop-up', 'new-opening', 'niche', 'local-favorite'].includes(t))
+    // ── THE WILD CARD ──
+    // Intentionally pick something the user WOULDN'T normally see
+    let wildCard: ScoredEvent | undefined;
+
+    const unusedCategoryEvents = boostedEvents.filter(e =>
+      !usedIds.has(e.id) && !usedCategories.has(e.category)
     );
 
-    if (hasPreferences && niche.length > 0) {
-      const matching = niche.find(e =>
-        interests.some(i => e.category.toLowerCase().includes(i.toLowerCase()))
+    if (unusedCategoryEvents.length > 0) {
+      const userNeighborhoods = city ? (CITY_NEIGHBORHOODS[city] || []) : [];
+      const unexploredEvents = unusedCategoryEvents.filter(e =>
+        !userNeighborhoods.some(n =>
+          e.neighborhood.toLowerCase().includes(n.toLowerCase())
+        )
       );
-      if (matching) return matching;
+
+      const candidates = unexploredEvents.length > 0 ? unexploredEvents : unusedCategoryEvents;
+      // Pick lowest score for maximum surprise
+      wildCard = candidates[candidates.length - 1] ?? candidates[0];
+    } else {
+      const remainingEvents = boostedEvents.filter(e => !usedIds.has(e.id));
+
+      if (hasPreferences && interests.length > 0) {
+        const lowestInterest = interests[interests.length - 1];
+        wildCard = remainingEvents.find(e =>
+          e.category.toLowerCase().includes(lowestInterest.toLowerCase())
+        );
+      }
+
+      if (!wildCard) {
+        wildCard = remainingEvents[remainingEvents.length - 1] ?? remainingEvents[0];
+      }
     }
 
-    return niche[0] || available[available.length - 1] || available[0];
-  }, [boostedEvents, leadEvent, nudgeEvent, listEvents, interests, hasPreferences]);
+    return {
+      leadEvent: lead,
+      listEvents: list,
+      nudgeEvent: nudge,
+      wildcardEvent: wildCard,
+    };
+  }, [boostedEvents, interests, city, hasPreferences]);
+
+  // ─── EDITORIAL COPY ──────────────────────────────────────
+  // Deterministic, reactive to events + preferences
+  const copy: EditorialResult = useMemo(() => {
+    return generateDeterministicCopy({
+      lead: leadEvent,
+      list: listEvents,
+      nudge: nudgeEvent,
+      wildCard: wildcardEvent,
+    });
+  }, [leadEvent, listEvents, nudgeEvent, wildcardEvent]);
 
   const handleShare = useCallback(() => {
     setShowShareCard(true);
@@ -185,7 +279,6 @@ export function YourcastView({
     setShowShareCard(false);
   }, []);
 
-  // Get current week label
   const getWeekLabel = () => {
     const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric' };
     const start = new Date();
@@ -224,22 +317,14 @@ export function YourcastView({
         </p>
 
         {/* Editorial headline */}
-        {copyLoading ? (
-          <div className="h-9 w-3/4 bg-soft rounded animate-pulse mb-3" />
-        ) : (
-          <h1 className="font-serif text-[28px] text-ink leading-snug mb-3 italic">
-            {copy.headline}
-          </h1>
-        )}
+        <h1 className="font-serif text-[28px] text-ink leading-snug mb-3 italic">
+          {copy.headline}
+        </h1>
 
         {/* Subtitle */}
-        {copyLoading ? (
-          <div className="h-5 w-full bg-soft rounded animate-pulse" />
-        ) : (
-          <p className="text-ink-2 text-[14px] font-light leading-relaxed">
-            {copy.subhead}
-          </p>
-        )}
+        <p className="text-ink-2 text-[14px] font-light leading-relaxed">
+          {copy.subhead}
+        </p>
 
         {/* Week label */}
         <p className="text-xs text-ink-3 mt-4 uppercase tracking-wider">

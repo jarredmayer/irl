@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { rankEvents, filterByDistance } from '../services/ranking';
 import { filterEventsByTime, getTimeSection, isEventPast } from '../utils/time';
 import { getWeatherForTime } from '../services/weather';
-import { WEATHER_CODES } from '../constants';
+import { WEATHER_CODES, MAX_PRICE } from '../constants';
 import type {
   Event,
   ScoredEvent,
@@ -74,6 +74,24 @@ export function useEvents(options: UseEventsOptions) {
     return rankEvents(allEvents, context);
   }, [allEvents, preferences, location, weather]);
 
+  // Compute dynamic max price from loaded events (95th percentile, rounded up to $10)
+  const maxPrice = useMemo(() => {
+    const prices = allEvents
+      .map((e) => e.price)
+      .filter((p): p is number => typeof p === 'number' && p > 0)
+      .sort((a, b) => a - b);
+
+    if (prices.length === 0) return MAX_PRICE;
+
+    // 95th percentile
+    const idx = Math.ceil(prices.length * 0.95) - 1;
+    const p95 = prices[Math.min(idx, prices.length - 1)];
+
+    // Round up to nearest $10, floor at $50
+    const rounded = Math.ceil(p95 / 10) * 10;
+    return Math.max(50, rounded);
+  }, [allEvents]);
+
   const filteredEvents = useMemo(() => {
     let events = rankedEvents;
     const now = new Date();
@@ -139,14 +157,16 @@ export function useEvents(options: UseEventsOptions) {
       );
     }
 
-    // Filter by price range (only if not free only)
+    // Filter by price range (only if not free only and user has narrowed the range)
     if (!filters.freeOnly && filters.priceRange) {
-      const [minPrice, maxPrice] = filters.priceRange;
-      events = events.filter((event) => {
-        // If no price specified, include it
-        if (event.price === undefined) return true;
-        return event.price >= minPrice && event.price <= maxPrice;
-      });
+      const [minPrice, filterMax] = filters.priceRange;
+      // Treat filterMax >= computed maxPrice as "no filter" (show all)
+      if (filterMax < maxPrice) {
+        events = events.filter((event) => {
+          if (event.price === undefined) return true;
+          return event.price >= minPrice && event.price <= filterMax;
+        });
+      }
     }
 
     // Filter by selected neighborhoods
@@ -258,6 +278,7 @@ export function useEvents(options: UseEventsOptions) {
     groupedEvents,
     savedFilteredEvents,
     getEventById,
+    maxPrice,
     totalCount: allEvents.length,
     filteredCount: filteredEvents.length,
     isLoading,
