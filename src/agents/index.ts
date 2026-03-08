@@ -16,7 +16,7 @@ export {
   clearEditorialCache,
 } from './editorial-agent';
 
-export type { EditorialResult } from './editorial-agent';
+export type { EditorialResult, CuratedSlots } from './editorial-agent';
 
 export {
   generateEventImage,
