@@ -10,6 +10,7 @@ interface FilterBarProps {
   hasLocation?: boolean;
   onConfigureAI?: () => void;
   weather?: WeatherForecast | null;
+  maxPrice?: number;
 }
 
 // Time filter options for the dedicated time row
@@ -41,7 +42,7 @@ const cityFilters: { value: City | undefined; label: string }[] = [
   { value: 'Palm Beach', label: 'PB' },
 ];
 
-export function FilterBar({ filters, onFiltersChange, hasLocation = false, onConfigureAI, weather: _weather }: FilterBarProps) {
+export function FilterBar({ filters, onFiltersChange, hasLocation = false, onConfigureAI, weather: _weather, maxPrice: dynamicMaxPrice }: FilterBarProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isAISearching, setIsAISearching] = useState(false);
   const [aiInterpretation, setAiInterpretation] = useState<string | null>(null);
@@ -387,22 +388,27 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
           </div>
 
           {/* Price range */}
-          {!filters.freeOnly && (
-            <div className="px-4 py-3 border-t border-divider">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-medium text-ink-2 uppercase tracking-wide">Max Price</span>
-                <span className="text-sm text-ink">${filters.priceRange[1]}</span>
+          {!filters.freeOnly && (() => {
+            const effectiveMax = dynamicMaxPrice ?? MAX_PRICE;
+            const sliderValue = filters.priceRange[1] >= effectiveMax ? effectiveMax : filters.priceRange[1];
+            const displayValue = sliderValue >= effectiveMax ? `$${effectiveMax}+` : `$${sliderValue}`;
+            return (
+              <div className="px-4 py-3 border-t border-divider">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-medium text-ink-2 uppercase tracking-wide">Max Price</span>
+                  <span className="text-sm text-ink">{displayValue}</span>
+                </div>
+                <input
+                  type="range"
+                  min={0}
+                  max={effectiveMax}
+                  value={sliderValue}
+                  onChange={(e) => updateFilter('priceRange', [0, Number(e.target.value)])}
+                  className="w-full h-1 mt-3 bg-divider rounded-lg appearance-none cursor-pointer accent-ink"
+                />
               </div>
-              <input
-                type="range"
-                min={0}
-                max={MAX_PRICE}
-                value={filters.priceRange[1]}
-                onChange={(e) => updateFilter('priceRange', [0, Number(e.target.value)])}
-                className="w-full h-1 mt-3 bg-divider rounded-lg appearance-none cursor-pointer accent-ink"
-              />
-            </div>
-          )}
+            );
+          })()}
         </div>
       )}
 

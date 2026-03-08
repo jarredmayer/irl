@@ -251,7 +251,7 @@ export const DEFAULT_FILTERS = {
   nearMeOnly: false,
   city: undefined,
   searchQuery: '',
-  priceRange: [0, 200] as [number, number],
+  priceRange: [0, Infinity] as [number, number],
   freeOnly: false,
   dateRange: ['', ''] as [string, string],
   outdoorOnly: false,

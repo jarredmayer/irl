@@ -98,6 +98,7 @@ function AppContent() {
     groupedEvents,
     getEventById,
     allEvents,
+    maxPrice,
     isLoading: eventsLoading,
   } = useEvents({
     preferences,
@@ -203,6 +204,7 @@ function AppContent() {
               followingNeighborhoods={neighborhoodIds}
               weather={weather}
               onConfigureAI={() => setShowAISettings(true)}
+              maxPrice={maxPrice}
             />
           }
         />
