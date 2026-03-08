@@ -1,19 +1,28 @@
 /**
  * Editorial Voice Agent
  *
- * Generates Yourcast editorial copy deterministically from event data.
- * Uses contextual templates based on time, day, category, and selected events.
- * AI generation is kept as an enhancement when API key is available.
+ * Generates daily Yourcast copy from event data.
+ * Primary path: uses event editorial fields (shortWhy, editorialWhy) from the UXAgent pipeline.
+ * Fallback: deterministic contextual templates when editorial fields are sparse.
+ * AI generation kept as enhancement when API key is available.
  */
 
 import type { ScoredEvent } from '../types';
 import { getPreferences } from '../store/preferences';
+
+const CACHE_KEY_PREFIX = 'irl_editorial_';
 
 export interface EditorialResult {
   headline: string;
   subhead: string;
   leadIntro: string;
   wildCardLabel: string;
+}
+
+interface CacheEntry {
+  result: EditorialResult;
+  ts: number;
+  key: string;
 }
 
 // ─── IRL VOICE BRIEF ─────────────────────────────────────
@@ -26,11 +35,47 @@ export interface EditorialResult {
 // Max 8 words for headline. Max 10 words for subhead.
 // ─────────────────────────────────────────────────────────
 
-interface CuratedSlots {
+export interface CuratedSlots {
   lead?: ScoredEvent;
   list: ScoredEvent[];
   nudge?: ScoredEvent;
   wildCard?: ScoredEvent;
+}
+
+// Cache key based on date + top event IDs + preferences
+function getCacheKey(events: ScoredEvent[]): string {
+  const date = new Date().toISOString().slice(0, 10);
+  const prefs = getPreferences();
+  const ids = events.slice(0, 3).map(e => e.id).join('-');
+  const prefKey = (prefs.interests || []).slice(0, 2).join(',');
+  return `${date}-${ids}-${prefKey}`;
+}
+
+function getCache(key: string): EditorialResult | null {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY_PREFIX + key);
+    if (!raw) return null;
+    const entry: CacheEntry = JSON.parse(raw);
+    // Expire after 6 hours
+    if (Date.now() - entry.ts > 1000 * 60 * 60 * 6) {
+      localStorage.removeItem(CACHE_KEY_PREFIX + key);
+      return null;
+    }
+    return entry.result;
+  } catch {
+    return null;
+  }
+}
+
+function setCache(key: string, result: EditorialResult): void {
+  try {
+    localStorage.setItem(
+      CACHE_KEY_PREFIX + key,
+      JSON.stringify({ result, ts: Date.now(), key })
+    );
+  } catch {
+    // localStorage might be full
+  }
 }
 
 // Headline templates grouped by context
@@ -242,41 +287,103 @@ export function generateDeterministicCopy(
   return { headline, subhead, leadIntro, wildCardLabel };
 }
 
-// Async wrapper — keeps AI generation as enhancement when API key is available
-// Falls back to deterministic copy
+// ─── PRIMARY GENERATION: event data → editorial copy ──────
+// Uses shortWhy / editorialWhy fields from the scraper's UXAgent pipeline.
+// Falls back to deterministic templates when those fields are sparse.
 export async function generateEditorialCopy(
   events: ScoredEvent[],
   slots?: CuratedSlots,
 ): Promise<EditorialResult> {
-  if (events.length === 0) {
-    return {
-      headline: 'Nothing Yet',
-      subhead: "Check back soon.",
-      leadIntro: 'Top pick for the week.',
-      wildCardLabel: 'Under the radar.',
-    };
-  }
-
-  // Use slots if provided, otherwise construct basic slots from events
-  const effectiveSlots: CuratedSlots = slots ?? {
-    lead: events[0],
-    list: events.slice(1, 4),
-    nudge: events[4],
-    wildCard: events.find(e => e.category !== events[0]?.category) ?? events[5],
+  const FALLBACKS: EditorialResult = {
+    headline: 'Tonight in Miami',
+    subhead: "What's worth going to.",
+    leadIntro: 'Top pick for tonight.',
+    wildCardLabel: 'Under the radar.',
   };
 
-  return generateDeterministicCopy(effectiveSlots);
+  if (events.length === 0) return FALLBACKS;
+
+  const cacheKey = getCacheKey(events);
+  const cached = getCache(cacheKey);
+  if (cached) return cached;
+
+  const prefs = getPreferences();
+  const cityMap: Record<string, string> = {
+    miami: 'Miami',
+    ftl: 'Fort Lauderdale',
+    pb: 'Palm Beach',
+  };
+  const cityLabel = (prefs.city ? cityMap[prefs.city] : null) ?? 'South Florida';
+
+  const top = events[0];
+  const wildCard = events.find(e => e.category !== top.category) ?? events[1];
+
+  // Try event-data-driven copy first (from UXAgent editorial fields)
+  const hasEditorialData = top.shortWhy || top.editorialWhy;
+
+  let result: EditorialResult;
+
+  if (hasEditorialData) {
+    // Event data is rich enough — use it directly
+    result = {
+      headline: top.shortWhy && top.shortWhy.length <= 60
+        ? top.shortWhy
+        : `Tonight in ${top.neighborhood ?? cityLabel}`,
+      subhead: wildCard
+        ? `Plus: ${wildCard.shortWhy || wildCard.title}`
+        : "What's worth going to.",
+      leadIntro: top.editorialWhy?.slice(0, 100) || top.shortWhy || 'Top pick for tonight.',
+      wildCardLabel: wildCard?.shortWhy || 'Under the radar.',
+    };
+  } else {
+    // Sparse editorial data — use deterministic contextual templates
+    const effectiveSlots: CuratedSlots = slots ?? {
+      lead: top,
+      list: events.slice(1, 4),
+      nudge: events[4],
+      wildCard,
+    };
+    result = generateDeterministicCopy(effectiveSlots);
+  }
+
+  setCache(cacheKey, result);
+  return result;
 }
 
 // ─── LEGACY EXPORTS FOR COMPATIBILITY ─────────────────────
 
 export function getCachedEditorial(): EditorialResult | null {
+  // Find any valid cache entry
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key?.startsWith(CACHE_KEY_PREFIX)) {
+        const raw = localStorage.getItem(key);
+        if (raw) {
+          const entry: CacheEntry = JSON.parse(raw);
+          if (Date.now() - entry.ts < 1000 * 60 * 60 * 6) {
+            return entry.result;
+          }
+        }
+      }
+    }
+  } catch {
+    // Ignore
+  }
   return null;
 }
 
 export function clearEditorialCache(): void {
-  // No-op — deterministic copy doesn't need caching
+  const keysToRemove: string[] = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key?.startsWith(CACHE_KEY_PREFIX)) {
+      keysToRemove.push(key);
+    }
+  }
+  keysToRemove.forEach(key => localStorage.removeItem(key));
 }
 
+// Legacy aliases
 export const generateEditorial = generateEditorialCopy;
 export const getYourcastEditorial = generateEditorialCopy;
