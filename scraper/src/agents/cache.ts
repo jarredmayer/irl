@@ -10,15 +10,15 @@
  *   - Editorial: 0 calls for recurring events (TTL 7 days)
  *   - Only new/changed events ever touch the API
  *
- * Cache files live at scraper/cache/ (gitignored).
+ * Cache files live at public/data/agent-cache/ (tracked by git).
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-// One level up from agents/ = src/, one more up = scraper/, then cache/
-const CACHE_DIR = join(dirname(fileURLToPath(import.meta.url)), '../../cache');
+// One level up from agents/ = src/, one more up = scraper/, one more up = repo root, then public/data/agent-cache/
+const CACHE_DIR = join(dirname(fileURLToPath(import.meta.url)), '../../../public/data/agent-cache');
 
 interface CacheFile<T> {
   version: 1;

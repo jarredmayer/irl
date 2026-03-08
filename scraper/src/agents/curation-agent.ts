@@ -78,8 +78,11 @@ Return JSON array only: [{"id": "...", "score": <1-10>}, ...]`;
     try {
       const response = await this.runLoop(prompt, { maxTurns: 1 });
       const cleaned = response.trim().replace(/^```json?\n?/, '').replace(/\n?```$/, '');
-      return JSON.parse(cleaned) as ScoreResult[];
-    } catch {
+      const scores = JSON.parse(cleaned) as ScoreResult[];
+      console.log(`   ✅ CurationAgent: LLM scored ${scores.length} events (batch OK)`);
+      return scores;
+    } catch (err) {
+      console.log(`   ⚠️  CurationAgent: first LLM attempt failed: ${String(err)}`);
       // First attempt failed — retry with a simpler one-line-per-event prompt
       try {
         const simplePrompt = `Score 1-10 (8+ = specific & rare, 1-4 = generic recurring):\n` +
@@ -87,10 +90,12 @@ Return JSON array only: [{"id": "...", "score": <1-10>}, ...]`;
           `\nReturn JSON: [{"id":"...","score":<1-10>},...]`;
         const response2 = await this.runLoop(simplePrompt, { maxTurns: 1 });
         const cleaned2 = response2.trim().replace(/^```json?\n?/, '').replace(/\n?```$/, '');
-        return JSON.parse(cleaned2) as ScoreResult[];
-      } catch {
+        const scores2 = JSON.parse(cleaned2) as ScoreResult[];
+        console.log(`   ✅ CurationAgent: LLM scored ${scores2.length} events (retry OK)`);
+        return scores2;
+      } catch (err2) {
         // Both attempts failed — apply heuristic fallback rather than losing all scores
-        console.log(`   ⚠️  CurationAgent: batch parse failed twice, applying heuristics`);
+        console.log(`   ⚠️  CurationAgent: batch parse failed twice (${String(err2)}), applying heuristic fallback — NO editor picks will be generated`);
         return events.map((e) => ({
           id: e.id,
           // Recurring series: safe 4. One-off events: 5. Can't identify editor picks without LLM.

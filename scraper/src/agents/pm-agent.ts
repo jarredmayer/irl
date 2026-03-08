@@ -19,7 +19,7 @@ const __dir = dirname(fileURLToPath(import.meta.url));
 
 const META_PATH = join(__dir, '../../../public/data/scrape-meta.json');
 const HEALTH_REPORT_PATH = join(__dir, '../../../public/data/source-health.json');
-const HISTORY_PATH = join(__dir, '../../cache/scrape-history.json');
+const HISTORY_PATH = join(__dir, '../../../public/data/agent-cache/scrape-history.json');
 const IG_SOURCES_PATH = join(__dir, '../sources/instagram-sources.ts');
 
 const HISTORY_MAX_RUNS = 5;

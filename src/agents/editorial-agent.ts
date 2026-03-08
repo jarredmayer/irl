@@ -1,8 +1,9 @@
 /**
  * Editorial Voice Agent
  *
- * Generates daily Yourcast copy using Claude Haiku.
- * Terse, local, unsentimental — like a friend who actually goes out.
+ * Generates daily Yourcast copy from event data.
+ * No API calls — editorial quality comes from the UXAgent in the scraper pipeline.
+ * The frontend just surfaces the best copy from the top events.
  */
 
 import type { ScoredEvent } from '../types';
@@ -91,60 +92,22 @@ export async function generateEditorialCopy(
     pb: 'Palm Beach',
   }[prefs.city ?? 'miami'] ?? 'South Florida';
 
-  const topEvents = events.slice(0, 5).map(e =>
-    `- ${e.title} (${e.category}, ${e.neighborhood ?? ''}, ${new Date(e.startAt).toLocaleString('en-US', { weekday: 'short', hour: 'numeric' })})`
-  ).join('\n');
+  const top = events[0];
+  const wildCard = events.find(e => e.category !== top.category) ?? events[1];
 
-  const prompt = `You write copy for IRL, a curated local events app in ${cityLabel}.
+  const result: EditorialResult = {
+    headline: top.shortWhy && top.shortWhy.length <= 60
+      ? top.shortWhy
+      : `Tonight in ${top.neighborhood ?? cityLabel}`,
+    subhead: wildCard
+      ? `Plus: ${wildCard.shortWhy || wildCard.title}`
+      : "What's worth going to.",
+    leadIntro: top.editorialWhy?.slice(0, 100) || top.shortWhy || 'Top pick for tonight.',
+    wildCardLabel: wildCard?.shortWhy || 'Under the radar.',
+  };
 
-IRL voice: terse, local, unsentimental. Like a friend who actually goes out.
-Specific beats generic. Facts not feelings. Never hype.
-Never use: perfect, amazing, discover, explore, curated, personalized, vibrant, exciting.
-Dry wit is fine. Enthusiasm is not.
-
-Tonight's top events:
-${topEvents}
-
-Return ONLY valid JSON, no markdown, no preamble:
-{
-  "headline": "max 8 words, tonight's vibe in one line",
-  "subhead": "max 10 words, what to expect tonight",
-  "leadIntro": "max 12 words, one line about the top event",
-  "wildCardLabel": "max 6 words, teaser for the under-the-radar pick"
-}`;
-
-  try {
-    const res = await fetch('/api/editorial', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'claude-3-5-haiku-20241022',
-        max_tokens: 256,
-        messages: [{ role: 'user', content: prompt }],
-      }),
-    });
-
-    if (!res.ok) {
-      const errorText = await res.text();
-      console.error('[editorial-agent] API error:', res.status, errorText);
-      return FALLBACKS;
-    }
-
-    const data = await res.json();
-    const text = data.content?.[0]?.text ?? '';
-    const clean = text.replace(/```json|```/g, '').trim();
-    const parsed: EditorialResult = JSON.parse(clean);
-
-    // Validate required fields
-    if (!parsed.headline || !parsed.subhead) return FALLBACKS;
-
-    setCache(cacheKey, parsed);
-    return parsed;
-  } catch {
-    return FALLBACKS;
-  }
+  setCache(cacheKey, result);
+  return result;
 }
 
 // ─── LEGACY EXPORTS FOR COMPATIBILITY ─────────────────────
