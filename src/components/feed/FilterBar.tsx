@@ -162,7 +162,10 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
     updateFilter('selectedNeighborhoods', newNeighborhoods);
   };
 
-  // Count active filters
+  // Get label for active time filter
+  const activeTimeLabel = timeFilters.find(tf => tf.id === filters.timeFilter)?.label ?? 'This Week';
+
+  // Count active filters (for expanded panel badge)
   const activeFilterCount =
     (filters.selectedCategories.length > 0 ? 1 : 0) +
     (filters.selectedNeighborhoods.length > 0 ? 1 : 0) +
@@ -254,44 +257,71 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
         </div>
       )}
 
-      {/* Time filter row */}
-      <div className="px-4 pb-2">
-        <span className="text-xs font-medium text-ink-2 uppercase tracking-wide">When</span>
-        <div className="mt-1.5 overflow-x-auto hide-scrollbar">
-          <ChipGroup>
-            {timeFilters.map((tf) => (
+      {/* Collapsed: single row with active time chip + quick filters */}
+      {!isExpanded && (
+        <div className="px-4 pb-3 overflow-x-auto hide-scrollbar">
+          <div className="flex flex-nowrap gap-2">
+            {/* Active time filter — tapping opens expanded filters */}
+            <Chip
+              label={activeTimeLabel}
+              selected={true}
+              onClick={() => setIsExpanded(true)}
+              size="md"
+            />
+            {/* Separator */}
+            <div className="w-px bg-divider shrink-0 my-1" />
+            {/* Quick attribute/category filters */}
+            {quickFilters.map((filter) => (
               <Chip
-                key={tf.id}
-                label={tf.label}
-                selected={filters.timeFilter === tf.id}
-                onClick={() => handleTimeFilterClick(tf.id)}
+                key={filter.id}
+                label={filter.label}
+                selected={isQuickFilterActive(filter)}
+                onClick={() => toggleQuickFilter(filter)}
                 size="md"
               />
             ))}
-          </ChipGroup>
+          </div>
         </div>
-      </div>
-
-      {/* Category / attribute filter pills */}
-      <div className="px-4 pb-3 overflow-x-auto hide-scrollbar">
-        <ChipGroup>
-          {quickFilters.map((filter) => (
-            <Chip
-              key={filter.id}
-              label={filter.label}
-              selected={isQuickFilterActive(filter)}
-              onClick={() => toggleQuickFilter(filter)}
-              size="md"
-            />
-          ))}
-        </ChipGroup>
-      </div>
+      )}
 
       {/* Expanded filters */}
       {isExpanded && (
         <div className="border-t border-divider">
+          {/* Time filters */}
+          <div className="px-4 py-3">
+            <span className="text-xs font-medium text-ink-2 uppercase tracking-wide">When</span>
+            <div className="mt-1.5 overflow-x-auto hide-scrollbar">
+              <div className="flex flex-nowrap gap-2">
+                {timeFilters.map((tf) => (
+                  <Chip
+                    key={tf.id}
+                    label={tf.label}
+                    selected={filters.timeFilter === tf.id}
+                    onClick={() => handleTimeFilterClick(tf.id)}
+                    size="sm"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Quick filters */}
+          <div className="px-4 py-3 border-t border-divider overflow-x-auto hide-scrollbar">
+            <div className="flex flex-nowrap gap-2">
+              {quickFilters.map((filter) => (
+                <Chip
+                  key={filter.id}
+                  label={filter.label}
+                  selected={isQuickFilterActive(filter)}
+                  onClick={() => toggleQuickFilter(filter)}
+                  size="sm"
+                />
+              ))}
+            </div>
+          </div>
+
           {/* City filters */}
-          <div className="px-4 py-3 overflow-x-auto hide-scrollbar">
+          <div className="px-4 py-3 border-t border-divider overflow-x-auto hide-scrollbar">
             <ChipGroup>
               {cityFilters.map((filter) => (
                 <Chip
