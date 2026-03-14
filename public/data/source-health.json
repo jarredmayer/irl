@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-03-06T14:01:56.907Z",
-  "scrapedAt": "2026-03-06T04:38:11.970Z",
-  "healthPct": 64,
-  "totalSources": 39,
-  "ok": 25,
-  "empty": 10,
-  "errored": 4,
+  "generatedAt": "2026-03-14T02:31:35.278Z",
+  "scrapedAt": "2026-03-06T14:01:56.969Z",
+  "healthPct": 68,
+  "totalSources": 44,
+  "ok": 30,
+  "empty": 12,
+  "errored": 2,
   "emptySources": [
     "III Points",
     "SOBEWFF",
     "Miami Spice",
     "Dice.fm Real",
-    "Hotel Events",
     "Broward Center",
-    "HistoryMiami",
     "Resy Miami Events",
     "Venue Watchlist",
-    "Eventbrite Miami"
+    "PAMM",
+    "Wolfsonian",
+    "Little Haiti Cultural",
+    "Wynwood BID",
+    "BonnetHouse"
   ],
   "erroredSources": [
     "Miami New Times",
-    "Candlelight Concerts (Fever)",
-    "Las Olas Boulevard",
     "Fever Miami"
   ],
   "suddenFailures": [],
@@ -33,5 +33,5 @@
     "@sobe_arts — South Beach arts & culture",
     "@miamibookfair — Miami Book Fair International"
   ],
-  "historyRuns": 2
+  "historyRuns": 1
 }
