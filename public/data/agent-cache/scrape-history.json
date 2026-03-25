@@ -223,5 +223,230 @@
         "status": "ok"
       }
     ]
+  },
+  {
+    "scrapedAt": "2026-03-14T02:31:35.387Z",
+    "sources": [
+      {
+        "name": "Miami New Times",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "Farmers Markets",
+        "count": 80,
+        "status": "ok"
+      },
+      {
+        "name": "Beach Cleanups",
+        "count": 16,
+        "status": "ok"
+      },
+      {
+        "name": "Don't Tell Comedy",
+        "count": 16,
+        "status": "ok"
+      },
+      {
+        "name": "World Cup 2026",
+        "count": 7,
+        "status": "ok"
+      },
+      {
+        "name": "III Points",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "SOBEWFF",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "Miami Spice",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "Miami Festivals",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "Dice.fm Real",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "Resident Advisor",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Candlelight Concerts (Fever)",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Hotel Events",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "Real Venue Events",
+        "count": 29,
+        "status": "ok"
+      },
+      {
+        "name": "Cultural Attractions",
+        "count": 393,
+        "status": "ok"
+      },
+      {
+        "name": "Pop-Ups",
+        "count": 59,
+        "status": "ok"
+      },
+      {
+        "name": "Miami Improv",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Fort Lauderdale Improv",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Broward Center",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "Verified Recurring",
+        "count": 2,
+        "status": "ok"
+      },
+      {
+        "name": "Coffee & Chill",
+        "count": 6,
+        "status": "ok"
+      },
+      {
+        "name": "Free Yoga Miami",
+        "count": 76,
+        "status": "ok"
+      },
+      {
+        "name": "Run Clubs",
+        "count": 18,
+        "status": "ok"
+      },
+      {
+        "name": "Cycling Group Rides",
+        "count": 36,
+        "status": "ok"
+      },
+      {
+        "name": "Las Olas Boulevard",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Fort Lauderdale",
+        "count": 23,
+        "status": "ok"
+      },
+      {
+        "name": "Palm Beach",
+        "count": 56,
+        "status": "ok"
+      },
+      {
+        "name": "Instagram Sources",
+        "count": 153,
+        "status": "ok"
+      },
+      {
+        "name": "Luma",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "SofarSounds",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "HistoryMiami",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "Resy Miami Events",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Venue Watchlist",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "Eventbrite Miami",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Fever Miami",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Club Space",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "PAMM",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "ICA Miami",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Wolfsonian",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Little Haiti Cultural",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "Wynwood BID",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "CultureRoom",
+        "count": 0,
+        "status": "error"
+      },
+      {
+        "name": "BonnetHouse",
+        "count": 0,
+        "status": "empty"
+      },
+      {
+        "name": "WeekendBroward Verified",
+        "count": 78,
+        "status": "ok"
+      }
+    ]
   }
 ]

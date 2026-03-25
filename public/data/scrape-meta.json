@@ -1,8 +1,8 @@
 {
-  "scrapedAt": "2026-03-14T02:31:35.387Z",
+  "scrapedAt": "2026-03-25T17:06:38.267Z",
   "stats": {
-    "total": 1048,
-    "deduplicated": 679,
+    "total": 1025,
+    "deduplicated": 626,
     "bySource": {
       "Miami New Times": 0,
       "Farmers Markets": 80,
@@ -19,18 +19,18 @@
       "Hotel Events": 0,
       "Real Venue Events": 29,
       "Cultural Attractions": 393,
-      "Pop-Ups": 59,
+      "Pop-Ups": 57,
       "Miami Improv": 0,
       "Fort Lauderdale Improv": 0,
       "Broward Center": 0,
       "Verified Recurring": 2,
       "Coffee & Chill": 6,
-      "Free Yoga Miami": 76,
+      "Free Yoga Miami": 75,
       "Run Clubs": 18,
       "Cycling Group Rides": 36,
       "Las Olas Boulevard": 0,
       "Fort Lauderdale": 23,
-      "Palm Beach": 56,
+      "Palm Beach": 58,
       "Instagram Sources": 153,
       "Luma": 0,
       "SofarSounds": 0,
@@ -47,14 +47,14 @@
       "Wynwood BID": 0,
       "CultureRoom": 0,
       "BonnetHouse": 0,
-      "WeekendBroward Verified": 78
+      "WeekendBroward Verified": 56
     }
   },
   "delta": {
-    "added": 549,
-    "removed": 384,
+    "added": 104,
+    "removed": 0,
     "modified": 0,
-    "unchanged": 130
+    "unchanged": 522
   },
   "sources": [
     {
@@ -153,7 +153,7 @@
     },
     {
       "name": "Pop-Ups",
-      "count": 59,
+      "count": 57,
       "status": "ok",
       "errors": []
     },
@@ -193,7 +193,7 @@
     },
     {
       "name": "Free Yoga Miami",
-      "count": 76,
+      "count": 75,
       "status": "ok",
       "errors": []
     },
@@ -225,7 +225,7 @@
     },
     {
       "name": "Palm Beach",
-      "count": 56,
+      "count": 58,
       "status": "ok",
       "errors": []
     },
@@ -351,7 +351,7 @@
     },
     {
       "name": "WeekendBroward Verified",
-      "count": 78,
+      "count": 56,
       "status": "ok",
       "errors": []
     }
