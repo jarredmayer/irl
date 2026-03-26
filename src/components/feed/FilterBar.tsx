@@ -27,6 +27,7 @@ const timeFilters: { id: TimeFilter; label: string }[] = [
 // Quick filter pills for the category/attribute row (no time filters here)
 const quickFilters = [
   { id: 'sunny', label: '☀ Sunny', type: 'weather' as const },
+  { id: 'rainy', label: '🌧 Rainy Day', type: 'weather' as const },
   { id: 'free', label: 'Free', type: 'price' as const },
   { id: 'Music', label: 'Music', type: 'category' as const },
   { id: 'Art', label: 'Arts', type: 'category' as const },
@@ -123,7 +124,7 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
   const isQuickFilterActive = (filter: typeof quickFilters[0]): boolean => {
     switch (filter.type) {
       case 'weather':
-        return filters.sunnyOnly;
+        return filter.id === 'sunny' ? filters.sunnyOnly : filters.rainyOnly;
       case 'price':
         return filters.freeOnly;
       case 'category':
@@ -135,12 +136,23 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
   const toggleQuickFilter = (filter: typeof quickFilters[0]) => {
     switch (filter.type) {
       case 'weather':
-        // Sunny filter - show outdoor events with clear weather
-        onFiltersChange({
-          ...filters,
-          sunnyOnly: !filters.sunnyOnly,
-          outdoorOnly: !filters.sunnyOnly ? true : filters.outdoorOnly,
-        });
+        if (filter.id === 'sunny') {
+          // Sunny filter - show outdoor events with clear weather (mutually exclusive with rainy)
+          onFiltersChange({
+            ...filters,
+            sunnyOnly: !filters.sunnyOnly,
+            rainyOnly: false,
+            outdoorOnly: !filters.sunnyOnly ? true : filters.outdoorOnly,
+          });
+        } else {
+          // Rainy day filter - show indoor events (mutually exclusive with sunny)
+          onFiltersChange({
+            ...filters,
+            rainyOnly: !filters.rainyOnly,
+            sunnyOnly: false,
+            outdoorOnly: false,
+          });
+        }
         break;
       case 'price':
         updateFilter('freeOnly', !filters.freeOnly);
@@ -173,7 +185,8 @@ export function FilterBar({ filters, onFiltersChange, hasLocation = false, onCon
     (filters.freeOnly ? 1 : 0) +
     (filters.city ? 1 : 0) +
     (filters.timeFilter !== 'this-week' ? 1 : 0) +
-    (filters.sunnyOnly ? 1 : 0);
+    (filters.sunnyOnly ? 1 : 0) +
+    (filters.rainyOnly ? 1 : 0);
 
   return (
     <div className="bg-white sticky top-[60px] z-30">

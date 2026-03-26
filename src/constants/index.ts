@@ -256,6 +256,7 @@ export const DEFAULT_FILTERS = {
   dateRange: ['', ''] as [string, string],
   outdoorOnly: false,
   sunnyOnly: false,
+  rainyOnly: false,
 };
 
 // Popular neighborhoods for quick filtering

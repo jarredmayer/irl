@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ink: #0E0E0E;
+  --color-ink-2: #5C5856;
+  --color-ink-3: #8A8682;
+  --color-divider: #E5E5E5;
+  --color-soft: #F7F6F4;
+  --color-bg-soft: #F7F6F4;
+  --color-white: #FFFFFF;
+  --color-burgundy: #7A2D3A;
+  --color-teal: #2E6560;
+  --color-mauve: #7A5C72;
+  --color-ochre: #9C6B28;
+  --color-slate-c: #3D5068;
+  --color-fig: #5C4A7A;
+  --color-mustard: #C4A040;
+  --color-mustard-ink: #1E1808;
+}
+
 :root {
   /* Typography */
   --font-wordmark: 'Bodoni Moda', Georgia, serif;
