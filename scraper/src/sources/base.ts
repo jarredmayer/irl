@@ -524,6 +524,7 @@ export abstract class BaseScraper {
             res.statusCode < 400 &&
             res.headers.location
           ) {
+            this.log(`  ↳ HTTP ${res.statusCode} redirect: ${url} → ${res.headers.location}`);
             req.destroy();
             this.fetchHTMLNative(res.headers.location, timeoutMs).then(resolve, reject);
             return;

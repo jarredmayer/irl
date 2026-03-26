@@ -80,17 +80,28 @@ export class CandlelightRealScraper extends BaseScraper {
   }
 
   /**
-   * Fetch the listing page and extract event URLs from the ItemList JSON-LD.
+   * Fetch the listing page and extract event URLs from the ItemList JSON-LD,
+   * with fallback strategies if JSON-LD is missing.
    */
   private async fetchEventUrls(): Promise<string[]> {
     try {
       const $ = await this.fetchHTMLNativeRetry(this.LISTING_URL, 2, 15_000);
 
+      // Log page size so we know it loaded
+      const htmlLength = $.html().length;
+      this.log(`Listing page HTML length: ${htmlLength}`);
+
       const urls: string[] = [];
 
-      $('script[type="application/ld+json"]').each((_, el) => {
+      // Log all JSON-LD script types for debugging
+      const jsonLdScripts = $('script[type="application/ld+json"]');
+      this.log(`Found ${jsonLdScripts.length} JSON-LD script(s)`);
+
+      jsonLdScripts.each((_, el) => {
         try {
           const data = JSON.parse($(el).text());
+          const atType = data['@type'] || data.type || 'unknown';
+          this.log(`  JSON-LD @type: ${atType}`);
           if (data['@type'] === 'ItemList' && Array.isArray(data.itemListElement)) {
             for (const item of data.itemListElement) {
               if (item.url) {
@@ -103,7 +114,54 @@ export class CandlelightRealScraper extends BaseScraper {
         }
       });
 
-      return urls;
+      if (urls.length > 0) {
+        this.log(`Found ${urls.length} URLs from JSON-LD ItemList`);
+        return urls;
+      }
+
+      this.log('JSON-LD ItemList returned 0 URLs, trying HTML fallback strategies...');
+
+      // Fallback 1: extract <a href> links to Fever event/candlelight pages
+      const seen = new Set<string>();
+
+      $('a[href]').each((_, el) => {
+        const href = $(el).attr('href');
+        if (!href) return;
+        // Match candlelight event pages or /plan/ pages
+        if (/\/en\/miami\/candlelight\//.test(href) || /\/plan\//.test(href)) {
+          const fullUrl = href.startsWith('http') ? href : `https://feverup.com${href}`;
+          // Avoid duplicates and the listing page itself
+          if (!seen.has(fullUrl) && fullUrl !== this.LISTING_URL && fullUrl !== this.LISTING_URL + '/') {
+            seen.add(fullUrl);
+            urls.push(fullUrl);
+          }
+        }
+      });
+
+      if (urls.length > 0) {
+        this.log(`Found ${urls.length} URLs from <a href> links`);
+        return urls;
+      }
+
+      // Fallback 2: extract data-plan-id attributes and construct URLs
+      const planIds: string[] = [];
+      $('[data-plan-id]').each((_, el) => {
+        const planId = $(el).attr('data-plan-id');
+        if (planId && !planIds.includes(planId)) {
+          planIds.push(planId);
+        }
+      });
+
+      if (planIds.length > 0) {
+        this.log(`Found ${planIds.length} data-plan-id attributes, constructing URLs`);
+        for (const planId of planIds) {
+          urls.push(`https://feverup.com/en/miami/plan/${planId}`);
+        }
+        return urls;
+      }
+
+      this.log('All fallback strategies returned 0 URLs');
+      return [];
     } catch (err) {
       this.logError('Failed to fetch listing page', err);
       return [];

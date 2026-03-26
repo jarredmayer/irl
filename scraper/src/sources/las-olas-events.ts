@@ -106,11 +106,73 @@ export class LasOlasEventsScraper extends BaseScraper {
         return [];
       }
 
+      // Log all top-level keys for debugging structure changes
+      const topLevelKeys = Object.keys(warmup);
+      this.log(`warmupData top-level keys (${topLevelKeys.length}): ${topLevelKeys.join(', ')}`);
+      for (const tlk of topLevelKeys) {
+        if (warmup[tlk] && typeof warmup[tlk] === 'object' && !Array.isArray(warmup[tlk])) {
+          const subKeys = Object.keys(warmup[tlk]);
+          this.log(`  warmup["${tlk}"] keys (${subKeys.length}): ${subKeys.join(', ')}`);
+        }
+      }
+
       // The Wix Events App ID stays the same: 140603ad-af8d-84a5-2c80-a0f60cb47351
       const APP_ID = '140603ad-af8d-84a5-2c80-a0f60cb47351';
-      const appData = warmup?.appsWarmupData?.[APP_ID];
+
+      // Primary path: warmup.appsWarmupData[APP_ID]
+      let appData = warmup?.appsWarmupData?.[APP_ID];
+
+      // Log appsWarmupData keys for debugging
+      if (warmup?.appsWarmupData) {
+        const appIds = Object.keys(warmup.appsWarmupData);
+        this.log(`appsWarmupData has ${appIds.length} app IDs: ${appIds.join(', ')}`);
+      } else {
+        this.log('appsWarmupData is missing or falsy');
+      }
+
+      // Fallback path 1: warmup.wixAppData[APP_ID]
       if (!appData) {
-        this.log('Could not find Wix Events app data');
+        appData = warmup?.wixAppData?.[APP_ID];
+        if (appData) this.log('Found app data via fallback: warmup.wixAppData[APP_ID]');
+      }
+
+      // Fallback path 2: warmup[APP_ID] directly
+      if (!appData) {
+        appData = warmup?.[APP_ID];
+        if (appData) this.log('Found app data via fallback: warmup[APP_ID]');
+      }
+
+      // Fallback path 3: iterate ALL app IDs in appsWarmupData
+      if (!appData && warmup?.appsWarmupData) {
+        for (const candidateId of Object.keys(warmup.appsWarmupData)) {
+          const candidate = warmup.appsWarmupData[candidateId];
+          if (candidate && typeof candidate === 'object') {
+            for (const wKey of Object.keys(candidate)) {
+              const widgetEvents = candidate[wKey]?.events?.events;
+              if (Array.isArray(widgetEvents) && widgetEvents.length > 0) {
+                this.log(`Found events via alternate app ID "${candidateId}", widget "${wKey}" (${widgetEvents.length} events)`);
+                appData = candidate;
+                break;
+              }
+            }
+            if (appData) break;
+          }
+        }
+      }
+
+      // Fallback path 4: recursively search for any object with an `events` array
+      if (!appData) {
+        const found = this.findEventsRecursive(warmup);
+        if (found && found.length > 0) {
+          this.log(`Found ${found.length} events via recursive search`);
+          const events = this.normalizeWixEvents(found);
+          this.log(`Normalized ${events.length} upcoming Las Olas events`);
+          return events;
+        }
+      }
+
+      if (!appData) {
+        this.log('Could not find Wix Events app data via any path');
         return [];
       }
 
@@ -124,7 +186,7 @@ export class LasOlasEventsScraper extends BaseScraper {
       }
 
       if (wixEvents.length === 0) {
-        this.log('No events found in Wix warmup data');
+        this.log('No events found in Wix warmup data (checked all widgets)');
         return [];
       }
 
@@ -200,6 +262,32 @@ export class LasOlasEventsScraper extends BaseScraper {
     }
 
     return events;
+  }
+
+  /**
+   * Recursively search an object tree for an `events` key containing an array value.
+   * Returns the first array found, or null.
+   */
+  private findEventsRecursive(obj: unknown, depth = 0): WixEvent[] | null {
+    if (depth > 10 || !obj || typeof obj !== 'object') return null;
+    const record = obj as Record<string, unknown>;
+    // Check if this object has an `events` key with an array value
+    if (Array.isArray(record.events) && record.events.length > 0) {
+      // Verify it looks like event data (has title or name)
+      const first = record.events[0];
+      if (first && typeof first === 'object' && ('title' in first || 'name' in first)) {
+        return record.events as WixEvent[];
+      }
+    }
+    // Recurse into children
+    for (const key of Object.keys(record)) {
+      const val = record[key];
+      if (val && typeof val === 'object') {
+        const result = this.findEventsRecursive(val, depth + 1);
+        if (result) return result;
+      }
+    }
+    return null;
   }
 
   private getETOffset(date: Date): number {

@@ -24,15 +24,6 @@ export {
   IIIPointsScraper,
 } from './nightlife-clubs.js';
 
-// Comedy & entertainment
-export {
-  DontTellComedyScraper,
-  MiamiImprovScraper,
-  DaniaBeachImprovScraper,
-  ArshtCenterScraper,
-  FillmoreMiamiScraper,
-} from './comedy-entertainment.js';
-
 // Food & drink
 export {
   FoodEventsScraper,
@@ -47,8 +38,8 @@ export { HotelsHospitalityScraper } from './hotels-hospitality.js';
 // Instagram real scraper (fetches posts via IG API + Claude extraction)
 export { InstagramRealScraper } from './instagram-real.js';
 
-// Ticketing platforms
-export { DiceFmScraper, ShotgunScraper, WorldCup2026Scraper } from './ticketing-platforms.js';
+// Ticketing platforms (real API scrapers only)
+export { ShotgunScraper } from './ticketing-platforms.js';
 
 // Community & lifestyle
 export {
@@ -177,13 +168,9 @@ import {
 } from './nightlife-clubs.js';
 import { ResidentAdvisorScraper } from './resident-advisor.js';
 import {
-  DontTellComedyScraper,
-} from './comedy-entertainment.js';
-import {
   MiamiSpiceScraper,
   SOBEWFFScraper,
 } from './food-drink.js';
-import { WorldCup2026Scraper } from './ticketing-platforms.js';
 import {
   MiamiFestivalsScraper,
 } from './cultural-districts.js';
@@ -226,14 +213,12 @@ export function getAllScrapers(): BaseScraper[] {
   return [
     // === REAL CALENDAR SCRAPERS ===
     new MiamiNewTimesScraper(),
-    new DontTellComedyScraper(),
 
     // Seasonal festivals — return 0 events when out of season (correct behavior)
     new IIIPointsScraper(),
     new SOBEWFFScraper(),
     new MiamiSpiceScraper(),
     new MiamiFestivalsScraper(),
-    new WorldCup2026Scraper(),
 
     // === REAL TICKETING PLATFORMS ===
     new DiceRealScraper(),

@@ -101,7 +101,7 @@ export class MiamiImprovRealScraper extends BaseScraper {
     const $ = await this.fetchHTML(this.url);
     const events: RawEvent[] = [];
 
-    // JSON-LD has Place with Events array
+    // Strategy 1: JSON-LD with Place.Events array
     $('script[type="application/ld+json"]').each((_, el) => {
       try {
         const data = JSON.parse($(el).html() || '');
@@ -117,11 +117,112 @@ export class MiamiImprovRealScraper extends BaseScraper {
         if (data['@type'] === 'Event' && data.name) {
           events.push(this.parseJsonLd(data));
         }
+        // Handle @graph array (common in newer schemas)
+        if (data['@graph'] && Array.isArray(data['@graph'])) {
+          for (const item of data['@graph']) {
+            if (item['@type'] === 'Event' && item.name && item.startDate) {
+              events.push(this.parseJsonLd(item));
+            }
+          }
+        }
+        // Handle array of events at top level
+        if (Array.isArray(data)) {
+          for (const item of data) {
+            if (item['@type'] === 'Event' && item.name && item.startDate) {
+              events.push(this.parseJsonLd(item));
+            }
+          }
+        }
+      } catch { /* skip */ }
+    });
+
+    if (events.length > 0) {
+      this.log(`Found ${events.length} Miami Improv events via JSON-LD`);
+      return events;
+    }
+
+    // Strategy 2: HTML parsing with CSS selectors for improv.com patterns
+    this.log('  JSON-LD returned 0 events, trying HTML selectors...');
+    $(`.event-list .event-item, .show-listing, [data-event-id], .event-card, .show-card`).each((_, el) => {
+      try {
+        const $el = $(el);
+        const title = this.cleanText($el.find('h2, h3, h4, .event-title, .show-title, .title').first().text());
+        const dateText = this.cleanText($el.find('.date, time, .event-date, .show-date').first().text());
+        const link = $el.find('a').attr('href') || $el.closest('a').attr('href') || '';
+
+        if (!title || title.length < 3) return;
+
+        const startAt = this.parseImprovDate(dateText);
+        events.push(this.buildImprovEvent(title, startAt, link));
+      } catch { /* skip */ }
+    });
+
+    if (events.length > 0) {
+      this.log(`Found ${events.length} Miami Improv events via HTML selectors`);
+      return events;
+    }
+
+    // Strategy 3: Find links containing "/event/" or "/show/"
+    this.log('  HTML selectors returned 0 events, trying link-based parsing...');
+    const seen = new Set<string>();
+    $('a[href*="/event/"], a[href*="/show/"]').each((_, el) => {
+      try {
+        const $el = $(el);
+        const title = this.cleanText($el.text());
+        const link = $el.attr('href') || '';
+
+        if (!title || title.length < 3 || seen.has(title.toLowerCase())) return;
+        seen.add(title.toLowerCase());
+
+        const $parent = $el.closest('div, li, article, section');
+        const dateText = this.cleanText($parent.find('.date, time, [class*="date"]').first().text());
+        const startAt = this.parseImprovDate(dateText);
+        events.push(this.buildImprovEvent(title, startAt, link));
       } catch { /* skip */ }
     });
 
     this.log(`Found ${events.length} Miami Improv events`);
     return events;
+  }
+
+  private parseImprovDate(text: string): string {
+    if (!text) return this.defaultImprovDate();
+    const match = text.match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+(\d{1,2})/i);
+    if (match) {
+      const monthMap: Record<string, string> = {
+        jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
+        jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12'
+      };
+      const month = monthMap[match[1].toLowerCase().slice(0, 3)];
+      const day = match[2].padStart(2, '0');
+      const year = new Date().getFullYear();
+      return `${year}-${month}-${day}T20:00:00`;
+    }
+    return this.defaultImprovDate();
+  }
+
+  private defaultImprovDate(): string {
+    const d = new Date();
+    d.setDate(d.getDate() + 7);
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}T20:00:00`;
+  }
+
+  private buildImprovEvent(title: string, startAt: string, link: string): RawEvent {
+    const url = link.startsWith('http') ? link : link ? `https://www.miamiimprov.com${link}` : this.url;
+    return {
+      title,
+      startAt,
+      venueName: 'Miami Improv',
+      address: '3450 NW 83rd Ave #224, Doral, FL 33166',
+      neighborhood: 'Doral',
+      city: 'Miami',
+      description: `${title} at Miami Improv. 21+ with two-drink minimum.`,
+      category: 'Comedy',
+      tags: ['comedy', 'live-entertainment'],
+      isOutdoor: false,
+      sourceName: this.name,
+      sourceUrl: url,
+    };
   }
 
   private parseJsonLd(data: any): RawEvent {
@@ -156,36 +257,128 @@ export class FortLauderdaleImprovScraper extends BaseScraper {
     const $ = await this.fetchHTML(this.url);
     const events: RawEvent[] = [];
 
-    // JSON-LD has Place with Events array
+    // Strategy 1: JSON-LD parsing with multiple structure support
     $('script[type="application/ld+json"]').each((_, el) => {
       try {
         const data = JSON.parse($(el).html() || '');
+        // Handle Place with Events array
         if (data.Events && Array.isArray(data.Events)) {
           for (const evt of data.Events) {
             if (evt.name && evt.startDate && !evt.name.toLowerCase().includes('closed')) {
-              events.push({
-                title: this.cleanText(evt.name),
-                startAt: evt.startDate?.replace('Z', ''),
-                      venueName: 'Fort Lauderdale Improv',
-                address: '5700 Seminole Way, Hollywood, FL 33314',
-                neighborhood: 'Hollywood',
-                city: 'Fort Lauderdale',
-                description: `${evt.name} at Fort Lauderdale Improv. 21+ with two-drink minimum.`,
-                category: 'Comedy',
-                tags: ['comedy', 'live-entertainment'],
-                priceAmount: evt.offers?.price,
-                isOutdoor: false,
-                sourceName: this.name,
-                sourceUrl: evt.url || this.url,
-              });
+              events.push(this.buildFtlEvent(evt));
+            }
+          }
+        }
+        // Handle direct Event
+        if (data['@type'] === 'Event' && data.name && data.startDate) {
+          events.push(this.buildFtlEvent(data));
+        }
+        // Handle @graph array (common in newer schemas)
+        if (data['@graph'] && Array.isArray(data['@graph'])) {
+          for (const item of data['@graph']) {
+            if (item['@type'] === 'Event' && item.name && item.startDate) {
+              events.push(this.buildFtlEvent(item));
+            }
+          }
+        }
+        // Handle top-level array of events
+        if (Array.isArray(data)) {
+          for (const item of data) {
+            if (item['@type'] === 'Event' && item.name && item.startDate) {
+              events.push(this.buildFtlEvent(item));
             }
           }
         }
       } catch { /* skip */ }
     });
 
+    if (events.length > 0) {
+      this.log(`Found ${events.length} FTL Improv events via JSON-LD`);
+      return events;
+    }
+
+    // Strategy 2: HTML parsing with CSS selectors for improv.com patterns
+    this.log('  JSON-LD returned 0 events, trying HTML selectors...');
+    $(`.event-list .event-item, .show-listing, [data-event-id], .event-card, .show-card`).each((_, el) => {
+      try {
+        const $el = $(el);
+        const title = this.cleanText($el.find('h2, h3, h4, .event-title, .show-title, .title').first().text());
+        const dateText = this.cleanText($el.find('.date, time, .event-date, .show-date').first().text());
+        const link = $el.find('a').attr('href') || $el.closest('a').attr('href') || '';
+
+        if (!title || title.length < 3) return;
+
+        const startAt = this.parseFtlDate(dateText);
+        events.push(this.buildFtlEvent({ name: title, startDate: startAt, url: link.startsWith('http') ? link : link ? `https://www.improvftl.com${link}` : undefined }));
+      } catch { /* skip */ }
+    });
+
+    if (events.length > 0) {
+      this.log(`Found ${events.length} FTL Improv events via HTML selectors`);
+      return events;
+    }
+
+    // Strategy 3: Find links containing "/event/" or "/show/"
+    this.log('  HTML selectors returned 0 events, trying link-based parsing...');
+    const seen = new Set<string>();
+    $('a[href*="/event/"], a[href*="/show/"]').each((_, el) => {
+      try {
+        const $el = $(el);
+        const title = this.cleanText($el.text());
+        const link = $el.attr('href') || '';
+
+        if (!title || title.length < 3 || seen.has(title.toLowerCase())) return;
+        seen.add(title.toLowerCase());
+
+        const $parent = $el.closest('div, li, article, section');
+        const dateText = this.cleanText($parent.find('.date, time, [class*="date"]').first().text());
+        const startAt = this.parseFtlDate(dateText);
+        events.push(this.buildFtlEvent({ name: title, startDate: startAt, url: link.startsWith('http') ? link : `https://www.improvftl.com${link}` }));
+      } catch { /* skip */ }
+    });
+
     this.log(`Found ${events.length} FTL Improv events`);
     return events;
+  }
+
+  private parseFtlDate(text: string): string {
+    if (!text) return this.defaultFtlDate();
+    const match = text.match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+(\d{1,2})/i);
+    if (match) {
+      const monthMap: Record<string, string> = {
+        jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
+        jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12'
+      };
+      const month = monthMap[match[1].toLowerCase().slice(0, 3)];
+      const day = match[2].padStart(2, '0');
+      const year = new Date().getFullYear();
+      return `${year}-${month}-${day}T20:00:00`;
+    }
+    return this.defaultFtlDate();
+  }
+
+  private defaultFtlDate(): string {
+    const d = new Date();
+    d.setDate(d.getDate() + 7);
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}T20:00:00`;
+  }
+
+  private buildFtlEvent(evt: any): RawEvent {
+    return {
+      title: this.cleanText(evt.name),
+      startAt: evt.startDate?.replace('Z', ''),
+      venueName: 'Fort Lauderdale Improv',
+      address: '5700 Seminole Way, Hollywood, FL 33314',
+      neighborhood: 'Hollywood',
+      city: 'Fort Lauderdale',
+      description: `${evt.name} at Fort Lauderdale Improv. 21+ with two-drink minimum.`,
+      category: 'Comedy',
+      tags: ['comedy', 'live-entertainment'],
+      priceAmount: evt.offers?.price,
+      isOutdoor: false,
+      sourceName: this.name,
+      sourceUrl: evt.url || this.url,
+    };
   }
 }
 
@@ -204,6 +397,9 @@ export class BrowardCenterScraper extends BaseScraper {
 
     try {
       const $ = await this.fetchHTML(this.baseUrl);
+      const html = $.html();
+      this.log(`  HTML length: ${html.length} chars`);
+      this.log(`  First 500 chars: ${html.slice(0, 500).replace(/\n/g, ' ')}`);
 
       // Strategy 1: Parse m-event-* class pattern elements
       $('[class*="m-event"]').each((_, el) => {
@@ -315,6 +511,70 @@ export class BrowardCenterScraper extends BaseScraper {
             });
           } catch { /* skip */ }
         });
+      }
+
+      // Strategy 4: JSON-LD structured data (server-rendered pages may include it)
+      if (events.length === 0) {
+        this.log('  Trying JSON-LD structured data...');
+        $('script[type="application/ld+json"]').each((_, el) => {
+          try {
+            const data = JSON.parse($(el).html() || '');
+            const items: any[] = [];
+
+            // Direct Event
+            if (data['@type'] === 'Event') items.push(data);
+            // ItemList
+            if (data['@type'] === 'ItemList' && data.itemListElement) {
+              for (const li of data.itemListElement) {
+                const item = li.item || li;
+                if (item['@type'] === 'Event') items.push(item);
+              }
+            }
+            // @graph array
+            if (data['@graph'] && Array.isArray(data['@graph'])) {
+              for (const item of data['@graph']) {
+                if (item['@type'] === 'Event') items.push(item);
+              }
+            }
+            // Top-level array
+            if (Array.isArray(data)) {
+              for (const item of data) {
+                if (item['@type'] === 'Event') items.push(item);
+              }
+            }
+
+            for (const item of items) {
+              if (!item.name || seen.has(item.name.toLowerCase())) continue;
+              seen.add(item.name.toLowerCase());
+
+              const venue = item.location?.name || 'Broward Center';
+              const startAt = item.startDate
+                ? item.startDate.replace('Z', '').replace(/\.\d+$/, '')
+                : this.parseEventDate('');
+
+              events.push({
+                title: this.cleanText(item.name),
+                startAt,
+                venueName: this.normalizeVenue(venue),
+                address: item.location?.address?.streetAddress || this.getVenueAddress(venue),
+                neighborhood: 'Downtown FLL',
+                lat: 26.1185,
+                lng: -80.1439,
+                city: 'Fort Lauderdale',
+                description: item.description || `${item.name} at ${venue}.`,
+                category: this.categorize(item.name, item.description || ''),
+                tags: ['live-entertainment', 'performing-arts'],
+                isOutdoor: false,
+                sourceName: this.name,
+                sourceUrl: item.url || this.baseUrl,
+                image: typeof item.image === 'string' ? item.image : item.image?.url,
+              });
+            }
+          } catch { /* skip */ }
+        });
+        if (events.length > 0) {
+          this.log(`  Found ${events.length} events via JSON-LD`);
+        }
       }
     } catch (e) {
       this.logError('Failed to scrape Broward Center', e);

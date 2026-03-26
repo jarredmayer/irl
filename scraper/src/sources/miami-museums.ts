@@ -21,6 +21,7 @@ import * as cheerio from 'cheerio';
  */
 export class PAMMScraper extends BaseScraper {
   private readonly baseUrl = 'https://www.pamm.org';
+  private readonly fallbackBaseUrl = 'https://pamm.org';
 
   constructor() {
     super('PAMM', { weight: 1.5, rateLimit: 2000 });
@@ -51,17 +52,22 @@ export class PAMMScraper extends BaseScraper {
     const events: RawEvent[] = [];
     const now = new Date();
 
-    // Try multiple event page URLs
+    // Try multiple event page URLs (www + non-www fallbacks for 302 redirect handling)
     const eventsUrls = [
       `${this.baseUrl}/en/events/`,
       `${this.baseUrl}/en/events`,
       `${this.baseUrl}/programs-and-events`,
       `${this.baseUrl}/en/calendar`,
+      `${this.fallbackBaseUrl}/en/events/`,
+      `${this.fallbackBaseUrl}/en/events`,
+      `${this.fallbackBaseUrl}/programs-and-events`,
+      `${this.fallbackBaseUrl}/en/calendar`,
     ];
 
     for (const eventsUrl of eventsUrls) {
       try {
         const $ = await this.fetchHTMLNativeRetry(eventsUrl, 2, 20_000);
+        this.log(`  Loaded ${eventsUrl} (HTML length: ${$.html()?.length ?? 0})`);
 
         // Try JSON-LD first
         const jsonLdEvents = this.parseJsonLd($, now);
@@ -147,6 +153,32 @@ export class PAMMScraper extends BaseScraper {
           } catch { /* skip individual event page failures */ }
         }
 
+        // Fallback: scrape event-like <a> links and fetch individual pages for JSON-LD
+        if (events.length === 0 && eventLinks.length === 0) {
+          const genericEventLinks: string[] = [];
+          $('a').each((_i, el) => {
+            const href = $(el).attr('href') || '';
+            if (/\/(event|program|exhibition)s?\b/i.test(href) && href !== eventsUrl) {
+              const fullUrl = href.startsWith('http') ? href : `${this.baseUrl}${href}`;
+              if (!genericEventLinks.includes(fullUrl) && !eventsUrls.includes(fullUrl)) {
+                genericEventLinks.push(fullUrl);
+              }
+            }
+          });
+          this.log(`  Found ${genericEventLinks.length} event-like links on ${eventsUrl}`);
+
+          for (const linkUrl of genericEventLinks.slice(0, 8)) {
+            try {
+              const $page = await this.fetchHTMLNativeRetry(linkUrl, 1, 10_000);
+              const jsonLdEvents = this.parseJsonLd($page, now);
+              if (jsonLdEvents.length > 0) {
+                events.push(...jsonLdEvents);
+              }
+              await this.sleep(1000);
+            } catch { /* skip */ }
+          }
+        }
+
         // Fallback: parse HTML event listings
         if (events.length === 0) {
           $('.event-item, .program-item, .views-row').each((_i, el) => {
@@ -197,7 +229,13 @@ export class PAMMScraper extends BaseScraper {
     const now = new Date();
 
     try {
-      const $ = await this.fetchHTMLNativeRetry(`${this.baseUrl}/exhibitions`, 2, 15_000);
+      let $: cheerio.CheerioAPI;
+      try {
+        $ = await this.fetchHTMLNativeRetry(`${this.baseUrl}/exhibitions`, 2, 15_000);
+      } catch {
+        $ = await this.fetchHTMLNativeRetry(`${this.fallbackBaseUrl}/exhibitions`, 2, 15_000);
+      }
+      this.log(`  Loaded exhibitions page (HTML length: ${$.html()?.length ?? 0})`);
 
       $('.exhibition-item, .views-row').each((_i, el) => {
         const $el = $(el);
@@ -363,6 +401,7 @@ export class ICAMiamiScraper extends BaseScraper {
       for (const url of urls) {
         try {
           const $ = await this.fetchHTMLNativeRetry(url, 2, 15_000);
+          this.log(`  Loaded ${url} (HTML length: ${$.html()?.length ?? 0})`);
 
           // Parse JSON-LD
           $('script[type="application/ld+json"]').each((_i, el) => {
@@ -406,6 +445,44 @@ export class ICAMiamiScraper extends BaseScraper {
               image: image?.startsWith('http') ? image : image ? `${this.baseUrl}${image}` : undefined,
             }));
           });
+
+          // Fallback: scrape event-like <a> links for JSON-LD Event data
+          if (events.length === 0) {
+            const eventLinks: string[] = [];
+            $('a').each((_i, el) => {
+              const href = $(el).attr('href') || '';
+              if (/\/(event|program|exhibition)s?\b/i.test(href)) {
+                const fullUrl = href.startsWith('http') ? href : `${this.baseUrl}${href}`;
+                if (!eventLinks.includes(fullUrl) && !urls.includes(fullUrl)) {
+                  eventLinks.push(fullUrl);
+                }
+              }
+            });
+            this.log(`  Found ${eventLinks.length} event-like links on ${url}`);
+
+            for (const linkUrl of eventLinks.slice(0, 8)) {
+              try {
+                const $page = await this.fetchHTMLNativeRetry(linkUrl, 1, 10_000);
+                $page('script[type="application/ld+json"]').each((_i, el) => {
+                  try {
+                    const data = JSON.parse($page(el).html() || '');
+                    const items = Array.isArray(data) ? data : [data];
+                    for (const item of items) {
+                      if (item['@type'] !== 'Event' || !item.startDate || new Date(item.startDate) < now) continue;
+                      events.push(this.createEvent(item.name, item.startDate, {
+                        endAt: item.endDate,
+                        description: item.description,
+                        sourceUrl: item.url || linkUrl,
+                        image: item.image?.url || item.image,
+                        priceLabel: item.isAccessibleForFree ? 'Free' : undefined,
+                      }));
+                    }
+                  } catch { /* skip */ }
+                });
+                await this.sleep(1000);
+              } catch { /* skip */ }
+            }
+          }
 
           if (events.length > 0) break;
         } catch { continue; }
@@ -486,6 +563,7 @@ export class ICAMiamiScraper extends BaseScraper {
  */
 export class WolfsonianScraper extends BaseScraper {
   private readonly baseUrl = 'https://wolfsonian.org';
+  private readonly fallbackBaseUrl = 'https://www.wolfsonian.org';
 
   constructor() {
     super('Wolfsonian', { weight: 1.4, rateLimit: 2000 });
@@ -505,11 +583,15 @@ export class WolfsonianScraper extends BaseScraper {
         `${this.baseUrl}/events`,
         `${this.baseUrl}/calendar`,
         `${this.baseUrl}/programs`,
+        `${this.fallbackBaseUrl}/whats-on/events/`,
+        `${this.fallbackBaseUrl}/events`,
+        `${this.fallbackBaseUrl}/programs`,
       ];
 
       for (const url of urls) {
         try {
           const $ = await this.fetchHTMLNativeRetry(url, 2, 15_000);
+          this.log(`  Loaded ${url} (HTML length: ${$.html()?.length ?? 0})`);
 
           // Parse JSON-LD
           $('script[type="application/ld+json"]').each((_i, el) => {
@@ -701,6 +783,7 @@ export class LittleHaitiCulturalScraper extends BaseScraper {
       for (const url of urls) {
         try {
           const $ = await this.fetchHTMLNativeRetry(url, 2, 15_000);
+          this.log(`  Loaded ${url} (HTML length: ${$.html()?.length ?? 0})`);
 
           // Parse JSON-LD
           $('script[type="application/ld+json"]').each((_i, el) => {
@@ -769,6 +852,56 @@ export class LittleHaitiCulturalScraper extends BaseScraper {
             });
           });
 
+          // Fallback: scrape event-like <a> links for JSON-LD Event data
+          if (events.length === 0) {
+            const eventLinks: string[] = [];
+            $('a').each((_i, el) => {
+              const href = $(el).attr('href') || '';
+              if (/\/(event|program|exhibition)s?\b/i.test(href)) {
+                const fullUrl = href.startsWith('http') ? href : `${this.baseUrl}${href}`;
+                if (!eventLinks.includes(fullUrl) && !urls.includes(fullUrl)) {
+                  eventLinks.push(fullUrl);
+                }
+              }
+            });
+            this.log(`  Found ${eventLinks.length} event-like links on ${url}`);
+
+            for (const linkUrl of eventLinks.slice(0, 8)) {
+              try {
+                const $page = await this.fetchHTMLNativeRetry(linkUrl, 1, 10_000);
+                $page('script[type="application/ld+json"]').each((_i, el) => {
+                  try {
+                    const data = JSON.parse($page(el).html() || '');
+                    const items = Array.isArray(data) ? data : [data];
+                    for (const item of items) {
+                      if (item['@type'] !== 'Event' || !item.startDate || new Date(item.startDate) < now) continue;
+                      events.push({
+                        title: item.name || '',
+                        startAt: item.startDate.replace('Z', '').replace(/\.\d+$/, ''),
+                        endAt: item.endDate?.replace('Z', '').replace(/\.\d+$/, ''),
+                        venueName: 'Little Haiti Cultural Complex',
+                        address: '212-260 NE 59th Terrace, Miami, FL 33137',
+                        neighborhood: 'Little Haiti',
+                        lat: 25.8301,
+                        lng: -80.1936,
+                        city: 'Miami',
+                        tags: ['community', 'latin', 'local-favorite'],
+                        category: 'Culture',
+                        isOutdoor: false,
+                        description: item.description || `${item.name} at Little Haiti Cultural Complex`,
+                        sourceUrl: item.url || linkUrl,
+                        sourceName: this.name,
+                        image: item.image?.url || item.image || undefined,
+                        priceLabel: item.isAccessibleForFree ? 'Free' : '$',
+                      });
+                    }
+                  } catch { /* skip */ }
+                });
+                await this.sleep(1000);
+              } catch { /* skip */ }
+            }
+          }
+
           if (events.length > 0) break;
         } catch { continue; }
       }
@@ -830,6 +963,7 @@ export class WynwoodBIDScraper extends BaseScraper {
       for (const url of urls) {
         try {
           const $ = await this.fetchHTMLNativeRetry(url, 2, 15_000);
+          this.log(`  Loaded ${url} (HTML length: ${$.html()?.length ?? 0})`);
 
           // Parse JSON-LD
           $('script[type="application/ld+json"]').each((_i, el) => {
@@ -900,6 +1034,58 @@ export class WynwoodBIDScraper extends BaseScraper {
               image: image?.startsWith('http') ? image : undefined,
             });
           });
+
+          // Fallback: scrape event-like <a> links for JSON-LD Event data
+          if (events.length === 0) {
+            const eventLinks: string[] = [];
+            $('a').each((_i, el) => {
+              const href = $(el).attr('href') || '';
+              if (/\/(event|program|exhibition)s?\b/i.test(href)) {
+                const fullUrl = href.startsWith('http') ? href : `${this.baseUrl}${href}`;
+                if (!eventLinks.includes(fullUrl) && !urls.includes(fullUrl)) {
+                  eventLinks.push(fullUrl);
+                }
+              }
+            });
+            this.log(`  Found ${eventLinks.length} event-like links on ${url}`);
+
+            for (const linkUrl of eventLinks.slice(0, 8)) {
+              try {
+                const $page = await this.fetchHTMLNativeRetry(linkUrl, 1, 10_000);
+                $page('script[type="application/ld+json"]').each((_i, el) => {
+                  try {
+                    const data = JSON.parse($page(el).html() || '');
+                    const items = Array.isArray(data) ? data : [data];
+                    for (const item of items) {
+                      if (item['@type'] !== 'Event' || !item.startDate || new Date(item.startDate) < now) continue;
+                      const venueName = item.location?.name || 'Wynwood';
+                      const address = item.location?.address?.streetAddress || 'Wynwood, Miami, FL';
+                      events.push({
+                        title: item.name || '',
+                        startAt: item.startDate.replace('Z', '').replace(/\.\d+$/, ''),
+                        endAt: item.endDate?.replace('Z', '').replace(/\.\d+$/, ''),
+                        venueName,
+                        address,
+                        neighborhood: 'Wynwood',
+                        lat: item.location?.geo?.latitude || 25.8005,
+                        lng: item.location?.geo?.longitude || -80.1992,
+                        city: 'Miami',
+                        tags: ['art-gallery', 'community', 'local-favorite'],
+                        category: 'Art',
+                        isOutdoor: this.isOutdoor(item.name || '', item.description || '', venueName),
+                        description: item.description || `${item.name} in Wynwood`,
+                        sourceUrl: item.url || linkUrl,
+                        sourceName: this.name,
+                        image: item.image?.url || item.image || undefined,
+                        priceLabel: item.isAccessibleForFree ? 'Free' : '$',
+                      });
+                    }
+                  } catch { /* skip */ }
+                });
+                await this.sleep(1000);
+              } catch { /* skip */ }
+            }
+          }
 
           if (events.length > 0) break;
         } catch { continue; }
