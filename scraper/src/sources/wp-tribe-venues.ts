@@ -62,35 +62,52 @@ export class HistoryMiamiScraper extends BaseScraper {
     let data: TribeApiResponse | undefined;
     for (const url of urls) {
       try {
-        // Try undici fetch first (handles DNS/TLS better in CI), fall back to native https
+        // Pre-resolve DNS for CI reliability, then try fetch with fallback to native https
         let raw: any;
         try {
-          const res = await fetch(url, {
-            signal: AbortSignal.timeout(10_000),
-            headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+          const parsed = new URL(url);
+          let fetchUrl = url;
+          const extraHeaders: Record<string, string> = {};
+          try {
+            const resolvedHost = await this.resolveWithFallback(parsed.hostname);
+            if (resolvedHost) {
+              fetchUrl = url.replace(parsed.hostname, resolvedHost);
+              extraHeaders['Host'] = parsed.hostname;
+            }
+          } catch { /* proceed with original */ }
+
+          const res = await fetch(fetchUrl, {
+            signal: AbortSignal.timeout(20_000),
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+              ...extraHeaders,
+            },
           });
           raw = await res.json();
         } catch (fetchErr) {
           this.log(`  fetch() failed for ${url}: ${fetchErr instanceof Error ? fetchErr.message : fetchErr}, trying native...`);
-          raw = await this.fetchJSONNativeGet<any>(url, 15_000);
+          raw = await this.fetchJSONNativeGet<any>(url, 25_000);
         }
         this.log(`  Response keys: ${Object.keys(raw || {}).join(', ')}`);
 
-        // Handle both standard Tribe API response and alternate structures
-        if (raw?.events && Array.isArray(raw.events)) {
-          data = raw as TribeApiResponse;
-        } else if (Array.isArray(raw)) {
+        // Handle both standard Tribe API response and alternate structures.
+        // IMPORTANT: Use the actual events array length, NOT the total/total_events fields,
+        // which some Tribe installs report as 0 even when events are present.
+        if (raw?.events && Array.isArray(raw.events) && raw.events.length > 0) {
+          data = { events: raw.events, total: raw.events.length, total_pages: raw.total_pages || 1 };
+        } else if (Array.isArray(raw) && raw.length > 0) {
           // Some Tribe installs return a bare array
           data = { events: raw, total: raw.length, total_pages: 1 };
-        } else if (raw?.data && Array.isArray(raw.data)) {
+        } else if (raw?.data && Array.isArray(raw.data) && raw.data.length > 0) {
           data = { events: raw.data, total: raw.data.length, total_pages: 1 };
         }
 
         if (data) {
-          this.log(`  Got ${data.events.length} events from API (total: ${data.total})`);
+          this.log(`  Got ${data.events.length} events from API (array length, ignoring total_events field)`);
           break;
         } else {
-          this.log(`  Unexpected response format from ${url}`);
+          this.log(`  Unexpected response format or empty events from ${url}`);
+          this.log(`  events field: ${typeof raw?.events}, length: ${raw?.events?.length ?? 'N/A'}, total: ${raw?.total ?? 'N/A'}, total_events: ${raw?.total_events ?? 'N/A'}`);
         }
       } catch (e) {
         this.log(`  ${url} failed: ${e instanceof Error ? e.message : String(e)}`);

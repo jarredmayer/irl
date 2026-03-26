@@ -573,11 +573,18 @@ export abstract class BaseScraper {
    * POST JSON using native https module and return parsed JSON response.
    * Use for APIs (like Algolia) that fail with undici-based fetch.
    */
-  protected fetchJSONNative<T>(url: string, body: string, headers: Record<string, string> = {}, timeoutMs = 15_000): Promise<T> {
+  protected async fetchJSONNative<T>(url: string, body: string, headers: Record<string, string> = {}, timeoutMs = 15_000): Promise<T> {
+    const parsed = new URL(url);
+
+    // Pre-resolve DNS with fallback to public resolvers (fixes EAI_AGAIN in CI)
+    let resolvedHost: string | null = null;
+    try {
+      resolvedHost = await this.resolveWithFallback(parsed.hostname);
+    } catch { /* proceed with default resolution */ }
+
     return new Promise((resolve, reject) => {
-      const parsed = new URL(url);
       const options: https.RequestOptions = {
-        hostname: parsed.hostname,
+        hostname: resolvedHost || parsed.hostname,
         port: parsed.port || 443,
         path: parsed.pathname + parsed.search,
         method: 'POST',
@@ -585,10 +592,12 @@ export abstract class BaseScraper {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
           'Content-Length': Buffer.byteLength(body),
+          Host: parsed.hostname,
           ...headers,
         },
         rejectUnauthorized: true,
         minVersion: 'TLSv1.2' as any,
+        servername: parsed.hostname,
       };
 
       const req = https.request(options, (res) => {
@@ -625,15 +634,28 @@ export abstract class BaseScraper {
    * Automatically handles compression, redirects, and timeouts.
    */
   protected async fetchHTMLFetch(url: string, timeoutMs = 15_000): Promise<cheerio.CheerioAPI> {
+    // Pre-resolve DNS with fallback (fixes EAI_AGAIN / connect timeouts in CI)
+    const parsed = new URL(url);
+    let fetchUrl = url;
+    const extraHeaders: Record<string, string> = {};
+    try {
+      const resolvedHost = await this.resolveWithFallback(parsed.hostname);
+      if (resolvedHost) {
+        fetchUrl = url.replace(parsed.hostname, resolvedHost);
+        extraHeaders['Host'] = parsed.hostname;
+      }
+    } catch { /* proceed with original URL */ }
+
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
     try {
-      const res = await fetch(url, {
+      const res = await fetch(fetchUrl, {
         signal: controller.signal,
         headers: {
           'User-Agent': this.userAgent,
           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
           'Accept-Language': 'en-US,en;q=0.5',
+          ...extraHeaders,
         },
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
@@ -647,18 +669,32 @@ export abstract class BaseScraper {
   /**
    * POST JSON using Node.js built-in fetch (undici).
    * More reliable than raw https.request for API calls.
+   * Pre-resolves DNS with fallback to public resolvers for CI reliability.
    */
   protected async fetchJSONFetch<T>(url: string, body: string, headers: Record<string, string> = {}, timeoutMs = 15_000): Promise<T> {
+    // Pre-resolve DNS with fallback (fixes EAI_AGAIN / connect timeouts in CI)
+    const parsed = new URL(url);
+    let fetchUrl = url;
+    const extraHeaders: Record<string, string> = {};
+    try {
+      const resolvedHost = await this.resolveWithFallback(parsed.hostname);
+      if (resolvedHost) {
+        fetchUrl = url.replace(parsed.hostname, resolvedHost);
+        extraHeaders['Host'] = parsed.hostname;
+      }
+    } catch { /* proceed with original URL */ }
+
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
     try {
-      const res = await fetch(url, {
+      const res = await fetch(fetchUrl, {
         method: 'POST',
         signal: controller.signal,
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
           'User-Agent': this.userAgent,
+          ...extraHeaders,
           ...headers,
         },
         body,

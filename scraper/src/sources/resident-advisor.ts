@@ -98,6 +98,7 @@ export class ResidentAdvisorScraper extends BaseScraper {
     const today = new Date();
     const dateFrom = format(today, 'yyyy-MM-dd');
     const dateTo = format(addDays(today, 30), 'yyyy-MM-dd');
+    this.log(`  Date range: ${dateFrom} to ${dateTo}, area: ${MIAMI_AREA_ID}`);
 
     const allEvents: RawEvent[] = [];
     const pageSize = 100;
@@ -139,19 +140,23 @@ export class ResidentAdvisorScraper extends BaseScraper {
 
       // Try undici fetch first (handles DNS/TLS better in CI), then native https as fallback
       try {
-        this.log(`  Requesting page ${page} (fetch)...`);
-        data = await this.fetchJSONFetch<typeof data>(RA_GRAPHQL, body, raHeaders, 15_000);
+        this.log(`  Requesting page ${page} (fetch, timeout 30s)...`);
+        data = await this.fetchJSONFetch<typeof data>(RA_GRAPHQL, body, raHeaders, 30_000);
         this.log(`  Got response, totalResults: ${data.data?.eventListings?.totalResults}`);
       } catch (e) {
         this.logError(`fetch() failed (page ${page})`, e);
         try {
-          this.log('  Retrying with native https...');
-          data = await this.fetchJSONNative<typeof data>(RA_GRAPHQL, body, raHeaders);
+          this.log('  Retrying with native https (timeout 30s)...');
+          data = await this.fetchJSONNative<typeof data>(RA_GRAPHQL, body, raHeaders, 30_000);
+          this.log(`  Native https succeeded, totalResults: ${data.data?.eventListings?.totalResults}`);
         } catch (e2) {
           this.logError(`Native https also failed`, e2);
           break;
         }
       }
+
+      // Debug: log the raw response shape
+      this.log(`  Response shape: errors=${!!data.errors}, data=${!!data.data}, eventListings=${!!data.data?.eventListings}`);
 
       if (data.errors?.length) {
         this.logError('GraphQL errors', data.errors.map((e) => e.message).join(', '));
@@ -159,23 +164,40 @@ export class ResidentAdvisorScraper extends BaseScraper {
       }
 
       const listing = data.data?.eventListings;
-      if (!listing) break;
+      if (!listing) {
+        this.log(`  WARNING: No eventListings in response. data keys: ${Object.keys(data.data || {}).join(', ') || 'none'}`);
+        break;
+      }
 
       totalResults = listing.totalResults;
+      const items = listing.data || [];
 
-      this.log(`  totalResults: ${totalResults}, data items: ${listing.data?.length || 0}`);
+      this.log(`  totalResults: ${totalResults}, data items: ${items.length}`);
 
       if (totalResults === 0 && page === 1) {
         this.log('RA returned totalResults=0 — query variables may need updating. dateFrom=' + dateFrom + ' dateTo=' + dateTo + ' area=' + MIAMI_AREA_ID);
         break;
       }
 
-      for (const { event } of listing.data) {
+      let mappedCount = 0;
+      let skippedNoVenue = 0;
+      let skippedNoSignals = 0;
+
+      for (const { event } of items) {
         const mapped = this.mapEvent(event);
-        if (mapped) allEvents.push(mapped);
+        if (mapped) {
+          allEvents.push(mapped);
+          mappedCount++;
+        } else if (!event.venue) {
+          skippedNoVenue++;
+        } else {
+          skippedNoSignals++;
+        }
       }
 
-      if (listing.data.length < pageSize) break;
+      this.log(`  Page ${page}: ${mappedCount} mapped, ${skippedNoVenue} skipped (no venue), ${skippedNoSignals} skipped (no signals)`);
+
+      if (items.length < pageSize) break;
       page++;
     }
 

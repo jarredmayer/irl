@@ -20,6 +20,8 @@ import * as cheerio from 'cheerio';
  * Events are in JSON-LD structured data or can be scraped from HTML.
  */
 export class PAMMScraper extends BaseScraper {
+  // Use www.pamm.org — pamm.org returns 301 redirect to www.pamm.org
+  // and some fetch implementations don't follow redirects reliably
   private readonly baseUrl = 'https://www.pamm.org';
 
   constructor() {
@@ -51,17 +53,24 @@ export class PAMMScraper extends BaseScraper {
     const events: RawEvent[] = [];
     const now = new Date();
 
-    // Try multiple event page URLs
+    // Try event page URLs — /en/events/ is the confirmed working path.
+    // /programs-and-events and /en/calendar return 404 as of 2026-03.
     const eventsUrls = [
       `${this.baseUrl}/en/events/`,
       `${this.baseUrl}/en/events`,
-      `${this.baseUrl}/programs-and-events`,
-      `${this.baseUrl}/en/calendar`,
     ];
 
     for (const eventsUrl of eventsUrls) {
       try {
-        const $ = await this.fetchHTMLNativeRetry(eventsUrl, 2, 20_000);
+        this.log(`  Trying ${eventsUrl}...`);
+        // PAMM pages are large (~4MB) — use generous timeout and try fetch first (handles compression)
+        let $: ReturnType<typeof import('cheerio').load>;
+        try {
+          $ = await this.fetchHTMLFetch(eventsUrl, 45_000);
+        } catch (e) {
+          this.log(`  fetch() failed: ${e instanceof Error ? e.message : e}, trying native https...`);
+          $ = await this.fetchHTMLNativeRetry(eventsUrl, 2, 45_000);
+        }
 
         // Try JSON-LD first
         const jsonLdEvents = this.parseJsonLd($, now);
@@ -88,7 +97,12 @@ export class PAMMScraper extends BaseScraper {
         // Fetch each event detail page (max 10)
         for (const eventUrl of eventLinks.slice(0, 10)) {
           try {
-            const $event = await this.fetchHTMLNativeRetry(eventUrl, 2, 10_000);
+            let $event: ReturnType<typeof import('cheerio').load>;
+            try {
+              $event = await this.fetchHTMLFetch(eventUrl, 20_000);
+            } catch {
+              $event = await this.fetchHTMLNativeRetry(eventUrl, 2, 20_000);
+            }
 
             const title = this.cleanText(
               $event('meta[property="og:title"]').attr('content') || $event('h1').first().text()
