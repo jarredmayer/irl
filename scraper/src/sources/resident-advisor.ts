@@ -98,33 +98,12 @@ export class ResidentAdvisorScraper extends BaseScraper {
     const today = new Date();
     const dateFrom = format(today, 'yyyy-MM-dd');
     const dateTo = format(addDays(today, 30), 'yyyy-MM-dd');
-
     this.log(`  Date range: ${dateFrom} to ${dateTo}, area: ${MIAMI_AREA_ID}`);
 
     const allEvents: RawEvent[] = [];
     const pageSize = 100;
     let page = 1;
     let totalResults = Infinity;
-
-    type RAResponse = {
-      data?: {
-        eventListings?: {
-          totalResults: number;
-          data: { listingDate: string; event: RAEvent }[];
-        };
-      };
-      errors?: { message: string }[];
-    };
-
-    const raHeaders = {
-      'Content-Type': 'application/json',
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      Accept: 'application/json',
-      'Accept-Language': 'en-US,en;q=0.9',
-      Referer: 'https://ra.co/events/us/miami',
-      Origin: 'https://ra.co',
-      'x-requested-with': 'XMLHttpRequest',
-    };
 
     while (allEvents.length < totalResults) {
       const body = JSON.stringify({
@@ -139,37 +118,45 @@ export class ResidentAdvisorScraper extends BaseScraper {
         },
       });
 
-      this.log(`  [DEBUG] Full query body (page ${page}): ${body}`);
+      let data: {
+        data?: {
+          eventListings?: {
+            totalResults: number;
+            data: { listingDate: string; event: RAEvent }[];
+          };
+        };
+        errors?: { message: string }[];
+      };
 
-      let data: RAResponse;
+      const raHeaders = {
+        'Content-Type': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        Accept: 'application/json',
+        'Accept-Language': 'en-US,en;q=0.9',
+        Referer: 'https://ra.co/events/us/miami',
+        Origin: 'https://ra.co',
+        'x-requested-with': 'XMLHttpRequest',
+      };
 
       // Try undici fetch first (handles DNS/TLS better in CI), then native https as fallback
       try {
-        this.log(`  Requesting page ${page} (fetch)...`);
-        data = await this.fetchJSONFetch<RAResponse>(RA_GRAPHQL, body, raHeaders, 15_000);
-        const responseStr = JSON.stringify(data);
-        this.log(`  [DEBUG] Response body length: ${responseStr.length} chars`);
-        this.log(`  [DEBUG] Response top-level keys: ${Object.keys(data).join(', ')}`);
-        if (data.data) {
-          this.log(`  [DEBUG] data keys: ${Object.keys(data.data).join(', ')}`);
-          if (data.data.eventListings) {
-            this.log(`  [DEBUG] eventListings keys: ${Object.keys(data.data.eventListings).join(', ')}`);
-          }
-        }
+        this.log(`  Requesting page ${page} (fetch, timeout 30s)...`);
+        data = await this.fetchJSONFetch<typeof data>(RA_GRAPHQL, body, raHeaders, 30_000);
         this.log(`  Got response, totalResults: ${data.data?.eventListings?.totalResults}`);
       } catch (e) {
         this.logError(`fetch() failed (page ${page})`, e);
         try {
-          this.log('  Retrying with native https...');
-          data = await this.fetchJSONNative<RAResponse>(RA_GRAPHQL, body, raHeaders);
-          const responseStr = JSON.stringify(data);
-          this.log(`  [DEBUG] Native response body length: ${responseStr.length} chars`);
-          this.log(`  [DEBUG] Native response top-level keys: ${Object.keys(data).join(', ')}`);
+          this.log('  Retrying with native https (timeout 30s)...');
+          data = await this.fetchJSONNative<typeof data>(RA_GRAPHQL, body, raHeaders, 30_000);
+          this.log(`  Native https succeeded, totalResults: ${data.data?.eventListings?.totalResults}`);
         } catch (e2) {
           this.logError(`Native https also failed`, e2);
           break;
         }
       }
+
+      // Debug: log the raw response shape
+      this.log(`  Response shape: errors=${!!data.errors}, data=${!!data.data}, eventListings=${!!data.data?.eventListings}`);
 
       if (data.errors?.length) {
         this.logError('GraphQL errors', data.errors.map((e) => e.message).join(', '));
@@ -178,31 +165,39 @@ export class ResidentAdvisorScraper extends BaseScraper {
 
       const listing = data.data?.eventListings;
       if (!listing) {
-        this.log(`  [DEBUG] No eventListings in response. data.data = ${JSON.stringify(data.data)?.slice(0, 500)}`);
+        this.log(`  WARNING: No eventListings in response. data keys: ${Object.keys(data.data || {}).join(', ') || 'none'}`);
         break;
       }
 
       totalResults = listing.totalResults;
+      const items = listing.data || [];
 
-      this.log(`  totalResults: ${totalResults}, data items: ${listing.data?.length || 0}`);
+      this.log(`  totalResults: ${totalResults}, data items: ${items.length}`);
 
       if (totalResults === 0 && page === 1) {
-        this.log('  Named query returned totalResults=0 — trying confirmed simpler inline query as fallback...');
-        const fallbackEvents = await this.scrapeFallbackSimpleQuery(dateFrom, raHeaders);
-        if (fallbackEvents.length > 0) {
-          this.log(`  Fallback simple query found ${fallbackEvents.length} events`);
-          return fallbackEvents;
-        }
-        this.log('  Fallback simple query also returned 0 events');
+        this.log('RA returned totalResults=0 — query variables may need updating. dateFrom=' + dateFrom + ' dateTo=' + dateTo + ' area=' + MIAMI_AREA_ID);
         break;
       }
 
-      for (const { event } of listing.data) {
+      let mappedCount = 0;
+      let skippedNoVenue = 0;
+      let skippedNoSignals = 0;
+
+      for (const { event } of items) {
         const mapped = this.mapEvent(event);
-        if (mapped) allEvents.push(mapped);
+        if (mapped) {
+          allEvents.push(mapped);
+          mappedCount++;
+        } else if (!event.venue) {
+          skippedNoVenue++;
+        } else {
+          skippedNoSignals++;
+        }
       }
 
-      if (listing.data.length < pageSize) break;
+      this.log(`  Page ${page}: ${mappedCount} mapped, ${skippedNoVenue} skipped (no venue), ${skippedNoSignals} skipped (no signals)`);
+
+      if (items.length < pageSize) break;
       page++;
     }
 
@@ -218,75 +213,6 @@ export class ResidentAdvisorScraper extends BaseScraper {
 
     this.log(`Found ${allEvents.length} events`);
     return allEvents;
-  }
-
-  /**
-   * Fallback: use the confirmed working simpler inline GraphQL query format.
-   * This avoids named queries and variables — the query is fully self-contained.
-   */
-  private async scrapeFallbackSimpleQuery(dateFrom: string, headers: Record<string, string>): Promise<RawEvent[]> {
-    const simpleQuery = `{eventListings(filters:{areas:{eq:${MIAMI_AREA_ID}},listingDate:{gte:"${dateFrom}"}},pageSize:20){data{event{title date venue{name}}}}}`;
-    const body = JSON.stringify({ query: simpleQuery });
-
-    this.log(`  [DEBUG] Fallback simple query body: ${body}`);
-
-    type SimpleRAResponse = {
-      data?: {
-        eventListings?: {
-          data: { event: { title: string; date: string; venue: { name: string } | null } }[];
-        };
-      };
-      errors?: { message: string }[];
-    };
-
-    let data: SimpleRAResponse;
-    try {
-      data = await this.fetchJSONFetch<SimpleRAResponse>(RA_GRAPHQL, body, headers, 15_000);
-      const responseStr = JSON.stringify(data);
-      this.log(`  [DEBUG] Fallback response length: ${responseStr.length} chars`);
-      this.log(`  [DEBUG] Fallback response keys: ${Object.keys(data).join(', ')}`);
-    } catch (e) {
-      this.logError('Fallback fetch failed', e);
-      try {
-        data = await this.fetchJSONNative<SimpleRAResponse>(RA_GRAPHQL, body, headers);
-      } catch (e2) {
-        this.logError('Fallback native also failed', e2);
-        return [];
-      }
-    }
-
-    if (data.errors?.length) {
-      this.logError('Fallback GraphQL errors', data.errors.map((e) => e.message).join(', '));
-      return [];
-    }
-
-    const listings = data.data?.eventListings?.data;
-    if (!listings || listings.length === 0) {
-      this.log('  [DEBUG] Fallback returned no listings');
-      return [];
-    }
-
-    this.log(`  [DEBUG] Fallback returned ${listings.length} events`);
-
-    const events: RawEvent[] = [];
-    for (const { event } of listings) {
-      if (!event.title || !event.venue) continue;
-      events.push({
-        title: event.title,
-        startAt: event.date,
-        venueName: event.venue.name,
-        address: '',
-        neighborhood: 'Miami',
-        city: 'Miami',
-        tags: ['live-music'],
-        category: 'Music',
-        isOutdoor: false,
-        description: `${event.title} at ${event.venue.name}`,
-        sourceUrl: 'https://ra.co/events/us/miami',
-        sourceName: this.name,
-      });
-    }
-    return events;
   }
 
   /**

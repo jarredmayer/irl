@@ -120,14 +120,29 @@ export class DiceRealScraper extends BaseScraper {
       // fall back to native https if it fails
       let html: string;
       try {
-        const res = await fetch(this.browseUrl, {
-          signal: AbortSignal.timeout(15_000),
-          headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+        // Pre-resolve DNS for reliability in CI
+        const parsed = new URL(this.browseUrl);
+        let fetchUrl = this.browseUrl;
+        const extraHeaders: Record<string, string> = {};
+        try {
+          const resolvedHost = await this.resolveWithFallback(parsed.hostname);
+          if (resolvedHost) {
+            fetchUrl = this.browseUrl.replace(parsed.hostname, resolvedHost);
+            extraHeaders['Host'] = parsed.hostname;
+          }
+        } catch { /* proceed with original URL */ }
+
+        const res = await fetch(fetchUrl, {
+          signal: AbortSignal.timeout(30_000),
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            ...extraHeaders,
+          },
         });
         html = await res.text();
       } catch (e) {
         this.log(`fetch() failed: ${e instanceof Error ? e.message : e}, trying native https...`);
-        html = await this.fetchHTMLNative(this.browseUrl, 20_000);
+        html = await this.fetchHTMLNative(this.browseUrl, 30_000);
       }
       this.log(`  HTML length: ${html.length} chars`);
 
