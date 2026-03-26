@@ -146,6 +146,7 @@ export interface FilterState {
   dateRange: [string, string]; // [startDate, endDate] in YYYY-MM-DD format
   outdoorOnly: boolean; // Show only outdoor events
   sunnyOnly: boolean; // Show only outdoor events with clear weather
+  rainyOnly: boolean; // Show indoor events (good for rainy weather)
 }
 
 export type ViewMode = 'feed' | 'map';

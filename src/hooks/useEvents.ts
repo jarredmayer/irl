@@ -215,6 +215,18 @@ export function useEvents(options: UseEventsOptions) {
       });
     }
 
+    // Filter by rainy day (indoor events — good for bad weather)
+    if (filters.rainyOnly) {
+      events = events.filter((event) => {
+        const indoorCategories = ['Nightlife', 'Art', 'Food & Drink', 'Music', 'Comedy', 'Theater'];
+        const isIndoorEvent = event.indoorOutdoor === 'indoor' ||
+                              event.indoorOutdoor === 'both' ||
+                              !event.isOutdoor ||
+                              indoorCategories.includes(event.category);
+        return isIndoorEvent;
+      });
+    }
+
     return events;
   }, [rankedEvents, filters, location, preferences.radiusMiles, weather]);
 

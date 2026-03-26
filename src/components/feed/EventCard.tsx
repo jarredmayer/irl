@@ -4,6 +4,7 @@ import { isHappeningNow } from '../../utils/time';
 import { getCategorySwatchColor } from '../../utils/category';
 import { useSwipeGesture } from '../../hooks/useSwipeGesture';
 import { generateEventImage, getFallbackImage } from '../../agents/image-agent';
+import { getWeatherIcon } from '../../services/weather';
 import type { ScoredEvent, HourlyWeather, FollowType } from '../../types';
 import { format } from 'date-fns';
 import { toZonedTime } from 'date-fns-tz';
@@ -35,7 +36,7 @@ function formatDateDisplay(startAt: string, timezone: string): string {
 export function EventCard({
   event,
   compact = false,
-  weather: _weather,
+  weather,
   onFollow,
   isFollowingVenue = false,
   isFollowingSeries = false,
@@ -303,10 +304,17 @@ export function EventCard({
                 {event.neighborhood}
               </p>
 
-              {/* Date/time */}
-              <p className="text-[13px] font-medium text-ink-2 uppercase tracking-wide">
-                {formatDateDisplay(event.startAt, event.timezone)}
-              </p>
+              {/* Date/time + weather */}
+              <div className="flex items-center justify-between">
+                <p className="text-[13px] font-medium text-ink-2 uppercase tracking-wide">
+                  {formatDateDisplay(event.startAt, event.timezone)}
+                </p>
+                {weather && (
+                  <span className="text-[12px] text-ink-3 flex items-center gap-0.5 shrink-0 ml-2">
+                    {getWeatherIcon(weather.weatherCode)} {Math.round(weather.temperature)}°
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         </div>
