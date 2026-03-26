@@ -46,7 +46,6 @@ import { UXAgent } from './ux-agent.js';
 import { BrandingAgent } from './branding-agent.js';
 import { VenueImageFetcher } from './venue-image-fetcher.js';
 import { PMAgent } from './pm-agent.js';
-import { InstagramSourcesScraper } from '../sources/instagram-sources.js';
 import { hasAIEnabled as hasAIForVenueSearch } from '../ai.js';
 
 export { PMAgent } from './pm-agent.js';
@@ -170,8 +169,7 @@ export class OrchestratorAgent {
     //    Results cached in scraper/cache/venue-images.json (14-day TTL).
     //    Gracefully no-ops when offline (uses cached results from last real scrape).
     const imageFetcher = new VenueImageFetcher();
-    const igScraper = new InstagramSourcesScraper();
-    const fetchedVenueImages = await imageFetcher.buildImageMap(current, igScraper.getAccountMeta());
+    const fetchedVenueImages = await imageFetcher.buildImageMap(current);
 
     // ── BRANDING (always runs — deterministic, zero API cost) ─────────────────
     //    Waterfall: event.image → og:image cache → venue DB → vibe tag → category

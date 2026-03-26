@@ -164,6 +164,11 @@ export class EventbriteMiamiScraper extends BaseScraper {
       this.log(`Found ${rawEvents.length} Eventbrite Miami events`);
       return rawEvents;
     } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      if (msg.includes('blocked from this IP')) {
+        this.log('Eventbrite blocked from this IP — run locally');
+        return [];
+      }
       this.logError('Eventbrite scrape failed', e);
       return [];
     }
@@ -182,6 +187,10 @@ export class EventbriteMiamiScraper extends BaseScraper {
           signal: AbortSignal.timeout(10_000),
           headers: { 'User-Agent': this.userAgent },
         });
+        if (res.status === 403 || res.status === 405) {
+          this.log('Eventbrite blocked from this IP — run locally');
+          return null;
+        }
         html = await res.text();
       } catch {
         html = await this.fetchHTMLNative('https://www.eventbrite.com', 10_000);
@@ -235,6 +244,11 @@ export class EventbriteMiamiScraper extends BaseScraper {
       };
 
       const req = https.request(options, (res) => {
+        if (res.statusCode === 403 || res.statusCode === 405) {
+          req.destroy();
+          reject(new Error('Eventbrite blocked from this IP — run locally'));
+          return;
+        }
         if (res.statusCode && res.statusCode >= 400) {
           req.destroy();
           reject(new Error(`HTTP ${res.statusCode}`));
@@ -288,6 +302,11 @@ export class EventbriteMiamiScraper extends BaseScraper {
       };
 
       const req = https.request(options, (res) => {
+        if (res.statusCode === 403 || res.statusCode === 405) {
+          req.destroy();
+          reject(new Error('Eventbrite blocked from this IP — run locally'));
+          return;
+        }
         if (res.statusCode && res.statusCode >= 400) {
           req.destroy();
           reject(new Error(`HTTP ${res.statusCode}`));
@@ -336,6 +355,10 @@ export class EventbriteMiamiScraper extends BaseScraper {
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
           },
         });
+        if (res.status === 403 || res.status === 405) {
+          this.log('Eventbrite blocked from this IP — run locally');
+          return [];
+        }
         html = await res.text();
         $ = cheerio.load(html);
       } catch {

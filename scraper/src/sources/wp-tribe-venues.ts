@@ -87,7 +87,14 @@ export class HistoryMiamiScraper extends BaseScraper {
         }
 
         if (data) {
-          this.log(`  Got ${data.events.length} events from API (total: ${data.total})`);
+          this.log(`  Got ${data.events.length} events from API (reported total: ${data.total})`);
+          // NOTE: Some Tribe installs report total=0 even when events array has data.
+          // Trust the actual events array length, not the reported total.
+          if (data.events.length === 0 && data.total > 0) {
+            this.log(`  WARNING: total=${data.total} but events array is empty — API may be misconfigured`);
+          } else if (data.events.length > 0 && data.total === 0) {
+            this.log(`  NOTE: total=0 but events array has ${data.events.length} items — using events array (ignoring total)`);
+          }
           break;
         } else {
           this.log(`  Unexpected response format from ${url}`);

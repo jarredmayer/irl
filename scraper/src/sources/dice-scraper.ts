@@ -53,6 +53,65 @@ export class DiceRealScraper extends BaseScraper {
     super('Dice.fm Real', { weight: 1.5, rateLimit: 2000 });
   }
 
+  /**
+   * Recursively search an object for arrays that look like Dice events
+   * (items with `name` and `date_unix` fields).
+   */
+  private findEventsArray(obj: any, path = 'root', depth = 0): { path: string; events: DiceNextDataEvent[] } | null {
+    if (depth > 10 || obj == null || typeof obj !== 'object') return null;
+
+    if (Array.isArray(obj)) {
+      if (obj.length > 0 && obj[0]?.name && obj[0]?.date_unix) {
+        this.log(`  Found events array at path: ${path} (${obj.length} items)`);
+        return { path, events: obj };
+      }
+      return null;
+    }
+
+    for (const key of Object.keys(obj)) {
+      const result = this.findEventsArray(obj[key], `${path}.${key}`, depth + 1);
+      if (result) return result;
+    }
+    return null;
+  }
+
+  /**
+   * Extract events from parsed __NEXT_DATA__, trying known paths first
+   * then falling back to recursive search.
+   */
+  private extractEventsFromNextData(nextData: any): DiceNextDataEvent[] {
+    // Log structure for debugging
+    this.log(`  __NEXT_DATA__ top-level keys: ${Object.keys(nextData).join(', ')}`);
+    this.log(`  __NEXT_DATA__.props keys: ${Object.keys(nextData?.props || {}).join(', ')}`);
+    this.log(`  __NEXT_DATA__.props.pageProps keys: ${Object.keys(nextData?.props?.pageProps || {}).join(', ')}`);
+
+    // Try known paths in order of likelihood
+    const knownPaths: Array<{ path: string; value: any }> = [
+      { path: 'props.pageProps.events', value: nextData?.props?.pageProps?.events },
+      { path: 'props.pageProps.initialData.events', value: nextData?.props?.pageProps?.initialData?.events },
+      { path: 'props.pageProps.browseData.events', value: nextData?.props?.pageProps?.browseData?.events },
+      { path: 'props.pageProps.data.events', value: nextData?.props?.pageProps?.data?.events },
+    ];
+
+    for (const { path, value } of knownPaths) {
+      if (Array.isArray(value) && value.length > 0) {
+        this.log(`  Found ${value.length} events at known path: ${path}`);
+        return value;
+      }
+    }
+
+    // Fallback: recursively search for arrays with event-like items
+    this.log('  Known paths exhausted, searching recursively for events array...');
+    const found = this.findEventsArray(nextData);
+    if (found) {
+      this.log(`  Recursive search found ${found.events.length} events at: ${found.path}`);
+      return found.events;
+    }
+
+    this.log('  No events array found anywhere in __NEXT_DATA__');
+    return [];
+  }
+
   async scrape(): Promise<RawEvent[]> {
     this.log('Fetching Dice.fm Miami via __NEXT_DATA__...');
 
@@ -85,7 +144,7 @@ export class DiceRealScraper extends BaseScraper {
         }
         try {
           const nextData = JSON.parse(nextDataMatch[1]);
-          const diceEvents: DiceNextDataEvent[] = nextData?.props?.pageProps?.events || [];
+          const diceEvents = this.extractEventsFromNextData(nextData);
           this.log(`Found ${diceEvents.length} events via regex fallback`);
           if (diceEvents.length === 0) return [];
           return this.mapAllEvents(diceEvents);
@@ -103,7 +162,7 @@ export class DiceRealScraper extends BaseScraper {
         return [];
       }
 
-      const diceEvents: DiceNextDataEvent[] = nextData?.props?.pageProps?.events || [];
+      const diceEvents = this.extractEventsFromNextData(nextData);
       this.log(`Found ${diceEvents.length} events in __NEXT_DATA__`);
 
       if (diceEvents.length === 0) {

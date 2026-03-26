@@ -20,7 +20,7 @@ const __dir = dirname(fileURLToPath(import.meta.url));
 const META_PATH = join(__dir, '../../../public/data/scrape-meta.json');
 const HEALTH_REPORT_PATH = join(__dir, '../../../public/data/source-health.json');
 const HISTORY_PATH = join(__dir, '../../../public/data/agent-cache/scrape-history.json');
-const IG_SOURCES_PATH = join(__dir, '../sources/instagram-sources.ts');
+const IG_SOURCES_PATH = join(__dir, '../sources/instagram-real.ts');
 
 const HISTORY_MAX_RUNS = 5;
 
@@ -61,7 +61,7 @@ interface ScrapeMeta {
   }>;
 }
 
-/** Read handles already in instagram-sources.ts to avoid duplicate suggestions */
+/** Read handles already in instagram-real.ts to avoid duplicate suggestions */
 function getMonitoredHandles(): Set<string> {
   try {
     const src = readFileSync(IG_SOURCES_PATH, 'utf-8');
