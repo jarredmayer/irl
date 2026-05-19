@@ -1,90 +1,51 @@
 {
-  "scrapedAt": "2026-03-25T17:06:38.267Z",
+  "scrapedAt": "2026-05-19T00:24:23.439Z",
   "stats": {
-    "total": 1025,
-    "deduplicated": 626,
+    "total": 692,
+    "deduplicated": 461,
     "bySource": {
       "Miami New Times": 0,
-      "Farmers Markets": 80,
-      "Beach Cleanups": 16,
-      "Don't Tell Comedy": 16,
-      "World Cup 2026": 7,
       "III Points": 0,
       "SOBEWFF": 0,
       "Miami Spice": 0,
       "Miami Festivals": 0,
       "Dice.fm Real": 0,
-      "Resident Advisor": 0,
-      "Candlelight Concerts (Fever)": 0,
-      "Hotel Events": 0,
-      "Real Venue Events": 29,
-      "Cultural Attractions": 393,
-      "Pop-Ups": 57,
-      "Miami Improv": 0,
-      "Fort Lauderdale Improv": 0,
-      "Broward Center": 0,
-      "Verified Recurring": 2,
-      "Coffee & Chill": 6,
-      "Free Yoga Miami": 75,
-      "Run Clubs": 18,
-      "Cycling Group Rides": 36,
-      "Las Olas Boulevard": 0,
-      "Fort Lauderdale": 23,
-      "Palm Beach": 58,
-      "Instagram Sources": 153,
-      "Luma": 0,
-      "SofarSounds": 0,
+      "Resident Advisor": 119,
+      "Candlelight Concerts (Fever)": 14,
+      "Hotel Events": 6,
+      "Miami Improv": 139,
+      "Fort Lauderdale Improv": 123,
+      "Broward Center": 1,
+      "Las Olas Boulevard": 13,
+      "Luma": 19,
+      "SofarSounds": 6,
       "HistoryMiami": 0,
       "Resy Miami Events": 0,
-      "Venue Watchlist": 0,
-      "Eventbrite Miami": 0,
-      "Fever Miami": 0,
-      "Club Space": 0,
+      "Venue Watchlist": 6,
+      "Eventbrite Miami": 30,
+      "Fever Miami": 156,
+      "Club Space": 39,
       "PAMM": 0,
-      "ICA Miami": 0,
-      "Wolfsonian": 0,
+      "ICA Miami": 1,
+      "Wolfsonian": 2,
       "Little Haiti Cultural": 0,
       "Wynwood BID": 0,
-      "CultureRoom": 0,
-      "BonnetHouse": 0,
-      "WeekendBroward Verified": 56
+      "CultureRoom": 12,
+      "BonnetHouse": 6,
+      "Instagram Real": 0
     }
   },
   "delta": {
-    "added": 104,
-    "removed": 0,
+    "added": 461,
+    "removed": 33,
     "modified": 0,
-    "unchanged": 522
+    "unchanged": 0
   },
   "sources": [
     {
       "name": "Miami New Times",
       "count": 0,
       "status": "empty",
-      "errors": []
-    },
-    {
-      "name": "Farmers Markets",
-      "count": 80,
-      "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "Beach Cleanups",
-      "count": 16,
-      "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "Don't Tell Comedy",
-      "count": 16,
-      "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "World Cup 2026",
-      "count": 7,
-      "status": "ok",
       "errors": []
     },
     {
@@ -119,137 +80,57 @@
     },
     {
       "name": "Resident Advisor",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "count": 119,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "Candlelight Concerts (Fever)",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "count": 14,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "Hotel Events",
-      "count": 0,
-      "status": "empty",
-      "errors": []
-    },
-    {
-      "name": "Real Venue Events",
-      "count": 29,
-      "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "Cultural Attractions",
-      "count": 393,
-      "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "Pop-Ups",
-      "count": 57,
-      "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "Miami Improv",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "fetch failed"
-      ]
-    },
-    {
-      "name": "Fort Lauderdale Improv",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "fetch failed"
-      ]
-    },
-    {
-      "name": "Broward Center",
-      "count": 0,
-      "status": "empty",
-      "errors": []
-    },
-    {
-      "name": "Verified Recurring",
-      "count": 2,
-      "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "Coffee & Chill",
       "count": 6,
       "status": "ok",
       "errors": []
     },
     {
-      "name": "Free Yoga Miami",
-      "count": 75,
+      "name": "Miami Improv",
+      "count": 139,
       "status": "ok",
       "errors": []
     },
     {
-      "name": "Run Clubs",
-      "count": 18,
+      "name": "Fort Lauderdale Improv",
+      "count": 123,
       "status": "ok",
       "errors": []
     },
     {
-      "name": "Cycling Group Rides",
-      "count": 36,
+      "name": "Broward Center",
+      "count": 1,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Las Olas Boulevard",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "Fort Lauderdale",
-      "count": 23,
-      "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "Palm Beach",
-      "count": 58,
-      "status": "ok",
-      "errors": []
-    },
-    {
-      "name": "Instagram Sources",
-      "count": 153,
+      "count": 13,
       "status": "ok",
       "errors": []
     },
     {
       "name": "Luma",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "count": 19,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "SofarSounds",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Request timed out"
-      ]
+      "count": 6,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "HistoryMiami",
@@ -260,106 +141,86 @@
     {
       "name": "Resy Miami Events",
       "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "status": "empty",
+      "errors": []
     },
     {
       "name": "Venue Watchlist",
-      "count": 0,
-      "status": "empty",
+      "count": 6,
+      "status": "ok",
       "errors": []
     },
     {
       "name": "Eventbrite Miami",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "count": 30,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "Fever Miami",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "count": 156,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "Club Space",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
+      "count": 39,
+      "status": "ok",
+      "errors": []
     },
     {
       "name": "PAMM",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "ICA Miami",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "Wolfsonian",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "Little Haiti Cultural",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "Wynwood BID",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "CultureRoom",
-      "count": 0,
-      "status": "error",
-      "errors": [
-        "Timed out after 120s"
-      ]
-    },
-    {
-      "name": "BonnetHouse",
       "count": 0,
       "status": "empty",
       "errors": []
     },
     {
-      "name": "WeekendBroward Verified",
-      "count": 56,
+      "name": "ICA Miami",
+      "count": 1,
       "status": "ok",
+      "errors": []
+    },
+    {
+      "name": "Wolfsonian",
+      "count": 2,
+      "status": "ok",
+      "errors": []
+    },
+    {
+      "name": "Little Haiti Cultural",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "Wynwood BID",
+      "count": 0,
+      "status": "empty",
+      "errors": []
+    },
+    {
+      "name": "CultureRoom",
+      "count": 12,
+      "status": "ok",
+      "errors": []
+    },
+    {
+      "name": "BonnetHouse",
+      "count": 6,
+      "status": "ok",
+      "errors": []
+    },
+    {
+      "name": "Instagram Real",
+      "count": 0,
+      "status": "empty",
       "errors": []
     }
   ],
   "sourceHealth": {
-    "ok": 16,
-    "empty": 11,
-    "errored": 17,
+    "ok": 17,
+    "empty": 12,
+    "errored": 0,
     "emptySources": [
       "Miami New Times",
       "III Points",
@@ -367,30 +228,13 @@
       "Miami Spice",
       "Miami Festivals",
       "Dice.fm Real",
-      "Hotel Events",
-      "Broward Center",
       "HistoryMiami",
-      "Venue Watchlist",
-      "BonnetHouse"
-    ],
-    "erroredSources": [
-      "Resident Advisor",
-      "Candlelight Concerts (Fever)",
-      "Miami Improv",
-      "Fort Lauderdale Improv",
-      "Las Olas Boulevard",
-      "Luma",
-      "SofarSounds",
       "Resy Miami Events",
-      "Eventbrite Miami",
-      "Fever Miami",
-      "Club Space",
       "PAMM",
-      "ICA Miami",
-      "Wolfsonian",
       "Little Haiti Cultural",
       "Wynwood BID",
-      "CultureRoom"
-    ]
+      "Instagram Real"
+    ],
+    "erroredSources": []
   }
 }
