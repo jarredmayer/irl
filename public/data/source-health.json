@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-25T17:06:37.759Z",
-  "scrapedAt": "2026-03-14T02:31:35.387Z",
+  "generatedAt": "2026-05-19T00:24:23.414Z",
+  "scrapedAt": "2026-03-25T17:06:38.267Z",
   "healthPct": 36,
   "totalSources": 44,
   "ok": 16,
@@ -38,29 +38,76 @@
     "Wynwood BID",
     "CultureRoom"
   ],
-  "suddenFailures": [
-    "Miami Festivals",
-    "Resident Advisor",
-    "Candlelight Concerts (Fever)",
-    "Hotel Events",
-    "Miami Improv",
-    "Fort Lauderdale Improv",
-    "Las Olas Boulevard",
-    "Luma",
-    "SofarSounds",
-    "HistoryMiami",
-    "Eventbrite Miami",
-    "Club Space",
-    "ICA Miami",
-    "CultureRoom"
+  "suddenFailures": [],
+  "graduallyDeclining": [
+    {
+      "name": "Miami Festivals",
+      "trend": "1 → 0 → 0"
+    },
+    {
+      "name": "Resident Advisor",
+      "trend": "253 → 0 → 0"
+    },
+    {
+      "name": "Candlelight Concerts (Fever)",
+      "trend": "14 → 0 → 0"
+    },
+    {
+      "name": "Hotel Events",
+      "trend": "10 → 0 → 0"
+    },
+    {
+      "name": "Miami Improv",
+      "trend": "153 → 0 → 0"
+    },
+    {
+      "name": "Fort Lauderdale Improv",
+      "trend": "120 → 0 → 0"
+    },
+    {
+      "name": "Las Olas Boulevard",
+      "trend": "44 → 0 → 0"
+    },
+    {
+      "name": "Luma",
+      "trend": "21 → 0 → 0"
+    },
+    {
+      "name": "SofarSounds",
+      "trend": "5 → 0 → 0"
+    },
+    {
+      "name": "HistoryMiami",
+      "trend": "13 → 0 → 0"
+    },
+    {
+      "name": "Eventbrite Miami",
+      "trend": "30 → 0 → 0"
+    },
+    {
+      "name": "Club Space",
+      "trend": "40 → 0 → 0"
+    },
+    {
+      "name": "ICA Miami",
+      "trend": "1 → 0 → 0"
+    },
+    {
+      "name": "CultureRoom",
+      "trend": "18 → 0 → 0"
+    }
   ],
-  "graduallyDeclining": [],
   "suggestedNewSources": [
+    "@broward_cultural — Broward Cultural Division (FTL arts/culture events)",
+    "@mdc_theatre — Miami Dade College theater productions",
+    "@calle_ocho_festival — Little Havana cultural events",
+    "@art_basel_miami — Art Basel Miami Beach programming",
+    "@midtown_miami — Midtown Miami neighborhood activations",
     "@southbeachmiami — South Beach events and activations",
     "@miami_open — Miami Open tennis tournament",
     "@ultramiami — Ultra Music Festival Miami",
     "@sobe_arts — South Beach arts & culture",
     "@miamibookfair — Miami Book Fair International"
   ],
-  "historyRuns": 2
+  "historyRuns": 3
 }
